@@ -1,0 +1,58 @@
+export default dataObj = [
+    {
+    title: 'Adverbs',
+    description: 'Adverb',
+    level: 'A1',
+    link: 'Class5x1x1',
+    key: 1,
+    showPro: false,
+    },
+    {
+    title: 'Agreement',
+    description: 'Kongruens',
+    level: 'A1',
+    link: 'Class5x2x1',
+    key: 2,
+    showPro: false,
+   },
+    {
+    title: 'Irregular adjectives',
+    description: 'Uregelmessige adjektiver',
+    level: 'A1',
+    link: 'Class5x3x1',
+    key: 3,
+    showPro: false,
+   },
+    {
+    title: 'The degree of comparison',
+    description: 'Gradbøyning',
+    level: 'A1',
+    link: 'Class5x4x1',
+    key: 4,
+    showPro: false,
+   },
+    {
+    title: 'Irregular degree of comparison',
+    description: 'Uregelmessig gradbøyning',
+    level: 'A1',
+    link: 'Class5x5x1',
+    key: 5,
+    showPro: false,
+   },
+    {
+    title: 'The degree of comparison II',
+    description: 'Mer, mest, mindre og minst',
+    level: 'A1',
+    link: 'Class5x6x1',
+    key: 6,
+    showPro: false,
+   },
+   {
+    title: 'Perfect participle',
+    description: 'Perfektum partisipp',
+    level: 'A1',
+    link: 'Class5x7x1',
+    key: 7,
+    showPro: false,
+   }
+];

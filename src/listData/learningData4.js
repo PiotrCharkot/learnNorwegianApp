@@ -1,0 +1,50 @@
+export default dataObj = [
+    {
+    title: 'Articles',
+    description: 'Artikler',
+    level: 'A1',
+    link: 'Class4x1x1',
+    key: 1,
+    showPro: false,
+   },
+    {
+    title: 'Irregular inflection',
+    description: 'Uregelmessig bøyning',
+    level: 'A1',
+    link: 'Class4x2x1',
+    key: 2,
+    showPro: false,
+   },
+    {
+    title: 'Uncountable nouns',
+    description: 'Utellelige substantiver',
+    level: 'A1',
+    link: 'Class4x3x1',
+    key: 3,
+    showPro: false,
+   },
+   {
+    title: 'Genitive',
+    description: 'Genitiv',
+    level: 'A1',
+    link: 'Class4x4x1',
+    key: 4,
+    showPro: false,
+   },
+    {
+    title: 'Noun phrase',
+    description: 'Substantivfraser',
+    level: 'A1',
+    link: 'Class4x5x1',
+    key: 5,
+    showPro: false,
+   },
+    {
+    title: 'Compound words',
+    description: 'Samskriving',
+    level: 'A1',
+    link: 'Class4x6x1',
+    key: 6,
+    showPro: false,
+   }
+];

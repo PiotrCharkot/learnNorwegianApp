@@ -1,0 +1,58 @@
+export default dataObj = [
+    {
+    title: 'Affirmative sentence',
+    description: 'Bekreftende setning',
+    level: 'A1',
+    link: 'Class2x1x1',
+    key: 1,
+    showPro: false,
+   },
+    {
+    title: 'Questions and negations',
+    description: 'Spørsmål og negasjoner',
+    level: 'A1',
+    link: 'Class2x2x1',
+    key: 2,
+    showPro: false,
+   },
+    {
+    title: `Clauses`,
+    description: 'Hovedsetning og leddsetning',
+    level: 'A1',
+    link: 'Class2x3x1',
+    key: 3,
+    showPro: false,
+   },
+    {
+    title: 'Indirect speech',
+    description: 'Indirekte tale',
+    level: 'A1',
+    link: 'Class2x4x1',
+    key: 4,
+    showPro: true,
+   },
+    {
+    title: 'Conditional statement',
+    description: 'Vilkårsetning',
+    level: 'A1',
+    link: 'Class2x5x1',
+    key: 5,
+    showPro: true,
+   },
+   {
+    title: 'Adverbial',
+    description: 'Adverbial',
+    level: 'A1',
+    link: 'Class2x6x1',
+    key: 6,
+    showPro: true,
+   },
+    {
+    title: 'Sentence adverbial',
+    description: 'Setningsadverbial',
+    level: 'A1',
+    link: 'Class2x7x1',
+    key: 7,
+    showPro: true,
+   }
+];

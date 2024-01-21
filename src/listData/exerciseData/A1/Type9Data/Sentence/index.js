@@ -1,0 +1,167 @@
+export default dataObj = [
+    {
+    typeOfScreen: '3',
+    correctAnswers: ['Over', '80%', 'av', 'befolkningen', 'i Norge','bor i', 'byer og'],
+    wordsWithGaps: ['          ', '          ', '          ', '          ', '          ', '          ', '          ',  '!!!' , 'var', 'Over', '80%', 'av', 'befolkningen', 'i Norge','bor i', 'byer og'],
+    gapsIndex: [],
+    textIndex: [],
+    translations: {
+        eng: 'Choose good anwer out of two from data base type 3',
+        pl: 'polskie instrukcje baza danych type 3',
+        ar: 'سيارة',
+        ger: 'ein Auto type 3',
+        lt: 'automobilis type 3',
+        ua: 'автомобіль type 3', 
+        sp: 'un coche type 3',
+    },
+    soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/wordsList1%2Faa.mp3?alt=media&token=6dee1799-ea0e-4360-b17c-da923f358f01',
+    key: 0
+   },
+   {
+    typeOfScreen: '3',
+    correctAnswers: ['Over', '80%', 'av', 'befolkningen', 'i Norge','bor i', 'byer og'],
+    wordsWithGaps: ['          ', '          ', '          ', '          ', '          ', '          ', '          ',  '!!!' , 'var', 'Over', '80%', 'av', 'befolkningen', 'i Norge','bor i', 'byer og', 'when', 'why'],
+    gapsIndex: [],
+    textIndex: [],
+    translations: {
+        eng: 'Choose good anwer out of two from data base type 3',
+        pl: 'polskie instrukcje baza danych type 3',
+        ar: 'سيارة',
+        ger: 'ein Auto type 3',
+        lt: 'automobilis type 3',
+        ua: 'автомобіль type 3', 
+        sp: 'un coche type 3',
+    },
+    soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/wordsList1%2Faa.mp3?alt=media&token=6dee1799-ea0e-4360-b17c-da923f358f01',
+    key: 1
+   },
+   {
+    typeOfScreen: '3',
+    correctAnswers: ['Over', '80%', 'av', 'befolkningen', 'i Norge','bor i', 'byer og'],
+    wordsWithGaps: ['          ', '          ', '          ', '          ', '          ', '          ', '          ',  '!!!' , 'var', 'Over', '80%', 'av', 'befolkningen', 'i Norge','bor i', 'byer og', 'when', 'why', 'when', 'why'],
+    gapsIndex: [],
+    textIndex: [],
+    translations: {
+        eng: 'Choose good anwer out of two from data base type 3',
+        pl: 'polskie instrukcje baza danych type 3',
+        ar: 'سيارة',
+        ger: 'ein Auto type 3',
+        lt: 'automobilis type 3',
+        ua: 'автомобіль type 3', 
+        sp: 'un coche type 3',
+    },
+    soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/wordsList1%2Faa.mp3?alt=media&token=6dee1799-ea0e-4360-b17c-da923f358f01',
+    key: 2
+   },
+   {
+    typeOfScreen: '3',
+    correctAnswers: ['Over', '80%', 'av', 'befolkningen', 'i Norge','bor i', 'byer og'],
+    wordsWithGaps: ['          ', '          ', '          ', '          ', '          ', '          ', '          ',  '!!!' , 'var', 'Over', '80%', 'av', 'befolkningen', 'i Norge','bor i', 'byer og', 'when', 'why', 'when', 'why', 'when', 'why'],
+    gapsIndex: [],
+    textIndex: [],
+    translations: {
+        eng: 'Choose good anwer out of two from data base type 3',
+        pl: 'polskie instrukcje baza danych type 3',
+        ar: 'سيارة',
+        ger: 'ein Auto type 3',
+        lt: 'automobilis type 3',
+        ua: 'автомобіль type 3', 
+        sp: 'un coche type 3',
+    },
+    soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/wordsList1%2Faa.mp3?alt=media&token=6dee1799-ea0e-4360-b17c-da923f358f01',
+    key: 3
+   },
+   {
+    typeOfScreen: '3',
+    correctAnswers: ['Over', '80%', 'av', 'befolkningen', 'i Norge','bor i', 'byer og'],
+    wordsWithGaps: ['          ', '          ', '          ', '          ', '          ', '          ', '          ',  '!!!' , 'var', 'Over', '80%', 'av', 'befolkningen', 'i Norge','bor i', 'byer og', 'when', 'why', 'when', 'why', 'when', 'why', 'when', 'why'],
+    gapsIndex: [],
+    textIndex: [],
+    translations: {
+        eng: 'Choose good anwer out of two from data base type 3',
+        pl: 'polskie instrukcje baza danych type 3',
+        ar: 'سيارة',
+        ger: 'ein Auto type 3',
+        lt: 'automobilis type 3',
+        ua: 'автомобіль type 3', 
+        sp: 'un coche type 3',
+    },
+    soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/wordsList1%2Faa.mp3?alt=media&token=6dee1799-ea0e-4360-b17c-da923f358f01',
+    key: 4
+   },
+   {
+    typeOfScreen: '3',
+    correctAnswers: ['Over', '80%', 'av', 'befolkningen', 'i Norge','bor i', 'byer og'],
+    wordsWithGaps: ['          ', '          ', '          ', '          ', '          ', '          ', '          ',  '!!!' , 'var', 'Over', '80%', 'av', 'befolkningen', 'i Norge','bor i', 'byer og', 'when', 'why', 'when', 'why', 'when', 'why', 'when', 'why', 'when', 'why'],
+    gapsIndex: [],
+    textIndex: [],
+    translations: {
+        eng: 'Choose good anwer out of two from data base type 3',
+        pl: 'polskie instrukcje baza danych type 3',
+        ar: 'سيارة',
+        ger: 'ein Auto type 3',
+        lt: 'automobilis type 3',
+        ua: 'автомобіль type 3', 
+        sp: 'un coche type 3',
+    },
+    soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/wordsList1%2Faa.mp3?alt=media&token=6dee1799-ea0e-4360-b17c-da923f358f01',
+    key: 5
+   },
+   {
+    typeOfScreen: '3',
+    correctAnswers: ['Over', '80%', 'av', 'befolkningen', 'i Norge','bor i', 'byer og'],
+    wordsWithGaps: ['          ', '          ', '          ', '          ', '          ', '          ', '          ',  '!!!' , 'var', 'Over', '80%', 'av', 'befolkningen', 'i Norge','bor i', 'byer og', 'when', 'why', 'when', 'why', 'when', 'why', 'when', 'why', 'when', 'why', 'when', 'why'],
+    gapsIndex: [],
+    textIndex: [],
+    translations: {
+        eng: 'Choose good anwer out of two from data base type 3',
+        pl: 'polskie instrukcje baza danych type 3',
+        ar: 'سيارة',
+        ger: 'ein Auto type 3',
+        lt: 'automobilis type 3',
+        ua: 'автомобіль type 3', 
+        sp: 'un coche type 3',
+    },
+    soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/wordsList1%2Faa.mp3?alt=media&token=6dee1799-ea0e-4360-b17c-da923f358f01',
+    key: 6
+   },
+   {
+    typeOfScreen: '3',
+    correctAnswers: ['Over', '80%', 'av', 'befolkningen', 'i Norge','bor i', 'byer og'],
+    wordsWithGaps: ['          ', '          ', '          ', '          ', '          ', '          ', '          ',  '!!!' , 'var', 'Over', '80%', 'av', 'befolkningen', 'i Norge','bor i', 'byer og', 'when', 'why', 'when', 'why', 'when', 'why', 'when', 'why', 'when', 'why', 'when', 'why', 'when', 'why'],
+    gapsIndex: [],
+    textIndex: [],
+    translations: {
+        eng: 'Choose good anwer out of two from data base type 3',
+        pl: 'polskie instrukcje baza danych type 3',
+        ar: 'سيارة',
+        ger: 'ein Auto type 3',
+        lt: 'automobilis type 3',
+        ua: 'автомобіль type 3', 
+        sp: 'un coche type 3',
+    },
+    soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/wordsList1%2Faa.mp3?alt=media&token=6dee1799-ea0e-4360-b17c-da923f358f01',
+    key: 7
+   },
+   {
+    typeOfScreen: '3',
+    correctAnswers: ['Over', '80%', 'av', 'befolkningen', 'i Norge','bor i', 'byer og'],
+    wordsWithGaps: ['          ', '          ', '          ', '          ', '          ', '          ', '          ',  '!!!' , 'var', 'Over', '80%', 'av', 'befolkningen', 'i Norge','bor i', 'byer og', 'when', 'why', 'when', 'why', 'when', 'why', 'when', 'why', 'when', 'why', 'when', 'why', 'when', 'why', 'when', 'why'],
+    gapsIndex: [],
+    textIndex: [],
+    translations: {
+        eng: 'Choose good anwer out of two from data base type 3',
+        pl: 'polskie instrukcje baza danych type 3',
+        ar: 'سيارة',
+        ger: 'ein Auto type 3',
+        lt: 'automobilis type 3',
+        ua: 'автомобіль type 3', 
+        sp: 'un coche type 3',
+    },
+    soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/wordsList1%2Faa.mp3?alt=media&token=6dee1799-ea0e-4360-b17c-da923f358f01',
+    key: 8
+   },
+
+];
+
+
