@@ -1,8 +1,8 @@
 export default dataObj = [
     {
     typeOfScreen: '3',
-    correctAnswers: ['Over', '80%', 'av', 'befolkningen', 'i Norge','bor i', 'byer og'],
-    wordsWithGaps: ['          ', '          ', '          ', '          ', '          ', '          ', '          ',  '!!!' , 'var', 'Over', '80%', 'av', 'befolkningen', 'i Norge','bor i', 'byer og'],
+    correctAnswers: ['Over', '80%', 'av', 'befolkningen', 'i Norge','bor i', 'byer og', '?'],
+    wordsWithGaps: ['          ', '          ', '          ', '          ', '          ', '          ', '          ', '?', '!!!' , 'var', 'Over', '80%', 'av', 'befolkningen', 'i Norge','bor i', 'byer og'],
     gapsIndex: [],
     textIndex: [],
     translations: {

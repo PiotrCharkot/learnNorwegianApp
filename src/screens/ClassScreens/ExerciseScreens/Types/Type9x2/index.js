@@ -7,22 +7,8 @@ import ProgressBar from '../../../../../components/bars/progressBar'
 import BottomBar from '../../../../../components/bars/bottomBar'
 import Draggable from '../../../../../components/other/Draggable'
 import generalStyles from '../../../../../styles/generalStyles';
-import Loader from '../../../../../components/other/Loader';
-import type9sentence from '../../../../../listData/exerciseData/A1/Type9Data/Sentence'
 
 
-const dataForMarkers = {
-    part: 'exercise',
-    section: 'section1',
-    class: 'class3'
-}
-
-
-
-const linkList = ['Exc1x10x1', 'Type9x2', 'Type9x3', 'Type9x4'];
-
-const currentScreen = 1;
-const allScreensNum = linkList.length;
 
 const correct = generalStyles.gradientTopCorrectDraggable;
 const correct1 = generalStyles.gradientBottomCorrectDraggable;
@@ -34,133 +20,58 @@ const gradientBottom = generalStyles.gradientBottomDraggable2;
 
 
 
+const exitLink = 'ExitExcScreen'
 
 
 
+//Type9x2
 
-//Type9 opening screen
-
-const Exc1x10x1 = ({ route }) => {
+const Type9x2 = ({ route }) => {
     
-    
+    const {userPoints, latestScreen, comeBackRoute, latestAnswered, allScreensNum, exeList, linkList, nextScreen, savedLang} = route.params;
+
+    const isCorrectNewArr = Array(exeList[nextScreen - 1].correctAnswers.length).fill(0);
     
     const [movingDraggable, setMovingDraggable] = useState(null);
     const [releaseDraggable, setReleaseDraggable] = useState(null);
-    const [isCorrect, setIsCorrect] = useState([]);
-    const [isCorrectNewArr, setIsCorrectNewArr] = useState([]);
-    const [numberGaps, setNumberGaps] = useState(0);
+    const [isCorrect, setIsCorrect] = useState(isCorrectNewArr);
+    
+    
     const [answersChecked, setAnswersChecked] = useState([]);
-    const [words, setWords] = useState([]);
-    const [currentPoints, setCurrentPoints] = useState(0);
-    const [latestScreenDone, setLatestScreenDone] = useState(currentScreen);
+    const [words, setWords] = useState(exeList[nextScreen - 1].wordsWithGaps);
+    const [currentPoints, setCurrentPoints] = useState(userPoints);
+    const [latestScreenDone, setLatestScreenDone] = useState(nextScreen);
     const [comeBack, setComeBack] = useState(false);
     const [resetCheck, setResetCheck] = useState(false);
-    const [latestScreenAnswered, setLatestScreenAnswered] = useState(0);
-    const [correctAnswers, setCorrectAnswers]= useState([]);
-    const [instructions, setInstructions] = useState('some instructions');
+    const [latestScreenAnswered, setLatestScreenAnswered] = useState(latestAnswered);
     
-    const [language, setLanguage] = useState('EN');
-    const [soundLink, setSoundLink] = useState('')
+    const [soundLink, setSoundLink] = useState(exeList[nextScreen - 1].soundLink)
     
-    const [contentReady, setContentReady] = useState(false);
-    const [exeList, setExeList] = useState([]);
-
+    
 
     useFocusEffect(() => {
 
-        if (route.params) {
-          const {userPoints, latestScreen, comeBackRoute, latestAnswered, nextScreen, savedLang} = route.params;
+        
 
-          if (latestScreen > currentScreen) {
-              setLatestScreenAnswered(latestAnswered);
-              setLatestScreenDone(latestScreen);
-              setComeBack(true);
-          }
-  
-          if (route.params.userPoints > 0) {
-              console.log('setting new points', route.params.userPoints );
-              setCurrentPoints(userPoints)
-          }
-
-          
-          if (savedLang === 'PL') {
-            setInstructions('polskie instrukcje')
-          } else if (savedLang === 'DE') {
-            setInstructions('niemieckie instrukcje')
-          } else if (savedLang === 'LT') {
-            setInstructions('litewskie instrukcje')
-          } else if (savedLang === 'AR') {
-            setInstructions('arabskie instrukcje')
-          } else if (savedLang === 'UA') {
-            setInstructions('ukr instrukcje')
-          } else if (savedLang === 'ES') {
-            setInstructions('esp instrukcje')
-          }
-          
-          setLanguage(savedLang)
+        if (latestScreen > nextScreen) {
+            setLatestScreenAnswered(latestAnswered);
+            setLatestScreenDone(latestScreen);
+            setComeBack(true);
         }
+
+        if (route.params.userPoints > 0) {
+            console.log('setting new points', route.params.userPoints );
+            setCurrentPoints(userPoints)
+        }
+
+        
+        
       
         
     })
 
 
-    useEffect(() => {
-
-        let tempArr = []; 
-        let alreadyUsed = [];
-        let sumOfAllPoints = 0;
     
-    
-        for (let i = 0; tempArr.length < allScreensNum; i++) {
-
-            let randomVal = Math.floor(Math.random() * type9sentence.length);
-
-            if (!alreadyUsed.includes(randomVal)) {
-                let newArrGaps = [];
-                let newArrText = [];
-
-
-                for (let j = 0; j < type9sentence[randomVal].correctAnswers.length; j++) {
-                    if (type9sentence[randomVal].wordsWithGaps[j] === '          ') {
-                        newArrGaps.push(j)
-                    } else {
-                        newArrText.push(j)
-                    }
-                }
-
-                type9sentence[randomVal].gapsIndex = newArrGaps;
-                type9sentence[randomVal].textIndex = newArrText;
-
-                sumOfAllPoints = sumOfAllPoints + newArrGaps.length * generalStyles.bonusCheckAnswerGapsText
-
-                tempArr.push(type9sentence[randomVal]);
-                alreadyUsed.push(randomVal)
-                
-            }
-            
-        }
-    
-        tempArr.push(sumOfAllPoints);
-        tempArr.push(dataForMarkers);
-        
-          
-          
-        console.log('my list of questions', tempArr);
-        console.log('my total points: ', sumOfAllPoints);
-        setExeList(tempArr);
-
-        
-        setSoundLink(tempArr[0].soundLink)
-        setWords(tempArr[0].wordsWithGaps)
-        setCorrectAnswers(tempArr[0].correctAnswers);
-        setNumberGaps(tempArr[0].gapsIndex.length);
-        setIsCorrect(Array(tempArr[0].correctAnswers.length).fill(0));
-        setIsCorrectNewArr(Array(tempArr[0].correctAnswers.length).fill(0));
-        setContentReady(true);
-    
-    
-    
-      }, [])
       
 
     useEffect(() => {
@@ -172,7 +83,7 @@ const Exc1x10x1 = ({ route }) => {
     useEffect(() => {
       
       if (answersChecked.length !== 0) {
-        setLatestScreenAnswered(currentScreen); 
+        setLatestScreenAnswered(nextScreen); 
         for (let i = 0; i < answersChecked.length; i++) {
 
           const newArr = [...isCorrect]; 
@@ -219,12 +130,11 @@ const Exc1x10x1 = ({ route }) => {
     
   return (
     <View style={styles.mainContainer}>
-      <ProgressBar screenNum={1} totalLenghtNum={allScreensNum} latestScreen={latestScreenDone} comeBack={comeBack}/>
+      <ProgressBar screenNum={nextScreen} totalLenghtNum={allScreensNum} latestScreen={latestScreenDone} comeBack={comeBackRoute}/>
 
-      {contentReady ? <View style={styles.body}>
+      <View style={styles.body}>
 
         <View style={styles.topView}>
-        <Text style={{...styles.questionText, textAlign: language === 'AR' ? 'right' : 'left' }}>{instructions}</Text>
             <View style={styles.pictureContainer}>
                 <TouchableOpacity onPress={playSound}>
                 <Image style={styles.pictureSound} source={require('../../../../../../assets/volume.png')} />
@@ -237,7 +147,7 @@ const Exc1x10x1 = ({ route }) => {
 
             {words.map((item, index) => {
                 
-                if (exeList[0].textIndex.includes(index)) {
+                if (exeList[nextScreen - 1].textIndex.includes(index)) {
                     return (
                         <View style={styles.exgzampleTextContainer} key={index}>
                             <Text style={styles.exgzampleText}>{item}</Text>
@@ -264,11 +174,11 @@ const Exc1x10x1 = ({ route }) => {
                         return (
 
                         <LinearGradient
-                        colors={isCorrect[index] === 0 || index > exeList[0].correctAnswers.length ? [gradientTop, gradientBottom] : isCorrect[index] === 1 ? [correct , correct1] : [incorrect1 , incorrect]}
+                        colors={isCorrect[index] === 0 || index > exeList[nextScreen - 1].correctAnswers.length ? [gradientTop, gradientBottom] : isCorrect[index] === 1 ? [correct , correct1] : [incorrect1 , incorrect]}
                         key={index}
                             style={[
                             isMovedOver && styles.draggableContainerSwap,
-                            item.trim() == '' && !exeList[0].gapsIndex.includes(index) ?  styles.draggableContainerEmpty : styles.draggableContainer,
+                            item.trim() == '' && !exeList[nextScreen - 1].gapsIndex.includes(index) ?  styles.draggableContainerEmpty : styles.draggableContainer,
                             ]}
                         >
                             
@@ -283,9 +193,7 @@ const Exc1x10x1 = ({ route }) => {
             })}
 
         </View>
-        </View>  : <View style={styles.loaderDisplay}>
-            <Loader />
-        </View> }
+        </View> 
         
     
 
@@ -293,15 +201,15 @@ const Exc1x10x1 = ({ route }) => {
         <BottomBar 
         callbackButton={'checkAnswerGapsText'}
         userAnswers={words}
-        correctAnswers={correctAnswers}
-        numberOfGaps={numberGaps}
-        linkNext={linkList[currentScreen]}
+        correctAnswers={exeList[nextScreen - 1].correctAnswers}
+        numberOfGaps={exeList[nextScreen - 1].gapsIndex.length}
+        linkNext={allScreensNum === nextScreen ? exitLink : linkList[nextScreen]}
+        linkPrevious={linkList[nextScreen - 2]} 
         buttonWidth={generalStyles.buttonNextPrevSize}
         buttonHeight={generalStyles.buttonNextPrevSize}
-        isFirstScreen={true}
         userPoints={currentPoints}
         latestScreen={latestScreenDone}
-        currentScreen={currentScreen}
+        currentScreen={nextScreen}
         questionScreen={true}
         comeBack={comeBack}
         checkAns={(arr) => setAnswersChecked(arr)}
@@ -310,14 +218,16 @@ const Exc1x10x1 = ({ route }) => {
         allScreensNum={allScreensNum}
         questionList={exeList}
         links={linkList}
-        savedLang={language}
+        savedLang={savedLang}
+        totalPoints={exeList[exeList.length - 2]}
+        dataForMarkers={exeList[exeList.length - 1]}
         />
       </View>
     </View>
   )
 }
 
-export default Exc1x10x1
+export default Type9x2
 
 
 const styles = StyleSheet.create({

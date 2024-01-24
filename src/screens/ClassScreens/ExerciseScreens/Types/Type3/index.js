@@ -148,12 +148,18 @@ const Type3 = ({ route }) => {
 
               {words.map((item, index) => {
                   
-                  if (exeList[nextScreen - 1].textIndex.includes(index)) {
+                  if (exeList[nextScreen - 1].textIndex.includes(index) && !exeList[nextScreen - 1].lineBreaker.includes(index)) {
                       return (
                           <View style={styles.exgzampleTextContainer} key={index}>
                               <Text style={styles.exgzampleText}>{item}</Text>
                           </View>
                       )
+                  } else if (exeList[nextScreen - 1].lineBreaker.includes(index)) {
+                    return (
+                        <View style={styles.lineBreaker} key={index}>
+                            
+                        </View>
+                    )
                   } else if (item === '!!!') {
                       return (
                           <View style={styles.spacer} key={index}>
@@ -310,8 +316,16 @@ const styles = StyleSheet.create({
     
   },
   spacer: {
+    borderBottomColor: 'grey',
+    borderBottomWidth: 0.5,
     height: 20,
     width: '100%',
+  },
+  lineBreaker: {
+    borderBottomColor: 'lightgrey',
+    borderBottomWidth: 1,
+    height: 0,
+    width: '100%'
   },
 })
 

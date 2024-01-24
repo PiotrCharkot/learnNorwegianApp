@@ -25,6 +25,7 @@ const dataForMarkers = {
 
 const typesInSet = [type6prep, type4prep, type2prep, type1prep, type5prep, type6prep, type7prep, type8prep];
 const linkList = ['Exc1x7x1', 'Type4', 'Type2', 'Type1', 'Type5', 'Type6', 'Type7', 'Type8'];
+let usedItems = [];
 
 const currentScreen = 1;
 const allScreensNum = linkList.length;
@@ -109,112 +110,125 @@ const Exc1x7x1 = ({route}) => {
 
     useEffect(() => {
 
-        let tempArr = []; 
-        let sumOfAllPoints = 0;
-    
-    
-        for (let i = 0; i < typesInSet.length; i++) {
-          let randomVal = Math.floor(Math.random() * typesInSet[i].length); 
-    
-    
-          if (typesInSet[i][randomVal].typeOfScreen === '1') {
-            sumOfAllPoints = sumOfAllPoints + typesInSet[i][randomVal].nuberOfQuestions * generalStyles.bonusCheckAllAnswers
-          } else if (typesInSet[i][randomVal].typeOfScreen === '2') {
-            sumOfAllPoints = sumOfAllPoints + typesInSet[i][randomVal].correctAnswers.length * generalStyles.bonusMatchLR
-          } else if (typesInSet[i][randomVal].typeOfScreen === '3') {
-    
-            let newArrGaps = [];
-            let newArrText = [];
-    
-            for (let j = 0; j < typesInSet[i][randomVal].correctAnswers.length; j++) {
-                if (typesInSet[i][randomVal].wordsWithGaps[j] === '            ') {
-                    newArrGaps.push(j)
-                } else {
-                    newArrText.push(j)
-                }
-            }
-    
-    
-            typesInSet[i][randomVal].gapsIndex = newArrGaps;
-            typesInSet[i][randomVal].textIndex = newArrText;
-    
-            sumOfAllPoints = sumOfAllPoints + newArrGaps.length * generalStyles.bonusCheckAnswerGapsText
-    
-          } else if (typesInSet[i][randomVal].typeOfScreen === '4') {
-            
-            sumOfAllPoints = sumOfAllPoints + typesInSet[i][randomVal].nuberOfQuestions * generalStyles.bonusCheckAllAnswers
-    
-          } else if (typesInSet[i][randomVal].typeOfScreen === '5') {
-            
-            sumOfAllPoints = sumOfAllPoints + typesInSet[i][randomVal].nuberOfQuestions * generalStyles.bonusCheckAnswersManyQ
-    
-          } else if (typesInSet[i][randomVal].typeOfScreen === '6') {
-            
-            sumOfAllPoints = sumOfAllPoints + (typesInSet[i][randomVal].correctAnswers[0].length + typesInSet[i][randomVal].correctAnswers[1].length) * generalStyles.bonusChooseCorrectCategory
-    
-          } else if (typesInSet[i][randomVal].typeOfScreen === '7') {
-    
-    
-            let newArrMistakes = [];
-    
-    
-            for (let j = 0; j < typesInSet[i][randomVal].words.length; j++) {
-              
-              if (typesInSet[i][randomVal].words[j] != typesInSet[i][randomVal].wordsCorrect[j]) {
-                newArrMistakes.push(j);
+      let tempArr = []; 
+      let sumOfAllPoints = 0;
+  
+  
+      for (let i = 0; i < typesInSet.length; i++) {
+        let randomVal = Math.floor(Math.random() * typesInSet[i].length); 
+  
+  
+        if (typesInSet[i][randomVal].typeOfScreen === '1') {
+          sumOfAllPoints = sumOfAllPoints + typesInSet[i][randomVal].nuberOfQuestions * generalStyles.bonusCheckAllAnswers
+        } else if (typesInSet[i][randomVal].typeOfScreen === '2') {
+          sumOfAllPoints = sumOfAllPoints + typesInSet[i][randomVal].correctAnswers.length * generalStyles.bonusMatchLR
+        } else if (typesInSet[i][randomVal].typeOfScreen === '3') {
+  
+          let newArrGaps = [];
+          let newArrText = [];
+          let newArrLineBreaker = [];
+  
+          for (let j = 0; j < typesInSet[i][randomVal].correctAnswers.length; j++) {
+              if (typesInSet[i][randomVal].wordsWithGaps[j] === '            ') {
+                  newArrGaps.push(j)
+              } else if (typesInSet[i][randomVal].wordsWithGaps[j] === 'lineBreaker') {
+                newArrLineBreaker.push(j)
+              } else {
+                  newArrText.push(j)
               }
-    
-            }
-    
-            typesInSet[i][randomVal].mistakesIndex = newArrMistakes;
-    
-            sumOfAllPoints = sumOfAllPoints + newArrMistakes.length * generalStyles.bonusMarkMistakes
-    
-          } else if (typesInSet[i][randomVal].typeOfScreen === '8') {
-            sumOfAllPoints = sumOfAllPoints + typesInSet[i][randomVal].nuberOfQuestions * generalStyles.bonusOrderChceck
-          } 
-    
-          
-          tempArr.push(typesInSet[i][randomVal])
-        }
-    
-        
-    
-        tempArr.push(sumOfAllPoints);
-        tempArr.push(dataForMarkers);
-        
-          
-          
-        console.log('my list of questions', tempArr);
-        console.log('my total points: ', sumOfAllPoints);
-        setExeList(tempArr);
-
-        if (tempArr[0].instructions) {
-
-          if (route.params.savedLang === 'PL') {
-            setNewInstructions(tempArr[0].instructions.pl)
-          } else if (route.params.savedLang === 'DE') {
-            setNewInstructions(tempArr[0].instructions.ger)
-          } else if (route.params.savedLang === 'LT') {
-            setNewInstructions(tempArr[0].instructions.lt)
-          } else if (route.params.savedLang === 'AR') {
-            setNewInstructions(tempArr[0].instructions.ar)
-          } else if (route.params.savedLang === 'UA') {
-            setNewInstructions(tempArr[0].instructions.ua)
-          } else if (route.params.savedLang === 'ES') {
-            setNewInstructions(tempArr[0].instructions.sp)
-          } else if (route.params.savedLang === 'EN') {
-            setNewInstructions(tempArr[0].instructions.eng)
           }
+  
+  
+          typesInSet[i][randomVal].gapsIndex = newArrGaps;
+          typesInSet[i][randomVal].textIndex = newArrText;
+          typesInSet[i][randomVal].lineBreaker = newArrLineBreaker;
+  
+          sumOfAllPoints = sumOfAllPoints + newArrGaps.length * generalStyles.bonusCheckAnswerGapsText
+  
+        } else if (typesInSet[i][randomVal].typeOfScreen === '4') {
+          
+          sumOfAllPoints = sumOfAllPoints + typesInSet[i][randomVal].nuberOfQuestions * generalStyles.bonusCheckAllAnswers
+  
+        } else if (typesInSet[i][randomVal].typeOfScreen === '5') {
+          
+          sumOfAllPoints = sumOfAllPoints + typesInSet[i][randomVal].nuberOfQuestions * generalStyles.bonusCheckAnswersManyQ
+  
+        } else if (typesInSet[i][randomVal].typeOfScreen === '6') {
+          
+          sumOfAllPoints = sumOfAllPoints + (typesInSet[i][randomVal].correctAnswers[0].length + typesInSet[i][randomVal].correctAnswers[1].length) * generalStyles.bonusChooseCorrectCategory
+  
+        } else if (typesInSet[i][randomVal].typeOfScreen === '7') {
+  
+  
+          let newArrMistakes = [];
+  
+  
+          for (let j = 0; j < typesInSet[i][randomVal].words.length; j++) {
+            
+            if (typesInSet[i][randomVal].words[j] != typesInSet[i][randomVal].wordsCorrect[j]) {
+              newArrMistakes.push(j);
+            }
+  
+          }
+  
+          typesInSet[i][randomVal].mistakesIndex = newArrMistakes;
+  
+          sumOfAllPoints = sumOfAllPoints + newArrMistakes.length * generalStyles.bonusMarkMistakes
+  
+        } else if (typesInSet[i][randomVal].typeOfScreen === '8') {
+          sumOfAllPoints = sumOfAllPoints + typesInSet[i][randomVal].nuberOfQuestions * generalStyles.bonusOrderChceck
+        } 
+  
+        
+        tempArr.push(typesInSet[i][randomVal]);
+        
+        usedItems.push(typesInSet[i][randomVal]);
+        typesInSet[i].splice(randomVal, 1);
+      }
+  
+      
+  
+      tempArr.push(sumOfAllPoints);
+      tempArr.push(dataForMarkers);
+      
+        
+        
+      console.log('my list of questions', tempArr);
+      console.log('my total points: ', sumOfAllPoints);
+      setExeList(tempArr);
+
+      if (tempArr[0].instructions) {
+
+        if (route.params.savedLang === 'PL') {
+          setNewInstructions(tempArr[0].instructions.pl)
+        } else if (route.params.savedLang === 'DE') {
+          setNewInstructions(tempArr[0].instructions.ger)
+        } else if (route.params.savedLang === 'LT') {
+          setNewInstructions(tempArr[0].instructions.lt)
+        } else if (route.params.savedLang === 'AR') {
+          setNewInstructions(tempArr[0].instructions.ar)
+        } else if (route.params.savedLang === 'UA') {
+          setNewInstructions(tempArr[0].instructions.ua)
+        } else if (route.params.savedLang === 'ES') {
+          setNewInstructions(tempArr[0].instructions.sp)
+        } else if (route.params.savedLang === 'EN') {
+          setNewInstructions(tempArr[0].instructions.eng)
         }
+      }
 
 
-        setWords(tempArr[0].words);
-        setCorrectAnswers(tempArr[0].correctAnswers);
-        setIsCorrect(Array(tempArr[0].words.length).fill(0));
-        setIsCorrectNewArr(Array(tempArr[0].words.length).fill(0));
-        setContentReady(true);
-    
+      setWords(tempArr[0].words);
+      setCorrectAnswers(tempArr[0].correctAnswers);
+      setIsCorrect(Array(tempArr[0].words.length).fill(0));
+      setIsCorrectNewArr(Array(tempArr[0].words.length).fill(0));
+      setContentReady(true);
+  
+      
+      for (let i = 0;  i < typesInSet.length; i++) {
+        typesInSet[i].push(usedItems[i]);
+      }
+
+      usedItems = []
     
     
     }, [])

@@ -21,6 +21,23 @@ export default dataObj = [
     allAnswers: ['dere', 'deg', 'meg', 'seg', 'oss', 'dere', 'seg', 'deg'],
     nuberOfQuestions: 2,
     questions: ['Jeg gleder _______ til å se deg igjen.', 'Faren min barberer _______ hver dag.']
-   }
+   },
+   {
+    typeOfScreen: '5',
+    nuberOfQuestions: 4,
+    questions: [
+        'Det _______ regne i morgen.',
+        'Neste år _______ jeg starte et nytt kurs.',
+        'Meteorologen sier at det _______ snø neste uke.',
+        'Vi _______ arrangere en fest til helgen.'
+    ],
+    allAnswers: ['skal', 'kommer til å', '', '', 'skal', 'kommer til å', '', '', 'skal', 'kommer til å', '', '', 'skal', 'kommer til å', '', '',],
+    correctAnswers: [
+        [false, true, false, false],  // 'Det kommer til å regne i morgen.'
+        [true, false, false, false],  // 'Neste år skal jeg starte et nytt kurs.'
+        [false, true, false, false],  // 'Meteorologen sier at det kommer til å snø neste uke.'
+        [true, true, false, false]   // 'Vi skal arrangere en fest til helgen.'
+    ],
+},
 ];
 

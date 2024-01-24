@@ -39,7 +39,7 @@ const Type5 = ({route}) => {
     const [comeBack, setComeBack] = useState(false);
     const [resetCheck, setResetCheck] = useState(false);
     const [latestScreenAnswered, setLatestScreenAnswered] = useState(latestAnswered);
-    const [instructions, setInstructions] = useState('some instructions english type 4');
+    const [instructions, setInstructions] = useState('Choose the correct answer from the options provided.');
     const [newInstructions, setNewInstructions] = useState('');
 
     const a1background = useRef(new Animated.Value(0)).current;
@@ -126,17 +126,17 @@ const Type5 = ({route}) => {
           }
         } else {
           if (savedLang === 'PL') {
-              setInstructions('polskie instrukcje type 5')
+              setInstructions('Wybierz odpowiednią odpowiedź spośród podanych opcji.')
             } else if (savedLang === 'DE') {
-              setInstructions('niemieckie instrukcje type 5')
+              setInstructions('Wähle die richtige Antwort aus den angegebenen Optionen.')
             } else if (savedLang === 'LT') {
-              setInstructions('litewskie instrukcje type 5')
+              setInstructions('Pasirinkite teisingą atsakymą iš pateiktų variantų.')
             } else if (savedLang === 'AR') {
-              setInstructions('arabskie instrukcje type 5')
+              setInstructions('اختر الإجابة الصحيحة من الخيارات المقدمة')
             } else if (savedLang === 'UA') {
-              setInstructions('ukr instrukcje type 5')
+              setInstructions('Виберіть правильну відповідь з наданих варіантів.')
             } else if (savedLang === 'ES') {
-              setInstructions('esp instrukcje type 5')
+              setInstructions('Elige la respuesta correcta de las opciones proporcionadas.')
           }
         }
     })
@@ -187,10 +187,10 @@ const Type5 = ({route}) => {
                   <Text style={styles.questionTextMiddle}>{exeList[nextScreen - 1].questions[0]}</Text>
 
                   <View style={styles.buttonsContainer}>
-                      <AnswerButtonSmall text={exeList[nextScreen - 1].allAnswers[0]} returnAnswer={(boolean) => setIsAnswer1Checked(boolean)}/>
-                      <AnswerButtonSmall text={exeList[nextScreen - 1].allAnswers[1]} returnAnswer={(boolean) => setIsAnswer2Checked(boolean)}/>
-                      <AnswerButtonSmall text={exeList[nextScreen - 1].allAnswers[2]} returnAnswer={(boolean) => setIsAnswer3Checked(boolean)}/>
-                      <AnswerButtonSmall text={exeList[nextScreen - 1].allAnswers[3]} returnAnswer={(boolean) => setIsAnswer4Checked(boolean)}/>
+                    {exeList[nextScreen - 1].allAnswers[0] === '' ? <View></View> : <AnswerButtonSmall text={exeList[nextScreen - 1].allAnswers[0]} returnAnswer={(boolean) => setIsAnswer1Checked(boolean)}/>}
+                    {exeList[nextScreen - 1].allAnswers[1] === '' ? <View></View> : <AnswerButtonSmall text={exeList[nextScreen - 1].allAnswers[1]} returnAnswer={(boolean) => setIsAnswer2Checked(boolean)}/>}
+                    {exeList[nextScreen - 1].allAnswers[2] === '' ? <View></View> : <AnswerButtonSmall text={exeList[nextScreen - 1].allAnswers[2]} returnAnswer={(boolean) => setIsAnswer3Checked(boolean)}/>}
+                    {exeList[nextScreen - 1].allAnswers[3] === '' ? <View></View> : <AnswerButtonSmall text={exeList[nextScreen - 1].allAnswers[3]} returnAnswer={(boolean) => setIsAnswer4Checked(boolean)}/>}
                   </View>
               </Animated.View> : <View style={{height: 0}}></View>}
               
@@ -199,10 +199,10 @@ const Type5 = ({route}) => {
                   <Text style={styles.questionTextMiddle}>{exeList[nextScreen - 1].questions[1]}</Text>
 
                   <View style={styles.buttonsContainer}>
-                      <AnswerButtonSmall text={exeList[nextScreen - 1].allAnswers[4]} returnAnswer={(boolean) => setIsAnswer5Checked(boolean)}/>
-                      <AnswerButtonSmall text={exeList[nextScreen - 1].allAnswers[5]} returnAnswer={(boolean) => setIsAnswer6Checked(boolean)}/>
-                      <AnswerButtonSmall text={exeList[nextScreen - 1].allAnswers[6]} returnAnswer={(boolean) => setIsAnswer7Checked(boolean)}/>
-                      <AnswerButtonSmall text={exeList[nextScreen - 1].allAnswers[7]} returnAnswer={(boolean) => setIsAnswer8Checked(boolean)}/>
+                    {exeList[nextScreen - 1].allAnswers[4] === '' ? <View></View> : <AnswerButtonSmall text={exeList[nextScreen - 1].allAnswers[4]} returnAnswer={(boolean) => setIsAnswer5Checked(boolean)}/>}
+                    {exeList[nextScreen - 1].allAnswers[5] === '' ? <View></View> : <AnswerButtonSmall text={exeList[nextScreen - 1].allAnswers[5]} returnAnswer={(boolean) => setIsAnswer6Checked(boolean)}/>}
+                    {exeList[nextScreen - 1].allAnswers[6] === '' ? <View></View> : <AnswerButtonSmall text={exeList[nextScreen - 1].allAnswers[6]} returnAnswer={(boolean) => setIsAnswer7Checked(boolean)}/>}
+                    {exeList[nextScreen - 1].allAnswers[7] === '' ? <View></View> : <AnswerButtonSmall text={exeList[nextScreen - 1].allAnswers[7]} returnAnswer={(boolean) => setIsAnswer8Checked(boolean)}/>}
                   </View>
               </Animated.View> : <View style={{height: 0}}></View>}
               
@@ -211,10 +211,10 @@ const Type5 = ({route}) => {
                   <Text style={styles.questionTextMiddle}>{exeList[nextScreen - 1].questions[2]}</Text>
 
                   <View style={styles.buttonsContainer}>
-                      <AnswerButtonSmall text={exeList[nextScreen - 1].allAnswers[8]} returnAnswer={(boolean) => setIsAnswer9Checked(boolean)}/>
-                      <AnswerButtonSmall text={exeList[nextScreen - 1].allAnswers[9]} returnAnswer={(boolean) => setIsAnswer10Checked(boolean)}/>
-                      <AnswerButtonSmall text={exeList[nextScreen - 1].allAnswers[10]} returnAnswer={(boolean) => setIsAnswer11Checked(boolean)}/>
-                      <AnswerButtonSmall text={exeList[nextScreen - 1].allAnswers[11]} returnAnswer={(boolean) => setIsAnswer12Checked(boolean)}/>
+                    {exeList[nextScreen - 1].allAnswers[8] === '' ? <View></View> : <AnswerButtonSmall text={exeList[nextScreen - 1].allAnswers[8]} returnAnswer={(boolean) => setIsAnswer9Checked(boolean)}/>}
+                    {exeList[nextScreen - 1].allAnswers[9] === '' ? <View></View> : <AnswerButtonSmall text={exeList[nextScreen - 1].allAnswers[9]} returnAnswer={(boolean) => setIsAnswer10Checked(boolean)}/>}
+                    {exeList[nextScreen - 1].allAnswers[10] === '' ? <View></View> : <AnswerButtonSmall text={exeList[nextScreen - 1].allAnswers[10]} returnAnswer={(boolean) => setIsAnswer11Checked(boolean)}/>}
+                    {exeList[nextScreen - 1].allAnswers[11] === '' ? <View></View> : <AnswerButtonSmall text={exeList[nextScreen - 1].allAnswers[11]} returnAnswer={(boolean) => setIsAnswer12Checked(boolean)}/>}
                   </View>
               </Animated.View> : <View style={{height: 0}}></View>}
               
@@ -223,10 +223,10 @@ const Type5 = ({route}) => {
                   <Text style={styles.questionTextMiddle}>{exeList[nextScreen - 1].questions[3]}</Text>
 
                   <View style={styles.buttonsContainer}>
-                      <AnswerButtonSmall text={exeList[nextScreen - 1].allAnswers[12]} returnAnswer={(boolean) => setIsAnswer13Checked(boolean)}/>
-                      <AnswerButtonSmall text={exeList[nextScreen - 1].allAnswers[13]} returnAnswer={(boolean) => setIsAnswer14Checked(boolean)}/>
-                      <AnswerButtonSmall text={exeList[nextScreen - 1].allAnswers[14]} returnAnswer={(boolean) => setIsAnswer15Checked(boolean)}/>
-                      <AnswerButtonSmall text={exeList[nextScreen - 1].allAnswers[15]} returnAnswer={(boolean) => setIsAnswer16Checked(boolean)}/>
+                    {exeList[nextScreen - 1].allAnswers[12] === '' ? <View></View> : <AnswerButtonSmall text={exeList[nextScreen - 1].allAnswers[12]} returnAnswer={(boolean) => setIsAnswer13Checked(boolean)}/>}
+                    {exeList[nextScreen - 1].allAnswers[13] === '' ? <View></View> : <AnswerButtonSmall text={exeList[nextScreen - 1].allAnswers[13]} returnAnswer={(boolean) => setIsAnswer14Checked(boolean)}/>}
+                    {exeList[nextScreen - 1].allAnswers[14] === '' ? <View></View> : <AnswerButtonSmall text={exeList[nextScreen - 1].allAnswers[14]} returnAnswer={(boolean) => setIsAnswer15Checked(boolean)}/>}
+                    {exeList[nextScreen - 1].allAnswers[15] === '' ? <View></View> : <AnswerButtonSmall text={exeList[nextScreen - 1].allAnswers[15]} returnAnswer={(boolean) => setIsAnswer16Checked(boolean)}/>}
                   </View>
               </Animated.View> : <View style={{height: 0}}></View>}
               

@@ -25,6 +25,7 @@ const dataForMarkers = {
 
 const typesInSet = [type2prep, type4prep, type6prep, type1prep, type3prep, type5prep, type7prep, type8prep];
 const linkList = ['Exc1x3x1', 'Type4', 'Type6', 'Type1', 'Type3', 'Type5', 'Type7', 'Type8'];
+let usedItems = [];
 
 const currentScreen = 1;
 const allScreensNum = linkList.length;
@@ -126,10 +127,13 @@ const Exc1x3x1 = ({route}) => {
     
             let newArrGaps = [];
             let newArrText = [];
+            let newArrLineBreaker = [];
     
             for (let j = 0; j < typesInSet[i][randomVal].correctAnswers.length; j++) {
                 if (typesInSet[i][randomVal].wordsWithGaps[j] === '            ') {
                     newArrGaps.push(j)
+                } else if (typesInSet[i][randomVal].wordsWithGaps[j] === 'lineBreaker') {
+                  newArrLineBreaker.push(j)
                 } else {
                     newArrText.push(j)
                 }
@@ -138,6 +142,7 @@ const Exc1x3x1 = ({route}) => {
     
             typesInSet[i][randomVal].gapsIndex = newArrGaps;
             typesInSet[i][randomVal].textIndex = newArrText;
+            typesInSet[i][randomVal].lineBreaker = newArrLineBreaker;
     
             sumOfAllPoints = sumOfAllPoints + newArrGaps.length * generalStyles.bonusCheckAnswerGapsText
     
@@ -176,7 +181,10 @@ const Exc1x3x1 = ({route}) => {
           } 
     
           
-          tempArr.push(typesInSet[i][randomVal])
+          tempArr.push(typesInSet[i][randomVal]);
+          
+          usedItems.push(typesInSet[i][randomVal]);
+          typesInSet[i].splice(randomVal, 1);
         }
     
         
@@ -218,6 +226,12 @@ const Exc1x3x1 = ({route}) => {
         setIsCorrectNewArr(Array(tempArr[0].correctAnswers.length).fill(0));
         setContentReady(true);
     
+        
+        for (let i = 0;  i < typesInSet.length; i++) {
+          typesInSet[i].push(usedItems[i]);
+        }
+
+        usedItems = []
     
     
       }, [])

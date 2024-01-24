@@ -25,6 +25,7 @@ const dataForMarkers = {
 
 const typesInSet = [type5prep, type4prep, type2prep, type1prep, type5prep, type6prep, type7prep, type8prep];
 const linkList = ['Exc1x6x1', 'Type4', 'Type2', 'Type1', 'Type5', 'Type6', 'Type7', 'Type8'];
+let usedItems = [];
 
 const currentScreen = 1;
 const allScreensNum = linkList.length;
@@ -60,7 +61,7 @@ const Exc1x6x1 = ({route}) => {
     const [resetCheck, setResetCheck] = useState(false);
     const [latestScreenAnswered, setLatestScreenAnswered] = useState(0);
     const [correctAnswers, setCorrectAnswers]= useState([]);
-    const [instructions, setInstructions] = useState('some instructions');
+    const [instructions, setInstructions] = useState('Choose the correct answer from the options provided.');
     const [newInstructions, setNewInstructions] = useState('');
     const [language, setLanguage] = useState('EN');
 
@@ -139,17 +140,17 @@ const Exc1x6x1 = ({route}) => {
           }
 
           if (savedLang === 'PL') {
-            setInstructions('polskie instrukcje')
+            setInstructions('Wybierz odpowiednią odpowiedź spośród podanych opcji.')
           } else if (savedLang === 'DE') {
-            setInstructions('niemieckie instrukcje')
+            setInstructions('Wähle die richtige Antwort aus den angegebenen Optionen.')
           } else if (savedLang === 'LT') {
-            setInstructions('litewskie instrukcje')
+            setInstructions('Pasirinkite teisingą atsakymą iš pateiktų variantų.')
           } else if (savedLang === 'AR') {
-            setInstructions('arabskie instrukcje')
+            setInstructions('اختر الإجابة الصحيحة من الخيارات المقدمة')
           } else if (savedLang === 'UA') {
-            setInstructions('ukr instrukcje')
+            setInstructions('Виберіть правильну відповідь з наданих варіантів.')
           } else if (savedLang === 'ES') {
-            setInstructions('esp instrukcje')
+            setInstructions('Elige la respuesta correcta de las opciones proporcionadas.')
           }
           
           setLanguage(savedLang)
@@ -176,10 +177,13 @@ const Exc1x6x1 = ({route}) => {
     
             let newArrGaps = [];
             let newArrText = [];
+            let newArrLineBreaker = [];
     
             for (let j = 0; j < typesInSet[i][randomVal].correctAnswers.length; j++) {
                 if (typesInSet[i][randomVal].wordsWithGaps[j] === '            ') {
                     newArrGaps.push(j)
+                } else if (typesInSet[i][randomVal].wordsWithGaps[j] === 'lineBreaker') {
+                  newArrLineBreaker.push(j)
                 } else {
                     newArrText.push(j)
                 }
@@ -188,6 +192,7 @@ const Exc1x6x1 = ({route}) => {
     
             typesInSet[i][randomVal].gapsIndex = newArrGaps;
             typesInSet[i][randomVal].textIndex = newArrText;
+            typesInSet[i][randomVal].lineBreaker = newArrLineBreaker;
     
             sumOfAllPoints = sumOfAllPoints + newArrGaps.length * generalStyles.bonusCheckAnswerGapsText
     
@@ -226,7 +231,10 @@ const Exc1x6x1 = ({route}) => {
           } 
     
           
-          tempArr.push(typesInSet[i][randomVal])
+          tempArr.push(typesInSet[i][randomVal]);
+          
+          usedItems.push(typesInSet[i][randomVal]);
+          typesInSet[i].splice(randomVal, 1);
         }
     
         
@@ -262,6 +270,13 @@ const Exc1x6x1 = ({route}) => {
 
         setCorrectAnswers(tempArr[0].correctAnswers);
         setContentReady(true);
+    
+        
+        for (let i = 0;  i < typesInSet.length; i++) {
+          typesInSet[i].push(usedItems[i]);
+        }
+
+        usedItems = []
     
     
     
@@ -315,10 +330,10 @@ const Exc1x6x1 = ({route}) => {
                   <Text style={styles.questionTextMiddle}>{exeList[0].questions[0]}</Text>
 
                   <View style={styles.buttonsContainer}>
-                      <AnswerButtonSmall text={exeList[0].allAnswers[0]} returnAnswer={(boolean) => setIsAnswer1Checked(boolean)}/>
-                      <AnswerButtonSmall text={exeList[0].allAnswers[1]} returnAnswer={(boolean) => setIsAnswer2Checked(boolean)}/>
-                      <AnswerButtonSmall text={exeList[0].allAnswers[2]} returnAnswer={(boolean) => setIsAnswer3Checked(boolean)}/>
-                      <AnswerButtonSmall text={exeList[0].allAnswers[3]} returnAnswer={(boolean) => setIsAnswer4Checked(boolean)}/>
+                    {exeList[0].allAnswers[0] === '' ? <View></View> : <AnswerButtonSmall text={exeList[0].allAnswers[0]} returnAnswer={(boolean) => setIsAnswer1Checked(boolean)}/>}
+                    {exeList[0].allAnswers[1] === '' ? <View></View> : <AnswerButtonSmall text={exeList[0].allAnswers[1]} returnAnswer={(boolean) => setIsAnswer2Checked(boolean)}/>}
+                    {exeList[0].allAnswers[2] === '' ? <View></View> : <AnswerButtonSmall text={exeList[0].allAnswers[2]} returnAnswer={(boolean) => setIsAnswer3Checked(boolean)}/>}
+                    {exeList[0].allAnswers[3] === '' ? <View></View> : <AnswerButtonSmall text={exeList[0].allAnswers[3]} returnAnswer={(boolean) => setIsAnswer4Checked(boolean)}/>}
                   </View>
               </Animated.View> : <View style={{height: 0}}></View>}
               
@@ -327,10 +342,10 @@ const Exc1x6x1 = ({route}) => {
                   <Text style={styles.questionTextMiddle}>{exeList[0].questions[1]}</Text>
 
                   <View style={styles.buttonsContainer}>
-                      <AnswerButtonSmall text={exeList[0].allAnswers[4]} returnAnswer={(boolean) => setIsAnswer5Checked(boolean)}/>
-                      <AnswerButtonSmall text={exeList[0].allAnswers[5]} returnAnswer={(boolean) => setIsAnswer6Checked(boolean)}/>
-                      <AnswerButtonSmall text={exeList[0].allAnswers[6]} returnAnswer={(boolean) => setIsAnswer7Checked(boolean)}/>
-                      <AnswerButtonSmall text={exeList[0].allAnswers[7]} returnAnswer={(boolean) => setIsAnswer8Checked(boolean)}/>
+                    {exeList[0].allAnswers[4] === '' ? <View></View> : <AnswerButtonSmall text={exeList[0].allAnswers[4]} returnAnswer={(boolean) => setIsAnswer5Checked(boolean)}/>}
+                    {exeList[0].allAnswers[5] === '' ? <View></View> : <AnswerButtonSmall text={exeList[0].allAnswers[5]} returnAnswer={(boolean) => setIsAnswer6Checked(boolean)}/>}
+                    {exeList[0].allAnswers[6] === '' ? <View></View> : <AnswerButtonSmall text={exeList[0].allAnswers[6]} returnAnswer={(boolean) => setIsAnswer7Checked(boolean)}/>}
+                    {exeList[0].allAnswers[7] === '' ? <View></View> : <AnswerButtonSmall text={exeList[0].allAnswers[7]} returnAnswer={(boolean) => setIsAnswer8Checked(boolean)}/>}
                   </View>
               </Animated.View> : <View style={{height: 0}}></View>}
               
@@ -339,10 +354,10 @@ const Exc1x6x1 = ({route}) => {
                   <Text style={styles.questionTextMiddle}>{exeList[0].questions[2]}</Text>
 
                   <View style={styles.buttonsContainer}>
-                      <AnswerButtonSmall text={exeList[0].allAnswers[8]} returnAnswer={(boolean) => setIsAnswer9Checked(boolean)}/>
-                      <AnswerButtonSmall text={exeList[0].allAnswers[9]} returnAnswer={(boolean) => setIsAnswer10Checked(boolean)}/>
-                      <AnswerButtonSmall text={exeList[0].allAnswers[10]} returnAnswer={(boolean) => setIsAnswer11Checked(boolean)}/>
-                      <AnswerButtonSmall text={exeList[0].allAnswers[11]} returnAnswer={(boolean) => setIsAnswer12Checked(boolean)}/>
+                    {exeList[0].allAnswers[8] === '' ? <View></View> : <AnswerButtonSmall text={exeList[0].allAnswers[8]} returnAnswer={(boolean) => setIsAnswer9Checked(boolean)}/>}
+                    {exeList[0].allAnswers[9] === '' ? <View></View> : <AnswerButtonSmall text={exeList[0].allAnswers[9]} returnAnswer={(boolean) => setIsAnswer10Checked(boolean)}/>}
+                    {exeList[0].allAnswers[10] === '' ? <View></View> : <AnswerButtonSmall text={exeList[0].allAnswers[10]} returnAnswer={(boolean) => setIsAnswer11Checked(boolean)}/>}
+                    {exeList[0].allAnswers[11] === '' ? <View></View> : <AnswerButtonSmall text={exeList[0].allAnswers[11]} returnAnswer={(boolean) => setIsAnswer12Checked(boolean)}/>}
                   </View>
               </Animated.View> : <View style={{height: 0}}></View>}
               
@@ -351,10 +366,10 @@ const Exc1x6x1 = ({route}) => {
                   <Text style={styles.questionTextMiddle}>{exeList[0].questions[3]}</Text>
 
                   <View style={styles.buttonsContainer}>
-                      <AnswerButtonSmall text={exeList[0].allAnswers[12]} returnAnswer={(boolean) => setIsAnswer13Checked(boolean)}/>
-                      <AnswerButtonSmall text={exeList[0].allAnswers[13]} returnAnswer={(boolean) => setIsAnswer14Checked(boolean)}/>
-                      <AnswerButtonSmall text={exeList[0].allAnswers[14]} returnAnswer={(boolean) => setIsAnswer15Checked(boolean)}/>
-                      <AnswerButtonSmall text={exeList[0].allAnswers[15]} returnAnswer={(boolean) => setIsAnswer16Checked(boolean)}/>
+                    {exeList[0].allAnswers[12] === '' ? <View></View> : <AnswerButtonSmall text={exeList[0].allAnswers[12]} returnAnswer={(boolean) => setIsAnswer13Checked(boolean)}/>}
+                    {exeList[0].allAnswers[13] === '' ? <View></View> : <AnswerButtonSmall text={exeList[0].allAnswers[13]} returnAnswer={(boolean) => setIsAnswer14Checked(boolean)}/>}
+                    {exeList[0].allAnswers[14] === '' ? <View></View> : <AnswerButtonSmall text={exeList[0].allAnswers[14]} returnAnswer={(boolean) => setIsAnswer15Checked(boolean)}/>}
+                    {exeList[0].allAnswers[15] === '' ? <View></View> : <AnswerButtonSmall text={exeList[0].allAnswers[15]} returnAnswer={(boolean) => setIsAnswer16Checked(boolean)}/>}
                   </View>
               </Animated.View> : <View style={{height: 0}}></View>}
               

@@ -51,6 +51,28 @@ export default dataObj = [
     words2: ['du', 'meg', '?', 'kan', 'hjelpe' ],
     words3: [],
     words4: [],
-   }
+   },
+   {
+    typeOfScreen: '8',
+    nuberOfQuestions: 2,
+    wordsCorrect: [
+        [
+            ['neste', 'år', 'skal', 'vi', 'flytte', 'til', 'en', 'ny', 'by', '.'],
+            ['vi', 'skal', 'flytte', 'til', 'en', 'ny', 'by', 'neste', 'år', '.']
+        ],
+        [
+            ['hun', 'kommer', 'til', 'å', 'starte', 'på', 'universitetet', 'i', 'høst', '.'],
+            ['på', 'universitetet', 'kommer', 'hun', 'til', 'å', 'starte', 'i', 'høst', '.']
+        ],[
+            
+        ],[
+
+        ]
+    ],
+    words1: ['år', 'ny', 'vi', 'til', 'neste', 'flytte', 'by', 'en', 'skal', '.'],
+    words2: ['i', 'starte', 'hun', 'høst', 'kommer', 'til', 'å', 'på', 'universitetet', '.'],
+    words3: [],
+    words4: [],
+}
 ];
 
