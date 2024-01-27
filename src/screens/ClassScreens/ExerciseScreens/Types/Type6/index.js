@@ -41,6 +41,8 @@ const Type6 = ({route}) => {
     const [latestScreenAnswered, setLatestScreenAnswered] = useState(latestAnswered);
     const [instructions, setInstructions] = useState('some instructions english type 1');
     const [newInstructions, setNewInstructions] = useState('');
+    const [translationLeft, setTranslationLeft] = useState('')
+    const [translationRight, setTranslationRight] = useState('')
 
     useEffect(() => {
         setMovingDraggable(null);
@@ -169,6 +171,33 @@ const Type6 = ({route}) => {
             setInstructions('esp instrukcje type 6')
         }
       }
+
+
+
+      if(exeList[nextScreen - 1].translations) {
+        if (savedLang === 'PL') {
+          setTranslationLeft(exeList[nextScreen - 1].translations.pl[0])
+          setTranslationRight(exeList[nextScreen - 1].translations.pl[1])
+        } else if (savedLang === 'DE') {
+          setTranslationLeft(exeList[nextScreen - 1].translations.ger[0])
+          setTranslationRight(exeList[nextScreen - 1].translations.ger[1])
+        } else if (savedLang === 'LT') {
+          setTranslationLeft(exeList[nextScreen - 1].translations.lt[0])
+          setTranslationRight(exeList[nextScreen - 1].translations.lt[1])
+        } else if (savedLang === 'AR') {
+          setTranslationLeft(exeList[nextScreen - 1].translations.ar[0])
+          setTranslationRight(exeList[nextScreen - 1].translations.ar[1])
+        } else if (savedLang === 'UA') {
+          setTranslationLeft(exeList[nextScreen - 1].translations.ua[0])
+          setTranslationRight(exeList[nextScreen - 1].translations.ua[1])
+        } else if (savedLang === 'ES') {
+          setTranslationLeft(exeList[nextScreen - 1].translations.sp[0])
+          setTranslationRight(exeList[nextScreen - 1].translations.sp[1])
+        } else if (savedLang === 'EN') {
+          setTranslationLeft(exeList[nextScreen - 1].translations.eng[0])
+          setTranslationRight(exeList[nextScreen - 1].translations.eng[1])
+        }
+      }
     })
 
 
@@ -186,7 +215,7 @@ const Type6 = ({route}) => {
                     <View style={styles.leftSideFrame}>
                         <View style={styles.frameTitle}>
 
-                            <Text style={styles.frameTitleTextLeft} >{exeList[nextScreen - 1].leftTitle}</Text>
+                            <Text style={{...styles.frameTitleTextLeft, textAlign: savedLang === 'AR' ? 'right' : 'center'}} >{exeList[nextScreen - 1].translations ? translationLeft : exeList[nextScreen - 1].leftTitle}</Text>
                         </View>
                         {words.map((item, index) => {
                     
@@ -226,7 +255,7 @@ const Type6 = ({route}) => {
                     <View style={styles.rightSideFrame}>
                         <View style={styles.frameTitle}>
 
-                            <Text style={styles.frameTitleTextRight} >{exeList[nextScreen - 1].rightTitle}</Text>
+                            <Text style={{...styles.frameTitleTextRight, textAlign: savedLang === 'AR' ? 'right' : 'center'}} >{exeList[nextScreen - 1].translations ? translationRight : exeList[nextScreen - 1].rightTitle}</Text>
                         </View>
                     {words.map((item, index) => {
                     

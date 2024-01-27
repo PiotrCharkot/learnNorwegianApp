@@ -31,6 +31,8 @@ const Type7 = ({route}) => {
     const [latestScreenAnswered, setLatestScreenAnswered] = useState(latestAnswered);
     const [instructions, setInstructions] = useState('some instructions english type 1');
     const [newInstructions, setNewInstructions] = useState('');
+    const [btnTextShow, setButtonTextShow] = useState('Show correct text')
+    const [btnTextHide, setButtonTextHide] = useState('Show incorrect text')
 
 
     useEffect(() => {
@@ -98,6 +100,27 @@ const Type7 = ({route}) => {
           } else if (savedLang === 'ES') {
             setInstructions('esp instrukcje type 7')
         }
+      }
+
+
+      if (savedLang === 'PL') {
+        setButtonTextShow('pokaz poprawny tekst');
+        setButtonTextHide('pokaz orginalny tekst');
+      } else if (savedLang === 'DE') {
+        setButtonTextShow('pokaz poprawny tekst');
+        setButtonTextHide('pokaz orginalny tekst');
+      } else if (savedLang === 'LT') {
+        setButtonTextShow('pokaz poprawny tekst');
+        setButtonTextHide('pokaz orginalny tekst');
+      } else if (savedLang === 'AR') {
+        setButtonTextShow('pokaz poprawny tekst');
+        setButtonTextHide('pokaz orginalny tekst');
+      } else if (savedLang === 'UA') {
+        setButtonTextShow('pokaz poprawny tekst');
+        setButtonTextHide('pokaz orginalny tekst');
+      } else if (savedLang === 'ES') {
+        setButtonTextShow('pokaz poprawny tekst sp');
+        setButtonTextHide('pokaz orginalny tekst sp');
       }
     })
 
@@ -176,7 +199,7 @@ const Type7 = ({route}) => {
 
           <View style={styles.btnContainer}>
           
-            {showMistakes ? <AnswerButton text={showCorrect ? 'Show incorrect text' : 'Show correct text'} colors={['#00308F', '#007FFF']}  returnAnswer={(boolean) => setShowCorrect(boolean)}/> : null}
+            {showMistakes ? <AnswerButton text={showCorrect ? btnTextHide : btnTextShow} colors={['#00308F', '#007FFF']}  returnAnswer={(boolean) => setShowCorrect(boolean)}/> : null}
           </View>
           
 

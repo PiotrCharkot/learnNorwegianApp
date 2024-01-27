@@ -65,6 +65,8 @@ const Exc1x7x1 = ({route}) => {
     const [instructions, setInstructions] = useState('some instructions');
     const [newInstructions, setNewInstructions] = useState('');
     const [language, setLanguage] = useState('EN');
+    const [translationLeft, setTranslationLeft] = useState('')
+    const [translationRight, setTranslationRight] = useState('')
 
 
     const [contentReady, setContentReady] = useState(false);
@@ -99,7 +101,8 @@ const Exc1x7x1 = ({route}) => {
           } else if (savedLang === 'ES') {
             setInstructions('esp instrukcje')
           }
-          
+
+
           setLanguage(savedLang)
 
         }
@@ -213,6 +216,32 @@ const Exc1x7x1 = ({route}) => {
           setNewInstructions(tempArr[0].instructions.sp)
         } else if (route.params.savedLang === 'EN') {
           setNewInstructions(tempArr[0].instructions.eng)
+        }
+      }
+
+
+      if(tempArr[0].translations) {
+        if (route.params.savedLang === 'PL') {
+          setTranslationLeft(tempArr[0].translations.pl[0])
+          setTranslationRight(tempArr[0].translations.pl[1])
+        } else if (route.params.savedLang === 'DE') {
+          setTranslationLeft(tempArr[0].translations.ger[0])
+          setTranslationRight(tempArr[0].translations.ger[1])
+        } else if (route.params.savedLang === 'LT') {
+          setTranslationLeft(tempArr[0].translations.lt[0])
+          setTranslationRight(tempArr[0].translations.lt[1])
+        } else if (route.params.savedLang === 'AR') {
+          setTranslationLeft(tempArr[0].translations.ar[0])
+          setTranslationRight(tempArr[0].translations.ar[1])
+        } else if (route.params.savedLang === 'UA') {
+          setTranslationLeft(tempArr[0].translations.ua[0])
+          setTranslationRight(tempArr[0].translations.ua[1])
+        } else if (route.params.savedLang === 'ES') {
+          setTranslationLeft(tempArr[0].translations.sp[0])
+          setTranslationRight(tempArr[0].translations.sp[1])
+        } else if (route.params.savedLang === 'EN') {
+          setTranslationLeft(tempArr[0].translations.eng[0])
+          setTranslationRight(tempArr[0].translations.eng[1])
         }
       }
 
@@ -338,7 +367,7 @@ const Exc1x7x1 = ({route}) => {
                     <View style={styles.leftSideFrame}>
                         <View style={styles.frameTitle}>
 
-                            <Text style={styles.frameTitleTextLeft} >{exeList[0].leftTitle}</Text>
+                            <Text style={{...styles.frameTitleTextLeft, textAlign: language === 'AR' ? 'right' : 'center'}} >{exeList[0].translations ? translationLeft : exeList[0].leftTitle}</Text>
                         </View>
                         {words.map((item, index) => {
                     
@@ -378,7 +407,7 @@ const Exc1x7x1 = ({route}) => {
                     <View style={styles.rightSideFrame}>
                         <View style={styles.frameTitle}>
 
-                            <Text style={styles.frameTitleTextRight} >{exeList[0].rightTitle}</Text>
+                            <Text style={{...styles.frameTitleTextRight, textAlign: language === 'AR' ? 'right' : 'center'}} >{exeList[0].translations ? translationRight : exeList[0].rightTitle}</Text>
                         </View>
                     {words.map((item, index) => {
                     

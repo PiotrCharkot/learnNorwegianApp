@@ -22,6 +22,25 @@ export default dataObj = [
     leftTitle: 'adjective',
     rightTitle: 'noun'
    },
+   {
+    typeOfScreen: '6',
+    leftTitle: 'Uncountable Nouns',
+    rightTitle: 'Countable Nouns',
+    correctAnswers: [['melk', 'informasjon', 'kaffe', 'musikk'], ['bøk', 'eple', 'stol', 'bil']],
+    words: ['???', '???', '???', '???', '???', '???', '???', '???', '???', '???', 'musikk', 'bøk', 'melk', 'eple', 'stol', 'informasjon', 'kaffe', 'bil'],
+    translations: {
+    	eng: ['Uncountable Nouns', 'Countable Nouns'],
+    	pl: ['Rzeczowniki niepoliczalne', 'Rzeczowniki policzalne'],
+    	ar: ['أسماء غير قابلة للعد', 'أسماء قابلة للعد'],
+    	ger: ['Unzählbare Substantive', 'Zählbare Substantive'],
+    	lt: ['Neskaičiuojami daiktavardžiai', 'Skaičiuojami daiktavardžiai'],
+    	ua: ['Непідраховувані іменники', 'Підраховувані іменники'],
+    	sp: ['Sustantivos incontables', 'Sustantivos contables'],
+    },
+
+},
+
+
 ];
 
 

@@ -60,6 +60,8 @@ const Exc1x8x1 = ({route}) => {
   const [instructions, setInstructions] = useState('some instructions');
   const [newInstructions, setNewInstructions] = useState('');
   const [language, setLanguage] = useState('EN');
+  const [btnTextShow, setButtonTextShow] = useState('Show correct text')
+  const [btnTextHide, setButtonTextHide] = useState('Show incorrect text')
 
 
   const [contentReady, setContentReady] = useState(false);
@@ -85,17 +87,29 @@ const Exc1x8x1 = ({route}) => {
       }
 
       if (savedLang === 'PL') {
-        setInstructions('polskie instrukcje')
+        setInstructions('polskie instrukcje');
+        setButtonTextShow('pokaz poprawny tekst');
+        setButtonTextHide('pokaz orginalny tekst');
       } else if (savedLang === 'DE') {
-        setInstructions('niemieckie instrukcje')
+        setInstructions('niemieckie instrukcje');
+        setButtonTextShow('pokaz poprawny tekst');
+        setButtonTextHide('pokaz orginalny tekst');
       } else if (savedLang === 'LT') {
-        setInstructions('litewskie instrukcje')
+        setInstructions('litewskie instrukcje');
+        setButtonTextShow('pokaz poprawny tekst');
+        setButtonTextHide('pokaz orginalny tekst');
       } else if (savedLang === 'AR') {
-        setInstructions('arabskie instrukcje')
+        setInstructions('arabskie instrukcje');
+        setButtonTextShow('pokaz poprawny tekst');
+        setButtonTextHide('pokaz orginalny tekst');
       } else if (savedLang === 'UA') {
-        setInstructions('ukr instrukcje')
+        setInstructions('ukr instrukcje');
+        setButtonTextShow('pokaz poprawny tekst');
+        setButtonTextHide('pokaz orginalny tekst');
       } else if (savedLang === 'ES') {
-        setInstructions('esp instrukcje')
+        setInstructions('esp instrukcje');
+        setButtonTextShow('pokaz poprawny tekst sp');
+        setButtonTextHide('pokaz orginalny tekst sp');
       }
       
       setLanguage(savedLang)
@@ -327,7 +341,7 @@ const Exc1x8x1 = ({route}) => {
 
           <View style={styles.btnContainer}>
           
-            {showMistakes ? <AnswerButton text={showCorrect ? 'Show incorrect text' : 'Show correct text'} colors={['#00308F', '#007FFF']}  returnAnswer={(boolean) => setShowCorrect(boolean)}/> : null}
+            {showMistakes ? <AnswerButton text={showCorrect ? btnTextHide : btnTextShow} colors={['#00308F', '#007FFF']}  returnAnswer={(boolean) => setShowCorrect(boolean)}/> : null}
           </View>
           
 
