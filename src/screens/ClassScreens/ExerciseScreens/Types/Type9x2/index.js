@@ -1,5 +1,5 @@
-import {View, Text, StyleSheet, ScrollView, Dimensions, StatusBar, TouchableOpacity, Image, SafeAreaView, } from 'react-native'
-import React, { useState, useEffect } from 'react'
+import {View, Text, StyleSheet, TouchableOpacity, Image, Animated, Easing  } from 'react-native'
+import React, { useState, useEffect, useRef } from 'react'
 import { useFocusEffect } from "@react-navigation/native";
 import { LinearGradient } from 'expo-linear-gradient';
 import { Audio } from "expo-av";
@@ -44,32 +44,58 @@ const Type9x2 = ({ route }) => {
     const [comeBack, setComeBack] = useState(false);
     const [resetCheck, setResetCheck] = useState(false);
     const [latestScreenAnswered, setLatestScreenAnswered] = useState(latestAnswered);
+    const [translation, setTranslation] = useState('')
     
     const [soundLink, setSoundLink] = useState(exeList[nextScreen - 1].soundLink)
     
     
+    const translationPosition = useRef(new Animated.Value(500)).current;
+
 
     useFocusEffect(() => {
 
         
 
-        if (latestScreen > nextScreen) {
-            setLatestScreenAnswered(latestAnswered);
-            setLatestScreenDone(latestScreen);
-            setComeBack(true);
-        }
+      if (latestScreen > nextScreen) {
+          setLatestScreenAnswered(latestAnswered);
+          setLatestScreenDone(latestScreen);
+          setComeBack(true);
+      }
 
-        if (route.params.userPoints > 0) {
-            console.log('setting new points', route.params.userPoints );
-            setCurrentPoints(userPoints)
-        }
+      if (route.params.userPoints > 0) {
+          console.log('setting new points', route.params.userPoints );
+          setCurrentPoints(userPoints)
+      }
 
         
+      if (savedLang === 'PL') {
+        setTranslation(exeList[nextScreen - 1].translations.pl)
+      } else if (savedLang === 'DE') {
+        setTranslation(exeList[nextScreen - 1].translations.ger)
+      } else if (savedLang === 'LT') {
+        setTranslation(exeList[nextScreen - 1].translations.lt)
+      } else if (savedLang === 'AR') {
+        setTranslation(exeList[nextScreen - 1].translations.ar)
+      } else if (savedLang === 'UA') {
+        setTranslation(exeList[nextScreen - 1].translations.ua)
+      } else if (savedLang === 'ES') {
+        setTranslation(exeList[nextScreen - 1].translations.sp)
+      } else if (savedLang === 'EN') {
+        setTranslation(exeList[nextScreen - 1].translations.eng)
+      }
         
       
         
     })
 
+
+    useEffect(() => {
+      if (latestScreen < nextScreen) {
+        setTimeout(() => {
+          playSound()
+        }, 500);
+      }
+    }, []);
 
     
       
@@ -94,6 +120,13 @@ const Type9x2 = ({ route }) => {
           setIsCorrect(newArr);
           
         }
+
+        Animated.timing(translationPosition, {
+          toValue: 0,
+          duration: 1000,
+          easing: Easing.bezier(.7,.93,.57,.99),
+          useNativeDriver: true
+        }).start()
       }
     
     }, [answersChecked])
@@ -192,6 +225,11 @@ const Type9x2 = ({ route }) => {
                 
             })}
 
+        </View>
+        <View>
+          <Animated.View style={{...styles.translationContainer,  transform: [{translateY: translationPosition}]}}>
+            <Text style={styles.translationText}>{translation}</Text>
+          </Animated.View>
         </View>
         </View> 
         
@@ -322,6 +360,18 @@ const styles = StyleSheet.create({
     height: 50,
     width: 50,
     tintColor: generalStyles.colorText2
+  },
+  translationContainer: {
+    position: 'absolute',
+    marginTop: 10,
+    paddingHorizontal: 20,
+    width: '100%',
+    alignItems: 'center',
+  },
+  translationText: {
+    fontSize: 17,
+    fontWeight: '600',
+    textAlign: 'center'
   }
 })
 

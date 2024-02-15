@@ -237,7 +237,7 @@ const BottomBar = (params) => {
             let returnArr = [];
             let questionPoints = correctAnswers.length * bonusAnswer * -1 + (params.numberOfGaps * bonusAnswer);
             for (let i = 0; i < correctAnswers.length; i++) {
-                if (correctAnswers[i] === params.userAnswers[i]) {
+                if (correctAnswers[i].toLowerCase() === params.userAnswers[i].toLowerCase()) {
                     returnArr.push(true);
                     questionPoints = questionPoints + bonusAnswer;
                 } else {
@@ -625,7 +625,6 @@ const styles = StyleSheet.create({
         },
         shadowOpacity: 0.35,
         shadowRadius: 9.5,
-        elevation: 5
         
     },
     textMessage: {

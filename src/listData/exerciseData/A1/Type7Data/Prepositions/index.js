@@ -7,8 +7,8 @@ export default dataObj = [
    },
    {
     typeOfScreen: '7',
-    words: ['Ideelt', 'sett', 'ønsker', 'jeg', 'deg', 'seks', 'timers', 'arbeidsdag', 'før', 'småbarnforeldre,', 'slik', 'noen', 'politikere', 'har', 'foreslatt.'],
-    wordsCorrect: ['Ideelt', 'sett', 'ønsker', 'jeg', 'meg', 'seks', 'timers', 'arbeidsdag', 'for', 'småbarnforeldre,', 'slik', 'noen', 'politikere', 'har', 'foreslått.'],
+    words: ['Ideelt', 'sett', 'ønsker', 'jeg', 'deg', 'seks', 'timers', 'arbeidsdag', 'før', 'linebreaker', 'småbarnforeldre,', 'slik', 'noen', 'politikere', 'har', 'foreslatt.'],
+    wordsCorrect: ['Ideelt', 'sett', 'ønsker', 'jeg', 'meg', 'seks', 'timers', 'arbeidsdag', 'for', 'linebreaker', 'småbarnforeldre,', 'slik', 'noen', 'politikere', 'har', 'foreslått.'],
     mistakesIndex: [],
     instructions: {
         eng: 'Choose good anwer out of two from data base type 7',
@@ -19,6 +19,12 @@ export default dataObj = [
         ua: 'автомобіль type 7', 
         sp: 'un coche type 7',
     }
-   }
+   },
+   {
+    typeOfScreen: '7',
+    wordsCorrect: ['Digitalisering', 'fører', 'til', 'betydelige', 'endringer', 'i', 'arbeidsmarkedet.', 'linebreaker', 'Et', 'godt', 'kosthold', 'er', 'grunnlaget', 'for', 'god', 'helse', 'og', 'velvære.', 'linebreaker', 'Innovasjonsprosesser', 'er', 'avgjørende', 'for', 'teknologisk', 'fremgang.', 'linebreaker', 'Klimaendringer', 'utfordrer', 'globale', 'miljøpolitikker.'],
+    words: ['Digitalisering', 'fører', 'til', 'betydelige', 'endringer', 'i', 'arbeidsmarkedet.', 'linebreaker', 'Et', 'godt', 'kost hold', 'er', 'grunnlaget', 'for', 'god', 'helse', 'og', 'velvære.', 'linebreaker', 'Innovasjon prosesser', 'er', 'avgjorende', 'for', 'teknologisk', 'fremgang.', 'linebreaker', 'Klima endringer', 'utfordrer', 'globale', 'miljøpolitikker.'],
+    mistakesIndex: []
+},
 ];
 

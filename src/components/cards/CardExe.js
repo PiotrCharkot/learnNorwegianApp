@@ -9,7 +9,7 @@ const widthOfBar = Math.ceil(screenWidth * 0.405)  // 0.6 * 0.75 * 0.9
 
 const CardExe = (params) => {
     
-    const { language, title } = params;
+    const { language, title, dataExercie } = params;
     
     const navigation = useNavigation();
 
@@ -51,7 +51,7 @@ const CardExe = (params) => {
 
     
   return (
-    <TouchableOpacity style={styles.mainContainer} onPress={() => navigation.navigate(params.link, {savedLang: language})}>
+    <TouchableOpacity style={styles.mainContainer} onPress={() => navigation.navigate(params.link, {savedLang: language, data: dataExercie})}>
         <LinearGradient colors={[ '#6441A5','#6441A5', '#6441A5',  '#2a0845']} style={styles.outterContainer} >
 
 
@@ -155,7 +155,6 @@ const styles = StyleSheet.create({
     bottomContainer: {
         position: 'absolute',
         width: '100%',
-        //backgroundColor: 'pink',
         bottom: 10
     },
     gradient: {
@@ -175,7 +174,6 @@ const styles = StyleSheet.create({
     averageBars: {
         justifyContent: 'center',
         alignItems: 'flex-end',
-        //backgroundColor: 'salmon',
         width: '75%'
     },
     averageText: {

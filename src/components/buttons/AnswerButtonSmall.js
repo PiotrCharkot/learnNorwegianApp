@@ -29,17 +29,19 @@ export default AnswerButtonSmall;
 
 const styles = StyleSheet.create({
     mainContainer: {
-        height: 25,
         width: screenWidth / 2 - 40,
         marginBottom: 10,
         marginRight: 10,
         paddingLeft: 5,
+        paddingRight: 5,
+        paddingVertical: 4,
         justifyContent: 'center',
         borderRadius: 5
     },
     text: {
         color: 'white',
         fontSize: 14,
-        fontWeight: '600'
+        fontWeight: '600',
+        flexWrap: 'wrap'
     }
 })

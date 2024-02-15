@@ -366,7 +366,7 @@ const Type4 = ({route}) => {
                                 onSelectionChange={() => resetAnimation()}
                                 /> 
                             </View>
-                        <Text style={styles.textRight}>{exeList[nextScreen - 1].questions[0][1]} <Text style={styles.textTranslation}>{exeList[nextScreen - 1].translations ? translations[0] : ''}</Text></Text>
+                        <Text style={styles.textRight}>{exeList[nextScreen - 1].questions[0][1]} <Text style={styles.textTranslation}>{exeList[nextScreen - 1].translations ? `(`+translations[0]+`)` : ''}</Text></Text>
                     </Animated.ScrollView>
                 </View> : <View style={{height: 0}}></View>}
                 
@@ -385,7 +385,7 @@ const Type4 = ({route}) => {
                                 onSelectionChange={() => resetAnimation()}
                                 /> 
                             </View>
-                        <Text style={styles.textRight}>{exeList[nextScreen - 1].questions[1][1]} <Text style={styles.textTranslation}>{exeList[nextScreen - 1].translations ? translations[1] : ''}</Text></Text>
+                        <Text style={styles.textRight}>{exeList[nextScreen - 1].questions[1][1]} <Text style={styles.textTranslation}>{exeList[nextScreen - 1].translations ? `(`+translations[1]+`)` : ''}</Text></Text>
                     </Animated.ScrollView>
                 </View> : <View style={{height: 0}}></View>}
                 
@@ -405,7 +405,7 @@ const Type4 = ({route}) => {
                                 onSelectionChange={() => resetAnimation()}
                                 /> 
                             </View>
-                        <Text style={styles.textRight}>{exeList[nextScreen - 1].questions[2][1]} <Text style={styles.textTranslation}>{exeList[nextScreen - 1].translations ? translations[2] : ''}</Text></Text>
+                        <Text style={styles.textRight}>{exeList[nextScreen - 1].questions[2][1]} <Text style={styles.textTranslation}>{exeList[nextScreen - 1].translations ? `(`+translations[2]+`)` : ''}</Text></Text>
                     </Animated.ScrollView>
                 </View> : <View style={{height: 0}}></View>}
                 
@@ -425,7 +425,7 @@ const Type4 = ({route}) => {
                                 onSelectionChange={() => resetAnimation()}
                                 /> 
                             </View>
-                        <Text style={styles.textRight}>{exeList[nextScreen - 1].questions[3][1]} <Text style={styles.textTranslation}>{exeList[nextScreen - 1].translations ? translations[3] : ''}</Text></Text>
+                        <Text style={styles.textRight}>{exeList[nextScreen - 1].questions[3][1]} <Text style={styles.textTranslation}>{exeList[nextScreen - 1].translations ? `(`+translations[3]+`)` : ''}</Text></Text>
                     </Animated.ScrollView>
                 </View> : <View style={{height: 0}}></View>}
                 
@@ -446,7 +446,7 @@ const Type4 = ({route}) => {
                                 onSelectionChange={() => resetAnimation()}
                                 /> 
                             </View>
-                        <Text style={styles.textRight}>{exeList[nextScreen - 1].questions[4][1]} <Text style={styles.textTranslation}>{exeList[nextScreen - 1].translations ? translations[4] : ''}</Text></Text>
+                        <Text style={styles.textRight}>{exeList[nextScreen - 1].questions[4][1]} <Text style={styles.textTranslation}>{exeList[nextScreen - 1].translations ? `(`+translations[4]+`)` : ''}</Text></Text>
                     </Animated.ScrollView>
                 </View> : <View style={{height: 0}}></View>}
                 
@@ -466,7 +466,7 @@ const Type4 = ({route}) => {
                                 onSelectionChange={() => resetAnimation()}
                                 /> 
                             </View>
-                        <Text style={styles.textRight}>{exeList[nextScreen - 1].questions[5][1]} <Text style={styles.textTranslation}>{exeList[nextScreen - 1].translations ? translations[5] : ''}</Text></Text>
+                        <Text style={styles.textRight}>{exeList[nextScreen - 1].questions[5][1]} <Text style={styles.textTranslation}>{exeList[nextScreen - 1].translations ? `(`+translations[5]+`)` : ''}</Text></Text>
                     </Animated.ScrollView>
                 </View> : <View style={{height: 0}}></View>}
                 
@@ -486,7 +486,7 @@ const Type4 = ({route}) => {
                                 onSelectionChange={() => resetAnimation()}
                                 /> 
                             </View>
-                        <Text style={styles.textRight}>{exeList[nextScreen - 1].questions[6][1]} <Text style={styles.textTranslation}>{exeList[nextScreen - 1].translations ? translations[6] : ''}</Text></Text>
+                        <Text style={styles.textRight}>{exeList[nextScreen - 1].questions[6][1]} <Text style={styles.textTranslation}>{exeList[nextScreen - 1].translations ? `(`+translations[6]+`)` : ''}</Text></Text>
                     </Animated.ScrollView>
                 </View> : <View style={{height: 0}}></View>}
                 
@@ -506,7 +506,7 @@ const Type4 = ({route}) => {
                                 onSelectionChange={() => resetAnimation()}
                                 /> 
                             </View>
-                        <Text style={styles.textRight}>{exeList[nextScreen - 1].questions[7][1]} <Text style={styles.textTranslation}>{exeList[nextScreen - 1].translations ? translations[7] : ''}</Text></Text>
+                        <Text style={styles.textRight}>{exeList[nextScreen - 1].questions[7][1]} <Text style={styles.textTranslation}>{exeList[nextScreen - 1].translations ? `(`+translations[7]+`)` : ''}</Text></Text>
                     </Animated.ScrollView>
                 </View> : <View style={{height: 0}}></View>}
                 

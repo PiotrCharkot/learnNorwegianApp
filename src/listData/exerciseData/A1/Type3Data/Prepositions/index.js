@@ -16,14 +16,14 @@ export default dataObj = [
 //         sp: 'un coche type 3',
 //     }
 //    },
-   {
-    typeOfScreen: '3',
-    correctAnswers: ['Regjeringen', 'hadde', 'fullmakter', 'i', 'den', 'heteste', 'corona-perioden', 'og', 'det', 'kan', 'godt', 'hende', 'en', 'regjering', 'må', 'ha', 'det', 'i', 'fremtiden.', 'Men', 'det', 'å', 'bare', 'avgi', 'blankofullmakt,', 'det', 'mener', 'vi', 'er', 'veldig', 'problematisk.'],
-    wordsWithGaps: ['Regjeringen', 'hadde', '            ', 'i', 'den', 'heteste', 'corona-perioden', 'og', 'det', 'kan', 'godt', '            ', 'en', 'regjering', 'må', 'ha', 'det', 'i', 'fremtiden.', 'Men', 'det', 'å', 'bare', '            ', 'blankofullmakt,', 'det', 'mener', 'vi', 'er', '            ', 'problematisk.', '!!!' , 'veldig','fullmakter', 'hende', 'avgi',],
-    gapsIndex: [],
-    textIndex: [],
-    lineBreaker: [],
-   },
+//    {
+//     typeOfScreen: '3',
+//     correctAnswers: ['Regjeringen', 'hadde', 'fullmakter', 'i', 'den', 'heteste', 'corona-perioden', 'og', 'det', 'kan', 'godt', 'hende', 'en', 'regjering', 'må', 'ha', 'det', 'i', 'fremtiden.', 'Men', 'det', 'å', 'bare', 'avgi', 'blankofullmakt,', 'det', 'mener', 'vi', 'er', 'veldig', 'problematisk.'],
+//     wordsWithGaps: ['Regjeringen', 'hadde', '            ', 'i', 'den', 'heteste', 'corona-perioden', 'og', 'det', 'kan', 'godt', '            ', 'en', 'regjering', 'må', 'ha', 'det', 'i', 'fremtiden.', 'Men', 'det', 'å', 'bare', '            ', 'blankofullmakt,', 'det', 'mener', 'vi', 'er', '            ', 'problematisk.', '!!!' , 'veldig','fullmakter', 'hende', 'avgi',],
+//     gapsIndex: [],
+//     textIndex: [],
+//     lineBreaker: [],
+//    },
    {
     typeOfScreen: '3',
     correctAnswers: ['De', 'må', 'reise', 'tidlig', 'hvis', 'de', 'vil', 'unngå', 'trafikken.', 'lineBreaker', 'Du', 'kan', 'lære', 'norsk', 'raskt', 'med', 'øvelse', 'og', 'tålmodighet.', 'lineBreaker', 'Han', 'tør', 'ikke', 'å', 'snakke', 'offentlig', 'uten', 'å', 'forberede', 'seg.', 'lineBreaker', 'Vi', 'bør', 'spise', 'sunnere', 'for', 'bedre', 'helse.', 'lineBreaker', 'Hun', 'ønsker', 'å', 'kjøpe', 'en', 'ny', 'bil', 'men', 'hun', 'trenger', 'å', 'spare', 'mer', 'penger.'],
@@ -31,7 +31,15 @@ export default dataObj = [
     gapsIndex: [],
     textIndex: [],
     lineBreaker: []
-}
+},
+{
+    typeOfScreen: '3',
+    correctAnswers: ['Om', 'været', 'blir', 'bra', 'i', 'morgen', 'skal', 'vi', 'gå', 'på', 'tur.', 'lineBreaker', 'Hvis', 'jeg', 'hadde', 'hatt', 'mer', 'tid', 'ville', 'jeg', 'ha', 'studert', 'fransk.', 'lineBreaker', 'Skulle', 'du', 'ha', 'vunnet', 'i', 'lotteriet', 'hva', 'ville', 'du', 'ha', 'gjort', 'med', 'pengene?'],
+    wordsWithGaps: ['Om', 'været', '            ', 'bra', 'i', 'morgen', '            ', 'vi', 'gå', 'på', 'tur.', 'lineBreaker', 'Hvis', 'jeg', '            ', 'hatt', 'mer', 'tid', 'ville', 'jeg', 'ha', '            ', 'fransk.', 'lineBreaker', 'Skulle', 'du', 'ha', '            ', 'i', 'lotteriet', '            ', 'ville', 'du', 'ha', 'gjort', 'med', 'pengene?', '!!!', 'studert', 'hva', 'blir', 'vunnet', 'hadde', 'skal'],
+    gapsIndex: [],
+    textIndex: [],
+    lineBreaker: [],
+},
 ];
 
 

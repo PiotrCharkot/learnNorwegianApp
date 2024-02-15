@@ -52,6 +52,12 @@ const styles = StyleSheet.create({
         fontWeight: '600',
         color: 'white'
     },
+    textTitleExp: {
+        fontSize: 26,
+        fontWeight: '600',
+        color: 'white',
+        marginBottom: 10
+    },
     textMainContainer: {
         paddingTop: 50,
         paddingHorizontal: 20
@@ -66,7 +72,7 @@ const styles = StyleSheet.create({
         color: 'white',
         textAlign: 'justify' ,
         paddingTop: 10,
-        paddingBottom: 180,
+        paddingBottom: 0,
     }
 });
 

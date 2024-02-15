@@ -18,7 +18,7 @@ const TextScreen = ({route}) => {
 
     const [title, setTitle] = useState('');
     const [text, setText] = useState('');
-    const [expressions, setExpressions] = useState('');
+    const [expressions, setExpressions] = useState([]);
     const [fontSize, setFontSize] = useState(16);
     const [darkMode, setDarkMode] = useState('0');
 
@@ -114,6 +114,7 @@ const TextScreen = ({route}) => {
 
     useEffect(() => {
 
+      console.log('my language in text screen is: ', route.params.language);
 
       getValueFor('darkMode');
       getValueForTxtSize('fontSize')
@@ -157,9 +158,38 @@ const TextScreen = ({route}) => {
           </View>
             <Text style={{...styles.textMain, color: darkMode === '1' ?  'white' : 'black', fontSize}}>{text}</Text>
 
-            <Text style={{...styles.textTitle, color: darkMode === '1' ?  'white' : 'black'}}>Expressions:</Text>
+            <Text style={{...styles.textTitleExp, color: darkMode === '1' ?  'white' : 'black'}}>Expressions:</Text>
 
-            <Text style={{...styles.textExpressions, color: darkMode === '1' ?  'white' : 'black', fontSize}}>{expressions}</Text>
+
+            {expressions.map((item) => {
+
+              let translation = ''
+              
+
+              if (route.params.language === 'PL') {
+                translation = item.pl
+              } else if (route.params.language === 'DE') {
+                translation = item.ger
+              } else if (route.params.language === 'LT') {
+                translation = item.lt
+              } else if (route.params.language === 'AR') {
+                translation = item.ar
+              } else if (route.params.language === 'UA') {
+                translation = item.ua
+              } else if (route.params.language === 'ES') {
+                translation = item.sp
+              } else if (route.params.language === 'EN') {
+                translation = item.eng
+              }
+
+              return (
+                
+                <View>
+                  <Text style={{...styles.textExpressions, color: darkMode === '1' ?  'white' : 'black', fontSize}}>{item.nor} - {translation}</Text>
+                </View>
+              )
+            })}
+
           </ScrollView>
         </View>
     </View>

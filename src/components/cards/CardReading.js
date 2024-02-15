@@ -23,7 +23,7 @@ const CardReading = (params) => {
     const goToReading = () => {
         navigation.navigate({
             name: 'Text',
-            params: {textId: params.textId}
+            params: {textId: params.textId, language: params.language}
           })
     }
 

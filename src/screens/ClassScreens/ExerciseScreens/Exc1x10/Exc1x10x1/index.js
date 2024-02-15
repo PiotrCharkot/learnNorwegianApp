@@ -1,5 +1,5 @@
-import {View, Text, StyleSheet, ScrollView, Dimensions, StatusBar, TouchableOpacity, Image, SafeAreaView, } from 'react-native'
-import React, { useState, useEffect } from 'react'
+import {View, Text, StyleSheet, TouchableOpacity, Image, Animated, Easing } from 'react-native'
+import React, { useState, useEffect, useRef } from 'react'
 import { useFocusEffect } from "@react-navigation/native";
 import { LinearGradient } from 'expo-linear-gradient';
 import { Audio } from "expo-av";
@@ -58,6 +58,7 @@ const Exc1x10x1 = ({ route }) => {
     const [latestScreenAnswered, setLatestScreenAnswered] = useState(0);
     const [correctAnswers, setCorrectAnswers]= useState([]);
     const [instructions, setInstructions] = useState('some instructions');
+    const [translation, setTranslation] = useState('')
     
     const [language, setLanguage] = useState('EN');
     const [soundLink, setSoundLink] = useState('')
@@ -65,40 +66,46 @@ const Exc1x10x1 = ({ route }) => {
     const [contentReady, setContentReady] = useState(false);
     const [exeList, setExeList] = useState([]);
 
+    
+    const translationPosition = useRef(new Animated.Value(500)).current;
+
 
     useFocusEffect(() => {
 
-        if (route.params) {
-          const {userPoints, latestScreen, comeBackRoute, latestAnswered, nextScreen, savedLang} = route.params;
+      
 
-          if (latestScreen > currentScreen) {
-              setLatestScreenAnswered(latestAnswered);
-              setLatestScreenDone(latestScreen);
-              setComeBack(true);
-          }
-  
-          if (route.params.userPoints > 0) {
-              console.log('setting new points', route.params.userPoints );
-              setCurrentPoints(userPoints)
-          }
+      if (route.params) {
+        const {userPoints, latestScreen, comeBackRoute, latestAnswered, nextScreen, savedLang, data} = route.params;
 
-          
-          if (savedLang === 'PL') {
-            setInstructions('polskie instrukcje')
-          } else if (savedLang === 'DE') {
-            setInstructions('niemieckie instrukcje')
-          } else if (savedLang === 'LT') {
-            setInstructions('litewskie instrukcje')
-          } else if (savedLang === 'AR') {
-            setInstructions('arabskie instrukcje')
-          } else if (savedLang === 'UA') {
-            setInstructions('ukr instrukcje')
-          } else if (savedLang === 'ES') {
-            setInstructions('esp instrukcje')
-          }
-          
-          setLanguage(savedLang)
+        
+        if (latestScreen > currentScreen) {
+            setLatestScreenAnswered(latestAnswered);
+            setLatestScreenDone(latestScreen);
+            setComeBack(true);
         }
+
+        if (route.params.userPoints > 0) {
+            console.log('setting new points', route.params.userPoints );
+            setCurrentPoints(userPoints)
+        }
+
+        
+        if (savedLang === 'PL') {
+          setInstructions('polskie instrukcje')
+        } else if (savedLang === 'DE') {
+          setInstructions('niemieckie instrukcje')
+        } else if (savedLang === 'LT') {
+          setInstructions('litewskie instrukcje')
+        } else if (savedLang === 'AR') {
+          setInstructions('arabskie instrukcje')
+        } else if (savedLang === 'UA') {
+          setInstructions('ukr instrukcje')
+        } else if (savedLang === 'ES') {
+          setInstructions('esp instrukcje')
+        }
+        
+        setLanguage(savedLang)
+      }
       
         
     })
@@ -106,58 +113,84 @@ const Exc1x10x1 = ({ route }) => {
 
     useEffect(() => {
 
-        let tempArr = []; 
-        let alreadyUsed = [];
-        let sumOfAllPoints = 0;
-    
-    
-        for (let i = 0; tempArr.length < allScreensNum; i++) {
+      let parsedData = Object.keys(route.params.data).length === 0 ? {} : JSON.parse(route.params.data)
+      let dataForExercise = Object.keys(route.params.data).length === 0 ? type9sentence : parsedData.A1
 
-            let randomVal = Math.floor(Math.random() * type9sentence.length);
+      console.log('ddddddddddddddddddddddddddddddddddddddddddddddd', dataForExercise);
+      console.log(typeof dataForExercise);
+      let tempArr = []; 
+      let alreadyUsed = [];
+      let sumOfAllPoints = 0;
+  
+  
+      for (let i = 0; tempArr.length < allScreensNum; i++) {
 
-            if (!alreadyUsed.includes(randomVal)) {
-                let newArrGaps = [];
-                let newArrText = [];
+          let randomVal = Math.floor(Math.random() * dataForExercise.length);
+
+          if (!alreadyUsed.includes(randomVal)) {
+              let newArrGaps = [];
+              let newArrText = [];
 
 
-                for (let j = 0; j < type9sentence[randomVal].correctAnswers.length; j++) {
-                    if (type9sentence[randomVal].wordsWithGaps[j] === '          ') {
-                        newArrGaps.push(j)
-                    } else {
-                        newArrText.push(j)
-                    }
-                }
+              for (let j = 0; j < dataForExercise[randomVal].correctAnswers.length; j++) {
+                  if (dataForExercise[randomVal].wordsWithGaps[j] === '          ') {
+                      newArrGaps.push(j)
+                  } else {
+                      newArrText.push(j)
+                  }
+              }
 
-                type9sentence[randomVal].gapsIndex = newArrGaps;
-                type9sentence[randomVal].textIndex = newArrText;
+              dataForExercise[randomVal].gapsIndex = newArrGaps;
+              dataForExercise[randomVal].textIndex = newArrText;
 
-                sumOfAllPoints = sumOfAllPoints + newArrGaps.length * generalStyles.bonusCheckAnswerGapsText
+              sumOfAllPoints = sumOfAllPoints + newArrGaps.length * generalStyles.bonusCheckAnswerGapsText
 
-                tempArr.push(type9sentence[randomVal]);
-                alreadyUsed.push(randomVal)
-                
-            }
-            
-        }
-    
-        tempArr.push(sumOfAllPoints);
-        tempArr.push(dataForMarkers);
-        
+              tempArr.push(dataForExercise[randomVal]);
+              alreadyUsed.push(randomVal)
+              
+          }
           
-          
-        console.log('my list of questions', tempArr);
-        console.log('my total points: ', sumOfAllPoints);
-        setExeList(tempArr);
-
+      }
+  
+      tempArr.push(sumOfAllPoints);
+      tempArr.push(dataForMarkers);
+      
         
-        setSoundLink(tempArr[0].soundLink)
-        setWords(tempArr[0].wordsWithGaps)
-        setCorrectAnswers(tempArr[0].correctAnswers);
-        setNumberGaps(tempArr[0].gapsIndex.length);
-        setIsCorrect(Array(tempArr[0].correctAnswers.length).fill(0));
-        setIsCorrectNewArr(Array(tempArr[0].correctAnswers.length).fill(0));
-        setContentReady(true);
-    
+        
+      // console.log('my list of questions', tempArr);
+      // console.log('my total points: ', sumOfAllPoints);
+      setExeList(tempArr);
+
+      
+      setSoundLink(tempArr[0].soundLink)
+      setWords(tempArr[0].wordsWithGaps)
+      setCorrectAnswers(tempArr[0].correctAnswers);
+      setNumberGaps(tempArr[0].gapsIndex.length);
+      setIsCorrect(Array(tempArr[0].correctAnswers.length).fill(0));
+      setIsCorrectNewArr(Array(tempArr[0].correctAnswers.length).fill(0));
+
+      if (route.params.savedLang === 'PL') {
+        setTranslation(tempArr[0].translations.pl)
+      } else if (route.params.savedLang === 'DE') {
+        setTranslation(tempArr[0].translations.ger)
+      } else if (route.params.savedLang === 'LT') {
+        setTranslation(tempArr[0].translations.lt)
+      } else if (route.params.savedLang === 'AR') {
+        setTranslation(tempArr[0].translations.ar)
+      } else if (route.params.savedLang === 'UA') {
+        setTranslation(tempArr[0].translations.ua)
+      } else if (route.params.savedLang === 'ES') {
+        setTranslation(tempArr[0].translations.sp)
+      } else if (route.params.savedLang === 'EN') {
+        setTranslation(tempArr[0].translations.eng)
+      }
+
+
+
+      setContentReady(true);
+
+      
+  
     
     
       }, [])
@@ -181,11 +214,30 @@ const Exc1x10x1 = ({ route }) => {
           })
 
           setIsCorrect(newArr);
+
           
         }
+
+        Animated.timing(translationPosition, {
+          toValue: 0,
+          duration: 1000,
+          easing: Easing.bezier(.7,.93,.57,.99),
+          useNativeDriver: true
+        }).start()
       }
     
+      
     }, [answersChecked])
+
+
+    useEffect(() => {
+      if (soundLink !== '') {
+        setTimeout(() => {
+          playSound()
+        }, 500);
+      }
+    }, [contentReady]);
+
 
     const onMovingDraggable = (movingDraggable) => {
         setMovingDraggable(movingDraggable);
@@ -224,12 +276,12 @@ const Exc1x10x1 = ({ route }) => {
       {contentReady ? <View style={styles.body}>
 
         <View style={styles.topView}>
-        <Text style={{...styles.questionText, textAlign: language === 'AR' ? 'right' : 'left' }}>{instructions}</Text>
-            <View style={styles.pictureContainer}>
-                <TouchableOpacity onPress={playSound}>
-                <Image style={styles.pictureSound} source={require('../../../../../../assets/volume.png')} />
-                </TouchableOpacity>
-            </View>
+          <Text style={{...styles.questionText, textAlign: language === 'AR' ? 'right' : 'left' }}>{instructions}</Text>
+          <View style={styles.pictureContainer}>
+              <TouchableOpacity onPress={playSound}>
+              <Image style={styles.pictureSound} source={require('../../../../../../assets/volume.png')} />
+              </TouchableOpacity>
+          </View>
         </View>
 
         <View style={styles.squaresViewContainer}>
@@ -282,6 +334,11 @@ const Exc1x10x1 = ({ route }) => {
                 
             })}
 
+        </View>
+        <View>
+          <Animated.View style={{...styles.translationContainer,  transform: [{translateY: translationPosition}]}}>
+            <Text style={styles.translationText}>{translation}</Text>
+          </Animated.View>
         </View>
         </View>  : <View style={styles.loaderDisplay}>
             <Loader />
@@ -412,6 +469,18 @@ const styles = StyleSheet.create({
     height: 50,
     width: 50,
     tintColor: generalStyles.colorText2
+  },
+  translationContainer: {
+    position: 'absolute',
+    marginTop: 10,
+    paddingHorizontal: 20,
+    width: '100%',
+    alignItems: 'center',
+  },
+  translationText: {
+    fontSize: 17,
+    fontWeight: '600',
+    textAlign: 'center'
   }
 })
 

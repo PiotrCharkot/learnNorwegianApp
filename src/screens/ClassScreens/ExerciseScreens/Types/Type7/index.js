@@ -165,32 +165,54 @@ const Type7 = ({route}) => {
               
 
             {showCorrect ? exeList[nextScreen - 1].wordsCorrect.map((item, index) => {
+
+              if (item === 'linebreaker') {
                 return (
-                    <TouchableOpacity key={index} style={{
-                        ...styles.touchable,
-                        backgroundColor: 'transparent'
-                  }}>
-                  <Text style={{
-                      ...styles.wordsTxt
-                    }}>{item} </Text>
-                </TouchableOpacity>
-                
+                  <View style={styles.lineBreaker} key={index}>
+                      
+                  </View>
                 )
+              } else {
+                return (
+                  <TouchableOpacity key={index} style={{
+                      ...styles.touchable,
+                      backgroundColor: 'transparent'
+                }}>
+                <Text style={{
+                    ...styles.wordsTxt
+                  }}>{item} </Text>
+                </TouchableOpacity>
+              
+              )
+              }
+
+              
                 
             }) :  exeList[nextScreen - 1].words.map((item, index) => {
+
+              if (item === 'linebreaker') {
                 return (
-                    <TouchableOpacity key={index} onPress={() => markWord(index)} style={{
-                        ...styles.touchable,
-                        backgroundColor: isCorrect[index] === 1 ? correct1 : markedWords.includes(index) ? generalStyles.colorHighlightChoosenAnswer : 'transparent'
-                    }}>
-                  <Text style={{
-                      ...styles.wordsTxt,
-                      textDecorationLine: exeList[nextScreen - 1].mistakesIndex.includes(index) && showMistakes ? 'underline' : null,
-                      textDecorationColor: 'red'
-                    }}>{item} </Text>
+                  <View style={styles.lineBreaker} key={index}>
+                      
+                  </View>
+                )
+              } else {
+                return (
+                  <TouchableOpacity key={index} onPress={() => markWord(index)} style={{
+                      ...styles.touchable,
+                      backgroundColor: isCorrect[index] === 1 ? correct1 : markedWords.includes(index) ? generalStyles.colorHighlightChoosenAnswer : 'transparent'
+                  }}>
+                <Text style={{
+                    ...styles.wordsTxt,
+                    textDecorationLine: exeList[nextScreen - 1].mistakesIndex.includes(index) && showMistakes ? 'underline' : null,
+                    textDecorationColor: 'red'
+                  }}>{item} </Text>
                 </TouchableOpacity>
-                
-              )
+                  
+                )
+              }
+
+              
               
             })}
 
@@ -299,6 +321,12 @@ const styles = StyleSheet.create({
   textBold: {
     color: 'grey'
   },
-  
+  lineBreaker: {
+    borderBottomColor: 'lightgrey',
+    borderBottomWidth: 0.5,
+    height: 0,
+    width: '100%',
+    marginBottom: 10
+  },
 
 })

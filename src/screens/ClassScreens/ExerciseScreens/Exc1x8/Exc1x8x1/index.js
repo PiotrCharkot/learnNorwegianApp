@@ -307,6 +307,14 @@ const Exc1x8x1 = ({route}) => {
               
 
             {showCorrect ? wordsCorrect.map((item, index) => {
+
+              if (item === 'linebreaker') {
+                return (
+                  <View style={styles.lineBreaker} key={index}>
+                      
+                  </View>
+                )
+              } else {
                 return (
                     <TouchableOpacity key={index} style={{
                         ...styles.touchable,
@@ -318,8 +326,18 @@ const Exc1x8x1 = ({route}) => {
                 </TouchableOpacity>
                 
                 )
+              }
+                
                 
             }) :  words.map((item, index) => {
+
+              if (item === 'linebreaker') {
+                return (
+                  <View style={styles.lineBreaker} key={index}>
+                      
+                  </View>
+                )
+              } else {
                 return (
                     <TouchableOpacity key={index} onPress={() => markWord(index)} style={{
                         ...styles.touchable,
@@ -333,6 +351,8 @@ const Exc1x8x1 = ({route}) => {
                 </TouchableOpacity>
                 
               )
+              }
+                
               
             })}
 
@@ -442,6 +462,12 @@ const styles = StyleSheet.create({
   textBold: {
     color: 'grey'
   },
-  
+  lineBreaker: {
+    borderBottomColor: 'lightgrey',
+    borderBottomWidth: 0.5,
+    height: 0,
+    width: '100%',
+    marginBottom: 10
+  },
 
 })

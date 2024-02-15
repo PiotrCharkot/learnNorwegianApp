@@ -5,6 +5,7 @@ import { useFocusEffect, useIsFocused } from "@react-navigation/native";
 import { LinearGradient } from 'expo-linear-gradient';
 import { useNavigation } from "@react-navigation/native";
 import { collection, getDocs, query, where, doc, setDoc, updateDoc, deleteDoc } from "firebase/firestore";
+import { getStorage, ref, getDownloadURL, uploadBytesResumable } from "firebase/storage";
 import { db } from '../../../firebase/firebase-config'
 import { onAuthStateChanged, getAuth  } from 'firebase/auth';
 import styles from './style'
@@ -29,6 +30,8 @@ const usersAchivments = collection(db, 'usersAchivments');
 
 
 const ExerciseScreen = () => {
+
+  const storage = getStorage();
    
   const isFocused = useIsFocused();
   const navigation = useNavigation();
@@ -45,6 +48,7 @@ const ExerciseScreen = () => {
   const [random, setRandom] = useState(0);
   const [title1, setTitle1] = useState('level');
   const [readingBtnTxt, setReadingButtonTxt] = useState('Reading');
+  const [dataListening, setDataListening] = useState({})
   
 
   const opacityImgBlur = scrollY.interpolate({
@@ -143,6 +147,26 @@ const ExerciseScreen = () => {
 
     let tempVal = Math.floor(Math.random() * imagesMain.length);
     setRandom(tempVal); 
+
+
+    getDownloadURL(ref(storage, 'exerciseData/A1.txt'))
+      .then(async (url) => {
+          
+        //set data from storage
+        const response = await fetch(url);
+        const text = await response.text();
+        //console.log('my dataaaa: ', text);
+        console.log('does things');
+        setDataListening(text)
+          
+      })
+      .catch((error) => {
+        console.log('my error is :', error);
+        if (error.code === 'storage/object-not-found') {
+          //console.log('no file for profile');
+          
+        }
+      });
 
     
   }, [])
@@ -319,7 +343,8 @@ const ExerciseScreen = () => {
       showPro={item.showPro}
       colorSmallSqu={colorSqu}
       language={choosenLanguage}
-      barsData={item.bars}/>
+      barsData={item.bars}
+      dataExercie={dataListening}/>
     </Animated.View>
   }
 

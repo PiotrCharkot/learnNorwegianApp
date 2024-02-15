@@ -206,7 +206,7 @@ const ReadingScreen = () => {
 
     return <Animated.View style={{transform: [{translateY}]}}>
 
-      <CardReading title={item.title} textId={item.textId}/>
+      <CardReading title={item.title} textId={item.textId} language={choosenLanguage}/>
     </Animated.View>
   }
 
