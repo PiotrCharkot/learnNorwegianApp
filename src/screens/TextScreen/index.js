@@ -184,12 +184,13 @@ const TextScreen = ({route}) => {
 
               return (
                 
-                <View>
-                  <Text style={{...styles.textExpressions, color: darkMode === '1' ?  'white' : 'black', fontSize}}>{item.nor} - {translation}</Text>
+                <View key={item.key}>
+                  <Text style={{...styles.textExpressions, textAlign: route.params.language === 'AR' ? 'right' : 'left', color: darkMode === '1' ?  'white' : 'black', fontSize}}>{item.nor} - {translation}</Text>
                 </View>
               )
             })}
 
+          <View style={{height: 200}}></View>
           </ScrollView>
         </View>
     </View>

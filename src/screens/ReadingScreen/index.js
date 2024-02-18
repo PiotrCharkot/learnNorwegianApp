@@ -8,6 +8,11 @@ import styles from './style'
 import { withAnchorPoint } from 'react-native-anchor-point';
 import CardReading from '../../components/cards/CardReading';
 import textListData from '../../listData/textListData';
+import textListData2 from '../../listData/textListData2';
+import textListData3 from '../../listData/textListData3';
+import textListData4 from '../../listData/textListData4';
+import textListData5 from '../../listData/textListData5';
+import textListData6 from '../../listData/textListData6';
 
 const screenWidth = Dimensions.get('window').width;
 const cardSize = screenWidth * 0.6 + 20;
@@ -27,6 +32,11 @@ const ReadingScreen = () => {
   
   const scrollY = useRef(new Animated.Value(0)).current;
   const scrollX = useRef(new Animated.Value(0)).current;
+  const scrollX2 = useRef(new Animated.Value(0)).current;
+  const scrollX3 = useRef(new Animated.Value(0)).current;
+  const scrollX4 = useRef(new Animated.Value(0)).current;
+  const scrollX5 = useRef(new Animated.Value(0)).current;
+  const scrollX6 = useRef(new Animated.Value(0)).current;
   const scaleLanguageHight = useRef(new Animated.Value(0)).current;
   const translateLanguage = useRef(new Animated.Value(100)).current;
   const overlayOpacity = useRef(new Animated.Value(1)).current;
@@ -36,6 +46,12 @@ const ReadingScreen = () => {
   const [choosenLanguage, setChoosenLanguage] = useState('EN');
   const [languageListOpen, setLanguageListOpen] = useState(false);
   const [dataFlatList, setDataFlatList] = useState([]);
+  const [dataFlatList2, setDataFlatList2] = useState([]);
+  const [dataFlatList3, setDataFlatList3] = useState([]);
+  const [dataFlatList4, setDataFlatList4] = useState([]);
+  const [dataFlatList5, setDataFlatList5] = useState([]);
+  const [dataFlatList6, setDataFlatList6] = useState([]);
+  const [title, setTitle] = useState('Level')
   const [random, setRandom] = useState(0);
 
   const xPositionDeg = interpolatedValueForX.interpolate({
@@ -59,6 +75,36 @@ const ReadingScreen = () => {
     inputRange: colorsBackFlatlist5.map((_, i) => i * cardSize),
     outputRange: colorsBackFlatlist5.map((i) => i)
   })
+
+
+  const backgroundFlatlist2 = scrollX2.interpolate({
+    inputRange: colorsBackFlatlist4.map((_, i) => i * cardSize),
+    outputRange: colorsBackFlatlist4.map((i) => i)
+  })
+
+
+  const backgroundFlatlist3 = scrollX3.interpolate({
+    inputRange: colorsBackFlatlist3.map((_, i) => i * cardSize),
+    outputRange: colorsBackFlatlist3.map((i) => i)
+  })
+
+  const backgroundFlatlist4 = scrollX4.interpolate({
+    inputRange: colorsBackFlatlist5.map((_, i) => i * cardSize),
+    outputRange: colorsBackFlatlist5.map((i) => i)
+  })
+
+
+  const backgroundFlatlist5 = scrollX5.interpolate({
+    inputRange: colorsBackFlatlist4.map((_, i) => i * cardSize),
+    outputRange: colorsBackFlatlist4.map((i) => i)
+  })
+
+
+  const backgroundFlatlist6 = scrollX6.interpolate({
+    inputRange: colorsBackFlatlist3.map((_, i) => i * cardSize),
+    outputRange: colorsBackFlatlist3.map((i) => i)
+  })
+
 
 
   const imagesMain = [require('../../../assets/reindeerBook1.png'), require('../../../assets/reindeerBook2.png'), require('../../../assets/reindeerBook3.png'), require('../../../assets/reindeerBook4.png'), require('../../../assets/reindeerBook5.png')];
@@ -146,6 +192,11 @@ const ReadingScreen = () => {
     let tempVal = Math.floor(Math.random() * imagesMain.length);
     setRandom(tempVal)
     setDataFlatList([{key: 'left-spacer'}, ...textListData, {key: 'right-spacer'}])
+    setDataFlatList2([{key: 'left-spacer'}, ...textListData2, {key: 'right-spacer'}])
+    setDataFlatList3([{key: 'left-spacer'}, ...textListData3, {key: 'right-spacer'}])
+    setDataFlatList4([{key: 'left-spacer'}, ...textListData4, {key: 'right-spacer'}])
+    setDataFlatList5([{key: 'left-spacer'}, ...textListData5, {key: 'right-spacer'}])
+    setDataFlatList6([{key: 'left-spacer'}, ...textListData6, {key: 'right-spacer'}])
   }, [])
 
   useEffect(() => {
@@ -186,9 +237,27 @@ const ReadingScreen = () => {
   }, [isFocused])
 
 
+  useEffect(() => {
+    if (choosenLanguage === 'PL') {
+      setTitle('Poziom');
+    } else if (choosenLanguage === 'DE') {
+      setTitle('Niveau');
+    } else if (choosenLanguage === 'LT') {
+      setTitle('Lygis');
+    } else if (choosenLanguage === 'AR') {
+      setTitle('مستوى');
+    } else if (choosenLanguage === 'UA') {
+      setTitle('Pівень');
+    } else if (choosenLanguage === 'ES') {
+      setTitle('Nivel');
+    } else if (choosenLanguage === 'EN') {
+      setTitle('Level');
+    }
+  }, [choosenLanguage])
+
+
   const renderCard = ({item, index}) => {
 
-    let colorSqu = colorsBackFlatlist5[index - 1]
 
     if (!item.title) {
       return <View style={{width: spacerSize}} ></View>
@@ -199,14 +268,134 @@ const ReadingScreen = () => {
       index  * cardSize,
     ];
 
-    const translateY = scrollX.interpolate({
+    const translateY1 = scrollX.interpolate({
       inputRange,
       outputRange: [0, -50, 0]
     })
 
-    return <Animated.View style={{transform: [{translateY}]}}>
+    return <Animated.View style={{transform: [{translateY: translateY1}]}}>
 
-      <CardReading title={item.title} textId={item.textId} language={choosenLanguage}/>
+      <CardReading title={item.title} textId={item.textId} level={item.level} language={choosenLanguage}/>
+    </Animated.View>
+  }
+
+
+  const renderCard2 = ({item, index}) => {
+
+
+    if (!item.title) {
+      return <View style={{width: spacerSize}} ></View>
+    }
+    const inputRange = [
+      (index - 2) * cardSize,
+      (index - 1) * cardSize,
+      index  * cardSize,
+    ];
+
+    const translateY2 = scrollX2.interpolate({
+      inputRange,
+      outputRange: [0, -50, 0]
+    })
+
+    return <Animated.View style={{transform: [{translateY: translateY2}]}}>
+
+      <CardReading title={item.title} textId={item.textId} level={item.level} language={choosenLanguage} />
+    </Animated.View>
+  }
+
+
+  const renderCard3 = ({item, index}) => {
+
+
+    if (!item.title) {
+      return <View style={{width: spacerSize}} ></View>
+    }
+    const inputRange = [
+      (index - 2) * cardSize,
+      (index - 1) * cardSize,
+      index  * cardSize,
+    ];
+
+    const translateY3 = scrollX3.interpolate({
+      inputRange,
+      outputRange: [0, -50, 0]
+    })
+
+    return <Animated.View style={{transform: [{translateY: translateY3}]}}>
+
+      <CardReading title={item.title} textId={item.textId} level={item.level} language={choosenLanguage} />
+    </Animated.View>
+  }
+
+
+  const renderCard4 = ({item, index}) => {
+
+
+    if (!item.title) {
+      return <View style={{width: spacerSize}} ></View>
+    }
+    const inputRange = [
+      (index - 2) * cardSize,
+      (index - 1) * cardSize,
+      index  * cardSize,
+    ];
+
+    const translateY4 = scrollX4.interpolate({
+      inputRange,
+      outputRange: [0, -50, 0]
+    })
+
+    return <Animated.View style={{transform: [{translateY: translateY4}]}}>
+
+      <CardReading title={item.title} textId={item.textId} level={item.level} language={choosenLanguage} />
+    </Animated.View>
+  }
+
+
+  const renderCard5 = ({item, index}) => {
+
+
+    if (!item.title) {
+      return <View style={{width: spacerSize}} ></View>
+    }
+    const inputRange = [
+      (index - 2) * cardSize,
+      (index - 1) * cardSize,
+      index  * cardSize,
+    ];
+
+    const translateY5 = scrollX5.interpolate({
+      inputRange,
+      outputRange: [0, -50, 0]
+    })
+
+    return <Animated.View style={{transform: [{translateY: translateY5}]}}>
+
+      <CardReading title={item.title} textId={item.textId} level={item.level} language={choosenLanguage} />
+    </Animated.View>
+  }
+
+
+  const renderCard6 = ({item, index}) => {
+
+
+    if (!item.title) {
+      return <View style={{width: spacerSize}} ></View>
+    }
+    const inputRange = [
+      (index - 2) * cardSize,
+      (index - 1) * cardSize,
+      index  * cardSize,
+    ];
+
+    const translateY6 = scrollX6.interpolate({
+      inputRange,
+      outputRange: [0, -50, 0]
+    })
+
+    return <Animated.View style={{transform: [{translateY: translateY6}]}}>
+
+      <CardReading title={item.title} textId={item.textId} level={item.level} language={choosenLanguage} />
     </Animated.View>
   }
 
@@ -255,7 +444,7 @@ const ReadingScreen = () => {
             </LinearGradient>
         
           <View style={styles.titleContainer}>
-            <Text style={styles.titleText}>Title</Text>
+            <Text style={styles.titleText}>{choosenLanguage === 'AR' ? '' : title} A1 {choosenLanguage === 'AR' ? title : ''}</Text>
           </View>
           <Animated.FlatList 
             style={styles.flatlist}
@@ -268,6 +457,137 @@ const ReadingScreen = () => {
             keyExtractor={(item) => item.key}
             onScroll={Animated.event(
               [{nativeEvent: {contentOffset: {x: scrollX}}}],
+              {useNativeDriver: false}
+              )}
+            scrollEventThrottle={16}
+          />
+
+        </Animated.View>
+
+        <Animated.View style={{...styles.flatListsContainerBottom, backgroundColor: backgroundFlatlist2}}>
+          
+          <LinearGradient colors={['white', 'rgba(255,255,255,0)', 'white']} start={[0.0, 0.1]} end={[0.0, 1.0]}  style={styles.gradinetFlatlist}>
+            </LinearGradient>
+        
+          <View style={styles.titleContainer}>
+            <Text style={styles.titleText}>{choosenLanguage === 'AR' ? '' : title} A2 {choosenLanguage === 'AR' ? title : ''}</Text>
+          </View>
+          <Animated.FlatList 
+            style={styles.flatlist}
+            horizontal
+            showsHorizontalScrollIndicator={false}
+            snapToInterval={cardSize}
+            decelerationRate={0}
+            data={dataFlatList2}
+            renderItem={renderCard2}
+            keyExtractor={(item) => item.key}
+            onScroll={Animated.event(
+              [{nativeEvent: {contentOffset: {x: scrollX2}}}],
+              {useNativeDriver: false}
+              )}
+            scrollEventThrottle={16}
+          />
+
+        </Animated.View>
+
+        <Animated.View style={{...styles.flatListsContainerBottom, backgroundColor: backgroundFlatlist3}}>
+          
+          <LinearGradient colors={['white', 'rgba(255,255,255,0)', 'white']} start={[0.0, 0.1]} end={[0.0, 1.0]}  style={styles.gradinetFlatlist}>
+            </LinearGradient>
+        
+          <View style={styles.titleContainer}>
+            <Text style={styles.titleText}>{choosenLanguage === 'AR' ? '' : title} B1 {choosenLanguage === 'AR' ? title : ''}</Text>
+          </View>
+          <Animated.FlatList 
+            style={styles.flatlist}
+            horizontal
+            showsHorizontalScrollIndicator={false}
+            snapToInterval={cardSize}
+            decelerationRate={0}
+            data={dataFlatList3}
+            renderItem={renderCard3}
+            keyExtractor={(item) => item.key}
+            onScroll={Animated.event(
+              [{nativeEvent: {contentOffset: {x: scrollX3}}}],
+              {useNativeDriver: false}
+              )}
+            scrollEventThrottle={16}
+          />
+
+        </Animated.View>
+
+        <Animated.View style={{...styles.flatListsContainerBottom, backgroundColor: backgroundFlatlist4}}>
+          
+          <LinearGradient colors={['white', 'rgba(255,255,255,0)', 'white']} start={[0.0, 0.1]} end={[0.0, 1.0]}  style={styles.gradinetFlatlist}>
+            </LinearGradient>
+        
+          <View style={styles.titleContainer}>
+            <Text style={styles.titleText}>{choosenLanguage === 'AR' ? '' : title} B2 {choosenLanguage === 'AR' ? title : ''}</Text>
+          </View>
+          <Animated.FlatList 
+            style={styles.flatlist}
+            horizontal
+            showsHorizontalScrollIndicator={false}
+            snapToInterval={cardSize}
+            decelerationRate={0}
+            data={dataFlatList4}
+            renderItem={renderCard4}
+            keyExtractor={(item) => item.key}
+            onScroll={Animated.event(
+              [{nativeEvent: {contentOffset: {x: scrollX4}}}],
+              {useNativeDriver: false}
+              )}
+            scrollEventThrottle={16}
+          />
+
+        </Animated.View>
+
+        <Animated.View style={{...styles.flatListsContainerBottom, backgroundColor: backgroundFlatlist5}}>
+          
+          <LinearGradient colors={['white', 'rgba(255,255,255,0)', 'white']} start={[0.0, 0.1]} end={[0.0, 1.0]}  style={styles.gradinetFlatlist}>
+            </LinearGradient>
+        
+          <View style={styles.titleContainer}>
+            <Text style={styles.titleText}>{choosenLanguage === 'AR' ? '' : title} C1 {choosenLanguage === 'AR' ? title : ''}</Text>
+          </View>
+          <Animated.FlatList 
+            style={styles.flatlist}
+            horizontal
+            showsHorizontalScrollIndicator={false}
+            snapToInterval={cardSize}
+            decelerationRate={0}
+            data={dataFlatList5}
+            renderItem={renderCard5}
+            keyExtractor={(item) => item.key}
+            onScroll={Animated.event(
+              [{nativeEvent: {contentOffset: {x: scrollX5}}}],
+              {useNativeDriver: false}
+              )}
+            scrollEventThrottle={16}
+          />
+
+        </Animated.View>
+
+
+        <Animated.View style={{...styles.flatListsContainerBottom, backgroundColor: backgroundFlatlist6}}>
+          
+          <LinearGradient colors={['white', 'rgba(255,255,255,0)', 'white']} start={[0.0, 0.1]} end={[0.0, 1.0]}  style={styles.gradinetFlatlist}>
+            </LinearGradient>
+        
+          <View style={styles.titleContainer}>
+            <Text style={styles.titleText}>{choosenLanguage === 'AR' ? '' : title} C2 {choosenLanguage === 'AR' ? title : ''}</Text>
+          </View>
+          <Animated.FlatList 
+            style={styles.flatlist}
+            horizontal
+            showsHorizontalScrollIndicator={false}
+            snapToInterval={cardSize}
+            decelerationRate={0}
+            data={dataFlatList6}
+            renderItem={renderCard6}
+            keyExtractor={(item) => item.key}
+            onScroll={Animated.event(
+              [{nativeEvent: {contentOffset: {x: scrollX6}}}],
               {useNativeDriver: false}
               )}
             scrollEventThrottle={16}

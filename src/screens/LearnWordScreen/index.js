@@ -1,4 +1,4 @@
-import { View, Text, FlatList, Animated, Dimensions, TouchableOpacity, Image, Easing } from 'react-native'
+import { View, Text, FlatList, Animated, Dimensions, TouchableOpacity, Image, Easing, AppState } from 'react-native'
 import React, {useEffect, useState, useRef} from 'react'
 import { useNavigation } from "@react-navigation/native";
 import { withAnchorPoint } from 'react-native-anchor-point';
@@ -61,6 +61,7 @@ const LearnWordScreen = ({route}) => {
     const [weeklyPointsVal, setWeeklyPointsVal] = useState(0);
     const [documentIdPoints, setDocumentIdPoints] = useState('tempid');
     const [displayedPoints, setDisplayedPoints] = useState(0);
+    const [appState, setAppState] = useState(AppState.currentState);
     
     
     const docRefPoints = doc(db, "usersPoints", documentIdPoints);
@@ -269,6 +270,21 @@ const LearnWordScreen = ({route}) => {
             
         }
     }, [showContent])
+
+    useEffect(() => {
+        const subscription = AppState.addEventListener("change", nextAppState => {
+          if (appState.match(/inactive|background/) && nextAppState === 'active') {
+            console.log('App has come to the foreground!');
+          } else if (nextAppState === 'background') {
+            console.log('App has gone to the background!');
+          }
+          setAppState(nextAppState);
+        });
+    
+        return () => {
+          subscription.remove();
+        };
+      }, [appState]);
     
 
 

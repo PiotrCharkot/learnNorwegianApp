@@ -13,7 +13,7 @@ export default dataObj = [
         ua: 'Ти любиш їсти піцу з друзями',
         sp: 'Te gusta comer pizza con amigos',
       },
-      soundLink: '',
+      soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FA1x1.mp3?alt=media&token=421fcc5f-cd84-401d-a190-ba63dabbfce8',
       key: 0
     },
     {
@@ -30,7 +30,7 @@ export default dataObj = [
         ua: 'Влітку я часто їжджу на узбережжя з моєю сім\'єю',
         sp: 'En verano, viajo a menudo a la costa con mi familia',
       },
-      soundLink: '',
+      soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FA1x2.mp3?alt=media&token=f584cc78-8b11-47d8-a2bd-8624c15f318a',
       key: 1
     },
     {
@@ -47,7 +47,7 @@ export default dataObj = [
         ua: 'Щоранку я бігаю в парку перед сніданком',
         sp: 'Cada mañana, corro en el parque antes del desayuno',
       },
-      soundLink: '',
+      soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FA1x3.mp3?alt=media&token=c13876bd-9b9f-432f-be96-d8c9a13a39d2',
       key: 2
     },
     {
@@ -64,7 +64,7 @@ export default dataObj = [
         ua: 'Я вчу норвезьку, бо хочу працювати в Норвегії',
         sp: 'Estoy aprendiendo noruego porque quiero trabajar en Noruega',
       },
-      soundLink: '',
+      soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FA1x4.mp3?alt=media&token=19a02f8f-8b78-47c2-a144-9c312bd2c8ac',
       key: 3
     },
     {
@@ -81,7 +81,7 @@ export default dataObj = [
         ua: 'Взимку я їжджу на лижах в горах кожні вихідні',
         sp: 'En invierno, voy a esquiar en las montañas cada fin de semana',
         },
-        soundLink: '',
+        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FA1x5.mp3?alt=media&token=62bd3d7b-7ac7-492d-8fce-8f7a6ff4020d',
         key: 4
     },
     {
@@ -98,7 +98,7 @@ export default dataObj = [
         ua: 'Моя улюблена книга - це роман, який я прочитав минулого року',
         sp: 'Mi libro favorito es una novela que leí el año pasado',
         },
-        soundLink: '',
+        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FA1x6.mp3?alt=media&token=3a58e7d2-0be4-4a78-9a4e-6f15da6fd760',
         key: 5
     },
     {
@@ -115,7 +115,7 @@ export default dataObj = [
         ua: `Я п'ю каву без цукру, але з трохи молока`,
         sp: 'Tomo café sin azúcar, pero con un poco de leche',
         },
-        soundLink: '',
+        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FA1x7.mp3?alt=media&token=c424e2d9-849a-484e-bc91-2b0f12177ed5',
         key: 6
     },
     {
@@ -132,7 +132,7 @@ export default dataObj = [
         ua: 'Я користуюся автобусом до роботи, бо це екологічно',
         sp: 'Uso el autobús para ir al trabajo porque es ecológico',
         },
-        soundLink: '',
+        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FA1x8.mp3?alt=media&token=0557ef62-3a7e-4b4a-9192-6c2c997a0637',
         key: 7
     },
     {
@@ -149,7 +149,7 @@ export default dataObj = [
         ua: 'На вечерю сьогодні я зроблю спагеті з томатним соусом',
         sp: 'Para la cena de hoy, haré espaguetis con salsa de tomate',
         },
-        soundLink: '',
+        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FA1x9.mp3?alt=media&token=958088ce-da13-4925-9e5b-766ace3a19bf',
         key: 8
     },
     {
@@ -166,7 +166,7 @@ export default dataObj = [
         ua: 'Мій брат грає на гітарі в гурті зі своїми друзями',
         sp: 'Mi hermano toca la guitarra en una banda con sus amigos',
         },
-        soundLink: '',
+        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FA1x10.mp3?alt=media&token=dda1e678-943e-4e1e-888a-94955360caab',
         key: 9
     },
     {
@@ -183,7 +183,7 @@ export default dataObj = [
           ua: 'Я часто ходжу в кафе, щоб читати або працювати',
           sp: 'A menudo voy a cafés para leer o trabajar',
         },
-        soundLink: '',
+        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FA1x11.mp3?alt=media&token=f61dd4dc-f7f7-4889-a479-965cf6a29a25',
         key: 10
     },
     {
@@ -200,7 +200,7 @@ export default dataObj = [
           ua: 'Навесні я саджу квіти у своєму саду',
           sp: 'En la primavera, planto flores en mi jardín',
         },
-        soundLink: '',
+        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FA1x12.mp3?alt=media&token=6c760ddc-0037-4130-b173-bae2e8aa2919',
         key: 11
     },
     {
@@ -217,7 +217,7 @@ export default dataObj = [
           ua: 'Я дивлюся норвезький серіал, щоб покращити свою мову',
           sp: 'Veo una serie noruega para mejorar mi idioma',
         },
-        soundLink: '',
+        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FA1x13.mp3?alt=media&token=ff2af900-b8a6-43d1-b4c8-4bb1304f47a9',
         key: 12
     },
     {
@@ -234,7 +234,7 @@ export default dataObj = [
             ua: 'На Різдво ми завжди робимо традиційні норвезькі торти',
             sp: 'Para Navidad, siempre hacemos pasteles noruegos tradicionales',
         },
-        soundLink: '',
+        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FA1x14.mp3?alt=media&token=9db85aa2-4406-40e8-b3eb-8b2e8fedb977',
         key: 13
     },
     {
@@ -251,7 +251,7 @@ export default dataObj = [
             ua: 'Я хочу навчитися пекти хліб вдома',
             sp: 'Quiero aprender a hornear pan en casa',
         },
-        soundLink: '',
+        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FA1x15.mp3?alt=media&token=9ded8e8a-703c-4b1c-9542-cd732a42819a',
         key: 14
     },
     {
@@ -268,7 +268,7 @@ export default dataObj = [
             ua: 'У неділю я часто ходжу до музеїв або художніх галерей',
             sp: 'Los domingos, suelo ir a museos o galerías de arte',
         },
-        soundLink: '',
+        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FA1x16.mp3?alt=media&token=d862d4b0-2a03-42af-a13c-98933ce32e75',
         key: 15
     },
     {
@@ -285,7 +285,7 @@ export default dataObj = [
           ua: "Я завжди п'ю чай вранці, щоб прокинутися",
           sp: 'Siempre tomo té por la mañana para despertarme'
         },
-        soundLink: '',
+        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FA1x17.mp3?alt=media&token=820d84f8-a958-4b6a-95e9-6c2e771f6ed7',
         key: 16
       },
       {
@@ -302,7 +302,7 @@ export default dataObj = [
           ua: 'Вдень я гуляю з моїм собакою в парку',
           sp: 'Por la tarde, paseo con mi perro en el parque'
         },
-        soundLink: '',
+        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FA1x18.mp3?alt=media&token=a6677c84-99f8-4931-b9b4-6df9a5ad254c',
         key: 17
       },
       {
@@ -319,24 +319,24 @@ export default dataObj = [
           ua: 'Мені подобається слухати музику, коли я працюю',
           sp: 'Me gusta escuchar música mientras trabajo'
         },
-        soundLink: '',
+        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FA1x19.mp3?alt=media&token=393ec930-0266-40f3-af35-8d275e9862f3',
         key: 18
       },
       {
-        correctAnswers: ['Min', 'mor', 'lager', 'den', 'beste', 'lasagnen', 'jeg', 'noensinne', 'har', 'smakt'],
-        wordsWithGaps: ['          ', '          ', '          ', '          ', '          ', '          ', '          ', '          ', '          ', '          ', '!!!', 'her', 'noensinne', 'Min', 'smakt', 'lasagnen', 'beste', 'mor', 'den', 'jeg', 'har', 'lager'],
+        correctAnswers: ['Min', 'mor', 'lager', 'den', 'beste', 'lasagnen'],
+        wordsWithGaps: ['          ', '          ', '          ', '          ', '          ', '          ', '!!!', 'den', 'Din', 'lager', 'mor', 'lasagnen', 'Min', 'beste'],
         gapsIndex: [],
         textIndex: [],
         translations: {
-          eng: 'My mother makes the best lasagna I have ever tasted',
-          pl: 'Moja matka robi najlepszą lasagne jaką kiedykolwiek jadłem',
-          ar: 'تصنع أمي أفضل لازانيا ذقتها على الإطلاق',
-          ger: 'Meine Mutter macht die beste Lasagne, die ich je gegessen habe',
-          lt: 'Mano mama gamina geriausią lazaniją, kokią kada nors esu ragavęs',
-          ua: 'Моя мама робить найкращу лазанью, яку я коли-небудь куштував',
-          sp: 'Mi madre hace la mejor lasaña que he probado nunca'
+          eng: 'My mother makes the best lasagna',
+          pl: 'Moja mama robi najlepszą lasagnę',
+          ar: 'والدتي تصنع أفضل لازانيا',
+          ger: 'Meine Mutter macht die beste Lasagne',
+          lt: 'Mano mama gamina geriausią lazaniją',
+          ua: 'Моя мама робить найкращу лазанью',
+          sp: 'Mi madre hace la mejor lasaña',
         },
-        soundLink: '',
+        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FA1x20.mp3?alt=media&token=43a1021f-2ba2-48e6-82fb-4188e08f8858',
         key: 19
       },
       {
@@ -353,7 +353,7 @@ export default dataObj = [
           ua: 'Я вивчаю норвезьку три рази на тиждень на вечірніх курсах',
           sp: 'Estudio noruego tres veces a la semana en cursos nocturnos'
         },
-        soundLink: '',
+        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FA1x21.mp3?alt=media&token=61df33d2-1002-4ec5-9fe3-9387a9062e7d',
         key: 20
       },
       {
@@ -370,7 +370,7 @@ export default dataObj = [
           ua: 'Я дивлюсь новини кожного вечора, щоб практикуватися в норвезькій',
           sp: 'Veo las noticias todas las noches para practicar noruego'
         },
-        soundLink: '',
+        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FA1x22.mp3?alt=media&token=d1814170-ca5b-4d8f-b01e-b2f0bf4e4c0b',
         key: 21
       },
       {
@@ -387,7 +387,7 @@ export default dataObj = [
           ua: 'Минулого вечора ми грали в настільні ігри та добре веселилися',
           sp: 'Anoche jugamos juegos de mesa y nos divertimos mucho'
         },
-        soundLink: '',
+        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FA1x23.mp3?alt=media&token=03e1bee5-25b2-4a36-a327-27c754cf467e',
         key: 22
       },
       {
@@ -404,7 +404,7 @@ export default dataObj = [
           ua: 'Я люблю подорожувати та відкривати нові місця і культури',
           sp: 'Me encanta viajar y descubrir nuevos lugares y culturas'
         },
-        soundLink: '',
+        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FA1x24.mp3?alt=media&token=7dd16aa7-e22e-4328-b85b-3b364ba7d38e',
         key: 23
       },
       {
@@ -421,7 +421,7 @@ export default dataObj = [
           ua: 'Мій дядько працює кухарем у ресторані у місті',
           sp: 'Mi tío trabaja como chef en un restaurante en la ciudad'
         },
-        soundLink: '',
+        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FA1x25.mp3?alt=media&token=1ddb8958-5164-4a7b-b4c6-bd067c9864be',
         key: 24
       },
       {
@@ -438,7 +438,7 @@ export default dataObj = [
           ua: 'Я намагаюся їсти здорову їжу та регулярно займатися спортом',
           sp: 'Intento comer alimentos saludables y hacer ejercicio regularmente'
         },
-        soundLink: '',
+        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FA1x26.mp3?alt=media&token=075bb188-5f2b-4e2e-a32b-0aedaaef7ae2',
         key: 25
       },
       {
@@ -455,7 +455,7 @@ export default dataObj = [
           ua: 'Ви плануєте кемпінг з друзями на наступні вихідні',
           sp: 'Estáis planeando un viaje de camping con amigos el próximo fin de semana'
         },
-        soundLink: '',
+        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FA1x27.mp3?alt=media&token=b03559a9-7f95-40b7-a05f-4036aefb3184',
         key: 26
       },
       {
@@ -472,7 +472,7 @@ export default dataObj = [
           ua: 'Щоранку я пишу щоденник, щоб організувати свої думки',
           sp: 'Cada mañana escribo en un diario para organizar mis pensamientos'
         },
-        soundLink: '',
+        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FA1x28.mp3?alt=media&token=e64e50c4-c375-4be4-8e63-b8e55f2826d6',
         key: 27
       },
       {
@@ -489,7 +489,7 @@ export default dataObj = [
           ua: "У мене є старий кіт на ім'я Луна, і вона дуже лінива",
           sp: 'Tengo un gato viejo llamado Luna, y ella es muy perezosa'
         },
-        soundLink: '',
+        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FA1x29.mp3?alt=media&token=e39acd29-6cbf-45b1-b6f2-c640111b72cb',
         key: 28
       },
       {
@@ -506,7 +506,7 @@ export default dataObj = [
           ua: 'Ви використовуєте громадський транспорт щодня, щоб заощадити гроші',
           sp: 'Usáis el transporte público todos los días para ahorrar dinero'
         },
-        soundLink: '',
+        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FA1x30.mp3?alt=media&token=eb3f5c63-74f4-44c0-af06-f2bb4e0569a9',
         key: 29
       },
       {
@@ -523,7 +523,7 @@ export default dataObj = [
           ua: 'Мені подобається дивитись документальні фільми, щоб дізнаватись про світ',
           sp: 'Me gusta ver documentales para aprender sobre el mundo'
         },
-        soundLink: '',
+        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FA1x31.mp3?alt=media&token=89f399fd-86b6-4885-9436-e47a33462b9a',
         key: 30
       },
       {
@@ -540,7 +540,7 @@ export default dataObj = [
           ua: 'Моя молодша сестра почала ходити до школи цього року',
           sp: 'Mi hermana pequeña empezó a ir al colegio este año'
         },
-        soundLink: '',
+        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FA1x32.mp3?alt=media&token=fa2f6b2d-ef55-4638-a02f-395669fdf66c',
         key: 31
       },
       {
@@ -557,7 +557,7 @@ export default dataObj = [
           ua: 'У новорічну ніч ми дивимося феєрверки та святкуємо з друзями',
           sp: 'En Nochevieja vemos fuegos artificiales y celebramos con amigos'
         },
-        soundLink: '',
+        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FA1x33.mp3?alt=media&token=f47a6a28-480e-4cbd-b6a2-c0c44011a282',
         key: 32
       },
       {
@@ -574,7 +574,7 @@ export default dataObj = [
           ua: 'Мене звати Анна',
           sp: 'Me llamo Anna'
         },
-        soundLink: '',
+        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FA1x34.mp3?alt=media&token=73ee94d2-7d05-46f6-b687-716196500957',
         key: 33
       },
       {
@@ -591,7 +591,7 @@ export default dataObj = [
           ua: 'Як у тебе справи?',
           sp: '¿Cómo estás?'
         },
-        soundLink: '',
+        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FA1x35.mp3?alt=media&token=d70d95dd-5b2a-407f-9723-3e31de50e783',
         key: 34
       },
       {
@@ -608,7 +608,7 @@ export default dataObj = [
           ua: 'Я з Норвегії',
           sp: 'Vengo de Noruega'
         },
-        soundLink: '',
+        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FA1x36.mp3?alt=media&token=0035a2a0-3c7f-47cf-bc5d-281334b7bdab',
         key: 35
       },
       {
@@ -625,7 +625,7 @@ export default dataObj = [
           ua: 'Котра година?',
           sp: '¿Qué hora es?'
         },
-        soundLink: '',
+        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FA1x37.mp3?alt=media&token=2c8ded53-bb49-4ad5-94af-6974a7b4e2e6',
         key: 36
       },
       {
@@ -642,7 +642,7 @@ export default dataObj = [
           ua: 'Я трохи розмовляю норвезькою',
           sp: 'Hablo un poco de noruego'
         },
-        soundLink: '',
+        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FA1x38.mp3?alt=media&token=ea40b54e-4d00-438d-946d-c61bc1342928',
         key: 37
       },
       {
@@ -659,7 +659,7 @@ export default dataObj = [
           ua: 'Чи можеш ти мені допомогти?',
           sp: '¿Puedes ayudarme?'
         },
-        soundLink: '',
+        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FA1x39.mp3?alt=media&token=f66d119d-2e5b-4440-8066-0d7aec74a29a',
         key: 38
       },
       {
@@ -676,7 +676,7 @@ export default dataObj = [
           ua: 'Де знаходиться туалет?',
           sp: '¿Dónde está el baño?'
         },
-        soundLink: '',
+        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FA1x40.mp3?alt=media&token=b34bf48f-7cd8-4b4a-a536-0fc6469f696b',
         key: 39
       },
       {
@@ -693,7 +693,7 @@ export default dataObj = [
           ua: 'Я не розумію.',
           sp: 'No entiendo.'
         },
-        soundLink: '',
+        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FA1x41.mp3?alt=media&token=9d17309c-f6f8-47e8-b470-8fe5564ade74',
         key: 40
       },
       {
@@ -710,7 +710,7 @@ export default dataObj = [
           ua: 'Скільки це коштує?',
           sp: '¿Cuánto cuesta?'
         },
-        soundLink: '',
+        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FA1x42.mp3?alt=media&token=3f0a907e-008a-4878-a6ea-586196253b78',
         key: 41
       },
       {
@@ -727,7 +727,7 @@ export default dataObj = [
           ua: 'Я б хотів каву.',
           sp: 'Me gustaría un café.'
         },
-        soundLink: '',
+        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FA1x43.mp3?alt=media&token=5eed04eb-4ed3-4613-85c8-59ebfe70b5bc',
         key: 42
       },
       {
@@ -744,7 +744,7 @@ export default dataObj = [
           ua: 'Чим ти займаєшся?',
           sp: '¿En qué trabajas?'
         },
-        soundLink: '',
+        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FA1x44.mp3?alt=media&token=760833d2-1548-463a-81d4-accc9d072e10',
         key: 43
       },
       {
@@ -761,7 +761,7 @@ export default dataObj = [
           ua: 'Я вивчаю норвезьку.',
           sp: 'Estoy aprendiendo noruego.'
         },
-        soundLink: '',
+        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FA1x45.mp3?alt=media&token=209a3761-6e83-4684-b1c4-98ebd48472d8',
         key: 44
       },
       {
@@ -778,7 +778,7 @@ export default dataObj = [
           ua: 'Мені подобається читати книжки.',
           sp: 'Me gusta leer libros.'
         },
-        soundLink: '',
+        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FA1x46.mp3?alt=media&token=407e01dd-4a9f-4102-9e75-498df5e5acca',
         key: 45
       },
       {
@@ -795,7 +795,7 @@ export default dataObj = [
           ua: 'Чи можу я заплатити карткою?',
           sp: '¿Puedo pagar con tarjeta?'
         },
-        soundLink: '',
+        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FA1x47.mp3?alt=media&token=aee35b43-9455-4ac0-8340-244e5b016d0b',
         key: 46
       },
       {
@@ -812,7 +812,7 @@ export default dataObj = [
           ua: 'Я голодний.',
           sp: 'Tengo hambre.'
         },
-        soundLink: '',
+        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FA1x48.mp3?alt=media&token=badff81e-be4f-43ea-bd9e-cf0eb7037a38',
         key: 47
       },
       {
@@ -829,7 +829,7 @@ export default dataObj = [
           ua: 'Що ми будемо робити сьогодні?',
           sp: '¿Qué vamos a hacer hoy?'
         },
-        soundLink: '',
+        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FA1x49.mp3?alt=media&token=316f313a-29e0-489b-8611-bab1e7bdc164',
         key: 48
       },
       {
@@ -846,7 +846,7 @@ export default dataObj = [
           ua: 'Я хочу додому.',
           sp: 'Quiero ir a casa.'
         },
-        soundLink: '',
+        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FA1x50.mp3?alt=media&token=cae1ef58-e2cd-45d2-9394-944874f80822',
         key: 49
       },
       {
@@ -863,7 +863,7 @@ export default dataObj = [
           ua: 'Чи є у тебе олівець?',
           sp: '¿Tienes un lápiz?'
         },
-        soundLink: '',
+        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FA1x51.mp3?alt=media&token=bfb3ed6b-3fba-49c0-ac22-8eea151d4951',
         key: 50
       },
       {
@@ -880,7 +880,7 @@ export default dataObj = [
           ua: 'Надворі холодно.',
           sp: 'Hace frío afuera.'
         },
-        soundLink: '',
+        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FA1x52.mp3?alt=media&token=31632281-0cc4-4b20-9abc-aea6337c4b1d',
         key: 51
       },
       {
@@ -897,7 +897,7 @@ export default dataObj = [
           ua: 'Чи можеш ти говорити повільніше?',
           sp: '¿Puedes hablar más despacio?'
         },
-        soundLink: '',
+        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FA1x53.mp3?alt=media&token=763a6fc7-2dd4-490b-903d-2e24adbb8cb9',
         key: 52
       },
       {
@@ -914,7 +914,7 @@ export default dataObj = [
           ua: 'Я живу в Осло.',
           sp: 'Vivo en Oslo.'
         },
-        soundLink: '',
+        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FA1x54.mp3?alt=media&token=9468c52f-068d-44af-95bf-1b1c915da536',
         key: 53
       },
       {
@@ -931,7 +931,7 @@ export default dataObj = [
           ua: 'У неї дві сестри.',
           sp: 'Ella tiene dos hermanas.'
         },
-        soundLink: '',
+        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FA1x55.mp3?alt=media&token=63bf7138-d450-4c88-92cf-192f31046690',
         key: 54
       },
       {
@@ -948,7 +948,7 @@ export default dataObj = [
           ua: 'Я встаю о сьомій.',
           sp: 'Me levanto a las siete.'
         },
-        soundLink: '',
+        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FA1x56.mp3?alt=media&token=27244f3c-042c-4481-a7ef-a4c81e7237c9',
         key: 55
       },
       {
@@ -965,7 +965,7 @@ export default dataObj = [
           ua: 'Він їде до Іспанії завтра.',
           sp: 'Él viaja a España mañana.'
         },
-        soundLink: '',
+        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FA1x57.mp3?alt=media&token=a5acdfcc-7f2d-4c36-9436-b62ef8b4b7f7',
         key: 56
       },
       {
@@ -982,7 +982,7 @@ export default dataObj = [
           ua: 'Я граю в футбол.',
           sp: 'Juego al fútbol.'
         },
-        soundLink: '',
+        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FA1x58.mp3?alt=media&token=3881fd45-e383-4283-aa48-5f5864b92bac',
         key: 57
       },
       {
@@ -999,7 +999,7 @@ export default dataObj = [
           ua: 'Я слухаю музику.',
           sp: 'Escucho música.'
         },
-        soundLink: '',
+        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FA1x59.mp3?alt=media&token=41a06e24-4a6e-40a7-a4fe-e0030d4aba67',
         key: 58
       },
       {
@@ -1016,7 +1016,7 @@ export default dataObj = [
           ua: 'Сьогодні йде дощ.',
           sp: 'Hoy está lloviendo.'
         },
-        soundLink: '',
+        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FA1x60.mp3?alt=media&token=2fd81697-7f77-426d-8a0a-f7453b116e7c',
         key: 59
       },
       {
@@ -1033,7 +1033,7 @@ export default dataObj = [
           ua: 'Я тебе люблю.',
           sp: 'Te quiero.'
         },
-        soundLink: '',
+        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FA1x61.mp3?alt=media&token=3f2336aa-da96-482e-822b-2a7930e36061',
         key: 60
       },
       {
@@ -1050,7 +1050,7 @@ export default dataObj = [
           ua: 'У тебе є собака.',
           sp: 'Tienes un perro.'
         },
-        soundLink: '',
+        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FA1x62.mp3?alt=media&token=ac357c56-ff42-44d7-a5be-f70d7a5f586e',
         key: 61
       },
       {
@@ -1067,7 +1067,7 @@ export default dataObj = [
           ua: 'Що ти робиш?',
           sp: '¿Qué estás haciendo?'
         },
-        soundLink: '',
+        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FA1x63.mp3?alt=media&token=96f285cf-c1fd-405b-8954-c0e56b2d47c1',
         key: 62
       },
       {
@@ -1084,7 +1084,7 @@ export default dataObj = [
           ua: 'Я купую їжу.',
           sp: 'Estoy comprando comida.'
         },
-        soundLink: '',
+        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FA1x64.mp3?alt=media&token=8d6c33ab-fe61-4cce-bc25-d5ea548c589c',
         key: 63
       },
       {
@@ -1101,7 +1101,7 @@ export default dataObj = [
           ua: 'Я спраглий.',
           sp: 'Tengo sed.'
         },
-        soundLink: '',
+        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FA1x65.mp3?alt=media&token=7c132067-9e23-4967-94e7-465bebd361eb',
         key: 64
       },
       {
@@ -1118,7 +1118,7 @@ export default dataObj = [
           ua: 'Чи можеш повторити?',
           sp: '¿Puedes repetir eso?'
         },
-        soundLink: '',
+        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FA1x66.mp3?alt=media&token=b2cfba6c-82f6-4bf6-a715-ef90812bc17a',
         key: 65
       },
       {
@@ -1135,7 +1135,7 @@ export default dataObj = [
           ua: 'Я тренуюся щодня.',
           sp: 'Hago ejercicio todos los días.'
         },
-        soundLink: '',
+        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FA1x67.mp3?alt=media&token=8d416baa-5823-44f9-a4fc-456d455a221a',
         key: 66
       },
       {
@@ -1152,7 +1152,7 @@ export default dataObj = [
           ua: 'Я готую вечерю.',
           sp: 'Estoy haciendo la cena.'
         },
-        soundLink: '',
+        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FA1x68.mp3?alt=media&token=a59f1532-6b01-44d5-baf9-607ac4bd0e4e',
         key: 67
       },
       {
@@ -1169,7 +1169,7 @@ export default dataObj = [
           ua: 'Що це?',
           sp: '¿Qué es esto?'
         },
-        soundLink: '',
+        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FA1x69.mp3?alt=media&token=7215a1d1-c7a8-446b-abd3-156467384ba6',
         key: 68
       },
       {
@@ -1186,7 +1186,7 @@ export default dataObj = [
           ua: 'Я читаю книгу.',
           sp: 'Estoy leyendo un libro.'
         },
-        soundLink: '',
+        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FA1x70.mp3?alt=media&token=1644f0c7-76db-44c3-886c-ab18f4bfee53',
         key: 69
       },
       {
@@ -1203,7 +1203,7 @@ export default dataObj = [
           ua: 'Він пише лист.',
           sp: 'Él está escribiendo una carta.'
         },
-        soundLink: '',
+        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FA1x71.mp3?alt=media&token=8bcef740-4e48-46bd-95ac-85ee4fbca287',
         key: 70
       },
       {
@@ -1220,7 +1220,7 @@ export default dataObj = [
           ua: 'Я вивчаю норвезьку.',
           sp: 'Estoy estudiando noruego.'
         },
-        soundLink: '',
+        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FA1x72.mp3?alt=media&token=100e5bd0-ebf1-4b7b-929b-fcc678b50563',
         key: 71
       },
       {
@@ -1237,7 +1237,7 @@ export default dataObj = [
           ua: 'Сьогодні твій день народження.',
           sp: 'Es tu cumpleaños hoy.'
         },
-        soundLink: '',
+        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FA1x73.mp3?alt=media&token=88090417-0450-4ca6-89b8-2f5dcdf0f4f3',
         key: 72
       },
       {
@@ -1254,7 +1254,7 @@ export default dataObj = [
           ua: "Як тебе звати?",
           sp: "¿Cómo te llamas?"
         },
-        soundLink: '',
+        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FA1x74.mp3?alt=media&token=0cb07a24-9d13-476b-bd84-17730af64a3a',
         key: 73
       },
       {
@@ -1271,7 +1271,7 @@ export default dataObj = [
           ua: "Звідки ти?",
           sp: "¿De dónde eres?"
         },
-        soundLink: '',
+        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FA1x75.mp3?alt=media&token=9e681fb5-61a6-49ed-a32d-729c69bd16ff',
         key: 74
       },
       {
@@ -1288,7 +1288,7 @@ export default dataObj = [
           ua: "Скільки тобі років?",
           sp: "¿Cuántos años tienes?"
         },
-        soundLink: '',
+        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FA1x76.mp3?alt=media&token=50027fcd-3d4f-47e9-b3fd-a2c9c3f634a9',
         key: 75
       },
       {
@@ -1305,7 +1305,7 @@ export default dataObj = [
           ua: "Чи є у тебе брати чи сестри?",
           sp: "¿Tienes hermanos?"
         },
-        soundLink: '',
+        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FA1x77.mp3?alt=media&token=456ce9d2-3303-44d0-b024-4efcad8f5938',
         key: 76
       },
       {
@@ -1322,7 +1322,7 @@ export default dataObj = [
           ua: "Яка твоя професія?",
           sp: "¿Cuál es tu profesión?"
         },
-        soundLink: '',
+        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FA1x78.mp3?alt=media&token=1477aef8-7eb7-42e6-8b8a-7262cfc2940b',
         key: 77
       },
       {
@@ -1339,7 +1339,7 @@ export default dataObj = [
           ua: "Тобі подобається читати книги?",
           sp: "¿Te gusta leer libros?"
         },
-        soundLink: '',
+        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FA1x79.mp3?alt=media&token=fba6dd56-813c-4697-98d1-92cb72b87790',
         key: 78
       },
       {
@@ -1356,7 +1356,7 @@ export default dataObj = [
           ua: "Що ти їси на сніданок?",
           sp: "¿Qué comes para el desayuno?"
         },
-        soundLink: '',
+        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FA1x80.mp3?alt=media&token=f87f6eff-9487-44ad-9704-794f95e7ec12',
         key: 79
       },
       {
@@ -1373,7 +1373,7 @@ export default dataObj = [
           ua: "Де ти живеш?",
           sp: "¿Dónde vives?"
         },
-        soundLink: '',
+        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FA1x81.mp3?alt=media&token=a27c635d-d3e3-41ca-9260-5b89abdaf811',
         key: 80
       },
       {
@@ -1390,7 +1390,7 @@ export default dataObj = [
           ua: "Чи говориш ти англійською?",
           sp: "¿Hablas inglés?"
         },
-        soundLink: '',
+        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FA1x82.mp3?alt=media&token=7b77ee6f-a33f-4ab1-8517-fbcf4124a503',
         key: 81
       },
       {
@@ -1407,7 +1407,7 @@ export default dataObj = [
           ua: 'Я не говорю французькою.',
           sp: 'No hablo francés.'
         },
-        soundLink: '',
+        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FA1x83.mp3?alt=media&token=5751e894-f528-4a6d-9412-0ad08e3875d9',
         key: 82
       },
       {
@@ -1424,7 +1424,7 @@ export default dataObj = [
           ua: 'Мені не подобається кава.',
           sp: 'No me gusta el café.'
         },
-        soundLink: '',
+        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FA1x84.mp3?alt=media&token=ab4a8d30-f91e-4d14-91cf-f6226f38633c',
         key: 83
       },
       {
@@ -1441,7 +1441,7 @@ export default dataObj = [
           ua: 'У мене немає машини.',
           sp: 'No tengo un coche.'
         },
-        soundLink: '',
+        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FA1x85.mp3?alt=media&token=b30c3c3c-06e4-4428-97ff-65bc7c3ac1f4',
         key: 84
       },
       {
@@ -1458,7 +1458,7 @@ export default dataObj = [
           ua: 'Я не живу в Осло.',
           sp: 'No vivo en Oslo.'
         },
-        soundLink: '',
+        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FA1x86.mp3?alt=media&token=aaf7e7af-7a20-48da-912f-1e2112de9c17',
         key: 85
       },
       {
@@ -1475,7 +1475,7 @@ export default dataObj = [
           ua: 'Ти не працюєш у суботу.',
           sp: 'No trabajas los sábados.'
         },
-        soundLink: '',
+        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FA1x87.mp3?alt=media&token=08fb866f-7c1f-4f60-adf4-219b9ffe03df',
         key: 86
       },
       {
@@ -1492,7 +1492,7 @@ export default dataObj = [
           ua: 'Ми не йдемо сьогодні ввечері в кіно.',
           sp: 'No vamos al cine esta noche.'
         },
-        soundLink: '',
+        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FA1x88.mp3?alt=media&token=185fdc25-9139-438f-81dd-083d505924e7',
         key: 87
       },
       {
@@ -1509,7 +1509,7 @@ export default dataObj = [
           ua: 'Вона не має кота.',
           sp: 'Ella no tiene un gato.'
         },
-        soundLink: '',
+        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FA1x89.mp3?alt=media&token=195d22bc-156c-4cab-91f1-1e9d15f3aedf',
         key: 88
       },
       {
@@ -1526,7 +1526,7 @@ export default dataObj = [
           ua: "Вони не їдять м'ясо.",
           sp: 'Ellos no comen carne.'
         },
-        soundLink: '',
+        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FA1x90.mp3?alt=media&token=a78d108f-7e05-497e-bb02-76c025d902ad',
         key: 89
       },
       {
@@ -1543,7 +1543,7 @@ export default dataObj = [
           ua: "Я не п'ю молоко на сніданок.",
           sp: 'No bebo leche en el desayuno.'
         },
-        soundLink: '',
+        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FA1x91.mp3?alt=media&token=a5903f62-d6c1-4b0f-883e-9143e0edb881',
         key: 90
       },
       {
@@ -1560,7 +1560,7 @@ export default dataObj = [
           ua: 'Він не читає книг.',
           sp: 'Él no lee libros.'
         },
-        soundLink: '',
+        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FA1x92.mp3?alt=media&token=43d02a16-818e-44d8-97ae-22020ddf5899',
         key: 91
       },
       {
@@ -1577,7 +1577,7 @@ export default dataObj = [
             ua: 'Ви дуже добре говорите норвезькою',
             sp: 'Hablan muy bien noruego',
         },
-        soundLink: '',
+        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FA1x93.mp3?alt=media&token=30eedf90-eb41-4ada-bf5e-b9aaf000d918',
         key: 92
     },
     {
@@ -1594,7 +1594,7 @@ export default dataObj = [
             ua: 'Вона ходить до школи щодня',
             sp: 'Ella va a la escuela todos los días',
         },
-        soundLink: '',
+        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FA1x94.mp3?alt=media&token=7192497e-20bf-4771-9acc-12fc77701e27',
         key: 93
     },
     {
@@ -1611,7 +1611,7 @@ export default dataObj = [
             ua: "Нам подобається їсти піцу в п'ятниці",
             sp: 'Nos gusta comer pizza los viernes',
         },
-        soundLink: '',
+        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FA1x95.mp3?alt=media&token=49e2bd5a-598f-48b3-b5b0-7be3c6c006c6',
         key: 94
     },
     {
@@ -1628,7 +1628,7 @@ export default dataObj = [
             sp: 'Viven en una gran ciudad, ¿verdad?',
             ger: 'Ihr wohnt in einer großen Stadt, nicht wahr?'
         },
-        soundLink: '',
+        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FA1x96.mp3?alt=media&token=8cfa18fd-007e-4631-9958-77bfadc149be',
         key: 95
     },
     {
@@ -1645,7 +1645,7 @@ export default dataObj = [
             sp: 'Ella lee un libro por la noche.',
             ger: 'Sie liest abends ein Buch.'
         },
-        soundLink: '',
+        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FA1x97.mp3?alt=media&token=ce594e7f-0eaa-4a77-9eec-4a8792e45742',
         key: 96
     },
     {
@@ -1662,7 +1662,7 @@ export default dataObj = [
             sp: 'Vamos a España este verano.',
             ger: 'Wir fahren diesen Sommer nach Spanien.'
         },
-        soundLink: '',
+        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FA1x98.mp3?alt=media&token=1f702a60-123e-4001-b57e-6ae4084f4787',
         key: 97
     },
     {
@@ -1679,7 +1679,7 @@ export default dataObj = [
             sp: 'Hace frío afuera en invierno.',
             ger: 'Es ist kalt draußen im Winter.'
         },
-        soundLink: '',
+        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FA1x99.mp3?alt=media&token=53acdce1-1ae7-4710-968d-2688524f3553',
         key: 98
     },
     {
@@ -1696,7 +1696,7 @@ export default dataObj = [
             sp: 'Aprenden noruego muy rápido.',
             ger: 'Ihr lernt Norwegisch sehr schnell.'
         },
-        soundLink: '',
+        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FA1x100.mp3?alt=media&token=e2f8d0ef-b4b9-40e8-9666-816c0a8aa91a',
         key: 99
     },
     {
@@ -1713,7 +1713,7 @@ export default dataObj = [
             sp: 'Ella no toma café por la mañana.',
             ger: 'Sie trinkt morgens keinen Kaffee.'
         },
-        soundLink: '',
+        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FA1x101.mp3?alt=media&token=c9554639-2dea-45f2-9e11-2556dc8d8e8c',
         key: 100
     },
     {
@@ -1730,7 +1730,7 @@ export default dataObj = [
             sp: 'Vemos una película juntos todos los sábados.',
             ger: 'Wir schauen jeden Samstag zusammen einen Film.'
         },
-        soundLink: '',
+        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FA1x102.mp3?alt=media&token=98b493bb-0d8d-4998-a597-b2c7b99b28be',
         key: 101
     },
     {
@@ -1747,7 +1747,7 @@ export default dataObj = [
             sp: 'Hay un gato fuera de la ventana.',
             ger: 'Es gibt eine Katze vor dem Fenster.'
         },
-        soundLink: '',
+        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FA1x103.mp3?alt=media&token=21fb74bd-6395-4c2a-8328-03d6e66c1836',
         key: 102
     },
     {
@@ -1764,7 +1764,7 @@ export default dataObj = [
             sp: 'A menudo van de paseo por el bosque.',
             ger: 'Ihr geht oft im Wald spazieren.'
         },
-        soundLink: '',
+        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FA1x104.mp3?alt=media&token=a9d84636-f236-45f1-9916-462ca6090041',
         key: 103
     },
     {
@@ -1781,7 +1781,7 @@ export default dataObj = [
             sp: 'Ella canta muy hermosamente.',
             ger: 'Sie singt sehr schön.'
         },
-        soundLink: '',
+        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FA1x105.mp3?alt=media&token=79b66ab8-7eaa-4a78-8736-783fbbcc2da9',
         key: 104
     },
     {
@@ -1798,7 +1798,7 @@ export default dataObj = [
             sp: 'Tenemos un pequeño jardín detrás de la casa.',
             ger: 'Wir haben einen kleinen Garten hinter dem Haus.'
         },
-        soundLink: '',
+        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FA1x106.mp3?alt=media&token=69bcf501-caa4-4304-80d8-1358fda8df0d',
         key: 105
     },
     {
@@ -1815,7 +1815,7 @@ export default dataObj = [
             sp: 'Hay muchos libros en la biblioteca.',
             ger: 'Es gibt viele Bücher in der Bibliothek.'
         },
-        soundLink: '',
+        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FA1x107.mp3?alt=media&token=3668ff9d-351a-4124-8608-8e86f0f5b8bc',
         key: 106
     },
     {
@@ -1832,7 +1832,7 @@ export default dataObj = [
             sp: 'Jugáis al fútbol después de la escuela.',
             ger: 'Ihr spielt Fußball nach der Schule.'
         },
-        soundLink: '',
+        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FA1x108.mp3?alt=media&token=df3092d2-b022-4bb8-a55c-cf8cb1386967',
         key: 107
     },
     {
@@ -1849,7 +1849,7 @@ export default dataObj = [
             sp: 'Ella tiene una bicicleta azul.',
             ger: 'Sie hat ein blaues Fahrrad.'
         },
-        soundLink: '',
+        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FA1x109.mp3?alt=media&token=ce375f8c-6518-4c84-89ad-7957fe0b8b41',
         key: 108
     },
     {
@@ -1866,7 +1866,7 @@ export default dataObj = [
             sp: 'Desayunamos a las ocho.',
             ger: 'Wir frühstücken um acht Uhr.'
         },
-        soundLink: '',
+        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FA1x110.mp3?alt=media&token=8d7c5bdc-ed18-469b-bc64-e9fd1d0c794c',
         key: 109
     },
     {
@@ -1883,7 +1883,7 @@ export default dataObj = [
             sp: 'Hoy es mi cumpleaños.',
             ger: 'Heute ist mein Geburtstag.'
         },
-        soundLink: '',
+        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FA1x111.mp3?alt=media&token=fb75bde7-2fd9-49aa-8ace-b5136bb7c02c',
         key: 110
     }
       

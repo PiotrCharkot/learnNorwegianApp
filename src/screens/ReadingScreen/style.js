@@ -53,15 +53,18 @@ const styles = StyleSheet.create({
     flatListsContainer: {
         marginTop: 235,
     },
+    flatListsContainerBottom: {
+        marginTop: 50,
+    },
     titleContainer: {
         position: 'absolute',
         alignItems: 'center',
         justifyContent: 'center',
         backgroundColor: 'white',
         height: 20,
-        width: 120,
+        width: 160,
         top: -10,
-        left: screenWidth / 2 - 60
+        left: screenWidth / 2 - 80
     },
     titleText: {
         fontWeight: '900',

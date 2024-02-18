@@ -1,23 +1,21 @@
 export default dataObj = [
     {
         key: 0,
-        textId: 0,
+        textId: 60,
         title: 'Studentlivet i Oslo',
-        level: 'A1'
+        level: 'B2'
    },
     {
         key: 1,
-        textId: 1,
+        textId: 61,
         title: 'Min Daglige Rutine',
-        level: 'A1'
+        level: 'B2'
    },
    {
        key: 2,
        textId: 61,
-       title: 'Min Daglige Rutine',
-       level: 'A1'
+       title: 'Min Daglige Rutine bb',
+       level: 'B2'
   },
    
 ];
-
-

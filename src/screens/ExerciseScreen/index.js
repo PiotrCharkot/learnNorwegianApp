@@ -46,7 +46,7 @@ const ExerciseScreen = () => {
   const [languageListOpen, setLanguageListOpen] = useState(false);
   const [dataFlatList, setDataFlatList] = useState([]);
   const [random, setRandom] = useState(0);
-  const [title1, setTitle1] = useState('level');
+  const [title1, setTitle1] = useState('Level');
   const [readingBtnTxt, setReadingButtonTxt] = useState('Reading');
   const [dataListening, setDataListening] = useState({})
   
@@ -223,22 +223,22 @@ const ExerciseScreen = () => {
       setTitle1('Poziom');
     } else if (choosenLanguage === 'DE') {
       setReadingButtonTxt('Czytanie niem');
-      setTitle1('Poziom niem');
+      setTitle1('Niveau');
     } else if (choosenLanguage === 'LT') {
       setReadingButtonTxt('Czytanie lt');
-      setTitle1('litews');
+      setTitle1('Lygis');
     } else if (choosenLanguage === 'AR') {
       setReadingButtonTxt('Czytaniearabskui');
-      setTitle1('arabski');
+      setTitle1('مستوى');
     } else if (choosenLanguage === 'UA') {
       setReadingButtonTxt('Czytanieua');
-      setTitle1('ukrai');
+      setTitle1('Pівень');
     } else if (choosenLanguage === 'ES') {
       setReadingButtonTxt('Czytaniesp');
-      setTitle1('spanish');
+      setTitle1('Nivel');
     } else if (choosenLanguage === 'EN') {
       setReadingButtonTxt('Reading');
-      setTitle1('level');
+      setTitle1('Level');
     }
   }, [choosenLanguage])
   
@@ -392,7 +392,7 @@ const ExerciseScreen = () => {
             </LinearGradient>
         
           <View style={styles.titleContainer}>
-            <Text style={styles.titleText}>{title1}</Text>
+            <Text style={styles.titleText}>{choosenLanguage === 'AR' ? '' : title1} A1 {choosenLanguage === 'AR' ? title1 : ''}</Text>
           </View>
           <Animated.FlatList 
             style={styles.flatlist}

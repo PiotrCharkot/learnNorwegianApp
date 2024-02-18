@@ -62,7 +62,7 @@ const CardReading = (params) => {
             <Image style={styles.picture} source={require('../../../assets/openBook.png')}/>
 
             <View style={styles.levelContainer}>
-                <Text style={styles.levelText}>A1</Text>
+                <Text style={styles.levelText}>{params.level}</Text>
             </View>
                 
             <View style={styles.blackSquare}></View>

@@ -7,7 +7,6 @@ const styles = StyleSheet.create({
     mainContainer: {
         height: '100%',
         backgroundColor: 'black'
-        
     },
     head: {
         height: 90
@@ -41,7 +40,7 @@ const styles = StyleSheet.create({
         top: 50
     },
     body: {
-        flex: 1
+        flex: 1,
     },
     titleCont: {
         width: '100%',
@@ -60,7 +59,7 @@ const styles = StyleSheet.create({
     },
     textMainContainer: {
         paddingTop: 50,
-        paddingHorizontal: 20
+        paddingHorizontal: 20,
     },
     textMain: {
         color: 'white',

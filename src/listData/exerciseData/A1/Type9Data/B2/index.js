@@ -13,7 +13,7 @@ export default dataObj = [
           ua: 'Я щойно закінчив книгу про історію Норвегії',
           sp: 'Acabo de terminar un libro sobre la historia de Noruega',
         },
-        soundLink: '',
+        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FB2x1.mp3?alt=media&token=0b123ede-036e-486d-953e-4d802ad78294',
         key: 0
     },
     {
@@ -30,7 +30,7 @@ export default dataObj = [
           ua: 'Вона вже відвідала більшість європейських столиць',
           sp: 'Ya ha visitado la mayoría de las capitales europeas',
         },
-        soundLink: '',
+        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FB2x2.mp3?alt=media&token=d6bf3a84-8c18-4782-84be-23f1ca60a302',
         key: 1
     },
     {
@@ -47,7 +47,7 @@ export default dataObj = [
           ua: 'Ми довго розглядали можливість переїзду до іншої країни',
           sp: 'Hemos considerado durante mucho tiempo mudarnos a otro país',
         },
-        soundLink: '',
+        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FB2x3.mp3?alt=media&token=2dcaea8e-abb9-4807-89e2-def944c8646f',
         key: 2
       },
       {
@@ -64,7 +64,7 @@ export default dataObj = [
           ua: 'Він нещодавно розпочав власний бізнес у сфері технологій',
           sp: 'Recientemente ha iniciado su propio negocio en tecnología',
         },
-        soundLink: '',
+        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FB2x4.mp3?alt=media&token=98b404b6-af40-4291-87d1-418088496adc',
         key: 3
       },
       {
@@ -81,7 +81,7 @@ export default dataObj = [
           ua: 'Вони разом створили успішну кампанію в соціальних мережах',
           sp: 'Han creado juntos una exitosa campaña de redes sociales',
         },
-        soundLink: '',
+        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FB2x5.mp3?alt=media&token=3810f7fd-e436-4650-a51f-7365f39f8af9',
         key: 4
       },
       {
@@ -98,7 +98,7 @@ export default dataObj = [
           ua: 'Я вивчаю іспанську, бо планую поїздку до Південної Америки',
           sp: 'Estoy aprendiendo español porque planeo viajar a Sudamérica',
         },
-        soundLink: '',
+        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FB2x6.mp3?alt=media&token=b542f38e-a537-4006-8f85-c74617e54944',
         key: 5
       },
       {
@@ -115,7 +115,7 @@ export default dataObj = [
           ua: 'Вона працює волонтером у екологічній організації',
           sp: 'Trabaja como voluntaria en una organización ambiental',
         },
-        soundLink: '',
+        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FB2x7.mp3?alt=media&token=d9ba9d19-d57a-4548-bc81-84587746cefc',
         key: 6
       },
       {
@@ -132,7 +132,7 @@ export default dataObj = [
           ua: 'Ми часто обговорюємо важливість сталого розвитку',
           sp: 'A menudo discutimos la importancia del desarrollo sostenible',
         },
-        soundLink: '',
+        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FB2x8.mp3?alt=media&token=5f46c79f-808b-44f1-8d6e-b12048ffaf60',
         key: 7
       },
       {
@@ -149,7 +149,7 @@ export default dataObj = [
           ua: 'Він вивчає щодня, щоб покращити свої мовні навички',
           sp: 'Estudia todos los días para mejorar sus habilidades lingüísticas',
         },
-        soundLink: '',
+        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FB2x9.mp3?alt=media&token=26f78359-e6c2-44af-950e-5d2eeed458ac',
         key: 8
       },
       {
@@ -166,7 +166,7 @@ export default dataObj = [
           ua: 'Вони організовують культурні заходи, щоб сприяти різноманіттю',
           sp: 'Organizan eventos culturales para promover la diversidad',
         },
-        soundLink: '',
+        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FB2x10.mp3?alt=media&token=6c27fb63-084c-4b8d-aea2-693949052c3e',
         key: 9
       },
       {
@@ -183,7 +183,7 @@ export default dataObj = [
           ua: 'Вона сказала, що жила у Франції два роки',
           sp: 'Dijo que había vivido en Francia durante dos años',
         },
-        soundLink: '',
+        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FB2x11.mp3?alt=media&token=4f5d9b9e-d2bf-463c-b3da-2de9673495ee',
         key: 10
       },
       {
@@ -200,7 +200,7 @@ export default dataObj = [
           ua: 'Вчитель сказав нам, що ми швидко покращимо наші мовні навички',
           sp: 'El profesor nos dijo que mejoraríamos nuestras habilidades lingüísticas rápidamente',
         },
-        soundLink: '',
+        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FB2x12.mp3?alt=media&token=f2139306-0838-40c2-8b3d-2898c99287e5',
         key: 11
       },
       {
@@ -217,7 +217,7 @@ export default dataObj = [
           ua: 'Він сказав, що наступного місяця розпочне новий проект',
           sp: 'Dijo que iba a empezar un nuevo proyecto el próximo mes',
         },
-        soundLink: '',
+        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FB2x13.mp3?alt=media&token=b134394c-d565-4c1e-844e-033c25bb8e8c',
         key: 12
       },
       {
@@ -234,7 +234,7 @@ export default dataObj = [
           ua: 'Вони згадали, що бачили цікаву виставку сучасного мистецтва',
           sp: 'Mencionaron que habían visto una exposición interesante sobre arte moderno',
         },
-        soundLink: '',
+        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FB2x14.mp3?alt=media&token=22890f13-4250-4aa5-948a-c8abf2c5c298',
         key: 13
       },
       {
@@ -251,7 +251,7 @@ export default dataObj = [
             sp: 'Oí que planean abrir un nuevo restaurante en la ciudad.',
             ger: 'Ich habe gehört, dass sie planen, ein neues Restaurant in der Stadt zu eröffnen.'
         },
-        soundLink: '',
+        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FB2x15.mp3?alt=media&token=3cdd4caa-c0eb-4794-80e4-540521484f21',
         key: 14
     },
     {
@@ -268,7 +268,7 @@ export default dataObj = [
             sp: 'Se dice que Noruega es uno de los países más felices del mundo.',
             ger: 'Es wird gesagt, dass Norwegen eines der glücklichsten Länder der Welt ist.'
         },
-        soundLink: '',
+        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FB2x16.mp3?alt=media&token=b06b6220-1b30-4e81-a602-f987b8d2e0a1',
         key: 15
     },
     {
@@ -285,12 +285,12 @@ export default dataObj = [
             sp: 'Se ha construido un nuevo puente sobre el fiordo.',
             ger: 'Eine neue Brücke wurde über den Fjord gebaut.'
         },
-        soundLink: '',
+        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FB2x17.mp3?alt=media&token=6b399018-41d7-47da-9abc-daba4f6d4652',
         key: 16
     },
     {
-        correctAnswers: ['Mange', 'bøker', 'har', 'blitt', 'skrevet', 'om', 'vikingenes', 'historie'],
-        wordsWithGaps: ['          ', '          ', '          ', '          ', '          ', '          ', '          ', '          ', '!!!', 'historie', 'Mange', 'har', 'bøker', 'blitt', 'skrevet', 'om', 'ble', 'vikingenes'],
+        correctAnswers: ['Mange', 'bøker', 'er', 'blitt', 'skrevet', 'om', 'vikingenes', 'historie'],
+        wordsWithGaps: ['          ', '          ', '          ', '          ', '          ', '          ', '          ', '          ', '!!!', 'historie', 'Mange', 'er', 'bøker', 'blitt', 'skrevet', 'om', 'ble', 'vikingenes'],
         gapsIndex: [],
         textIndex: [],
         translations: {
@@ -302,7 +302,7 @@ export default dataObj = [
             sp: 'Se han escrito muchos libros sobre la historia de los vikingos.',
             ger: 'Viele Bücher wurden über die Geschichte der Wikinger geschrieben.'
         },
-        soundLink: '',
+        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FB2x18.mp3?alt=media&token=d3f779ea-b939-4d55-9d8b-d1b9337e036d',
         key: 17
     },
     {
@@ -319,7 +319,7 @@ export default dataObj = [
             sp: 'Nuestro proyecto fue presentado en la conferencia internacional.',
             ger: 'Unser Projekt wurde auf der internationalen Konferenz vorgestellt.'
         },
-        soundLink: '',
+        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FB2x19.mp3?alt=media&token=5ce23ac1-ffc1-4087-b28d-ea02f82fa104',
         key: 18
     },
     {
@@ -336,7 +336,7 @@ export default dataObj = [
             sp: 'Esta película ha sido criticada por su falta de precisión histórica.',
             ger: 'Dieser Film wurde wegen seines Mangels an historischer Genauigkeit kritisiert.'
         },
-        soundLink: '',
+        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FB2x20.mp3?alt=media&token=fd56eecb-a087-49cb-9dcf-a092565d26bf',
         key: 19
     },
     {
@@ -353,7 +353,7 @@ export default dataObj = [
             sp: 'Siempre he soñado con viajar por el mundo.',
             ger: 'Ich habe immer davon geträumt, um die Welt zu reisen.'
         },
-        soundLink: '',
+        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FB2x21.mp3?alt=media&token=84a358a7-2ba0-40d2-9d76-3428f0bbb381',
         key: 20
     },
     {
@@ -370,7 +370,7 @@ export default dataObj = [
             sp: 'Se le ha ofrecido un puesto en la universidad.',
             ger: 'Ihr wurde eine Stelle an der Universität angeboten.'
         },
-        soundLink: '',
+        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FB2x22.mp3?alt=media&token=a384f5c4-52b1-451d-82b1-535e08867dde',
         key: 21
     },
     {
@@ -387,7 +387,7 @@ export default dataObj = [
             sp: 'Hemos discutido este problema, pero aún no hemos encontrado una solución.',
             ger: 'Wir haben dieses Problem diskutiert, aber noch keine Lösung gefunden.'
         },
-        soundLink: '',
+        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FB2x23.mp3?alt=media&token=39c68c6c-3f50-4113-832d-9094c260cefb',
         key: 22
     },
     {
@@ -404,7 +404,7 @@ export default dataObj = [
             sp: 'Dijo que había estado trabajando allí por más de diez años.',
             ger: 'Er sagte, er habe dort seit über zehn Jahren gearbeitet.'
         },
-        soundLink: '',
+        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FB2x24.mp3?alt=media&token=0deafe9d-8111-43c9-904f-ce5f9043a3ce',
         key: 23
     },
     {
@@ -421,7 +421,7 @@ export default dataObj = [
             sp: 'Se ha informado que los cambios climáticos afectan los patrones meteorológicos globales.',
             ger: 'Es wurde berichtet, dass Klimaveränderungen globale Wettermuster beeinflussen.'
         },
-        soundLink: '',
+        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FB2x25.mp3?alt=media&token=5ff45af9-3cd1-415e-9952-ebb45a5b7e83',
         key: 24
     },
     {
@@ -438,7 +438,7 @@ export default dataObj = [
             sp: 'Recientemente he aprendido que meditar puede mejorar la salud mental.',
             ger: 'Ich habe kürzlich gelernt, dass Meditation die psychische Gesundheit verbessern kann.'
         },
-        soundLink: '',
+        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FB2x26.mp3?alt=media&token=bb58f4c7-785c-4a15-a34f-7283de266f51',
         key: 25
     },
     {
@@ -455,7 +455,7 @@ export default dataObj = [
             sp: 'Ella me dijo que pronto estará en una expedición de investigación.',
             ger: 'Sie hat mir erzählt, dass sie bald auf eine Forschungsexpedition gehen wird.'
         },
-        soundLink: '',
+        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FB2x27.mp3?alt=media&token=737ce678-f4fb-49c1-b722-586056ac52cb',
         key: 26
     },
     {
@@ -472,7 +472,7 @@ export default dataObj = [
             sp: 'Se ha desarrollado una nueva tecnología para combatir la contaminación por plásticos.',
             ger: 'Eine neue Technologie wurde entwickelt, um Plastikverschmutzung zu bekämpfen.'
         },
-        soundLink: '',
+        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FB2x28.mp3?alt=media&token=bf82961f-6def-48a6-89cb-a94c0dcbd892',
         key: 27
     },
     {
@@ -489,7 +489,7 @@ export default dataObj = [
             sp: 'Hemos visto un aumento en el interés por el turismo sostenible.',
             ger: 'Wir haben ein gesteigertes Interesse an nachhaltigem Tourismus festgestellt.'
         },
-        soundLink: '',
+        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FB2x29.mp3?alt=media&token=258b65a0-2818-481f-be6c-9827f6c001ac',
         key: 28
     },
     {
@@ -506,7 +506,7 @@ export default dataObj = [
             sp: 'Se ha anunciado que el festival tendrá lugar de manera digital este año.',
             ger: 'Es wurde angekündigt, dass das Festival in diesem Jahr digital stattfinden wird.'
         },
-        soundLink: '',
+        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FB2x30.mp3?alt=media&token=c3d7e0a4-6e97-4f8b-b331-a7f96035a849',
         key: 29
     },
     {
@@ -523,7 +523,7 @@ export default dataObj = [
             sp: 'He sido más consciente de mi propio consumo.',
             ger: 'Ich bin mir meines eigenen Verbrauchs bewusster geworden.'
         },
-        soundLink: '',
+        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FB2x31.mp3?alt=media&token=660e3024-6013-4a9a-bbd7-21c138abf998',
         key: 30
     },
     {
@@ -540,7 +540,7 @@ export default dataObj = [
             sp: 'Mencionó que había cambiado su dieta para ser más sostenible.',
             ger: 'Sie erwähnte, dass sie ihre Ernährung geändert hat, um nachhaltiger zu sein.'
         },
-        soundLink: '',
+        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FB2x32.mp3?alt=media&token=e8f7032a-350b-4123-b6cb-1e6f5e39ccbe',
         key: 31
     },
     {
@@ -557,7 +557,7 @@ export default dataObj = [
             sp: 'Nuestras sugerencias fueron bien recibidas durante la reunión.',
             ger: 'Unsere Vorschläge wurden während des Treffens gut aufgenommen.'
         },
-        soundLink: '',
+        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FB2x33.mp3?alt=media&token=5e7653a2-76a1-4a2f-a9c0-cad3eeeacd3e',
         key: 32
     },
     {
@@ -574,7 +574,7 @@ export default dataObj = [
             sp: 'Ha explorado diversas culturas a través de sus viajes.',
             ger: 'Er hat verschiedene Kulturen durch seine Reisen erkundet.'
         },
-        soundLink: '',
+        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FB2x34.mp3?alt=media&token=be2c84fc-a2fe-4c46-bf6e-f6b87b8d3c5d',
         key: 33
     },
     {
@@ -591,7 +591,7 @@ export default dataObj = [
             sp: 'Se ha establecido que la lectura mejora las habilidades lingüísticas.',
             ger: 'Es wurde festgestellt, dass Lesen die Sprachkenntnisse verbessert.'
         },
-        soundLink: '',
+        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FB2x35.mp3?alt=media&token=975c8196-5010-4bff-9205-9c0935737de1',
         key: 34
     },
     {
@@ -608,7 +608,7 @@ export default dataObj = [
             sp: 'He descubierto que el ejercicio regular mejora la productividad.',
             ger: 'Ich habe herausgefunden, dass regelmäßige Bewegung die Produktivität steigert.'
         },
-        soundLink: '',
+        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FB2x36.mp3?alt=media&token=6d0f4a07-dd6f-4336-b4b7-eb9fad597cb4',
         key: 35
     },
     {
@@ -625,7 +625,7 @@ export default dataObj = [
             sp: 'Se sorprendió cuando ganó el concurso de fotografía.',
             ger: 'Sie war überrascht, als sie den Fotowettbewerb gewann.'
         },
-        soundLink: '',
+        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FB2x37.mp3?alt=media&token=469dcb91-03f7-4e00-9814-67052b859fc1',
         key: 36
     },
     {
@@ -642,7 +642,7 @@ export default dataObj = [
             sp: 'Hemos aprendido mucho de nuestros errores durante este proyecto.',
             ger: 'Wir haben aus unseren Fehlern bei diesem Projekt viel gelernt.'
         },
-        soundLink: '',
+        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FB2x38.mp3?alt=media&token=c960a020-a875-48c5-8a21-69ebc081fbc5',
         key: 37
     },
     {
@@ -659,12 +659,12 @@ export default dataObj = [
             sp: 'Dijo que iban a renovar su casa el próximo año.',
             ger: 'Er sagte, sie würden ihr Haus nächstes Jahr renovieren.'
         },
-        soundLink: '',
+        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FB2x39.mp3?alt=media&token=53d18599-7bbc-428e-8730-57f74226a73d',
         key: 38
     },
     {
-        correctAnswers: ['Ny', 'forskning', 'har', 'blitt', 'publisert', 'om', 'effekten', 'av', 'sosiale', 'medier', 'på', 'samfunnet'],
-        wordsWithGaps: ['          ', '          ', '          ', '          ', '          ', '          ', '          ', '          ', '          ', '          ', '          ', '          ', '!!!', 'samfunnet', 'av', 'medier', 'Ny', 'forskning', 'på', 'har', 'lav', 'publisert', 'effekten', 'blitt', 'om', 'sosiale'],
+        correctAnswers: ['Ny', 'forskning', 'er', 'blitt', 'publisert', 'om', 'effekten', 'av', 'sosiale', 'medier', 'på', 'samfunnet'],
+        wordsWithGaps: ['          ', '          ', '          ', '          ', '          ', '          ', '          ', '          ', '          ', '          ', '          ', '          ', '!!!', 'samfunnet', 'av', 'medier', 'Ny', 'forskning', 'på', 'er', 'lav', 'publisert', 'effekten', 'blitt', 'om', 'sosiale'],
         gapsIndex: [],
         textIndex: [],
         translations: {
@@ -676,7 +676,7 @@ export default dataObj = [
             sp: 'Se ha publicado una nueva investigación sobre el efecto de las redes sociales en la sociedad.',
             ger: 'Es wurde eine neue Forschung über die Auswirkungen von sozialen Medien auf die Gesellschaft veröffentlicht.'
         },
-        soundLink: '',
+        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FB2x40.mp3?alt=media&token=f2282a9f-2c84-4dc2-b18d-31b3ec4c9b1d',
         key: 39
     },
     {
@@ -693,7 +693,7 @@ export default dataObj = [
             sp: 'Me han inspirado las personas que marcan la diferencia.',
             ger: 'Ich wurde von Menschen inspiriert, die einen Unterschied machen.'
         },
-        soundLink: '',
+        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FB2x41.mp3?alt=media&token=4d657871-654a-426d-8c28-5eb6fbc7cd58',
         key: 40
     },
     {
@@ -710,7 +710,7 @@ export default dataObj = [
             sp: 'Ha desarrollado una aplicación que ayuda a los usuarios a reducir el desperdicio de alimentos.',
             ger: 'Sie hat eine App entwickelt, die Nutzern hilft, Lebensmittelverschwendung zu reduzieren.'
         },
-        soundLink: '',
+        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FB2x42.mp3?alt=media&token=eaaed419-1ac2-45c4-a18e-dd6ff1fef43d',
         key: 41
     },
     {
@@ -727,7 +727,7 @@ export default dataObj = [
             sp: 'Se ha observado un aumento en el uso de energía renovable.',
             ger: 'Ein Anstieg der Nutzung erneuerbarer Energien wurde beobachtet.'
         },
-        soundLink: '',
+        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FB2x43.mp3?alt=media&token=6f473d1e-3db6-4776-8f18-0aa0de3fccbe',
         key: 42
     },
     {
@@ -744,7 +744,7 @@ export default dataObj = [
             sp: 'Fuimos informados sobre los cambios en las directrices.',
             ger: 'Wir wurden über die Änderungen in den Richtlinien informiert.'
         },
-        soundLink: '',
+        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FB2x44.mp3?alt=media&token=adee09a2-ffef-46a5-a588-5e3b7a9628fc',
         key: 43
     },
     {
@@ -761,7 +761,7 @@ export default dataObj = [
             sp: 'Visité un festival internacional de cine y vi muchas películas inspiradoras.',
             ger: 'Ich habe ein internationales Filmfestival besucht und viele inspirierende Filme gesehen.'
         },
-        soundLink: '',
+        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FB2x45.mp3?alt=media&token=d6066c49-415c-4979-b129-fe280c6dde79',
         key: 44
     },
     {
@@ -778,7 +778,7 @@ export default dataObj = [
             sp: 'Obtuvo una maestría en desarrollo sostenible el año pasado.',
             ger: 'Sie hat letztes Jahr einen Masterabschluss in nachhaltiger Entwicklung gemacht.'
         },
-        soundLink: '',
+        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FB2x46.mp3?alt=media&token=b43f3c1d-0239-4468-a9b3-d305f568f18e',
         key: 45
     },
     {
@@ -795,7 +795,7 @@ export default dataObj = [
             sp: 'Organizamos un proyecto de arte callejero que transformó nuestro vecindario.',
             ger: 'Wir haben ein Straßenkunstprojekt organisiert, das unser Viertel verwandelt hat.'
         },
-        soundLink: '',
+        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FB2x47.mp3?alt=media&token=ec0d0107-7c61-4feb-aa6c-783504162824',
         key: 46
     },
     {
@@ -812,7 +812,7 @@ export default dataObj = [
             sp: 'Aprendió a programar y desarrolló su primera aplicación el verano pasado.',
             ger: 'Er hat das Programmieren gelernt und letzten Sommer seine erste App entwickelt.'
         },
-        soundLink: '',
+        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FB2x48.mp3?alt=media&token=ce7385ca-7b9d-4fd9-b7d3-d7800e417f2d',
         key: 47
     }
 ]
