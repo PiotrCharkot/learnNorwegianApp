@@ -72,8 +72,7 @@ const styles = StyleSheet.create({
     bonusPointsContainer: {
         position: 'absolute',
         right: 20,
-        flexDirection: 'row',
-        
+        flexDirection: 'row'
     },
     bonusPointsText: {
         fontSize: 24,

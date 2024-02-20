@@ -120,17 +120,17 @@ const Type1 = ({route}) => {
       }
     } else {
       if (savedLang === 'PL') {
-          setInstructions('polskie instrukcje type 1')
+          setInstructions('Wybierz właściwe słowo, aby uzupełnić zdanie.')
         } else if (savedLang === 'DE') {
-          setInstructions('niemieckie instrukcje type 1')
+          setInstructions('Wähle das richtige Wort, um den Satz zu vervollständigen.')
         } else if (savedLang === 'LT') {
-          setInstructions('litewskie instrukcje type 1')
+          setInstructions('Pasirinkite teisingą žodį, kad užbaigtumėte sakinį.')
         } else if (savedLang === 'AR') {
-          setInstructions('arabskie instrukcje type 1')
+          setInstructions('اختر الكلمة الصحيحة لإكمال الجملة')
         } else if (savedLang === 'UA') {
-          setInstructions('ukr instrukcje type 1')
+          setInstructions('Виберіть правильне слово, щоб завершити речення.')
         } else if (savedLang === 'ES') {
-          setInstructions('esp instrukcje type 1')
+          setInstructions('Elige la palabra correcta para completar la oración.')
       }
     }
     
@@ -341,6 +341,7 @@ const styles = StyleSheet.create({
     justifyContent: 'flex-end',
     alignItems: 'center', 
     backgroundColor: 'lightgrey', 
+    paddingHorizontal: 5,
     borderRadius: 6,
     transform: [{translateY: 3}]
     

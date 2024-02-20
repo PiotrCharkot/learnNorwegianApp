@@ -18,6 +18,9 @@ const pointsToScore = 200;
 const minimumPoints = 1;
 let openTime;
 let closeTime;
+let startBackgroundTime;
+let endBackgroundTime;
+let backgroundTime = 0;
 
 
 
@@ -83,6 +86,7 @@ const LearnWordScreen = ({route}) => {
         closeTime = new Date().getTime();
 
         console.log('screen was on in ', openTime - closeTime, 'miliseconds.');
+        console.log('my time in background: ', backgroundTime);
         
         Animated.spring(interpolatedValueForX, {
             toValue: 360,
@@ -92,6 +96,8 @@ const LearnWordScreen = ({route}) => {
         }).start();
     
         updatePointsInFb();
+
+        backgroundTime = 0;
     
         setTimeout(() => {
     
@@ -103,7 +109,7 @@ const LearnWordScreen = ({route}) => {
             } else {
                 navigation.navigate('Main');
             }
-        }, 1300)
+        }, 1000)
     }
 
     const getTransform = (viewHeight, viewWidth, transValA, transValB, valX, valY) => {
@@ -114,9 +120,9 @@ const LearnWordScreen = ({route}) => {
     };
 
 
-    const showPointsAnimation = () => {
+    const showPointsAnimation = (bonusPoints) => {
 
-        let bonusPoints2 = Math.floor((closeTime - openTime) / 1000 * 2 / 3) 
+        //let bonusPoints2 = Math.floor((closeTime - openTime - backgroundTime) / 1000 * 2 / 3) 
         //animate points container
         Animated.spring(pointsOffset, {
             toValue: 0,
@@ -140,7 +146,7 @@ const LearnWordScreen = ({route}) => {
             useNativeDriver: true,
         }).start();
 
-        if (currentDailyScore < pointsToScore && currentDailyScore + bonusPoints2 >= pointsToScore && bonusPoints2 > minimumPoints) {
+        if (currentDailyScore < pointsToScore && currentDailyScore + bonusPoints >= pointsToScore && bonusPoints > minimumPoints) {
             Animated.spring(daysOffset, {
                 toValue: 0,
                 speed: 1,
@@ -155,7 +161,7 @@ const LearnWordScreen = ({route}) => {
 
     const updatePointsInFb = async () => {
 
-        let bonusPoints = Math.floor((closeTime - openTime) / 1000 * 2 / 3) 
+        let bonusPoints = Math.floor((closeTime - openTime - backgroundTime) / 1000 * 2 / 3) 
         console.log('bounus points is: ', bonusPoints);
 
         setDisplayedPoints(bonusPoints)
@@ -163,7 +169,7 @@ const LearnWordScreen = ({route}) => {
         if (documentIdPoints !== 'tempid' && bonusPoints > minimumPoints) {
 
         
-            showPointsAnimation();
+            showPointsAnimation(bonusPoints);
 
             updateDoc(docRefPoints, {
                 dailyPoints: lastUpdateVal === new Date().toLocaleDateString() ? currentDailyScore + bonusPoints : bonusPoints,
@@ -271,12 +277,19 @@ const LearnWordScreen = ({route}) => {
         }
     }, [showContent])
 
+
     useEffect(() => {
+
         const subscription = AppState.addEventListener("change", nextAppState => {
           if (appState.match(/inactive|background/) && nextAppState === 'active') {
             console.log('App has come to the foreground!');
+            endBackgroundTime = new Date().getTime();
+
+            backgroundTime = backgroundTime + endBackgroundTime - startBackgroundTime;
           } else if (nextAppState === 'background') {
             console.log('App has gone to the background!');
+            startBackgroundTime = new Date().getTime();
+
           }
           setAppState(nextAppState);
         });
@@ -284,7 +297,7 @@ const LearnWordScreen = ({route}) => {
         return () => {
           subscription.remove();
         };
-      }, [appState]);
+    }, [appState]);
     
 
 

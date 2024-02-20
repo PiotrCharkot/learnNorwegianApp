@@ -1,4 +1,4 @@
-import { View, Text, Animated, TouchableOpacity, FlatList, Image, Dimensions, Easing } from 'react-native'
+import { View, Text, Animated, TouchableOpacity, FlatList, Image, Dimensions, Easing, AppState  } from 'react-native'
 import React, { useRef, useState, useEffect } from 'react';
 import { useNavigation } from "@react-navigation/native";
 import { db } from '../../../firebase/firebase-config'
@@ -19,6 +19,9 @@ const minimumPoints = 1;
 let indexOfElement;
 let openTime;
 let closeTime;
+let startBackgroundTime;
+let endBackgroundTime;
+let backgroundTime = 0;
 
 
 const TestWordScreen = ({route}) => {
@@ -72,6 +75,7 @@ const TestWordScreen = ({route}) => {
     const [flipOnStart, setFlipOnStart] = useState(false);
     const [lastIdentification, setLastIdentification] = useState(200);
     const [displayedPoints, setDisplayedPoints] = useState(0);
+    const [appState, setAppState] = useState(AppState.currentState);
     
     const docRef = doc(db, "usersWordsInfo", documentId);
     const docRefPoints = doc(db, "usersPoints", documentIdPoints);
@@ -139,6 +143,7 @@ const TestWordScreen = ({route}) => {
         closeTime = new Date().getTime();
 
         console.log('test screen was on in ', closeTime - openTime, 'miliseconds.');
+        console.log('my time in background: ', backgroundTime);
         
         Animated.spring(interpolatedValueForX, {
             toValue: 360,
@@ -150,7 +155,9 @@ const TestWordScreen = ({route}) => {
         updateUsersWordInfo();
 
         updatePointsInFb();
-        
+
+        backgroundTime = 0;
+    
     
         setTimeout(() => {
     
@@ -163,7 +170,7 @@ const TestWordScreen = ({route}) => {
             } else {
                 navigation.navigate('Main');
             }
-        }, 1300)
+        }, 1000)
     }
 
     const getTransform = (viewHeight, viewWidth, transValA, transValB, valX, valY) => {
@@ -310,9 +317,9 @@ const TestWordScreen = ({route}) => {
 
     }
 
-    const showPointsAnimation = () => {
+    const showPointsAnimation = (bonusPoints) => {
 
-        let bonusPoints2 = Math.floor((closeTime - openTime) / 1000 * 2 / 3) 
+        //let bonusPoints2 = Math.floor((closeTime - openTime - backgroundTime) / 1000 * 2 / 3) 
         //animate points container
         Animated.spring(pointsOffset, {
             toValue: 0,
@@ -336,7 +343,7 @@ const TestWordScreen = ({route}) => {
             useNativeDriver: true,
         }).start();
 
-        if (currentDailyScore < pointsToScore && currentDailyScore + bonusPoints2 >= pointsToScore && bonusPoints2 > minimumPoints) {
+        if (currentDailyScore < pointsToScore && currentDailyScore + bonusPoints >= pointsToScore && bonusPoints > minimumPoints) {
             Animated.spring(daysOffset, {
                 toValue: 0,
                 speed: 1,
@@ -350,7 +357,7 @@ const TestWordScreen = ({route}) => {
 
     const updatePointsInFb = async () => {
 
-        let bonusPoints = Math.floor((closeTime - openTime) / 1000 * 2 / 3) 
+        let bonusPoints = Math.floor((closeTime - openTime - backgroundTime) / 1000 * 2 / 3) 
         console.log('bounus points is: ', bonusPoints);
 
         setDisplayedPoints(bonusPoints)
@@ -358,7 +365,7 @@ const TestWordScreen = ({route}) => {
         if (documentIdPoints !== 'tempid' && bonusPoints > minimumPoints) {
 
         
-            showPointsAnimation();
+            showPointsAnimation(bonusPoints);
 
             updateDoc(docRefPoints, {
                 dailyPoints: lastUpdateVal === new Date().toLocaleDateString() ? currentDailyScore + bonusPoints : bonusPoints,
@@ -375,6 +382,27 @@ const TestWordScreen = ({route}) => {
             })
         }
     }
+
+    useEffect(() => {
+
+        const subscription = AppState.addEventListener("change", nextAppState => {
+          if (appState.match(/inactive|background/) && nextAppState === 'active') {
+            console.log('App has come to the foreground!');
+            endBackgroundTime = new Date().getTime();
+
+            backgroundTime = backgroundTime + endBackgroundTime - startBackgroundTime;
+          } else if (nextAppState === 'background') {
+            console.log('App has gone to the background!');
+            startBackgroundTime = new Date().getTime();
+
+          }
+          setAppState(nextAppState);
+        });
+    
+        return () => {
+          subscription.remove();
+        };
+    }, [appState]);
     
     const renderCard = ({item, index}) => {
 

@@ -13,6 +13,7 @@ import type5prep from '../../../../../listData/exerciseData/A1/Type5Data/Preposi
 import type6prep from '../../../../../listData/exerciseData/A1/Type6Data/Prepositions'
 import type7prep from '../../../../../listData/exerciseData/A1/Type7Data/Prepositions'
 import type8prep from '../../../../../listData/exerciseData/A1/Type8Data/Prepositions'
+import aatest from '../../../../../listData/aatest';
 
 
 // import files with data and Loader component
@@ -32,8 +33,8 @@ const dataForMarkers = {
 // set correct firsts link and data type
 
 
-const typesInSet = [type1prep, type4prep, type2prep, type1prep, type5prep, type6prep, type7prep, type8prep];
-const linkList = ['Exc1x2x1', 'Type4', 'Type2', 'Type1', 'Type5', 'Type6', 'Type7', 'Type8'];
+const typesInSet = [aatest, aatest, type4prep, type2prep, type5prep, type6prep, type7prep, type8prep];
+const linkList = ['Exc1x2x1', 'Type1', 'Type4', 'Type2', 'Type5', 'Type6', 'Type7', 'Type8'];
 let usedItems = [];
 
 
@@ -154,17 +155,17 @@ const Exc1x2x1 = ({route}) => {
 
       
       if (savedLang === 'PL') {
-        setInstructions('polskie instrukcje')
+        setInstructions('Wybierz właściwe słowo, aby uzupełnić zdanie.')
       } else if (savedLang === 'DE') {
-        setInstructions('niemieckie instrukcje')
+        setInstructions('Wähle das richtige Wort, um den Satz zu vervollständigen.')
       } else if (savedLang === 'LT') {
-        setInstructions('litewskie instrukcje')
+        setInstructions('Pasirinkite teisingą žodį, kad užbaigtumėte sakinį.')
       } else if (savedLang === 'AR') {
-        setInstructions('arabskie instrukcje')
+        setInstructions('اختر الكلمة الصحيحة لإكمال الجملة')
       } else if (savedLang === 'UA') {
-        setInstructions('ukr instrukcje')
+        setInstructions('Виберіть правильне слово, щоб завершити речення.')
       } else if (savedLang === 'ES') {
-        setInstructions('esp instrukcje')
+        setInstructions('Elige la palabra correcta para completar la oración.')
       }
       
       setLanguage(savedLang)
@@ -513,6 +514,7 @@ const styles = StyleSheet.create({
     justifyContent: 'flex-end',
     alignItems: 'center', 
     backgroundColor: 'lightgrey', 
+    paddingHorizontal: 5,
     borderRadius: 6,
     transform: [{translateY: 3}]
     

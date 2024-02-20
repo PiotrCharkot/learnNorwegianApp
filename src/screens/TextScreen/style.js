@@ -72,7 +72,35 @@ const styles = StyleSheet.create({
         textAlign: 'justify' ,
         paddingTop: 10,
         paddingBottom: 0,
-    }
+    },
+    bonusPointsContainer: {
+        position: 'absolute',
+        right: 20,
+        flexDirection: 'row'
+    },
+    bonusPointsText: {
+        fontSize: 24,
+        fontWeight: '600',
+        color: '#00308f'
+    },
+    daysValContainer: {
+        position: 'absolute',
+        flexDirection: 'row',
+        justifyContent: 'center',
+        alignItems: 'center',
+        marginLeft: 20,
+        left: 0
+    },
+    daysValText: {
+        fontSize: 24,
+        fontWeight: '500',
+        color: 'brown'
+    },
+    sunImg: {
+        height: 20,
+        width: 20,
+        tintColor: 'brown'
+    },
 });
 
 
