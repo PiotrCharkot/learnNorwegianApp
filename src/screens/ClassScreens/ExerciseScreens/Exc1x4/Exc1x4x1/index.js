@@ -15,6 +15,7 @@ import type5prep from '../../../../../listData/exerciseData/A1/Type5Data/Preposi
 import type6prep from '../../../../../listData/exerciseData/A1/Type6Data/Prepositions'
 import type7prep from '../../../../../listData/exerciseData/A1/Type7Data/Prepositions'
 import type8prep from '../../../../../listData/exerciseData/A1/Type8Data/Prepositions'
+import aatest from '../../../../../listData/aatest';
 
 
 const dataForMarkers = {
@@ -25,7 +26,7 @@ const dataForMarkers = {
 
 
 
-const typesInSet = [type3prep, type3prep, type2prep, type1prep, type5prep, type6prep, type7prep, type8prep];
+const typesInSet = [aatest, aatest, type2prep, type1prep, type5prep, type6prep, type7prep, type8prep];
 const linkList = ['Exc1x4x1', 'Type3', 'Type2', 'Type1', 'Type5', 'Type6', 'Type7', 'Type8'];
 let usedItems = [];
 
@@ -65,7 +66,7 @@ const Exc1x4x1 = ({ route }) => {
     const [resetCheck, setResetCheck] = useState(false);
     const [latestScreenAnswered, setLatestScreenAnswered] = useState(0);
     const [correctAnswers, setCorrectAnswers]= useState([]);
-    const [instructions, setInstructions] = useState('some instructions');
+    const [instructions, setInstructions] = useState('Drag and drop the words into the correct gaps.');
     const [newInstructions, setNewInstructions] = useState('');
     const [language, setLanguage] = useState('EN');
     
@@ -91,17 +92,17 @@ const Exc1x4x1 = ({ route }) => {
 
           
           if (savedLang === 'PL') {
-            setInstructions('polskie instrukcje')
+            setInstructions('Przeciągnij i upuść słowa we właściwe luki.')
           } else if (savedLang === 'DE') {
-            setInstructions('niemieckie instrukcje')
+            setInstructions('Ziehe die Wörter in die richtigen Lücken.')
           } else if (savedLang === 'LT') {
-            setInstructions('litewskie instrukcje')
+            setInstructions('Tempkite žodžius į teisingas vietas.')
           } else if (savedLang === 'AR') {
-            setInstructions('arabskie instrukcje')
+            setInstructions('اسحب وأفلت الكلمات في الفراغات الصحيحة')
           } else if (savedLang === 'UA') {
-            setInstructions('ukr instrukcje')
+            setInstructions('Перетягніть слова в правильні пропуски.')
           } else if (savedLang === 'ES') {
-            setInstructions('esp instrukcje')
+            setInstructions('Arrastra y suelta las palabras en los huecos correctos.')
           }
           
           setLanguage(savedLang)
@@ -337,10 +338,10 @@ const Exc1x4x1 = ({ route }) => {
                         <LinearGradient
                         colors={isCorrect[index] === 0 || index > exeList[0].correctAnswers.length ? [gradientTop, gradientBottom] : isCorrect[index] === 1 ? [correct , correct1] : [incorrect1 , incorrect]}
                         key={index}
-                            style={[
-                            isMovedOver && styles.draggableContainerSwap,
-                            item.trim() == '' && !exeList[0].gapsIndex.includes(index) ?  styles.draggableContainerEmpty : styles.draggableContainer,
-                            ]}
+                          style={[
+                          isMovedOver && styles.draggableContainerSwap,
+                          item.trim() == '' && !exeList[0].gapsIndex.includes(index) ?  styles.draggableContainerEmpty : styles.draggableContainer,
+                          ]}
                         >
                             
                             <Text style={styles.textInDraggable}>{item}</Text>
@@ -428,7 +429,7 @@ const styles = StyleSheet.create({
     paddingVertical: 6,
     justifyContent: 'center',
     borderRadius: 8,
-    margin: 6,
+    margin: 4,
     overflow: "hidden",
     backgroundColor: 'lightgreen'
   },
@@ -457,7 +458,7 @@ const styles = StyleSheet.create({
     color: 'white'
   },
   exgzampleText: {
-    fontSize: 12,
+    fontSize: 13,
     fontWeight: '500',
     flexWrap: 'wrap',
     
@@ -466,7 +467,7 @@ const styles = StyleSheet.create({
     flexWrap: 'wrap',
     justifyContent: 'center',
     height: 30,
-    marginVertical: 6,
+    marginVertical: 4,
     marginHorizontal: 2
     
   },
@@ -475,6 +476,7 @@ const styles = StyleSheet.create({
     borderBottomWidth: 0.5,
     height: 20,
     width: '100%',
+    marginBottom: 10
   },
   lineBreaker: {
     borderBottomColor: 'lightgrey',

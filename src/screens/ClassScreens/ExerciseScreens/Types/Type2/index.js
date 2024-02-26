@@ -42,7 +42,7 @@ const Type2 = ({route}) => {
     const [comeBack, setComeBack] = useState(false);
     const [resetCheck, setResetCheck] = useState(false);
     const [latestScreenAnswered, setLatestScreenAnswered] = useState(latestAnswered);
-    const [instructions, setInstructions] = useState('some instructions english type 2');
+    const [instructions, setInstructions] = useState('Match items to their matches.');
     const [newInstructions, setNewInstructions] = useState('');
 
     useFocusEffect(() => {
@@ -76,17 +76,17 @@ const Type2 = ({route}) => {
           }
         } else {
           if (savedLang === 'PL') {
-              setInstructions('polskie instrukcje type 2')
+              setInstructions('Dopasuj elementy do ich par.')
             } else if (savedLang === 'DE') {
-              setInstructions('niemieckie instrukcje type 2')
+              setInstructions('Ordne die Elemente ihren Pendants zu.')
             } else if (savedLang === 'LT') {
-              setInstructions('litewskie instrukcje type 2')
+              setInstructions('Suderinkite elementus su jų poromis.')
             } else if (savedLang === 'AR') {
-              setInstructions('arabskie instrukcje type 2')
+              setInstructions('طابق العناصر مع مثيلاتها')
             } else if (savedLang === 'UA') {
-              setInstructions('ukr instrukcje type 2')
+              setInstructions('Відповідайте елементи з їх парами.')
             } else if (savedLang === 'ES') {
-              setInstructions('esp instrukcje type 2')
+              setInstructions('Empareja los elementos con sus pares.')
           }
         }
     })

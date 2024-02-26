@@ -15,6 +15,7 @@ import type5prep from '../../../../../listData/exerciseData/A1/Type5Data/Preposi
 import type6prep from '../../../../../listData/exerciseData/A1/Type6Data/Prepositions'
 import type7prep from '../../../../../listData/exerciseData/A1/Type7Data/Prepositions'
 import type8prep from '../../../../../listData/exerciseData/A1/Type8Data/Prepositions'
+import aatest from '../../../../../listData/aatest';
 
 
 const dataForMarkers = {
@@ -25,8 +26,8 @@ const dataForMarkers = {
   
 
 
-const typesInSet = [type8prep, type4prep, type2prep, type1prep, type5prep, type6prep, type7prep, type8prep];
-const linkList = ['Exc1x9x1', 'Type4', 'Type2', 'Type1', 'Type5', 'Type6', 'Type7', 'Type8'];
+const typesInSet = [aatest, aatest, type2prep, type1prep, type5prep, type6prep, type7prep];
+const linkList = ['Exc1x9x1', 'Type8', 'Type2', 'Type1', 'Type5', 'Type6', 'Type7'];
 let usedItems = [];
 
 
@@ -58,7 +59,7 @@ const Exc1x9x1 = ({ route }) => {
     const [resetCheck, setResetCheck] = useState(false);
     const [latestScreenAnswered, setLatestScreenAnswered] = useState(0);
     const [correctAnswers, setCorrectAnswers]= useState([]);
-    const [instructions, setInstructions] = useState('some instructions');
+    const [instructions, setInstructions] = useState('Sort the words to form a correct sentence.');
     const [newInstructions, setNewInstructions] = useState('');
     const [language, setLanguage] = useState('EN');
 
@@ -131,17 +132,17 @@ const Exc1x9x1 = ({ route }) => {
           }
 
           if (savedLang === 'PL') {
-            setInstructions('polskie instrukcje')
+            setInstructions('Uporządkuj słowa, aby utworzyć poprawne zdanie.')
           } else if (savedLang === 'DE') {
-            setInstructions('niemieckie instrukcje')
+            setInstructions('Sortiere die Wörter, um einen korrekten Satz zu bilden.')
           } else if (savedLang === 'LT') {
-            setInstructions('litewskie instrukcje')
+            setInstructions('Sudėliokite žodžius į teisingą sakinį.')
           } else if (savedLang === 'AR') {
-            setInstructions('arabskie instrukcje')
+            setInstructions('رتب الكلمات لتكوين جملة صحيحة')
           } else if (savedLang === 'UA') {
-            setInstructions('ukr instrukcje')
+            setInstructions('Впорядкуйте слова, щоб сформувати правильне речення.')
           } else if (savedLang === 'ES') {
-            setInstructions('esp instrukcje')
+            setInstructions('Ordena las palabras para formar una oración correcta.')
           }
           
           setLanguage(savedLang)

@@ -33,7 +33,7 @@ const Type8 = ({ route }) => {
     const [comeBack, setComeBack] = useState(false);
     const [resetCheck, setResetCheck] = useState(false);
     const [latestScreenAnswered, setLatestScreenAnswered] = useState(latestAnswered);
-    const [instructions, setInstructions] = useState('some instructions english type 1');
+    const [instructions, setInstructions] = useState('Sort the words to form a correct sentence.');
     const [newInstructions, setNewInstructions] = useState('');
 
     const a1background = useRef(new Animated.Value(0)).current;
@@ -113,17 +113,17 @@ const Type8 = ({ route }) => {
         }
       } else {
         if (savedLang === 'PL') {
-            setInstructions('polskie instrukcje type 8')
+            setInstructions('Uporządkuj słowa, aby utworzyć poprawne zdanie.')
           } else if (savedLang === 'DE') {
-            setInstructions('niemieckie instrukcje type 8')
+            setInstructions('Sortiere die Wörter, um einen korrekten Satz zu bilden.')
           } else if (savedLang === 'LT') {
-            setInstructions('litewskie instrukcje type 8')
+            setInstructions('Sudėliokite žodžius į teisingą sakinį.')
           } else if (savedLang === 'AR') {
-            setInstructions('arabskie instrukcje type 8')
+            setInstructions('رتب الكلمات لتكوين جملة صحيحة')
           } else if (savedLang === 'UA') {
-            setInstructions('ukr instrukcje type 8')
+            setInstructions('Впорядкуйте слова, щоб сформувати правильне речення.')
           } else if (savedLang === 'ES') {
-            setInstructions('esp instrukcje type 8')
+            setInstructions('Ordena las palabras para formar una oración correcta.')
         }
       }
     })

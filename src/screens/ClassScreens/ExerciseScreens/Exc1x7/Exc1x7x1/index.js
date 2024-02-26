@@ -15,6 +15,7 @@ import type5prep from '../../../../../listData/exerciseData/A1/Type5Data/Preposi
 import type6prep from '../../../../../listData/exerciseData/A1/Type6Data/Prepositions'
 import type7prep from '../../../../../listData/exerciseData/A1/Type7Data/Prepositions'
 import type8prep from '../../../../../listData/exerciseData/A1/Type8Data/Prepositions'
+import aatest from '../../../../../listData/aatest';
 
 
 const dataForMarkers = {
@@ -23,8 +24,8 @@ const dataForMarkers = {
     class: 'class1'
 }
 
-const typesInSet = [type6prep, type4prep, type2prep, type1prep, type5prep, type6prep, type7prep, type8prep];
-const linkList = ['Exc1x7x1', 'Type4', 'Type2', 'Type1', 'Type5', 'Type6', 'Type7', 'Type8'];
+const typesInSet = [aatest, aatest, type2prep, type1prep, type5prep, type7prep, type8prep];
+const linkList = ['Exc1x7x1', 'Type6', 'Type2', 'Type1', 'Type5', 'Type7', 'Type8'];
 let usedItems = [];
 
 const currentScreen = 1;
@@ -62,7 +63,7 @@ const Exc1x7x1 = ({route}) => {
     const [resetCheck, setResetCheck] = useState(false);
     const [latestScreenAnswered, setLatestScreenAnswered] = useState(0);
     const [correctAnswers, setCorrectAnswers]= useState([]);
-    const [instructions, setInstructions] = useState('some instructions');
+    const [instructions, setInstructions] = useState('Sort the words into the correct categories.');
     const [newInstructions, setNewInstructions] = useState('');
     const [language, setLanguage] = useState('EN');
     const [translationLeft, setTranslationLeft] = useState('')
@@ -89,17 +90,17 @@ const Exc1x7x1 = ({route}) => {
           }
 
           if (savedLang === 'PL') {
-            setInstructions('polskie instrukcje')
+            setInstructions('Posortuj słowa do właściwych kategorii.')
           } else if (savedLang === 'DE') {
-            setInstructions('niemieckie instrukcje')
+            setInstructions('Sortiere die Wörter in die richtigen Kategorien.')
           } else if (savedLang === 'LT') {
-            setInstructions('litewskie instrukcje')
+            setInstructions('Sugrupuokite žodžius į teisingas kategorijas.')
           } else if (savedLang === 'AR') {
-            setInstructions('arabskie instrukcje')
+            setInstructions('رتب الكلمات في الفئات الصحيحة')
           } else if (savedLang === 'UA') {
-            setInstructions('ukr instrukcje')
+            setInstructions('Розсортуйте слова за правильними категоріями.')
           } else if (savedLang === 'ES') {
-            setInstructions('esp instrukcje')
+            setInstructions('Ordena las palabras en las categorías correctas.')
           }
 
 

@@ -27,7 +27,7 @@ const Type1 = ({route}) => {
   const [comeBack, setComeBack] = useState(false);
   const [answersChecked, setAnswersChecked] = useState([]);
   const [resetCheck, setResetCheck] = useState(false);
-  const [instructions, setInstructions] = useState('some instructions english type 1');
+  const [instructions, setInstructions] = useState('Choose the correct word to complete the sentence.');
   const [newInstructions, setNewInstructions] = useState('');
   
 

@@ -4,7 +4,7 @@ import { useFocusEffect } from "@react-navigation/native";
 import { LinearGradient } from 'expo-linear-gradient';
 import ProgressBar from '../../../../../components/bars/progressBar'
 import BottomBar from '../../../../../components/bars/bottomBar';
-import AnswerButton from '../../../../../components/buttons/AnswerButton';
+import AnswerButtonRev from '../../../../../components/buttons/AnswerButtonRevers';
 import generalStyles from '../../../../../styles/generalStyles';
 
 
@@ -29,10 +29,10 @@ const Type7 = ({route}) => {
     const [comeBack, setComeBack] = useState(false);
     const [resetCheck, setResetCheck] = useState(false);
     const [latestScreenAnswered, setLatestScreenAnswered] = useState(latestAnswered);
-    const [instructions, setInstructions] = useState('some instructions english type 1');
+    const [instructions, setInstructions] = useState('Find and mark the mistakes in the text.');
     const [newInstructions, setNewInstructions] = useState('');
-    const [btnTextShow, setButtonTextShow] = useState('Show correct text')
-    const [btnTextHide, setButtonTextHide] = useState('Show incorrect text')
+    const [btnTextShow, setButtonTextShow] = useState('Hide Mistakes')
+    const [btnTextHide, setButtonTextHide] = useState('Show Mistakes')
 
 
     useEffect(() => {
@@ -88,39 +88,39 @@ const Type7 = ({route}) => {
         }
       } else {
         if (savedLang === 'PL') {
-            setInstructions('polskie instrukcje type 7')
+            setInstructions('Znajdź i zaznacz błędy w tekście.')
           } else if (savedLang === 'DE') {
-            setInstructions('niemieckie instrukcje type 7')
+            setInstructions('Finde und markiere die Fehler im Text.')
           } else if (savedLang === 'LT') {
-            setInstructions('litewskie instrukcje type 7')
+            setInstructions('Raskite ir pažymėkite klaidas tekste.')
           } else if (savedLang === 'AR') {
-            setInstructions('arabskie instrukcje type 7')
+            setInstructions('ابحث وعلّم الأخطاء في النص')
           } else if (savedLang === 'UA') {
-            setInstructions('ukr instrukcje type 7')
+            setInstructions('Знайдіть і відзначте помилки в тексті.')
           } else if (savedLang === 'ES') {
-            setInstructions('esp instrukcje type 7')
+            setInstructions('Encuentra y marca los errores en el texto.')
         }
       }
 
 
       if (savedLang === 'PL') {
-        setButtonTextShow('pokaz poprawny tekst');
-        setButtonTextHide('pokaz orginalny tekst');
+        setButtonTextShow('Ukryj błędy');
+        setButtonTextHide('Pokaż błędy');
       } else if (savedLang === 'DE') {
-        setButtonTextShow('pokaz poprawny tekst');
-        setButtonTextHide('pokaz orginalny tekst');
+        setButtonTextShow('Fehler verbergen');
+        setButtonTextHide('Fehler anzeigen');
       } else if (savedLang === 'LT') {
-        setButtonTextShow('pokaz poprawny tekst');
-        setButtonTextHide('pokaz orginalny tekst');
+        setButtonTextShow('Slėpti klaidas');
+        setButtonTextHide('Rodyti klaidas');
       } else if (savedLang === 'AR') {
-        setButtonTextShow('pokaz poprawny tekst');
-        setButtonTextHide('pokaz orginalny tekst');
+        setButtonTextShow('اخفِ الأخطاء');
+        setButtonTextHide('عرض الأخطاء');
       } else if (savedLang === 'UA') {
-        setButtonTextShow('pokaz poprawny tekst');
-        setButtonTextHide('pokaz orginalny tekst');
+        setButtonTextShow('Сховати помилки');
+        setButtonTextHide('Показати помилки');
       } else if (savedLang === 'ES') {
-        setButtonTextShow('pokaz poprawny tekst sp');
-        setButtonTextHide('pokaz orginalny tekst sp');
+        setButtonTextShow('Ocultar errores');
+        setButtonTextHide('Mostrar errores');
       }
     })
 
@@ -180,7 +180,7 @@ const Type7 = ({route}) => {
                 }}>
                 <Text style={{
                     ...styles.wordsTxt
-                  }}>{item} </Text>
+                  }}>{item}</Text>
                 </TouchableOpacity>
               
               )
@@ -206,7 +206,7 @@ const Type7 = ({route}) => {
                     ...styles.wordsTxt,
                     textDecorationLine: exeList[nextScreen - 1].mistakesIndex.includes(index) && showMistakes ? 'underline' : null,
                     textDecorationColor: 'red'
-                  }}>{item} </Text>
+                  }}>{item}</Text>
                 </TouchableOpacity>
                   
                 )
@@ -221,7 +221,7 @@ const Type7 = ({route}) => {
 
           <View style={styles.btnContainer}>
           
-            {showMistakes ? <AnswerButton text={showCorrect ? btnTextHide : btnTextShow} colors={['#00308F', '#007FFF']}  returnAnswer={(boolean) => setShowCorrect(boolean)}/> : null}
+            {showMistakes ? <AnswerButtonRev text={showCorrect ? btnTextHide : btnTextShow} colors={['#00308F', '#007FFF']}  returnAnswer={(boolean) => setShowCorrect(boolean)} savedLang={savedLang}/> : null}
           </View>
           
 
@@ -302,8 +302,8 @@ const styles = StyleSheet.create({
   },
   touchable: {
     borderRadius: 4,
-    marginRight: 2,
-    marginBottom: 4
+    marginBottom: 4,
+    paddingHorizontal: 2
   },
   wordsTxt: {
     fontSize: 15,

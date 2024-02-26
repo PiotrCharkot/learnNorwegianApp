@@ -4,7 +4,7 @@ import { useFocusEffect } from "@react-navigation/native";
 import { LinearGradient } from 'expo-linear-gradient';
 import ProgressBar from '../../../../../components/bars/progressBar'
 import BottomBar from '../../../../../components/bars/bottomBar';
-import AnswerButton from '../../../../../components/buttons/AnswerButton';
+import AnswerButtonRev from '../../../../../components/buttons/AnswerButtonRevers';
 import generalStyles from '../../../../../styles/generalStyles';
 import Loader from '../../../../../components/other/Loader';
 import type1prep from '../../../../../listData/exerciseData/A1/Type1Data/Prepositions'
@@ -15,6 +15,7 @@ import type5prep from '../../../../../listData/exerciseData/A1/Type5Data/Preposi
 import type6prep from '../../../../../listData/exerciseData/A1/Type6Data/Prepositions'
 import type7prep from '../../../../../listData/exerciseData/A1/Type7Data/Prepositions'
 import type8prep from '../../../../../listData/exerciseData/A1/Type8Data/Prepositions'
+import aatest from '../../../../../listData/aatest';
 
 
 const dataForMarkers = {
@@ -24,8 +25,8 @@ const dataForMarkers = {
 }
 
 
-const typesInSet = [type7prep, type4prep, type2prep, type1prep, type5prep, type6prep, type7prep, type8prep];
-const linkList = ['Exc1x8x1', 'Type4', 'Type2', 'Type1', 'Type5', 'Type6', 'Type7', 'Type8'];
+const typesInSet = [aatest, aatest, type2prep, type1prep, type5prep, type6prep, type8prep];
+const linkList = ['Exc1x8x1', 'Type7', 'Type2', 'Type1', 'Type5', 'Type6', 'Type8'];
 let usedItems = [];
 
 
@@ -57,11 +58,11 @@ const Exc1x8x1 = ({route}) => {
   const [words, setWords] = useState([]);
   const [wordsCorrect, setWordsCorrect] = useState([]);
   const [correctAnswers, setCorrectAnswers]= useState([]);
-  const [instructions, setInstructions] = useState('some instructions');
+  const [instructions, setInstructions] = useState('Find and mark the mistakes in the text.');
   const [newInstructions, setNewInstructions] = useState('');
   const [language, setLanguage] = useState('EN');
-  const [btnTextShow, setButtonTextShow] = useState('Show correct text')
-  const [btnTextHide, setButtonTextHide] = useState('Show incorrect text')
+  const [btnTextShow, setButtonTextShow] = useState('Hide Mistakes')
+  const [btnTextHide, setButtonTextHide] = useState('Show Mistakes')
 
 
   const [contentReady, setContentReady] = useState(false);
@@ -87,29 +88,29 @@ const Exc1x8x1 = ({route}) => {
       }
 
       if (savedLang === 'PL') {
-        setInstructions('polskie instrukcje');
-        setButtonTextShow('pokaz poprawny tekst');
-        setButtonTextHide('pokaz orginalny tekst');
+        setInstructions('Znajdź i zaznacz błędy w tekście.');
+        setButtonTextShow('Ukryj błędy');
+        setButtonTextHide('Pokaż błędy');
       } else if (savedLang === 'DE') {
-        setInstructions('niemieckie instrukcje');
-        setButtonTextShow('pokaz poprawny tekst');
-        setButtonTextHide('pokaz orginalny tekst');
+        setInstructions('Finde und markiere die Fehler im Text.');
+        setButtonTextShow('Fehler verbergen');
+        setButtonTextHide('Fehler anzeigen');
       } else if (savedLang === 'LT') {
-        setInstructions('litewskie instrukcje');
-        setButtonTextShow('pokaz poprawny tekst');
-        setButtonTextHide('pokaz orginalny tekst');
+        setInstructions('Raskite ir pažymėkite klaidas tekste.');
+        setButtonTextShow('Slėpti klaidas');
+        setButtonTextHide('Rodyti klaidas');
       } else if (savedLang === 'AR') {
-        setInstructions('arabskie instrukcje');
-        setButtonTextShow('pokaz poprawny tekst');
-        setButtonTextHide('pokaz orginalny tekst');
+        setInstructions('ابحث وعلّم الأخطاء في النص');
+        setButtonTextShow('اخفِ الأخطاء');
+        setButtonTextHide('عرض الأخطاء');
       } else if (savedLang === 'UA') {
-        setInstructions('ukr instrukcje');
-        setButtonTextShow('pokaz poprawny tekst');
-        setButtonTextHide('pokaz orginalny tekst');
+        setInstructions('Знайдіть і відзначте помилки в тексті.');
+        setButtonTextShow('Сховати помилки');
+        setButtonTextHide('Показати помилки');
       } else if (savedLang === 'ES') {
-        setInstructions('esp instrukcje');
-        setButtonTextShow('pokaz poprawny tekst sp');
-        setButtonTextHide('pokaz orginalny tekst sp');
+        setInstructions('Encuentra y marca los errores en el texto.');
+        setButtonTextShow('Ocultar errores');
+        setButtonTextHide('Mostrar errores');
       }
       
       setLanguage(savedLang)
@@ -322,7 +323,7 @@ const Exc1x8x1 = ({route}) => {
                   }}>
                   <Text style={{
                       ...styles.wordsTxt
-                    }}>{item} </Text>
+                    }}>{item}</Text>
                 </TouchableOpacity>
                 
                 )
@@ -347,7 +348,7 @@ const Exc1x8x1 = ({route}) => {
                       ...styles.wordsTxt,
                       textDecorationLine: correctAnswers.includes(index) && showMistakes ? 'underline' : null,
                       textDecorationColor: 'red'
-                    }}>{item} </Text>
+                    }}>{item}</Text>
                 </TouchableOpacity>
                 
               )
@@ -361,7 +362,7 @@ const Exc1x8x1 = ({route}) => {
 
           <View style={styles.btnContainer}>
           
-            {showMistakes ? <AnswerButton text={showCorrect ? btnTextHide : btnTextShow} colors={['#00308F', '#007FFF']}  returnAnswer={(boolean) => setShowCorrect(boolean)}/> : null}
+            {showMistakes ? <AnswerButtonRev text={showCorrect ? btnTextHide : btnTextShow} colors={['#00308F', '#007FFF']}  returnAnswer={(boolean) => setShowCorrect(boolean)} savedLang={language}/> : null}
           </View>
           
 
@@ -443,8 +444,8 @@ const styles = StyleSheet.create({
   },
   touchable: {
     borderRadius: 4,
-    marginRight: 2,
-    marginBottom: 4
+    marginBottom: 4,
+    paddingHorizontal: 2
   },
   wordsTxt: {
     fontSize: 15,

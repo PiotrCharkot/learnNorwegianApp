@@ -15,6 +15,7 @@ import type5prep from '../../../../../listData/exerciseData/A1/Type5Data/Preposi
 import type6prep from '../../../../../listData/exerciseData/A1/Type6Data/Prepositions'
 import type7prep from '../../../../../listData/exerciseData/A1/Type7Data/Prepositions'
 import type8prep from '../../../../../listData/exerciseData/A1/Type8Data/Prepositions'
+import aatest from '../../../../../listData/aatest';
 
 
 const dataForMarkers = {
@@ -25,8 +26,8 @@ const dataForMarkers = {
 
 
 const screenWidth = Dimensions.get('window').width;
-const typesInSet = [type4prep, type1prep, type5prep, type6prep, type7prep, type8prep];
-const linkList = ['Exc1x5x1', 'Type1', 'Type5', 'Type6', 'Type7', 'Type8'];
+const typesInSet = [aatest, aatest, type5prep, type6prep, type7prep, type8prep];
+const linkList = ['Exc1x5x1', 'Type4', 'Type5', 'Type6', 'Type7', 'Type8'];
 let usedItems = [];
 
 
@@ -154,32 +155,31 @@ const Exc1x5x1 = ({route}) => {
         }
         
         setLanguage(savedLang)
-        console.log('show lang:', language);
 
         if (savedLang === 'PL') {
           setInstructions('Wpisz odpowiednie słowo.')
-          setHideShowText('pokaz odpowiedzi')
-          setHideTxt('ukryj odpowiedzi')
+          setHideShowText('Pokaż odpowiedzi')
+          setHideTxt('Ukryj odpowiedzi')
         } else if (savedLang === 'DE') {
           setInstructions('Gib das richtige Wort ein.')
-          setHideShowText('pokaz odpowiedzi niem')
-          setHideTxt('ukryj odpowiedzi niem')
+          setHideShowText('Antworten anzeigen')
+          setHideTxt('Antworten verbergen')
         } else if (savedLang === 'LT') {
           setInstructions('Įvesk teisingą žodį.')
-          setHideShowText('pokaz odpowiedzi')
-          setHideTxt('ukryj odpowiedzi lt')
+          setHideShowText('Rodyti atsakymus')
+          setHideTxt('Slėpti atsakymus')
         } else if (savedLang === 'AR') {
           setInstructions('اكتب الكلمة الصحيحة')
-          setHideShowText('pokaz odpowiedzi')
-          setHideTxt('ukryj odpowiedzi ar')
+          setHideShowText('عرض الإجابات')
+          setHideTxt('اخفِ الإجابات')
         } else if (savedLang === 'UA') {
           setInstructions('Введіть правильне слово.')
-          setHideShowText('pokaz odpowiedzi ukr')
-          setHideTxt('ukryj odpowiedzi')
+          setHideShowText('Показати відповіді')
+          setHideTxt('Сховати відповіді')
         } else if (savedLang === 'ES') {
           setInstructions('Escribe la palabra correcta.')
-          setHideShowText('pokaz odpowiedzi spa')
-          setHideTxt('ukryj odpowiedzi')
+          setHideShowText('Mostrar respuestas')
+          setHideTxt('Ocultar respuestas')
       }
         
 
@@ -682,9 +682,9 @@ const Exc1x5x1 = ({route}) => {
 
       <View style={styles.bottomBarContainer}>
         <BottomBar  
-        callbackButton={'checkAllAnswers'} 
+        callbackButton={'checkAllAnswersInput'} 
         userAnswers={[A1, A2, A3, A4, A5, A6, A7, A8]}
-        correctAnswers={correctAnswers}
+        correctAnswers={correctAnswers.map((item) => item.map((element) => element.toLowerCase() ))}
         buttonWidth={generalStyles.buttonNextPrevSize}
         buttonHeight={generalStyles.buttonNextPrevSize}
         linkNext={linkList[currentScreen]}

@@ -39,7 +39,7 @@ const Type3 = ({ route }) => {
     const [resetCheck, setResetCheck] = useState(false);
     const [latestScreenAnswered, setLatestScreenAnswered] = useState(latestAnswered);
     
-    const [instructions, setInstructions] = useState('some instructions english type 2');
+    const [instructions, setInstructions] = useState('Drag and drop the words into the correct gaps.');
     const [newInstructions, setNewInstructions] = useState('');
     
 
@@ -74,17 +74,17 @@ const Type3 = ({ route }) => {
         }
       } else {
         if (savedLang === 'PL') {
-            setInstructions('polskie instrukcje type 2')
+            setInstructions('Przeciągnij i upuść słowa we właściwe luki.')
           } else if (savedLang === 'DE') {
-            setInstructions('niemieckie instrukcje type 2')
+            setInstructions('Ziehe die Wörter in die richtigen Lücken.')
           } else if (savedLang === 'LT') {
-            setInstructions('litewskie instrukcje type 2')
+            setInstructions('Tempkite žodžius į teisingas vietas.')
           } else if (savedLang === 'AR') {
-            setInstructions('arabskie instrukcje type 2')
+            setInstructions('اسحب وأفلت الكلمات في الفراغات الصحيحة')
           } else if (savedLang === 'UA') {
-            setInstructions('ukr instrukcje type 2')
+            setInstructions('Перетягніть слова в правильні пропуски.')
           } else if (savedLang === 'ES') {
-            setInstructions('esp instrukcje type 2')
+            setInstructions('Arrastra y suelta las palabras en los huecos correctos.')
         }
       }
     })
@@ -273,7 +273,7 @@ const styles = StyleSheet.create({
     paddingVertical: 6,
     justifyContent: 'center',
     borderRadius: 8,
-    margin: 6,
+    margin: 4,
     overflow: "hidden",
     backgroundColor: 'lightgreen'
   },
@@ -302,7 +302,7 @@ const styles = StyleSheet.create({
     color: 'white'
   },
   exgzampleText: {
-    fontSize: 12,
+    fontSize: 13,
     fontWeight: '500',
     flexWrap: 'wrap',
     
@@ -311,7 +311,7 @@ const styles = StyleSheet.create({
     flexWrap: 'wrap',
     justifyContent: 'center',
     height: 30,
-    marginVertical: 6,
+    marginVertical: 4,
     marginHorizontal: 2
     
   },
@@ -320,6 +320,7 @@ const styles = StyleSheet.create({
     borderBottomWidth: 0.5,
     height: 20,
     width: '100%',
+    marginBottom: 10
   },
   lineBreaker: {
     borderBottomColor: 'lightgrey',

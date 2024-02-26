@@ -122,56 +122,56 @@ const Type4 = ({route}) => {
         if (exeList[nextScreen - 1].instructions) {
             if (savedLang === 'PL') {
                 setNewInstructions(exeList[nextScreen - 1].instructions.pl)
-                setHideShowText('pokaz odpowiedzi')
-                setHideTxt('ukryj odpowiedzi')
+                setHideShowText('Pokaż odpowiedzi')
+                setHideTxt('Ukryj odpowiedzi')
               } else if (savedLang === 'DE') {
                 setNewInstructions(exeList[nextScreen - 1].instructions.ger)
-                setHideShowText('pokaz odpowiedzi')
-                setHideTxt('ukryj odpowiedzi niem')
+                setHideShowText('Antworten anzeigen')
+                setHideTxt('Antworten verbergen')
               } else if (savedLang === 'LT') {
                 setNewInstructions(exeList[nextScreen - 1].instructions.lt)
-                setHideShowText('pokaz odpowiedzi')
-                setHideTxt('ukryj odpowiedzi lt')
+                setHideShowText('Rodyti atsakymus')
+                setHideTxt('Slėpti atsakymus')
               } else if (savedLang === 'AR') {
                 setNewInstructions(exeList[nextScreen - 1].instructions.ar)
-                setHideShowText('pokaz odpowiedzi')
-                setHideTxt('ukryj odpowiedzi lt')
+                setHideShowText('عرض الإجابات')
+                setHideTxt('اخفِ الإجابات')
               } else if (savedLang === 'UA') {
                 setNewInstructions(exeList[nextScreen - 1].instructions.ua)
-                setHideShowText('pokaz odpowiedzi ukr')
-                setHideTxt('ukryj odpowiedzi lt')
+                setHideShowText('Показати відповіді')
+                setHideTxt('Сховати відповіді')
               } else if (savedLang === 'ES') {
                 setNewInstructions(exeList[nextScreen - 1].instructions.sp)
-                setHideShowText('pokaz odpowiedzi sp')
-                setHideTxt('ukryj odpowiedzi lt')
+                setHideShowText('Mostrar respuestas')
+                setHideTxt('Ocultar respuestas')
               } else if (savedLang === 'EN') {
                 setNewInstructions(exeList[nextScreen - 1].instructions.eng)
             }
         } else {
             if (savedLang === 'PL') {
                 setInstructions('Wpisz odpowiednie słowo.')
-                setHideShowText('pokaz odpowiedzi')
-                setHideTxt('ukryj odpowiedzi')
+                setHideShowText('Pokaż odpowiedzi')
+                setHideTxt('Ukryj odpowiedzi')
               } else if (savedLang === 'DE') {
                 setInstructions('Gib das richtige Wort ein.')
-                setHideShowText('pokaz odpowiedzi niem')
-                setHideTxt('ukryj odpowiedzi niem')
+                setHideShowText('Antworten anzeigen')
+                setHideTxt('Antworten verbergen')
               } else if (savedLang === 'LT') {
                 setInstructions('Įvesk teisingą žodį.')
-                setHideShowText('pokaz odpowiedzi')
-                setHideTxt('ukryj odpowiedzi lt')
+                setHideShowText('Rodyti atsakymus')
+                setHideTxt('Slėpti atsakymus')
               } else if (savedLang === 'AR') {
                 setInstructions('اكتب الكلمة الصحيحة')
-                setHideShowText('pokaz odpowiedzi')
-                setHideTxt('ukryj odpowiedzi ar')
+                setHideShowText('عرض الإجابات')
+                setHideTxt('اخفِ الإجابات')
               } else if (savedLang === 'UA') {
                 setInstructions('Введіть правильне слово.')
-                setHideShowText('pokaz odpowiedzi ukr')
-                setHideTxt('ukryj odpowiedzi')
+                setHideShowText('Показати відповіді')
+                setHideTxt('Сховати відповіді')
               } else if (savedLang === 'ES') {
                 setInstructions('Escribe la palabra correcta.')
-                setHideShowText('pokaz odpowiedzi spa')
-                setHideTxt('ukryj odpowiedzi')
+                setHideShowText('Mostrar respuestas')
+                setHideTxt('Ocultar respuestas')
             }
         }
 
@@ -542,9 +542,9 @@ const Type4 = ({route}) => {
 
       <View style={styles.bottomBarContainer}>
         <BottomBar  
-        callbackButton={'checkAllAnswers'} 
+        callbackButton={'checkAllAnswersInput'} 
         userAnswers={[A1, A2, A3, A4, A5, A6, A7, A8]}
-        correctAnswers={exeList[nextScreen - 1].correctAnswers}
+        correctAnswers={exeList[nextScreen - 1].correctAnswers.map((item) => item.map((element) => element.toLowerCase() ))}
         buttonWidth={generalStyles.buttonNextPrevSize}
         buttonHeight={generalStyles.buttonNextPrevSize}
         linkNext={allScreensNum === nextScreen ? exitLink : linkList[nextScreen]}

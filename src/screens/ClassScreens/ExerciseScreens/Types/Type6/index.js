@@ -39,7 +39,7 @@ const Type6 = ({route}) => {
     const [comeBack, setComeBack] = useState(false);
     const [resetCheck, setResetCheck] = useState(false);
     const [latestScreenAnswered, setLatestScreenAnswered] = useState(latestAnswered);
-    const [instructions, setInstructions] = useState('some instructions english type 1');
+    const [instructions, setInstructions] = useState('Sort the words into the correct categories.');
     const [newInstructions, setNewInstructions] = useState('');
     const [translationLeft, setTranslationLeft] = useState('')
     const [translationRight, setTranslationRight] = useState('')
@@ -158,17 +158,17 @@ const Type6 = ({route}) => {
         }
       } else {
         if (savedLang === 'PL') {
-            setInstructions('polskie instrukcje type 6')
+            setInstructions('Posortuj słowa do właściwych kategorii.')
           } else if (savedLang === 'DE') {
-            setInstructions('niemieckie instrukcje type 6')
+            setInstructions('Sortiere die Wörter in die richtigen Kategorien.')
           } else if (savedLang === 'LT') {
-            setInstructions('litewskie instrukcje type 6')
+            setInstructions('Sugrupuokite žodžius į teisingas kategorijas.')
           } else if (savedLang === 'AR') {
-            setInstructions('arabskie instrukcje type 6')
+            setInstructions('رتب الكلمات في الفئات الصحيحة')
           } else if (savedLang === 'UA') {
-            setInstructions('ukr instrukcje type 6')
+            setInstructions('Розсортуйте слова за правильними категоріями.')
           } else if (savedLang === 'ES') {
-            setInstructions('esp instrukcje type 6')
+            setInstructions('Ordena las palabras en las categorías correctas.')
         }
       }
 

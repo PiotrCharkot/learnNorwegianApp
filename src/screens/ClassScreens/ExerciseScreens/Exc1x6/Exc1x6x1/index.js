@@ -14,6 +14,7 @@ import type5prep from '../../../../../listData/exerciseData/A1/Type5Data/Preposi
 import type6prep from '../../../../../listData/exerciseData/A1/Type6Data/Prepositions'
 import type7prep from '../../../../../listData/exerciseData/A1/Type7Data/Prepositions'
 import type8prep from '../../../../../listData/exerciseData/A1/Type8Data/Prepositions'
+import aatest from '../../../../../listData/aatest';
 
 
 const dataForMarkers = {
@@ -23,8 +24,8 @@ const dataForMarkers = {
 }
 
 
-const typesInSet = [type5prep, type4prep, type2prep, type1prep, type5prep, type6prep, type7prep, type8prep];
-const linkList = ['Exc1x6x1', 'Type4', 'Type2', 'Type1', 'Type5', 'Type6', 'Type7', 'Type8'];
+const typesInSet = [aatest, aatest, type2prep, type1prep, type6prep, type7prep, type8prep];
+const linkList = ['Exc1x6x1', 'Type5', 'Type2', 'Type1', 'Type6', 'Type7', 'Type8'];
 let usedItems = [];
 
 const currentScreen = 1;

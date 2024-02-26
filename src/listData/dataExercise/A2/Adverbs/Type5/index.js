@@ -1,0 +1,63 @@
+export default dataObj = [
+
+    {
+        typeOfScreen: '5',
+        nuberOfQuestions: 3,
+        questions: [
+            'Han sykler _______ selv på en vindfull dag.',
+            'De jobber _______ i hagen.',
+            'Møtet startet _______.',
+        ],
+        allAnswers: [
+            'ledig', 'sakte', 'raskt', 'veldig',
+            'ganske', 'høyt', 'flittig', 'lavt',
+            'punktlig', 'gjennomsiktig', 'bløt', 'spennende'
+        ],
+        correctAnswers: [
+            [false, false, true, false],  // raskt
+            [false, false, true, false],  // flittig
+            [true, false, false, false],  // punktlig
+        ],
+    },
+    {
+        typeOfScreen: '5',
+        nuberOfQuestions: 3,
+        questions: [
+            'Vinduet er _______ åpent.',
+            'Barnet sovner _______ etter eventyret.',
+            'Hun arbeider _______ for å fullføre prosjektet.'
+            
+        ],
+        allAnswers: [
+            'mykt', 'sint', 'vanlig', 'delvis',
+            'energisk', 'snill', 'raus', 'straks', 
+            'overrasket', 'intenst', 'sjelden', 'høyt' 
+        ],
+        correctAnswers: [
+            [false, false, false, true],  // delvis
+            [false, false, false, true],  // straks
+            [false, true, false, false],  // intenst
+        ],
+    },
+    {
+        typeOfScreen: '5',
+        nuberOfQuestions: 3,
+        questions: [
+            
+            'Vi må handle _______ for å rekke bussen.',
+            'Hun analyserte problemet _______ før hun foreslo en løsning.',
+            'Landskapet endrer seg _______ når vi nærmer oss fjellene.'
+            
+        ],
+        allAnswers: [
+            'hardt', 'mye', 'fort', 'sterkt',
+            'kort', 'grundig', 'raskt', 'overfladisk',
+            'gradvis', 'sjelden', 'slett', 'kaotisk'
+        ],
+        correctAnswers: [
+            [false, false, true, false],   // 'fort' is correct
+            [false, true, false, false],  // 'grundig' is correct
+            [true, false, false, false]   // 'gradvis' is correct
+        ],
+    },
+];

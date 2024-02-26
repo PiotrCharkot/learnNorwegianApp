@@ -192,7 +192,33 @@ const BottomBar = (params) => {
 
             params.checkAns(returnArr);
 
-            console.log('curscrenn : ', params.currentScreen, '    lta   :', params.latestAnswered );
+            if (!answCheckOnce && params.currentScreen > params.latestAnswered) {
+                setCurrentPoints(() => {
+                    return params.userPoints + questionPoints;
+                })
+            }
+            
+
+            setAnswCheckOnce(true);
+            setLetGoBack(false);
+            setButtonFunction('goToNext');
+            setPathIcon('next');
+        }  else if (buttonFunction === 'checkAllAnswersInput' && params.currentScreen >= params.latestScreen) {
+
+            let bonusAnswer = generalStyles.bonusCheckAllAnswers;
+            let returnArr = [];
+            let questionPoints = 0;
+
+            for (let i = 0; i < correctAnswers.length; i++) {
+                if (correctAnswers[i].includes(params.userAnswers[i].replace(/\s+/g, ' '))) {
+                    returnArr.push(true);
+                    questionPoints = questionPoints + bonusAnswer;
+                } else {
+                    returnArr.push(false);
+                }
+            }
+
+            params.checkAns(returnArr);
 
             if (!answCheckOnce && params.currentScreen > params.latestAnswered) {
                 setCurrentPoints(() => {
@@ -233,6 +259,7 @@ const BottomBar = (params) => {
             setPathIcon('next');
         } else if (buttonFunction === 'checkAnswerGapsText' && params.currentScreen >= params.latestScreen) {
             
+            
             let bonusAnswer = generalStyles.bonusCheckAnswerGapsText;
             let returnArr = [];
             let questionPoints = correctAnswers.length * bonusAnswer * -1 + (params.numberOfGaps * bonusAnswer);
@@ -244,7 +271,7 @@ const BottomBar = (params) => {
                     returnArr.push(false);
                 }
             }
-
+            
             params.checkAns(returnArr);
 
             if (!answCheckOnce && params.currentScreen > params.latestAnswered) {
@@ -329,6 +356,7 @@ const BottomBar = (params) => {
             setButtonFunction('goToNext');
             setPathIcon('next');
         }  else if (buttonFunction === 'orderChceck' && params.currentScreen >= params.latestScreen) {
+            let answersToLowerCase = [];
             let bonusAnswer = generalStyles.bonusOrderChceck;
             let returnArr = [];
             let questionPoints = 0;
@@ -339,12 +367,19 @@ const BottomBar = (params) => {
                     a.length === b.length &&
                     a.every((val, index) => val === b[index]);
             }
-            
+
 
             for (let i = 0; i < params.userAnswers.length; i++) {
+                
+                answersToLowerCase.push(params.userAnswers[i].map((item) => item.toLowerCase()))
+            } 
+            
+            
+
+            for (let i = 0; i < answersToLowerCase.length; i++) {
                 let tempVal = false;
                 for (let j = 0; j < correctAnswers[i].length; j++) {
-                    if (arrayEquals(correctAnswers[i][j], params.userAnswers[i])) {
+                    if (arrayEquals(correctAnswers[i][j], answersToLowerCase[i])) {
                         
                         tempVal = true
                     }

@@ -15,6 +15,8 @@ import type5prep from '../../../../../listData/exerciseData/A1/Type5Data/Preposi
 import type6prep from '../../../../../listData/exerciseData/A1/Type6Data/Prepositions'
 import type7prep from '../../../../../listData/exerciseData/A1/Type7Data/Prepositions'
 import type8prep from '../../../../../listData/exerciseData/A1/Type8Data/Prepositions'
+import aatest from '../../../../../listData/aatest';
+
 
 const dataForMarkers = {
     part: 'exercise',
@@ -23,8 +25,8 @@ const dataForMarkers = {
 }
 
 
-const typesInSet = [type2prep, type4prep, type6prep, type1prep, type3prep, type5prep, type7prep, type8prep];
-const linkList = ['Exc1x3x1', 'Type4', 'Type6', 'Type1', 'Type3', 'Type5', 'Type7', 'Type8'];
+const typesInSet = [aatest, aatest, type6prep, type1prep, type3prep, type5prep, type7prep, type8prep];
+const linkList = ['Exc1x3x1', 'Type2', 'Type6', 'Type1', 'Type3', 'Type5', 'Type7', 'Type8'];
 let usedItems = [];
 
 const currentScreen = 1;
@@ -63,7 +65,7 @@ const Exc1x3x1 = ({route}) => {
     const [comeBack, setComeBack] = useState(false);
     const [resetCheck, setResetCheck] = useState(false);
     const [latestScreenAnswered, setLatestScreenAnswered] = useState(0);
-    const [instructions, setInstructions] = useState('some instructions');
+    const [instructions, setInstructions] = useState('Match items to their matches.');
     const [newInstructions, setNewInstructions] = useState('');
     const [language, setLanguage] = useState('EN');
     
@@ -88,17 +90,17 @@ const Exc1x3x1 = ({route}) => {
           }
 
           if (savedLang === 'PL') {
-            setInstructions('polskie instrukcje')
+            setInstructions('Dopasuj elementy do ich par.')
           } else if (savedLang === 'DE') {
-            setInstructions('niemieckie instrukcje')
+            setInstructions('Ordne die Elemente ihren Pendants zu.')
           } else if (savedLang === 'LT') {
-            setInstructions('litewskie instrukcje')
+            setInstructions('Suderinkite elementus su jų poromis.')
           } else if (savedLang === 'AR') {
-            setInstructions('arabskie instrukcje')
+            setInstructions('طابق العناصر مع مثيلاتها')
           } else if (savedLang === 'UA') {
-            setInstructions('ukr instrukcje')
+            setInstructions('Відповідайте елементи з їх парами.')
           } else if (savedLang === 'ES') {
-            setInstructions('esp instrukcje')
+            setInstructions('Empareja los elementos con sus pares.')
           }
           
           setLanguage(savedLang)

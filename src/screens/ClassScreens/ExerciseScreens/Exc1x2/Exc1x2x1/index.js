@@ -68,7 +68,7 @@ const Exc1x2x1 = ({route}) => {
   const [answersChecked, setAnswersChecked] = useState([]);
   const [resetCheck, setResetCheck] = useState(false);
   const [correctAnswers, setCorrectAnswers]= useState([]); // in opening screen set correct Ansewers after setting ExeList in useEffect (tempArr)
-  const [instructions, setInstructions] = useState('some instructions');
+  const [instructions, setInstructions] = useState('Choose the correct word to complete the sentence.');
   const [newInstructions, setNewInstructions] = useState('');
   const [language, setLanguage] = useState('EN');
 
