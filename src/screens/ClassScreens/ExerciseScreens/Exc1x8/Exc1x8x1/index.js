@@ -464,11 +464,12 @@ const styles = StyleSheet.create({
     color: 'grey'
   },
   lineBreaker: {
-    borderBottomColor: 'lightgrey',
-    borderBottomWidth: 0.5,
+    borderBottomColor: '#f0f0f0',
+    borderBottomWidth: 1,
     height: 0,
     width: '100%',
-    marginBottom: 10
+    marginBottom: 10,
+    marginTop: 6
   },
 
 })

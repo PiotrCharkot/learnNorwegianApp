@@ -33,8 +33,8 @@ const dataForMarkers = {
 // set correct firsts link and data type
 
 
-const typesInSet = [aatest, aatest, type4prep, type2prep, type5prep, type6prep, type7prep, type8prep];
-const linkList = ['Exc1x2x1', 'Type1', 'Type4', 'Type2', 'Type5', 'Type6', 'Type7', 'Type8'];
+const typesInSet = [aatest, aatest, type2prep, type5prep, type6prep, type7prep, type8prep];
+const linkList = ['Exc1x2x1', 'Type1', 'Type2', 'Type5', 'Type6', 'Type7', 'Type8'];
 let usedItems = [];
 
 
