@@ -26,23 +26,29 @@ const dataForMarkers = {
   class: 'class0'
 }
 
+const option1 = [type1prep, type1prep, type2prep, type5prep, type6prep, type7prep, type8prep];
+const option2 = [type1prep, type1prep, type4prep, type5prep];
+const option3 = [type1prep, type1prep, type3prep];
+
+const links1 = ['Exc1x2x1', 'Type1', 'Type2', 'Type5', 'Type6', 'Type7', 'Type8'];
+const links2 = ['Exc1x2x1', 'Type1', 'Type4', 'Type5'];
+const links3 = ['Exc1x2x1', 'Type1', 'Type3'];
 
 
-// set typeInSet as array with data from import
-// set array with links to screens
-// set correct firsts link and data type
-
-
-const typesInSet = [aatest, aatest, type2prep, type5prep, type6prep, type7prep, type8prep];
-const linkList = ['Exc1x2x1', 'Type1', 'Type2', 'Type5', 'Type6', 'Type7', 'Type8'];
 let usedItems = [];
+
+
+
+let linkList = [];
+let typesInSet = [];
+
 
 
 
 //set current screen as 1 and allScreenNum
 
 const currentScreen = 1;
-const allScreensNum = linkList.length;
+let allScreensNum = option1.length;
 
 const colorUnderline = generalStyles.colorHighlightChoiceOption;
 const colorChosenAns = generalStyles.colorHighlightChoosenAnswer;
@@ -181,6 +187,24 @@ const Exc1x2x1 = ({route}) => {
     let tempArr = []; 
     let sumOfAllPoints = 0;
 
+    let randomNumber = Math.floor(Math.random()* 3)
+    console.log('my raaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaandom: ', randomNumber);
+
+
+
+    if (randomNumber === 0) {
+      typesInSet = option1;
+      linkList = links1;
+      allScreensNum = option1.length;
+    } else if (randomNumber === 1) {
+      typesInSet = option2
+      linkList = links2;
+      allScreensNum = option2.length;
+    } else if (randomNumber === 2) {
+      typesInSet = option3
+      linkList = links3;
+      allScreensNum = option3.length;
+    }
 
     for (let i = 0; i < typesInSet.length; i++) {
       let randomVal = Math.floor(Math.random() * typesInSet[i].length); 

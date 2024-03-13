@@ -185,7 +185,7 @@ export default dataObj = [
             ['Jeg snakker norsk ', '', ''],  // I speak Norwegian now.
             ['Hun leser boken ', '', ''] // She is reading the book tonight.
         ],
-        correctAnswers: ['raskt', 'snart', 'nå', 'i kveld'],
+        correctAnswers: [['raskt'], ['snart'], ['nå'], ['i kveld']],
         translations: {
             eng: ['(quickly)', '(soon)', '(now)', '(tonight)'],
             pl: ['(szybko)', '(wkrótce)', '(teraz)', '(dzisiaj wieczorem)'],
@@ -206,7 +206,7 @@ export default dataObj = [
             ['Filmen ', ' i fjor'],
             ['Boken ', ' for første gang i 1984'],
         ],
-        correctAnswers: ['ble revidert', 'ble publisert', 'ble lansert', 'ble utgitt'],
+        correctAnswers: [['ble revidert'], ['ble publisert'], ['ble lansert'], ['ble utgitt']],
         translations: {
             eng: ['The report was audited', 'The lesson was published online', 'The movie was launched last year', 'The book was published for the first time in 1984'],
             pl: ['Raport został zrewidowany', 'Lekcja została opublikowana w internecie', 'Film został wydany w zeszłym roku', 'Książka została wydana po raz pierwszy w 1984 roku'],

@@ -84,7 +84,7 @@ const styles = StyleSheet.create({
         width: screenWidth * 0.6,
         backgroundColor: 'white',
         borderRadius: 20,
-        marginHorizontal: 10,
+        marginHorizontal: 0,
         shadowColor: 'black',
         shadowOffset: {
             width: 0,

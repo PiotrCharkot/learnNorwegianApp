@@ -25,7 +25,7 @@ const dataForMarkers = {
 }
 
 
-const typesInSet = [aatest, aatest, type6prep, type1prep, type3prep, type5prep, type7prep, type8prep];
+const typesInSet = [type2prep, type2prep, type6prep, type1prep, type3prep, type5prep, type7prep, type8prep];
 const linkList = ['Exc1x3x1', 'Type2', 'Type6', 'Type1', 'Type3', 'Type5', 'Type7', 'Type8'];
 let usedItems = [];
 

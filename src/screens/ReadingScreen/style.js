@@ -72,13 +72,13 @@ const styles = StyleSheet.create({
         color: 'brown'
     },
     flatlist: {
-        height: screenWidth * 0.35 + 110,
-        paddingTop: 85,
+        height: screenWidth * 0.35 + 90,
+        paddingTop: 60,
     },
     gradinetFlatlist: {
         top: 0.5,
         position: 'absolute',
-        height: screenWidth * 0.35 + 110,
+        height: screenWidth * 0.35 + 90,
         width: '100%',
     },
     choosenLanguageContainer: {

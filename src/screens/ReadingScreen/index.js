@@ -6,6 +6,7 @@ import { useNavigation } from "@react-navigation/native";
 import { LinearGradient } from 'expo-linear-gradient';
 import styles from './style'
 import { withAnchorPoint } from 'react-native-anchor-point';
+import { Audio } from 'expo-av';
 import CardReading from '../../components/cards/CardReading';
 import textListData from '../../listData/textListData';
 import textListData2 from '../../listData/textListData2';
@@ -15,7 +16,7 @@ import textListData5 from '../../listData/textListData5';
 import textListData6 from '../../listData/textListData6';
 
 const screenWidth = Dimensions.get('window').width;
-const cardSize = screenWidth * 0.6 + 20;
+const cardSize = screenWidth * 0.6;
 const spacerSize = (screenWidth - cardSize) / 2;
 const colorsBackFlatlist = ['#ffd7d4', '#ffebd4', '#feffd4', '#e6ffd4', '#d4ffdc', '#d4fffd', '#d4d7ff', '#f4d4ff', '#ffd4f3']
 const colorsBackFlatlist2 = ['#f21d1d', '#ebf21d', '#32f21d', '#1deef2', '#1d2bf2', '#d21df2', '#f21d72']
@@ -42,7 +43,9 @@ const ReadingScreen = () => {
   const overlayOpacity = useRef(new Animated.Value(1)).current;
   const overlayOffset = useRef(new Animated.Value(0)).current;
   const interpolatedValueForX = useRef(new Animated.Value(0)).current;
-
+  const interpolatedValueRotation = useRef(new Animated.Value(0)).current;
+  const lastPlayedAtRef = useRef(0)
+  
   const [choosenLanguage, setChoosenLanguage] = useState('EN');
   const [languageListOpen, setLanguageListOpen] = useState(false);
   const [dataFlatList, setDataFlatList] = useState([]);
@@ -53,6 +56,11 @@ const ReadingScreen = () => {
   const [dataFlatList6, setDataFlatList6] = useState([]);
   const [title, setTitle] = useState('Level')
   const [random, setRandom] = useState(0);
+  const [sound, setSound] = useState();
+  const [sound2, setSound2] = useState();
+  const [sound3, setSound3] = useState();
+
+
 
   const xPositionDeg = interpolatedValueForX.interpolate({
       inputRange: [0, 360],
@@ -148,7 +156,7 @@ const ReadingScreen = () => {
         useNativeDriver: true
       }).start()
     }
-    
+    playSound3();
   }
 
 
@@ -163,6 +171,99 @@ const ReadingScreen = () => {
   );
 
 
+  useEffect(() => {
+    const loadSound = async () => {
+      console.log('Loading Sound');
+      const { sound } = await Audio.Sound.createAsync(
+        require('./../../../assets/sounds/tick.mp3')
+      );
+      setSound(sound);
+    };
+
+    loadSound();
+
+    // Don't forget to unload the sound when the component is unmounted
+    return () => {
+      sound?.unloadAsync();
+    };
+  }, []);
+
+  useEffect(() => {
+    const loadSound2 = async () => {
+      console.log('Loading Sound222222');
+      const { sound } = await Audio.Sound.createAsync(
+        require('./../../../assets/sounds/pebbelsClick.wav')
+      );
+      setSound2(sound);
+    };
+
+    loadSound2();
+
+    // Don't forget to unload the sound when the component is unmounted
+    return () => {
+      sound2?.unloadAsync();
+    };
+  }, []);
+
+
+  useEffect(() => {
+    const loadSound3 = async () => {
+      console.log('Loading Sound222222');
+      const { sound } = await Audio.Sound.createAsync(
+        require('./../../../assets/sounds/cameraClick.wav')
+      );
+      setSound3(sound);
+    };
+
+    loadSound3();
+
+    // Don't forget to unload the sound when the component is unmounted
+    return () => {
+      sound2?.unloadAsync();
+    };
+  }, []);
+
+
+  const playSound = async () => {
+    console.log('Playing Sound');
+    await sound?.replayAsync(); // Use replayAsync to play from the beginning if already loaded
+  };
+
+
+  const playSound2 = async () => {
+    console.log('Playing Sounddddddddddddddd');
+    await sound2?.replayAsync(); // Use replayAsync to play from the beginning if already loaded
+  };
+
+  const playSound3 = async () => {
+    console.log('Playing Sounddddddddddddddd');
+    await sound3?.replayAsync(); // Use replayAsync to play from the beginning if already loaded
+  };
+
+
+  const handleScroll = (event) => {
+    // First, process the animated event
+    Animated.event(
+      [{ nativeEvent: { contentOffset: { x: interpolatedValueRotation } } }],
+      { useNativeDriver: false }
+    )(event); // Manually invoke the animated event handler
+
+    // Then, add your logic for playing sound at certain scroll positions
+    const x = event.nativeEvent.contentOffset.x; // Get the current horizontal scroll position
+    const threshold = cardSize - cardSize * 0.5; // Define your threshold here
+
+    // Calculate the absolute difference from the last played position
+    const diff = Math.abs(x - lastPlayedAtRef.current);
+
+    if (diff >= threshold) {
+      playSound();
+      // Update the last played position to the current, adjusted for multiples of 200
+      // This adjustment ensures correct behavior in both forward and backward scrolling
+      lastPlayedAtRef.current = x - (x % threshold) + (x > lastPlayedAtRef.current ? threshold : 0);
+    }
+  };
+
+
 
   const getTransform = (viewHeight, viewWidth, transValA, transValB, valX, valY) => {
     let transform = {
@@ -173,7 +274,8 @@ const ReadingScreen = () => {
 
 
   const exitButton = () => {
-
+    console.log('fireeeeeeeeeee');
+    playSound2();
     Animated.spring(interpolatedValueForX, {
         toValue: 360,
         speed: 1,
@@ -268,12 +370,24 @@ const ReadingScreen = () => {
       index  * cardSize,
     ];
 
-    const translateY1 = scrollX.interpolate({
+    const rotateVal = interpolatedValueRotation.interpolate({
+      inputRange,
+      outputRange: ["55deg", "0deg", "-55deg"]
+    })
+
+
+    const scaleVal = interpolatedValueRotation.interpolate({
+      inputRange,
+      outputRange: [0.92, 1, 0.92]
+    })
+
+
+    const translateY1 = interpolatedValueRotation.interpolate({
       inputRange,
       outputRange: [0, -50, 0]
     })
 
-    return <Animated.View style={{transform: [{translateY: translateY1}]}}>
+    return <Animated.View style={{transform: [{perspective: 3000}, {rotateY: rotateVal}, {scaleY: scaleVal}]}}>
 
       <CardReading title={item.title} textId={item.textId} level={item.level} language={choosenLanguage}/>
     </Animated.View>
@@ -455,10 +569,8 @@ const ReadingScreen = () => {
             data={dataFlatList}
             renderItem={renderCard}
             keyExtractor={(item) => item.key}
-            onScroll={Animated.event(
-              [{nativeEvent: {contentOffset: {x: scrollX}}}],
-              {useNativeDriver: false}
-              )}
+            onScroll={handleScroll}
+            
             scrollEventThrottle={16}
           />
 
