@@ -9,14 +9,14 @@ export default dataObj = [
             'Undersøkelsen _______ gjennomført av et uavhengig firma i går.'
         ],
         allAnswers: [
-            'ble', 'blir', 'har blitt', 'vil bli',  // 1st question
-            'ble', 'blir', 'har blitt', 'vil bli',  // 2nd question
-            'ble', 'blir', 'har blitt', 'vil bli'   // 4th question
+            'ble', 'blir', 'har blitt', 'vil bli',  
+            'ble', 'blir', 'har blitt', 'vil bli',  
+            'ble', 'blir', 'har blitt', 'vil bli'  
         ],
         correctAnswers: [
-            [true, false, false, false],  // ble tatt
-            [false, false, false, true],  // vil bli publisert
-            [true, false, false, false]   // ble gjennomført
+            [true, false, false, false], 
+            [false, false, false, true],  
+            [true, false, false, false]  
         ],
     },
     {
@@ -29,16 +29,16 @@ export default dataObj = [
             'Dokumentene _______ per e-post.'
         ],
         allAnswers: [
-            'vil utgis', 'vil bli utgis', 'utgitt', 'vil bli utgitt',  // 1st question
-            'vil bli bookes', 'booket', 'vil booket', 'ble booket',  // 2nd question
-            'vurdert', 'ble vurderes', 'ble vurdert', 'vil vurdert',  // 3rd question
-            'sendt', 'sendes', 'ble sendes', 'vil sendes'   // 4th question
+            'vil utgis', 'vil bli utgis', 'utgitt', 'vil bli utgitt',  
+            'vil bli bookes', 'booket', 'vil booket', 'ble booket',  
+            'vurdert', 'ble vurderes', 'ble vurdert', 'vil vurdert',  
+            'sendt', 'sendes', 'ble sendes', 'vil sendes'   
         ],
         correctAnswers: [
-            [false, false, false, true],  // vil bli utgitt
-            [false, false, false, true],  // ble booket
-            [false, false, true, false],  // ble vurdert
-            [false, true, false, false]   // sendes
+            [false, false, false, true],  
+            [false, false, false, true],  
+            [false, false, true, false],  
+            [false, true, false, false]  
         ],
     },
     {
@@ -51,16 +51,16 @@ export default dataObj = [
             'Sikkerhetsreglene _______ strengt av alle besøkende.'
         ],
         allAnswers: [
-            'er tilrettelegges', 'tilrettelegges', 'ble tilrettelegges', 'vil ble tilrettelagt',  // 1st question
-            'offentliggjort', 'vil bli offentliggjøres', 'ble offentliggjort', 'vil bli offentliggjort',  // 2nd question
-            'blir bes', 'blir bedt', 'blitt bedt', 'vil blitt bedt',  // 3rd question
-            'bli følges', 'vil ble fulgt', 'følges', 'har bli fulgt'   // 4th question
+            'er tilrettelegges', 'tilrettelegges', 'ble tilrettelegges', 'vil ble tilrettelagt',  
+            'offentliggjort', 'vil bli offentliggjøres', 'ble offentliggjort', 'vil bli offentliggjort',  
+            'blir bes', 'blir bedt', 'blitt bedt', 'vil blitt bedt',  
+            'bli følges', 'vil ble fulgt', 'følges', 'har bli fulgt'   
         ],
         correctAnswers: [
-            [false, true, false, false],  // tilrettelegges
-            [false, false, false, true],  // vil bli offentliggjort
-            [false, true, false, false],  // blir bedt
-            [false, false, true, false]   // følges
+            [false, true, false, false],  
+            [false, false, false, true],  
+            [false, true, false, false], 
+            [false, false, true, false]  
         ],
     }
 ];

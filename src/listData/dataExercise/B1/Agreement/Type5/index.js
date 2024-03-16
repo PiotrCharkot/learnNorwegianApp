@@ -4,66 +4,66 @@ export default dataObj = [
         typeOfScreen: '5',
         nuberOfQuestions: 4,
         questions: [
-            'Han kjøpte et _______ skrivebord.', // new desk
-            'Hun fant en _______ mynt.', // old coin
-            'De har en _______  utsikt fra huset sitt.', // beautiful view
-            'Barna lekte med sine _______ leker.' // new toys
+            'Han kjøpte et _______ skrivebord.',
+            'Hun fant en _______ mynt.', 
+            'De har en _______  utsikt fra huset sitt.', 
+            'Barna lekte med sine _______ leker.' 
         ],
         allAnswers: [
-            'ny', 'nytt', 'nye', '', // possible answers for the first question
-            'gammel', 'gammelt', 'gamle', '', // possible answers for the second question
-            'vakre', 'vakkert', 'vakker', '', // possible answers for the third question
-            'ny', 'nytt', 'nye', '' // possible answers for the fourth question
+            'ny', 'nytt', 'nye', '', 
+            'gammel', 'gammelt', 'gamle', '', 
+            'vakre', 'vakkert', 'vakker', '', 
+            'ny', 'nytt', 'nye', '' 
         ],
         correctAnswers: [
-            [false, true, false, false], // 'nytt' for the neuter noun "skrivebord"
-            [true, false, false, false], // 'gammel' for the common gender noun "mynt"
-            [false, false, true, false], // 'vakre' for the feminine noun "utsikt" in definite form
-            [false, false, true, false]  // 'nye' for the plural noun "leker"
+            [false, true, false, false], 
+            [true, false, false, false], 
+            [false, false, true, false], 
+            [false, false, true, false]  
         ],
     },
     {
         typeOfScreen: '5',
         nuberOfQuestions: 4,
         questions: [
-            'Det var en _______ forskjell på prisene.', // big difference
-            'Jeg kjøpte en _______ bil i går.', // new car
-            'De plantet mange _______ blomster i hagen.', // colorful flowers
-            'Hun har en _______ hobby.' // interesting hobby
+            'Det var en _______ forskjell på prisene.', 
+            'Jeg kjøpte en _______ bil i går.', 
+            'De plantet mange _______ blomster i hagen.', 
+            'Hun har en _______ hobby.'
         ],
         allAnswers: [
-            'stor', 'stort', 'store', '', // possible answers for the first question
-            'nytt', 'nye', 'ny', '', // possible answers for the second question
-            'fargerik', 'fargerike', 'fargerikt', '', // possible answers for the third question
-            'interessante', 'interessanter', 'interessant', '', // possible answers for the fourth question
+            'stor', 'stort', 'store', '', 
+            'nytt', 'nye', 'ny', '', 
+            'fargerik', 'fargerike', 'fargerikt', '', 
+            'interessante', 'interessanter', 'interessant', '', 
         ],
         correctAnswers: [
-            [true, false, false, false], // 'stor' for the plural noun "prisene"
-            [false, false, true, false], // 'ny' for the masculine noun "bil"
-            [false, true, false, false], // 'fargerike' for the plural noun "blomster"
-            [false, false, true, false]  // 'interessant' for the feminine noun "hobby" in definite form
+            [true, false, false, false], 
+            [false, false, true, false], 
+            [false, true, false, false], 
+            [false, false, true, false]  
         ],
     },
     {
         typeOfScreen: '5',
         nuberOfQuestions: 4,
         questions: [
-            'Vi hadde en _______  tid på ferie.', // good time
-            'Hun leste en _______ bok om historie.', // long book
-            'Bordet er laget av _______ tre.', // dark wood
-            'De så mange _______ stjerner på himmelen.' // small stars
+            'Vi hadde en _______  tid på ferie.', 
+            'Hun leste en _______ bok om historie.', 
+            'Bordet er laget av _______ tre.',
+            'De så mange _______ stjerner på himmelen.' 
         ],
         allAnswers: [
-            'godt', 'gode', 'god', '', // possible answers for the first question
-            'lang', 'langt', 'lange', '', // possible answers for the second question
-            'mørk', 'mørkt', 'mørke', '', // possible answers for the third question
-            'liten', 'lite', 'små', 'lille', // possible answers for the fourth question
+            'godt', 'gode', 'god', '', 
+            'lang', 'langt', 'lange', '', 
+            'mørk', 'mørkt', 'mørke', '', 
+            'liten', 'lite', 'små', 'lille', 
         ],
         correctAnswers: [
-            [false, false, true, false], // 'god' for the plural context "tid på ferie"
-            [true, false, false, false], // 'lang' for the feminine noun "bok" in definite form
-            [false, true, false, false], // 'mørkt' for the neuter noun "tre"
-            [false, false, true, false]  // 'små' for the plural noun "stjerner"
+            [false, false, true, false], 
+            [true, false, false, false], 
+            [false, true, false, false], 
+            [false, false, true, false] 
         ],
     }
     

@@ -113,10 +113,10 @@ const Exc1x10x1 = ({ route }) => {
 
     useEffect(() => {
 
-      let parsedData = Object.keys(route.params.data).length === 0 ? {} : JSON.parse(route.params.data)
-      let dataForExercise = Object.keys(route.params.data).length === 0 ? type9sentence : parsedData.A1
+      let parsedData = Object.keys(route.params.data).length === 0 ? {} : JSON.parse(route.params.data) 
+      let dataForExercise = Object.keys(route.params.data).length === 0 ? type9sentence : parsedData.A1  // maybe change this (name is not going to be A1 here!!!!)
 
-      console.log('ddddddddddddddddddddddddddddddddddddddddddddddd', dataForExercise);
+      console.log('data for exrcises', dataForExercise);
       console.log(typeof dataForExercise);
       let tempArr = []; 
       let alreadyUsed = [];

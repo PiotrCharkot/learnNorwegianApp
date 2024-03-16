@@ -59,8 +59,8 @@ export default dataObj = [
         leftTitle: 'adverbs',
         rightTitle: 'adjectives',
         correctAnswers: [
-            ['raskt', 'tydelig', 'plutselig', 'ofte'],  // Adverbs
-            ['glad', 'stor', 'ny', 'ung']  // Adjectives
+            ['raskt', 'tydelig', 'plutselig', 'ofte'],  
+            ['glad', 'stor', 'ny', 'ung']  
         ],
         words: [
             '???', '???', '???', '???', '???', '???', '???', '???', '???', '???', 

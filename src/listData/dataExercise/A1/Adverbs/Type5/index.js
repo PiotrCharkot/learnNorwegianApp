@@ -14,10 +14,10 @@ export default dataObj = [
             'effektivt', 'lavt', 'kreativt', 'rolig', 
             'tydelig', 'grundig', 'dypt', 'ofte'],
         correctAnswers: [
-            [true, false, false, false],  // fort
-            [false, false, true, false],  // stille
-            [false, false, false, true],  // rolig
-            [false, false, false, true],  // ofte
+            [true, false, false, false], 
+            [false, false, true, false], 
+            [false, false, false, true], 
+            [false, false, false, true],  
         ],
     },
     {
@@ -34,10 +34,10 @@ export default dataObj = [
             'lykkelig', 'sulten', 'opptatt','deilig', 
             'mørk', 'ofte', 'tålmodig', 'mykt'],
         correctAnswers: [
-            [true, false, false, false],  // tålmodig
-            [false, true, false, false],  // rolig
-            [false, false, false, true],  // deilig
-            [false, true, false, false],  // ofte
+            [true, false, false, false], 
+            [false, true, false, false],  
+            [false, false, false, true], 
+            [false, true, false, false],  
         ],
     },
     {
@@ -54,10 +54,10 @@ export default dataObj = [
             'plutselig', 'raskt', 'rent', 'fantastisk',
             'opptatt', 'stille', 'nesten', 'varmt'],
         correctAnswers: [
-            [true, false, false, false],  // snart
-            [false, true, false, false],  // lykkelig
-            [false, false, false, true],  // fantastisk
-            [false, true, false, false],  // stille
+            [true, false, false, false],  
+            [false, true, false, false], 
+            [false, false, false, true],  
+            [false, true, false, false], 
         ],
     },
     {
@@ -74,10 +74,10 @@ export default dataObj = [
             'trist', 'sjelden', 'nøye', 'deilig', 
             'ledig', 'dyrt', 'sakte', 'billig'],
         correctAnswers: [
-            [true, false, false, false],  // vakkert
-            [false, false, true, false],  // høyt
-            [false, false, false, true],  // deilig
-            [false, false, true, false],  // sakte
+            [true, false, false, false], 
+            [false, false, true, false], 
+            [false, false, false, true], 
+            [false, false, true, false],  
         ],
     },
     {
@@ -92,9 +92,9 @@ export default dataObj = [
             'tørr', 'dyrt', 'fornøyd', 'glatt',
             'dårlig', 'grundig', 'lyst', 'lavt'],
         correctAnswers: [
-            [false, true, false, false],  // koselig
-            [false, false, true, false],  // fornøyd
-            [false, true, false, false],  // grundig
+            [false, true, false, false],  
+            [false, false, true, false],  
+            [false, true, false, false],  
         ],
     },
     {
@@ -109,9 +109,9 @@ export default dataObj = [
             'sliten', 'stadig', 'koselig', 'kaldt',
             'hardt', 'forsiktig', 'tålmodig', 'sammen'],
         correctAnswers: [
-            [false, false, true, false],  // fort
-            [false, true, false, false],  // stadig
-            [false, true, false, false],  // forsiktig
+            [false, false, true, false], 
+            [false, true, false, false],  
+            [false, true, false, false], 
         ],
     },
     {
@@ -127,9 +127,9 @@ export default dataObj = [
             'mett', 'glatt', 'ofte', 'dårlig', 
             'kort', 'raskt', 'stort', 'høyt'],
         correctAnswers: [
-            [false, false, false, true],  // tålmodig
-            [false, false, true, false],  // ofte
-            [false, true, false, false],  // raskt
+            [false, false, false, true], 
+            [false, false, true, false],  
+            [false, true, false, false], 
         ],
     },
     {
@@ -144,9 +144,9 @@ export default dataObj = [
             'bred', 'kaldt', 'tomt', 'nytt', 
             'sint', 'skarp', 'vanligvis', 'sur',],
         correctAnswers: [
-            [true, false, false, false],  // raskt
-            [false, true, false, false],  // kaldt
-            [false, false, true, false],  // vanligvis
+            [true, false, false, false],  
+            [false, true, false, false], 
+            [false, false, true, false],  
         ],
     },
     {
@@ -163,10 +163,10 @@ export default dataObj = [
             'tynn', 'farlig', 'hardt', 'mulig', 
             'lokal', 'sjalu', 'stiv', 'varmt'],
         correctAnswers: [
-            [true, false, false, false],  // forsiktig
-            [false, true, false, false],  // raskt
-            [false, false, true, false],  // hardt
-            [false, false, false, true],  // varmt
+            [true, false, false, false], 
+            [false, true, false, false], 
+            [false, false, true, false],  
+            [false, false, false, true], 
         ],
     }
 ];

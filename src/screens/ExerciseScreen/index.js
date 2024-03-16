@@ -8,6 +8,7 @@ import { collection, getDocs, query, where, doc, setDoc, updateDoc, deleteDoc } 
 import { getStorage, ref, getDownloadURL, uploadBytesResumable } from "firebase/storage";
 import { db } from '../../../firebase/firebase-config'
 import { onAuthStateChanged, getAuth  } from 'firebase/auth';
+import { Audio } from 'expo-av';
 import styles from './style'
 import Card from '../../components/cards/Card';
 import CardExerciseList from '../../components/cards/CardExerciseList';
@@ -41,6 +42,7 @@ const ExerciseScreen = () => {
   const overlayOffset = useRef(new Animated.Value(0)).current;
   const scaleLanguageHight = useRef(new Animated.Value(0)).current;
   const translateLanguage = useRef(new Animated.Value(100)).current;
+  const lastPlayedAtRef = useRef(0);
 
   const [choosenLanguage, setChoosenLanguage] = useState('EN');
   const [languageListOpen, setLanguageListOpen] = useState(false);
@@ -48,8 +50,10 @@ const ExerciseScreen = () => {
   const [random, setRandom] = useState(0);
   const [title1, setTitle1] = useState('Level');
   const [readingBtnTxt, setReadingButtonTxt] = useState('Reading');
-  const [dataListening, setDataListening] = useState({})
-  
+  const [dataExerciseA1, setDataExerciseA1] = useState({});
+  const [isSoundOn, setIsSoundOn] = useState(true);
+  const [sound, setSound] = useState();
+  const [sound2, setSound2] = useState();
 
   const opacityImgBlur = scrollY.interpolate({
     inputRange: [0, 60],
@@ -79,7 +83,13 @@ const ExerciseScreen = () => {
   async function getValueFor(key) {
     let result = await SecureStore.getItemAsync(key);
     if (result) {
-      setChoosenLanguage(result);
+      if (key === 'sound' && result === '0') {
+        setIsSoundOn(false);
+      } else if (key === 'sound' && result === '1') {
+        setIsSoundOn(true);
+      } else if (key === 'language') {
+        setChoosenLanguage(result);
+      }
     } else {
       console.log('No values stored under that key.');
     }
@@ -123,14 +133,16 @@ const ExerciseScreen = () => {
         useNativeDriver: true
       }).start()
     }
-    
+    if (isSoundOn) {
+      playSound();
+    }
   }
 
   useFocusEffect(
     useCallback(() => {
-
       
       getValueFor('language');
+      getValueFor('sound');
   
     }, [])
   );
@@ -148,15 +160,14 @@ const ExerciseScreen = () => {
     setRandom(tempVal); 
 
 
-    getDownloadURL(ref(storage, 'exerciseData/A1.txt'))
+    getDownloadURL(ref(storage, 'exerciseData/A1JsonFormat.json'))
       .then(async (url) => {
           
         //set data from storage
         const response = await fetch(url);
         const text = await response.text();
-        //console.log('my dataaaa: ', text);
-        console.log('does things');
-        setDataListening(text)
+        
+        setDataExerciseA1(text)
           
       })
       .catch((error) => {
@@ -252,6 +263,45 @@ const ExerciseScreen = () => {
     }, [])
   );
 
+  useEffect(() => {
+    const loadSound = async () => {
+      console.log('Loading Sound');
+      const { sound } = await Audio.Sound.createAsync(
+        require('./../../../assets/sounds/cameraClick.wav')
+      );
+      setSound(sound);
+    };
+
+    loadSound();
+
+    return () => {
+      sound?.unloadAsync();
+    };
+  }, []);
+
+  useEffect(() => {
+    const loadSound2 = async () => {
+      const { sound } = await Audio.Sound.createAsync(
+        require('./../../../assets/sounds/tick.mp3')
+      );
+      setSound2(sound);
+    };
+
+    loadSound2();
+
+    return () => {
+      sound2?.unloadAsync();
+    };
+  }, []);
+
+  const playSound = async () => {
+    await sound?.replayAsync(); 
+  };
+
+  const playSound2 = async () => {
+    await sound2?.replayAsync(); 
+  };
+
 
   const getDataFb = async () => {
 
@@ -295,6 +345,28 @@ const ExerciseScreen = () => {
     
 
   }
+
+  const handleScroll = (event) => {
+    // First, process the animated event
+    Animated.event(
+      [{ nativeEvent: { contentOffset: { x: scrollX } } }],
+      { useNativeDriver: false }
+    )(event); // Manually invoke the animated event handler
+
+    // Then, add your logic for playing sound at certain scroll positions
+    const x = event.nativeEvent.contentOffset.x; // Get the current horizontal scroll position
+    const threshold = cardSize * 0.5; // Define your threshold here
+
+    // Calculate the absolute difference from the last played position
+    const diff = Math.abs(x - lastPlayedAtRef.current);
+
+    if (diff >= threshold && isSoundOn) {
+      playSound2();
+      // Update the last played position to the current, adjusted for multiples of 200
+      // This adjustment ensures correct behavior in both forward and backward scrolling
+      lastPlayedAtRef.current = x - (x % threshold) + (x > lastPlayedAtRef.current ? threshold : 0);
+    }
+  };
 
 
   const renderCard = ({item, index}) => {
@@ -343,7 +415,7 @@ const ExerciseScreen = () => {
       colorSmallSqu={colorSqu}
       language={choosenLanguage}
       barsData={item.bars}
-      dataExercie={dataListening}/>
+      dataExercie={dataExerciseA1}/>
     </Animated.View>
   }
 
@@ -402,10 +474,7 @@ const ExerciseScreen = () => {
             data={dataFlatList}
             renderItem={renderCard}
             keyExtractor={(item) => item.key}
-            onScroll={Animated.event(
-              [{nativeEvent: {contentOffset: {x: scrollX}}}],
-              {useNativeDriver: false}
-              )}
+            onScroll={handleScroll}
             scrollEventThrottle={16}
           />
 

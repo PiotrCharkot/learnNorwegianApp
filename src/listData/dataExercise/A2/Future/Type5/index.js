@@ -11,10 +11,10 @@ export default dataObj = [
         ],
         allAnswers: ['skal', 'kommer til å', '', '', 'skal', 'kommer til å', '', '', 'skal', 'kommer til å', '', '', 'skal', 'kommer til å', '', ''],
         correctAnswers: [
-            [false, true, false, false],  // 'Det kommer til å regne i morgen.'
-            [true, false, false, false],  // 'Neste år skal jeg starte et nytt kurs.'
-            [false, true, false, false],  // 'Meteorologen sier at det kommer til å snø neste uke.'
-            [true, true, false, false]   // 'Vi skal arrangere en fest til helgen.'
+            [false, true, false, false],  
+            [true, false, false, false], 
+            [false, true, false, false],  
+            [true, true, false, false]   
         ],
             instructions: {
                 eng: 'For each question, one or more options may be correct. Choose all that apply.',
@@ -37,10 +37,10 @@ export default dataObj = [
         ],
         allAnswers: ['skal', 'kommer til å', '', '', 'skal', 'kommer til å', '', '', 'skal', 'kommer til å', '', '', 'skal', 'kommer til å', '', ''],
         correctAnswers: [
-            [true, true, false, false],  // 'Hun skal reise til Norge neste sommer.'
-            [false, true, false, false],  // 'Ifølge værmeldingen kommer til å det være solskinn i morgen.'
-            [true, true, false, false],  // 'De skal holde en konsert i byparken neste måned.'
-            [false, true, false, false]   // 'Det ser ut som bilen kommer til å bryte sammen snart.'
+            [true, true, false, false],  
+            [false, true, false, false],  
+            [true, true, false, false],  
+            [false, true, false, false]   
         ],
             instructions: {
                 eng: 'For each question, one or more options may be correct. Choose all that apply.',
@@ -63,10 +63,10 @@ export default dataObj = [
         ],
         allAnswers: ['skal', 'kommer til å', '', '', 'skal', 'kommer til å', '', '', 'skal', 'kommer til å', '', '', 'skal', 'kommer til å', '', ''],
         correctAnswers: [
-            [true, true, false, false],  // 'Vi skal besøke besteforeldrene mine i helgen.'
-            [false, true, false, false],  // 'Det ser ut til at han kommer til å vinne løpet.'
-            [true, false, false, false],  // 'Neste år skal jeg begynne å lære spansk.'
-            [false, true, false, false]   // 'Det kommer til å være en stor streik neste uke.'
+            [true, true, false, false], 
+            [false, true, false, false],  
+            [true, false, false, false], 
+            [false, true, false, false]  
         ],
             instructions: {
                 eng: 'For each question, one or more options may be correct. Choose all that apply.',
@@ -88,9 +88,9 @@ export default dataObj = [
         ],
         allAnswers: ['skal', 'kommer til å', '', '', 'skal', 'kommer til å', '', '', 'skal', 'kommer til å', '', ''],
         correctAnswers: [
-            [true, true, false, false],  // 'De skal flytte til en ny by neste år.'
-            [false, true, false, false],  // 'Meteorologen sier at det kommer til å være veldig kaldt i morgen.'
-            [true, true, false, false],  // 'Jeg skal delta i maratonet neste søndag.'
+            [true, true, false, false], 
+            [false, true, false, false],  
+            [true, true, false, false], 
         ],
             instructions: {
                 eng: 'For each question, one or more options may be correct. Choose all that apply.',
@@ -113,10 +113,10 @@ export default dataObj = [
         ],
         allAnswers: ['skal', 'kommer det til å', '', '', 'skal', 'kommer til å', '', '', 'skal', 'kommer han til å', '', '', 'skal', 'kommer til å', '', ''],
         correctAnswers: [
-            [false, true, false, false],  // 'Ifølge prognosen kommer det til å snø neste vinter.'
-            [true, true, false, false],   // 'Vi skal/kommer til å arrangere en fest neste måned.'
-            [false, true, false, false],  // 'Sannsynligvis kommer han til å få jobben han søkte på.'
-            [true, false, false, false]   // 'Neste år skal jeg reise til Japan.'
+            [false, true, false, false],  
+            [true, true, false, false],   
+            [false, true, false, false],  
+            [true, false, false, false]   
         ],
             instructions: {
                 eng: 'For each question, one or more options may be correct. Choose all that apply.',

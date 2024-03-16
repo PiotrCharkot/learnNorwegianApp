@@ -5,8 +5,8 @@ export default dataObj = [
         leftTitle: 'Verb',
         rightTitle: 'Noun',
         correctAnswers: [
-            ['spise', 'leke', 'studere', 'drikke', 'løpe'], // Verbs
-            ['bok', 'kaffe', 'hund', 'skole', 'bil'] // Nouns
+            ['spise', 'leke', 'studere', 'drikke', 'løpe'], 
+            ['bok', 'kaffe', 'hund', 'skole', 'bil'] 
         ],
         words: [
             '???', '???', '???', '???', '???', 
@@ -20,8 +20,8 @@ export default dataObj = [
         leftTitle: 'Verb',
         rightTitle: 'Noun',
         correctAnswers: [
-            ['synge', 'lære', 'gå', 'se', 'skrive'], // Verbs
-            ['bord', 'billett', 'by', 'klokke', 'katt'] // Nouns
+            ['synge', 'lære', 'gå', 'se', 'skrive'], 
+            ['bord', 'billett', 'by', 'klokke', 'katt'] 
         ],
         words: [
             '???', '???', '???', '???', '???',
@@ -35,8 +35,8 @@ export default dataObj = [
         leftTitle: 'Verb',
         rightTitle: 'Noun',
         correctAnswers: [
-            ['sove', 'jobbe', 'lese', 'svømme', 'kjøre'], // Verbs
-            ['eple', 'bok', 'hav', 'bygning', 'klokke'] // Nouns
+            ['sove', 'jobbe', 'lese', 'svømme', 'kjøre'], 
+            ['eple', 'bok', 'hav', 'bygning', 'klokke'] 
         ],
         words: [
             '???', '???', '???', '???', '???',
@@ -50,8 +50,8 @@ export default dataObj = [
         leftTitle: 'Verb',
         rightTitle: 'Noun',
         correctAnswers: [
-            ['male', 'sykle', 'lage', 'studere', 'lese'], // Verbs
-            ['stol', 'telefon', 'kake', 'bil', 'gate'] // Nouns
+            ['male', 'sykle', 'lage', 'studere', 'lese'], 
+            ['stol', 'telefon', 'kake', 'bil', 'gate'] 
         ],
         words: [
             '???', '???', '???', '???', '???', 
@@ -65,8 +65,8 @@ export default dataObj = [
         leftTitle: 'Verb',
         rightTitle: 'Adjective',
         correctAnswers: [
-            ['snakke', 'hoppe', 'lære', 'vaske'], // Verbs
-            ['glad', 'rask', 'ung', 'stor', 'vakker'] // Adjectives
+            ['snakke', 'hoppe', 'lære', 'vaske'], 
+            ['glad', 'rask', 'ung', 'stor', 'vakker'] 
         ],
         words: [
             '???', '???', '???', '???', '???',
@@ -80,8 +80,8 @@ export default dataObj = [
         leftTitle: 'Verb',
         rightTitle: 'Adjective',
         correctAnswers: [
-            ['danse', 'tegne', 'kjøpe', 'lese'], // Verbs
-            ['ny', 'gammel', 'kald', 'varm', 'liten'] // Adjectives
+            ['danse', 'tegne', 'kjøpe', 'lese'], 
+            ['ny', 'gammel', 'kald', 'varm', 'liten'] 
         ],
         words: [
             '???', '???', '???', '???', '???',
@@ -95,8 +95,8 @@ export default dataObj = [
         leftTitle: 'Adjective',
         rightTitle: 'Noun',
         correctAnswers: [
-            ['blå', 'ung', 'stor', 'vakker', 'rask'], // Adjectives
-            ['bok', 'by', 'bil', 'elv', 'fjell'] // Nouns
+            ['blå', 'ung', 'stor', 'vakker', 'rask'], 
+            ['bok', 'by', 'bil', 'elv', 'fjell'] 
         ],
         words: [
             '???', '???', '???', '???', '???',
@@ -110,8 +110,8 @@ export default dataObj = [
         leftTitle: 'Adjective',
         rightTitle: 'Noun',
         correctAnswers: [
-            ['gammel', 'lykkelig', 'kald', 'liten', 'lang'], // Adjectives
-            ['klokke', 'hund', 'hus', 'hage', 'bro'] // Nouns
+            ['gammel', 'lykkelig', 'kald', 'liten', 'lang'], 
+            ['klokke', 'hund', 'hus', 'hage', 'bro'] 
         ],
         words: [
             '???', '???', '???', '???', '???',

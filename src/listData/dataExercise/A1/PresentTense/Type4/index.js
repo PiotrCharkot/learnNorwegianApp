@@ -4,10 +4,10 @@ export default dataObj = [
         typeOfScreen: '4',
         nuberOfQuestions: 4,
         questions: [
-            ['Hun ', 'en bok.'],             // She reads a book.
-            ['Vi ', 'på skolen.'],           // We learn at school.
-            ['Han ', 'norsk.'],              // He speaks Norwegian.
-            ['Barna ', 'i parken.'],         // The children play in the park.
+            ['Hun ', 'en bok.'],             
+            ['Vi ', 'på skolen.'],           
+            ['Han ', 'norsk.'],              
+            ['Barna ', 'i parken.'],        
         ],
         correctAnswers: [['leser'], ['lærer'], ['snakker'], ['leker']],
         translations: {
@@ -33,10 +33,10 @@ export default dataObj = [
         typeOfScreen: '4',
         nuberOfQuestions: 4,
         questions: [
-            ['Katten ', 'melk.'],         // The cat drinks milk.
-            ['De ', 'i butikken.'],       // They work in the store.
-            ['Jeg ', 'til musikk.'],      // I listen to music.
-            ['Bilen ', 'raskt.'],         // The car drives fast.
+            ['Katten ', 'melk.'],         
+            ['De ', 'i butikken.'],      
+            ['Jeg ', 'til musikk.'],      
+            ['Bilen ', 'raskt.'],   
         ],
         correctAnswers: [['drikker'], ['jobber'], ['lytter'], ['kjører']],
         translations: {
@@ -62,10 +62,10 @@ export default dataObj = [
         typeOfScreen: '4',
         nuberOfQuestions: 4,
         questions: [
-            ['Fuglene ', 'tidlig.'],         // The birds sing early.
-            ['Hun ', 'en bok.'],             // She reads a book.
-            ['Barna ', 'på skolen.'],        // The children play at school.
-            ['Vi ', 'middag nå.'],           // We make dinner now.
+            ['Fuglene ', 'tidlig.'],        
+            ['Hun ', 'en bok.'],             
+            ['Barna ', 'på skolen.'],    
+            ['Vi ', 'middag nå.'],         
         ],
         correctAnswers: [['synger'], ['leser'], ['leker'], ['lager']],
         translations: {
@@ -91,10 +91,10 @@ export default dataObj = [
         typeOfScreen: '4',
         nuberOfQuestions: 4,
         questions: [
-            ['Jeg ', 'i Oslo.'],            // I live in Oslo.
-            ['Du ', 'norsk.'],              // You speak Norwegian.
-            ['Hunden ', 'maten.'],          // The dog eats the food.
-            ['Læreren ', 'i klasserommet.'], // The teacher teaches in the classroom.
+            ['Jeg ', 'i Oslo.'],           
+            ['Du ', 'norsk.'],             
+            ['Hunden ', 'maten.'],         
+            ['Læreren ', 'i klasserommet.'], 
         ],
         correctAnswers: [['bor'], ['snakker', 'prater'], ['spiser'], ['underviser']],
         translations: {
@@ -120,10 +120,10 @@ export default dataObj = [
         typeOfScreen: '4',
         nuberOfQuestions: 4,
         questions: [
-            ['Barnet ', 'med lekene.'],           // The child plays with the toys.
-            ['Han ', 'på datamaskinen.'],         // He works on the computer.
-            ['Vi ', 'på musikken.'],             // We listen to the music.
-            ['Hun ', 'på treningsstudioet.'],     // She exercises at the gym.
+            ['Barnet ', 'med lekene.'],           
+            ['Han ', 'på datamaskinen.'],        
+            ['Vi ', 'på musikken.'],          
+            ['Hun ', 'på treningsstudioet.'],  
         ],
         correctAnswers: [['leker'], ['jobber'], ['hører'], ['trener']],
         translations: {

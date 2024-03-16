@@ -43,8 +43,7 @@ const ReadingScreen = () => {
   const overlayOpacity = useRef(new Animated.Value(1)).current;
   const overlayOffset = useRef(new Animated.Value(0)).current;
   const interpolatedValueForX = useRef(new Animated.Value(0)).current;
-  const interpolatedValueRotation = useRef(new Animated.Value(0)).current;
-  const lastPlayedAtRef = useRef(0)
+  const lastPlayedAtRef = useRef(0);
   
   const [choosenLanguage, setChoosenLanguage] = useState('EN');
   const [languageListOpen, setLanguageListOpen] = useState(false);
@@ -173,7 +172,6 @@ const ReadingScreen = () => {
 
   useEffect(() => {
     const loadSound = async () => {
-      console.log('Loading Sound');
       const { sound } = await Audio.Sound.createAsync(
         require('./../../../assets/sounds/tick.mp3')
       );
@@ -182,7 +180,6 @@ const ReadingScreen = () => {
 
     loadSound();
 
-    // Don't forget to unload the sound when the component is unmounted
     return () => {
       sound?.unloadAsync();
     };
@@ -190,7 +187,6 @@ const ReadingScreen = () => {
 
   useEffect(() => {
     const loadSound2 = async () => {
-      console.log('Loading Sound222222');
       const { sound } = await Audio.Sound.createAsync(
         require('./../../../assets/sounds/pebbelsClick.wav')
       );
@@ -199,7 +195,6 @@ const ReadingScreen = () => {
 
     loadSound2();
 
-    // Don't forget to unload the sound when the component is unmounted
     return () => {
       sound2?.unloadAsync();
     };
@@ -208,7 +203,6 @@ const ReadingScreen = () => {
 
   useEffect(() => {
     const loadSound3 = async () => {
-      console.log('Loading Sound222222');
       const { sound } = await Audio.Sound.createAsync(
         require('./../../../assets/sounds/cameraClick.wav')
       );
@@ -217,7 +211,6 @@ const ReadingScreen = () => {
 
     loadSound3();
 
-    // Don't forget to unload the sound when the component is unmounted
     return () => {
       sound2?.unloadAsync();
     };
@@ -225,32 +218,29 @@ const ReadingScreen = () => {
 
 
   const playSound = async () => {
-    console.log('Playing Sound');
-    await sound?.replayAsync(); // Use replayAsync to play from the beginning if already loaded
+    await sound?.replayAsync(); 
   };
 
 
   const playSound2 = async () => {
-    console.log('Playing Sounddddddddddddddd');
-    await sound2?.replayAsync(); // Use replayAsync to play from the beginning if already loaded
+    await sound2?.replayAsync(); 
   };
 
   const playSound3 = async () => {
-    console.log('Playing Sounddddddddddddddd');
-    await sound3?.replayAsync(); // Use replayAsync to play from the beginning if already loaded
+    await sound3?.replayAsync(); 
   };
 
 
   const handleScroll = (event) => {
     // First, process the animated event
     Animated.event(
-      [{ nativeEvent: { contentOffset: { x: interpolatedValueRotation } } }],
+      [{ nativeEvent: { contentOffset: { x: scrollX } } }],
       { useNativeDriver: false }
     )(event); // Manually invoke the animated event handler
 
     // Then, add your logic for playing sound at certain scroll positions
     const x = event.nativeEvent.contentOffset.x; // Get the current horizontal scroll position
-    const threshold = cardSize - cardSize * 0.5; // Define your threshold here
+    const threshold = cardSize * 0.5; // Define your threshold here
 
     // Calculate the absolute difference from the last played position
     const diff = Math.abs(x - lastPlayedAtRef.current);
@@ -274,7 +264,6 @@ const ReadingScreen = () => {
 
 
   const exitButton = () => {
-    console.log('fireeeeeeeeeee');
     playSound2();
     Animated.spring(interpolatedValueForX, {
         toValue: 360,
@@ -370,19 +359,19 @@ const ReadingScreen = () => {
       index  * cardSize,
     ];
 
-    const rotateVal = interpolatedValueRotation.interpolate({
+    const rotateVal = scrollX.interpolate({
       inputRange,
       outputRange: ["55deg", "0deg", "-55deg"]
     })
 
 
-    const scaleVal = interpolatedValueRotation.interpolate({
+    const scaleVal = scrollX.interpolate({
       inputRange,
       outputRange: [0.92, 1, 0.92]
     })
 
 
-    const translateY1 = interpolatedValueRotation.interpolate({
+    const translateY1 = scrollX.interpolate({
       inputRange,
       outputRange: [0, -50, 0]
     })
@@ -570,7 +559,6 @@ const ReadingScreen = () => {
             renderItem={renderCard}
             keyExtractor={(item) => item.key}
             onScroll={handleScroll}
-            
             scrollEventThrottle={16}
           />
 

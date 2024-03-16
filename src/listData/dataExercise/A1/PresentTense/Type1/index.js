@@ -3,11 +3,11 @@ export default dataObj = [
         typeOfScreen: '1',
         nuberOfQuestions: 5,
         questions: [
-            ['Hun ', 'lagde', 'lager', ' middag nå.'], // "Hun lager middag nå." (She is making dinner now.)
-            ['Vi ', 'snakkes', 'snakker', ' norsk hver dag.'], // "Vi snakker norsk hver dag." (We speak Norwegian every day.)
-            ['Katten ', 'sover', 'sove', ' på sofaen.'], // "Katten sover på sofaen." (The cat sleeps on the sofa.)
-            ['De ', 'synger', 'synges', ' i kor hver torsdag.'], // "De synger i kor hver torsdag." (They sing in the choir every Thursday.)
-            ['Han ', 'studere', 'studerer', ' norsk på universitetet.'], // "Han studerer norsk på universitetet." (He studies Norwegian at the university.)
+            ['Hun ', 'lagde', 'lager', ' middag nå.'], 
+            ['Vi ', 'snakkes', 'snakker', ' norsk hver dag.'], 
+            ['Katten ', 'sover', 'sove', ' på sofaen.'], 
+            ['De ', 'synger', 'synges', ' i kor hver torsdag.'], 
+            ['Han ', 'studere', 'studerer', ' norsk på universitetet.'], 
         ],
         correctAnswers: [2, 2, 1, 1, 2],
     },
@@ -15,11 +15,11 @@ export default dataObj = [
         typeOfScreen: '1',
         nuberOfQuestions: 5,
         questions: [
-            ['Barnet ', 'leker', 'elsker', ' i parken.'], // "Barnet leker i parken." (The child plays in the park.)
-            ['Hunden ', 'sover', 'løper', ' raskt.'], // "Hunden løper raskt." (The dog runs fast.)
-            ['De ', 'ser', 'ses', ' en film nå.'], // "De ser en film nå." (They are watching a movie now.)
-            ['Jeg ', 'elsker', 'reiser', ' å lære norsk.'], // "Jeg elsker å lære norsk." (I love learning Norwegian.)
-            ['Bussen ', 'ser', 'stopper', ' ved neste stasjon.'], // "Bussen stopper ved neste stasjon." (The bus stops at the next station.)
+            ['Barnet ', 'leker', 'elsker', ' i parken.'], 
+            ['Hunden ', 'sover', 'løper', ' raskt.'],
+            ['De ', 'ser', 'ses', ' en film nå.'], 
+            ['Jeg ', 'elsker', 'reiser', ' å lære norsk.'], 
+            ['Bussen ', 'ser', 'stopper', ' ved neste stasjon.'], 
         ],
         correctAnswers: [1, 2, 1, 1, 2],
     },
@@ -27,11 +27,11 @@ export default dataObj = [
         typeOfScreen: '1',
         nuberOfQuestions: 5,
         questions: [
-            ['Mamma ', 'lager', 'lage', ' frokost hver morgen.'], // "Mamma lager frokost hver morgen." (Mom makes breakfast every morning.)
-            ['Vinduet ', 'har', 'er', ' åpent.'], // "Vinduet er åpent." (The window is open.)
-            ['Vi ', 'reiser', 'reiste', ' til Bergen i morgen.'], // "Vi reiser til Bergen i morgen." (We are traveling to Bergen tomorrow.)
-            ['Han ', 'drikker', 'spiser', ' kaffe hver morgen.'], // "Han drikker kaffe hver morgen." (He drinks coffee every morning.)
-            ['Læreren ', 'forklare', 'forklarer', ' leksjonen godt.'], // "Læreren forklarer leksjonen godt." (The teacher explains the lesson well.)
+            ['Mamma ', 'lager', 'lage', ' frokost hver morgen.'], 
+            ['Vinduet ', 'har', 'er', ' åpent.'], 
+            ['Vi ', 'reiser', 'reiste', ' til Bergen i morgen.'], 
+            ['Han ', 'drikker', 'spiser', ' kaffe hver morgen.'], 
+            ['Læreren ', 'forklare', 'forklarer', ' leksjonen godt.'], 
         ],
         correctAnswers: [1, 2, 1, 1, 2],
     },
@@ -39,11 +39,11 @@ export default dataObj = [
         typeOfScreen: '1',
         nuberOfQuestions: 5,
         questions: [
-            ['Barna ', 'spiser', 'synger', ' frokost nå.'], // "Barna spiser frokost nå." (The children are eating breakfast now.)
-            ['Hun ', 'snakker', 'sykler', ' til skolen.'], // "Hun sykler til skolen." (She bikes to school.)
-            ['Det ', 'regner', 'jobber', ' i dag.'], // "Det regner i dag." (It is raining today.)
-            ['Han ', 'lese', 'leser', ' en bok.'], // "Han leser en bok." (He is reading a book.)
-            ['Vi ', 'bor', 'svarer', ' i Oslo.'], // "Vi bor i Oslo." (We live in Oslo.)
+            ['Barna ', 'spiser', 'synger', ' frokost nå.'], 
+            ['Hun ', 'snakker', 'sykler', ' til skolen.'], 
+            ['Det ', 'regner', 'jobber', ' i dag.'], 
+            ['Han ', 'lese', 'leser', ' en bok.'], 
+            ['Vi ', 'bor', 'svarer', ' i Oslo.'], 
         ],
         correctAnswers: [1, 2, 1, 2, 1],
     },
@@ -51,11 +51,11 @@ export default dataObj = [
         typeOfScreen: '1',
         nuberOfQuestions: 5,
         questions: [
-            ['Fuglene ', 'syr', 'synger', ' om morgenen.'], // "Fuglene synger om morgenen." (The birds sing in the morning.)
-            ['Hun ', 'snakker', 'spiser', ' norsk og engelsk.'], // "Hun snakker norsk og engelsk." (She speaks Norwegian and English.)
-            ['Bilen ', 'står', 'ligger', ' utenfor huset.'], // "Bilen står utenfor huset." (The car is parked outside the house.)
-            ['Klokken ', 'er', 'har', ' ni.'], // "Klokken er ni." (It is nine o'clock.)
-            ['De ', 'sover', 'jobber', ' hardt hver dag.'], // "De jobber hardt hver dag." (They work hard every day.)
+            ['Fuglene ', 'syr', 'synger', ' om morgenen.'], 
+            ['Hun ', 'snakker', 'spiser', ' norsk og engelsk.'], 
+            ['Bilen ', 'står', 'ligger', ' utenfor huset.'], 
+            ['Klokken ', 'er', 'har', ' ni.'], 
+            ['De ', 'sover', 'jobber', ' hardt hver dag.'], 
         ],
         correctAnswers: [2, 1, 1, 1, 2],
     },
@@ -63,11 +63,11 @@ export default dataObj = [
         typeOfScreen: '1',
         nuberOfQuestions: 5,
         questions: [
-            ['Hunden ', 'sover', 'leser', ' under bordet.'], // "Hunden sover under bordet." (The dog is sleeping under the table.)
-            ['Jeg ', 'gråter', 'kjøper', ' ny sykkel.'], // "Jeg kjøper ny sykkel." (I am buying a new bike.)
-            ['Han ', 'spiller', 'sykler', ' fotball.'], // "Han spiller fotball." (He plays football.)
-            ['De ', 'ser', 'synger', ' på TV.'], // "De ser på TV." (They are watching TV.)
-            ['Læreren ', 'undervise', 'underviser', ' i klasserommet.'], // "Læreren underviser i klasserommet." (The teacher teaches in the classroom.)
+            ['Hunden ', 'sover', 'leser', ' under bordet.'], 
+            ['Jeg ', 'gråter', 'kjøper', ' ny sykkel.'],
+            ['Han ', 'spiller', 'sykler', ' fotball.'], 
+            ['De ', 'ser', 'synger', ' på TV.'], 
+            ['Læreren ', 'undervise', 'underviser', ' i klasserommet.'], 
         ],
         correctAnswers: [1, 2, 1, 1, 2],
     },
@@ -75,11 +75,11 @@ export default dataObj = [
         typeOfScreen: '1',
         nuberOfQuestions: 5,
         questions: [
-            ['Været ', 'er', 'kan', ' fint i dag.'], // "Været er fint i dag." (The weather is nice today.)
-            ['Jeg ', 'hører', 'skriver', ' musikk.'], // "Jeg hører musikk." (I am listening to music.)
-            ['Hun ', 'lage', 'lager', ' kaffe.'], // "Hun lager kaffe." (She is making coffee.)
-            ['Vi ', 'studere', 'studerer', ' sammen.'], // "Vi studerer sammen." (We study together.)
-            ['Barnet ', 'gråter', 'jager', ' ofte.'], // "Barnet gråter ofte." (The child cries often.)
+            ['Været ', 'er', 'kan', ' fint i dag.'], 
+            ['Jeg ', 'hører', 'skriver', ' musikk.'], 
+            ['Hun ', 'lage', 'lager', ' kaffe.'],
+            ['Vi ', 'studere', 'studerer', ' sammen.'], 
+            ['Barnet ', 'gråter', 'jager', ' ofte.'], 
         ],
         correctAnswers: [1, 1, 2, 2, 1],
     },
@@ -87,11 +87,11 @@ export default dataObj = [
         typeOfScreen: '1',
         nuberOfQuestions: 5,
         questions: [
-            ['Han ', 'skriver', 'tar', ' en e-post.'], // "Han skriver en e-post." (He is writing an email.)
-            ['Katten ', 'jager', 'kommer', ' en mus.'], // "Katten jager en mus." (The cat chases a mouse.)
-            ['De ', 'tenker', 'danser', ' i festen.'], // "De danser i festen." (They are dancing at the party.)
-            ['Jeg ', 'får', 'lærer', ' norsk.'], // "Jeg lærer norsk." (I am learning Norwegian.)
-            ['Vi ', 'møter', 'snakker', ' venner i kveld.'], // "Vi møter venner i kveld." (We are meeting friends tonight.)
+            ['Han ', 'skriver', 'tar', ' en e-post.'], 
+            ['Katten ', 'jager', 'kommer', ' en mus.'], 
+            ['De ', 'tenker', 'danser', ' i festen.'], 
+            ['Jeg ', 'får', 'lærer', ' norsk.'], 
+            ['Vi ', 'møter', 'snakker', ' venner i kveld.'], 
         ],
         correctAnswers: [1, 1, 2, 2, 1],
     },
@@ -99,11 +99,11 @@ export default dataObj = [
         typeOfScreen: '1',
         nuberOfQuestions: 5,
         questions: [
-            ['Han ', 'går', 'synes', ' til butikken.'], // "Han går til butikken." (He goes to the store.)
-            ['Hun ', 'snakker', 'leser', ' en bok.'], // "Hun leser en bok." (She reads a book.)
-            ['Bussen ', 'kommer', 'kom', ' om fem minutter.'], // "Bussen kommer om fem minutter." (The bus comes in five minutes.)
-            ['Vi ', 'prove', 'lager', ' middag sammen.'], // "Vi lager middag sammen." (We make dinner together.)
-            ['Katten ', 'jager', 'tror', ' en fugl.'], // "Katten jager en fugl." (The cat chases a bird.)
+            ['Han ', 'går', 'synes', ' til butikken.'], 
+            ['Hun ', 'snakker', 'leser', ' en bok.'], 
+            ['Bussen ', 'kommer', 'kom', ' om fem minutter.'], 
+            ['Vi ', 'prove', 'lager', ' middag sammen.'], 
+            ['Katten ', 'jager', 'tror', ' en fugl.'], 
         ],
         correctAnswers: [1, 2, 1, 2, 1],
     },
@@ -111,11 +111,11 @@ export default dataObj = [
         typeOfScreen: '1',
         nuberOfQuestions: 5,
         questions: [
-            ['Jeg ', 'snakker', 'stoler', ' med vennene mine.'], // "Jeg snakker med vennene mine." (I talk with my friends.)
-            ['De ', 'studere', 'studerer', ' norsk nå.'], // "De studerer norsk nå." (They are studying Norwegian now.)
-            ['Han ', 'ser', 'sykler', ' til jobb.'], // "Han sykler til jobb." (He bikes to work.)
-            ['Hun ', 'kan', 'svarer', ' på e-posten.'], // "Hun svarer på e-posten." (She answers the email.)
-            ['Vi ', 'ser', 'hører', ' på TV hver kveld.'], // "Vi ser på TV hver kveld." (We watch TV every evening.)
+            ['Jeg ', 'snakker', 'stoler', ' med vennene mine.'], 
+            ['De ', 'studere', 'studerer', ' norsk nå.'], 
+            ['Han ', 'ser', 'sykler', ' til jobb.'], 
+            ['Hun ', 'kan', 'svarer', ' på e-posten.'], 
+            ['Vi ', 'ser', 'hører', ' på TV hver kveld.'], 
         ],
         correctAnswers: [1, 2, 2, 2, 1],
     },
@@ -123,11 +123,11 @@ export default dataObj = [
         typeOfScreen: '1',
         nuberOfQuestions: 5,
         questions: [
-            ['Barnet ', 'gråter', 'gråtet', ' nå.'], // "Barnet gråter nå." (The child is crying now.)
-            ['Hunden ', 'sover', 'skriver', ' i sengen.'], // "Hunden sover i sengen." (The dog is sleeping in the bed.)
-            ['De ', 'bor', 'spiller', ' fotball i parken.'], // "De spiller fotball i parken." (They play football in the park.)
-            ['Jeg ', 'tegner', 'lærer', ' norsk.'], // "Jeg lærer norsk." (I am learning Norwegian.)
-            ['Han ', 'kjører', 'sykler', ' bilen.'], // "Han kjører bilen." (He drives the car.)
+            ['Barnet ', 'gråter', 'gråtet', ' nå.'], 
+            ['Hunden ', 'sover', 'skriver', ' i sengen.'], 
+            ['De ', 'bor', 'spiller', ' fotball i parken.'], 
+            ['Jeg ', 'tegner', 'lærer', ' norsk.'], 
+            ['Han ', 'kjører', 'sykler', ' bilen.'], 
         ],
         correctAnswers: [1, 1, 2, 2, 1],
         instructions: {
@@ -144,11 +144,11 @@ export default dataObj = [
         typeOfScreen: '1',
         nuberOfQuestions: 5,
         questions: [
-            ['Hun ', 'tenker', 'skriver', ' en artikkel.'], // "Hun skriver en artikkel." (She writes an article.)
-            ['Vi ', 'lever', 'reiser', ' til Norge.'], // "Vi reiser til Norge." (We travel to Norway.)
-            ['Læreren ', 'forklarer', 'drar', ' regelen.'], // "Læreren forklarer regelen." (The teacher explains the rule.)
-            ['Katten ', 'spiser', 'dirkker', ' maten sin.'], // "Katten spiser maten sin." (The cat eats its food.)
-            ['De ', 'liker', 'bor', ' i en stor by.'], // "De bor i en stor by." (They live in a big city.)
+            ['Hun ', 'tenker', 'skriver', ' en artikkel.'], 
+            ['Vi ', 'lever', 'reiser', ' til Norge.'], 
+            ['Læreren ', 'forklarer', 'drar', ' regelen.'],
+            ['Katten ', 'spiser', 'dirkker', ' maten sin.'], 
+            ['De ', 'liker', 'bor', ' i en stor by.'], 
         ],
         correctAnswers: [2, 2, 1, 1, 2],
         instructions: {
@@ -165,11 +165,11 @@ export default dataObj = [
         typeOfScreen: '1',
         nuberOfQuestions: 5,
         questions: [
-            ['Han ', 'drikker', 'trekker', ' vann.'], // "Han drikker vann." (He drinks water.)
-            ['Vi ', 'går', 'sover', ' en tur.'], // "Vi går en tur." (We go for a walk.)
-            ['Hun ', 'spiser', 'synger', ' en sang.'], // "Hun synger en sang." (She sings a song.)
-            ['Barnet ', 'tegner', 'tegnet', ' et bilde.'], // "Barnet tegner et bilde." (The child draws a picture.)
-            ['Klokken ', 'drar', 'er', ' ti.'], // "Klokken er ti." (It is ten o'clock.)
+            ['Han ', 'drikker', 'trekker', ' vann.'],
+            ['Vi ', 'går', 'sover', ' en tur.'], 
+            ['Hun ', 'spiser', 'synger', ' en sang.'], 
+            ['Barnet ', 'tegner', 'tegnet', ' et bilde.'], 
+            ['Klokken ', 'drar', 'er', ' ti.'], 
         ],
         correctAnswers: [1, 1, 2, 1, 2],
         instructions: {

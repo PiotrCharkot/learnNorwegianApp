@@ -4,6 +4,7 @@ import { useNavigation } from "@react-navigation/native";
 import { getAuth, deleteUser, signOut, onAuthStateChanged } from "firebase/auth";
 import { authentication } from '../../../firebase/firebase-config';
 import { withAnchorPoint } from 'react-native-anchor-point';
+import { Audio } from 'expo-av';
 import * as SecureStore from 'expo-secure-store';
 import styles from './style'
 
@@ -24,6 +25,7 @@ const SettingsScreen = () => {
   const [soundOn, setSoundOn] = useState('1');
   const [notificationsOn, setNotificationsOn] = useState('0');
   const [userLoged, setUserLoged] = useState(false);
+  const [sound, setSound] = useState();
 
   const rotateWheel = scrollY.interpolate({
     inputRange: [0, 200],
@@ -45,18 +47,21 @@ const SettingsScreen = () => {
       .catch(() => {
         console.log("Could not log out!");
       });
-  }
+  };
 
   const switchSound = () => {
     if (soundOn === '1') {
       setSoundOn('0');
       save('sound', '0');
+      console.log('sound mute');
     } else {
       setSoundOn('1');
       save('sound', '1');
+      playSound();
+      console.log('sound on');
     }
     //change in secure store 1 = sound, 0 = mute
-  }
+  };
 
   const showConfirmation = () => {
     Animated.spring(confirmationPos, {
@@ -66,16 +71,16 @@ const SettingsScreen = () => {
         useNativeDriver: true,
     }).start();
 
-}
+  };
 
-const hideConfirmation = () => {
-    Animated.spring(confirmationPos, {
-        toValue: 200,
-        speed: 10,
-        bounciness: 5,
-        useNativeDriver: true,
-    }).start();
-}
+  const hideConfirmation = () => {
+      Animated.spring(confirmationPos, {
+          toValue: 200,
+          speed: 10,
+          bounciness: 5,
+          useNativeDriver: true,
+      }).start();
+  };
 
   const deleteAccount = () => {
     console.log('delete account');
@@ -89,7 +94,7 @@ const hideConfirmation = () => {
       console.log('delete account error');
     });
 
-  }
+  };
 
   const switchNotifications = () => {
     if (notificationsOn === '1') {
@@ -100,7 +105,13 @@ const hideConfirmation = () => {
       save('notifications', '1');
     }
     //change in secure store 1 = notifications on, 0 = notifcations off
-  }
+  };
+
+
+  const playSound = async () => {
+    
+    await sound?.replayAsync(); 
+  };
 
   async function save(key, value) {
     await SecureStore.setItemAsync(key, value);
@@ -109,17 +120,20 @@ const hideConfirmation = () => {
   async function getValueFor(key) {
     let result = await SecureStore.getItemAsync(key);
     if (result) {
-      console.log("Here's your value", result);
-      setSoundOn(result);
+      if (key === 'sound') {
+        setSoundOn(result);
+      } else if (key === 'notifications') {
+        setNotificationsOn(result)
+      }
     } else {
       if (key === 'sound') {
         setSoundOn('1');
         save('sound', '1');  
-        console.log('No values stored under that key: ', key);
+        console.log('No values stored under that key sound: ', key);
       } else if (key === 'notifications') {
         setNotificationsOn('0');
         save('notifications', '0'); 
-        console.log('No values stored under that key: ', key);
+        console.log('No values stored under that key notifications: ', key);
       }
       
     }
@@ -167,6 +181,23 @@ const hideConfirmation = () => {
   return unscubscribe;
   }, [userLoged])
 
+
+  useEffect(() => {
+    const loadSound = async () => {
+      console.log('Loading Sound');
+      const { sound } = await Audio.Sound.createAsync(
+        require('./../../../assets/sounds/pluck.mp3')
+      );
+      setSound(sound);
+    };
+
+    loadSound();
+
+    
+    return () => {
+      sound?.unloadAsync();
+    };
+  }, []);
 
   return (
     <View style={styles.mainContainer}>

@@ -4,10 +4,10 @@ export default dataObj = [
         typeOfScreen: '4',
         nuberOfQuestions: 4,
         questions: [
-            ['Han kjører ', '', ''],       // He drives quickly.
-            ['De kommer ', '', ''],       // They will come soon.
-            ['Jeg snakker norsk ', '', ''],  // I speak Norwegian now.
-            ['Hun leser boken ', '', ''] // She is reading the book tonight.
+            ['Han kjører ', '', ''],      
+            ['De kommer ', '', ''],      
+            ['Jeg snakker norsk ', '', ''], 
+            ['Hun leser boken ', '', ''] 
         ],
         correctAnswers: [['fort', 'raskt'], ['snart'], ['nå'], ['i kveld']],
         translations: {
@@ -24,10 +24,10 @@ export default dataObj = [
         typeOfScreen: '4',
         nuberOfQuestions: 4,
         questions: [
-            ['De spiser ', 'hjemme.'],       // They eat at home.
-            ['Han jobber ', 'sent.'],        // He works late.
-            ['Vi reiser ', ''],     // We travel tomorrow.
-            ['Hun studerer ', 'flittig.'],   // She studies diligently.
+            ['De spiser ', 'hjemme.'],       
+            ['Han jobber ', 'sent.'],    
+            ['Vi reiser ', ''],   
+            ['Hun studerer ', 'flittig.'],  
         ],
         correctAnswers: [['vanligvis'], ['ofte'], ['snart'], ['alltid']],
         translations: {
@@ -44,9 +44,9 @@ export default dataObj = [
         typeOfScreen: '4',
         nuberOfQuestions: 3,
         questions: [
-            ['Han har en ', 'bil.'],            // He has a _____ car.
-            ['Hun har en ', 'kjole.'],          // She has a _____ dress.
-            ['De spiste en ', 'middag.']        // They ate a _____ dinner.
+            ['Han har en ', 'bil.'],       
+            ['Hun har en ', 'kjole.'],      
+            ['De spiste en ', 'middag.']      
         ],
         correctAnswers: [['stor'], ['rød'], ['deilig']],
         translations: {
@@ -63,9 +63,9 @@ export default dataObj = [
         typeOfScreen: '4',
         nuberOfQuestions: 3,
         questions: [
-            ['Været var ', 'og kaldt.'],         // The weather was _____ and cold.
-            ['Dette problemet er ', 'å løse.'],  // This problem is _____ to solve.
-            ['Hun følte seg ', 'etter nyheten.'], // She felt _____ after the news.
+            ['Været var ', 'og kaldt.'],      
+            ['Dette problemet er ', 'å løse.'], 
+            ['Hun følte seg ', 'etter nyheten.'], 
         ],
         correctAnswers: [['grått'], ['vanskelig'], ['sjokkert']],
         translations: {

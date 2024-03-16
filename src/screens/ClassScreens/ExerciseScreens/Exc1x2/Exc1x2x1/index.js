@@ -26,9 +26,9 @@ const dataForMarkers = {
   class: 'class0'
 }
 
-const option1 = [type1prep, type1prep, type2prep, type5prep, type6prep, type7prep, type8prep];
-const option2 = [type1prep, type1prep, type4prep, type5prep];
-const option3 = [type1prep, type1prep, type3prep];
+let option1 = [type1prep, type1prep, type2prep, type5prep, type6prep, type7prep, type8prep];
+let option2 = [type1prep, type1prep, type4prep, type5prep];
+let option3 = [type1prep, type1prep, type3prep];
 
 const links1 = ['Exc1x2x1', 'Type1', 'Type2', 'Type5', 'Type6', 'Type7', 'Type8'];
 const links2 = ['Exc1x2x1', 'Type1', 'Type4', 'Type5'];
@@ -184,11 +184,23 @@ const Exc1x2x1 = ({route}) => {
 
   useEffect(() => {
 
+
+    let parsedData = Object.keys(route.params.data).length === 0 ? {} : JSON.parse(route.params.data) 
+    let type1prepNew = Object.keys(route.params.data).length === 0 ? type1prep : parsedData.adverbs.type1
+
+    if (Object.keys(route.params.data).length === 0) {
+      console.log('data from firebase not recived');
+    } else {
+      option1 = [type1prepNew, type1prepNew, type2prep, type5prep, type6prep, type7prep, type8prep];
+      option2 = [type1prepNew, type1prepNew, type4prep, type5prep];
+      option3 = [type1prepNew, type1prepNew, type3prep];
+    }
+
     let tempArr = []; 
     let sumOfAllPoints = 0;
 
     let randomNumber = Math.floor(Math.random()* 3)
-    console.log('my raaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaandom: ', randomNumber);
+    console.log('set of exrecises nummer: ', randomNumber);
 
 
 

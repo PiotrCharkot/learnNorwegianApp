@@ -4,10 +4,10 @@ export default dataObj = [
         typeOfScreen: '4',
         nuberOfQuestions: 4,
         questions: [
-            ['en', 'bil'], // a car
-            ['et', 'hus'], // a house
-            ['en', 'bok'], // a book
-            ['flere', 'barn'] // several children
+            ['en', 'bil'], 
+            ['et', 'hus'], 
+            ['en', 'bok'], 
+            ['flere', 'barn'] 
         ],
         correctAnswers: [['rød'], ['stort'], ['ny'], ['lykkelige']],
         translations: {
@@ -24,10 +24,10 @@ export default dataObj = [
         typeOfScreen: '4',
         nuberOfQuestions: 4,
         questions: [
-            ['en', 'hund'], // a dog
-            ['et', 'eple'], // an apple
-            ['en', 'katt'], // a cat
-            ['flere', 'trær'] // several trees
+            ['en', 'hund'], 
+            ['et', 'eple'], 
+            ['en', 'katt'], 
+            ['flere', 'trær'] 
         ],
         correctAnswers: [['stor'], ['rødt'], ['liten'], ['høye']],
         translations: {
@@ -44,10 +44,10 @@ export default dataObj = [
         typeOfScreen: '4',
         nuberOfQuestions: 4,
         questions: [
-            ['en', 'by'], // a city
-            ['et', 'bord'], // a table
-            ['en', 'sol'], // a sun
-            ['flere', 'vinduer'] // several windows
+            ['en', 'by'],
+            ['et', 'bord'],
+            ['en', 'sol'], 
+            ['flere', 'vinduer'] 
         ],
         correctAnswers: [['liten'], ['stort'], ['lys'], ['store']],
         translations: {

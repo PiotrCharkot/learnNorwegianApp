@@ -4,8 +4,8 @@ export default dataObj = [
         typeOfScreen: '4',
         nuberOfQuestions: 2,
         questions: [
-            ['Hun ', 'til legen i morgen.'],            // She will go to the doctor tomorrow.
-            ['De ', 'sin nye bil neste uke.'],          // They will receive their new car next week.
+            ['Hun ', 'til legen i morgen.'],            
+            ['De ', 'sin nye bil neste uke.'],     
         ],
         correctAnswers: [['skal gå', 'kommer til å gå'], ['skal få', 'kommer til å få']],
         translations: {
@@ -31,10 +31,10 @@ export default dataObj = [
         typeOfScreen: '4',
         nuberOfQuestions: 4,
         questions: [
-            ['Vi', 'til fjellet neste helg.'],  // to travel
-            ['Lise', 'studiene sine til våren.'],  // to complete
-            ['De', 'en ny kafé i byen snart.'],  // to open
-            ['Hun', 'lærer innen to år.'],  // to become
+            ['Vi', 'til fjellet neste helg.'],  
+            ['Lise', 'studiene sine til våren.'], 
+            ['De', 'en ny kafé i byen snart.'], 
+            ['Hun', 'lærer innen to år.'],  
         ],
         correctAnswers: [['skal reise', 'kommer til å reise'], ['skal fullføre', 'kommer til å fullføre'], ['skal åpne', 'kommer til å åpne'], ['skal bli', 'kommer til å bli']],
         translations: {
@@ -60,10 +60,10 @@ export default dataObj = [
         typeOfScreen: '4',
         nuberOfQuestions: 4,
         questions: [
-            ['Jeg', 'medisin neste år.'],  // to study
-            ['Du', 'deg bedre etter å ha hvilt.'],  // to feel
-            ['Han', 'et nytt hus i sommer.'],  // to build
-            ['De', 'mange nye oppdrag denne måneden.'],  // to receive
+            ['Jeg', 'medisin neste år.'], 
+            ['Du', 'deg bedre etter å ha hvilt.'], 
+            ['Han', 'et nytt hus i sommer.'], 
+            ['De', 'mange nye oppdrag denne måneden.'],  
         ],
         correctAnswers: [['skal studere', 'kommer til å studere'], ['skal føle', 'kommer til å føle'], ['skal bygge', 'kommer til å bygge'], ['skal få', 'kommer til å få']],
         translations: {

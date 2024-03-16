@@ -5,8 +5,8 @@ export default dataObj = [
         leftTitle: 'en',
         rightTitle: 'et',
         correctAnswers: [
-            ['bok', 'bil', 'klokke', 'stol'], // masculine nouns
-            ['hus', 'barn', 'eple', 'brev']    // neuter nouns
+            ['bok', 'bil', 'klokke', 'stol'], 
+            ['hus', 'barn', 'eple', 'brev']  
         ],
         words: [
             '???', '???', '???', '???', 
@@ -20,8 +20,8 @@ export default dataObj = [
         leftTitle: 'en',
         rightTitle: 'et',
         correctAnswers: [
-            ['katt', 'hund', 'dag', 'bil'], // masculine nouns
-            ['tre', 'navn', 'rom', 'vindu'] // neuter nouns
+            ['katt', 'hund', 'dag', 'bil'], 
+            ['tre', 'navn', 'rom', 'vindu'] 
         ],
         words: [
             '???', '???', '???', '???', 
@@ -35,8 +35,8 @@ export default dataObj = [
         leftTitle: 'en',
         rightTitle: 'et',
         correctAnswers: [
-            ['båt', 'klokke', 'stol', 'jobb'], // masculine nouns
-            ['kart', 'selskap', 'brev', 'navn'] // neuter nouns
+            ['båt', 'klokke', 'stol', 'jobb'], 
+            ['kart', 'selskap', 'brev', 'navn'] 
         ],
         words: [
             '???', '???', '???', '???', 

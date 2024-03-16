@@ -4,10 +4,10 @@ export default dataObj = [
         typeOfScreen: '4',
         nuberOfQuestions: 4,
         questions: [
-            ['Han snakker om ', 'selv.'],       // He talks about himself.
-            ['Vi må ta vare på ', 'selv.'],     // We must take care of ourselves.
-            ['Du må tro på ', 'selv.'],         // You must believe in yourself.
-            ['Hun ser på ', 'i speilet.'],         // She looks at herself in the mirror.
+            ['Han snakker om ', 'selv.'],     
+            ['Vi må ta vare på ', 'selv.'],    
+            ['Du må tro på ', 'selv.'],       
+            ['Hun ser på ', 'i speilet.'],         
         ],
         correctAnswers: [['seg'], ['oss'], ['deg'], ['seg']],
         instructions: {
@@ -24,8 +24,8 @@ export default dataObj = [
         typeOfScreen: '4',
         nuberOfQuestions: 2,
         questions: [
-            ['Jeg gleder ', 'til festen.'],     // I look forward to the party.
-            ['Hun kjøpte en gave til ', 'selv.'], // She bought a gift for herself.
+            ['Jeg gleder ', 'til festen.'],    
+            ['Hun kjøpte en gave til ', 'selv.'],
         ],
         correctAnswers: [['meg'], ['seg']],
         instructions: {
@@ -42,10 +42,10 @@ export default dataObj = [
         typeOfScreen: '4',
         nuberOfQuestions: 4,
         questions: [
-            ['', 'liker å lese bøker.'],     // They like to read books.
-            ['Kan ', 'hjelpe meg?'],         // Can you help me?
-            ['', 'bor i Norge.'],            // We live in Norway.
-            ['', 'er på skolen.'],          // She is at school.
+            ['', 'liker å lese bøker.'],    
+            ['Kan ', 'hjelpe meg?'],        
+            ['', 'bor i Norge.'],           
+            ['', 'er på skolen.'],       
         ],
         correctAnswers: [['De'], ['du'], ['Vi'], ['Hun']],
         translations: {
@@ -72,10 +72,10 @@ export default dataObj = [
         typeOfScreen: '4',
         nuberOfQuestions: 4,
         questions: [
-            ['', 'snakker norsk.'],        // He speaks Norwegian.
-            ['', 'går på tur sammen.'],     // They go for a walk together.
-            ['', 'har en katt.'],          // I have a cat.
-            ['', 'liker å svømme.'],        // You like to swim.
+            ['', 'snakker norsk.'],    
+            ['', 'går på tur sammen.'],     
+            ['', 'har en katt.'],         
+            ['', 'liker å svømme.'],     
         ],
         correctAnswers: [['Han'], ['De'], ['Jeg'], ['Du']],
         translations: {

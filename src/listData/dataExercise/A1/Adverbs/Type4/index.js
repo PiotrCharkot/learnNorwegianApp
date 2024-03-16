@@ -4,8 +4,8 @@ export default dataObj = [
         typeOfScreen: '4',
         nuberOfQuestions: 2,
         questions: [
-            ['Vannet er ', 'kaldt.'],          // The water is cold.
-            ['De snakker ', 'norsk.']          // They speak Norwegian.
+            ['Vannet er ', 'kaldt.'],         
+            ['De snakker ', 'norsk.'] 
         ],
         correctAnswers: [['veldig'], ['flytende']],
         translations: {
@@ -22,8 +22,8 @@ export default dataObj = [
         typeOfScreen: '4',
         nuberOfQuestions: 2,
         questions: [
-            ['Han snakker ', ''],   // He speaks clearly.
-            ['Kaken smaker ', '']      // The cake tastes sweet.
+            ['Han snakker ', ''],  
+            ['Kaken smaker ', '']    
         ],
         correctAnswers: [['sakte'], ['deilig']],
         translations: {
@@ -40,8 +40,8 @@ export default dataObj = [
         typeOfScreen: '4',
         nuberOfQuestions: 2,
         questions: [
-            ['Månen skinner ', 'i natt.'],       // The moon is shining tonight.
-            ['Barnet sover ', 'nå.'],            // The child is sleeping now.
+            ['Månen skinner ', 'i natt.'],      
+            ['Barnet sover ', 'nå.'],      
         ],
         correctAnswers: [['klart'], ['dypt']],
         translations: {

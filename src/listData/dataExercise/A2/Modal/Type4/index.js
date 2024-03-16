@@ -4,11 +4,11 @@ export default dataObj = [
         typeOfScreen: '4',
         nuberOfQuestions: 5,
         questions: [
-            ['Du ', 'ikke glemme å låse døren.'], // You must not forget to lock the door.
-            ['Han ', 'kjøre bil uten lappen.'],    // He can drive a car without a license.
-            ['Vi ', 'gjerne hjelpe deg.'],         // We would like to help you.
-            ['Jeg ', 'se filmen i kveld.'],        // I want to watch the movie tonight.
-            ['De ', 'snakke norsk nå.'],           // They can speak Norwegian now.
+            ['Du ', 'ikke glemme å låse døren.'], 
+            ['Han ', 'kjøre bil uten lappen.'],   
+            ['Vi ', 'gjerne hjelpe deg.'],        
+            ['Jeg ', 'se filmen i kveld.'],    
+            ['De ', 'snakke norsk nå.'],
         ],
         correctAnswers: [['må'], ['kan'], ['vil'], ['skal'], ['kan']],
         translations: {
@@ -66,10 +66,10 @@ export default dataObj = [
         typeOfScreen: '4',
         nuberOfQuestions: 4,
         questions: [
-            ['Du ', 'lese denne boken.'],         // You must read this book.
-            ['Han ', 'gjerne hjelpe til.'],       // He would like to help.
-            ['Vi ', 'ikke komme i dag.'],         // We can't come today.
-            ['Jeg ', 'prøve igjen.'],             // I should try again.
+            ['Du ', 'lese denne boken.'],        
+            ['Han ', 'gjerne hjelpe til.'],     
+            ['Vi ', 'ikke komme i dag.'],     
+            ['Jeg ', 'prøve igjen.'],           
         ],
         correctAnswers: [['må'], ['vil'], ['kan'], ['bør']],
         translations: {
@@ -86,10 +86,10 @@ export default dataObj = [
         typeOfScreen: '4',
         nuberOfQuestions: 4,
         questions: [
-            ['De ', 'lese denne rapporten.'],        // They must read this report.
-            ['Du ', 'prøve hardere.'],              // You should try harder.
-            ['Jeg ', 'gå nå, det er sent.'],        // I want to go now, it's late.
-            ['Vi ', 'finne en løsning.'],            // We can find a solution.
+            ['De ', 'lese denne rapporten.'],       
+            ['Du ', 'prøve hardere.'],             
+            ['Jeg ', 'gå nå, det er sent.'],    
+            ['Vi ', 'finne en løsning.'],          
         ],
         correctAnswers: [['må'], ['bør'], ['vil'], ['kan']],
         translations: {
@@ -106,10 +106,10 @@ export default dataObj = [
         typeOfScreen: '4',
         nuberOfQuestions: 4,
         questions: [
-            ['Du ', 'gjøre leksene dine.'],           // You must do your homework.
-            ['Han ', 'hjelpe oss.'],                // He wants to help us.
-            ['Vi ', 'snakke norsk på kurset.'],       // We can speak Norwegian in the course.
-            ['Jeg ', 'prøve igjen i morgen.'],        // I should try again tomorrow.
+            ['Du ', 'gjøre leksene dine.'],     
+            ['Han ', 'hjelpe oss.'],              
+            ['Vi ', 'snakke norsk på kurset.'],    
+            ['Jeg ', 'prøve igjen i morgen.'],
         ],
         correctAnswers: [['må'], ['vil'], ['kan'], ['bør']],
         translations: {

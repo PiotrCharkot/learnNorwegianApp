@@ -14,9 +14,9 @@ export default dataObj = [
             'punktlig', 'gjennomsiktig', 'bløt', 'spennende'
         ],
         correctAnswers: [
-            [false, false, true, false],  // raskt
-            [false, false, true, false],  // flittig
-            [true, false, false, false],  // punktlig
+            [false, false, true, false],  
+            [false, false, true, false],  
+            [true, false, false, false], 
         ],
     },
     {
@@ -34,9 +34,9 @@ export default dataObj = [
             'overrasket', 'intenst', 'sjelden', 'høyt' 
         ],
         correctAnswers: [
-            [false, false, false, true],  // delvis
-            [false, false, false, true],  // straks
-            [false, true, false, false],  // intenst
+            [false, false, false, true], 
+            [false, false, false, true],
+            [false, true, false, false], 
         ],
     },
     {
@@ -55,9 +55,9 @@ export default dataObj = [
             'gradvis', 'sjelden', 'slett', 'kaotisk'
         ],
         correctAnswers: [
-            [false, false, true, false],   // 'fort' is correct
-            [false, true, false, false],  // 'grundig' is correct
-            [true, false, false, false]   // 'gradvis' is correct
+            [false, false, true, false],   
+            [false, true, false, false], 
+            [true, false, false, false] 
         ],
     },
 ];
