@@ -9,7 +9,6 @@ import CardLearn from '../../components/cards/CardLearn'
 import Loader from '../../components/other/Loader';
 import { FlashList } from '@shopify/flash-list';
 import uuid from 'react-native-uuid';
-import dummyData from '../../listData/learningData1';
 
 const screenWidth = Dimensions.get('window').width;
 const cardSize = screenWidth * 0.7 + 20;

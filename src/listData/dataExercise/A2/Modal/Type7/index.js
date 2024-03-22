@@ -16,7 +16,7 @@ export default dataObj = [
         typeOfScreen: '7',
         wordsCorrect: ['Han', 'må', 'gå', 'tidlig', 'fra', 'jobben', 'fordi', 'han', 'skal hente', 'barna', 'på', 'skolen.'],
         words: ['Han', 'ma', 'gå', 'tidlig', 'fra', 'jobben', 'fordi', 'han', 'skal å hente', 'barna', 'på', 'skolen.'],
-        mistakesIndex: [1]
+        mistakesIndex: []
     }
     
 ];

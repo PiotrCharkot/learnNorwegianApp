@@ -13,7 +13,8 @@ import styles from './style'
 import Card from '../../components/cards/Card';
 import CardExerciseList from '../../components/cards/CardExerciseList';
 import CardExe from '../../components/cards/CardExe';
-import exerciseData1 from '../../listData/exerciseData1';
+import exerciseList1 from '../../listData/exerciseLists/exerciseList1';
+import exerciseList2 from '../../listData/exerciseLists/exerciseList2';
 
 const screenWidth = Dimensions.get('window').width;
 const cardSize = screenWidth * 0.6 + 20;
@@ -38,19 +39,23 @@ const ExerciseScreen = () => {
   const navigation = useNavigation();
   const scrollY = useRef(new Animated.Value(0)).current;
   const scrollX = useRef(new Animated.Value(0)).current;
+  const scrollX2 = useRef(new Animated.Value(0)).current;
   const overlayOpacity = useRef(new Animated.Value(1)).current;
   const overlayOffset = useRef(new Animated.Value(0)).current;
   const scaleLanguageHight = useRef(new Animated.Value(0)).current;
   const translateLanguage = useRef(new Animated.Value(100)).current;
   const lastPlayedAtRef = useRef(0);
+  const lastPlayedAtRef2 = useRef(0);
 
   const [choosenLanguage, setChoosenLanguage] = useState('EN');
   const [languageListOpen, setLanguageListOpen] = useState(false);
   const [dataFlatList, setDataFlatList] = useState([]);
+  const [dataFlatList2, setDataFlatList2] = useState([]);
   const [random, setRandom] = useState(0);
   const [title1, setTitle1] = useState('Level');
-  const [readingBtnTxt, setReadingButtonTxt] = useState('Reading');
+  const [readingBtnTxt, setReadingButtonTxt] = useState('Reading Hub');
   const [dataExerciseA1, setDataExerciseA1] = useState({});
+  const [dataExerciseA2, setDataExerciseA2] = useState({});
   const [isSoundOn, setIsSoundOn] = useState(true);
   const [sound, setSound] = useState();
   const [sound2, setSound2] = useState();
@@ -67,6 +72,11 @@ const ExerciseScreen = () => {
   });
 
   const backgroundFlatlist = scrollX.interpolate({
+    inputRange: colorsBackFlatlist5.map((_, i) => i * cardSize),
+    outputRange: colorsBackFlatlist5.map((i) => i)
+  })
+
+  const backgroundFlatlist2 = scrollX2.interpolate({
     inputRange: colorsBackFlatlist5.map((_, i) => i * cardSize),
     outputRange: colorsBackFlatlist5.map((i) => i)
   })
@@ -102,19 +112,19 @@ const ExerciseScreen = () => {
       save('language', language);
 
       if (language === 'PL') {
-        setReadingButtonTxt('Czytanie')
+        setReadingButtonTxt('Czytaj')
       } else if (language === 'DE') {
-        setReadingButtonTxt('Czytanie niem')
+        setReadingButtonTxt('Lesen')
       } else if (language === 'LT') {
-        setReadingButtonTxt('Czytanie lt')
+        setReadingButtonTxt('Skaityk')
       } else if (language === 'AR') {
-        setReadingButtonTxt('Czytaniearabskui')
+        setReadingButtonTxt('اقرأ')
       } else if (language === 'UA') {
-        setReadingButtonTxt('Czytanieua')
+        setReadingButtonTxt('Читай')
       } else if (language === 'ES') {
-        setReadingButtonTxt('Czytaniesp')
+        setReadingButtonTxt('Leer')
       } else if (language === 'EN') {
-        setReadingButtonTxt('Reading')
+        setReadingButtonTxt('Reading Hub')
       }
     }
     if (!languageListOpen) {
@@ -154,7 +164,8 @@ const ExerciseScreen = () => {
 
 
 
-    setDataFlatList([{key: 'left-spacer'}, ...exerciseData1, {key: 'right-spacer'}]);
+    setDataFlatList([{key: 'left-spacer'}, ...exerciseList1, {key: 'right-spacer'}]);
+    setDataFlatList2([{key: 'left-spacer'}, ...exerciseList2, {key: 'right-spacer'}]);
 
     let tempVal = Math.floor(Math.random() * imagesMain.length);
     setRandom(tempVal); 
@@ -178,6 +189,24 @@ const ExerciseScreen = () => {
         }
       });
 
+
+      getDownloadURL(ref(storage, 'exerciseData/A2JsonFormat.json'))
+      .then(async (url) => {
+          
+        //set data from storage
+        const response = await fetch(url);
+        const text = await response.text();
+        
+        setDataExerciseA2(text)
+          
+      })
+      .catch((error) => {
+        console.log('my error is :', error);
+        if (error.code === 'storage/object-not-found') {
+          //console.log('no file for profile');
+          
+        }
+      });
     
   }, [])
 
@@ -229,25 +258,25 @@ const ExerciseScreen = () => {
 
   useEffect(() => {
     if (choosenLanguage === 'PL') {
-      setReadingButtonTxt('Czytanie');
+      setReadingButtonTxt('Czytaj');
       setTitle1('Poziom');
     } else if (choosenLanguage === 'DE') {
-      setReadingButtonTxt('Czytanie niem');
+      setReadingButtonTxt('Lesen');
       setTitle1('Niveau');
     } else if (choosenLanguage === 'LT') {
-      setReadingButtonTxt('Czytanie lt');
+      setReadingButtonTxt('Skaityk');
       setTitle1('Lygis');
     } else if (choosenLanguage === 'AR') {
-      setReadingButtonTxt('Czytaniearabskui');
+      setReadingButtonTxt('اقرأ');
       setTitle1('مستوى');
     } else if (choosenLanguage === 'UA') {
-      setReadingButtonTxt('Czytanieua');
+      setReadingButtonTxt('Читай');
       setTitle1('Pівень');
     } else if (choosenLanguage === 'ES') {
-      setReadingButtonTxt('Czytaniesp');
+      setReadingButtonTxt('Leer');
       setTitle1('Nivel');
     } else if (choosenLanguage === 'EN') {
-      setReadingButtonTxt('Reading');
+      setReadingButtonTxt('Reading Hub');
       setTitle1('Level');
     }
   }, [choosenLanguage])
@@ -312,35 +341,56 @@ const ExerciseScreen = () => {
     querySnapshot.forEach((doc) => {
 
       
-      for (let i = 0; i < exerciseData1.length; i++) {
+      for (let i = 0; i < exerciseList1.length; i++) {
 
-        if (exerciseData1[i].key === 1) {
-          exerciseData1[i].bars = doc.data().exercise.section1.class0
-        } else if (exerciseData1[i].key === 2) {
-          exerciseData1[i].bars = doc.data().exercise.section1.class1
-        } else if (exerciseData1[i].key === 3) {
-          exerciseData1[i].bars = doc.data().exercise.section1.class2
-        } else if (exerciseData1[i].key === 4) {
-          exerciseData1[i].bars = doc.data().exercise.section1.class3
-        } else if (exerciseData1[i].key === 5) {
-          exerciseData1[i].bars = doc.data().exercise.section1.class4
-        } else if (exerciseData1[i].key === 6) {
-          exerciseData1[i].bars = doc.data().exercise.section1.class5
-        } else if (exerciseData1[i].key === 7) {
-          exerciseData1[i].bars = doc.data().exercise.section1.class6
-        } else if (exerciseData1[i].key === 8) {
-          exerciseData1[i].bars = doc.data().exercise.section1.class7
-        } else if (exerciseData1[i].key === 9) {
-          exerciseData1[i].bars = doc.data().exercise.section1.class8
-        } else if (exerciseData1[i].key === 10) {
-          exerciseData1[i].bars = doc.data().exercise.section1.class9
+        if (exerciseList1[i].key === 1) {
+          exerciseList1[i].bars = doc.data().exercise.section1.class0
+        } else if (exerciseList1[i].key === 2) {
+          exerciseList1[i].bars = doc.data().exercise.section1.class1
+        } else if (exerciseList1[i].key === 3) {
+          exerciseList1[i].bars = doc.data().exercise.section1.class2
+        } else if (exerciseList1[i].key === 4) {
+          exerciseList1[i].bars = doc.data().exercise.section1.class3
+        } else if (exerciseList1[i].key === 5) {
+          exerciseList1[i].bars = doc.data().exercise.section1.class4
+        } else if (exerciseList1[i].key === 6) {
+          exerciseList1[i].bars = doc.data().exercise.section1.class5
+        } else if (exerciseList1[i].key === 7) {
+          exerciseList1[i].bars = doc.data().exercise.section1.class6
+        } else if (exerciseList1[i].key === 8) {
+          exerciseList1[i].bars = doc.data().exercise.section1.class7
+        } else if (exerciseList1[i].key === 9) {
+          exerciseList1[i].bars = doc.data().exercise.section1.class8
+        } else if (exerciseList1[i].key === 10) {
+          exerciseList1[i].bars = doc.data().exercise.section1.class9
+        } 
+        
+      }
+
+
+
+      for (let i = 0; i < exerciseList2.length; i++) {
+
+        if (exerciseList2[i].key === 1) {
+          exerciseList2[i].bars = doc.data().exercise.section2.class0
+        } else if (exerciseList2[i].key === 2) {
+          exerciseList2[i].bars = doc.data().exercise.section2.class1
+        } else if (exerciseList2[i].key === 3) {
+          exerciseList2[i].bars = doc.data().exercise.section2.class2
+        } else if (exerciseList2[i].key === 4) {
+          exerciseList2[i].bars = doc.data().exercise.section2.class3
+        } else if (exerciseList2[i].key === 5) {
+          exerciseList2[i].bars = doc.data().exercise.section2.class4
+        } else if (exerciseList2[i].key === 6) {
+          exerciseList2[i].bars = doc.data().exercise.section2.class5
         } 
         
       }
     })
 
 
-    setDataFlatList([{key: 'left-spacer'}, ...exerciseData1, {key: 'right-spacer'}]);
+    setDataFlatList([{key: 'left-spacer'}, ...exerciseList1, {key: 'right-spacer'}]);
+    setDataFlatList2([{key: 'left-spacer'}, ...exerciseList2, {key: 'right-spacer'}]);
 
     
 
@@ -369,10 +419,35 @@ const ExerciseScreen = () => {
   };
 
 
+  const handleScroll2 = (event) => {
+    // First, process the animated event
+    Animated.event(
+      [{ nativeEvent: { contentOffset: { x: scrollX2 } } }],
+      { useNativeDriver: false }
+    )(event); // Manually invoke the animated event handler
+
+    // Then, add your logic for playing sound at certain scroll positions
+    const x = event.nativeEvent.contentOffset.x; // Get the current horizontal scroll position
+    const threshold = cardSize * 0.5; // Define your threshold here
+
+    // Calculate the absolute difference from the last played position
+    const diff = Math.abs(x - lastPlayedAtRef2.current);
+
+    if (diff >= threshold && isSoundOn) {
+      playSound2();
+      // Update the last played position to the current, adjusted for multiples of 200
+      // This adjustment ensures correct behavior in both forward and backward scrolling
+      lastPlayedAtRef2.current = x - (x % threshold) + (x > lastPlayedAtRef2.current ? threshold : 0);
+    }
+  };
+
+
+
   const renderCard = ({item, index}) => {
 
     let colorSqu = colorsBackFlatlist5[index - 1]
     let translatedTitle = '';
+    let translatedSubTitle = '';
 
     if (!item.title) {
       return <View style={{width: spacerSize}} ></View>
@@ -390,25 +465,32 @@ const ExerciseScreen = () => {
 
     if (choosenLanguage === 'PL') {
       translatedTitle = item.title.pl
+      translatedSubTitle = item.description.pl
     } else if (choosenLanguage === 'DE') {
       translatedTitle = item.title.ger
+      translatedSubTitle = item.description.ger
     } else if (choosenLanguage === 'LT') {
       translatedTitle = item.title.lt
+      translatedSubTitle = item.description.lt
     } else if (choosenLanguage === 'AR') {
       translatedTitle = item.title.ar
+      translatedSubTitle = item.description.ar
     } else if (choosenLanguage === 'UA') {
       translatedTitle = item.title.ua
+      translatedSubTitle = item.description.ua
     } else if (choosenLanguage === 'ES') {
       translatedTitle = item.title.sp
+      translatedSubTitle = item.description.sp
     } else if (choosenLanguage === 'EN') {
       translatedTitle = item.title.eng
+      translatedSubTitle = item.description.eng
     }
 
     return <Animated.View style={{transform: [{translateY}]}}>
 
       <CardExe 
       title={translatedTitle} 
-      description={item.description} 
+      description={translatedSubTitle} 
       level={item.level} 
       link={item.link} 
       showPro={item.showPro}
@@ -416,6 +498,65 @@ const ExerciseScreen = () => {
       language={choosenLanguage}
       barsData={item.bars}
       dataExercie={dataExerciseA1}/>
+    </Animated.View>
+  }
+
+
+  const renderCard2 = ({item, index}) => {
+
+    let colorSqu = colorsBackFlatlist5[index - 1]
+    let translatedTitle = '';
+    let translatedSubTitle = '';
+
+    if (!item.title) {
+      return <View style={{width: spacerSize}} ></View>
+    }
+    const inputRange = [
+      (index - 2) * cardSize,
+      (index - 1) * cardSize,
+      index  * cardSize,
+    ];
+
+    const translateY = scrollX2.interpolate({
+      inputRange,
+      outputRange: [0, -50, 0]
+    })
+
+    if (choosenLanguage === 'PL') {
+      translatedTitle = item.title.pl
+      translatedSubTitle = item.description.pl
+    } else if (choosenLanguage === 'DE') {
+      translatedTitle = item.title.ger
+      translatedSubTitle = item.description.ger
+    } else if (choosenLanguage === 'LT') {
+      translatedTitle = item.title.lt
+      translatedSubTitle = item.description.lt
+    } else if (choosenLanguage === 'AR') {
+      translatedTitle = item.title.ar
+      translatedSubTitle = item.description.ar
+    } else if (choosenLanguage === 'UA') {
+      translatedTitle = item.title.ua
+      translatedSubTitle = item.description.ua
+    } else if (choosenLanguage === 'ES') {
+      translatedTitle = item.title.sp
+      translatedSubTitle = item.description.sp
+    } else if (choosenLanguage === 'EN') {
+      translatedTitle = item.title.eng
+      translatedSubTitle = item.description.eng
+    }
+
+    return <Animated.View style={{transform: [{translateY}]}}>
+
+      <CardExe 
+      title={translatedTitle} 
+      description={translatedSubTitle} 
+      level={item.level} 
+      link={item.link} 
+      showPro={item.showPro}
+      colorSmallSqu={colorSqu}
+      language={choosenLanguage}
+      barsData={item.bars}
+      dataExercie={dataExerciseA2}/>
     </Animated.View>
   }
 
@@ -457,6 +598,8 @@ const ExerciseScreen = () => {
         <LinearGradient colors={['white', transparent, transparent, transparent, transparent, 'white']} start={[0.0, 0.0]} end={[0.0, 1.0]}  style={{...styles.gradinetImg}}>
         </LinearGradient>
         </Animated.View>
+
+
         <Animated.View style={{...styles.flatListsContainer, backgroundColor: backgroundFlatlist}}>
           
           <LinearGradient colors={['white', 'rgba(255,255,255,0)', 'white']} start={[0.0, 0.1]} end={[0.0, 1.0]}  style={styles.gradinetFlatlist}>
@@ -477,6 +620,31 @@ const ExerciseScreen = () => {
             onScroll={handleScroll}
             scrollEventThrottle={16}
           />
+          
+
+        </Animated.View>
+
+        <Animated.View style={{...styles.flatListsContainerBottom, backgroundColor: backgroundFlatlist2}}>
+          
+          <LinearGradient colors={['white', 'rgba(255,255,255,0)', 'white']} start={[0.0, 0.1]} end={[0.0, 1.0]}  style={styles.gradinetFlatlist}>
+            </LinearGradient>
+        
+          <View style={styles.titleContainer}>
+            <Text style={styles.titleText}>{choosenLanguage === 'AR' ? '' : title1} A2 {choosenLanguage === 'AR' ? title1 : ''}</Text>
+          </View>
+          <Animated.FlatList 
+            style={styles.flatlist}
+            horizontal
+            showsHorizontalScrollIndicator={false}
+            snapToInterval={cardSize}
+            decelerationRate={0}
+            data={dataFlatList2}
+            renderItem={renderCard2}
+            keyExtractor={(item) => item.key}
+            onScroll={handleScroll2}
+            scrollEventThrottle={16}
+          />
+          
 
         </Animated.View>
         

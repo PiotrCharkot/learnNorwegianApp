@@ -7,16 +7,17 @@ import { collection, getDocs, query, where, doc, setDoc, updateDoc, deleteDoc } 
 import { db } from '../../../firebase/firebase-config'
 import { authentication } from '../../../firebase/firebase-config';
 import { onAuthStateChanged  } from 'firebase/auth';
+import * as SecureStore from 'expo-secure-store';
 import uuid from 'react-native-uuid';
 import styles from './style';
 import Card from '../../components/cards/Card';
 import CardBlack from '../../components/cards/CardBlack';
-import learningData1 from '../../listData/learningData1';
-import learningData2 from '../../listData/learningData2';
-import learningData3 from '../../listData/learningData3';
-import learningData4 from '../../listData/learningData4';
-import learningData5 from '../../listData/learningData5';
-import learningData6 from '../../listData/learningData6';
+import learningList1 from '../../listData/learningLists/learningList1';
+import learningList2 from '../../listData/learningLists/learningList2';
+import learningList3 from '../../listData/learningLists/learningList3';
+import learningList4 from '../../listData/learningLists/learningList4';
+import learningList5 from '../../listData/learningLists/learningList5';
+import learningList6 from '../../listData/learningLists/learningList6';
 
 const screenWidth = Dimensions.get('window').width;
 const cardSize = screenWidth * 0.6 + 20;
@@ -58,6 +59,9 @@ const LearningScreen = () => {
   const [dataFlatList5, setDataFlatList5] = useState([]);
   const [dataFlatList6, setDataFlatList6] = useState([]);
   const [random, setRandom] = useState(0);
+  const [readingBtnTxt, setReadingButtonTxt] = useState('Reading Hub');
+  const [choosenLanguage, setChoosenLanguage] = useState('EN');
+  const [isSoundOn, setIsSoundOn] = useState(true);
 
   const opacityImgBlur = scrollY.interpolate({
     inputRange: [0, 60],
@@ -106,6 +110,24 @@ const LearningScreen = () => {
   const imagesMainBlurred = [require('../../../assets/reindeerRobo1Blurred.png'), require('../../../assets/reindeerRobo2Blurred.png'), require('../../../assets/reindeerRobo3Blurred.png'), require('../../../assets/reindeerRobo4Blurred.png'), require('../../../assets/reindeerRobo5Blurred.png'), require('../../../assets/reindeerRobo6Blurred.png')];
 
 
+
+  async function getValueFor(key) {
+    let result = await SecureStore.getItemAsync(key);
+    if (result) {
+      if (key === 'sound' && result === '0') {
+        setIsSoundOn(false);
+      } else if (key === 'sound' && result === '1') {
+        setIsSoundOn(true);
+      } else if (key === 'language') {
+        setChoosenLanguage(result);
+      }
+    } else {
+      console.log('No values stored under that key.');
+    }
+  }
+
+
+
   useEffect(() => {
     const unscubscribe = onAuthStateChanged(authentication, (authUser) => {
         
@@ -128,12 +150,12 @@ const LearningScreen = () => {
     setRandom(tempVal);
     
     
-    setDataFlatList([{key: 'left-spacer'}, ...learningData1, {key: 'right-spacer'}])
-    setDataFlatList2([{key: 'left-spacer'}, ...learningData2, {key: 'right-spacer'}])
-    setDataFlatList3([{key: 'left-spacer'}, ...learningData3, {key: 'right-spacer'}])
-    setDataFlatList4([{key: 'left-spacer'}, ...learningData4, {key: 'right-spacer'}])
-    setDataFlatList5([{key: 'left-spacer'}, ...learningData5, {key: 'right-spacer'}])
-    setDataFlatList6([{key: 'left-spacer'}, ...learningData6, {key: 'right-spacer'}])
+    setDataFlatList([{key: 'left-spacer'}, ...learningList1, {key: 'right-spacer'}])
+    setDataFlatList2([{key: 'left-spacer'}, ...learningList2, {key: 'right-spacer'}])
+    setDataFlatList3([{key: 'left-spacer'}, ...learningList3, {key: 'right-spacer'}])
+    setDataFlatList4([{key: 'left-spacer'}, ...learningList4, {key: 'right-spacer'}])
+    setDataFlatList5([{key: 'left-spacer'}, ...learningList5, {key: 'right-spacer'}])
+    setDataFlatList6([{key: 'left-spacer'}, ...learningList6, {key: 'right-spacer'}])
   }, [])
 
   useEffect(() => {
@@ -174,11 +196,31 @@ const LearningScreen = () => {
     
   }, [isFocused])
 
+  useEffect(() => {
+    if (choosenLanguage === 'PL') {
+      setReadingButtonTxt('Czytaj');
+    } else if (choosenLanguage === 'DE') {
+      setReadingButtonTxt('Lesen');
+    } else if (choosenLanguage === 'LT') {
+      setReadingButtonTxt('Skaityk');
+    } else if (choosenLanguage === 'AR') {
+      setReadingButtonTxt('اقرأ');
+    } else if (choosenLanguage === 'UA') {
+      setReadingButtonTxt('Читай');
+    } else if (choosenLanguage === 'ES') {
+      setReadingButtonTxt('Leer');
+    } else if (choosenLanguage === 'EN') {
+      setReadingButtonTxt('Reading Hub');
+    }
+  }, [choosenLanguage])
+
 
   useFocusEffect(
     useCallback(() => {
 
-      
+      getValueFor('language');
+      getValueFor('sound');
+
       if (userId !== 'userId') {
 
         getDataFb();
@@ -237,40 +279,40 @@ const LearningScreen = () => {
       
       for (let i = 0; i < doc.data().learning.section1.length; i++) {
         
-        learningData1[i].stars = doc.data().learning.section1[i]
+        learningList1[i].stars = doc.data().learning.section1[i]
       }
 
       for (let i = 0; i < doc.data().learning.section2.length; i++) {
         
-        learningData2[i].stars = doc.data().learning.section2[i]
+        learningList2[i].stars = doc.data().learning.section2[i]
       }
       
       for (let i = 0; i < doc.data().learning.section3.length; i++) {
         
-        learningData3[i].stars = doc.data().learning.section3[i]
+        learningList3[i].stars = doc.data().learning.section3[i]
       }
 
       for (let i = 0; i < doc.data().learning.section4.length; i++) {
         
-        learningData4[i].stars = doc.data().learning.section4[i]
+        learningList4[i].stars = doc.data().learning.section4[i]
       }
 
       for (let i = 0; i < doc.data().learning.section5.length; i++) {
         
-        learningData5[i].stars = doc.data().learning.section5[i]
+        learningList5[i].stars = doc.data().learning.section5[i]
       }
 
       for (let i = 0; i < doc.data().learning.section6.length; i++) {
         
-        learningData6[i].stars = doc.data().learning.section6[i]
+        learningList6[i].stars = doc.data().learning.section6[i]
       }
 
-      setDataFlatList([{key: 'left-spacer'}, ...learningData1, {key: 'right-spacer'}])
-      setDataFlatList2([{key: 'left-spacer'}, ...learningData2, {key: 'right-spacer'}])
-      setDataFlatList3([{key: 'left-spacer'}, ...learningData3, {key: 'right-spacer'}])
-      setDataFlatList4([{key: 'left-spacer'}, ...learningData4, {key: 'right-spacer'}])
-      setDataFlatList5([{key: 'left-spacer'}, ...learningData5, {key: 'right-spacer'}])
-      setDataFlatList6([{key: 'left-spacer'}, ...learningData6, {key: 'right-spacer'}])
+      setDataFlatList([{key: 'left-spacer'}, ...learningList1, {key: 'right-spacer'}])
+      setDataFlatList2([{key: 'left-spacer'}, ...learningList2, {key: 'right-spacer'}])
+      setDataFlatList3([{key: 'left-spacer'}, ...learningList3, {key: 'right-spacer'}])
+      setDataFlatList4([{key: 'left-spacer'}, ...learningList4, {key: 'right-spacer'}])
+      setDataFlatList5([{key: 'left-spacer'}, ...learningList5, {key: 'right-spacer'}])
+      setDataFlatList6([{key: 'left-spacer'}, ...learningList6, {key: 'right-spacer'}])
     });
 
   }
@@ -465,6 +507,8 @@ const LearningScreen = () => {
       outputRange: [0, -50, 0]
     })
 
+
+
     return <Animated.View style={{transform: [{translateY: translateY6}]}}>
 
       <CardBlack 
@@ -493,7 +537,7 @@ const LearningScreen = () => {
         <View style={styles.headBottom}>
           <View style={styles.readingButtonContainer}>
             <TouchableOpacity style={styles.buttonContainer} onPress={() => navigation.navigate('Reading')}>
-              <Text style={styles.textButton}>Reading</Text>
+              <Text style={styles.textButton}>{readingBtnTxt}</Text>
               <Image style={styles.bookPic} source={require('../../../assets/book.png')} />
             </TouchableOpacity>
           </View>

@@ -7,15 +7,15 @@ import BottomBar from '../../../../../components/bars/bottomBar'
 import generalStyles from '../../../../../styles/generalStyles';
 import Loader from '../../../../../components/other/Loader';
 import AnswerPairType4 from '../../../../../components/other/AnswerPairType4';
-import type1prep from '../../../../../listData/exerciseData/A1/Type1Data/Prepositions'
-import type2prep from '../../../../../listData/exerciseData/A1/Type2Data/Prepositions'
-import type3prep from '../../../../../listData/exerciseData/A1/Type3Data/Prepositions'
-import type4prep from '../../../../../listData/exerciseData/A1/Type4Data/Prepositions'
-import type5prep from '../../../../../listData/exerciseData/A1/Type5Data/Prepositions'
-import type6prep from '../../../../../listData/exerciseData/A1/Type6Data/Prepositions'
-import type7prep from '../../../../../listData/exerciseData/A1/Type7Data/Prepositions'
-import type8prep from '../../../../../listData/exerciseData/A1/Type8Data/Prepositions'
-import aatest from '../../../../../listData/aatest';
+import type1data from '../../../../../listData/exerciseData/A1/Type1Data/Prepositions'
+import type2data from '../../../../../listData/exerciseData/A1/Type2Data/Prepositions'
+import type3data from '../../../../../listData/exerciseData/A1/Type3Data/Prepositions'
+import type4data from '../../../../../listData/exerciseData/A1/Type4Data/Prepositions'
+import type5data from '../../../../../listData/exerciseData/A1/Type5Data/Prepositions'
+import type6data from '../../../../../listData/exerciseData/A1/Type6Data/Prepositions'
+import type7data from '../../../../../listData/exerciseData/A1/Type7Data/Prepositions'
+import type8data from '../../../../../listData/exerciseData/A1/Type8Data/Prepositions'
+
 
 
 const dataForMarkers = {
@@ -24,15 +24,25 @@ const dataForMarkers = {
     class: 'class3'
 }
 
+let option1 = [type4data, type1data, type2data, type5data, type6data, type7data, type8data];
+let option2 = [type4data, type1data, type4data, type5data];
+let option3 = [type4data, type1data, type3data];
 
-const screenWidth = Dimensions.get('window').width;
-const typesInSet = [aatest, aatest, type5prep, type6prep, type7prep, type8prep];
-const linkList = ['Exc1x5x1', 'Type4', 'Type5', 'Type6', 'Type7', 'Type8'];
+const links1 = ['Exc1x5x1', 'Type1', 'Type2', 'Type5', 'Type6', 'Type7', 'Type8'];
+const links2 = ['Exc1x5x1', 'Type1', 'Type4', 'Type5'];
+const links3 = ['Exc1x5x1', 'Type1', 'Type3'];
+
+let typesInSet = [];
+let linkList = [];
+
+
+
 let usedItems = [];
 
+const screenWidth = Dimensions.get('window').width;
 
 const currentScreen = 1;
-const allScreensNum = linkList.length;
+let allScreensNum = option1.length;
 
 const outputColors = [generalStyles.wrongAnswerConfirmationColor, generalStyles.neutralAnswerConfirmationColor, generalStyles.correctAnswerConfirmationColor];
 
@@ -192,8 +202,34 @@ const Exc1x5x1 = ({route}) => {
 
     useEffect(() => {
 
+      let parsedData = Object.keys(route.params.data).length === 0 ? {} : JSON.parse(route.params.data) 
+      let type4dataNew = Object.keys(route.params.data).length === 0 ? type4data : parsedData.adverbs.type4
+
+      option1 = [type4dataNew, type1data, type2data, type5data, type6data, type7data, type8data];
+      option2 = [type4dataNew, type1data, type4data, type5data];
+      option3 = [type4dataNew, type1data, type3data];
+
       let tempArr = []; 
       let sumOfAllPoints = 0;
+
+      let randomNumber = Math.floor(Math.random()* 3);
+      console.log('set of exrecises nummer: ', randomNumber);
+
+
+
+      if (randomNumber === 0) {
+        typesInSet = option1;
+        linkList = links1;
+        allScreensNum = option1.length;
+      } else if (randomNumber === 1) {
+        typesInSet = option2
+        linkList = links2;
+        allScreensNum = option2.length;
+      } else if (randomNumber === 2) {
+        typesInSet = option3
+        linkList = links3;
+        allScreensNum = option3.length;
+      }
   
   
       for (let i = 0; i < typesInSet.length; i++) {

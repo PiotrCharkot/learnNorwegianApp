@@ -2,7 +2,7 @@ import { View, Text, Animated, Image, FlatList, TouchableOpacity, Easing, AppSta
 import React, {useState, useEffect, useRef } from 'react'
 import * as SecureStore from 'expo-secure-store';
 import styles from './style';
-import textData from '../../listData/textData';
+import textData from '../../listData/textLists/textData';
 import { db } from '../../../firebase/firebase-config';
 import { getAuth  } from 'firebase/auth';
 import { collection, getDocs, query, doc, where, updateDoc, setDoc } from "firebase/firestore";

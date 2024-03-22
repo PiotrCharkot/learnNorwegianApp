@@ -8,12 +8,12 @@ import styles from './style'
 import { withAnchorPoint } from 'react-native-anchor-point';
 import { Audio } from 'expo-av';
 import CardReading from '../../components/cards/CardReading';
-import textListData from '../../listData/textListData';
-import textListData2 from '../../listData/textListData2';
-import textListData3 from '../../listData/textListData3';
-import textListData4 from '../../listData/textListData4';
-import textListData5 from '../../listData/textListData5';
-import textListData6 from '../../listData/textListData6';
+import textListData1 from '../../listData/textLists/textListData1';
+import textListData2 from '../../listData/textLists/textListData2';
+import textListData3 from '../../listData/textLists/textListData3';
+import textListData4 from '../../listData/textLists/textListData4';
+import textListData5 from '../../listData/textLists/textListData5';
+import textListData6 from '../../listData/textLists/textListData6';
 
 const screenWidth = Dimensions.get('window').width;
 const cardSize = screenWidth * 0.6;
@@ -282,7 +282,7 @@ const ReadingScreen = () => {
   useEffect(() => {
     let tempVal = Math.floor(Math.random() * imagesMain.length);
     setRandom(tempVal)
-    setDataFlatList([{key: 'left-spacer'}, ...textListData, {key: 'right-spacer'}])
+    setDataFlatList([{key: 'left-spacer'}, ...textListData1, {key: 'right-spacer'}])
     setDataFlatList2([{key: 'left-spacer'}, ...textListData2, {key: 'right-spacer'}])
     setDataFlatList3([{key: 'left-spacer'}, ...textListData3, {key: 'right-spacer'}])
     setDataFlatList4([{key: 'left-spacer'}, ...textListData4, {key: 'right-spacer'}])

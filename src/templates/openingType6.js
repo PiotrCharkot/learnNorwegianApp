@@ -7,14 +7,7 @@ import BottomBar from '../../../../../components/bars/bottomBar';
 import DraggableQuick from '../../../../../components/other/DraggableQuick';
 import generalStyles from '../../../../../styles/generalStyles';
 import Loader from '../../../../../components/other/Loader';
-import type1data from '../../../../../listData/exerciseData/A1/Type1Data/Prepositions'
-import type2data from '../../../../../listData/exerciseData/A1/Type2Data/Prepositions'
-import type3data from '../../../../../listData/exerciseData/A1/Type3Data/Prepositions'
-import type4data from '../../../../../listData/exerciseData/A1/Type4Data/Prepositions'
-import type5data from '../../../../../listData/exerciseData/A1/Type5Data/Prepositions'
-import type6data from '../../../../../listData/exerciseData/A1/Type6Data/Prepositions'
-import type7data from '../../../../../listData/exerciseData/A1/Type7Data/Prepositions'
-import type8data from '../../../../../listData/exerciseData/A1/Type8Data/Prepositions'
+
 
 
 const dataForMarkers = {
@@ -23,13 +16,13 @@ const dataForMarkers = {
     class: 'class1'
 }
 
-let option1 = [type6data, type1data, type2data, type5data, type6data, type7data, type8data];
-let option2 = [type6data, type1data, type4data, type5data];
-let option3 = [type6data, type1data, type3data];
+let option1 = [type6data, ];
+let option2 = [type6data, ];
+let option3 = [type6data, ];
 
-const links1 = ['Exc1x7x1', 'Type1', 'Type2', 'Type5', 'Type6', 'Type7', 'Type8'];
-const links2 = ['Exc1x7x1', 'Type1', 'Type4', 'Type5'];
-const links3 = ['Exc1x7x1', 'Type1', 'Type3'];
+const links1 = [];
+const links2 = [];
+const links3 = [];
 
 
 
@@ -127,9 +120,9 @@ const Exc1x7x1 = ({route}) => {
       let parsedData = Object.keys(route.params.data).length === 0 ? {} : JSON.parse(route.params.data) 
       let type6dataNew = Object.keys(route.params.data).length === 0 ? type6data : parsedData.adverbs.type6
 
-      option1 = [type6dataNew, type1data, type2data, type5data, type6data, type7data, type8data];
-      option2 = [type6dataNew, type1data, type4data, type5data];
-      option3 = [type6dataNew, type1data, type3data];
+      option1 = [type6dataNew, ];
+      option2 = [type6dataNew, ];
+      option3 = [type6dataNew, ];
 
       let tempArr = []; 
       let sumOfAllPoints = 0;

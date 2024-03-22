@@ -67,6 +67,10 @@ const styles = StyleSheet.create({
     flatListsContainer: {
         marginTop: 235,
     },
+    flatListsContainerBottom: {
+        marginTop: 50,
+        marginBottom: 200 // for the time
+    },
     titleContainer: {
         position: 'absolute',
         alignItems: 'center',
