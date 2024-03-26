@@ -15,15 +15,18 @@ import CardExerciseList from '../../components/cards/CardExerciseList';
 import CardExe from '../../components/cards/CardExe';
 import exerciseList1 from '../../listData/exerciseLists/exerciseList1';
 import exerciseList2 from '../../listData/exerciseLists/exerciseList2';
+import exerciseList3 from '../../listData/exerciseLists/exerciseList3';
+import exerciseList4 from '../../listData/exerciseLists/exerciseList4';
+import exerciseList5 from '../../listData/exerciseLists/exerciseList5';
 
 const screenWidth = Dimensions.get('window').width;
 const cardSize = screenWidth * 0.6 + 20;
 const spacerSize = (screenWidth - cardSize) / 2;
-const colorsBackFlatlist = ['#ffd7d4', '#ffebd4', '#feffd4', '#e6ffd4', '#d4ffdc', '#d4fffd', '#d4d7ff', '#f4d4ff', '#ffd4f3']
-const colorsBackFlatlist2 = ['#f21d1d', '#ebf21d', '#32f21d', '#1deef2', '#1d2bf2', '#d21df2', '#f21d72']
-const colorsBackFlatlist3 = ['#e6746e', '#e6e46e', '#7ae66e', '#6ee6e2', '#6e7ae6', '#e26ee6', '#e6746e', '#e6e46e', '#7ae66e', '#6ee6e2', '#6e7ae6', '#e26ee6']
-const colorsBackFlatlist4 = ['#fccccc', '#fafccc', '#d2fccc', '#ccfcfc', '#ccd0fc', '#f8ccfc', '#fccccc', '#fafccc', '#d2fccc', '#ccfcfc', '#ccd0fc', '#f8ccfc']
-const colorsBackFlatlist5 = ['#b0faac', '#acf9fa', '#b4acfa', '#faacf3', '#faacac', '#f9faac', '#b0faac', '#acf9fa', '#b4acfa', '#faacf3', '#faacac', '#f9faac',]
+const colorsBackFlatlist = ['#b0faac', '#acf9fa', '#b4acfa', '#faacf3', '#faacac', '#f9faac', '#d9acfa']
+const colorsBackFlatlist2 = ['#acf9fa', '#b4acfa', '#faacf3', '#faacac', '#f9faac', '#d9acfa', '#b0faac']
+const colorsBackFlatlist3 = ['#b4acfa', '#faacf3', '#faacac', '#f9faac', '#d9acfa', '#b0faac', '#acf9fa']
+const colorsBackFlatlist4 = ['#faacf3', '#faacac', '#f9faac', '#d9acfa', '#b0faac', '#acf9fa', '#b4acfa']
+const colorsBackFlatlist5 = ['#faacac', '#f9faac', '#d9acfa', '#b0faac', '#acf9fa', '#b4acfa', '#faacf3']
 const transparent = 'rgba(255,255,255,0)';
 
 
@@ -40,22 +43,34 @@ const ExerciseScreen = () => {
   const scrollY = useRef(new Animated.Value(0)).current;
   const scrollX = useRef(new Animated.Value(0)).current;
   const scrollX2 = useRef(new Animated.Value(0)).current;
+  const scrollX3 = useRef(new Animated.Value(0)).current;
+  const scrollX4 = useRef(new Animated.Value(0)).current;
+  const scrollX5 = useRef(new Animated.Value(0)).current;
   const overlayOpacity = useRef(new Animated.Value(1)).current;
   const overlayOffset = useRef(new Animated.Value(0)).current;
   const scaleLanguageHight = useRef(new Animated.Value(0)).current;
   const translateLanguage = useRef(new Animated.Value(100)).current;
   const lastPlayedAtRef = useRef(0);
   const lastPlayedAtRef2 = useRef(0);
+  const lastPlayedAtRef3 = useRef(0);
+  const lastPlayedAtRef4 = useRef(0);
+  const lastPlayedAtRef5 = useRef(0);
 
   const [choosenLanguage, setChoosenLanguage] = useState('EN');
   const [languageListOpen, setLanguageListOpen] = useState(false);
   const [dataFlatList, setDataFlatList] = useState([]);
   const [dataFlatList2, setDataFlatList2] = useState([]);
+  const [dataFlatList3, setDataFlatList3] = useState([]);
+  const [dataFlatList4, setDataFlatList4] = useState([]);
+  const [dataFlatList5, setDataFlatList5] = useState([]);
   const [random, setRandom] = useState(0);
   const [title1, setTitle1] = useState('Level');
   const [readingBtnTxt, setReadingButtonTxt] = useState('Reading Hub');
   const [dataExerciseA1, setDataExerciseA1] = useState({});
   const [dataExerciseA2, setDataExerciseA2] = useState({});
+  const [dataExerciseB1, setDataExerciseB1] = useState({});
+  const [dataExerciseB2, setDataExerciseB2] = useState({});
+  const [dataExerciseC1, setDataExerciseC1] = useState({});
   const [isSoundOn, setIsSoundOn] = useState(true);
   const [sound, setSound] = useState();
   const [sound2, setSound2] = useState();
@@ -72,11 +87,26 @@ const ExerciseScreen = () => {
   });
 
   const backgroundFlatlist = scrollX.interpolate({
-    inputRange: colorsBackFlatlist5.map((_, i) => i * cardSize),
-    outputRange: colorsBackFlatlist5.map((i) => i)
+    inputRange: colorsBackFlatlist.map((_, i) => i * cardSize),
+    outputRange: colorsBackFlatlist.map((i) => i)
   })
 
   const backgroundFlatlist2 = scrollX2.interpolate({
+    inputRange: colorsBackFlatlist2.map((_, i) => i * cardSize),
+    outputRange: colorsBackFlatlist2.map((i) => i)
+  })
+
+  const backgroundFlatlist3 = scrollX3.interpolate({
+    inputRange: colorsBackFlatlist3.map((_, i) => i * cardSize),
+    outputRange: colorsBackFlatlist3.map((i) => i)
+  })
+
+  const backgroundFlatlist4 = scrollX4.interpolate({
+    inputRange: colorsBackFlatlist4.map((_, i) => i * cardSize),
+    outputRange: colorsBackFlatlist4.map((i) => i)
+  })
+
+  const backgroundFlatlist5 = scrollX5.interpolate({
     inputRange: colorsBackFlatlist5.map((_, i) => i * cardSize),
     outputRange: colorsBackFlatlist5.map((i) => i)
   })
@@ -166,47 +196,105 @@ const ExerciseScreen = () => {
 
     setDataFlatList([{key: 'left-spacer'}, ...exerciseList1, {key: 'right-spacer'}]);
     setDataFlatList2([{key: 'left-spacer'}, ...exerciseList2, {key: 'right-spacer'}]);
+    setDataFlatList3([{key: 'left-spacer'}, ...exerciseList3, {key: 'right-spacer'}]);
+    setDataFlatList4([{key: 'left-spacer'}, ...exerciseList4, {key: 'right-spacer'}]);
+    setDataFlatList5([{key: 'left-spacer'}, ...exerciseList5, {key: 'right-spacer'}]);
 
     let tempVal = Math.floor(Math.random() * imagesMain.length);
     setRandom(tempVal); 
 
 
     getDownloadURL(ref(storage, 'exerciseData/A1JsonFormat.json'))
-      .then(async (url) => {
-          
-        //set data from storage
-        const response = await fetch(url);
-        const text = await response.text();
+    .then(async (url) => {
         
-        setDataExerciseA1(text)
-          
-      })
-      .catch((error) => {
-        console.log('my error is :', error);
-        if (error.code === 'storage/object-not-found') {
-          //console.log('no file for profile');
-          
-        }
-      });
+      //set data from storage
+      const response = await fetch(url);
+      const text = await response.text();
+      
+      setDataExerciseA1(text)
+        
+    })
+    .catch((error) => {
+      console.log('my error is :', error);
+      if (error.code === 'storage/object-not-found') {
+        //console.log('no file for profile');
+        
+      }
+    });
 
 
-      getDownloadURL(ref(storage, 'exerciseData/A2JsonFormat.json'))
-      .then(async (url) => {
-          
-        //set data from storage
-        const response = await fetch(url);
-        const text = await response.text();
+    getDownloadURL(ref(storage, 'exerciseData/A2JsonFormat.json'))
+    .then(async (url) => {
         
-        setDataExerciseA2(text)
-          
-      })
-      .catch((error) => {
-        console.log('my error is :', error);
-        if (error.code === 'storage/object-not-found') {
-          //console.log('no file for profile');
-          
-        }
-      });
+      //set data from storage
+      const response = await fetch(url);
+      const text = await response.text();
+      
+      setDataExerciseA2(text)
+        
+    })
+    .catch((error) => {
+      console.log('my error is :', error);
+      if (error.code === 'storage/object-not-found') {
+        //console.log('no file for profile');
+        
+      }
+    });
+
+
+    getDownloadURL(ref(storage, 'exerciseData/B1JsonFormat.json'))
+    .then(async (url) => {
+        
+      //set data from storage
+      const response = await fetch(url);
+      const text = await response.text();
+      
+      setDataExerciseB1(text)
+        
+    })
+    .catch((error) => {
+      console.log('my error is :', error);
+      if (error.code === 'storage/object-not-found') {
+        //console.log('no file for profile');
+        
+      }
+    });
+
+    getDownloadURL(ref(storage, 'exerciseData/B2JsonFormat.json'))
+    .then(async (url) => {
+        
+      //set data from storage
+      const response = await fetch(url);
+      const text = await response.text();
+      
+      setDataExerciseB2(text)
+        
+    })
+    .catch((error) => {
+      console.log('my error is :', error);
+      if (error.code === 'storage/object-not-found') {
+        //console.log('no file for profile');
+        
+      }
+    });
+
+    getDownloadURL(ref(storage, 'exerciseData/C1JsonFormat.json'))
+    .then(async (url) => {
+        
+      //set data from storage
+      const response = await fetch(url);
+      const text = await response.text();
+      
+      setDataExerciseC1(text)
+        
+    })
+    .catch((error) => {
+      console.log('my error is :', error);
+      if (error.code === 'storage/object-not-found') {
+        //console.log('no file for profile');
+        
+      }
+    });
     
   }, [])
 
@@ -340,57 +428,95 @@ const ExerciseScreen = () => {
 
     querySnapshot.forEach((doc) => {
 
+
+      exerciseList1[0].bars = doc.data().exercise.section1.class0;
+      exerciseList1[1].bars = doc.data().exercise.section1.class1;
+      exerciseList1[2].bars = doc.data().exercise.section1.class2;
+      exerciseList1[3].bars = doc.data().exercise.section1.class3;
+      exerciseList1[4].bars = doc.data().exercise.section1.class4;
+      exerciseList1[5].bars = doc.data().exercise.section1.class5;
       
-      for (let i = 0; i < exerciseList1.length; i++) {
+      exerciseList2[0].bars = doc.data().exercise.section2.class0;
+      exerciseList2[1].bars = doc.data().exercise.section2.class1;
+      exerciseList2[2].bars = doc.data().exercise.section2.class2;
+      exerciseList2[3].bars = doc.data().exercise.section2.class3;
+      exerciseList2[4].bars = doc.data().exercise.section2.class4;
+      exerciseList2[5].bars = doc.data().exercise.section2.class5;
 
-        if (exerciseList1[i].key === 1) {
-          exerciseList1[i].bars = doc.data().exercise.section1.class0
-        } else if (exerciseList1[i].key === 2) {
-          exerciseList1[i].bars = doc.data().exercise.section1.class1
-        } else if (exerciseList1[i].key === 3) {
-          exerciseList1[i].bars = doc.data().exercise.section1.class2
-        } else if (exerciseList1[i].key === 4) {
-          exerciseList1[i].bars = doc.data().exercise.section1.class3
-        } else if (exerciseList1[i].key === 5) {
-          exerciseList1[i].bars = doc.data().exercise.section1.class4
-        } else if (exerciseList1[i].key === 6) {
-          exerciseList1[i].bars = doc.data().exercise.section1.class5
-        } else if (exerciseList1[i].key === 7) {
-          exerciseList1[i].bars = doc.data().exercise.section1.class6
-        } else if (exerciseList1[i].key === 8) {
-          exerciseList1[i].bars = doc.data().exercise.section1.class7
-        } else if (exerciseList1[i].key === 9) {
-          exerciseList1[i].bars = doc.data().exercise.section1.class8
-        } else if (exerciseList1[i].key === 10) {
-          exerciseList1[i].bars = doc.data().exercise.section1.class9
-        } 
+      exerciseList3[0].bars = doc.data().exercise.section3.class0;
+      exerciseList3[1].bars = doc.data().exercise.section3.class1;
+      exerciseList3[2].bars = doc.data().exercise.section3.class2;
+      exerciseList3[3].bars = doc.data().exercise.section3.class3;
+      exerciseList3[4].bars = doc.data().exercise.section3.class4;
+      exerciseList3[5].bars = doc.data().exercise.section3.class5;
+
+      exerciseList4[0].bars = doc.data().exercise.section4.class0;
+      exerciseList4[1].bars = doc.data().exercise.section4.class1;
+      exerciseList4[2].bars = doc.data().exercise.section4.class2;
+      exerciseList4[3].bars = doc.data().exercise.section4.class3;
+      exerciseList4[4].bars = doc.data().exercise.section4.class4;
+
+      exerciseList5[0].bars = doc.data().exercise.section5.class0;
+      exerciseList5[1].bars = doc.data().exercise.section5.class1;
+      exerciseList5[2].bars = doc.data().exercise.section5.class2;
+      exerciseList5[3].bars = doc.data().exercise.section5.class3;
+      exerciseList5[4].bars = doc.data().exercise.section5.class4;
+      exerciseList5[5].bars = doc.data().exercise.section5.class5;
+
+
+      // for (let i = 0; i < exerciseList1.length; i++) {
+
+      //   if (exerciseList1[i].key === 1) {
+      //     exerciseList1[i].bars = doc.data().exercise.section1.class0
+      //   } else if (exerciseList1[i].key === 2) {
+      //     exerciseList1[i].bars = doc.data().exercise.section1.class1
+      //   } else if (exerciseList1[i].key === 3) {
+      //     exerciseList1[i].bars = doc.data().exercise.section1.class2
+      //   } else if (exerciseList1[i].key === 4) {
+      //     exerciseList1[i].bars = doc.data().exercise.section1.class3
+      //   } else if (exerciseList1[i].key === 5) {
+      //     exerciseList1[i].bars = doc.data().exercise.section1.class4
+      //   } else if (exerciseList1[i].key === 6) {
+      //     exerciseList1[i].bars = doc.data().exercise.section1.class5
+      //   } else if (exerciseList1[i].key === 7) {
+      //     exerciseList1[i].bars = doc.data().exercise.section1.class6
+      //   } else if (exerciseList1[i].key === 8) {
+      //     exerciseList1[i].bars = doc.data().exercise.section1.class7
+      //   } else if (exerciseList1[i].key === 9) {
+      //     exerciseList1[i].bars = doc.data().exercise.section1.class8
+      //   } else if (exerciseList1[i].key === 10) {
+      //     exerciseList1[i].bars = doc.data().exercise.section1.class9
+      //   } 
         
-      }
+      // }
 
 
 
-      for (let i = 0; i < exerciseList2.length; i++) {
+      // for (let i = 0; i < exerciseList2.length; i++) {
 
-        if (exerciseList2[i].key === 1) {
-          exerciseList2[i].bars = doc.data().exercise.section2.class0
-        } else if (exerciseList2[i].key === 2) {
-          exerciseList2[i].bars = doc.data().exercise.section2.class1
-        } else if (exerciseList2[i].key === 3) {
-          exerciseList2[i].bars = doc.data().exercise.section2.class2
-        } else if (exerciseList2[i].key === 4) {
-          exerciseList2[i].bars = doc.data().exercise.section2.class3
-        } else if (exerciseList2[i].key === 5) {
-          exerciseList2[i].bars = doc.data().exercise.section2.class4
-        } else if (exerciseList2[i].key === 6) {
-          exerciseList2[i].bars = doc.data().exercise.section2.class5
-        } 
+      //   if (exerciseList2[i].key === 1) {
+      //     exerciseList2[i].bars = doc.data().exercise.section2.class0
+      //   } else if (exerciseList2[i].key === 2) {
+      //     exerciseList2[i].bars = doc.data().exercise.section2.class1
+      //   } else if (exerciseList2[i].key === 3) {
+      //     exerciseList2[i].bars = doc.data().exercise.section2.class2
+      //   } else if (exerciseList2[i].key === 4) {
+      //     exerciseList2[i].bars = doc.data().exercise.section2.class3
+      //   } else if (exerciseList2[i].key === 5) {
+      //     exerciseList2[i].bars = doc.data().exercise.section2.class4
+      //   } else if (exerciseList2[i].key === 6) {
+      //     exerciseList2[i].bars = doc.data().exercise.section2.class5
+      //   } 
         
-      }
+      // }
     })
 
 
     setDataFlatList([{key: 'left-spacer'}, ...exerciseList1, {key: 'right-spacer'}]);
     setDataFlatList2([{key: 'left-spacer'}, ...exerciseList2, {key: 'right-spacer'}]);
+    setDataFlatList3([{key: 'left-spacer'}, ...exerciseList3, {key: 'right-spacer'}]);
+    setDataFlatList4([{key: 'left-spacer'}, ...exerciseList4, {key: 'right-spacer'}]);
+    setDataFlatList5([{key: 'left-spacer'}, ...exerciseList5, {key: 'right-spacer'}]);
 
     
 
@@ -442,10 +568,80 @@ const ExerciseScreen = () => {
   };
 
 
+  const handleScroll3 = (event) => {
+    // First, process the animated event
+    Animated.event(
+      [{ nativeEvent: { contentOffset: { x: scrollX3 } } }],
+      { useNativeDriver: false }
+    )(event); // Manually invoke the animated event handler
+
+    // Then, add your logic for playing sound at certain scroll positions
+    const x = event.nativeEvent.contentOffset.x; // Get the current horizontal scroll position
+    const threshold = cardSize * 0.5; // Define your threshold here
+
+    // Calculate the absolute difference from the last played position
+    const diff = Math.abs(x - lastPlayedAtRef3.current);
+
+    if (diff >= threshold && isSoundOn) {
+      playSound2();
+      // Update the last played position to the current, adjusted for multiples of 200
+      // This adjustment ensures correct behavior in both forward and backward scrolling
+      lastPlayedAtRef3.current = x - (x % threshold) + (x > lastPlayedAtRef3.current ? threshold : 0);
+    }
+  };
+
+
+
+  const handleScroll4 = (event) => {
+    // First, process the animated event
+    Animated.event(
+      [{ nativeEvent: { contentOffset: { x: scrollX4 } } }],
+      { useNativeDriver: false }
+    )(event); // Manually invoke the animated event handler
+
+    // Then, add your logic for playing sound at certain scroll positions
+    const x = event.nativeEvent.contentOffset.x; // Get the current horizontal scroll position
+    const threshold = cardSize * 0.5; // Define your threshold here
+
+    // Calculate the absolute difference from the last played position
+    const diff = Math.abs(x - lastPlayedAtRef4.current);
+
+    if (diff >= threshold && isSoundOn) {
+      playSound2();
+      // Update the last played position to the current, adjusted for multiples of 200
+      // This adjustment ensures correct behavior in both forward and backward scrolling
+      lastPlayedAtRef4.current = x - (x % threshold) + (x > lastPlayedAtRef4.current ? threshold : 0);
+    }
+  };
+
+
+
+  const handleScroll5 = (event) => {
+    // First, process the animated event
+    Animated.event(
+      [{ nativeEvent: { contentOffset: { x: scrollX5 } } }],
+      { useNativeDriver: false }
+    )(event); // Manually invoke the animated event handler
+
+    // Then, add your logic for playing sound at certain scroll positions
+    const x = event.nativeEvent.contentOffset.x; // Get the current horizontal scroll position
+    const threshold = cardSize * 0.5; // Define your threshold here
+
+    // Calculate the absolute difference from the last played position
+    const diff = Math.abs(x - lastPlayedAtRef5.current);
+
+    if (diff >= threshold && isSoundOn) {
+      playSound2();
+      // Update the last played position to the current, adjusted for multiples of 200
+      // This adjustment ensures correct behavior in both forward and backward scrolling
+      lastPlayedAtRef5.current = x - (x % threshold) + (x > lastPlayedAtRef5.current ? threshold : 0);
+    }
+  };
+
+
 
   const renderCard = ({item, index}) => {
 
-    let colorSqu = colorsBackFlatlist5[index - 1]
     let translatedTitle = '';
     let translatedSubTitle = '';
 
@@ -492,9 +688,7 @@ const ExerciseScreen = () => {
       title={translatedTitle} 
       description={translatedSubTitle} 
       level={item.level} 
-      link={item.link} 
-      showPro={item.showPro}
-      colorSmallSqu={colorSqu}
+      link={item.link}
       language={choosenLanguage}
       barsData={item.bars}
       dataExercie={dataExerciseA1}/>
@@ -504,7 +698,6 @@ const ExerciseScreen = () => {
 
   const renderCard2 = ({item, index}) => {
 
-    let colorSqu = colorsBackFlatlist5[index - 1]
     let translatedTitle = '';
     let translatedSubTitle = '';
 
@@ -551,16 +744,182 @@ const ExerciseScreen = () => {
       title={translatedTitle} 
       description={translatedSubTitle} 
       level={item.level} 
-      link={item.link} 
-      showPro={item.showPro}
-      colorSmallSqu={colorSqu}
+      link={item.link}
       language={choosenLanguage}
       barsData={item.bars}
       dataExercie={dataExerciseA2}/>
     </Animated.View>
   }
 
+
+
+  const renderCard3 = ({item, index}) => {
+
+    let translatedTitle = '';
+    let translatedSubTitle = '';
+
+    if (!item.title) {
+      return <View style={{width: spacerSize}} ></View>
+    }
+    const inputRange = [
+      (index - 2) * cardSize,
+      (index - 1) * cardSize,
+      index  * cardSize,
+    ];
+
+    const translateY = scrollX3.interpolate({
+      inputRange,
+      outputRange: [0, -50, 0]
+    })
+
+    if (choosenLanguage === 'PL') {
+      translatedTitle = item.title.pl
+      translatedSubTitle = item.description.pl
+    } else if (choosenLanguage === 'DE') {
+      translatedTitle = item.title.ger
+      translatedSubTitle = item.description.ger
+    } else if (choosenLanguage === 'LT') {
+      translatedTitle = item.title.lt
+      translatedSubTitle = item.description.lt
+    } else if (choosenLanguage === 'AR') {
+      translatedTitle = item.title.ar
+      translatedSubTitle = item.description.ar
+    } else if (choosenLanguage === 'UA') {
+      translatedTitle = item.title.ua
+      translatedSubTitle = item.description.ua
+    } else if (choosenLanguage === 'ES') {
+      translatedTitle = item.title.sp
+      translatedSubTitle = item.description.sp
+    } else if (choosenLanguage === 'EN') {
+      translatedTitle = item.title.eng
+      translatedSubTitle = item.description.eng
+    }
+
+    return <Animated.View style={{transform: [{translateY}]}}>
+
+      <CardExe 
+      title={translatedTitle} 
+      description={translatedSubTitle} 
+      level={item.level} 
+      link={item.link}
+      language={choosenLanguage}
+      barsData={item.bars}
+      dataExercie={dataExerciseB1}/>
+    </Animated.View>
+  }
+
+
+  const renderCard4 = ({item, index}) => {
+
+    let translatedTitle = '';
+    let translatedSubTitle = '';
+
+    if (!item.title) {
+      return <View style={{width: spacerSize}} ></View>
+    }
+    const inputRange = [
+      (index - 2) * cardSize,
+      (index - 1) * cardSize,
+      index  * cardSize,
+    ];
+
+    const translateY = scrollX4.interpolate({
+      inputRange,
+      outputRange: [0, -50, 0]
+    })
+
+    if (choosenLanguage === 'PL') {
+      translatedTitle = item.title.pl
+      translatedSubTitle = item.description.pl
+    } else if (choosenLanguage === 'DE') {
+      translatedTitle = item.title.ger
+      translatedSubTitle = item.description.ger
+    } else if (choosenLanguage === 'LT') {
+      translatedTitle = item.title.lt
+      translatedSubTitle = item.description.lt
+    } else if (choosenLanguage === 'AR') {
+      translatedTitle = item.title.ar
+      translatedSubTitle = item.description.ar
+    } else if (choosenLanguage === 'UA') {
+      translatedTitle = item.title.ua
+      translatedSubTitle = item.description.ua
+    } else if (choosenLanguage === 'ES') {
+      translatedTitle = item.title.sp
+      translatedSubTitle = item.description.sp
+    } else if (choosenLanguage === 'EN') {
+      translatedTitle = item.title.eng
+      translatedSubTitle = item.description.eng
+    }
+
+    return <Animated.View style={{transform: [{translateY}]}}>
+
+      <CardExe 
+      title={translatedTitle} 
+      description={translatedSubTitle} 
+      level={item.level} 
+      link={item.link}
+      language={choosenLanguage}
+      barsData={item.bars}
+      dataExercie={dataExerciseB2}/>
+    </Animated.View>
+  }
+
   
+
+  const renderCard5 = ({item, index}) => {
+
+    let translatedTitle = '';
+    let translatedSubTitle = '';
+
+    if (!item.title) {
+      return <View style={{width: spacerSize}} ></View>
+    }
+    const inputRange = [
+      (index - 2) * cardSize,
+      (index - 1) * cardSize,
+      index  * cardSize,
+    ];
+
+    const translateY = scrollX5.interpolate({
+      inputRange,
+      outputRange: [0, -50, 0]
+    })
+
+    if (choosenLanguage === 'PL') {
+      translatedTitle = item.title.pl
+      translatedSubTitle = item.description.pl
+    } else if (choosenLanguage === 'DE') {
+      translatedTitle = item.title.ger
+      translatedSubTitle = item.description.ger
+    } else if (choosenLanguage === 'LT') {
+      translatedTitle = item.title.lt
+      translatedSubTitle = item.description.lt
+    } else if (choosenLanguage === 'AR') {
+      translatedTitle = item.title.ar
+      translatedSubTitle = item.description.ar
+    } else if (choosenLanguage === 'UA') {
+      translatedTitle = item.title.ua
+      translatedSubTitle = item.description.ua
+    } else if (choosenLanguage === 'ES') {
+      translatedTitle = item.title.sp
+      translatedSubTitle = item.description.sp
+    } else if (choosenLanguage === 'EN') {
+      translatedTitle = item.title.eng
+      translatedSubTitle = item.description.eng
+    }
+
+    return <Animated.View style={{transform: [{translateY}]}}>
+
+      <CardExe 
+      title={translatedTitle} 
+      description={translatedSubTitle} 
+      level={item.level} 
+      link={item.link}
+      language={choosenLanguage}
+      barsData={item.bars}
+      dataExercie={dataExerciseC1}/>
+    </Animated.View>
+  }
 
   return (
     <View style={styles.mainContainer}>
@@ -642,6 +1001,81 @@ const ExerciseScreen = () => {
             renderItem={renderCard2}
             keyExtractor={(item) => item.key}
             onScroll={handleScroll2}
+            scrollEventThrottle={16}
+          />
+          
+
+        </Animated.View>
+
+
+        <Animated.View style={{...styles.flatListsContainerBottom, backgroundColor: backgroundFlatlist3}}>
+          
+          <LinearGradient colors={['white', 'rgba(255,255,255,0)', 'white']} start={[0.0, 0.1]} end={[0.0, 1.0]}  style={styles.gradinetFlatlist}>
+            </LinearGradient>
+        
+          <View style={styles.titleContainer}>
+            <Text style={styles.titleText}>{choosenLanguage === 'AR' ? '' : title1} B1 {choosenLanguage === 'AR' ? title1 : ''}</Text>
+          </View>
+          <Animated.FlatList 
+            style={styles.flatlist}
+            horizontal
+            showsHorizontalScrollIndicator={false}
+            snapToInterval={cardSize}
+            decelerationRate={0}
+            data={dataFlatList3}
+            renderItem={renderCard3}
+            keyExtractor={(item) => item.key}
+            onScroll={handleScroll3}
+            scrollEventThrottle={16}
+          />
+          
+
+        </Animated.View>
+
+
+        <Animated.View style={{...styles.flatListsContainerBottom, backgroundColor: backgroundFlatlist4}}>
+          
+          <LinearGradient colors={['white', 'rgba(255,255,255,0)', 'white']} start={[0.0, 0.1]} end={[0.0, 1.0]}  style={styles.gradinetFlatlist}>
+            </LinearGradient>
+        
+          <View style={styles.titleContainer}>
+            <Text style={styles.titleText}>{choosenLanguage === 'AR' ? '' : title1} B2 {choosenLanguage === 'AR' ? title1 : ''}</Text>
+          </View>
+          <Animated.FlatList 
+            style={styles.flatlist}
+            horizontal
+            showsHorizontalScrollIndicator={false}
+            snapToInterval={cardSize}
+            decelerationRate={0}
+            data={dataFlatList4}
+            renderItem={renderCard4}
+            keyExtractor={(item) => item.key}
+            onScroll={handleScroll4}
+            scrollEventThrottle={16}
+          />
+          
+
+        </Animated.View>
+
+
+        <Animated.View style={{...styles.flatListsContainerLast, backgroundColor: backgroundFlatlist5}}>
+          
+          <LinearGradient colors={['white', 'rgba(255,255,255,0)', 'white']} start={[0.0, 0.1]} end={[0.0, 1.0]}  style={styles.gradinetFlatlist}>
+            </LinearGradient>
+        
+          <View style={styles.titleContainer}>
+            <Text style={styles.titleText}>{choosenLanguage === 'AR' ? '' : title1} C1 {choosenLanguage === 'AR' ? title1 : ''}</Text>
+          </View>
+          <Animated.FlatList 
+            style={styles.flatlist}
+            horizontal
+            showsHorizontalScrollIndicator={false}
+            snapToInterval={cardSize}
+            decelerationRate={0}
+            data={dataFlatList5}
+            renderItem={renderCard5}
+            keyExtractor={(item) => item.key}
+            onScroll={handleScroll5}
             scrollEventThrottle={16}
           />
           

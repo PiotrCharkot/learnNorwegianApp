@@ -43,14 +43,16 @@ const generalStyles = StyleSheet.create({
     buttonNextPrevSize: 45,
     answerBonus: 8,
     screenBonus: 10,
-    bonusCheckAnswersManyQ: 3,
+    bonusCheckAnswersManyQ: 4, //inc
     bonusCheckAllAnswers: 4,
+    bonusCheckAllAnswersInput: 9, //inc
     bonusMatchLR: 4,
-    bonusCheckAnswerGapsText: 6,
-    bonusChooseCorrectCategory: 2,
-    bonusMarkMistakes: 6,
-    bonusMarkMistakesPenaltyPoints: 2,
-    bonusOrderChceck: 6,
+    bonusCheckAnswerGapsText: 8, //inc
+    bonusCheckAnswerGapsTextSounds: 2, //inc
+    bonusChooseCorrectCategory: 3, // inc
+    bonusMarkMistakes: 8, // inc
+    bonusMarkMistakesPenaltyPoints: 4, //inc
+    bonusOrderChceck: 9,  //inc
     paddingHorizontalEgzCont: 6,
     paddingVerticalEgzCont: 4,
     marginHorizontalEgzCont: 20,

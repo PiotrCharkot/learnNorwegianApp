@@ -177,7 +177,7 @@ const Exc1x4x1 = ({ route }) => {
   
         } else if (typesInSet[i][randomVal].typeOfScreen === '4') {
           
-          sumOfAllPoints = sumOfAllPoints + typesInSet[i][randomVal].nuberOfQuestions * generalStyles.bonusCheckAllAnswers
+          sumOfAllPoints = sumOfAllPoints + typesInSet[i][randomVal].nuberOfQuestions * generalStyles.bonusCheckAllAnswersInput
   
         } else if (typesInSet[i][randomVal].typeOfScreen === '5') {
           

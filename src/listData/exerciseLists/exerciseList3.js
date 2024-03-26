@@ -18,7 +18,7 @@ export default dataObj = [
         ua: 'Слухайте та відновлюйте порядок', 
         sp: 'Escucha y reconstruye el orden',
     },
-    link: 'Exc1x1x1',
+    link: 'Exc3x1x1',
     key: 1,
     },
     {
@@ -40,7 +40,7 @@ export default dataObj = [
         ua: 'Подорож у часі, оволодій минулим', 
         sp: 'Viaje a través del tiempo, domina el pasado',
     },
-    link: 'Exc1x2x1',
+    link: 'Exc3x2x1',
     key: 2,
    },
     {
@@ -62,7 +62,7 @@ export default dataObj = [
         ua: 'Поєднай минуле і теперішнє, вдосконалюй свої навички', 
         sp: 'Une pasado y presente, perfecciona tus habilidades',
     },
-    link: 'Exc1x3x1',
+    link: 'Exc3x3x1',
     key: 3,
    },
     {
@@ -84,7 +84,7 @@ export default dataObj = [
         ua: 'Досліджуй ступені порівняння, покращуй свій вираз', 
         sp: 'Escala las alturas de la comparación, enriquece tu expresión',
     },
-    link: 'Exc1x4x1',
+    link: 'Exc3x4x1',
     key: 4,
    },
     {
@@ -106,7 +106,7 @@ export default dataObj = [
         ua: 'Гармонізуй слова, удосконалюй свої речення', 
         sp: 'Armoniza las palabras, perfecciona tus oraciones',
     },
-    link: 'Exc1x5x1',
+    link: 'Exc3x5x1',
     key: 5,
    },
    {
@@ -128,7 +128,7 @@ export default dataObj = [
         ua: 'Оволодій повним спектром граматики', 
         sp: 'Domina el espectro completo de la gramática',
     },
-    link: 'Exc1x6x1',
+    link: 'Exc3x6x1',
     key: 6,
    }
 ];

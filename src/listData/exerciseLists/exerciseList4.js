@@ -18,7 +18,7 @@ export default dataObj = [
         ua: 'Послухай речення, впорядкуй слова', 
         sp: 'Escucha la frase, ordena las palabras',
     },
-    link: 'Exc1x1x1',
+    link: 'Exc4x1x1',
     key: 1,
     },
     {
@@ -40,7 +40,7 @@ export default dataObj = [
         ua: 'Досліджуйте нюанси завершених дій', 
         sp: 'Explora las sutilezas de las acciones completadas',
     },
-    link: 'Exc1x2x1',
+    link: 'Exc4x2x1',
     key: 2,
    },
     {
@@ -62,7 +62,7 @@ export default dataObj = [
         ua: 'Оволодій структурою та формуванням слів', 
         sp: 'Domina la estructura y la formación de palabras',
     },
-    link: 'Exc1x3x1',
+    link: 'Exc4x3x1',
     key: 3,
    },
     {
@@ -84,7 +84,7 @@ export default dataObj = [
         ua: 'Оволодіння власністю та директивами', 
         sp: 'Dominio de la posesión y las directrices',
     },
-    link: 'Exc1x4x1',
+    link: 'Exc4x4x1',
     key: 4,
    },
     {
@@ -106,7 +106,7 @@ export default dataObj = [
         ua: 'Перевірте свої знання з усіх тем', 
         sp: 'Comprueba tu conocimiento en todos los temas',
     },
-    link: 'Exc1x5x1',
+    link: 'Exc4x5x1',
     key: 5,
    },
    

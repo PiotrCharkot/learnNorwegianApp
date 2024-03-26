@@ -205,7 +205,7 @@ const BottomBar = (params) => {
             setPathIcon('next');
         }  else if (buttonFunction === 'checkAllAnswersInput' && params.currentScreen >= params.latestScreen) {
 
-            let bonusAnswer = generalStyles.bonusCheckAllAnswers;
+            let bonusAnswer = generalStyles.bonusCheckAllAnswersInput;
             let returnArr = [];
             let questionPoints = 0;
 
@@ -284,7 +284,34 @@ const BottomBar = (params) => {
             setLetGoBack(false);
             setButtonFunction('goToNext');
             setPathIcon('next');
-        } else if (buttonFunction === 'chooseCorrectCategory' && params.currentScreen >= params.latestScreen) {
+        } else if (buttonFunction === 'checkAnswerGapsTextSounds' && params.currentScreen >= params.latestScreen) {
+            
+            
+            let bonusAnswer = generalStyles.bonusCheckAnswerGapsTextSounds;
+            let returnArr = [];
+            let questionPoints = correctAnswers.length * bonusAnswer * -1 + (params.numberOfGaps * bonusAnswer);
+            for (let i = 0; i < correctAnswers.length; i++) {
+                if (correctAnswers[i].toLowerCase() === params.userAnswers[i].toLowerCase()) {
+                    returnArr.push(true);
+                    questionPoints = questionPoints + bonusAnswer;
+                } else {
+                    returnArr.push(false);
+                }
+            }
+            
+            params.checkAns(returnArr);
+
+            if (!answCheckOnce && params.currentScreen > params.latestAnswered) {
+                setCurrentPoints(() => {
+                    return params.userPoints + questionPoints;
+                })
+            }
+
+            setAnswCheckOnce(true);
+            setLetGoBack(false);
+            setButtonFunction('goToNext');
+            setPathIcon('next');
+        }  else if (buttonFunction === 'chooseCorrectCategory' && params.currentScreen >= params.latestScreen) {
 
             let bonusAnswer = generalStyles.bonusChooseCorrectCategory;
             let returnArr = [];

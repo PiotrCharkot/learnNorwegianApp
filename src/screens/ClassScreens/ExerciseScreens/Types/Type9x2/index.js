@@ -1,4 +1,4 @@
-import {View, Text, StyleSheet, TouchableOpacity, Image, Animated, Easing  } from 'react-native'
+import {View, Text, StyleSheet, TouchableOpacity, Image, Animated, Easing } from 'react-native'
 import React, { useState, useEffect, useRef } from 'react'
 import { useFocusEffect } from "@react-navigation/native";
 import { LinearGradient } from 'expo-linear-gradient';
@@ -237,7 +237,7 @@ const Type9x2 = ({ route }) => {
 
       <View style={styles.bottomBarContainer}>
         <BottomBar 
-        callbackButton={'checkAnswerGapsText'}
+        callbackButton={'checkAnswerGapsTextSounds'}
         userAnswers={words}
         correctAnswers={exeList[nextScreen - 1].correctAnswers}
         numberOfGaps={exeList[nextScreen - 1].gapsIndex.length}

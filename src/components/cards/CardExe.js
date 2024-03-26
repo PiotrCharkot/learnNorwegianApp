@@ -162,6 +162,7 @@ const styles = StyleSheet.create({
         width: '100%',
         paddingTop: 10,
         paddingLeft: 10,
+        paddingRight: 10,
         borderBottomLeftRadius: 70,
         borderBottomRightRadius: 18,
         borderTopLeftRadius: 18,
@@ -227,9 +228,10 @@ const styles = StyleSheet.create({
     },
     textTitle: {
         color: 'white',
-        fontSize: 16,
+        fontSize: 15,
         fontWeight: '800',
         shadowColor: 'black',
+        paddingRight: 10,
         shadowOffset: {
             width: -1,
             height: -1,
@@ -240,7 +242,7 @@ const styles = StyleSheet.create({
     },
     textDescription: {
         color: 'white',
-        fontSize: 13,
+        fontSize: 11,
         fontWeight: '500'
     },
     textLevel: {

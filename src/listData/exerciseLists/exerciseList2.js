@@ -18,7 +18,7 @@ export default dataObj = [
         ua: 'Розташуй слова у правильному порядку', 
         sp: 'Organiza las palabras en el orden correcto',
     },
-    link: 'Exc1x1x1',
+    link: 'Exc2x1x1',
     key: 1,
    },
     {
@@ -40,7 +40,7 @@ export default dataObj = [
         ua: 'Оволодій майбутнім часом сьогодні', 
         sp: 'Domina el futuro hoy',
     },
-    link: 'Exc1x2x1',
+    link: 'Exc2x2x1',
     key: 2,
    },
     {
@@ -62,7 +62,7 @@ export default dataObj = [
         ua: 'Досліджуй нюанси модальних дієслів', 
         sp: 'Navega por las sutilezas de los verbos modales',
     },
-    link: 'Exc1x3x1',
+    link: 'Exc2x3x1',
     key: 3,
    },
     {
@@ -84,7 +84,7 @@ export default dataObj = [
         ua: 'Створення зв\'язків, освоєння значень', 
         sp: 'Creando conexiones, dominando significados',
     },
-    link: 'Exc1x4x1',
+    link: 'Exc2x4x1',
     key: 4,
    },
     {
@@ -98,15 +98,15 @@ export default dataObj = [
         sp: 'Adverbios y Adjetivos',
     },
     description: {
-        eng: 'Understanding and Using Adverbs & Adjectives',
-        pl: 'Rozumienie i używanie przysłówków i przymiotników',
-        ar: 'فهم واستخدام الظروف والصفات',
-        ger: 'Verstehen und Verwenden von Adverbien und Adjektiven',
-        lt: 'Prieveiksmių ir būdvardžių supratimas ir naudojimas',
-        ua: 'Розуміння та використання прислівників і прикметників', 
-        sp: 'Entender y usar adverbios y adjetivos',
+        eng: 'Fine-tune your descriptions',
+        pl: 'Dopracuj swoje opisy',
+        ar: 'صقل وصفك',
+        ger: 'Feinabstimme deine Beschreibungen',
+        lt: 'Sudėkite savo aprašymus',
+        ua: 'Вдоскональ свої описи', 
+        sp: 'Afina tus descripciones',
     },
-    link: 'Exc1x5x1',
+    link: 'Exc2x5x1',
     key: 5,
    },
    {
@@ -128,7 +128,7 @@ export default dataObj = [
         ua: 'Досліджуйте кожен аспект граматики', 
         sp: 'Explora cada aspecto de la gramática',
     },
-    link: 'Exc1x6x1',
+    link: 'Exc2x6x1',
     key: 6,
    }
 ];

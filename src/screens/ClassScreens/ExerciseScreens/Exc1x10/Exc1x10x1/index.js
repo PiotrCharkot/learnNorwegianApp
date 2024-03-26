@@ -19,7 +19,7 @@ const dataForMarkers = {
 
 
 
-const linkList = ['Exc1x10x1', 'Type9x2', 'Type9x3', 'Type9x4'];
+const linkList = ['Exc1x10x1', 'Type9x2', 'Type9x3', 'Type9x4', 'Type9x5', 'Type9x6', 'Type9x7', 'Type9x8', 'Type9x9', 'Type9x10'];
 
 const currentScreen = 1;
 const allScreensNum = linkList.length;
@@ -57,7 +57,7 @@ const Exc1x10x1 = ({ route }) => {
     const [resetCheck, setResetCheck] = useState(false);
     const [latestScreenAnswered, setLatestScreenAnswered] = useState(0);
     const [correctAnswers, setCorrectAnswers]= useState([]);
-    const [instructions, setInstructions] = useState('some instructions');
+    const [instructions, setInstructions] = useState('Listen and align words in order');
     const [translation, setTranslation] = useState('')
     
     const [language, setLanguage] = useState('EN');
@@ -91,17 +91,17 @@ const Exc1x10x1 = ({ route }) => {
 
         
         if (savedLang === 'PL') {
-          setInstructions('polskie instrukcje')
+          setInstructions('Słuchaj i ustaw słowa w kolejności')
         } else if (savedLang === 'DE') {
-          setInstructions('niemieckie instrukcje')
+          setInstructions('Hören und ordne die Wörter der Reihe nach an')
         } else if (savedLang === 'LT') {
-          setInstructions('litewskie instrukcje')
+          setInstructions('Klausykite ir sudėliokite žodžius pagal eilę')
         } else if (savedLang === 'AR') {
-          setInstructions('arabskie instrukcje')
+          setInstructions('استمع ورتب الكلمات بالترتيب')
         } else if (savedLang === 'UA') {
-          setInstructions('ukr instrukcje')
+          setInstructions('Слухайте та розташовуйте слова за порядком')
         } else if (savedLang === 'ES') {
-          setInstructions('esp instrukcje')
+          setInstructions('Escucha y ordena las palabras')
         }
         
         setLanguage(savedLang)
@@ -114,7 +114,7 @@ const Exc1x10x1 = ({ route }) => {
     useEffect(() => {
 
       let parsedData = Object.keys(route.params.data).length === 0 ? {} : JSON.parse(route.params.data) 
-      let dataForExercise = Object.keys(route.params.data).length === 0 ? type9sentence : parsedData.A1  // maybe change this (name is not going to be A1 here!!!!)
+      let dataForExercise = Object.keys(route.params.data).length === 0 ? type9sentence : parsedData.sounds.type9;
 
       console.log('data for exrcises', dataForExercise);
       console.log(typeof dataForExercise);
@@ -143,7 +143,7 @@ const Exc1x10x1 = ({ route }) => {
               dataForExercise[randomVal].gapsIndex = newArrGaps;
               dataForExercise[randomVal].textIndex = newArrText;
 
-              sumOfAllPoints = sumOfAllPoints + newArrGaps.length * generalStyles.bonusCheckAnswerGapsText
+              sumOfAllPoints = sumOfAllPoints + newArrGaps.length * generalStyles.bonusCheckAnswerGapsTextSounds
 
               tempArr.push(dataForExercise[randomVal]);
               alreadyUsed.push(randomVal)
@@ -348,7 +348,7 @@ const Exc1x10x1 = ({ route }) => {
 
       <View style={styles.bottomBarContainer}>
         <BottomBar 
-        callbackButton={'checkAnswerGapsText'}
+        callbackButton={'checkAnswerGapsTextSounds'}
         userAnswers={words}
         correctAnswers={correctAnswers}
         numberOfGaps={numberGaps}

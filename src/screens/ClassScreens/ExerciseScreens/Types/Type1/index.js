@@ -13,6 +13,7 @@ const colorUnderline = generalStyles.colorHighlightChoiceOption;
 const colorChosenAns = generalStyles.colorHighlightChoosenAnswer;
 const outputColors = [generalStyles.wrongAnswerConfirmationColor, generalStyles.neutralAnswerConfirmationColor, generalStyles.correctAnswerConfirmationColor];
 
+const exitLink = 'ExitExcScreen'
 
 const Type1 = ({route}) => {
   
