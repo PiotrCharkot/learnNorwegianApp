@@ -26,6 +26,8 @@ const SettingsScreen = () => {
   const [notificationsOn, setNotificationsOn] = useState('0');
   const [userLoged, setUserLoged] = useState(false);
   const [sound, setSound] = useState();
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
 
   const rotateWheel = scrollY.interpolate({
     inputRange: [0, 200],

@@ -139,6 +139,13 @@ const Tabs = () => {
                 daysInRow: 0,
                 lastUpdate: new Date().toLocaleDateString(),
                 userIsPro: false,
+                gold: 0,
+                silver: 0,
+                bronze: 0,
+                version: 1,
+                levelName: '',
+                leaugeID: '',
+                userBadge: ''
             });
 
             
@@ -156,9 +163,9 @@ const Tabs = () => {
                 section1: [0,0,0,0,0],
                 section2: [0,0,0,0,0,0,0],
                 section3: [0,0,0,0,0],
-                section4: [0,0,0,0,0],
-                section5: [0,0,0,0,0],
-                section6: [0,0,0,0,0],
+                section4: [0,0,0,0,0,0],
+                section5: [0,0,0,0,0,0,0],
+                section6: [0,0,0,0,0,0],
               },
               exercise: {
                 section1: {
@@ -168,10 +175,6 @@ const Tabs = () => {
                     class3: [0,0,0],
                     class4: [0,0,0],
                     class5: [0,0,0],
-                    class6: [0,0,0],
-                    class7: [0,0,0],
-                    class8: [0,0,0],
-                    class9: [0,0,0],
                 },
                 section2: {
                     class0: [0,0,0],
@@ -179,6 +182,7 @@ const Tabs = () => {
                     class2: [0,0,0],
                     class3: [0,0,0],
                     class4: [0,0,0],
+                    class5: [0,0,0],
                 },
                 section3: {
                     class0: [0,0,0],
@@ -186,6 +190,7 @@ const Tabs = () => {
                     class2: [0,0,0],
                     class3: [0,0,0],
                     class4: [0,0,0],
+                    class5: [0,0,0],
                 },
                 section4: {
                     class0: [0,0,0],
@@ -194,11 +199,16 @@ const Tabs = () => {
                     class3: [0,0,0],
                     class4: [0,0,0],
                 },
+                section5: {
+                    class0: [0,0,0],
+                    class1: [0,0,0],
+                    class2: [0,0,0],
+                    class3: [0,0,0],
+                    class4: [0,0,0],
+                    class5: [0,0,0],
+                },
               },
-              gold: 0,
-              silver: 0,
-              bronze: 0,
-        
+              version: 1
             });
         }
 

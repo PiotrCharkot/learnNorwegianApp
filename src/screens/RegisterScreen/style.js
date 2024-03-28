@@ -83,12 +83,14 @@ const styles = StyleSheet.create({
         width: circleSize / 2 - 54,
         paddingTop: 25,
         borderBottomColor: 'grey',
-        borderBottomWidth: 0.2
+        borderBottomWidth: 0.2,
+        paddingRight: 10
     },
     inputHolderDown: {
         justifyContent: 'center',
         height: 50,
         paddingTop: 25,
+        paddingRight: 20
     },
     inputImg: {
         height: 15,
@@ -141,6 +143,53 @@ const styles = StyleSheet.create({
         overflow: 'hidden',
         bottom: circleSize / 4.2,
         left: -25
+    },
+    messageContainer: {
+        borderWidth: 1,
+        borderColor: '#fafafa',
+        position: 'absolute',
+        height: 140,
+        width: screenWidth - 50,
+        borderRadius: 70,
+        backgroundColor: 'grey',
+        alignItems: 'center',
+    },
+    messageText: {
+        textAlign: 'center',
+        fontWeight: '600',
+        fontSize: 14
+    }, 
+    messageButtonsContainer: {
+        alignItems: 'center',
+    },
+    messageButtons: {
+        borderWidth: 1,
+        borderColor: 'black',
+        marginTop: 10,
+        width: 200,
+        alignItems: 'center',
+        borderRadius: 8
+    },
+    messageGradient: {
+        height: '100%',
+        width: '100%', 
+        paddingVertical: 15,
+        paddingHorizontal: 50,
+        borderRadius: 70,
+        justifyContent: 'space-between'
+    },
+    messageButtonsText: {
+        fontSize: 14,
+        fontWeight: '600'
+    },
+    inputTakenMsgCont: {
+        position: 'absolute',
+        top: - 40,
+        paddingLeft: 10,
+    },
+    inputTakenMsgTxt: {
+        fontSize: 12,
+        color: 'red'
     }
 });
 

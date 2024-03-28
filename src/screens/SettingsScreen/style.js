@@ -78,7 +78,7 @@ const styles = StyleSheet.create({
         borderRadius: 14
     },
     confirmationText: {
-        fontSize: 24,
+        fontSize: 20,
         textAlign: 'center',
         fontWeight: '500',
         color: 'white',
@@ -100,7 +100,7 @@ const styles = StyleSheet.create({
         borderRadius: 8
     },
     confirmationBtnTxt: {
-        fontSize: 16,
+        fontSize: 13,
         fontWeight: '500',
         color: 'white'
     }

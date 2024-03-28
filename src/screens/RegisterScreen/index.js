@@ -11,6 +11,7 @@ import { LinearGradient } from 'expo-linear-gradient';
 import uuid from 'react-native-uuid';
 import GradientButton from '../../components/buttons/GradientButton';
 import styles from './style';
+import forbiddenUsernames from '../../listData/otherData/forbiddenUsernames';
 
 const offsetButton = 25;
 const usersPointsCollection = collection(db, 'usersPoints');
@@ -20,16 +21,27 @@ const RegisterScreen = () => {
 
     const navigation = useNavigation();
 
+    const userNames = collection(db, 'userNames');
+    const docRefUserList = doc(db, "userNames", "DbIjRsGg1IzAgJs0vC81");
+
     const screenWidth = Dimensions.get("window").width;
     const interpolatedValue = useRef(new Animated.Value(0)).current;
     const interpolatedValueForX = useRef(new Animated.Value(0)).current;
     const buttonLoginPos = useRef(new Animated.Value(-290)).current;
+    const messageContainerPos = useRef(new Animated.Value(-500)).current;
     const [imageLink, setImageLink] = useState(require('../../../assets/sign-in.png'));
     const [username, setUsername] = useState("");
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
+    const [messageText, setMessageText] = useState("Looks like an unknown error");
+    const [userNamesList, setUserNamesList] = useState([]);
+    const [isUsernameTaken, setIsUsernameTaken] = useState(false);
 
     const credential = EmailAuthProvider.credential(email, password);
+
+    const maxLength = 20;
+    const maxLengthPassword = 50;
+    const maxLengthEmail = 250;
 
 
 const circlePositionDeg = interpolatedValue.interpolate({
@@ -43,31 +55,34 @@ const xPositionDeg = interpolatedValueForX.interpolate({
 })
 
 
+
+const updateUserNamesList = async (userNameParam) => {
+    let newUsersList = [...userNamesList, userNameParam.toLowerCase()]
+
+    console.log('updated list is: ', userNamesList, newUsersList);
+
+    updateDoc(docRefUserList, {
+        nameList: newUsersList   
+    })
+    .then(docRef => {
+        console.log("username is added to list of users: ", userNameParam);
+    })
+    .catch(error => {
+        console.log(error);
+    })
+}
+
+
 const updateUserNameInRankigs = async (userIdentyfication, userN) => {
     console.log('my id in update is: ', userIdentyfication, 'and name is: ', userN );
-    //let docId = uuid.v4();
+    
+    
     const q = query(usersPointsCollection, where('userRef', '==', userIdentyfication))
     const querySnapshot = await getDocs(q);
 
     if (querySnapshot.empty) {
 
         console.log('no data for userPoints for this user in RegisterScreen screen. this is an error. there should be document for this user!');
-
-
-        // console.log('there is no user in rankings yet');
-        // //set new document here
-
-        // await setDoc(doc(db, 'usersPoints', docId), {
-        //     userRef: userIdentyfication,
-        //     userName: userN,
-        //     totalPoints: 0,
-        //     weeklyPoints: 0,
-        //     dailyPoints: 0,
-        //     daysInRow: 0,
-        //     lastUpdate: new Date().toLocaleDateString(),
-        //     userIsPro: false,
-        // });
-
 
     } else {
         
@@ -131,37 +146,85 @@ const closeScreenAnimation = () => {
 
 
 const createUser = () => {
-    linkWithCredential(authentication.currentUser, credential)
-    .then((usercred) => {
-        const user = usercred.user;
-        updateProfile(authentication.currentUser, {
-            displayName: username
-          }).then(() => {
-            console.log('username updated to: ', username);
-          }).catch((error) => {
-            console.log(error);
-          });
-         
-        
-          updateUserNameInRankigs(user.uid, username);
-        
-        console.log("Anonymous account successfully upgraded", user);
-        setUsername('');
-        setEmail('');
-        setPassword('');
-    }).catch((error) => {
-        console.log("Error upgrading anonymous account", error);
-    });
+    if (username.trim() && !isUsernameTaken) {
 
+        linkWithCredential(authentication.currentUser, credential)
+        .then((usercred) => {
+            const user = usercred.user;
+            updateProfile(authentication.currentUser, {
+                displayName: username
+              }).then(() => {
+                console.log('username updated to: ', username);
+              }).catch((error) => {
+                console.log(error);
+              });
+             
+            
+            updateUserNameInRankigs(user.uid, username);
+            updateUserNamesList(username)
+            
+            console.log("Anonymous account successfully upgraded", user);
+            setUsername('');
+            setEmail('');
+            setPassword('');
+            exitButton(true);
+        }).catch((error) => {
+            const errorCode = error.code;
+            const errorMessage = error.message;
+
+
+            if (errorCode === 'auth/missing-email') {
+                
+                setMessageText('Oops! It seems you forgot to type in your email. Let\'s fill that in to move forward!');
+                
+            } else if (errorCode === 'auth/missing-password') {
+                
+                setMessageText('We noticed you skipped the password field. Please enter your password to secure your account');
+                
+            } else if (errorCode === 'auth/weak-password') {
+               
+                setMessageText('Your password needs to be between 6 and 50 characters long');
+                
+            } else if (errorCode === 'auth/invalid-email') {
+               
+                setMessageText('Oops, that doesn\'t look like a valid email address. Let\'s try again!');
+                
+            } else if (errorCode === 'auth/email-already-in-use') {
+                
+                setMessageText('This email is already in use. Please try another one or log in if you\'re already a member');
+            }
     
+            Animated.spring(messageContainerPos, {
+                toValue: 0,
+                speed: 1,
+                bounciness: 0,
+                useNativeDriver: true,
+            }).start();
+    
+            console.log("Error upgrading anonymous account. Code", errorCode);
+            console.log("Error upgrading anonymous account. Message", errorMessage);
+        });
+    
+        
+        
+    } else {
+        setMessageText('Looks like you missed a step! Please enter a username to continue.');
+        Animated.spring(messageContainerPos, {
+            toValue: 0,
+            speed: 1,
+            bounciness: 0,
+            useNativeDriver: true,
+        }).start();
+    }
 
-    exitButton();
+
 }
 
 const backToLogIn = () => {
 
-    setImageLink(require('../../../assets/login.png'))
+    setImageLink(require('../../../assets/login.png')) 
 
+    hideMessage();
     closeScreenAnimation();
 
     setTimeout(() => {
@@ -173,10 +236,14 @@ const backToLogIn = () => {
     }, 2000);
 }
 
-const exitButton = () => {
+const exitButton = (boolean) => {
     console.log('exxit');
 
-    setImageLink(require('../../../assets/goodbye.png'))
+    if (boolean) {
+        setImageLink(require('../../../assets/userRegistered.png'));
+    } else {
+        setImageLink(require('../../../assets/goodbye.png'));
+    }
     Animated.spring(interpolatedValueForX, {
         toValue: 360,
         speed: 1,
@@ -184,6 +251,7 @@ const exitButton = () => {
         useNativeDriver: true,
     }).start();
 
+    hideMessage();
     closeScreenAnimation();
 
     setTimeout(() => {
@@ -191,6 +259,19 @@ const exitButton = () => {
         navigation.navigate('Main');
     }, 1500)
 }
+
+
+const hideMessage = () => {
+
+    Animated.spring(messageContainerPos, {
+        toValue: -500,
+        speed: 1,
+        bounciness: 0,
+        useNativeDriver: true,
+    }).start();
+
+}
+
 
 const getTransform = (viewHeight, viewWidth, transValA, transValB, valX, valY) => {
     let transform = {
@@ -201,7 +282,20 @@ const getTransform = (viewHeight, viewWidth, transValA, transValB, valX, valY) =
 
 useEffect(() => {
 
-    openScreenAnimation()
+    const getUserNames = async () => {
+        const querySnapshot = await getDoc(docRefUserList);
+
+        if (querySnapshot.empty) {
+            console.log('no usernames data');
+        } else {
+            console.log('usernames data is: ', querySnapshot.data());
+            setUserNamesList(querySnapshot.data().nameList)
+        }
+    }
+
+
+    openScreenAnimation(); 
+    getUserNames();
    
 },[]);
 
@@ -231,12 +325,21 @@ useEffect(() => {
                             <Input 
                             style={styles.input}
                             autoCapitalize='none'
-                            placeholder='username'
+                            placeholder='username (max 20 characters)'
                             inputContainerStyle={styles.inputContainerStyle}
+                            maxLength={maxLength}
                             leftIcon={<Image style={styles.inputImg} source={require('../../../assets/profil.png')}/>}
                             type={"text"}
                             value={username}
-                            onChangeText={(text) => setUsername(text)}
+                            onChangeText={(text) => {
+                                setUsername(text);
+                                
+                                if (userNamesList.includes(text.toLowerCase()) || forbiddenUsernames.includes(text.toLowerCase())) {
+                                    setIsUsernameTaken(true);
+                                } else {
+                                    setIsUsernameTaken(false);
+                                }
+                            }}
                             />
                         </View>
 
@@ -247,6 +350,7 @@ useEffect(() => {
                             autoCapitalize='none'
                             placeholder='email address'
                             inputContainerStyle={styles.inputContainerStyle}
+                            maxLength={maxLengthEmail}
                             leftIcon={<Image style={styles.inputImg} source={require('../../../assets/email.png')}/>}
                             type={"email"}
                             value={email}
@@ -258,8 +362,9 @@ useEffect(() => {
 
                             <Input 
                             style={styles.input}
-                            placeholder='password'
+                            placeholder='password (6-50 characters)'
                             inputContainerStyle={styles.inputContainerStyle}
+                            maxLength={maxLengthPassword}
                             leftIcon={<Image style={styles.inputImg} source={require('../../../assets/padlock.png')}/>}
                             secureTextEntry
                             type={"password"}
@@ -292,10 +397,14 @@ useEffect(() => {
                             </View>
                         </View>
 
-                        
-                            
-                    </View>
+                        <View style={styles.inputTakenMsgCont}>
+                            <Text style={styles.inputTakenMsgTxt}>{isUsernameTaken ? 'This username is already taken. Please choose another.' : ''}</Text>
+                        </View>
                     
+                    </View>
+
+
+
                     <Animated.View style={{...styles.regButtonCont, ...styles.shadowStrong, transform: [{translateX: buttonLoginPos}]}}>
                         <GradientButton  
                             height={40} 
@@ -320,6 +429,25 @@ useEffect(() => {
 
 
                 
+            </Animated.View>
+
+            
+
+            <Animated.View style={{...styles.messageContainer, transform: [{translateX: messageContainerPos}]}}>
+                <LinearGradient colors={['#6d28ed', '#fafafa']} style={styles.messageGradient}  start={[0.0, 1.0]} end={[1.0, 1.0]}>
+
+                
+                    <Text style={styles.messageText}>{messageText}</Text>
+
+                    <View style={styles.messageButtonsContainer}>
+
+                        <TouchableOpacity style={styles.messageButtons} onPress={hideMessage}>
+                            <Text style={styles.messageButtonsText}>OK</Text>
+                        </TouchableOpacity>
+                    </View>
+                    
+
+                </LinearGradient>
             </Animated.View>
         </LinearGradient>
     </KeyboardAvoidingView>

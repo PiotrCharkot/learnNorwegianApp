@@ -20,9 +20,12 @@ const LoginScreen = () => {
     const interpolatedValueForX = useRef(new Animated.Value(0)).current;
     const buttonForgetPos = useRef(new Animated.Value(-290)).current;
     const buttonRegisterPos = useRef(new Animated.Value(-290)).current;
+    const messageContainerPos = useRef(new Animated.Value(-500)).current;
     const [imageLink, setImageLink] = useState(require('../../../assets/login.png'));
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
+    const [messageText, setMessageText] = useState("Looks like an unknown error");
+    const [showForgotBtn, setShowForgotBtn] = useState(true);
     
 
 
@@ -99,20 +102,45 @@ const logIn = () => {
     setEmail('');
     setPassword('');
     console.log('user loged successfully!!!');
+    exitButton(true); 
   })
   .catch((error) => {
     const errorCode = error.code;
     const errorMessage = error.message;
+
+
+    if (errorCode === 'auth/user-not-found') {
+        console.log('show info about user not found...');
+        setMessageText('No email found. Hit \'Register account\' or try to log in with correct email');
+        setShowForgotBtn(false);
+    } else if (errorCode === 'auth/wrong-password') {
+        console.log('looks like you dont remember you password');
+        setMessageText('Wrong password. Try again or hit \'forgot password\' to reset');
+        setShowForgotBtn(true);
+    } else if (errorCode === 'auth/invalid-email') {
+        setMessageText('Invalid email format. Please check your email address and try again');
+        setShowForgotBtn(false);
+    }
+
+
+    Animated.spring(messageContainerPos, {
+        toValue: 0,
+        speed: 1,
+        bounciness: 0,
+        useNativeDriver: true,
+    }).start();
+
+
   });
 
   
-  exitButton();
 }
 
 const registerButton = () => {
     console.log('register button pressed');
     setImageLink(require('../../../assets/sign-in.png'))
 
+    hideMessage();
     closeLoginAnimation();
 
     setTimeout(() => {
@@ -129,6 +157,7 @@ const registerButton = () => {
 const forgotButton = () => {
     setImageLink(require('../../../assets/lock-question.png'))
 
+    hideMessage();
     closeLoginAnimation();
 
     setTimeout(() => {
@@ -142,9 +171,13 @@ const forgotButton = () => {
     }, 2000);
 }
 
-const exitButton = () => {
+const exitButton = (boolean) => {
 
-    setImageLink(require('../../../assets/goodbye.png'))
+    if (boolean) {
+        setImageLink(require('../../../assets/userRegistered.png'));
+    } else {
+        setImageLink(require('../../../assets/goodbye.png'));
+    }
     Animated.spring(interpolatedValueForX, {
         toValue: 360,
         speed: 1,
@@ -152,12 +185,26 @@ const exitButton = () => {
         useNativeDriver: true,
     }).start();
 
+    hideMessage();
     closeLoginAnimation();
 
     setTimeout(() => {
 
         navigation.navigate('Main');
     }, 1500)
+}
+
+
+const hideMessage = () => {
+
+    Animated.spring(messageContainerPos, {
+        toValue: -500,
+        speed: 1,
+        bounciness: 0,
+        useNativeDriver: true,
+    }).start();
+
+    setShowForgotBtn(true);
 }
 
 
@@ -302,6 +349,29 @@ useEffect(() => {
 
 
                 
+            </Animated.View>
+
+            <Animated.View style={{...styles.messageContainer, transform: [{translateX: messageContainerPos}]}}>
+                <LinearGradient colors={['#6d28ed', '#fafafa']} style={styles.messageGradient}  start={[0.0, 1.0]} end={[1.0, 1.0]}>
+
+                
+                    <Text style={styles.messageText} >{messageText}</Text>
+
+                    <View style={styles.messageButtonsContainer}>
+                        {showForgotBtn ? <TouchableOpacity style={styles.messageButtons} onPress={forgotButton}>
+                            <Text style={styles.messageButtonsText}>Forgot password</Text>
+                        </TouchableOpacity> : <TouchableOpacity style={styles.messageButtons} onPress={registerButton}>
+                            <Text style={styles.messageButtonsText}>Register account</Text>
+                        </TouchableOpacity>}
+                        
+
+                        <TouchableOpacity style={styles.messageButtons} onPress={hideMessage}>
+                            <Text style={styles.messageButtonsText}>OK</Text>
+                        </TouchableOpacity>
+                    </View>
+                    
+
+                </LinearGradient>
             </Animated.View>
         </LinearGradient>
     </KeyboardAvoidingView>

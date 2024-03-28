@@ -139,6 +139,42 @@ const styles = StyleSheet.create({
         overflow: 'hidden',
         bottom: circleSize / 4.2,
         left: -25
+    },
+    messageContainer: {
+        position: 'absolute',
+        height: 140,
+        width: screenWidth - 50,
+        borderRadius: 70,
+        backgroundColor: 'grey',
+        alignItems: 'center',
+    },
+    messageText: {
+        textAlign: 'center',
+        fontWeight: '600',
+        fontSize: 14
+    }, 
+    messageButtonsContainer: {
+        alignItems: 'center',
+    },
+    messageButtons: {
+        borderWidth: 1,
+        borderColor: 'black',
+        marginTop: 10,
+        width: 200,
+        alignItems: 'center',
+        borderRadius: 8
+    },
+    messageGradient: {
+        height: '100%',
+        width: '100%', 
+        paddingVertical: 15,
+        paddingHorizontal: 50,
+        borderRadius: 70,
+        justifyContent: 'space-between'
+    },
+    messageButtonsText: {
+        fontSize: 14,
+        fontWeight: '600'
     }
 });
 

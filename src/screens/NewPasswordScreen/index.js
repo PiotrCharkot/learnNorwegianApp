@@ -81,19 +81,25 @@ const updatePass = () => {
     console.log('update button pressed');
     updatePassword(user, password).then(() => {
         // Update successful.
-        exitButton();
+        exitButton(true);
     }).catch((error) => {
+        const errorCode = error.code;
         // An error ocurred
         // ...
-        console.log('password update failed', error);
-        navigation.navigate('Reauth')
+        console.log('password update failed', errorCode);
+        //navigation.navigate('Reauth')
+        //auth/requires-recent-login - reauth on this error code
       });
       
 }
 
-const exitButton = () => {
+const exitButton = (boolean) => {
 
-    setImageLink(require('../../../assets/goodbye.png'))
+    if (boolean) {
+        setImageLink(require('../../../assets/update.png'))
+    } else {
+        setImageLink(require('../../../assets/goodbye.png'))
+    }
     Animated.spring(interpolatedValueForX, {
         toValue: 360,
         speed: 1,
