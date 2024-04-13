@@ -26,7 +26,7 @@ let backgroundTime = 0;
 
 const TestWordScreen = ({route}) => {
 
-    const {userId, refToList, savedLang, own, userN, myTitle} = route.params;
+    const {userId, refToList, savedLang, own, userN, myTitle, userLangOwnCard} = route.params;
 
     const navigation = useNavigation();
 
@@ -165,7 +165,7 @@ const TestWordScreen = ({route}) => {
             if (own) {
                 navigation.navigate({
                     name: 'MyList',
-                    params: {userRef: userId}
+                    params: {userRef: userId, language: userLangOwnCard}
                   })
             } else {
                 navigation.navigate('Main');

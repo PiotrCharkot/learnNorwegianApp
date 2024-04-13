@@ -1,4 +1,4 @@
-import { View, Text, StyleSheet, ScrollView } from 'react-native'
+import { View, Text, StyleSheet, ScrollView, Image, Dimensions } from 'react-native'
 import React, { useState, useEffect  } from 'react'
 import { useFocusEffect } from "@react-navigation/native";
 import ProgressBar from '../../../../../components/bars/progressBar'
@@ -7,7 +7,7 @@ import generalStyles from '../../../../../styles/generalStyles';
 
 const currentScreen = 9;  //current screen
 
-
+const screenWidth = Dimensions.get('window').width;
 
 const Class1x3x9 = ({route}) => { // name
 
@@ -37,9 +37,14 @@ const Class1x3x9 = ({route}) => { // name
     <View style={styles.mainContainer}> 
         <ScrollView showsVerticalScrollIndicator={false} style={styles.body}>
           <View style={styles.textContainer}>
-            <Text style={styles.text}>A little tip to remember these irregular verbs? Go over to our <Text style={styles.textColor}>flashcard section</Text> in the bottom navigator. There's a special corner just for learning these kind of verbs. (add image here)</Text>
+            <Text style={styles.text}>A little tip to remember these irregular verbs? Go over to our <Text style={styles.textColor}>flashcard section</Text> in the bottom navigator. There's a special corner just for learning these kind of verbs.</Text>
+
           </View>
 
+          <View style={styles.imgContainer}> 
+
+            <Image style={styles.imgCards} source={require('../../../../../../assets/flashcardsNoBackground.png')} />
+          </View>
           
 
         </ScrollView>
@@ -142,6 +147,13 @@ const styles = StyleSheet.create({
     bottom: 0,
     width: '100%',
   },
-  
+  imgContainer: {
+    alignItems: 'center',
+    width: '100%'
+  },
+  imgCards: {
+    width: screenWidth - 140,
+    height: (screenWidth - 140) * 2.1
+  }
   
 })

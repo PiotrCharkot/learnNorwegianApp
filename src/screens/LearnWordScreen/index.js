@@ -25,7 +25,7 @@ let backgroundTime = 0;
 
 const LearnWordScreen = ({route}) => {
     
-    const {userId, refToList, savedLang, own, userN, myTitle} = route.params;
+    const {userId, refToList, savedLang, own, userN, myTitle, userLangOwnCard} = route.params;
     const words = collection(db, own ? 'wordsOwn' : 'words');
     const usersPointsCollection = collection(db, 'usersPoints');
     
@@ -103,7 +103,7 @@ const LearnWordScreen = ({route}) => {
             if (own) {
                 navigation.navigate({
                     name: 'PublicLists',
-                    params: {userRef: userId}
+                    params: {userRef: userId, choosenLang: userLangOwnCard}
                   })
             } else {
                 navigation.navigate('Main');

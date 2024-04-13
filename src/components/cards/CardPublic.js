@@ -17,11 +17,15 @@ const CardPublic = (params) => {
 
     const [documentId, setDocumentId] = useState(params.docForUpdate);
     const [addBtnTxt, setAddBtnTxt] = useState('Add to your lists');
+    const [addBtnSuccesTxt, setAddBtnSuccesTxt] = useState('List added');
+
+    const [seeBtnTxt, setSeeBtnTxt] = useState('See');
     const [alreadyAdded, setAlreadyAdded] = useState(false);
 
 
+
     const pressLearn = () => {
-        navigation.navigate('LearnWord', {refToList: params.listReference, userId: params.currentUser, savedLang: 'EN', own: true, myTitle: params.title})
+        navigation.navigate('LearnWord', {refToList: params.listReference, userId: params.currentUser, savedLang: 'EN', own: true, myTitle: params.title, userLangOwnCard: params.choosenLang})
     }
     
     const addToYour = async () => {
@@ -55,7 +59,7 @@ const CardPublic = (params) => {
 
             await setDoc(doc(db, 'wordsOwn', docId), tempObj)
             .then( async () => {
-                setAddBtnTxt('List added');
+                setAddBtnTxt(addBtnSuccesTxt);
                 setAlreadyAdded(true);
                 console.log('added this list to your lists')
                 await updateDoc(doc(db, "usersWordsInfo", documentId), {
@@ -85,6 +89,35 @@ const CardPublic = (params) => {
     }, [params.docForUpdate])
     
 
+    useEffect(() => {
+
+        if (params.choosenLang === 'PL') {
+            setAddBtnTxt('Dodaj do swoich list');
+            setAddBtnSuccesTxt('Lista dodana');
+            setSeeBtnTxt('Zobacz');
+        } else if (params.choosenLang === 'DE') {
+            setAddBtnTxt('Zu Listen hinzufügen');
+            setAddBtnSuccesTxt('Liste hinzugefügt');
+            setSeeBtnTxt('Sehen');
+        } else if (params.choosenLang === 'LT') {
+            setAddBtnTxt('Pridėti prie savo sąrašų');
+            setAddBtnSuccesTxt('Sąrašas pridėtas');
+            setSeeBtnTxt('Matyti');
+        } else if (params.choosenLang === 'AR') {
+            setAddBtnTxt('أضف إلى قوائمك');
+            setAddBtnSuccesTxt('تم إضافة القائمة');
+            setSeeBtnTxt('انظر');
+        } else if (params.choosenLang === 'UA') {
+            setAddBtnTxt('Додати до своїх списків');
+            setAddBtnSuccesTxt('Список додано');
+            setSeeBtnTxt('Бачити');
+        } else if (params.choosenLang === 'ES') {
+            setAddBtnTxt('Añadir a tus listas');
+            setAddBtnSuccesTxt('Lista añadida');
+            setSeeBtnTxt('Ver');
+        }
+  
+    }, [])
 
 
   return (
@@ -99,7 +132,7 @@ const CardPublic = (params) => {
             </View>
         </View>
         <View style={styles.wordNrCont}>
-            <Text style={styles.wordNrText}>{params.wordsLength} words</Text>
+            <Text style={styles.wordNrText}>{params.wordsLength} ord</Text>
         </View>
         
       <Text></Text>
@@ -109,7 +142,7 @@ const CardPublic = (params) => {
       </TouchableOpacity>}
       
       <TouchableOpacity style={styles.touchableTest} onPress={pressLearn}> 
-        <Text style={styles.touchableTestText}>See</Text>
+        <Text style={styles.touchableTestText}>{seeBtnTxt}</Text>
       </TouchableOpacity>
     </View>
   )
@@ -161,7 +194,8 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         alignItems: 'center',
         height: 20,
-        width: 110,
+        //width: 110,
+        paddingHorizontal: 10,
         borderRadius: 5,
         bottom: 10,
         left: 30,
@@ -170,7 +204,7 @@ const styles = StyleSheet.create({
     },
     touchableEditText: {
         color: 'white',
-        fontSize: 12
+        fontSize: 10
     },
     touchableTest: {
         position: 'absolute',
@@ -187,7 +221,7 @@ const styles = StyleSheet.create({
     touchableTestText: {
         color: '#282e38',
         fontWeight: '500',
-        fontSize: 12
+        fontSize: 10
     },
     wordNrCont: {
         position: 'absolute',

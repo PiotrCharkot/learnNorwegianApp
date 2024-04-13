@@ -1,4 +1,4 @@
-import { View, Text, StyleSheet, ScrollView } from 'react-native'
+import { View, Text, StyleSheet, ScrollView, Image, Dimensions } from 'react-native'
 import React, { useState, useEffect  } from 'react'
 import { useFocusEffect } from "@react-navigation/native";
 import ProgressBar from '../../../../../components/bars/progressBar'
@@ -7,6 +7,8 @@ import generalStyles from '../../../../../styles/generalStyles';
 
 const currentScreen = 10;  //current screen
 
+
+const screenWidth = Dimensions.get('window').width;
 
 
 const Class1x4x10 = ({route}) => { // name
@@ -37,10 +39,18 @@ const Class1x4x10 = ({route}) => { // name
     <View style={styles.mainContainer}> 
         <ScrollView showsVerticalScrollIndicator={false} style={styles.body}>
           <View style={styles.textContainer}>
-            <Text style={styles.text}>Got a feeling those irregular verbs might trip you up? {'\n\n'}Go over to our <Text style={styles.textColor}>flashcard section</Text> in the bottom navigator. We've got both past tense and present perfect tense irregular verb forms lined up for you there. (add image here)</Text>
-          </View>
+            <Text style={styles.text}>Got a feeling those irregular verbs might trip you up? {'\n\n'}Go over to our <Text style={styles.textColor}>flashcard section</Text> in the bottom navigator. We've got both past tense and present perfect tense irregular verb forms lined up for you there.</Text>
+
 
           
+
+
+          </View>
+
+          <View style={styles.imgContainer}> 
+
+            <Image style={styles.imgCards} source={require('../../../../../../assets/flashcardsNoBackground.png')} />
+          </View>
 
         </ScrollView>
     
@@ -140,6 +150,14 @@ const styles = StyleSheet.create({
     bottom: 0,
     width: '100%',
   },
+  imgContainer: {
+    alignItems: 'center',
+    width: '100%'
+  },
+  imgCards: {
+    width: screenWidth - 140,
+    height: (screenWidth - 140) * 2.1
+  }
   
   
 })

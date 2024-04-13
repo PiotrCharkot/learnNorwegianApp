@@ -205,27 +205,6 @@ const styles = StyleSheet.create({
         fontSize: 10,
         fontWeight: '600'
     },
-    offsetSquare: {
-        position: 'absolute',
-        bottom: -20,
-        right: 20,
-        justifyContent: 'center',
-        alignItems: 'center',
-        height: screenWidth * 0.2,
-        width: screenWidth * 0.2,
-        backgroundColor: '#c9ebf0',
-        borderWidth: 4,
-        borderColor: 'white',
-        borderRadius: '50%',
-        shadowColor: 'black',
-        shadowOffset: {
-            width: -5,
-            height: -5,
-        },
-        shadowOpacity: 0.6,
-        shadowRadius: 4.5,
-        elevation: 5
-    },
     textTitle: {
         color: 'white',
         fontSize: 15,

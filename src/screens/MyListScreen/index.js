@@ -17,7 +17,7 @@ const wordsOwn = collection(db, 'wordsOwn');
 const MyListScreen = ({ route }) => {
 
 
-    const {userRef} = route.params
+    const {userRef, language} = route.params
     const auth = getAuth();
     const user = auth.currentUser;
     const navigation = useNavigation();
@@ -25,6 +25,10 @@ const MyListScreen = ({ route }) => {
     const [isContent, setIsContent] = useState(false); 
     const [dataFlatlist, setDataFlatlist] = useState([]);
     const [userId, setUserId] = useState('');
+    const [message, setMessage] = useState('It looks like you haven’t created any flashcards in this section yet. Tap the "Create new" button and make your first card!');
+    const [btnTxt, setBtnTxt] = useState('Create new');
+    const [btnTxt2, setBtnTxt2] = useState('Explore Cards');
+    
 
     const interpolatedValueForX = useRef(new Animated.Value(0)).current;
     const opacityMessage = useRef(new Animated.Value(0)).current;
@@ -40,7 +44,7 @@ const MyListScreen = ({ route }) => {
 
     const renderItemFunc = ({item}) => {
   
-      return <CardOwn lang={item.listLang} title={item.listTitle} userId={item.useRef} listReference={item.refNum} />
+      return <CardOwn lang={item.listLang} title={item.listTitle} userId={item.useRef} listReference={item.refNum} choosenLang={language}/>
     }
 
     const getTransform = (viewHeight, viewWidth, transValA, transValB, valX, valY) => {
@@ -98,9 +102,42 @@ const MyListScreen = ({ route }) => {
       }
   
       getDataFb();
-    
+
+
       
     }, [isFocused])
+
+
+
+    useEffect(() => {
+
+      if (language === 'PL') {
+        setMessage('Wygląda na to, że nie stworzyłeś jeszcze żadnych fiszek w tej sekcji. Naciśnij przycisk "Utwórz nową" i stwórz swoją pierwszą kartę!');
+        setBtnTxt('Utwórz nową');
+        setBtnTxt2('Eksploruj karty');
+      } else if (language === 'DE') {
+        setMessage('Es sieht so aus, als hättest du in diesem Bereich noch keine Karteikarten erstellt. Tippe auf den Button "Neu erstellen" und mache deine erste Karte!');
+        setBtnTxt('Neu erstellen');
+        setBtnTxt2('Karten erkunden');
+      } else if (language === 'LT') {
+        setMessage('Atrodo, kad šiame skyriuje dar nesukūrėte jokių mokymosi kortelių. Paspauskite mygtuką „Sukurti naują“ ir sukurkite savo pirmąją kortelę!');
+        setBtnTxt('Sukurti naują');
+        setBtnTxt2('Tyrinėti korteles');
+      } else if (language === 'AR') {
+        setMessage('يبدو أنك لم تقم بإنشاء أي بطاقات تعليمية في هذا القسم بعد. انقر على زر "إنشاء جديد" واصنع بطاقتك الأولى');
+        setBtnTxt('إنشاء جديد');
+        setBtnTxt2('استكشاف البطاقات');
+      } else if (language === 'UA') {
+        setMessage('Здається, ви ще не створили жодної картки в цьому розділі. Натисніть кнопку "Створити нову" та зробіть свою першу картку!');
+        setBtnTxt('Створити нову');
+        setBtnTxt2('Досліджувати картки');
+      } else if (language === 'ES') {
+        setMessage('Parece que aún no has creado ninguna tarjeta en esta sección. ¡Toca el botón "Crear nueva" y haz tu primera tarjeta!');
+        setBtnTxt('Crear nueva');
+        setBtnTxt2('Explorar tarjetas');
+      }
+
+    }, [])
     
 
 
@@ -113,9 +150,9 @@ const MyListScreen = ({ route }) => {
       <View style={styles.createButtonContainer}>
         <TouchableOpacity style={styles.buttonContainerTop} onPress={() => navigation.navigate({
           name: 'PublicLists',
-          params: {userRef: userId}
+          params: {userRef: userId, choosenLang: language}
         })}>
-          <Text style={styles.textButton}>See other user's lists</Text>
+          <Text style={styles.textButton}>{btnTxt2}</Text>
         </TouchableOpacity>
       </View>
       <Animated.View style={{...styles.iconXContainer, ...getTransform(25, 25, { rotate: xPositionDeg }, { translateX: 0 }, 0.5, 0.5)}}>
@@ -143,7 +180,7 @@ const MyListScreen = ({ route }) => {
 
         </View> : <Animated.View style={{...styles.emptyContent, opacity: opacityMessage}}>
         
-          <Text style={styles.emptyContentText}>You don't have any lists. Tap button at bottm to create a new list</Text>
+          <Text style={styles.emptyContentText}>{message}</Text>
 
         </Animated.View>}
       
@@ -153,9 +190,9 @@ const MyListScreen = ({ route }) => {
       <View style={styles.buttonContainer}>
         <TouchableOpacity style={styles.opacityBtn} onPress={() => navigation.navigate({
             name: 'CreateList',
-            params: {userReference: userId}
+            params: {userReference: userId, choosenLang: language}
         })}>
-            <Text style={styles.buttonText}>Create new list + </Text>
+            <Text style={styles.buttonText}>{btnTxt} + </Text>
         </TouchableOpacity>
       </View>
     </View>

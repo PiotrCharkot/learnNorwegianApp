@@ -13,7 +13,7 @@ import { db } from '../../../firebase/firebase-config'
 
 const CreateListScreen = ({ route }) => {
 
-    const {userReference} = route.params;
+    const {userReference, choosenLang} = route.params;
     const navigation = useNavigation();
     let wordIdentification = 0;
 
@@ -25,6 +25,17 @@ const CreateListScreen = ({ route }) => {
     const [documentId, setDocumentId] = useState('tempid');
     const [allUsersArrs, setAllUsersArrs] = useState([]);
     const [isSelectedPublic, setIsSelectedPublic] = useState(false);
+    const [labelTitle, setLabelTitle] = useState('Title');
+    const [labelLanguage, setLabelLanguage] = useState('Language');
+    const [btnAdd, setBtnAdd] = useState('Add');
+    const [btnCreate, setBtnCreate] = useState('Create list');
+    const [messageEmpty, setMessageEmpty] = useState('Please fill in the Title and Language fields before creating your list.');
+    const [textAddTwo, setTextAddTwo] = useState('Add at least two pairs of words to create a list')
+    const [placeholder1, setPlaceholder1] = useState('Title e.g. Nouns - A1')
+    const [placeholder2, setPlaceholder2] = useState('Your language e.g. english')
+    const [placeholder3, setPlaceholder3] = useState('Norwegian word')
+    const [placeholder4, setPlaceholder4] = useState('translation')
+    const [checkBoxLabel, setCheckBoxLabel] = useState('share this list with other users')
 
 
     const userWordsData = collection(db, 'usersWordsInfo');
@@ -176,7 +187,7 @@ const CreateListScreen = ({ route }) => {
     
             navigation.navigate({
                 name: 'MyList',
-                params: {userRef: userReference}
+                params: {userRef: userReference, language: choosenLang}
               });
         }, 800)
     }
@@ -211,6 +222,91 @@ const CreateListScreen = ({ route }) => {
             getDataFb;
         };
     }, [])
+
+
+    useEffect(() => {
+
+        if (choosenLang === 'PL') {
+            setMessageEmpty('Proszę wypełnić pola Tytuł i Język przed utworzeniem listy');
+            setLabelTitle('Tytuł');
+            setLabelLanguage('Język');
+            setBtnAdd('Dodaj');
+            setBtnCreate('Utwórz listę');
+            setTextAddTwo('Dodaj przynajmniej dwie pary słów, aby stworzyć listę');
+            setCheckBoxLabel('udostępnij tę listę innym użytkownikom');
+            setPlaceholder1('Tytuł np. Rzeczowniki - A1');
+            setPlaceholder2('Twój język np. polski');
+            setPlaceholder3('Norweskie słowo');
+            setPlaceholder4('Tłumaczenie');
+
+        } else if (choosenLang === 'DE') {
+            setMessageEmpty('Bitte füllen Sie die Felder Titel und Sprache aus, bevor Sie Ihre Liste erstellen');
+            setLabelTitle('Titel');
+            setLabelLanguage('Sprache');
+            setBtnAdd('Hinzufügen');
+            setBtnCreate('Liste erstellen');
+            setTextAddTwo('Füge mindestens zwei Wortpaare hinzu, um eine Liste zu erstellen');
+            setCheckBoxLabel('teile diese Liste mit anderen Benutzern');
+            setPlaceholder1('Nouns - A1: Titel z.B. Nomen - A1');
+            setPlaceholder2('Deine Sprache z.B. Deutsch');
+            setPlaceholder3('Norwegisches Wort');
+            setPlaceholder4('Übersetzung');
+            
+        } else if (choosenLang === 'LT') {
+            setMessageEmpty('Prašome užpildyti Laukelius Pavadinimas ir Kalba prieš kuriant sąrašą');
+            setLabelTitle('Pavadinimas');
+            setLabelLanguage('Kalba');
+            setBtnAdd('Pridėti');
+            setBtnCreate('Sukurti sąrašą');
+            setTextAddTwo('Pridėkite bent dvi žodžių poras, kad sukurtumėte sąrašą');
+            setCheckBoxLabel('pasidalinkite šiuo sąrašu su kitais vartotojais');
+            setPlaceholder1('Pavadinimas pvz., Daiktavardžiai - A1');
+            setPlaceholder2('Tavo kalba pvz., lietuvių');
+            setPlaceholder3('Norvegiškas žodis');
+            setPlaceholder4('Vertimas');
+            
+        } else if (choosenLang === 'AR') {
+            setMessageEmpty('الرجاء ملء حقول العنوان واللغة قبل إنشاء قائمتك');
+            setLabelTitle('العنوان');
+            setLabelLanguage('اللغة');
+            setBtnAdd('أضف');
+            setBtnCreate('إنشاء قائمة');
+            setTextAddTwo('أضف على الأقل زوجين من الكلمات لإنشاء قائمة');
+            setCheckBoxLabel('شارك هذه القائمة مع المستخدمين الآخرين');
+            setPlaceholder1('العنوان مثلاً، الأسماء');
+            setPlaceholder2('لغتك مثلاً، العربية');
+            setPlaceholder3('كلمة نرويجية');
+            setPlaceholder4('ترجمة');
+            
+        } else if (choosenLang === 'UA') {
+            setMessageEmpty('Будь ласка, заповніть поля Назва та Мова перед створенням списку');
+            setLabelTitle('Назва');
+            setLabelLanguage('Мова');
+            setBtnAdd('Додати');
+            setBtnCreate('Створити список');
+            setTextAddTwo('Додайте принаймні дві пари слів, щоб створити список');
+            setCheckBoxLabel('поділіться цим списком з іншими користувачами');
+            setPlaceholder1('Назва напр., Іменники - A1');
+            setPlaceholder2('Твоя мова напр., українська');
+            setPlaceholder3('Норвезьке слово');
+            setPlaceholder4('Переклад');
+            
+        } else if (choosenLang === 'ES') {
+            setMessageEmpty('Por favor, rellene los campos de Título e Idioma antes de crear su lista');
+            setLabelTitle('Título');
+            setLabelLanguage('Idioma');
+            setBtnAdd('Añadir');
+            setBtnCreate('Crear lista');
+            setTextAddTwo('Añade al menos dos pares de palabras para crear una lista');
+            setCheckBoxLabel('comparte esta lista con otros usuarios');
+            setPlaceholder1('Título p.ej., Sustantivos - A1');
+            setPlaceholder2('Tu idioma p.ej., español');
+            setPlaceholder3('Palabra noruega');
+            setPlaceholder4('Traducción');
+          
+        }
+
+    }, [])
     
 
   return (
@@ -223,16 +319,16 @@ const CreateListScreen = ({ route }) => {
         </TouchableOpacity>
       </Animated.View>
       <View style={styles.inputContainer}>
-        <Text style={styles.labelText}>Title</Text>
+        <Text style={styles.labelText}>{labelTitle}</Text>
         <Input 
         style={styles.input}
-        placeholder='Title e.g. Nouns - A1'
+        placeholder={placeholder1}
         onChangeText={(text) => setTitle(text)}
         />
-        <Text style={styles.labelText}>Language</Text>
+        <Text style={styles.labelText}>{labelLanguage}</Text>
         <Input 
         style={styles.input}
-        placeholder='Your language e.g. english'
+        placeholder={placeholder2}
         onChangeText={(text) => setLanguage(text)}
         autoCapitalize='none'
         />
@@ -244,7 +340,7 @@ const CreateListScreen = ({ route }) => {
                 <Input 
                 style={styles.input}
                 ref={norInput}
-                placeholder='norwegian word'
+                placeholder={placeholder3}
                 inputContainerStyle={styles.inputSmallContainerStyle}
                 onChangeText={(text) => setNorWord(text)}
                 autoCapitalize='none'
@@ -257,7 +353,7 @@ const CreateListScreen = ({ route }) => {
                 <Input 
                 style={styles.input}
                 ref={transInput}
-                placeholder='translation'
+                placeholder={placeholder4}
                 inputContainerStyle={styles.inputSmallContainerStyle}
                 onChangeText={(text) => setTransWord(text)}
                 autoCapitalize='none'
@@ -270,13 +366,13 @@ const CreateListScreen = ({ route }) => {
         
         <View style={styles.buttonContainer}>
             <TouchableOpacity  style={styles.opacityBtn} onPress={() => addWordToList()}>
-                <Text style={styles.opacityBtnText}>Add</Text>
+                <Text style={styles.opacityBtnText}>{btnAdd}</Text>
             </TouchableOpacity>
 
             {dataFlatList.length > 1 ? <TouchableOpacity  style={styles.opacityBtn} onPress={() => createList()}>
-                <Text style={styles.opacityBtnText}>Create list</Text>
+                <Text style={styles.opacityBtnText}>{btnCreate}</Text>
             </TouchableOpacity> : <View style={styles.infoContainer}>
-                <Text style={styles.textInfo}>Add at least two pairs of words to create a list</Text>
+                <Text style={styles.textInfo}>{textAddTwo}</Text>
 
             </View> }
         </View>
@@ -301,7 +397,7 @@ const CreateListScreen = ({ route }) => {
 
             <CheckBox
             center
-            title="share this list with other users"
+            title={checkBoxLabel}
             checkedIcon="dot-circle-o"
             uncheckedIcon="circle-o"
             checked={isSelectedPublic}
@@ -321,9 +417,9 @@ const CreateListScreen = ({ route }) => {
         </View>
 
         {showMessage ? <Animated.View style={{...styles.messageContainer, opacity: messageOpacity}}>
-            <Text style={styles.opacityBtnTextInfo}>Hold up! A list without a 'Title' and 'Language'? Please fill them in before making a list.</Text>
+            <Text style={styles.opacityBtnTextInfo}>{messageEmpty}</Text>
             <TouchableOpacity  style={styles.confirmationBtn} onPress={() => dismissMessage()}>
-                <Text style={styles.opacityBtnText}>Ok</Text>
+                <Text style={styles.opacityBtnText}>OK</Text>
             </TouchableOpacity>
         </Animated.View> : <View></View>}   
         

@@ -74,6 +74,13 @@ const styles = StyleSheet.create({
     color: 'white',
     fontWeight: '500'
    },
+   loaderDisplay: {
+    width: '100%',
+    height: '100%',
+    alignItems: 'center',
+    justifyContent: 'center',
+    backgroundColor: 'white'
+},
    
 });
 

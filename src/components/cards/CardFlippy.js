@@ -132,8 +132,9 @@ const CardFlippy = (params) => {
                 colorB={'#007FFF'} 
                 callbackFunc={() => {params.callbackFunc(wordData.wordId)}} 
                 path={'wordUp'} 
-                heightIcon={15} 
-                widthIcon={15}
+                colorIcon={'#18c454'}
+                heightIcon={20} 
+                widthIcon={20}
                 startGradient={[1.0, 0.0]}
                 endGradient={[1.0, 1.0]}
                 borderTopRightRadius={15} 
@@ -151,8 +152,9 @@ const CardFlippy = (params) => {
                 colorB={'#007FFF'} 
                 callbackFunc={() => {params.callbackFunc2(wordData.wordId)}} 
                 path={'wordDown'} 
-                heightIcon={15} 
-                widthIcon={15}
+                colorIcon={'#c42b10'}
+                heightIcon={20} 
+                widthIcon={20}
                 startGradient={[1.0, 0.0]}
                 endGradient={[1.0, 1.0]}
                 borderTopRightRadius={15} 

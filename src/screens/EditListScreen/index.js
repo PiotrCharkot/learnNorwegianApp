@@ -13,12 +13,10 @@ const screenHight = Dimensions.get('window').height;
 
 const EditListScreen = ({ route }) => {
 
-    const {userReference, refToList} = route.params;
+    const {userReference, refToList, choosenLang} = route.params;
     const navigation = useNavigation();
     
     
-    const [title, setTitle] = useState('');
-    const [language, setLanguage] = useState('');
     const [norWord, setNorWord] = useState('');
     const [transWord, setTransWord] = useState('');
     const [documentId, setDocumentId] = useState('tempid');
@@ -29,7 +27,12 @@ const EditListScreen = ({ route }) => {
     const [isSelectedPublic, setIsSelectedPublic] = useState(false);
     const [newWordIdArr, setNewWordIdArr] = useState([])
     const [removedWordIdArr, setRemovedWordIdArr] = useState([]);
-    
+    const [messageAdd, setMessageAdd] = useState('Add words and update list');
+    const [confirmDelete, setConfirmDelete] = useState('Are you sure you want to delete this list?');
+    const [placeholder3, setPlaceholder3] = useState('Norwegian word');
+    const [placeholder4, setPlaceholder4] = useState('translation');
+    const [checkBoxLabel, setCheckBoxLabel] = useState('share this list with other users');
+    const [buttonsArray, setButtonsArray] = useState(['Add', 'Update List', 'Delete list', 'Yes', 'No'])
     
     
     const wordsUserInfo = collection(db, 'usersWordsInfo');
@@ -154,6 +157,7 @@ const EditListScreen = ({ route }) => {
             })
         } else {
             console.log('display message cant be empty');
+            showConfirmation();
         }
         
         //display message cant be empty
@@ -217,7 +221,7 @@ const EditListScreen = ({ route }) => {
     
             navigation.navigate({
                 name: 'MyList',
-                params: {userRef: userReference}
+                params: {userRef: userReference, language: choosenLang}
               });
         }, 800)
     }
@@ -266,6 +270,54 @@ const EditListScreen = ({ route }) => {
             getDataFb;
         };
     }, [])
+
+    useEffect(() => {
+
+        if (choosenLang === 'PL') {
+            setConfirmDelete('Czy na pewno chcesz usunąć tę listę?');
+            setMessageAdd('Dodaj słowa i zaktualizuj listę');
+            setCheckBoxLabel('udostępnij tę listę innym użytkownikom');
+            setPlaceholder3('Norweskie słowo');
+            setPlaceholder4('Tłumaczenie');
+            setButtonsArray(["Dodaj", "Zaktualizuj listę", "Usuń listę", "Tak", "Nie"])
+        } else if (choosenLang === 'DE') {
+            setConfirmDelete('Bist du sicher, dass du diese Liste löschen möchtest?');
+            setMessageAdd('Wörter hinzufügen und Liste aktualisieren');
+            setCheckBoxLabel('teile diese Liste mit anderen Benutzern');
+            setPlaceholder3('Norwegisches Wort');
+            setPlaceholder4('Übersetzung');
+            setButtonsArray(["Hinzufügen", "Liste aktualisieren", "Liste löschen", "Ja", "Nein"]);
+        } else if (choosenLang === 'LT') {
+            setConfirmDelete('Ar tikrai norite ištrinti šį sąrašą?');
+            setMessageAdd('Pridėti žodžius ir atnaujinti sąrašą');
+            setCheckBoxLabel('pasidalinkite šiuo sąrašu su kitais vartotojais');
+            setPlaceholder3('Norvegiškas žodis');
+            setPlaceholder4('Vertimas');
+            setButtonsArray(["Pridėti", "Atnaujinti sąrašą", "Ištrinti sąrašą", "Taip", "Ne"]);
+        } else if (choosenLang === 'AR') {
+            setConfirmDelete('هل أنت متأكد من أنك تريد حذف هذه القائمة؟');
+            setMessageAdd('إضافة كلمات وتحديث القائمة');
+            setCheckBoxLabel('شارك هذه القائمة مع المستخدمين الآخرين');
+            setPlaceholder3('كلمة نرويجية');
+            setPlaceholder4('ترجمة');
+            setButtonsArray(["إضافة", "تحديث القائمة", "حذف القائمة", "نعم", "لا"]);
+        } else if (choosenLang === 'UA') {
+            setConfirmDelete('Ви впевнені, що хочете видалити цей список?');
+            setMessageAdd('Додати слова та оновити список');
+            setCheckBoxLabel('поділіться цим списком з іншими користувачами');
+            setPlaceholder3('Норвезьке слово');
+            setPlaceholder4('Переклад');
+            setButtonsArray(["Додати", "Оновити список", "Видалити список", "Так", "Ні"]);
+        } else if (choosenLang === 'ES') {
+            setConfirmDelete('¿Estás seguro de que quieres eliminar esta lista?');
+            setMessageAdd('Añadir palabras y actualizar la lista');
+            setCheckBoxLabel('comparte esta lista con otros usuarios');
+            setPlaceholder3('Palabra noruega');
+            setPlaceholder4('Traducción');
+            setButtonsArray(["Añadir", "Actualizar lista", "Eliminar lista", "Sí", "No"]);
+        }
+
+    }, [])
     
 
   return (
@@ -287,7 +339,7 @@ const EditListScreen = ({ route }) => {
                 <Input 
                 style={styles.input}
                 ref={norInput}
-                placeholder='norwegian word'
+                placeholder={placeholder3}
                 inputContainerStyle={styles.inputSmallContainerStyle}
                 onChangeText={(text) => setNorWord(text)}
                 autoCapitalize='none'
@@ -300,7 +352,7 @@ const EditListScreen = ({ route }) => {
                 <Input 
                 style={styles.input}
                 ref={transInput}
-                placeholder='translation'
+                placeholder={placeholder4}
                 inputContainerStyle={styles.inputSmallContainerStyle}
                 onChangeText={(text) => setTransWord(text)}
                 autoCapitalize='none'
@@ -313,13 +365,13 @@ const EditListScreen = ({ route }) => {
         
         <View style={styles.buttonContainer}>
             <TouchableOpacity  style={styles.opacityBtn} onPress={() => addWordToList()}>
-                <Text style={styles.opacityBtnText}>Add</Text>
+                <Text style={styles.opacityBtnText}>{buttonsArray[0]}</Text>
             </TouchableOpacity>
 
             {isChanged ? <TouchableOpacity  style={styles.opacityBtn} onPress={() => updateList()}>
-                <Text style={styles.opacityBtnText}>Update list</Text>
+                <Text style={styles.opacityBtnText}>{buttonsArray[1]}</Text>
             </TouchableOpacity> : <View style={styles.infoContainer}>
-                <Text style={styles.textInfo}>Add words and update list</Text>
+                <Text style={styles.textInfo}>{messageAdd}</Text>
 
             </View> }
         </View>
@@ -344,7 +396,7 @@ const EditListScreen = ({ route }) => {
 
             <CheckBox
             center
-            title="share this list with other users"
+            title={checkBoxLabel}
             checkedIcon="dot-circle-o"
             uncheckedIcon="circle-o"
             checked={isSelectedPublic}
@@ -365,7 +417,7 @@ const EditListScreen = ({ route }) => {
 
 
             <TouchableOpacity style={styles.deleteOpacity} onPress={showConfirmation}>
-                <Text style={styles.deleteOpacityText}>Delete list</Text>
+                <Text style={styles.deleteOpacityText}>{buttonsArray[2]}</Text>
             </TouchableOpacity>
             
         
@@ -374,14 +426,14 @@ const EditListScreen = ({ route }) => {
         <Animated.View style={{...styles.confirmationContainer, transform: [{translateY: confirmationPos}]}}>
             <View style={styles.confirmationContainerInside}>
 
-                <Text style={styles.confirmationText}>About to throw this list into a shredder. Still on board?</Text>
+                <Text style={styles.confirmationText}>{confirmDelete}</Text>
 
                 <View style={styles.confirmationBtnCont}>
                     <TouchableOpacity style={styles.confirmationBtn} onPress={deleteList}>
-                        <Text style={styles.confirmationBtnTxt}>Yes</Text>
+                        <Text style={styles.confirmationBtnTxt}>{buttonsArray[3]}</Text>
                     </TouchableOpacity>
                     <TouchableOpacity style={styles.confirmationBtn} onPress={hideConfirmation}>
-                        <Text style={styles.confirmationBtnTxt}>No</Text>
+                        <Text style={styles.confirmationBtnTxt}>{buttonsArray[4]}</Text>
                     </TouchableOpacity>
                 </View>
             </View>

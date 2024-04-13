@@ -10,8 +10,36 @@ const CardOwn = (params) => {
 
     const navigation = useNavigation();
 
+    const [btnEdit, setBtnEdit] = useState('Edit list');
+    const [btnTest, setBtnTest] = useState('Test');
+
+
+    useEffect(() => {
+
+        if (params.choosenLang === 'PL') {
+            setBtnEdit('Edytuj listę');
+            setBtnTest('Test');
+        } else if (params.choosenLang === 'DE') {
+            setBtnEdit('Liste bearbeiten');
+            setBtnTest('Test');
+        } else if (params.choosenLang === 'LT') {
+            setBtnEdit('Redaguoti sąrašą');
+            setBtnTest('Testas');
+        } else if (params.choosenLang === 'AR') {
+            setBtnEdit('تعديل القائمة');
+            setBtnTest('اختبار');
+        } else if (params.choosenLang === 'UA') {
+            setBtnEdit('Редагувати список');
+            setBtnTest('Тест');
+        } else if (params.choosenLang === 'ES') {
+            setBtnEdit('Editar lista');
+            setBtnTest('Prueba');
+        }
+  
+      }, [])
+
     const pressTest = () => {
-        navigation.navigate('TestWord', {refToList: params.listReference, userId: params.userId, savedLang: 'EN', own: true, myTitle: params.title})
+        navigation.navigate('TestWord', {refToList: params.listReference, userId: params.userId, savedLang: 'EN', own: true, myTitle: params.title, userLangOwnCard: params.choosenLang})
     }
     
     const editList = () => {
@@ -19,7 +47,7 @@ const CardOwn = (params) => {
         
         navigation.navigate({
             name: 'EditList',
-            params: {userReference: params.userId, refToList: params.listReference}
+            params: {userReference: params.userId, refToList: params.listReference, choosenLang: params.choosenLang}
         })
     }
     
@@ -37,10 +65,10 @@ const CardOwn = (params) => {
       <Text></Text>
       <Text></Text>
       <TouchableOpacity style={styles.touchableEdit}> 
-        <Text style={styles.touchableEditText} onPress={editList}>Edit list</Text>
+        <Text style={styles.touchableEditText} onPress={editList}>{btnEdit}</Text>
       </TouchableOpacity>
       <TouchableOpacity style={styles.touchableTest} onPress={pressTest}> 
-        <Text style={styles.touchableTestText}>Test</Text>
+        <Text style={styles.touchableTestText}>{btnTest}</Text>
       </TouchableOpacity>
     </View>
   )
@@ -92,7 +120,7 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         alignItems: 'center',
         height: 20,
-        width: 80,
+        paddingHorizontal: 10,
         borderRadius: 5,
         bottom: 10,
         left: 30,

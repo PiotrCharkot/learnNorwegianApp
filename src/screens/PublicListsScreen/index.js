@@ -6,6 +6,7 @@ import { db } from '../../../firebase/firebase-config'
 import { authentication } from '../../../firebase/firebase-config';
 import { useNavigation, useIsFocused } from "@react-navigation/native";
 import { withAnchorPoint } from 'react-native-anchor-point';
+import Loader from '../../components/other/Loader';
 import styles from './style'
 import CardPublic from '../../components/cards/CardPublic';
 
@@ -17,12 +18,12 @@ const wordsOwn = collection(db, 'wordsOwn');
 const PublicListScreen = ({ route }) => {
 
 
-    const {userRef} = route.params
+    const {userRef, choosenLang} = route.params
     const auth = getAuth();
     const user = auth.currentUser;
     const navigation = useNavigation();
 
-    const [isContent, setIsContent] = useState(true); //diplay message if thera are no lists!!
+    const [isContent, setIsContent] = useState(false); //diplay message if thera are no lists!!
     const [dataFlatlist, setDataFlatlist] = useState([]);
     const [userId, setUserId] = useState('');
     const [documentId, setDocumentId] = useState('tempid');
@@ -50,6 +51,7 @@ const PublicListScreen = ({ route }) => {
         currentUser={userRef} 
         allArrs={allUsersArrs}
         docForUpdate={documentId}
+        choosenLang={choosenLang}
         wordsLength={item.wordsArr.length}
         resetData={(boolean) => setGetNewData(boolean)}
         />
@@ -75,7 +77,7 @@ const PublicListScreen = ({ route }) => {
   
           navigation.navigate({
             name: 'MyList',
-            params: {userRef: userId}
+            params: {userRef: userId, language: choosenLang}
           });
       }, 800)
     }
@@ -89,32 +91,27 @@ const PublicListScreen = ({ route }) => {
 
       const getDataFb = async () => {
 
-          const q = query(wordsOwn, where('public', '==', true))
-          const querySnapshot = await getDocs(q);
-          let tempArr = [];
-  
-          if (querySnapshot.empty) {
-            console.log('there is no lists for this user')
-          } else {
-            console.log('user exist in data base');
-          }
+        const q = query(wordsOwn, where('public', '==', true))
+        const querySnapshot = await getDocs(q);
+        let tempArr = [];
+
+        
+        querySnapshot.forEach((doc) => {
+          tempArr.push(doc.data());
+        });
+
+        
+        setDataFlatlist(tempArr);
+        setIsContent(true);
+
+        const q2 = query(userWordsData, where('userReference', '==', userRef))
+          const querySnapshot2 = await getDocs(q2);
+          querySnapshot2.forEach((doc) => {
           
-          querySnapshot.forEach((doc) => {
-            tempArr.push(doc.data());
-          });
-  
-          console.log('temporarttttt: ', tempArr);
-          setDataFlatlist(tempArr);
-
-
-          const q2 = query(userWordsData, where('userReference', '==', userRef))
-            const querySnapshot2 = await getDocs(q2);
-            querySnapshot2.forEach((doc) => {
-            
-                setDocumentId(doc.id);
-                setAllUsersArrs(doc.data().wordList);
-            
-            })
+              setDocumentId(doc.id);
+              setAllUsersArrs(doc.data().wordList);
+          
+          })
       }
   
       getDataFb();
@@ -153,10 +150,8 @@ const PublicListScreen = ({ route }) => {
         scrollEventThrottle={16}
         />
 
-        </View> : <View style={styles.emptyContent}>
-        
-            <Text style={styles.emptyContentText}>You don't have any lists. Tap button at bottm to create new list</Text>
-
+        </View> : <View style={styles.loaderDisplay}>
+          <Loader />
         </View>}
       
 

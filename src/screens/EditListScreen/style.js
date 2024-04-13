@@ -44,7 +44,7 @@ const styles = StyleSheet.create({
     },
     opacityBtn: {
         height: 50, 
-        width: 150,
+        width: 220,
         backgroundColor: 'pink',
         borderRadius: 10,
         justifyContent: 'center',
