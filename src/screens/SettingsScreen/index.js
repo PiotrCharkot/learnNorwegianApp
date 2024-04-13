@@ -1,7 +1,7 @@
 import { View, Text, ScrollView, TouchableOpacity, Image, Dimensions, Animated } from 'react-native'
 import React, { useState, useEffect, useRef } from 'react'
 import { useNavigation } from "@react-navigation/native";
-import { getAuth, deleteUser, signOut, onAuthStateChanged } from "firebase/auth";
+import { getAuth, signOut, onAuthStateChanged } from "firebase/auth";
 import { authentication } from '../../../firebase/firebase-config';
 import { withAnchorPoint } from 'react-native-anchor-point';
 import { Audio } from 'expo-av';
@@ -26,8 +26,7 @@ const SettingsScreen = () => {
   const [notificationsOn, setNotificationsOn] = useState('0');
   const [userLoged, setUserLoged] = useState(false);
   const [sound, setSound] = useState();
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
+  
 
   const rotateWheel = scrollY.interpolate({
     inputRange: [0, 200],
@@ -84,19 +83,6 @@ const SettingsScreen = () => {
       }).start();
   };
 
-  const deleteAccount = () => {
-    console.log('delete account');
-    
-    deleteUser(user).then(() => {
-      // User deleted.
-      console.log('delete account acomplished');
-    }).catch((error) => {
-      
-      //reautication of user!
-      console.log('delete account error');
-    });
-
-  };
 
   const switchNotifications = () => {
     if (notificationsOn === '1') {
@@ -241,7 +227,7 @@ const SettingsScreen = () => {
           {userLoged ? <Text style={styles.buttonText}>Log out</Text> : <Text style={styles.buttonText}>Log in</Text>}
           </TouchableOpacity>
 
-          <TouchableOpacity style={styles.btnOpacity} onPress={() => userLoged ? navigation.navigate('UpdatePassword') : navigation.navigate('Login')}>
+          <TouchableOpacity style={styles.btnOpacity} onPress={() => userLoged ? navigation.navigate({name: 'Reauth', params: {changePass: true}}) : showConfirmation()}>
           <Image source={require('../../../assets/password.png')}  style={{...styles.buttonImg, tintColor: 'pink'}}/>
             <Text style={styles.buttonText}>Change password</Text>
           </TouchableOpacity>
@@ -256,7 +242,7 @@ const SettingsScreen = () => {
             <Text style={styles.buttonText}>About</Text>
           </TouchableOpacity>
 
-          <TouchableOpacity style={styles.btnOpacity} onPress={showConfirmation}>
+          <TouchableOpacity style={styles.btnOpacity} onPress={() => userLoged ? navigation.navigate({name: 'Reauth', params: {changePass: false}}) : showConfirmation()}>
           <Image source={require('../../../assets/bin.png')}  style={{...styles.buttonImg}}/>
             <Text style={styles.buttonText}>Delete account</Text>
           </TouchableOpacity>
@@ -281,14 +267,14 @@ const SettingsScreen = () => {
       <Animated.View style={{...styles.confirmationContainer, transform: [{translateY: confirmationPos}]}}>
             <View style={styles.confirmationContainerInside}>
 
-                <Text style={styles.confirmationText}>Are you sure you want to delete your account?</Text>
+                <Text style={styles.confirmationText}>You must be logged in to proceed with further action</Text>
 
                 <View style={styles.confirmationBtnCont}>
-                    <TouchableOpacity style={styles.confirmationBtn} onPress={deleteAccount}>
-                        <Text style={styles.confirmationBtnTxt}>Yes</Text>
+                    <TouchableOpacity style={styles.confirmationBtn} onPress={() => navigation.navigate('Login')}>
+                        <Text style={styles.confirmationBtnTxt}>Log in</Text>
                     </TouchableOpacity>
                     <TouchableOpacity style={styles.confirmationBtn} onPress={hideConfirmation}>
-                        <Text style={styles.confirmationBtnTxt}>No</Text>
+                        <Text style={styles.confirmationBtnTxt}>OK</Text>
                     </TouchableOpacity>
                 </View>
             </View>

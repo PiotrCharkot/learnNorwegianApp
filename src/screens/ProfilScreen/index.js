@@ -177,6 +177,7 @@ const ProfilScreen = () => {
   
     randomIndex = Math.floor(Math.random() * randomPicture.length);
     setNewProfilePic(randomPicture[randomIndex]);
+
     
   }, [])
   

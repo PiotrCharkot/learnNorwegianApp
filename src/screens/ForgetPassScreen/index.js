@@ -88,6 +88,7 @@ const resetPassword = () => {
             bounciness: 0,
             useNativeDriver: true,
         }).start();
+        setEmail('');
     })
     .catch((error) => {
         const errorCode = error.code;

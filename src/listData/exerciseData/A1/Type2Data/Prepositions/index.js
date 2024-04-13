@@ -52,5 +52,29 @@ export default dataObj = [
         'Jeg forstår hva du sier, men jeg er ikke enig med deg.',
         'De planlegger å besøke museet neste helg.',
       ]
+   },
+   {
+    typeOfScreen: '2',
+    correctAnswers: {
+      eng: ['word1 one', 'word2 two', 'word3 three'],
+      pl: ['word1 onePl', 'word2 twoPl', 'word3 threePl'],
+      ar: ['word1 oneAr', 'word2 twoAr', 'word3 threeAr'],
+      ger: ['word1 oneGer', 'word2 twoGer', 'word3 threeGer'],
+      lt: ['word1 oneLt', 'word2 twoLt', 'word3 threeLt'],
+      ua: ['word1 oneUa', 'word2 twoUa', 'word3 threeUa'], 
+      sp: ['word1 oneSp', 'word2 twoSp', 'word3 threeSp'],
+    },
+    leftSideWords: ['word1 ', 'word2 ', 'word3 '],
+    rightSideWords: {
+      eng: ['one', 'two', 'three'],
+      pl: ['onePl', 'twoPl', 'threePl'],
+      ar: ['oneAr', 'twoAr', 'threeAr'],
+      ger: ['oneGer', 'twoGer', 'threeGer'],
+      lt: ['oneLt', 'twoLt', 'threeLt'],
+      ua: ['oneUa', 'twoUa', 'threeUa'], 
+      sp: ['oneSp', 'twoSp', 'threeSp'],
+    },
    }
 ];
+
+

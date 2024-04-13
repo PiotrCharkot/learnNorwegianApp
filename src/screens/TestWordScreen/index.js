@@ -181,14 +181,14 @@ const TestWordScreen = ({route}) => {
     };
 
     const confirmButton = (wordRef) => {
-        
-        setWordsLvlUp([...wordsLvlUp, wordRef])  
+
+        setWordsLvlUp(wordsLvlUp => [...wordsLvlUp, wordRef])  
         console.log('word up', wordRef, wordsLvlUp);
     }
-
+    
     const denyButton = (wordRef) => {
         
-        setWordsLvlDown([...wordsLvlDown, wordRef])
+        setWordsLvlDown(wordsLvlDown => [...wordsLvlDown, wordRef])
         console.log('word down', wordRef, wordsLvlDown);
     }
 
@@ -484,6 +484,7 @@ const TestWordScreen = ({route}) => {
 
             if (querySnapshot3.empty) {
                 console.log('no data for userPoints for this user in Learnword screen. this is an error. there should be document for this user!');
+                //error handling here
                 //setDataToFbPoints();
             } else {
 

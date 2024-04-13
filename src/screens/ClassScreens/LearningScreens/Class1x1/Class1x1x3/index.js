@@ -53,7 +53,7 @@ const Class1x1x3 = ({ route }) => {
 
           <View style={styles.exampleContainer}>
             <Text style={styles.exampleText}>å vente - venter</Text>
-            <Text style={styles.text}>to wait</Text>
+            <Text style={styles.text}>to waitto waitto waitto waitto waitto waitto waitto waitto waitto waitto wait</Text>
           </View>
 
           <View style={styles.exampleContainer}>

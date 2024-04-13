@@ -3,12 +3,11 @@ import React, {useState, useEffect, useRef} from 'react'
 import { useNavigation } from "@react-navigation/native";
 import { authentication } from '../../../firebase/firebase-config';
 import { db } from '../../../firebase/firebase-config'
-import { collection, getDocs, query, where, doc, getDoc, setDoc, updateDoc } from "firebase/firestore";
+import { collection, getDocs, query, where, doc, getDoc, updateDoc } from "firebase/firestore";
 import { EmailAuthProvider, linkWithCredential, updateProfile  } from "firebase/auth";
 import { Input } from "react-native-elements";
 import { withAnchorPoint } from 'react-native-anchor-point';
 import { LinearGradient } from 'expo-linear-gradient';
-import uuid from 'react-native-uuid';
 import GradientButton from '../../components/buttons/GradientButton';
 import styles from './style';
 import forbiddenUsernames from '../../listData/otherData/forbiddenUsernames';

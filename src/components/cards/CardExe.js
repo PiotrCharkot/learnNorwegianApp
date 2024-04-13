@@ -45,7 +45,7 @@ const CardExe = (params) => {
         }
 
         
-    }, [barOffset, params.barsData])
+    }, [barOffset, barOffsetAver, params.barsData])
 
     
 

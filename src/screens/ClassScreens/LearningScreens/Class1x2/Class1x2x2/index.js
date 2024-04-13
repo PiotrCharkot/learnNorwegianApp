@@ -144,6 +144,7 @@ const styles = StyleSheet.create({
   exampleText: {
     fontSize: generalStyles.exampleTextSize,
     fontWeight: generalStyles.exampleTextWeight,
+    textAlign: 'center',
   },
   bottomBarContainer: {
     position: 'absolute',

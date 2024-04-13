@@ -114,6 +114,7 @@ const CardFlippy = (params) => {
             setTranslation(wordData.sp)
         }
 
+
     }, [params])
 
   return (
@@ -194,15 +195,6 @@ const styles = StyleSheet.create({
         marginTop: 80,
         marginBottom: 80,
         overflow: 'visible',
-        shadowColor: 'black',
-        shadowOffset: {
-            width: 0,
-            height: 0,
-        },
-        shadowOpacity: 0.45,
-        shadowRadius: 14.5,
-        elevation: 5
-       
     },
     norView: {
         position: 'absolute',
@@ -211,7 +203,15 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         alignItems: 'center',
         backgroundColor: 'pink',
-        borderRadius: 30
+        borderRadius: 30,
+        shadowColor: 'black',
+        shadowOffset: {
+            width: 0,
+            height: 0,
+        },
+        shadowOpacity: 0.45,
+        shadowRadius: 14.5,
+        elevation: 5
     },
     gradientNor: {
         height: '100%',
@@ -227,8 +227,15 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         alignItems: 'center',
         backgroundColor: 'salmon',
-        borderRadius: 30
-        
+        borderRadius: 30,
+        shadowColor: 'black',
+        shadowOffset: {
+            width: 0,
+            height: 0,
+        },
+        shadowOpacity: 0.45,
+        shadowRadius: 14.5,
+        elevation: 5     
     },
     opacityFlip: {
         justifyContent: 'center',
@@ -250,7 +257,6 @@ const styles = StyleSheet.create({
         },
         shadowOpacity: 0.9,
         shadowRadius: 1.2,
-        elevation: 5
     },
     textNor: {
         color: 'white',
@@ -265,7 +271,6 @@ const styles = StyleSheet.create({
         },
         shadowOpacity: 0.9,
         shadowRadius: 1.2,
-        elevation: 5
     },
     textNorExample: {
         color: 'white',
@@ -331,6 +336,5 @@ const styles = StyleSheet.create({
         },
         shadowOpacity: 1,
         shadowRadius: 1.2,
-        elevation: 5
     },
 });

@@ -57,7 +57,7 @@ const gradientBottom2 = generalStyles.gradientBottomDraggable3;
 
 //Type2 opening screen
 
-const Exc1x3x1 = ({route}) => {
+const Exc1x3x1testing = ({route}) => {
     
     
     
@@ -128,14 +128,14 @@ const Exc1x3x1 = ({route}) => {
       let type1dataNew = Object.keys(route.params.data).length === 0 ? type1data : parsedData.adverbs.type1
       let type2dataNew = Object.keys(route.params.data).length === 0 ? type2data : parsedData.adverbs.type2
 
-      option1 = [type2dataNew, type1dataNew, type2dataNew, type5data, type6data, type7data, type8data];
-      option2 = [type2dataNew, type1dataNew, type4data, type5data];
-      option3 = [type2dataNew, type1dataNew, type3data];
+      option1 = [type2data, type1data, type2data, type5data, type6data, type7data, type8data];
+      option2 = [type2data, type1data, type4data, type5data];
+      option3 = [type2data, type1data, type3data];
 
       let tempArr = []; 
       let sumOfAllPoints = 0;
 
-      let randomNumber = Math.floor(Math.random()* 3);
+      let randomNumber = Math.floor(Math.random()* 1);
       console.log('in opennig type2 set of exrecises nummer: ', randomNumber);
 
 
@@ -161,7 +161,7 @@ const Exc1x3x1 = ({route}) => {
         if (typesInSet[i][randomVal].typeOfScreen === '1') {
           sumOfAllPoints = sumOfAllPoints + typesInSet[i][randomVal].nuberOfQuestions * generalStyles.bonusCheckAllAnswers
         } else if (typesInSet[i][randomVal].typeOfScreen === '2') {
-          sumOfAllPoints = sumOfAllPoints + typesInSet[i][randomVal].correctAnswers.length * generalStyles.bonusMatchLR
+          sumOfAllPoints = sumOfAllPoints + typesInSet[i][randomVal].leftSideWords.length * generalStyles.bonusMatchLR
         } else if (typesInSet[i][randomVal].typeOfScreen === '3') {
   
           let newArrGaps = [];
@@ -257,12 +257,52 @@ const Exc1x3x1 = ({route}) => {
         }
       }
 
-
       setWordsLeft(tempArr[0].leftSideWords);
-      setWordsRight(tempArr[0].rightSideWords);
-      setCorrectAnswers(tempArr[0].correctAnswers);
-      setIsCorrect(Array(tempArr[0].correctAnswers.length).fill(0));
-      setIsCorrectNewArr(Array(tempArr[0].correctAnswers.length).fill(0));
+
+      
+      
+      if (Array.isArray(tempArr[0].correctAnswers)) {
+
+        console.log('The variable is an array.');
+
+        setWordsRight(tempArr[0].rightSideWords);
+        setCorrectAnswers(tempArr[0].correctAnswers);
+
+      } else if (typeof tempArr[0].correctAnswers === 'object' && tempArr[0].correctAnswers !== null) {
+
+        console.log('The variable is an object.');
+
+        if (route.params.savedLang === 'PL') {
+          setWordsRight(tempArr[0].rightSideWords.pl)
+          setCorrectAnswers(tempArr[0].correctAnswers.pl)
+        } else if (route.params.savedLang === 'DE') {
+          setWordsRight(tempArr[0].rightSideWords.ger)
+          setCorrectAnswers(tempArr[0].correctAnswers.ger)
+        } else if (route.params.savedLang === 'LT') {
+          setWordsRight(tempArr[0].rightSideWords.lt)
+          setCorrectAnswers(tempArr[0].correctAnswers.lt)
+        } else if (route.params.savedLang === 'AR') {
+          setWordsRight(tempArr[0].rightSideWords.ar)
+          setCorrectAnswers(tempArr[0].correctAnswers.ar)
+        } else if (route.params.savedLang === 'UA') {
+          setWordsRight(tempArr[0].rightSideWords.ua)
+          setCorrectAnswers(tempArr[0].correctAnswers.ua)
+        } else if (route.params.savedLang === 'ES') {
+          setWordsRight(tempArr[0].rightSideWords.sp)
+          setCorrectAnswers(tempArr[0].correctAnswers.sp)
+        } else if (route.params.savedLang === 'EN') {
+          setWordsRight(tempArr[0].rightSideWords.eng)
+          setCorrectAnswers(tempArr[0].correctAnswers.eng)
+        }
+      }
+
+
+
+
+      
+
+      setIsCorrect(Array(tempArr[0].leftSideWords.length).fill(0));
+      setIsCorrectNewArr(Array(tempArr[0].leftSideWords.length).fill(0));
       setContentReady(true);
   
       
@@ -438,7 +478,7 @@ const Exc1x3x1 = ({route}) => {
   )
 }
 
-export default Exc1x3x1
+export default Exc1x3x1testing
 
 const styles = StyleSheet.create({
   mainContainer: {

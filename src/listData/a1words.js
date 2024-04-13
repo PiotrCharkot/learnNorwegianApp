@@ -767,7 +767,7 @@
     norEgz: 'Hunden min elsker å gå tur.',
     soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/wordsList1%2Fhund.mp3?alt=media&token=6f48901c-fab9-42ba-9c9b-a03a7f38d4dc',
     wordId: 54
-  },
+  },//
   {
     nor: 'en kopp',
     eng: 'a cup',
@@ -1537,7 +1537,7 @@
     norEgz: 'Barna lekte i parken hele ettermiddagen.',
     soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/wordsList1%2Fpark.mp3?alt=media&token=5bff62ee-6eca-402c-8169-297973de32c8',
     wordId: 109
-  },
+  },//
   {
     nor: 'en sko',
     eng: 'a shoe',

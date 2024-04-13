@@ -20,6 +20,10 @@ const GradientButton = (params) => {
         imgPath = require('../../../assets/word-up.png');
     } else if (params.path === 'wordDown') {
         imgPath = require('../../../assets/word-down.png');
+    } else if (params.path === 'results') {
+        imgPath = require('../../../assets/results.png');
+    } else if (params.path === 'home') {
+        imgPath = require('../../../assets/home.png');
     }
 
 

@@ -141,15 +141,18 @@ const styles = StyleSheet.create({
   exampleTextSmall: {
     fontSize: generalStyles.exampleTextSizeSmall,
     fontWeight: generalStyles.exampleTextWeight,
+    textAlign: 'center',
   },
   exampleTextSmallColor: {
     fontSize: generalStyles.exampleTextSizeSmall,
     fontWeight: generalStyles.exampleTextWeight,
-    color: generalStyles.colorText
+    color: generalStyles.colorText,
+    textAlign: 'center',
   },
   exampleText: {
     fontSize: generalStyles.exampleTextSize,
     fontWeight: generalStyles.exampleTextWeight,
+    textAlign: 'center',
   },
   bottomBarContainer: {
     position: 'absolute',

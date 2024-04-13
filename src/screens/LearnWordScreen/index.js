@@ -227,7 +227,8 @@ const LearnWordScreen = ({route}) => {
             const querySnapshot3 = await getDocs(q3);
 
             if (querySnapshot3.empty) {
-                console.log('no data for userPoints for this user in Learnword screen. this is an error. there should be document for this user!');
+                console.log('no data for userPoints for this user in Learnword screen. this is an error. there should be document for this user!'); 
+                //error handling here
                 //setDataToFbPoints();
             } else {
 
@@ -311,7 +312,7 @@ const LearnWordScreen = ({route}) => {
     
         return <View>
     
-          <CardLearn wordData={item} lang={savedLang}/>
+          <CardLearn key={index} wordData={item} lang={savedLang}/>
         </View>
     }
 

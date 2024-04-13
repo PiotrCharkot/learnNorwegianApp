@@ -40,6 +40,7 @@ const CardLearn = (params) => {
       } else if (userLanguage === 'ES') {
         setTranslation(wordData.sp)
       }
+
     
     }, [])
     
@@ -80,6 +81,7 @@ const styles = StyleSheet.create({
         marginHorizontal: 10,
         marginTop: 80,
         marginBottom: 80,
+        backgroundColor: 'white',
         shadowColor: 'black',
         shadowOffset: {
             width: 0,

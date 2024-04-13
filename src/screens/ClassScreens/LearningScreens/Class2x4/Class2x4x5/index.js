@@ -151,6 +151,7 @@ const styles = StyleSheet.create({
     fontWeight: generalStyles.exampleTextWeight,
     marginTop: 40,
     marginBottom: 10,
+    textAlign: 'center',
     color: '#6441A5'
 },
 exampleTextSmallColor2: {
@@ -158,6 +159,7 @@ exampleTextSmallColor2: {
     fontWeight: generalStyles.exampleTextWeight,
     marginTop: 20,
     marginBottom: 10,
+    textAlign: 'center',
     color: 'darkred'
   },
   exampleText: {

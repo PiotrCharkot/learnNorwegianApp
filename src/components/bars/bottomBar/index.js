@@ -21,6 +21,8 @@ const BottomBar = (params) => {
     const correctMessagePosition = useRef(new Animated.Value(0)).current;
     const correctImagePosition = useRef(new Animated.Value(0)).current;
     const wrongMessagePosition = useRef(new Animated.Value(0)).current;
+    const pointsOpacity = useRef(new Animated.Value(0)).current;
+    const pointsScale = useRef(new Animated.Value(1)).current; 
 
     const correctAnswers = params.correctAnswers;
     const [pathIcon, setPathIcon] = useState('next');
@@ -32,6 +34,7 @@ const BottomBar = (params) => {
     const [imgMargin, setImgMargin] = useState(0);
     const [letGoBack, setLetGoBack] = useState(true);
     const [answCheckOnce, setAnswCheckOnce] = useState(false);
+    const [displayPoints, setDisplayPoints] = useState(10)
     
 
     const goBack = () => {
@@ -84,6 +87,37 @@ const BottomBar = (params) => {
             setPathIcon('next')
         }
         
+    }
+
+
+    const pointsAnimation = () => {
+        Animated.sequence([
+            
+            Animated.timing(pointsOpacity, {
+              toValue: 1,
+              duration: 1000, 
+              useNativeDriver: true, 
+            }),
+            Animated.timing(pointsOpacity, {
+              toValue: 0,
+              duration: 1000, 
+              useNativeDriver: true,
+            }),
+        ]).start();
+
+        Animated.sequence([
+            
+            Animated.timing(pointsScale, {
+              toValue: 2, 
+              duration: 2200, 
+              useNativeDriver: true, 
+            }),
+            Animated.timing(pointsScale, {
+              toValue: 1, 
+              duration: 100, 
+              useNativeDriver: true,
+            }),
+          ]).start();
     }
 
     const buttonAction = () => {
@@ -169,6 +203,8 @@ const BottomBar = (params) => {
                 setCurrentPoints(() => {
                     return params.userPoints + questionPoints;
                 })
+                setDisplayPoints(questionPoints)
+                pointsAnimation();
             }
 
             setAnswCheckOnce(true);
@@ -196,6 +232,8 @@ const BottomBar = (params) => {
                 setCurrentPoints(() => {
                     return params.userPoints + questionPoints;
                 })
+                setDisplayPoints(questionPoints)
+                pointsAnimation();
             }
             
 
@@ -224,6 +262,8 @@ const BottomBar = (params) => {
                 setCurrentPoints(() => {
                     return params.userPoints + questionPoints;
                 })
+                setDisplayPoints(questionPoints)
+                pointsAnimation();
             }
             
 
@@ -251,6 +291,8 @@ const BottomBar = (params) => {
                 setCurrentPoints(() => {
                     return params.userPoints + questionPoints;
                 })
+                setDisplayPoints(questionPoints)
+                pointsAnimation();
             }
 
             setAnswCheckOnce(true);
@@ -278,6 +320,8 @@ const BottomBar = (params) => {
                 setCurrentPoints(() => {
                     return params.userPoints + questionPoints;
                 })
+                setDisplayPoints(questionPoints)
+                pointsAnimation();
             }
 
             setAnswCheckOnce(true);
@@ -305,6 +349,8 @@ const BottomBar = (params) => {
                 setCurrentPoints(() => {
                     return params.userPoints + questionPoints;
                 })
+                setDisplayPoints(questionPoints)
+                pointsAnimation();
             }
 
             setAnswCheckOnce(true);
@@ -338,6 +384,8 @@ const BottomBar = (params) => {
                 setCurrentPoints(() => {
                     return params.userPoints + questionPoints;
                 })
+                setDisplayPoints(questionPoints)
+                pointsAnimation();
             }
 
             setAnswCheckOnce(true);
@@ -376,6 +424,8 @@ const BottomBar = (params) => {
                 setCurrentPoints(() => {
                     return params.userPoints + questionPoints - penaltyWrongAns;
                 })
+                setDisplayPoints(questionPoints)
+                pointsAnimation();
             }
 
             setAnswCheckOnce(true);
@@ -423,6 +473,8 @@ const BottomBar = (params) => {
                 setCurrentPoints(() => {
                     return params.userPoints + questionPoints;
                 })
+                setDisplayPoints(questionPoints)
+                pointsAnimation();
             }
 
             setAnswCheckOnce(true);
@@ -588,6 +640,10 @@ const BottomBar = (params) => {
                 borderBottomLeftRadius={params.buttonHeight ? params.buttonHeight / 2 : 20} />
             </View>
 
+            <Animated.View style={{...styles.pointsContainer, opacity: pointsOpacity, transform: [{scale: pointsScale}]}}>
+                <Text style={styles.pointsText}>+ {displayPoints.toString()}</Text>
+            </Animated.View>
+
         </View>
     </View>
   )
@@ -693,5 +749,15 @@ const styles = StyleSheet.create({
         color: 'brown',
         fontSize: 16,
         fontWeight: '700'
+    }, 
+    pointsContainer: {
+        position: 'absolute',
+        left: screenWidth - 160,
+        top: 10,
+    },
+    pointsText: {
+        fontSize: 20,
+        fontWeight: '900',
+        color: 'grey'
     }
 })

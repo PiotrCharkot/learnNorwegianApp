@@ -20,9 +20,13 @@ const NewPasswordScreen = () => {
     const screenWidth = Dimensions.get("window").width;
     const interpolatedValue = useRef(new Animated.Value(0)).current;
     const interpolatedValueForX = useRef(new Animated.Value(0)).current;
+    const messageContainerPos = useRef(new Animated.Value(-500)).current;
     const buttonLoginPos = useRef(new Animated.Value(-290)).current;
-    const [imageLink, setImageLink] = useState(require('../../../assets/password.png'));
+    const [imageLink, setImageLink] = useState(require('../../../assets/fingerprint.png'));
     const [password, setPassword] = useState("");
+    const [messageText, setMessageText] = useState("Looks like an unknown error");
+
+    const maxLengthPassword = 50;
     
 
 
@@ -77,19 +81,94 @@ const closeScreenAnimation = () => {
 
 }
 
+
+const hideMessage = () => {
+
+    Animated.spring(messageContainerPos, {
+        toValue: -500,
+        speed: 1,
+        bounciness: 0,
+        useNativeDriver: true,
+    }).start();
+
+}
+
+const goToReAuth = () => {
+
+    setImageLink(require('../../../assets/authentication.png')) 
+
+    closeScreenAnimation();
+
+    setTimeout(() => {
+        navigation.navigate({name: 'Reauth', params: {changePass: true}});
+
+        setTimeout(() => {
+            
+            setImageLink(require('../../../assets/fingerprint.png'))
+        }, 300);
+        
+    }, 1500);
+}
+
 const updatePass = () => {
     console.log('update button pressed');
-    updatePassword(user, password).then(() => {
-        // Update successful.
-        exitButton(true);
-    }).catch((error) => {
-        const errorCode = error.code;
-        // An error ocurred
-        // ...
-        console.log('password update failed', errorCode);
-        //navigation.navigate('Reauth')
-        //auth/requires-recent-login - reauth on this error code
-      });
+
+
+    if (password.trim()) {
+
+        updatePassword(user, password).then(() => {
+            // Update successful.
+            console.log('update successful!');
+            setPassword('');
+            exitButton(true);
+        }).catch((error) => {
+            const errorCode = error.code;
+            // An error ocurred
+            // ...
+            console.log('password update failed code', errorCode);
+            //navigation.navigate('Reauth')
+            //auth/requires-recent-login - reauth on this error code
+            
+            if (errorCode === 'auth/requires-recent-login') {
+                
+                goToReAuth();
+            
+            } else if (errorCode === 'auth/missing-password') {
+                
+                setMessageText('We noticed you skipped the password field. Please enter your password to proceed.');
+                
+                Animated.spring(messageContainerPos, {
+                    toValue: 0,
+                    speed: 1,
+                    bounciness: 0,
+                    useNativeDriver: true,
+                }).start();
+                
+            } else if (errorCode === 'auth/weak-password') {
+                
+                setMessageText('Your password needs to be between 6 and 50 characters long');
+                
+                Animated.spring(messageContainerPos, {
+                    toValue: 0,
+                    speed: 1,
+                    bounciness: 0,
+                    useNativeDriver: true,
+                }).start();
+                
+            }
+        
+        
+        
+        });
+    } else {
+        setMessageText('Please enter new password to continue');
+        Animated.spring(messageContainerPos, {
+            toValue: 0,
+            speed: 1,
+            bounciness: 0,
+            useNativeDriver: true,
+        }).start();
+    }
       
 }
 
@@ -162,8 +241,9 @@ useEffect(() => {
 
                             <Input 
                             style={styles.input}
-                            placeholder='new password'
+                            placeholder='your new password'
                             inputContainerStyle={styles.inputContainerStyle}
+                            maxLength={maxLengthPassword}
                             leftIcon={<Image style={styles.inputImg} source={require('../../../assets/padlock.png')}/>}
                             secureTextEntry
                             type={"password"}
@@ -205,6 +285,24 @@ useEffect(() => {
 
 
                 
+            </Animated.View>
+
+
+            <Animated.View style={{...styles.messageContainer, transform: [{translateX: messageContainerPos}]}}>
+                <LinearGradient colors={['#6d28ed', '#fafafa']} style={styles.messageGradient}  start={[0.0, 1.0]} end={[1.0, 1.0]}>
+
+                
+                    <Text style={styles.messageText}>{messageText}</Text>
+
+                    <View style={styles.messageButtonsContainer}>
+
+                        <TouchableOpacity style={styles.messageButtons} onPress={hideMessage}>
+                            <Text style={styles.messageButtonsText}>OK</Text>
+                        </TouchableOpacity>
+                    </View>
+                    
+
+                </LinearGradient>
             </Animated.View>
         </LinearGradient>
     </KeyboardAvoidingView>

@@ -11,6 +11,10 @@ const CardFlashList = (params) => {
     const { refNummer, userIdRef, title, language, userName } = params;
     const navigation = useNavigation();
 
+
+    const [learnBtn, setLearnBtn] = useState('Learn');
+    const [testBtn, setTestBtn] = useState('Test');
+
     const pressLearn = () => {
        
         navigation.navigate('LearnWord', {refToList: refNummer, userId: userIdRef, savedLang: language, userN: userName})
@@ -20,6 +24,35 @@ const CardFlashList = (params) => {
         
         navigation.navigate('TestWord', {refToList: refNummer, userId: userIdRef, savedLang: language, own: false, userN: userName})
     }
+
+
+    useEffect(() => {
+      
+        if (language === 'PL') {
+            setLearnBtn('Ucz się');
+            setTestBtn('Test');
+          } else if (language === 'DE') {
+            setLearnBtn('Lernen');
+            setTestBtn('Testen');
+          } else if (language === 'LT') {
+            setLearnBtn('Mokytis');
+            setTestBtn('Testas');
+          } else if (language === 'AR') {
+            setLearnBtn('تعلم');
+            setTestBtn('اختبار');
+          } else if (language === 'UA') {
+            setLearnBtn('Вчитися');
+            setTestBtn('Тест');
+          } else if (language === 'ES') {
+            setLearnBtn('Aprender');
+            setTestBtn('Prueba');
+          } else if (language === 'EN') {
+            setLearnBtn('Learn');
+            setTestBtn('Test');
+          }
+      
+    }, [language])
+    
 
   return (
     <View style={styles.wrapper}>
@@ -31,14 +64,14 @@ const CardFlashList = (params) => {
             <TouchableOpacity onPress={pressLearn}>
                 <View style={styles.leftContainer}>
                     <LinearGradient colors={['#50C878', '#004953']} style={styles.btnGradient}>
-                        <Text style={styles.buttonText}>Learn</Text>
+                        <Text style={styles.buttonText}>{learnBtn}</Text>
                     </LinearGradient>
                 </View>
             </TouchableOpacity>
             <TouchableOpacity onPress={pressTest}>
                 <View style={styles.rightContainer}>
                     <LinearGradient colors={['#50C878', '#004953']} style={styles.btnGradient}>
-                        <Text style={styles.buttonText}>Test</Text>
+                        <Text style={styles.buttonText}>{testBtn}</Text>
                     </LinearGradient>
                 </View>
             </TouchableOpacity>
@@ -56,6 +89,7 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         backgroundColor: 'salmon',
         borderRadius: 30,
+        paddingHorizontal: 15
         
     }, 
    
@@ -109,7 +143,8 @@ const styles = StyleSheet.create({
     textTitle: {
         color: 'white',
         fontSize: 20,
-        fontWeight: '700'
+        fontWeight: '700',
+        textAlign: 'center'
     },
     buttonText: {
         color: 'white',

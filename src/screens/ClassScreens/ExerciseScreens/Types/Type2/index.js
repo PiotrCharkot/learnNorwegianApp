@@ -28,10 +28,11 @@ const Type2 = ({route}) => {
     const {userPoints, latestScreen, comeBackRoute, latestAnswered, allScreensNum, exeList, linkList, nextScreen, savedLang} = route.params
     
 
-    const isCorrectNewArr = Array(exeList[nextScreen - 1].correctAnswers.length).fill(0);
+    const isCorrectNewArr = Array(exeList[nextScreen - 1].leftSideWords.length).fill(0);
     
     const [wordsLeft, setWordsLeft] = useState(exeList[nextScreen - 1].leftSideWords);
-    const [wordsRight, setWordsRight] = useState(exeList[nextScreen - 1].rightSideWords);
+    const [wordsRight, setWordsRight] = useState([]);
+    const [correctAswers, setCorrectAnswers] = useState([]);
     const [movingDraggable, setMovingDraggable] = useState(null);
     const [releaseDraggable, setReleaseDraggable] = useState(null);
     const [isCorrect, setIsCorrect] = useState(isCorrectNewArr);
@@ -45,6 +46,51 @@ const Type2 = ({route}) => {
     const [instructions, setInstructions] = useState('Match items to their matches.');
     const [newInstructions, setNewInstructions] = useState('');
 
+
+
+    useEffect(() => {
+     
+
+      if (Array.isArray(exeList[nextScreen - 1].correctAnswers)) {
+
+        console.log('The variable is an array in type2.');
+
+        setWordsRight(exeList[nextScreen - 1].rightSideWords);
+        setCorrectAnswers(exeList[nextScreen - 1].correctAnswers);
+
+      } else if (typeof exeList[nextScreen - 1].correctAnswers === 'object' && exeList[nextScreen - 1].correctAnswers !== null) {
+
+        console.log('The variable is an object in type2.');
+
+        if (savedLang === 'PL') {
+          setWordsRight(exeList[nextScreen - 1].rightSideWords.pl)
+          setCorrectAnswers(exeList[nextScreen - 1].correctAnswers.pl)
+        } else if (savedLang === 'DE') {
+          setWordsRight(exeList[nextScreen - 1].rightSideWords.ger)
+          setCorrectAnswers(exeList[nextScreen - 1].correctAnswers.ger)
+        } else if (savedLang === 'LT') {
+          setWordsRight(exeList[nextScreen - 1].rightSideWords.lt)
+          setCorrectAnswers(exeList[nextScreen - 1].correctAnswers.lt)
+        } else if (savedLang === 'AR') {
+          setWordsRight(exeList[nextScreen - 1].rightSideWords.ar)
+          setCorrectAnswers(exeList[nextScreen - 1].correctAnswers.ar)
+        } else if (savedLang === 'UA') {
+          setWordsRight(exeList[nextScreen - 1].rightSideWords.ua)
+          setCorrectAnswers(exeList[nextScreen - 1].correctAnswers.ua)
+        } else if (savedLang === 'ES') {
+          setWordsRight(exeList[nextScreen - 1].rightSideWords.sp)
+          setCorrectAnswers(exeList[nextScreen - 1].correctAnswers.sp)
+        } else if (savedLang === 'EN') {
+          setWordsRight(exeList[nextScreen - 1].rightSideWords.eng)
+          setCorrectAnswers(exeList[nextScreen - 1].correctAnswers.eng)
+        }
+      }
+
+
+    }, [])
+    
+
+
     useFocusEffect(() => {
         
         if (latestScreen > nextScreen) {
@@ -57,6 +103,13 @@ const Type2 = ({route}) => {
             console.log('setting new points', route.params.userPoints );
             setCurrentPoints(userPoints)
         }
+
+
+
+
+        
+
+
 
         if (exeList[nextScreen - 1].instructions) {
           if (savedLang === 'PL') {
@@ -93,18 +146,18 @@ const Type2 = ({route}) => {
 
     useEffect(() => {
 
-        if (answersChecked.length !== 0) {
-          setLatestScreenAnswered(nextScreen);
-          for (let i = 0; i < answersChecked.length; i++) {
+      if (answersChecked.length !== 0) {
+        setLatestScreenAnswered(nextScreen);
+        for (let i = 0; i < answersChecked.length; i++) {
 
-            const newArr = [...isCorrect];
-            newArr.map((val, ind) => {
-                answersChecked[ind] ? newArr[ind] = 1 : newArr[ind] = 2
-            })
+          const newArr = [...isCorrect];
+          newArr.map((val, ind) => {
+              answersChecked[ind] ? newArr[ind] = 1 : newArr[ind] = 2
+          })
 
-            setIsCorrect(newArr);
-            
-          }
+          setIsCorrect(newArr);
+          
+        }
       }
       
     
@@ -225,7 +278,7 @@ const Type2 = ({route}) => {
         callbackButton={'matchLR'} 
         userAnswers={wordsLeft}
         userAnswers2={wordsRight}
-        correctAnswers={exeList[nextScreen - 1].correctAnswers}
+        correctAnswers={correctAswers}
         buttonWidth={generalStyles.buttonNextPrevSize}
         buttonHeight={generalStyles.buttonNextPrevSize}
         linkNext={allScreensNum === nextScreen ? exitLink : linkList[nextScreen]}

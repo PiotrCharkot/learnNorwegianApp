@@ -43,11 +43,11 @@ const styles = StyleSheet.create({
     },
     inputContainer: {
         justifyContent: 'center',
-        height: 150,
+        height: 100,
         width: circleSize / 2 - 50,
         backgroundColor: 'white',
-        borderTopRightRadius: 75,
-        borderBottomRightRadius: 75,
+        borderTopRightRadius: 50,
+        borderBottomRightRadius: 50,
     },
     shadow: {
         shadowColor: '#7F5DF0',
@@ -80,7 +80,6 @@ const styles = StyleSheet.create({
     inputHolder: {
         justifyContent: 'center',
         height: 50,
-        width: circleSize / 2 - 54,
         paddingTop: 25,
         borderBottomColor: 'grey',
         borderBottomWidth: 0.2
@@ -94,6 +93,9 @@ const styles = StyleSheet.create({
         height: 15,
         width: 15,
         tintColor: 'grey'
+    },
+    input: {
+        fontSize: 12
     },
     leftContainer: {
         justifyContent: 'center',
@@ -138,7 +140,54 @@ const styles = StyleSheet.create({
         overflow: 'hidden',
         bottom: circleSize / 4.2,
         left: -25
-    }
+    },
+    msgCont: {
+        position: 'absolute',
+        top: - 40,
+        paddingLeft: 10,
+    },
+    msgTxt: {
+        fontSize: 12,
+        color: 'red'
+    },
+    messageContainer: {
+        borderWidth: 1,
+        borderColor: '#fafafa',
+        position: 'absolute',
+        height: 140,
+        width: screenWidth - 50,
+        borderRadius: 70,
+        backgroundColor: 'grey',
+        alignItems: 'center',
+    },
+    messageText: {
+        textAlign: 'center',
+        fontWeight: '600',
+        fontSize: 14
+    }, 
+    messageButtonsContainer: {
+        alignItems: 'center',
+    },
+    messageButtons: {
+        borderWidth: 1,
+        borderColor: 'black',
+        marginTop: 10,
+        width: 200,
+        alignItems: 'center',
+        borderRadius: 8
+    },
+    messageGradient: {
+        height: '100%',
+        width: '100%', 
+        paddingVertical: 15,
+        paddingHorizontal: 50,
+        borderRadius: 70,
+        justifyContent: 'space-between'
+    },
+    messageButtonsText: {
+        fontSize: 14,
+        fontWeight: '600'
+    },
 });
 
 

@@ -493,7 +493,7 @@ const ExitExcScreen = ({route}) => {
           colorA={'#485563'} 
           colorB={'#29323c'} 
           callbackFunc={goToMain} 
-          path={'forgot'} 
+          path={'home'} 
           colorIcon={'white'}
           heightIcon={15} 
           widthIcon={15}
@@ -516,7 +516,7 @@ const ExitExcScreen = ({route}) => {
           colorA={'#485563'} 
           colorB={'#29323c'} 
           callbackFunc={goToResults} 
-          path={'forgot'} 
+          path={'results'} 
           colorIcon={'white'}
           heightIcon={15} 
           widthIcon={15}

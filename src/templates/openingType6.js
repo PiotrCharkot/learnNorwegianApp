@@ -153,7 +153,7 @@ const Exc1x7x1 = ({route}) => {
         if (typesInSet[i][randomVal].typeOfScreen === '1') {
           sumOfAllPoints = sumOfAllPoints + typesInSet[i][randomVal].nuberOfQuestions * generalStyles.bonusCheckAllAnswers
         } else if (typesInSet[i][randomVal].typeOfScreen === '2') {
-          sumOfAllPoints = sumOfAllPoints + typesInSet[i][randomVal].correctAnswers.length * generalStyles.bonusMatchLR
+          sumOfAllPoints = sumOfAllPoints + typesInSet[i][randomVal].leftSideWords.length * generalStyles.bonusMatchLR
         } else if (typesInSet[i][randomVal].typeOfScreen === '3') {
   
           let newArrGaps = [];

@@ -191,21 +191,21 @@ const TextScreen = ({route}) => {
     if (documentIdPoints !== 'tempid' && bonusPoints > minimumPoints) {
 
     
-        showPointsAnimation(bonusPoints);
+      showPointsAnimation(bonusPoints);
 
-        updateDoc(docRefPoints, {
-            dailyPoints: lastUpdateVal === new Date().toLocaleDateString() ? currentDailyScore + bonusPoints : bonusPoints,
-            totalPoints: totalPointsVal + bonusPoints,
-            weeklyPoints: currentWeek.includes(lastUpdateVal) ? weeklyPointsVal + bonusPoints : bonusPoints,
-            lastUpdate: new Date().toLocaleDateString(),
-            daysInRow: currentDailyScore < pointsToScore && currentDailyScore + bonusPoints >= pointsToScore ? daysInRowVal + 1 : daysInRowVal
-        })
-        .then(docRef => {
-            console.log("A New Document Field has been added to an existing document updaiting points");
-        })
-        .catch(error => {
-            console.log(error);
-        })
+      updateDoc(docRefPoints, {
+        dailyPoints: lastUpdateVal === new Date().toLocaleDateString() ? currentDailyScore + bonusPoints : bonusPoints,
+        totalPoints: totalPointsVal + bonusPoints,
+        weeklyPoints: currentWeek.includes(lastUpdateVal) ? weeklyPointsVal + bonusPoints : bonusPoints,
+        lastUpdate: new Date().toLocaleDateString(),
+        daysInRow: currentDailyScore < pointsToScore && currentDailyScore + bonusPoints >= pointsToScore ? daysInRowVal + 1 : daysInRowVal
+      })
+      .then(docRef => {
+        console.log("A New Document Field has been added to an existing document updaiting points");
+      })
+      .catch(error => {
+        console.log(error);
+      })
     }
   }
 

@@ -3,11 +3,10 @@ import React, {useState, useEffect, useRef, useCallback}  from 'react'
 import { onAuthStateChanged, getAuth  } from 'firebase/auth';
 import { useIsFocused } from "@react-navigation/native";
 import { db } from '../../../firebase/firebase-config'
-import { collection, getDocs, query, where, doc, setDoc, updateDoc } from "firebase/firestore";
+import { collection, getDocs, query } from "firebase/firestore";
 import { getStorage, ref, getDownloadURL, uploadBytesResumable } from "firebase/storage";
 import { authentication } from '../../../firebase/firebase-config';
 import RankingItem from '../../components/other/RankingItem';
-import { FlashList } from '@shopify/flash-list';
 import styles from './style';
 
 
@@ -20,7 +19,7 @@ let extraItem = {
   totalPoints: 0,
   userName: 'extra',
   userRef: 'extra.png',
-  weeklyPoints: 70
+  weeklyPoints: 0
 }
 
 let sixDaysAgo = new Date(new Date().setDate(new Date().getDate()-6)).toLocaleDateString();
@@ -44,11 +43,12 @@ const ResultsScreen = () => {
   const storage = getStorage();
   const auth = getAuth();
 
+  const userNumCap = 20;
 
   const [weekly, setWeekly] = useState(false);
   const [dataFlatList, setDataFlatList] = useState([]);
   const [dataFlatListWeekly, setDataFlatListWeekly] = useState([]);
-  const [userId, setUserId] = useState('userId');
+  const [userId, setUserId] = useState(auth.currentUser.uid);
   const [imgSrc, setImgSrc] = useState("https://www.google.com/url?sa=i&url=https%3A%2F%2Fcommons.wikimedia.org%2Fwiki%2FFile%3AHD_transparent_picture.png&psig=AOvVaw06tXtft-O_kCjAPf3xT_cS&ust=1677700689506000&source=images&cd=vfe&ved=0CBAQjRxqFwoTCLD1rp-Auf0CFQAAAAAdAAAAABAE");
   const [imgSrc2, setImgSrc2] = useState("https://www.google.com/url?sa=i&url=https%3A%2F%2Fcommons.wikimedia.org%2Fwiki%2FFile%3AHD_transparent_picture.png&psig=AOvVaw06tXtft-O_kCjAPf3xT_cS&ust=1677700689506000&source=images&cd=vfe&ved=0CBAQjRxqFwoTCLD1rp-Auf0CFQAAAAAdAAAAABAE");
   const [imgSrc3, setImgSrc3] = useState("https://www.google.com/url?sa=i&url=https%3A%2F%2Fcommons.wikimedia.org%2Fwiki%2FFile%3AHD_transparent_picture.png&psig=AOvVaw06tXtft-O_kCjAPf3xT_cS&ust=1677700689506000&source=images&cd=vfe&ved=0CBAQjRxqFwoTCLD1rp-Auf0CFQAAAAAdAAAAABAE");
@@ -79,6 +79,7 @@ const ResultsScreen = () => {
   const [idFirstWeekly, setIdFirstWeekly] = useState('');
   const [idSecondWeekly, setIdSecondWeekly] = useState('');
   const [idThirdWeekly, setIdThirdWeekly] = useState('');
+  
 
   const interpolatedValueFlipFirst = useRef(new Animated.Value(0)).current;
   const interpolatedValueFlipSecond = useRef(new Animated.Value(-90)).current;
@@ -101,23 +102,19 @@ const ResultsScreen = () => {
     getDataFb(); 
   }, [isFocused]);
 
-  useEffect(() => {
-    const unscubscribe = onAuthStateChanged(authentication, (authUser) => {
-        
-      if (authUser) {
-        setUserId(authUser.uid)
-
-      }
-    });
-
-    return unscubscribe;
-  }, [])
   
 
   const getDataFb = async () => {
 
     let tempDataArray = [];
     let tempDataArrayWeekly = [];
+
+    let userExtraObject = {};
+    let userExtraObjectWeekly = {};
+
+    let addUserObject = false;
+    let addUserObjectWeekly = false;
+
     
     const allDocsInPointsCol = query(usersPointsCollection);
     const querySnapshotAllDocs = await getDocs(allDocsInPointsCol);
@@ -144,17 +141,50 @@ const ResultsScreen = () => {
         tempDataArray[i].position = i + 1;
         tempDataArrayWeekly[i].position = i + 1;
 
+
+        if (tempDataArray[i].userRef === userId && i + 1 > userNumCap) {
+          
+          addUserObject = true;
+          userExtraObject = tempDataArray[i];
+          
+        }
+
+
+        if (tempDataArrayWeekly[i].useRef === userId && i + 1 > userNumCap) {
+
+          addUserObjectWeekly = true;
+          userExtraObjectWeekly = tempDataArrayWeekly[i];
+
+        }
+
         
       }
     }
+    
      
-    tempDataArray.push(extraItem);
-    tempDataArrayWeekly.push(extraItem);
 
 
     
-    setDataFlatList(tempDataArray.slice(3));
-    setDataFlatListWeekly(tempDataArrayWeekly.slice(3));
+    setDataFlatList(() => {
+      let arrayCapped = [];
+      arrayCapped = tempDataArray.slice(3, userNumCap);
+      if (addUserObject) {
+        arrayCapped.push(userExtraObject);
+        addUserObject = false;
+      }
+      arrayCapped.push(extraItem);
+      return arrayCapped;
+    });
+
+    setDataFlatListWeekly(() => {
+      let arrayCappedWeekly = [];
+      arrayCappedWeekly = tempDataArrayWeekly.slice(3, userNumCap);
+      if (addUserObjectWeekly) {
+        arrayCappedWeekly.push(userExtraObjectWeekly);
+      }
+      arrayCappedWeekly.push(extraItem);
+      return arrayCappedWeekly;
+    });
 
     
     if (tempDataArray.length > 0) {
