@@ -349,7 +349,8 @@ const LearningScreen = () => {
       link={item.link} 
       showPro={item.showPro}
       colorSmallSqu={colorSqu}
-      stars={item.stars}/>
+      stars={item.stars}
+      savedLang={choosenLanguage}/>
     </Animated.View>
   }
 

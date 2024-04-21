@@ -14,7 +14,7 @@ const ChangePictureScreen = ({route}) => {
 
     const screenWidth = Dimensions.get("window").width;
     
-    const {userId} = route.params;
+    const {userId, choosenLanguage} = route.params;
     const storage = getStorage();
     const storageRef = ref(storage, `profilePictures/${userId}`);
 
@@ -26,6 +26,9 @@ const ChangePictureScreen = ({route}) => {
     const blueBckPositionY = useRef(new Animated.Value(-screenWidth)).current;
     const opacityBlue = useRef(new Animated.Value(0)).current;
     const opacityGreen = useRef(new Animated.Value(0)).current;
+
+    const [pickText, setPickText] = useState('Choose a picture');
+    const [useText, setUseText] = useState('Set as profile picture')
 
 
     const hideGreenCloud = () => {
@@ -131,6 +134,29 @@ const ChangePictureScreen = ({route}) => {
             useNativeDriver: true
         })
       ]).start()
+
+
+      if (choosenLanguage === 'PL') {
+        setPickText('Wybierz zdjęcie');
+        setUseText('Ustaw jako zdjęcie profilowe');
+      } else if (choosenLanguage === 'DE') {
+        setPickText('Wähle ein Bild');
+        setUseText('Als Profilbild festlegen');
+      } else if (choosenLanguage === 'LT') {
+        setPickText('Pasirinkite nuotrauką');
+        setUseText('Nustatyti kaip profilio nuotrauką');
+      } else if (choosenLanguage === 'AR') {
+        setPickText('اختر صورة');
+        setUseText('اضبط كصورة للملف الشخصي');
+      } else if (choosenLanguage === 'UA') {
+        setPickText('Виберіть зображення');
+        setUseText('Встановити як фото профілю');
+      } else if (choosenLanguage === 'ES') {
+        setPickText('Elige una imagen');
+        setUseText('Establecer como foto de perfil');
+      } 
+
+
     }, [])
     
     
@@ -162,11 +188,11 @@ const ChangePictureScreen = ({route}) => {
                 
                 <GradientButton  
                 height={40} 
-                width={200}
+                width={240}
                 colorA={'#3a7bd5'} 
                 colorB={'#3a6073'} 
                 callbackFunc={uploadToFb} 
-                text={'Use that image'}
+                text={useText}
                 colorText={'white'}
                 noText={false}
                 startGradient={[0.0, 0.0]}
@@ -186,11 +212,11 @@ const ChangePictureScreen = ({route}) => {
 
             <GradientButton  
             height={40} 
-            width={200}
+            width={240}
             colorA={'#3a7bd5'} 
             colorB={'#3a6073'} 
             callbackFunc={pickImage} 
-            text={'Pick an image'}
+            text={pickText}
             colorText={'white'}
             noText={false}
             startGradient={[0.0, 0.0]}

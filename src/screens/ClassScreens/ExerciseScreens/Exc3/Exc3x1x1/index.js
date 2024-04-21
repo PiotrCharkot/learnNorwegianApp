@@ -73,10 +73,11 @@ const Exc3x1x1 = ({ route }) => {
     useFocusEffect(() => {
 
       
-
+      
       if (route.params) {
         const {userPoints, latestScreen, comeBackRoute, latestAnswered, nextScreen, savedLang, data} = route.params;
-
+        
+        console.log('my lang', savedLang);
         
         if (latestScreen > currentScreen) {
             setLatestScreenAnswered(latestAnswered);

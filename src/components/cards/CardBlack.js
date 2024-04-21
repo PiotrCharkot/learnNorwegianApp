@@ -9,11 +9,10 @@ const transparent = 'rgba(255,255,255,0)';
 
 const CardBlack = (params) => {
 
-   
     const navigation = useNavigation();
 
   return (
-    <TouchableOpacity style={styles.mainContainer} onPress={() => navigation.navigate(params.link)}>
+    <TouchableOpacity style={styles.mainContainer} onPress={() => navigation.navigate(params.link, {savedLang: params.savedLang})}>
         <View style={styles.gradientWrap}>
 
             <LinearGradient colors={['black', '#252626']} style={styles.gradientBig}>

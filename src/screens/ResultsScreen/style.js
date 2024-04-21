@@ -83,15 +83,35 @@ const styles = StyleSheet.create({
         bottom: - 50,
         fontSize: 12
     },
+    toggleContainer: {
+        position: 'absolute',
+        top: 46,
+        left: 20,
+        borderWidth: 1,
+        borderRadius: 5,
+        borderColor: '#ad42f5',
+        padding: 3,
+    },
+    toggleText: {
+        fontSize: 11,
+        fontWeight: '600',
+        color: '#ad42f5',
+    },
     switcherContainer: {
         position: 'absolute',
         top: 50,
-        right: 20
+        right: 0,
+        width: 150
+
+    },
+    switcherHolder: {
+        width: '100%'
     },
     switcherText: {
-        fontSize: 13,
+        fontSize: 11,
         fontWeight: '600',
-        color: '#ad42f5'
+        color: '#ad42f5',
+        textAlign: 'center'
     }
 
 });

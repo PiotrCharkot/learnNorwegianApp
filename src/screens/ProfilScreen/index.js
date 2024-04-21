@@ -1,6 +1,7 @@
 import { View, Text, TouchableOpacity, Image, Dimensions, Animated, ScrollView} from 'react-native'
 import React, { useState, useEffect, useRef, useCallback } from 'react'
-import { useNavigation, useIsFocused } from "@react-navigation/native";
+import { useNavigation, useIsFocused, useFocusEffect } from "@react-navigation/native";
+import * as SecureStore from 'expo-secure-store';
 import { LinearGradient } from 'expo-linear-gradient';
 import { collection, getDocs, query, where, doc, setDoc, updateDoc, deleteDoc } from "firebase/firestore";
 import { db } from '../../../firebase/firebase-config'
@@ -43,6 +44,7 @@ const ProfilScreen = () => {
 
   const userFbPoints = collection(db, 'usersPoints');
 
+  const [choosenLanguage, setChoosenLanguage] = useState('EN');
   const [userLoged, setUserLoged] = useState(false);
   const [username, setUsername] = useState('Guest');
   const [userEmail, setUserEmail] = useState('No email');
@@ -55,20 +57,13 @@ const ProfilScreen = () => {
   const [userShortId, setUserShortId] = useState('');
   const [profilePicUrl, setProfilePicUrl] = useState(null);
   const [newProfilePic, setNewProfilePic] = useState('reindeer-profile3.png');
+  const [labelsArray, setLabelsArray] = useState(['Points', 'Day', 'Days', 'Username', 'Email', 'Daily points', 'Weekly points', 'My Id', 'Change picture']);
+  const [loginLabel, setLoginLabel] = useState('Log in')
   const overlayOpacity = useRef(new Animated.Value(1)).current;
   const overlayOffset = useRef(new Animated.Value(0)).current;
   
   let randomIndex;
 
-  const signOutFunc = () => {
-    signOut(authentication)
-      .then(() => {
-        setUserLoged(false);
-      })
-      .catch(() => {
-        console.log("Could not log out!");
-      });
-  }
 
   const uploadToFb = async (urlParam) => {
         
@@ -91,6 +86,17 @@ const ProfilScreen = () => {
     });
     
    
+  }
+
+
+  async function getValueFor(key) {
+    let result = await SecureStore.getItemAsync(key);
+    if (result) {
+      console.log("Here's your value", result);
+      setChoosenLanguage(result);
+    } else {
+      console.log('No values stored under that key.');
+    }
   }
 
 
@@ -173,6 +179,44 @@ const ProfilScreen = () => {
   }
 
 
+  useFocusEffect(
+    useCallback(() => {
+
+      
+      getValueFor('language');
+  
+      
+    }, [])
+  );
+
+
+  useEffect(() => {
+    if (choosenLanguage === 'PL') {
+      setLabelsArray(["Punkty", "Dzień", "Dni", "Nazwa użytkownika", "Email", "Punkty dziennie", "Punkty tygodniowe", "Mój Id", "Zmień zdjęcie"]);
+      setLoginLabel('Zaloguj się');
+    } else if (choosenLanguage === 'DE') {
+      setLabelsArray(["Punkte", "Tag", "Tage", "Benutzername", "E-Mail", "Tägliche Punkte", "Wöchentliche Punkte", "Meine ID", "Bild ändern"]);
+      setLoginLabel('Anmelden');
+    } else if (choosenLanguage === 'LT') {
+      setLabelsArray(["Taškai", "Diena", "Dienos", "Vartotojo vardas", "El. paštas", "Dienos taškai", "Savaitės taškai", "Mano Id", "Keisti nuotrauką"]);
+      setLoginLabel('Prisijungti');
+    } else if (choosenLanguage === 'AR') {
+      setLabelsArray(["النقاط", "يوم", "أيام", "اسم المستخدم", "البريد الإلكتروني", "نقاط يومية", "نقاط أسبوعية", "هويتي", "تغيير الصورة"]);
+      setLoginLabel('تسجيل الدخول');
+    } else if (choosenLanguage === 'UA') {
+      setLabelsArray(["Бали", "День", "Дні", "Ім'я користувача", "Електронна пошта", "Щоденні бали", "Тижневі бали", "Мій Id", "Змінити зображення"]);
+      setLoginLabel('Увійти');
+    } else if (choosenLanguage === 'ES') {
+      setLabelsArray(["Puntos", "Día", "Días", "Nombre de usuario", "Correo electrónico", "Puntos diarios", "Puntos semanales", "Mi ID", "Cambiar imagen"]);
+      setLoginLabel('Iniciar sesión');
+    } else if (choosenLanguage === 'EN') {
+      setLabelsArray(['Points', 'Day', 'Days', 'Username', 'Email', 'Daily points', 'Weekly points', 'My Id', 'Change picture']);
+      setLoginLabel('Log in');
+    }
+  }, [choosenLanguage])
+
+
+
   useEffect(() => {
   
     randomIndex = Math.floor(Math.random() * randomPicture.length);
@@ -253,12 +297,12 @@ const ProfilScreen = () => {
 
       <LinearGradient colors={['#4c669f', '#3b5998', '#192f6a']} style={styles.backgroundTop}>
         <View style={styles.loginButtonContainer}>
-          {userLoged ? null : <TouchableOpacity onPress={() => navigation.navigate("Login")}>
-            <Text style={styles.textLoginButton}>LOG IN</Text>
+          {userLoged ? null : <TouchableOpacity onPress={() => navigation.navigate("Login", {choosenLanguage: choosenLanguage})}>
+            <Text style={styles.textLoginButton}>{loginLabel}</Text>
           </TouchableOpacity>}  
         </View>
 
-        <TouchableOpacity style={styles.settingsImgContainer} onPress={() => navigation.navigate('Settings')}>
+        <TouchableOpacity style={styles.settingsImgContainer} onPress={() => navigation.navigate('Settings', {choosenLanguage: choosenLanguage})}>
           <Image style={styles.settingsImg} source={require('../../../assets/settings.png')} />
         </TouchableOpacity>
 
@@ -279,17 +323,17 @@ const ProfilScreen = () => {
           <View style={styles.topInfo}>
             <View style={styles.leftTopInfo}>
               <Text style={styles.pointsText}>{userPoints}</Text>
-              <Text>Points</Text>
+              <Text>{labelsArray[0]}</Text>
             </View>
             <View style={styles.rightTopInfo}>
               <Text style={styles.pointsText}>{userDays}</Text>
-              <Text>Days</Text>
+              <Text>{userDays === 1 ? labelsArray[1] : labelsArray[2]}</Text>
             </View>
 
           </View>
           <View style={styles.valContainer}>
             <View style={styles.fieldDesc}>
-              <Text style={styles.fieldDescText}>Username</Text>
+              <Text style={styles.fieldDescText}>{labelsArray[3]}</Text>
             </View>
             <View style={styles.fieldVal}>
               <Text style={styles.fieldValText}>{username}</Text>  
@@ -298,7 +342,7 @@ const ProfilScreen = () => {
 
           <View style={styles.valContainer}>
             <View style={styles.fieldDesc}>
-              <Text style={styles.fieldDescText}>Email</Text>
+              <Text style={styles.fieldDescText}>{labelsArray[4]}</Text>
             </View>
             <View style={styles.fieldVal}>
               <Text style={styles.fieldValText}>{userEmail}</Text>  
@@ -306,14 +350,14 @@ const ProfilScreen = () => {
           </View>
 
 
-          <TouchableOpacity style={styles.btnChangePicOpacity} onPress={() => navigation.navigate('ChangePic', {userId: user.uid})}>
-            <Text style={styles.btnChangePicOpacityText}>Change Picture</Text>
+          <TouchableOpacity style={styles.btnChangePicOpacity} onPress={() => navigation.navigate('ChangePic', {userId: user.uid, choosenLanguage: choosenLanguage})}>
+            <Text style={styles.btnChangePicOpacityText}>{labelsArray[8]}</Text>
           </TouchableOpacity>
 
 
           <View style={styles.valContainer}>
             <View style={styles.fieldDesc}>
-              <Text style={styles.fieldDescText}>Daily points</Text>
+              <Text style={styles.fieldDescText}>{labelsArray[5]}</Text>
             </View>
             <View style={styles.fieldVal}>
               <Text style={styles.fieldValText}>{userDailyPoints}</Text>  
@@ -323,7 +367,7 @@ const ProfilScreen = () => {
 
           <View style={styles.valContainer}>
             <View style={styles.fieldDesc}>
-              <Text style={styles.fieldDescText}>Weekly points</Text>
+              <Text style={styles.fieldDescText}>{labelsArray[6]}</Text>
             </View>
             <View style={styles.fieldVal}>
               <Text style={styles.fieldValText}>{userWeeklyPoints}</Text>  
@@ -332,7 +376,7 @@ const ProfilScreen = () => {
 
           <View style={styles.valContainer}>
             <View style={styles.fieldDesc}>
-              <Text style={styles.fieldDescText}>My Id</Text>
+              <Text style={styles.fieldDescText}>{labelsArray[7]}</Text>
             </View>
             <View style={styles.fieldVal}>
               <Text style={styles.fieldValText}>{userShortId}</Text>  

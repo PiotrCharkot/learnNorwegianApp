@@ -21,8 +21,8 @@ const styles = StyleSheet.create({
     loginButtonContainer: {
         paddingLeft: 10,
         marginTop: 0,
-        marginRight: screenWidth - 150,
-        width: 100,
+        marginRight: screenWidth - 250,
+        width: 200,
     },
     settingsImgContainer: {
         alignItems: 'center',

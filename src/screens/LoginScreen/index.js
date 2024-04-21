@@ -11,9 +11,11 @@ import styles from './style';
 
 const offsetButton = 25;
 
-const LoginScreen = () => {
+const LoginScreen = ({route}) => {
 
     const navigation = useNavigation();
+
+    const {choosenLanguage} = route.params;
 
     const screenWidth = Dimensions.get("window").width;
     const interpolatedValue = useRef(new Animated.Value(0)).current;
@@ -26,6 +28,13 @@ const LoginScreen = () => {
     const [password, setPassword] = useState("");
     const [messageText, setMessageText] = useState("Looks like an unknown error");
     const [showForgotBtn, setShowForgotBtn] = useState(true);
+    const [buttonLabels, setButtonLabels] = useState([' forgot password', ' register']);
+    const [placeholderArray, setPlaceholderArray] = useState(['email address', 'password']);
+    const [errorMessage1, setErrorMessage1] = useState("No email found. Hit 'Register account' or try to log in with correct email");
+    const [errorMessage2, setErrorMessage2] = useState("Wrong password. Try again or hit 'Forgot password' to reset");
+    const [errorMessage3, setErrorMessage3] = useState("Invalid email format. Please check your email address and try again");
+    const [registerBtnText, setRegisterBtnText] = useState('Register account');
+    const [forgotBtnText, setForgotBtnText] = useState('Forgot password')
     
 
 
@@ -108,17 +117,16 @@ const logIn = () => {
     const errorCode = error.code;
     const errorMessage = error.message;
 
+    console.log('error login', errorCode);
 
     if (errorCode === 'auth/user-not-found') {
-        console.log('show info about user not found...');
-        setMessageText('No email found. Hit \'Register account\' or try to log in with correct email');
+        setMessageText(errorMessage1);
         setShowForgotBtn(false);
-    } else if (errorCode === 'auth/wrong-password') {
-        console.log('looks like you dont remember you password');
-        setMessageText('Wrong password. Try again or hit \'forgot password\' to reset');
+    } else if (errorCode === 'auth/wrong-password' || errorCode === 'auth/missing-password') {
+        setMessageText(errorMessage2);
         setShowForgotBtn(true);
     } else if (errorCode === 'auth/invalid-email') {
-        setMessageText('Invalid email format. Please check your email address and try again');
+        setMessageText(errorMessage3);
         setShowForgotBtn(false);
     }
 
@@ -145,7 +153,7 @@ const registerButton = () => {
 
     setTimeout(() => {
         
-        navigation.navigate('Register');
+        navigation.navigate('Register', {choosenLanguage: choosenLanguage});
         
         setTimeout(() => {
             
@@ -162,7 +170,7 @@ const forgotButton = () => {
 
     setTimeout(() => {
         
-        navigation.navigate('Forget');
+        navigation.navigate('Forget', {choosenLanguage: choosenLanguage});
         
         setTimeout(() => {
             
@@ -220,11 +228,63 @@ useFocusEffect(
     const unsubscribe = openLoginAnimation(); 
 
     return () => unsubscribe;
-  }, []))
+}, []))
 
 useEffect(() => {
 
     openLoginAnimation();
+
+
+    if (choosenLanguage === 'PL') {
+        setButtonLabels(["zapomniałem hasła", "zarejestruj się"]);
+        setPlaceholderArray(["adres email", "hasło"]);
+        setErrorMessage1("Nie znaleziono adresu e-mail. Kliknij 'Zarejestruj konto' lub spróbuj zalogować się z poprawnym adresem e-mail");
+        setErrorMessage2("Błędne hasło. Spróbuj ponownie lub kliknij 'Zapomniałem hasła', aby zresetować");
+        setErrorMessage3("Nieprawidłowy format adresu e-mail. Proszę sprawdzić swój adres e-mail i spróbować ponownie");
+        setRegisterBtnText("Zarejestruj konto");
+        setForgotBtnText("Zapomniałem hasła");
+
+    } else if (choosenLanguage === 'DE') {
+        setButtonLabels(["Passwort vergessen", "registrieren"]);
+        setPlaceholderArray(["E-Mail-Adresse", "Passwort"]);
+        setErrorMessage1("Keine E-Mail gefunden. Klicke auf 'Konto registrieren' oder versuche dich mit der richtigen E-Mail-Adresse anzumelden");
+        setErrorMessage2("Falsches Passwort. Versuche es erneut oder klicke auf 'Passwort vergessen', um es zurückzusetzen");
+        setErrorMessage3("Ungültiges E-Mail-Format. Bitte überprüfe deine E-Mail-Adresse und versuche es erneut");
+        setRegisterBtnText("Konto registrieren");
+        setForgotBtnText("Passwort vergessen");
+    } else if (choosenLanguage === 'LT') {
+        setButtonLabels(["pamiršau slaptažodį", "užsiregistruoti"]);
+        setPlaceholderArray(["el. pašto adresas", "slaptažodis"]);
+        setErrorMessage1("El. pašto adresas nerastas. Spustelėkite 'Registruoti paskyrą' arba bandykite prisijungti su teisingu el. pašto adresu");
+        setErrorMessage2("Neteisingas slaptažodis. Bandykite vėl arba spauskite 'Pamiršau slaptažodį', kad atstatytumėte");
+        setErrorMessage3("Neteisingas el. pašto formato. Prašome patikrinti savo el. pašto adresą ir bandyti dar kartą");
+        setRegisterBtnText("Registruoti paskyrą");
+        setForgotBtnText("Pamiršau slaptažodį");
+    } else if (choosenLanguage === 'AR') {
+        setButtonLabels(["نسيت كلمة السر", "التسجيل"]);
+        setPlaceholderArray(["عنوان البريد الإلكتروني", "كلمة المرور"]);
+        setErrorMessage1("لم يتم العثور على البريد الإلكتروني. اضغط على 'تسجيل حساب' أو حاول تسجيل الدخول بالبريد الإلكتروني الصحيح");
+        setErrorMessage2("كلمة السر خاطئة. حاول مرة أخرى أو اضغط على 'نسيت كلمة السر' لإعادة تعيينها");
+        setErrorMessage3("تنسيق البريد الإلكتروني غير صالح. يرجى التحقق من عنوان بريدك الإلكتروني والمحاولة مرة أخرى");
+        setRegisterBtnText("تسجيل حساب");
+        setForgotBtnText("نسيت كلمة السر");
+    } else if (choosenLanguage === 'UA') {
+        setButtonLabels(["забув пароль", "зареєструватися"]);
+        setPlaceholderArray(["адреса електронної пошти", "пароль"]);
+        setErrorMessage1("Електронну адресу не знайдено. Натисніть 'Зареєструвати акаунт' або спробуйте увійти з правильною електронною адресою");
+        setErrorMessage2("Неправильний пароль. Спробуйте ще раз або натисніть 'Забули пароль', щоб скинути");
+        setErrorMessage3("Недійсний формат електронної пошти. Будь ласка, перевірте свою адресу електронної пошти та спробуйте знову");
+        setRegisterBtnText("Зареєструвати акаунт");
+        setForgotBtnText("Забули пароль");
+    } else if (choosenLanguage === 'ES') {
+        setButtonLabels(["olvidé la contraseña", "registrarse"]);
+        setPlaceholderArray(["dirección de correo electrónico", "contraseña"]);
+        setErrorMessage1("No se encontró el correo electrónico. Haz clic en 'Registrar cuenta' o intenta iniciar sesión con el correo electrónico correcto");
+        setErrorMessage2("Contraseña incorrecta. Intenta de nuevo o haz clic en 'Olvidé la contraseña' para restablecerla");
+        setErrorMessage3("Formato de correo electrónico no válido. Por favor, revisa tu dirección de correo electrónico e inténtalo de nuevo");
+        setRegisterBtnText("Registrar cuenta");
+        setForgotBtnText("Olvidé la contraseña");
+    } 
    
 },[]);
 
@@ -254,7 +314,7 @@ useEffect(() => {
 
                             <Input 
                             style={styles.input}
-                            placeholder='email address'
+                            placeholder={placeholderArray[0]}
                             autoCapitalize='none'
                             inputContainerStyle={styles.inputContainerStyle}
                             leftIcon={<Image style={styles.inputImg} source={require('../../../assets/email.png')}/>}
@@ -268,7 +328,7 @@ useEffect(() => {
 
                             <Input 
                             style={styles.input}
-                            placeholder='password'
+                            placeholder={placeholderArray[1]}
                             inputContainerStyle={styles.inputContainerStyle}
                             leftIcon={<Image style={styles.inputImg} source={require('../../../assets/padlock.png')}/>}
                             secureTextEntry
@@ -308,7 +368,7 @@ useEffect(() => {
                     <Animated.View style={{...styles.forgotButtonCont, ...styles.shadowStrong, transform: [{translateX: buttonForgetPos}]}}>
                         <GradientButton  
                             height={40} 
-                            width={screenWidth * 1.5 / 4 + offsetButton }
+                            width={screenWidth * 1.5 / 2.8 + offsetButton }
                             colorA={'white'} 
                             colorB={'#e8cceb'} 
                             callbackFunc={forgotButton} 
@@ -317,18 +377,21 @@ useEffect(() => {
                             heightIcon={15} 
                             widthIcon={15}
                             noText={false}
-                            text={' forgot password'}
+                            text={buttonLabels[0]}
                             colorText={'grey'}
                             startGradient={[1.0, 0.0]}
                             endGradient={[1.0, 1.0]}
                             borderTopRightRadius={20} 
                             borderBottomRightRadius={20} 
+                            paddingLeft={30}
+                            justify={'flex-start'}
+                            marginR={5}
                         />
                     </Animated.View>
                     <Animated.View style={{...styles.regButtonCont, ...styles.shadowStrong, transform: [{translateX: buttonRegisterPos}]}}>
                         <GradientButton  
                             height={40} 
-                            width={screenWidth * 1.5 / 6 + offsetButton}
+                            width={screenWidth * 1.5 / 3.7 + offsetButton}
                             colorA={'white'} 
                             colorB={'#e8cceb'} 
                             callbackFunc={registerButton} 
@@ -337,12 +400,15 @@ useEffect(() => {
                             heightIcon={15} 
                             widthIcon={15}
                             noText={false}
-                            text={' register'}
+                            text={buttonLabels[1]}
                             colorText={'grey'}
                             startGradient={[1.0, 0.0]}
                             endGradient={[1.0, 1.0]}
                             borderTopRightRadius={20} 
                             borderBottomRightRadius={20} 
+                            paddingLeft={30}
+                            justify={'flex-start'}
+                            marginR={5}
                         />
                     </Animated.View>
                 </View>
@@ -359,9 +425,9 @@ useEffect(() => {
 
                     <View style={styles.messageButtonsContainer}>
                         {showForgotBtn ? <TouchableOpacity style={styles.messageButtons} onPress={forgotButton}>
-                            <Text style={styles.messageButtonsText}>Forgot password</Text>
+                            <Text style={styles.messageButtonsText}>{forgotBtnText}</Text>
                         </TouchableOpacity> : <TouchableOpacity style={styles.messageButtons} onPress={registerButton}>
-                            <Text style={styles.messageButtonsText}>Register account</Text>
+                            <Text style={styles.messageButtonsText}>{registerBtnText}</Text>
                         </TouchableOpacity>}
                         
 

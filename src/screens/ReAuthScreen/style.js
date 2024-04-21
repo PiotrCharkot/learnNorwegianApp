@@ -154,16 +154,16 @@ const styles = StyleSheet.create({
         borderWidth: 1,
         borderColor: '#fafafa',
         position: 'absolute',
-        height: 140,
         width: screenWidth - 50,
-        borderRadius: 70,
-        backgroundColor: 'grey',
+        borderRadius: 24,
+        backgroundColor: 'white',
         alignItems: 'center',
     },
     messageText: {
         textAlign: 'center',
         fontWeight: '600',
-        fontSize: 14
+        fontSize: 14,
+        marginBottom: 20
     }, 
     messageButtonsContainer: {
         alignItems: 'center',
@@ -180,8 +180,8 @@ const styles = StyleSheet.create({
         height: '100%',
         width: '100%', 
         paddingVertical: 15,
-        paddingHorizontal: 50,
-        borderRadius: 70,
+        paddingHorizontal: 20,
+        borderRadius: 20,
         justifyContent: 'space-between'
     },
     messageButtonsText: {

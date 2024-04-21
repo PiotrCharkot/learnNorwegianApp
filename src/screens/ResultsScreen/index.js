@@ -1,7 +1,8 @@
 import { View, Text, FlatList, Image, Animated, Easing, TouchableOpacity } from 'react-native'
 import React, {useState, useEffect, useRef, useCallback}  from 'react'
 import { onAuthStateChanged, getAuth  } from 'firebase/auth';
-import { useIsFocused } from "@react-navigation/native";
+import * as SecureStore from 'expo-secure-store';
+import { useIsFocused, useFocusEffect } from "@react-navigation/native";
 import { db } from '../../../firebase/firebase-config'
 import { collection, getDocs, query } from "firebase/firestore";
 import { getStorage, ref, getDownloadURL, uploadBytesResumable } from "firebase/storage";
@@ -45,6 +46,7 @@ const ResultsScreen = () => {
 
   const userNumCap = 20;
 
+  const [choosenLanguage, setChoosenLanguage] = useState('EN');
   const [weekly, setWeekly] = useState(false);
   const [dataFlatList, setDataFlatList] = useState([]);
   const [dataFlatListWeekly, setDataFlatListWeekly] = useState([]);
@@ -79,6 +81,9 @@ const ResultsScreen = () => {
   const [idFirstWeekly, setIdFirstWeekly] = useState('');
   const [idSecondWeekly, setIdSecondWeekly] = useState('');
   const [idThirdWeekly, setIdThirdWeekly] = useState('');
+  const [weeklyText, setWeeeklyText] = useState('Weekly Ranking');
+  const [alltimeText, setAlltimeText] = useState('All-Time Ranking');
+  const [toggleText, setToggleText] = useState('Toggle rankings');
   
 
   const interpolatedValueFlipFirst = useRef(new Animated.Value(0)).current;
@@ -103,6 +108,59 @@ const ResultsScreen = () => {
   }, [isFocused]);
 
   
+  async function getValueFor(key) {
+    let result = await SecureStore.getItemAsync(key);
+    if (result) {
+      console.log("Here's your value", result);
+      setChoosenLanguage(result);
+    } else {
+      console.log('No values stored under that key.');
+    }
+  }
+
+
+  useFocusEffect(
+    useCallback(() => {
+
+      
+      getValueFor('language');
+  
+      
+    }, [])
+  );
+
+
+
+  useEffect(() => {
+    if (choosenLanguage === 'PL') {
+      setWeeeklyText('Tygodniowy ranking');
+      setAlltimeText('Ogólny ranking');
+      setToggleText('Przełącz rankingi');
+    } else if (choosenLanguage === 'DE') {
+      setWeeeklyText('Wöchentliches Ranking');
+      setAlltimeText('Allzeit-Ranking');
+      setToggleText('Rankings umschalten');
+    } else if (choosenLanguage === 'LT') {
+      setWeeeklyText('Savaitinis reitingas');
+      setAlltimeText('Visų laikų reitingas');
+      setToggleText('');
+    } else if (choosenLanguage === 'AR') {
+      setWeeeklyText('التصنيف الأسبوعي');
+      setAlltimeText('التصنيف العام');
+      setToggleText('تبديل التصنيفات');
+    } else if (choosenLanguage === 'UA') {
+      setWeeeklyText('Щотижневий рейтинг');
+      setAlltimeText('Рейтинг за весь час');
+      setToggleText('Перемикати рейтинги');
+    } else if (choosenLanguage === 'ES') {
+      setWeeeklyText('Clasificación semanal');
+      setAlltimeText('Clasificación general');
+      setToggleText('Alternar clasificaciones');
+    }
+  }, [choosenLanguage]);
+
+
+
 
   const getDataFb = async () => {
 
@@ -342,17 +400,25 @@ const ResultsScreen = () => {
   return (
     <View style={styles.mainContainer}>
 
+
+      <View style={styles.toggleContainer}>
+        <TouchableOpacity onPress={() => changeSide()}>
+          <Text style={styles.toggleText}>{toggleText}</Text>
+
+        </TouchableOpacity>
+      </View>
+
       <View style={styles.switcherContainer}>
 
-        <Animated.View style={{transform: [{perspective: 500}, {rotateY: rotateVal}]}}>
+        <Animated.View style={{...styles.switcherHolder, transform: [{perspective: 500}, {rotateY: rotateVal}]}}>
           <TouchableOpacity onPress={() => changeSide()}>
-            <Text style={styles.switcherText}>See this week</Text>
+            <Text style={styles.switcherText}>{alltimeText}</Text>
 
           </TouchableOpacity>
         </Animated.View>
-        <Animated.View style={{position: 'absolute', transform: [{perspective: 500}, {rotateY: rotateValTrans}]}}>
+        <Animated.View style={{...styles.switcherHolder, position: 'absolute', transform: [{perspective: 500}, {rotateY: rotateValTrans}]}}>
           <TouchableOpacity onPress={() => changeSide()}>
-          <Text style={styles.switcherText}>See all time</Text>
+          <Text style={styles.switcherText}>{weeklyText}</Text>
             </TouchableOpacity>
         </Animated.View>
       </View>

@@ -30,7 +30,7 @@ const wordsCorrect = [
 
 const Class1x1x10 = ({ route }) => {
 
-    const {userPoints, latestScreen, comeBackRoute, allScreensNum} = route.params
+    const {userPoints, latestScreen, comeBackRoute, allScreensNum, savedLang} = route.params
     
     
     const [movingDraggable, setMovingDraggable] = useState(null);
@@ -151,6 +151,7 @@ const Class1x1x10 = ({ route }) => {
         learningLastScreen={true}
         dataForMarkers={dataForMarkers}
         allScreensNum={allScreensNum}
+        savedLang={savedLang}
         />
       </View>
     </View>

@@ -18,7 +18,9 @@ const Class1x1x1 = ({route}) => {
 
   useFocusEffect(() => {
     if (route.params) {
-      const {userPoints, latestScreen, comeBackRoute} = route.params;
+      const {userPoints, latestScreen, comeBackRoute, savedLang} = route.params;
+
+      console.log(savedLang);
       
       if (latestScreen > currentScreen) {
         setLatestScreenDone(latestScreen);
@@ -66,6 +68,7 @@ const Class1x1x1 = ({route}) => {
           currentScreen={currentScreen}
           comeBack={comeBack}
           allScreensNum={allScreensNum}
+          savedLang={route.params.savedLang}
           />
         </View>
     </View>

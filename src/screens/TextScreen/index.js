@@ -57,6 +57,8 @@ const TextScreen = ({route}) => {
   const [documentIdPoints, setDocumentIdPoints] = useState('tempid');
   const [displayedPoints, setDisplayedPoints] = useState(0);
   const [appState, setAppState] = useState(AppState.currentState);
+  const [ptsText, setPtsText] = useState('pts');
+  const [streakText, setStreakText] = useState('streak')
 
   const interpolatedValueForX = useRef(new Animated.Value(0)).current;
   const pointsRotation = useRef(new Animated.Value(0)).current;
@@ -252,6 +254,29 @@ const TextScreen = ({route}) => {
             setExpressions(el.expressions);
         }
     })
+
+
+    if (route.params.language === 'PL') {
+      setPtsText('pkt');
+      setStreakText('seria');
+    } else if (route.params.language === 'ES') {
+      setPtsText('pts');
+      setStreakText('racha');
+    } else if (route.params.language === 'DE') {
+      setPtsText('Pkt');
+      setStreakText('Serie');
+    }  else if (route.params.language === 'LT') {
+      setPtsText('tašk');
+      setStreakText('serija');
+    }  else if (route.params.language === 'UA') {
+      setPtsText('б');
+      setStreakText('серія');
+    }  else if (route.params.language === 'AR') {
+      setPtsText('نقاط');
+      setStreakText('سلسلة');
+    }
+
+
   }, [])
 
 
@@ -365,7 +390,7 @@ const TextScreen = ({route}) => {
 
                   <Text style={styles.bonusPointsText}> {displayedPoints} </Text>
               </Animated.View>
-              <Text style={styles.bonusPointsText}>pts</Text>
+              <Text style={styles.bonusPointsText}>{ptsText}</Text>
           </Animated.View>
 
 
@@ -374,7 +399,7 @@ const TextScreen = ({route}) => {
                       <Text style={styles.daysValText}>{daysInRowVal + 1} </Text>
                   </View>
                   <Image source={require('../../../assets/sun.png')}  style={styles.sunImg}/>
-                  <Text style={styles.daysValText}> streak</Text>
+                  <Text style={styles.daysValText}> {streakText}</Text>
           </Animated.View>
 
           <ScrollView style={styles.textMainContainer}>

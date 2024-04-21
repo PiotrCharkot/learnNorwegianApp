@@ -42,8 +42,8 @@ const GradientButton = (params) => {
         start={params.startGradient}
         end={params.endGradient}>
       
-        <TouchableOpacity style={styles.opacity} onPress={() => params.callbackFunc()}>
-            <Image style={{ height: params.heightIcon, width: params.widthIcon, tintColor: params.colorIcon ? params.colorIcon : null}} source={imgPath} />
+        <TouchableOpacity style={{...styles.opacity, paddingLeft: params.paddingLeft ? params.paddingLeft : 0, justifyContent: params.justify ? params.justify : 'center'}} onPress={() => params.callbackFunc()}>
+            <Image style={{ height: params.heightIcon, width: params.widthIcon, tintColor: params.colorIcon ? params.colorIcon : null, marginRight: params.marginR ? params.marginR : 0}} source={imgPath} />
             {params.noText ? null : <Text style={{...styles.text, color: params.colorText, fontSize: params.fontSize ? params.fontSize : 11}}>{params.text}</Text>}
         </TouchableOpacity>
       </LinearGradient>
@@ -65,7 +65,6 @@ const styles = StyleSheet.create({
     }, 
     opacity: {
         flexDirection: 'row',
-        justifyContent: 'center',
         alignItems: 'center',
         height: '100%',
         width: '100%',

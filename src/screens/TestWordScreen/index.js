@@ -76,6 +76,8 @@ const TestWordScreen = ({route}) => {
     const [lastIdentification, setLastIdentification] = useState(200);
     const [displayedPoints, setDisplayedPoints] = useState(0);
     const [appState, setAppState] = useState(AppState.currentState);
+    const [ptsText, setPtsText] = useState('pts');
+    const [streakText, setStreakText] = useState('streak')
     
     const docRef = doc(db, "usersWordsInfo", documentId);
     const docRefPoints = doc(db, "usersPoints", documentIdPoints);
@@ -424,26 +426,6 @@ const TestWordScreen = ({route}) => {
         openTime = new Date().getTime();
 
 
-        //let docId = uuid.v4();
-
-        // const setDataToFbPoints = async () => {
-        //     await setDoc(doc(db, 'usersPoints', docId), {
-        //         userRef: userId,
-        //         userName: userN,
-        //         totalPoints: 0,
-        //         weeklyPoints: 0,
-        //         dailyPoints: 0,
-        //         daysInRow: 0,
-        //         lastUpdate: new Date().toLocaleDateString(),
-        //         userIsPro: false,
-        //     });
-
-
-        //     setDocumentIdPoints(docId);
-        //     setLastUpdateVal(new Date().toLocaleDateString());
-            
-        // }
-
 
         const getDataFb = async () => {
 
@@ -519,18 +501,30 @@ const TestWordScreen = ({route}) => {
 
         if (savedLang === 'PL') {
             setBtnTxt('Pol');
+            setPtsText('pkt');
+            setStreakText('seria');
         } else if (savedLang === 'ES') {
             setBtnTxt('Spa')
+            setPtsText('pts');
+            setStreakText('racha');
         } else if (savedLang === 'EN') {
-            setBtnTxt('Eng')
+            setBtnTxt('Eng');
         } else if (savedLang === 'DE') {
-            setBtnTxt('Ger')
+            setBtnTxt('Ger');
+            setPtsText('Pkt');
+            setStreakText('Serie');
         }  else if (savedLang === 'LT') {
-            setBtnTxt('Lit')
+            setBtnTxt('Lit');
+            setPtsText('tašk');
+            setStreakText('serija');
         }  else if (savedLang === 'UA') {
-            setBtnTxt('Ukr')
+            setBtnTxt('Ukr');
+            setPtsText('б');
+            setStreakText('серія');
         }  else if (savedLang === 'AR') {
-            setBtnTxt('Ara')
+            setBtnTxt('Ara');
+            setPtsText('نقاط');
+            setStreakText('سلسلة');
         } 
 
         getDataFb();
@@ -724,7 +718,7 @@ const TestWordScreen = ({route}) => {
 
                     <Text style={styles.bonusPointsText}> {displayedPoints} </Text>
                 </Animated.View>
-                <Text style={styles.bonusPointsText}>pts</Text>
+                <Text style={styles.bonusPointsText}>{ptsText}</Text>
             </Animated.View>
 
 
@@ -733,7 +727,7 @@ const TestWordScreen = ({route}) => {
                         <Text style={styles.daysValText}>{daysInRowVal + 1} </Text>
                     </View>
                     <Image source={require('../../../assets/sun.png')}  style={styles.sunImg}/>
-                    <Text style={styles.daysValText}> streak</Text>
+                    <Text style={styles.daysValText}> {streakText}</Text>
             </Animated.View>
 
 

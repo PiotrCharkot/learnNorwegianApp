@@ -64,6 +64,8 @@ const LearnWordScreen = ({route}) => {
     const [documentIdPoints, setDocumentIdPoints] = useState('tempid');
     const [displayedPoints, setDisplayedPoints] = useState(0);
     const [appState, setAppState] = useState(AppState.currentState);
+    const [ptsText, setPtsText] = useState('pts');
+    const [streakText, setStreakText] = useState('streak')
     
     
     const docRefPoints = doc(db, "usersPoints", documentIdPoints);
@@ -192,25 +194,6 @@ const LearnWordScreen = ({route}) => {
 
         openTime = new Date().getTime();
 
-        //let docId = uuid.v4();
-
-        // const setDataToFbPoints = async () => {
-        //     await setDoc(doc(db, 'usersPoints', docId), {
-        //         userRef: userId,
-        //         userName: userN,
-        //         totalPoints: 0,
-        //         weeklyPoints: 0,
-        //         dailyPoints: 0,
-        //         daysInRow: 0,
-        //         lastUpdate: new Date().toLocaleDateString(),
-        //         userIsPro: false,
-        //     });
-
-
-        //     setDocumentIdPoints(docId);
-        //     setLastUpdateVal(new Date().toLocaleDateString());
-            
-        // }
 
         const getDataFb = async () => {
 
@@ -261,6 +244,26 @@ const LearnWordScreen = ({route}) => {
         }
 
         getDataFb();
+
+        if (savedLang === 'PL') {
+            setPtsText('pkt');
+            setStreakText('seria');
+        } else if (savedLang === 'ES') {
+            setPtsText('pts');
+            setStreakText('racha');
+        } else if (savedLang === 'DE') {
+            setPtsText('Pkt');
+            setStreakText('Serie');
+        }  else if (savedLang === 'LT') {
+            setPtsText('tašk');
+            setStreakText('serija');
+        }  else if (savedLang === 'UA') {
+            setPtsText('б');
+            setStreakText('серія');
+        }  else if (savedLang === 'AR') {
+            setPtsText('نقاط');
+            setStreakText('سلسلة');
+        }
 
 
         return () => {
@@ -352,7 +355,7 @@ const LearnWordScreen = ({route}) => {
 
                         <Text style={styles.bonusPointsText}> {displayedPoints} </Text>
                     </Animated.View>
-                    <Text style={styles.bonusPointsText}>pts</Text>
+                    <Text style={styles.bonusPointsText}>{ptsText}</Text>
                 </Animated.View>
 
 
@@ -361,7 +364,7 @@ const LearnWordScreen = ({route}) => {
                             <Text style={styles.daysValText}>{daysInRowVal + 1} </Text>
                         </View>
                         <Image source={require('../../../assets/sun.png')}  style={styles.sunImg}/>
-                        <Text style={styles.daysValText}> streak</Text>
+                        <Text style={styles.daysValText}> {streakText}</Text>
                 </Animated.View>
                 
                 {showContent ? (

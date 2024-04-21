@@ -8,7 +8,7 @@ import { LinearGradient } from 'expo-linear-gradient';
 import GradientButton from '../../components/buttons/GradientButton';
 import styles from './style';
 
-const NewPasswordScreen = () => {
+const NewPasswordScreen = ({route}) => {
 
 
     const auth = getAuth();
@@ -16,6 +16,8 @@ const NewPasswordScreen = () => {
     const user = auth.currentUser;
     
     const navigation = useNavigation();
+
+    const {choosenLanguage} = route.params;
 
     const screenWidth = Dimensions.get("window").width;
     const interpolatedValue = useRef(new Animated.Value(0)).current;
@@ -25,6 +27,10 @@ const NewPasswordScreen = () => {
     const [imageLink, setImageLink] = useState(require('../../../assets/fingerprint.png'));
     const [password, setPassword] = useState("");
     const [messageText, setMessageText] = useState("Looks like an unknown error");
+    const [placeholderText, setPlaceholderText] = useState('your new password');
+    const [errorMessage1, setErrorMessage1] = useState("We noticed you skipped the password field. Please enter your password to proceed");
+    const [errorMessage2, setErrorMessage2] = useState("Your password needs to be between 6 and 50 characters long");
+    const [errorMessage3, setErrorMessage3] = useState("Please enter new password to continue");
 
     const maxLengthPassword = 50;
     
@@ -135,7 +141,7 @@ const updatePass = () => {
             
             } else if (errorCode === 'auth/missing-password') {
                 
-                setMessageText('We noticed you skipped the password field. Please enter your password to proceed.');
+                setMessageText(errorMessage1);
                 
                 Animated.spring(messageContainerPos, {
                     toValue: 0,
@@ -146,7 +152,7 @@ const updatePass = () => {
                 
             } else if (errorCode === 'auth/weak-password') {
                 
-                setMessageText('Your password needs to be between 6 and 50 characters long');
+                setMessageText(errorMessage2);
                 
                 Animated.spring(messageContainerPos, {
                     toValue: 0,
@@ -161,7 +167,7 @@ const updatePass = () => {
         
         });
     } else {
-        setMessageText('Please enter new password to continue');
+        setMessageText(errorMessage3);
         Animated.spring(messageContainerPos, {
             toValue: 0,
             speed: 1,
@@ -186,6 +192,7 @@ const exitButton = (boolean) => {
         useNativeDriver: true,
     }).start();
 
+    hideMessage();
     closeScreenAnimation();
 
     setTimeout(() => {
@@ -212,6 +219,38 @@ useFocusEffect(
 useEffect(() => {
 
     openScreenAnimation();
+
+    if (choosenLanguage === 'PL') {
+        setPlaceholderText("twoje nowe hasło");
+        setErrorMessage1("Zauważyliśmy, że pominąłeś pole hasła. Proszę wpisz swoje hasło, aby kontynuować.");
+        setErrorMessage2("Twoje hasło musi mieć od 6 do 50 znaków.");
+        setErrorMessage3("Proszę wprowadzić nowe hasło, aby kontynuować.");
+    } else if (choosenLanguage === 'DE') {
+        setPlaceholderText("Ihr neues Passwort");
+        setErrorMessage1("Wir haben bemerkt, dass Sie das Passwortfeld übersprungen haben. Bitte geben Sie Ihr Passwort ein, um fortzufahren.");
+        setErrorMessage2("Ihr Passwort muss zwischen 6 und 50 Zeichen lang sein.");
+        setErrorMessage3("Bitte geben Sie ein neues Passwort ein, um fortzufahren.");
+    } else if (choosenLanguage === 'LT') {
+        setPlaceholderText("jūsų naujas slaptažodis");
+        setErrorMessage1("Pastebėjome, kad praleidote slaptažodžio lauką. Prašome įvesti savo slaptažodį, kad galėtumėte tęsti.");
+        setErrorMessage2("Jūsų slaptažodis turi būti nuo 6 iki 50 simbolių ilgio.");
+        setErrorMessage3("Prašome įvesti naują slaptažodį, kad tęstumėte.");
+    } else if (choosenLanguage === 'AR') {
+        setPlaceholderText("كلمة المرور الجديدة الخاصة بك");
+        setErrorMessage1("لاحظنا أنك تخطيت حقل كلمة السر. الرجاء إدخال كلمة السر للمتابعة");
+        setErrorMessage2("يجب أن تتراوح كلمة المرور الخاصة بك بين 6 و50 حرفًا");
+        setErrorMessage3("يرجى إدخال كلمة مرور جديدة للمتابعة");
+    } else if (choosenLanguage === 'UA') {
+        setPlaceholderText("ваш новий пароль");
+        setErrorMessage1("Ми помітили, що ви пропустили поле з паролем. Будь ласка, введіть свій пароль, щоб продовжити.");
+        setErrorMessage2("Ваш пароль повинен містити від 6 до 50 символів.");
+        setErrorMessage3("Будь ласка, введіть новий пароль, щоб продовжити.");
+    } else if (choosenLanguage === 'ES') {
+        setPlaceholderText("tu nueva contraseña");
+        setErrorMessage1("Hemos notado que saltaste el campo de la contraseña. Por favor, ingresa tu contraseña para continuar.");
+        setErrorMessage2("Tu contraseña debe tener entre 6 y 50 caracteres.");
+        setErrorMessage3("Por favor, ingresa una nueva contraseña para continuar.");
+    } 
    
 },[]);
 
@@ -241,7 +280,7 @@ useEffect(() => {
 
                             <Input 
                             style={styles.input}
-                            placeholder='your new password'
+                            placeholder={placeholderText}
                             inputContainerStyle={styles.inputContainerStyle}
                             maxLength={maxLengthPassword}
                             leftIcon={<Image style={styles.inputImg} source={require('../../../assets/padlock.png')}/>}

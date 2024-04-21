@@ -21,7 +21,8 @@ const usersAchivments = collection(db, 'usersAchivments');
 const ExitExcScreen = ({route}) => {
 
   const navigation = useNavigation();
-  const { userPoints, allPoints, dataMarkers } = route.params;
+  const { userPoints, allPoints, dataMarkers, savedLang } = route.params;
+
 
   let sixDaysAgo = new Date(new Date().setDate(new Date().getDate()-6)).toLocaleDateString();
   let fiveDaysAgo = new Date(new Date().setDate(new Date().getDate()-5)).toLocaleDateString();
@@ -47,8 +48,31 @@ const ExitExcScreen = ({route}) => {
   const [myDocumentId, setMyDocumentId] = useState('tempid');
   const [showLineOffset, setShowLineOffset] = useState(false);
   const [dayUp, setDayUp] = useState(false);
-  const [tempObj, setTempObj] = useState({})
-  const [allowChangesFb, setAllowChangesFb] = useState(false)
+  const [tempObj, setTempObj] = useState({});
+  const [allowChangesFb, setAllowChangesFb] = useState(false);
+  const [pointsText, setPointsText] = useState('points');
+  const [todaysScoreText, setTodaysScoreText] = useState('Today\'s score');
+  const [daysInRowText, setDaysInRowText] = useState(() => {
+    if (savedLang === 'PL') {
+      return 'dni z rzędu'
+    } else if (savedLang === 'DE') {
+      return 'Tage in Folge'
+    } else if (savedLang === 'LT') {
+      return 'dienos iš eilės'
+    } else if (savedLang === 'AR') {
+      return 'أيام متتالية'
+    } else if (savedLang === 'UA') {
+      return 'дні поспіль'
+    } else if (savedLang === 'ES') {
+      return 'días consecutivos'
+    } else if (savedLang === 'EN') {
+      return 'days in a row'
+    } 
+  });
+  const [day1, setDay1] = useState('day in a row');
+  const [manyDays, setManyDays] = useState('days in a row');
+  const [btnHomeText, setBtnHomeText] = useState('Home');
+  const [btnRankingText, setBtnRankingText] = useState('View rankings');
 
   const interpolatedValue = useRef(new Animated.Value(-180)).current;
   const interpolatedValueFlipFirst = useRef(new Animated.Value(0)).current;
@@ -243,6 +267,11 @@ const ExitExcScreen = ({route}) => {
             if (doc.data().lastUpdate !== today && doc.data().lastUpdate !== yesterday) {
               return 0;
             } else {
+              if (doc.data().daysInRow === 1) {
+                setDaysInRowText(day1);
+              } else {
+                setDaysInRowText(manyDays);
+              }
               return doc.data().daysInRow
             }
           })
@@ -314,6 +343,18 @@ const ExitExcScreen = ({route}) => {
 
       if (currentDailyScore < pointsToScore && currentDailyScore + userPoints >= pointsToScore) {
 
+        if (daysInRowVal + 1 === 1) {
+          setTimeout(() => {
+            
+            setDaysInRowText(day1);
+          }, 4100);
+        } else {
+          setTimeout(() => {
+            
+            setDaysInRowText(manyDays);
+          }, 4100);
+        }
+
         Animated.timing(interpolatedValueFlipFirst, {
           toValue: 90,
           duration: rotationTime,
@@ -337,7 +378,7 @@ const ExitExcScreen = ({route}) => {
       Animated.sequence([
         Animated.timing(lineOffset, {
           toValue: currentDailyScore - pointsToScore >= 0 ? 0 : currentDailyScore - pointsToScore,
-          duration: 100,
+          duration: 0,
           speed: 1,
           delay: 0,
           easing: Easing.bezier(.35,-0.01,.63,1),
@@ -400,7 +441,54 @@ const ExitExcScreen = ({route}) => {
   
 
 
+  useEffect(() => {
+    if (savedLang === 'PL') {
+      setPointsText('punkty');
+      setDay1('dzień z rzędu');
+      setManyDays('dni z rzędu');
+      setTodaysScoreText('Dzisiejszy wynik');
+      setBtnHomeText('Strona główna');
+      setBtnRankingText('Zobacz rankingi');
+    } else if (savedLang === 'DE') {
+      setPointsText('punkte');
+      setDay1('Tag in Folge');
+      setManyDays('Tage in Folge');
+      setTodaysScoreText('Heutiger Punktestand');
+      setBtnHomeText('Startseite');
+      setBtnRankingText('Rankings ansehen');
+    } else if (savedLang === 'LT') {
+      setPointsText('taškai');
+      setDay1('diena iš eilės');
+      setManyDays('dienos iš eilės');
+      setTodaysScoreText('Šiandienos rezultatas');
+      setBtnHomeText('Pagrindinis');
+      setBtnRankingText('Peržiūrėti reitingus');
+    } else if (savedLang === 'AR') {
+      setPointsText('نقاط');
+      setDay1('يوم متتالي');
+      setManyDays('أيام متتالية');
+      setTodaysScoreText('نتيجة اليوم');
+      setBtnHomeText('الرئيسية');
+      setBtnRankingText('عرض التصنيفات');
+    } else if (savedLang === 'UA') {
+      setPointsText('бали');
+      setDay1('день поспіль');
+      setManyDays('дні поспіль');
+      setTodaysScoreText('Сьогоднішній результат');
+      setBtnHomeText('Головна');
+      setBtnRankingText('Переглянути рейтинги');
+    } else if (savedLang === 'ES') {
+      setPointsText('puntos');
+      setDay1('día consecutivo');
+      setManyDays('días consecutivos');
+      setTodaysScoreText('Puntuación de hoy');
+      setBtnHomeText('Inicio');
+      setBtnRankingText('Ver clasificaciones');
+    } 
+  }, [])
 
+
+  
 
   const getTransform = (viewHeight, viewWidth, transValA, transValB, valX, valY) => {
       let transform = {
@@ -428,7 +516,7 @@ const ExitExcScreen = ({route}) => {
       <View style={styles.topView}>
         <View style={styles.topLeftView}>
           <Text style={styles.numbersTxt}>+ {userPoints}</Text>
-          <Text style={styles.resultsTxt}>points</Text>
+          <Text style={styles.resultsTxt}>{pointsText}</Text>
         </View>
         <View style={styles.topRightView}>
           <View >
@@ -440,7 +528,7 @@ const ExitExcScreen = ({route}) => {
               <Text style={styles.numbersTxt}>{daysInRowVal + 1}</Text>
             </Animated.View>
           </View>
-        <Text style={styles.resultsTxt}>days in a row</Text>
+        <Text style={styles.resultsTxt}>{daysInRowText}</Text>
         </View>
 
       </View>
@@ -499,7 +587,7 @@ const ExitExcScreen = ({route}) => {
           widthIcon={15}
           fontSize={16}
           noText={false}
-          text={' go to main'}
+          text={btnHomeText}
           colorText={'white'}
           startGradient={[1.0, 0.0]}
           endGradient={[1.0, 1.0]}
@@ -507,6 +595,7 @@ const ExitExcScreen = ({route}) => {
           borderTopLeftRadius={20} 
           borderBottomRightRadius={20} 
           borderBottomLeftRadius={20}
+          marginR={5}
           />
           </Animated.View>
           <Animated.View style={{...styles.buttonView, opacity: buttonOpacity}}>
@@ -522,14 +611,15 @@ const ExitExcScreen = ({route}) => {
           widthIcon={15}
           fontSize={16}
           noText={false}
-          text={' check rankings '}
+          text={btnRankingText}
           colorText={'white'}
           startGradient={[1.0, 0.0]}
           endGradient={[1.0, 1.0]}
           borderTopRightRadius={20} 
           borderTopLeftRadius={20} 
           borderBottomRightRadius={20} 
-          borderBottomLeftRadius={20} 
+          borderBottomLeftRadius={20}
+          marginR={5}
           />
           </Animated.View>
         </View>
@@ -544,7 +634,7 @@ const ExitExcScreen = ({route}) => {
           </View>
 
         </View>
-        <Text style={styles.todayScoreText}>Today score: {currentDailyScore + userPoints}</Text>
+        <Text style={styles.todayScoreText}>{todaysScoreText}: {currentDailyScore === 0 ? 0 : currentDailyScore + userPoints}</Text>
 
       </View>
       
