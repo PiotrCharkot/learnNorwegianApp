@@ -25,7 +25,7 @@ const dataForMarkers = {
 
 const Class1x3x12 = ({route}) => {  //name
 
-    const {userPoints, latestScreen, comeBackRoute, allScreensNum} = route.params
+    const {userPoints, latestScreen, comeBackRoute, allScreensNum, savedLang} = route.params
     
     
     const [isAnswerAChecked, setIsAnswerAChecked] = useState(false);
@@ -96,6 +96,7 @@ const Class1x3x12 = ({route}) => {  //name
           totalPoints={totalPoints}
           learningLastScreen={true}
           dataForMarkers={dataForMarkers}
+          savedLang={savedLang}
           />
         </View>
     </View>

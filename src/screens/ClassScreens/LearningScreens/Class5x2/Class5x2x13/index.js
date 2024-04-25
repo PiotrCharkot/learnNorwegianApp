@@ -30,7 +30,7 @@ const indexOfText = [0, 1, 2, 3, 4, 5, 7] // array with indexes of text
 
 const Class5x2x13 = ({ route }) => {  //screen name
 
-    const {userPoints, latestScreen, comeBackRoute, allScreensNum} = route.params
+    const {userPoints, latestScreen, comeBackRoute, allScreensNum, savedLang} = route.params
 
     const auth = getAuth();
     const user = auth.currentUser;
@@ -167,6 +167,7 @@ const Class5x2x13 = ({ route }) => {  //screen name
           learningLastScreen={true}
           totalPoints={totalPoints}
           dataForMarkers={dataForMarkers}
+          savedLang={savedLang}
           />
         </View>
     </View>

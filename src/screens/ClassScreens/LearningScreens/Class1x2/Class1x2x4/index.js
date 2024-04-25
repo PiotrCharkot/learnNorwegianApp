@@ -13,7 +13,7 @@ const currentScreen = 4;  //current screen
 const Class1x1x4 = ({route}) => { // name
 
   
-    const {userPoints,  latestScreen, comeBackRoute, allScreensNum} = route.params
+    const {userPoints,  latestScreen, comeBackRoute, allScreensNum, savedLang} = route.params
     
     const auth = getAuth();
     const user = auth.currentUser;    
@@ -74,6 +74,7 @@ const Class1x1x4 = ({route}) => { // name
           currentScreen={currentScreen}
           comeBack={comeBack}
           allScreensNum={allScreensNum}
+          savedLang={savedLang}
           />
         </View>
     </View>

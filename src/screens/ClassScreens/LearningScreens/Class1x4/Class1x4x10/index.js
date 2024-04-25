@@ -14,7 +14,7 @@ const screenWidth = Dimensions.get('window').width;
 const Class1x4x10 = ({route}) => { // name
 
   
-    const {userPoints,  latestScreen, comeBackRoute, allScreensNum} = route.params
+    const {userPoints,  latestScreen, comeBackRoute, allScreensNum, savedLang} = route.params
     
     
 
@@ -70,6 +70,7 @@ const Class1x4x10 = ({route}) => { // name
           currentScreen={currentScreen}
           comeBack={comeBack}
           allScreensNum={allScreensNum}
+          savedLang={savedLang}
           />
         </View>
     </View>

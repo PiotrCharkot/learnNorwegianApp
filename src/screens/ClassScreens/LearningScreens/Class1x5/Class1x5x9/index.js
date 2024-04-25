@@ -31,7 +31,7 @@ const wordsCorrect = [  // words in correct orders
 
 const Class1x5x9 = ({ route }) => { // name
 
-    const {userPoints, latestScreen, comeBackRoute, allScreensNum} = route.params
+    const {userPoints, latestScreen, comeBackRoute, allScreensNum, savedLang} = route.params
     
     
     const [movingDraggable, setMovingDraggable] = useState(null);
@@ -152,6 +152,7 @@ const Class1x5x9 = ({ route }) => { // name
         dataForMarkers={dataForMarkers}
         comeBack={comeBack}
         allScreensNum={allScreensNum}
+        savedLang={savedLang}
         />
       </View>
     </View>

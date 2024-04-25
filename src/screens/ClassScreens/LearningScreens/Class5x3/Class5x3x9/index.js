@@ -12,7 +12,7 @@ const currentScreen = 9;  //current screen
 const Class5x3x9 = ({route}) => { // name
 
   
-    const {userPoints,  latestScreen, comeBackRoute, allScreensNum} = route.params
+    const {userPoints,  latestScreen, comeBackRoute, allScreensNum, savedLang} = route.params
     
     
 
@@ -79,6 +79,7 @@ const Class5x3x9 = ({route}) => { // name
           currentScreen={currentScreen}
           comeBack={comeBack}
           allScreensNum={allScreensNum}
+          savedLang={savedLang}
           />
         </View>
     </View>

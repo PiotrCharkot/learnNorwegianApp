@@ -12,7 +12,7 @@ const currentScreen = 2; //screen number
 const Class5x2x2 = ({route}) => {  //screen name
 
   
-    const {userPoints,  latestScreen, comeBackRoute, allScreensNum} = route.params
+    const {userPoints,  latestScreen, comeBackRoute, allScreensNum, savedLang} = route.params
     
 
     const [currentPoints, setCurrentPoints] = useState(userPoints);
@@ -83,6 +83,7 @@ const Class5x2x2 = ({route}) => {  //screen name
           currentScreen={currentScreen}
           comeBack={comeBack}
           allScreensNum={allScreensNum}
+          savedLang={savedLang}
           />
         </View>
     </View>

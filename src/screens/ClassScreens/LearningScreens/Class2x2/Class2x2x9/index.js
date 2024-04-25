@@ -23,7 +23,7 @@ const wordsCorrect = [  // words in correct orders
 
 const Class2x2x9 = ({ route }) => { // name
 
-    const {userPoints, latestScreen, comeBackRoute, allScreensNum} = route.params
+    const {userPoints, latestScreen, comeBackRoute, allScreensNum, savedLang} = route.params
     
     
     const [movingDraggable, setMovingDraggable] = useState(null);
@@ -140,6 +140,7 @@ const Class2x2x9 = ({ route }) => { // name
         questionScreen={true}
         comeBack={comeBack}
         allScreensNum={allScreensNum}
+        savedLang={savedLang}
         />
       </View>
     </View>

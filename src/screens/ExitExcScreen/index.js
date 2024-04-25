@@ -634,7 +634,7 @@ const ExitExcScreen = ({route}) => {
           </View>
 
         </View>
-        <Text style={styles.todayScoreText}>{todaysScoreText}: {currentDailyScore === 0 ? 0 : currentDailyScore + userPoints}</Text>
+        <Text style={styles.todayScoreText}>{todaysScoreText}: {showLineOffset ? currentDailyScore + userPoints : 0}</Text>
 
       </View>
       

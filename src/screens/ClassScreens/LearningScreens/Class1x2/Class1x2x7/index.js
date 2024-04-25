@@ -16,7 +16,7 @@ const correctAnswers = [true, true, false, true];  //correct answer true or fals
 
 const Class1x2x7 = ({route}) => {  //name
 
-    const {userPoints, latestScreen, comeBackRoute, allScreensNum} = route.params
+    const {userPoints, latestScreen, comeBackRoute, allScreensNum, savedLang} = route.params
     
     
     const [isAnswerAChecked, setIsAnswerAChecked] = useState(false);
@@ -85,6 +85,7 @@ const Class1x2x7 = ({route}) => {  //name
           questionScreen={true}
           comeBack={comeBack}
           allScreensNum={allScreensNum}
+          savedLang={savedLang}
           />
         </View>
     </View>

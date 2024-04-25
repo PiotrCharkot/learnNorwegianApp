@@ -18,7 +18,7 @@ const Class2x3x8 = ({ route }) => { //name
     const auth = getAuth();
     const user = auth.currentUser;
 
-    const {userPoints, latestScreen, comeBackRoute, allScreensNum} = route.params
+    const {userPoints, latestScreen, comeBackRoute, allScreensNum, savedLang} = route.params
     
     
     const [currentPoints, setCurrentPoints] = useState(userPoints);
@@ -85,6 +85,7 @@ const Class2x3x8 = ({ route }) => { //name
             currentScreen={currentScreen}
             comeBack={comeBack}
             allScreensNum={allScreensNum}
+            savedLang={savedLang}
             />
         </View>
     </View>

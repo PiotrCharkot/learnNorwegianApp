@@ -36,7 +36,7 @@ const Class4x5x9 = ({ route }) => { // name
     const auth = getAuth();
     const user = auth.currentUser;
 
-    const {userPoints, latestScreen, comeBackRoute, allScreensNum} = route.params
+    const {userPoints, latestScreen, comeBackRoute, allScreensNum, savedLang} = route.params
     
     
     const [movingDraggable, setMovingDraggable] = useState(null);
@@ -156,6 +156,7 @@ const Class4x5x9 = ({ route }) => { // name
         learningLastScreen={true}
         totalPoints={totalPoints}
         dataForMarkers={dataForMarkers}
+        savedLang={savedLang}
         />
       </View>
     </View>

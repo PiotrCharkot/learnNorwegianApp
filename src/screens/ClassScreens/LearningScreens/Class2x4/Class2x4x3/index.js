@@ -12,7 +12,7 @@ const currentScreen = 3;
 const Class2x4x3 = ({route}) => {
 
   
-    const {userPoints,  latestScreen, comeBackRoute, allScreensNum} = route.params
+    const {userPoints,  latestScreen, comeBackRoute, allScreensNum, savedLang} = route.params
     
 
     const [currentPoints, setCurrentPoints] = useState(userPoints);
@@ -73,6 +73,7 @@ const Class2x4x3 = ({route}) => {
             currentScreen={currentScreen}
             comeBack={comeBack}
             allScreensNum={allScreensNum}
+            savedLang={savedLang}
             />
         </View>
     </View>

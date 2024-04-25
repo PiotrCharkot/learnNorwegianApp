@@ -277,8 +277,8 @@ const SettingsScreen = ({route}) => {
             <Text style={styles.buttonText}>{buttonsLabelArray[9]}</Text>
           </TouchableOpacity>
 
-          <TouchableOpacity style={styles.btnOpacity} >
-          <Image source={require('../../../assets/terms.png')}  style={{...styles.buttonImg, tintColor: 'grey'}}/>
+          <TouchableOpacity style={styles.btnOpacity} onPress={() => navigation.navigate({name: 'Terms', params: {choosenLanguage: choosenLanguage}})}>
+          <Image source={require('../../../assets/terms.png')} style={{...styles.buttonImg, tintColor: 'grey'}}/>
             <Text style={styles.buttonText}>{buttonsLabelArray[10]}</Text>
           </TouchableOpacity>
 

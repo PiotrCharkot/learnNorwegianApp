@@ -28,7 +28,7 @@ const dataForMarkers = {
 
 const Class4x4x10 = ({ route }) => {  //screen name
 
-    const {userPoints, latestScreen, comeBackRoute, allScreensNum} = route.params
+    const {userPoints, latestScreen, comeBackRoute, allScreensNum, savedLang} = route.params
 
     const auth = getAuth();
     const user = auth.currentUser;
@@ -165,6 +165,7 @@ const Class4x4x10 = ({ route }) => {  //screen name
           learningLastScreen={true}
           totalPoints={totalPoints}
           dataForMarkers={dataForMarkers}
+          savedLang={savedLang}
           />
         </View>
     </View>

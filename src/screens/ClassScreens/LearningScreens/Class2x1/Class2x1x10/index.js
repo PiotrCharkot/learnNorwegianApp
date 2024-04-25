@@ -20,7 +20,7 @@ const indexOfText = [0, 1, 3] // array with indexes of text
 
 const Class2x1x10 = ({ route }) => {  //screen name
 
-    const {userPoints, latestScreen, comeBackRoute, allScreensNum} = route.params
+    const {userPoints, latestScreen, comeBackRoute, allScreensNum, savedLang} = route.params
     
     const [movingDraggable, setMovingDraggable] = useState(null);
     const [releaseDraggable, setReleaseDraggable] = useState(null);
@@ -151,6 +151,7 @@ const Class2x1x10 = ({ route }) => {  //screen name
         questionScreen={true}
         comeBack={comeBack}
         allScreensNum={allScreensNum}
+        savedLang={savedLang}
         />
       </View>
     </View>

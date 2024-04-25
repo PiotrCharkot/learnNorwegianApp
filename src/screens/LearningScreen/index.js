@@ -7,6 +7,7 @@ import { collection, getDocs, query, where, doc, setDoc, updateDoc, deleteDoc } 
 import { db } from '../../../firebase/firebase-config'
 import { authentication } from '../../../firebase/firebase-config';
 import { onAuthStateChanged  } from 'firebase/auth';
+import { Audio } from 'expo-av';
 import * as SecureStore from 'expo-secure-store';
 import uuid from 'react-native-uuid';
 import styles from './style';
@@ -50,6 +51,12 @@ const LearningScreen = () => {
   const scrollX6 = useRef(new Animated.Value(0)).current;
   const overlayOpacity = useRef(new Animated.Value(1)).current;
   const overlayOffset = useRef(new Animated.Value(0)).current;
+  const lastPlayedAtRef = useRef(0);
+  const lastPlayedAtRef2 = useRef(0);
+  const lastPlayedAtRef3 = useRef(0);
+  const lastPlayedAtRef4 = useRef(0);
+  const lastPlayedAtRef5 = useRef(0);
+  const lastPlayedAtRef6 = useRef(0);
 
   const [userId, setUserId] = useState('userId');
   const [dataFlatList, setDataFlatList] = useState([]);
@@ -62,6 +69,7 @@ const LearningScreen = () => {
   const [readingBtnTxt, setReadingButtonTxt] = useState('Reading Hub');
   const [choosenLanguage, setChoosenLanguage] = useState('EN');
   const [isSoundOn, setIsSoundOn] = useState(true);
+  const [sound, setSound] = useState();
 
   const opacityImgBlur = scrollY.interpolate({
     inputRange: [0, 60],
@@ -231,35 +239,28 @@ const LearningScreen = () => {
   );
 
 
-  // const setDataToFb = async () => {
+  useEffect(() => {
+    const loadSound = async () => {
+      console.log('Loading Sound');
+      const { sound } = await Audio.Sound.createAsync(
+        require('./../../../assets/sounds/tick.mp3')
+      );
+      setSound(sound);
+    };
 
-  //   let docId = uuid.v4();
+    loadSound();
+
+    return () => {
+      sound?.unloadAsync();
+    };
+  }, []);
 
 
-  //   await setDoc(doc(db, 'usersAchivments', docId), {
-  //     userRef: userId,
-  //     learning: {
-  //       section1: [0,0,0,0,0,0],
-  //       section2: [0,0,0,0,0],
-  //       section3: [0,0,0,0,0],
-  //       section4: [0,0,0,0,0],
-  //       section5: [0,0,0,0,0],
-  //       section6: [0,0,0,0,0],
-  //     },
-  //     exercise: {
-  //       section1: [0,0,0,0,0],
-  //       section2: [0,0,0,0,0],
-  //       section3: [0,0,0,0,0],
-  //       section4: [0,0,0,0,0],
-  //       section5: [0,0,0,0,0],
-  //       section6: [0,0,0,0,0],
-  //     },
-  //     gold: 0,
-  //     silver: 0,
-  //     bronze: 0,
+  const playSound = async () => {
+    await sound?.replayAsync(); 
+  };
 
-  //   });
-  // }
+
 
 
   const getDataFb = async () => {
@@ -316,6 +317,31 @@ const LearningScreen = () => {
     });
 
   }
+
+
+
+  const handleScroll = (event) => {
+    // First, process the animated event
+    Animated.event(
+      [{ nativeEvent: { contentOffset: { x: scrollX } } }],
+      { useNativeDriver: false }
+    )(event); // Manually invoke the animated event handler
+
+    // Then, add your logic for playing sound at certain scroll positions
+    const x = event.nativeEvent.contentOffset.x; // Get the current horizontal scroll position
+    const threshold = cardSize * 0.5; // Define your threshold here
+
+    // Calculate the absolute difference from the last played position
+    const diff = Math.abs(x - lastPlayedAtRef.current);
+
+    if (diff >= threshold && isSoundOn) {
+      playSound();
+      // Update the last played position to the current, adjusted for multiples of 200
+      // This adjustment ensures correct behavior in both forward and backward scrolling
+      lastPlayedAtRef.current = x - (x % threshold) + (x > lastPlayedAtRef.current ? threshold : 0);
+    }
+  };
+
 
 
 
@@ -384,7 +410,8 @@ const LearningScreen = () => {
       link={item.link} 
       showPro={item.showPro}
       colorSmallSqu={colorSqu}
-      stars={item.stars}/>
+      stars={item.stars}
+      savedLang={choosenLanguage}/>
     </Animated.View>
   }
 
@@ -418,7 +445,8 @@ const LearningScreen = () => {
       link={item.link} 
       showPro={item.showPro}
       colorSmallSqu={colorSqu}
-      stars={item.stars}/>
+      stars={item.stars}
+      savedLang={choosenLanguage}/>
     </Animated.View>
   }
 
@@ -452,7 +480,8 @@ const LearningScreen = () => {
       link={item.link} 
       showPro={item.showPro}
       colorSmallSqu={colorSqu}
-      stars={item.stars}/>
+      stars={item.stars}
+      savedLang={choosenLanguage}/>
     </Animated.View>
   }
 
@@ -486,7 +515,8 @@ const LearningScreen = () => {
       link={item.link} 
       showPro={item.showPro}
       colorSmallSqu={colorSqu}
-      stars={item.stars}/>
+      stars={item.stars}
+      savedLang={choosenLanguage}/>
     </Animated.View>
   }
 
@@ -522,7 +552,8 @@ const LearningScreen = () => {
       link={item.link} 
       showPro={item.showPro}
       colorSmallSqu={colorSqu}
-      stars={item.stars}/>
+      stars={item.stars}
+      savedLang={choosenLanguage}/>
     </Animated.View>
   }
 
@@ -586,10 +617,7 @@ const LearningScreen = () => {
             data={dataFlatList}
             renderItem={renderCard}
             keyExtractor={(item) => item.key}
-            onScroll={Animated.event(
-              [{nativeEvent: {contentOffset: {x: scrollX}}}],
-              {useNativeDriver: false}
-            )}
+            onScroll={handleScroll}
             scrollEventThrottle={16}
           />
 

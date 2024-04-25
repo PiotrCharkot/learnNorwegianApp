@@ -19,7 +19,7 @@ const correctAnswers = [false, false, false, true];  //correct answer true or fa
 
 const Class4x2x7 = ({route}) => {  //name
 
-    const {userPoints, latestScreen, comeBackRoute, allScreensNum} = route.params
+    const {userPoints, latestScreen, comeBackRoute, allScreensNum, savedLang} = route.params
     
     const auth = getAuth();
     const user = auth.currentUser;
@@ -89,6 +89,7 @@ const Class4x2x7 = ({route}) => {  //name
           questionScreen={true}
           comeBack={comeBack}
           allScreensNum={allScreensNum}
+          savedLang={savedLang}
           />
         </View>
     </View>

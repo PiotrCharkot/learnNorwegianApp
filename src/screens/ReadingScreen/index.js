@@ -44,6 +44,11 @@ const ReadingScreen = () => {
   const overlayOffset = useRef(new Animated.Value(0)).current;
   const interpolatedValueForX = useRef(new Animated.Value(0)).current;
   const lastPlayedAtRef = useRef(0);
+  const lastPlayedAtRef2 = useRef(0);
+  const lastPlayedAtRef3 = useRef(0);
+  const lastPlayedAtRef4 = useRef(0);
+  const lastPlayedAtRef5 = useRef(0);
+  const lastPlayedAtRef6 = useRef(0);
   
   const [choosenLanguage, setChoosenLanguage] = useState('EN');
   const [languageListOpen, setLanguageListOpen] = useState(false);
@@ -255,6 +260,128 @@ const ReadingScreen = () => {
 
 
 
+  const handleScroll2 = (event) => {
+    // First, process the animated event
+    Animated.event(
+      [{ nativeEvent: { contentOffset: { x: scrollX2 } } }],
+      { useNativeDriver: false }
+    )(event); // Manually invoke the animated event handler
+
+    // Then, add your logic for playing sound at certain scroll positions
+    const x = event.nativeEvent.contentOffset.x; // Get the current horizontal scroll position
+    const threshold = cardSize * 0.5; // Define your threshold here
+
+    // Calculate the absolute difference from the last played position
+    const diff = Math.abs(x - lastPlayedAtRef2.current);
+
+    if (diff >= threshold) {
+      playSound();
+      // Update the last played position to the current, adjusted for multiples of 200
+      // This adjustment ensures correct behavior in both forward and backward scrolling
+      lastPlayedAtRef2.current = x - (x % threshold) + (x > lastPlayedAtRef2.current ? threshold : 0);
+    }
+  };
+  
+
+
+  const handleScroll3 = (event) => {
+    // First, process the animated event
+    Animated.event(
+      [{ nativeEvent: { contentOffset: { x: scrollX3 } } }],
+      { useNativeDriver: false }
+    )(event); // Manually invoke the animated event handler
+
+    // Then, add your logic for playing sound at certain scroll positions
+    const x = event.nativeEvent.contentOffset.x; // Get the current horizontal scroll position
+    const threshold = cardSize * 0.5; // Define your threshold here
+
+    // Calculate the absolute difference from the last played position
+    const diff = Math.abs(x - lastPlayedAtRef3.current);
+
+    if (diff >= threshold) {
+      playSound();
+      // Update the last played position to the current, adjusted for multiples of 200
+      // This adjustment ensures correct behavior in both forward and backward scrolling
+      lastPlayedAtRef3.current = x - (x % threshold) + (x > lastPlayedAtRef3.current ? threshold : 0);
+    }
+  };
+  
+
+
+  const handleScroll4 = (event) => {
+    // First, process the animated event
+    Animated.event(
+      [{ nativeEvent: { contentOffset: { x: scrollX4 } } }],
+      { useNativeDriver: false }
+    )(event); // Manually invoke the animated event handler
+
+    // Then, add your logic for playing sound at certain scroll positions
+    const x = event.nativeEvent.contentOffset.x; // Get the current horizontal scroll position
+    const threshold = cardSize * 0.5; // Define your threshold here
+
+    // Calculate the absolute difference from the last played position
+    const diff = Math.abs(x - lastPlayedAtRef4.current);
+
+    if (diff >= threshold) {
+      playSound();
+      // Update the last played position to the current, adjusted for multiples of 200
+      // This adjustment ensures correct behavior in both forward and backward scrolling
+      lastPlayedAtRef4.current = x - (x % threshold) + (x > lastPlayedAtRef4.current ? threshold : 0);
+    }
+  };
+
+  
+
+
+  const handleScroll5 = (event) => {
+    // First, process the animated event
+    Animated.event(
+      [{ nativeEvent: { contentOffset: { x: scrollX5 } } }],
+      { useNativeDriver: false }
+    )(event); // Manually invoke the animated event handler
+
+    // Then, add your logic for playing sound at certain scroll positions
+    const x = event.nativeEvent.contentOffset.x; // Get the current horizontal scroll position
+    const threshold = cardSize * 0.5; // Define your threshold here
+
+    // Calculate the absolute difference from the last played position
+    const diff = Math.abs(x - lastPlayedAtRef5.current);
+
+    if (diff >= threshold) {
+      playSound();
+      // Update the last played position to the current, adjusted for multiples of 200
+      // This adjustment ensures correct behavior in both forward and backward scrolling
+      lastPlayedAtRef5.current = x - (x % threshold) + (x > lastPlayedAtRef5.current ? threshold : 0);
+    }
+  };
+
+
+  
+
+
+  const handleScroll6 = (event) => {
+    // First, process the animated event
+    Animated.event(
+      [{ nativeEvent: { contentOffset: { x: scrollX6 } } }],
+      { useNativeDriver: false }
+    )(event); // Manually invoke the animated event handler
+
+    // Then, add your logic for playing sound at certain scroll positions
+    const x = event.nativeEvent.contentOffset.x; // Get the current horizontal scroll position
+    const threshold = cardSize * 0.5; // Define your threshold here
+
+    // Calculate the absolute difference from the last played position
+    const diff = Math.abs(x - lastPlayedAtRef6.current);
+
+    if (diff >= threshold) {
+      playSound();
+      // Update the last played position to the current, adjusted for multiples of 200
+      // This adjustment ensures correct behavior in both forward and backward scrolling
+      lastPlayedAtRef6.current = x - (x % threshold) + (x > lastPlayedAtRef6.current ? threshold : 0);
+    }
+  };
+
+
   const getTransform = (viewHeight, viewWidth, transValA, transValB, valX, valY) => {
     let transform = {
         transform: [{ perspective: 400 }, transValA, transValB],
@@ -371,11 +498,6 @@ const ReadingScreen = () => {
     })
 
 
-    const translateY1 = scrollX.interpolate({
-      inputRange,
-      outputRange: [0, -50, 0]
-    })
-
     return <Animated.View style={{transform: [{perspective: 3000}, {rotateY: rotateVal}, {scaleY: scaleVal}]}}>
 
       <CardReading title={item.title} textId={item.textId} level={item.level} language={choosenLanguage}/>
@@ -395,12 +517,20 @@ const ReadingScreen = () => {
       index  * cardSize,
     ];
 
-    const translateY2 = scrollX2.interpolate({
+
+    const rotateVal = scrollX2.interpolate({
       inputRange,
-      outputRange: [0, -50, 0]
+      outputRange: ["55deg", "0deg", "-55deg"]
     })
 
-    return <Animated.View style={{transform: [{translateY: translateY2}]}}>
+
+    const scaleVal = scrollX2.interpolate({
+      inputRange,
+      outputRange: [0.92, 1, 0.92]
+    })
+
+
+    return <Animated.View style={{transform: [{perspective: 3000}, {rotateY: rotateVal}, {scaleY: scaleVal}]}}>
 
       <CardReading title={item.title} textId={item.textId} level={item.level} language={choosenLanguage} />
     </Animated.View>
@@ -419,12 +549,19 @@ const ReadingScreen = () => {
       index  * cardSize,
     ];
 
-    const translateY3 = scrollX3.interpolate({
+    const rotateVal = scrollX3.interpolate({
       inputRange,
-      outputRange: [0, -50, 0]
+      outputRange: ["55deg", "0deg", "-55deg"]
     })
 
-    return <Animated.View style={{transform: [{translateY: translateY3}]}}>
+
+    const scaleVal = scrollX3.interpolate({
+      inputRange,
+      outputRange: [0.92, 1, 0.92]
+    })
+
+
+    return <Animated.View style={{transform: [{perspective: 3000}, {rotateY: rotateVal}, {scaleY: scaleVal}]}}>
 
       <CardReading title={item.title} textId={item.textId} level={item.level} language={choosenLanguage} />
     </Animated.View>
@@ -443,12 +580,18 @@ const ReadingScreen = () => {
       index  * cardSize,
     ];
 
-    const translateY4 = scrollX4.interpolate({
+    const rotateVal = scrollX4.interpolate({
       inputRange,
-      outputRange: [0, -50, 0]
+      outputRange: ["55deg", "0deg", "-55deg"]
     })
 
-    return <Animated.View style={{transform: [{translateY: translateY4}]}}>
+
+    const scaleVal = scrollX4.interpolate({
+      inputRange,
+      outputRange: [0.92, 1, 0.92]
+    })
+
+    return <Animated.View style={{transform: [{perspective: 3000}, {rotateY: rotateVal}, {scaleY: scaleVal}]}}>
 
       <CardReading title={item.title} textId={item.textId} level={item.level} language={choosenLanguage} />
     </Animated.View>
@@ -467,12 +610,18 @@ const ReadingScreen = () => {
       index  * cardSize,
     ];
 
-    const translateY5 = scrollX5.interpolate({
+    const rotateVal = scrollX5.interpolate({
       inputRange,
-      outputRange: [0, -50, 0]
+      outputRange: ["55deg", "0deg", "-55deg"]
     })
 
-    return <Animated.View style={{transform: [{translateY: translateY5}]}}>
+
+    const scaleVal = scrollX5.interpolate({
+      inputRange,
+      outputRange: [0.92, 1, 0.92]
+    })
+
+    return <Animated.View style={{transform: [{perspective: 3000}, {rotateY: rotateVal}, {scaleY: scaleVal}]}}>
 
       <CardReading title={item.title} textId={item.textId} level={item.level} language={choosenLanguage} />
     </Animated.View>
@@ -491,12 +640,18 @@ const ReadingScreen = () => {
       index  * cardSize,
     ];
 
-    const translateY6 = scrollX6.interpolate({
+    const rotateVal = scrollX6.interpolate({
       inputRange,
-      outputRange: [0, -50, 0]
+      outputRange: ["55deg", "0deg", "-55deg"]
     })
 
-    return <Animated.View style={{transform: [{translateY: translateY6}]}}>
+
+    const scaleVal = scrollX6.interpolate({
+      inputRange,
+      outputRange: [0.92, 1, 0.92]
+    })
+
+    return <Animated.View style={{transform: [{perspective: 3000}, {rotateY: rotateVal}, {scaleY: scaleVal}]}}>
 
       <CardReading title={item.title} textId={item.textId} level={item.level} language={choosenLanguage} />
     </Animated.View>
@@ -581,10 +736,7 @@ const ReadingScreen = () => {
             data={dataFlatList2}
             renderItem={renderCard2}
             keyExtractor={(item) => item.key}
-            onScroll={Animated.event(
-              [{nativeEvent: {contentOffset: {x: scrollX2}}}],
-              {useNativeDriver: false}
-              )}
+            onScroll={handleScroll2}
             scrollEventThrottle={16}
           />
 
@@ -607,10 +759,7 @@ const ReadingScreen = () => {
             data={dataFlatList3}
             renderItem={renderCard3}
             keyExtractor={(item) => item.key}
-            onScroll={Animated.event(
-              [{nativeEvent: {contentOffset: {x: scrollX3}}}],
-              {useNativeDriver: false}
-              )}
+            onScroll={handleScroll3}
             scrollEventThrottle={16}
           />
 
@@ -633,10 +782,7 @@ const ReadingScreen = () => {
             data={dataFlatList4}
             renderItem={renderCard4}
             keyExtractor={(item) => item.key}
-            onScroll={Animated.event(
-              [{nativeEvent: {contentOffset: {x: scrollX4}}}],
-              {useNativeDriver: false}
-              )}
+            onScroll={handleScroll4}
             scrollEventThrottle={16}
           />
 
@@ -659,10 +805,7 @@ const ReadingScreen = () => {
             data={dataFlatList5}
             renderItem={renderCard5}
             keyExtractor={(item) => item.key}
-            onScroll={Animated.event(
-              [{nativeEvent: {contentOffset: {x: scrollX5}}}],
-              {useNativeDriver: false}
-              )}
+            onScroll={handleScroll5}
             scrollEventThrottle={16}
           />
 
@@ -686,10 +829,7 @@ const ReadingScreen = () => {
             data={dataFlatList6}
             renderItem={renderCard6}
             keyExtractor={(item) => item.key}
-            onScroll={Animated.event(
-              [{nativeEvent: {contentOffset: {x: scrollX6}}}],
-              {useNativeDriver: false}
-              )}
+            onScroll={handleScroll6}
             scrollEventThrottle={16}
           />
 
