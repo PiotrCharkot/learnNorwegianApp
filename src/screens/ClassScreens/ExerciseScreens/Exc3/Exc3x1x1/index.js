@@ -80,14 +80,14 @@ const Exc3x1x1 = ({ route }) => {
         console.log('my lang', savedLang);
         
         if (latestScreen > currentScreen) {
-            setLatestScreenAnswered(latestAnswered);
-            setLatestScreenDone(latestScreen);
-            setComeBack(true);
+          setLatestScreenAnswered(latestAnswered);
+          setLatestScreenDone(latestScreen);
+          setComeBack(true);
         }
 
         if (route.params.userPoints > 0) {
-            console.log('setting new points', route.params.userPoints );
-            setCurrentPoints(userPoints)
+          
+          setCurrentPoints(userPoints)
         }
 
         
@@ -117,7 +117,7 @@ const Exc3x1x1 = ({ route }) => {
       let parsedData = Object.keys(route.params.data).length === 0 ? {} : JSON.parse(route.params.data) 
       let dataForExercise = Object.keys(route.params.data).length === 0 ? type9sentence : parsedData.sounds.type9;
 
-      console.log('data for exrcises', dataForExercise);
+      
       
       let tempArr = []; 
       let alreadyUsed = [];

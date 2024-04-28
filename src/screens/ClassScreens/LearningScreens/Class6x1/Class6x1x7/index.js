@@ -21,7 +21,7 @@ const indexOfText = [0, 1, 3, 4] // array with indexes of text
 
 const Class6x1x7 = ({ route }) => {  //screen name
 
-    const {userPoints, latestScreen, comeBackRoute, allScreensNum} = route.params
+    const {userPoints, latestScreen, comeBackRoute, allScreensNum, savedLang} = route.params
 
     const auth = getAuth();
     const user = auth.currentUser;
@@ -156,6 +156,7 @@ const Class6x1x7 = ({ route }) => {  //screen name
           questionScreen={true}
           comeBack={comeBack}
           allScreensNum={allScreensNum}
+          savedLang={savedLang}
           />
         </View>
     </View>

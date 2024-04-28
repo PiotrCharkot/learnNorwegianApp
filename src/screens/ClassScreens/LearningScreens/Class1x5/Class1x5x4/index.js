@@ -1,4 +1,4 @@
-import { View, Text, StyleSheet, ScrollView } from 'react-native'
+import { View, Text, StyleSheet, ScrollView, Image, Dimensions } from 'react-native'
 import React, { useState, useEffect  } from 'react'
 import { useFocusEffect } from "@react-navigation/native";
 import ProgressBar from '../../../../../components/bars/progressBar'
@@ -7,7 +7,7 @@ import generalStyles from '../../../../../styles/generalStyles';
 
 const currentScreen = 4;  //current screen
 
-
+const screenWidth = Dimensions.get('window').width;
 
 const Class1x5x4 = ({route}) => { // name
 
@@ -37,10 +37,13 @@ const Class1x5x4 = ({route}) => { // name
     <View style={styles.mainContainer}> 
         <ScrollView showsVerticalScrollIndicator={false} style={styles.body}>
           <View style={styles.textContainer}>
-            <Text style={styles.text}>How to form verbs in present perfect? {'\n\n'}We touched on that in the 'Present perfect tense'  section. You can go there to check out how to change regular verbs. {'\n\n'}There is also a bunch of irregular verbs that have to be memorized. You should check out our <Text style={styles.textColor}>flashcard section</Text> that can be found in bottom navigator. There are flashcards dedicated to those tricky irregular verbs. (add image here)</Text>
+            <Text style={styles.text}>How to form verbs in present perfect? {'\n\n'}We touched on that in the 'Present perfect tense' section. You can go there to check out how to change regular verbs. {'\n\n'}There is also a bunch of irregular verbs that have to be memorized. You should check out our <Text style={styles.textColor}>flashcard section</Text> that can be found in bottom navigator. There are flashcards dedicated to those tricky irregular verbs.</Text>
           </View>
 
-          
+          <View style={styles.imgContainer}> 
+
+            <Image style={styles.imgCards} source={require('../../../../../../assets/flashcardsNoBackground.png')} />
+          </View>
 
         </ScrollView>
     
@@ -142,6 +145,13 @@ const styles = StyleSheet.create({
     bottom: 0,
     width: '100%',
   },
-  
+  imgContainer: {
+    alignItems: 'center',
+    width: '100%'
+  },
+  imgCards: {
+    width: screenWidth - 220,
+    height: (screenWidth - 220) * 2.1
+  }
   
 })

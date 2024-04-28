@@ -44,7 +44,7 @@ const ResultsScreen = () => {
   const storage = getStorage();
   const auth = getAuth();
 
-  const userNumCap = 20;
+  const userNumCap = 50;
 
   const [choosenLanguage, setChoosenLanguage] = useState('EN');
   const [weekly, setWeekly] = useState(false);
@@ -111,7 +111,6 @@ const ResultsScreen = () => {
   async function getValueFor(key) {
     let result = await SecureStore.getItemAsync(key);
     if (result) {
-      console.log("Here's your value", result);
       setChoosenLanguage(result);
     } else {
       console.log('No values stored under that key.');

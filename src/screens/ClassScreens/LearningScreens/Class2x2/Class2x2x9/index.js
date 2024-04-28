@@ -28,7 +28,7 @@ const Class2x2x9 = ({ route }) => { // name
     
     const [movingDraggable, setMovingDraggable] = useState(null);
     const [releaseDraggable, setReleaseDraggable] = useState(null);
-    const [words, setWords] = useState(['i morgen', 'du', '?', 'festen', 'på', 'Kommer' ]); // words to sort in random order Kommer du på festen i morgen?
+    const [words, setWords] = useState(['i morgen', 'du', 'festen', 'på', 'Kommer', '?' ]); // words to sort in random order Kommer du på festen i morgen?
     const [currentPoints, setCurrentPoints] = useState(userPoints);
     const [latestScreenDone, setLatestScreenDone] = useState(currentScreen);
     const [comeBack, setComeBack] = useState(false);

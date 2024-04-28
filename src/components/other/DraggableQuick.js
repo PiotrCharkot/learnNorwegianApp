@@ -123,13 +123,13 @@ export default Draggable
 
 const styles = StyleSheet.create({
   shadow: {
-    shadowColor: "#000",
-    shadowOffset: {
-      width: 0,
-      height: 6,
-    },
-    shadowOpacity: 0.3,
-    shadowRadius: 10,
-    elevation: 10,
+    // shadowColor: "#000",
+    // shadowOffset: {
+    //   width: 0,
+    //   height: 6,
+    // },
+    // shadowOpacity: 0.3,
+    // shadowRadius: 10,
+    // elevation: 10,
   },
 });

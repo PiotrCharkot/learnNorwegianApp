@@ -197,7 +197,7 @@ const SettingsScreen = ({route}) => {
 
   useEffect(() => {
     const loadSound = async () => {
-      console.log('Loading Sound');
+      
       const { sound } = await Audio.Sound.createAsync(
         require('./../../../assets/sounds/pluck.mp3')
       );

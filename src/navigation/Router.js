@@ -424,7 +424,6 @@ import Type9x7 from "../screens/ClassScreens/ExerciseScreens/Types/Type9x7";
 import Type9x8 from "../screens/ClassScreens/ExerciseScreens/Types/Type9x8";
 import Type9x9 from "../screens/ClassScreens/ExerciseScreens/Types/Type9x9";
 import Type9x10 from "../screens/ClassScreens/ExerciseScreens/Types/Type9x10";
-import Exc1x3x1testing from "../screens/ClassScreens/ExerciseScreens/Exc1x3/Exc1x3x1";
 
 
 
@@ -856,7 +855,6 @@ const Router = () => {
                 <Stack.Screen name="Type9x8" component={Type9x8} options={{headerShown: false, animationEnabled: false }}/>
                 <Stack.Screen name="Type9x9" component={Type9x9} options={{headerShown: false, animationEnabled: false }}/>
                 <Stack.Screen name="Type9x10" component={Type9x10} options={{headerShown: false, animationEnabled: false }}/>
-                <Stack.Screen name="Testing" component={Exc1x3x1testing} options={{headerShown: false, animationEnabled: false }}/>
             </Stack.Navigator>
         </NavigationContainer>
     )

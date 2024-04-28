@@ -51,7 +51,7 @@ const Class1x5x6 = ({route}) => {  //name
 
 
           <View style={styles.textContainer}>
-            <Text style={styles.text}>{'\n\n'}{'\n\n'}Let's check how hard is past perfect tense. We have a few questions lined up to see just how well you've grasped it. Let's dive in!</Text>
+            <Text style={styles.text}>{'\n\n'}Let's check how hard is past perfect tense. We have a few questions lined up to see just how well you've grasped it. Let's dive in!</Text>
           
           </View>
           

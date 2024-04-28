@@ -46,7 +46,7 @@ const Class2x2x4 = ({ route }) => { //name
         <ScrollView showsVerticalScrollIndicator={false} style={styles.body}>
 
           <View style={styles.textContainer}>
-            <Text style={styles.text}>Let's explore some other examples of question words (<Text style={styles.textColor2}>spørreord</Text>)in the sentence:</Text>
+            <Text style={styles.text}>Let's explore some other examples of question words (<Text style={styles.textColor2}>spørreord</Text>) in the sentence:</Text>
           </View>
 
           

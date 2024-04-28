@@ -43,12 +43,12 @@ const ReadingScreen = () => {
   const overlayOpacity = useRef(new Animated.Value(1)).current;
   const overlayOffset = useRef(new Animated.Value(0)).current;
   const interpolatedValueForX = useRef(new Animated.Value(0)).current;
-  const lastPlayedAtRef = useRef(0);
-  const lastPlayedAtRef2 = useRef(0);
-  const lastPlayedAtRef3 = useRef(0);
-  const lastPlayedAtRef4 = useRef(0);
-  const lastPlayedAtRef5 = useRef(0);
-  const lastPlayedAtRef6 = useRef(0);
+  // const lastPlayedAtRef = useRef(0);
+  // const lastPlayedAtRef2 = useRef(0);
+  // const lastPlayedAtRef3 = useRef(0);
+  // const lastPlayedAtRef4 = useRef(0);
+  // const lastPlayedAtRef5 = useRef(0);
+  // const lastPlayedAtRef6 = useRef(0);
   
   const [choosenLanguage, setChoosenLanguage] = useState('EN');
   const [languageListOpen, setLanguageListOpen] = useState(false);
@@ -131,10 +131,10 @@ const ReadingScreen = () => {
   async function getValueFor(key) {
     let result = await SecureStore.getItemAsync(key);
     if (result) {
-      console.log("Here's your value", result);
+      
       setChoosenLanguage(result);
     } else {
-      console.log('No values stored under that key.');
+      console.log('No values stored under that key: ', key);
     }
   }
 
@@ -243,19 +243,19 @@ const ReadingScreen = () => {
       { useNativeDriver: false }
     )(event); // Manually invoke the animated event handler
 
-    // Then, add your logic for playing sound at certain scroll positions
-    const x = event.nativeEvent.contentOffset.x; // Get the current horizontal scroll position
-    const threshold = cardSize * 0.5; // Define your threshold here
+    // // Then, add your logic for playing sound at certain scroll positions
+    // const x = event.nativeEvent.contentOffset.x; // Get the current horizontal scroll position
+    // const threshold = cardSize * 0.5; // Define your threshold here
 
-    // Calculate the absolute difference from the last played position
-    const diff = Math.abs(x - lastPlayedAtRef.current);
+    // // Calculate the absolute difference from the last played position
+    // const diff = Math.abs(x - lastPlayedAtRef.current);
 
-    if (diff >= threshold) {
-      playSound();
-      // Update the last played position to the current, adjusted for multiples of 200
-      // This adjustment ensures correct behavior in both forward and backward scrolling
-      lastPlayedAtRef.current = x - (x % threshold) + (x > lastPlayedAtRef.current ? threshold : 0);
-    }
+    // if (diff >= threshold) {
+    //   playSound();
+    //   // Update the last played position to the current, adjusted for multiples of 200
+    //   // This adjustment ensures correct behavior in both forward and backward scrolling
+    //   lastPlayedAtRef.current = x - (x % threshold) + (x > lastPlayedAtRef.current ? threshold : 0);
+    // }
   };
 
 
@@ -267,19 +267,19 @@ const ReadingScreen = () => {
       { useNativeDriver: false }
     )(event); // Manually invoke the animated event handler
 
-    // Then, add your logic for playing sound at certain scroll positions
-    const x = event.nativeEvent.contentOffset.x; // Get the current horizontal scroll position
-    const threshold = cardSize * 0.5; // Define your threshold here
+    // // Then, add your logic for playing sound at certain scroll positions
+    // const x = event.nativeEvent.contentOffset.x; // Get the current horizontal scroll position
+    // const threshold = cardSize * 0.5; // Define your threshold here
 
-    // Calculate the absolute difference from the last played position
-    const diff = Math.abs(x - lastPlayedAtRef2.current);
+    // // Calculate the absolute difference from the last played position
+    // const diff = Math.abs(x - lastPlayedAtRef2.current);
 
-    if (diff >= threshold) {
-      playSound();
-      // Update the last played position to the current, adjusted for multiples of 200
-      // This adjustment ensures correct behavior in both forward and backward scrolling
-      lastPlayedAtRef2.current = x - (x % threshold) + (x > lastPlayedAtRef2.current ? threshold : 0);
-    }
+    // if (diff >= threshold) {
+    //   playSound();
+    //   // Update the last played position to the current, adjusted for multiples of 200
+    //   // This adjustment ensures correct behavior in both forward and backward scrolling
+    //   lastPlayedAtRef2.current = x - (x % threshold) + (x > lastPlayedAtRef2.current ? threshold : 0);
+    // }
   };
   
 
@@ -291,19 +291,19 @@ const ReadingScreen = () => {
       { useNativeDriver: false }
     )(event); // Manually invoke the animated event handler
 
-    // Then, add your logic for playing sound at certain scroll positions
-    const x = event.nativeEvent.contentOffset.x; // Get the current horizontal scroll position
-    const threshold = cardSize * 0.5; // Define your threshold here
+    // // Then, add your logic for playing sound at certain scroll positions
+    // const x = event.nativeEvent.contentOffset.x; // Get the current horizontal scroll position
+    // const threshold = cardSize * 0.5; // Define your threshold here
 
-    // Calculate the absolute difference from the last played position
-    const diff = Math.abs(x - lastPlayedAtRef3.current);
+    // // Calculate the absolute difference from the last played position
+    // const diff = Math.abs(x - lastPlayedAtRef3.current);
 
-    if (diff >= threshold) {
-      playSound();
-      // Update the last played position to the current, adjusted for multiples of 200
-      // This adjustment ensures correct behavior in both forward and backward scrolling
-      lastPlayedAtRef3.current = x - (x % threshold) + (x > lastPlayedAtRef3.current ? threshold : 0);
-    }
+    // if (diff >= threshold) {
+    //   playSound();
+    //   // Update the last played position to the current, adjusted for multiples of 200
+    //   // This adjustment ensures correct behavior in both forward and backward scrolling
+    //   lastPlayedAtRef3.current = x - (x % threshold) + (x > lastPlayedAtRef3.current ? threshold : 0);
+    // }
   };
   
 
@@ -315,19 +315,19 @@ const ReadingScreen = () => {
       { useNativeDriver: false }
     )(event); // Manually invoke the animated event handler
 
-    // Then, add your logic for playing sound at certain scroll positions
-    const x = event.nativeEvent.contentOffset.x; // Get the current horizontal scroll position
-    const threshold = cardSize * 0.5; // Define your threshold here
+    // // Then, add your logic for playing sound at certain scroll positions
+    // const x = event.nativeEvent.contentOffset.x; // Get the current horizontal scroll position
+    // const threshold = cardSize * 0.5; // Define your threshold here
 
-    // Calculate the absolute difference from the last played position
-    const diff = Math.abs(x - lastPlayedAtRef4.current);
+    // // Calculate the absolute difference from the last played position
+    // const diff = Math.abs(x - lastPlayedAtRef4.current);
 
-    if (diff >= threshold) {
-      playSound();
-      // Update the last played position to the current, adjusted for multiples of 200
-      // This adjustment ensures correct behavior in both forward and backward scrolling
-      lastPlayedAtRef4.current = x - (x % threshold) + (x > lastPlayedAtRef4.current ? threshold : 0);
-    }
+    // if (diff >= threshold) {
+    //   playSound();
+    //   // Update the last played position to the current, adjusted for multiples of 200
+    //   // This adjustment ensures correct behavior in both forward and backward scrolling
+    //   lastPlayedAtRef4.current = x - (x % threshold) + (x > lastPlayedAtRef4.current ? threshold : 0);
+    // }
   };
 
   
@@ -340,19 +340,19 @@ const ReadingScreen = () => {
       { useNativeDriver: false }
     )(event); // Manually invoke the animated event handler
 
-    // Then, add your logic for playing sound at certain scroll positions
-    const x = event.nativeEvent.contentOffset.x; // Get the current horizontal scroll position
-    const threshold = cardSize * 0.5; // Define your threshold here
+    // // Then, add your logic for playing sound at certain scroll positions
+    // const x = event.nativeEvent.contentOffset.x; // Get the current horizontal scroll position
+    // const threshold = cardSize * 0.5; // Define your threshold here
 
-    // Calculate the absolute difference from the last played position
-    const diff = Math.abs(x - lastPlayedAtRef5.current);
+    // // Calculate the absolute difference from the last played position
+    // const diff = Math.abs(x - lastPlayedAtRef5.current);
 
-    if (diff >= threshold) {
-      playSound();
-      // Update the last played position to the current, adjusted for multiples of 200
-      // This adjustment ensures correct behavior in both forward and backward scrolling
-      lastPlayedAtRef5.current = x - (x % threshold) + (x > lastPlayedAtRef5.current ? threshold : 0);
-    }
+    // if (diff >= threshold) {
+    //   playSound();
+    //   // Update the last played position to the current, adjusted for multiples of 200
+    //   // This adjustment ensures correct behavior in both forward and backward scrolling
+    //   lastPlayedAtRef5.current = x - (x % threshold) + (x > lastPlayedAtRef5.current ? threshold : 0);
+    // }
   };
 
 
@@ -366,19 +366,19 @@ const ReadingScreen = () => {
       { useNativeDriver: false }
     )(event); // Manually invoke the animated event handler
 
-    // Then, add your logic for playing sound at certain scroll positions
-    const x = event.nativeEvent.contentOffset.x; // Get the current horizontal scroll position
-    const threshold = cardSize * 0.5; // Define your threshold here
+    // // Then, add your logic for playing sound at certain scroll positions
+    // const x = event.nativeEvent.contentOffset.x; // Get the current horizontal scroll position
+    // const threshold = cardSize * 0.5; // Define your threshold here
 
-    // Calculate the absolute difference from the last played position
-    const diff = Math.abs(x - lastPlayedAtRef6.current);
+    // // Calculate the absolute difference from the last played position
+    // const diff = Math.abs(x - lastPlayedAtRef6.current);
 
-    if (diff >= threshold) {
-      playSound();
-      // Update the last played position to the current, adjusted for multiples of 200
-      // This adjustment ensures correct behavior in both forward and backward scrolling
-      lastPlayedAtRef6.current = x - (x % threshold) + (x > lastPlayedAtRef6.current ? threshold : 0);
-    }
+    // if (diff >= threshold) {
+    //   playSound();
+    //   // Update the last played position to the current, adjusted for multiples of 200
+    //   // This adjustment ensures correct behavior in both forward and backward scrolling
+    //   lastPlayedAtRef6.current = x - (x % threshold) + (x > lastPlayedAtRef6.current ? threshold : 0);
+    // }
   };
 
 

@@ -79,14 +79,14 @@ const Exc1x1x1 = ({ route }) => {
 
         
         if (latestScreen > currentScreen) {
-            setLatestScreenAnswered(latestAnswered);
-            setLatestScreenDone(latestScreen);
-            setComeBack(true);
+          setLatestScreenAnswered(latestAnswered);
+          setLatestScreenDone(latestScreen);
+          setComeBack(true);
         }
 
         if (route.params.userPoints > 0) {
-            console.log('setting new points', route.params.userPoints );
-            setCurrentPoints(userPoints)
+            
+          setCurrentPoints(userPoints)
         }
 
         
@@ -116,7 +116,6 @@ const Exc1x1x1 = ({ route }) => {
       let parsedData = Object.keys(route.params.data).length === 0 ? {} : JSON.parse(route.params.data) 
       let dataForExercise = Object.keys(route.params.data).length === 0 ? type9sentence : parsedData.sounds.type9;
 
-      console.log('data for exrcises', dataForExercise);
       
       let tempArr = []; 
       let alreadyUsed = [];
@@ -316,13 +315,13 @@ const Exc1x1x1 = ({ route }) => {
                         <LinearGradient
                         colors={isCorrect[index] === 0 || index > exeList[0].correctAnswers.length ? [gradientTop, gradientBottom] : isCorrect[index] === 1 ? [correct , correct1] : [incorrect1 , incorrect]}
                         key={index}
-                            style={[
-                            isMovedOver && styles.draggableContainerSwap,
-                            item.trim() == '' && !exeList[0].gapsIndex.includes(index) ?  styles.draggableContainerEmpty : styles.draggableContainer,
-                            ]}
+                        style={[
+                        isMovedOver && styles.draggableContainerSwap,
+                        item.trim() == '' && !exeList[0].gapsIndex.includes(index) ?  styles.draggableContainerEmpty : styles.draggableContainer,
+                        ]}
                         >
                             
-                            <Text style={styles.textInDraggable}>{item}</Text>
+                          <Text style={styles.textInDraggable}>{item}</Text>
                         </LinearGradient>
                         );
                     }}

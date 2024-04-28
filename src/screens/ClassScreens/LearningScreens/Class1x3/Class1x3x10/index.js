@@ -56,8 +56,8 @@ const Class1x3x10 = ({route}) => {  //name
 
             <Text style={{...styles.textSmall, marginHorizontal: 20, marginTop: 15}}> - to narrate a sequence of past events,</Text>
           <View style={styles.exampleContainer}>
-            <Text style={styles.exampleTextSmall}>Han kjøpte en bil, solgte den, og kjøpte en ny en.</Text>
-            <Text style={styles.exampleTextSmallThin}>He bought a car, sold it, and bought a new one.</Text>
+            <Text style={styles.exampleTextSmall}>Han kjøpte en bil, solgte den og kjøpte en ny.</Text>
+            <Text style={styles.exampleTextSmallThin}>He bought a car, sold it and bought a new one.</Text>
           </View>
         </ScrollView>
     

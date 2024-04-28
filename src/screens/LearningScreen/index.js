@@ -51,12 +51,12 @@ const LearningScreen = () => {
   const scrollX6 = useRef(new Animated.Value(0)).current;
   const overlayOpacity = useRef(new Animated.Value(1)).current;
   const overlayOffset = useRef(new Animated.Value(0)).current;
-  const lastPlayedAtRef = useRef(0);
-  const lastPlayedAtRef2 = useRef(0);
-  const lastPlayedAtRef3 = useRef(0);
-  const lastPlayedAtRef4 = useRef(0);
-  const lastPlayedAtRef5 = useRef(0);
-  const lastPlayedAtRef6 = useRef(0);
+  // const lastPlayedAtRef = useRef(0);
+  // const lastPlayedAtRef2 = useRef(0);
+  // const lastPlayedAtRef3 = useRef(0);
+  // const lastPlayedAtRef4 = useRef(0);
+  // const lastPlayedAtRef5 = useRef(0);
+  // const lastPlayedAtRef6 = useRef(0);
 
   const [userId, setUserId] = useState('userId');
   const [dataFlatList, setDataFlatList] = useState([]);
@@ -130,7 +130,7 @@ const LearningScreen = () => {
         setChoosenLanguage(result);
       }
     } else {
-      console.log('No values stored under that key.');
+      console.log('No values stored under that key: '. key);
     }
   }
 
@@ -241,7 +241,6 @@ const LearningScreen = () => {
 
   useEffect(() => {
     const loadSound = async () => {
-      console.log('Loading Sound');
       const { sound } = await Audio.Sound.createAsync(
         require('./../../../assets/sounds/tick.mp3')
       );
@@ -269,12 +268,6 @@ const LearningScreen = () => {
     const q = query(usersAchivments, where('userRef', '==', userId))
     const querySnapshot = await getDocs(q);
 
-    if (querySnapshot.empty) {
-      //setDataToFb();
-      console.log('no user in db yet');
-    } else {
-      console.log('user exist in data base');
-    }
     
     querySnapshot.forEach((doc) => {
       
@@ -321,25 +314,24 @@ const LearningScreen = () => {
 
 
   const handleScroll = (event) => {
-    // First, process the animated event
+    
     Animated.event(
       [{ nativeEvent: { contentOffset: { x: scrollX } } }],
       { useNativeDriver: false }
-    )(event); // Manually invoke the animated event handler
+    )(event);
+    // // Then, add your logic for playing sound at certain scroll positions
+    // const x = event.nativeEvent.contentOffset.x; // Get the current horizontal scroll position
+    // const threshold = cardSize * 0.5; // Define your threshold here
 
-    // Then, add your logic for playing sound at certain scroll positions
-    const x = event.nativeEvent.contentOffset.x; // Get the current horizontal scroll position
-    const threshold = cardSize * 0.5; // Define your threshold here
+    // // Calculate the absolute difference from the last played position
+    // const diff = Math.abs(x - lastPlayedAtRef.current);
 
-    // Calculate the absolute difference from the last played position
-    const diff = Math.abs(x - lastPlayedAtRef.current);
-
-    if (diff >= threshold && isSoundOn) {
-      playSound();
-      // Update the last played position to the current, adjusted for multiples of 200
-      // This adjustment ensures correct behavior in both forward and backward scrolling
-      lastPlayedAtRef.current = x - (x % threshold) + (x > lastPlayedAtRef.current ? threshold : 0);
-    }
+    // if (diff >= threshold && isSoundOn) {
+    //   playSound();
+    //   // Update the last played position to the current, adjusted for multiples of 200
+    //   // This adjustment ensures correct behavior in both forward and backward scrolling
+    //   lastPlayedAtRef.current = x - (x % threshold) + (x > lastPlayedAtRef.current ? threshold : 0);
+    // }
   };
 
 
@@ -617,7 +609,10 @@ const LearningScreen = () => {
             data={dataFlatList}
             renderItem={renderCard}
             keyExtractor={(item) => item.key}
-            onScroll={handleScroll}
+            onScroll={Animated.event(
+              [{ nativeEvent: { contentOffset: { x: scrollX } } }],
+              { useNativeDriver: false }
+            )}
             scrollEventThrottle={16}
           />
 

@@ -53,22 +53,22 @@ const Class1x4x9 = ({ route }) => { //name
 
           <View style={styles.exampleContainer}>
             <Text style={styles.exampleText}>å dra - dratt</Text>
-            <Text style={styles.text}>(to go/travel)</Text>
+            <Text style={styles.text}>(to go/travel - gone/traveled)</Text>
           </View>
 
           <View style={styles.exampleContainer}>
             <Text style={styles.exampleText}>å gå - gått</Text>
-            <Text style={styles.text}>(to walk)</Text>
+            <Text style={styles.text}>(to walk - walked)</Text>
           </View>
 
           <View style={styles.exampleContainer}>
             <Text style={styles.exampleText}>å få - fått</Text>
-            <Text style={styles.text}>(to get)</Text>
+            <Text style={styles.text}>(to get - got)</Text>
           </View>
 
           <View style={styles.exampleContainer}>
             <Text style={styles.exampleText}>å gjøre - gjort</Text>
-            <Text style={styles.text}>(to do)</Text>
+            <Text style={styles.text}>(to do - done)</Text>
           </View>
 
             

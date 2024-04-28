@@ -83,14 +83,12 @@ const MyListScreen = ({ route }) => {
           let tempArr = [];
   
           if (querySnapshot.empty) {
-            console.log('there is no lists for this user')
             Animated.timing(opacityMessage, {
               toValue: 1,
               duration: 1000,
               useNativeDriver: true
             }).start()
           } else {
-            console.log('user exist in data base');
             setIsContent(true);
           }
           

@@ -39,7 +39,7 @@ const Class1x4x6 = ({route}) => {  //screen name
             <Text style={{...styles.text , fontSize: 20, fontWeight: '600', color: '#6441A5'}}>Group two:</Text>
           </View>
           <View style={styles.textContainer}>
-            <Text style={styles.text}>Many verbs with one consonant and a few with a double consonant at the end belong in this group: -pp, -nn, -l, -p. Also this with stem ending with a double consonant that sound like one: -nd, -lg.{'\n\n\n'}They get the <Text style={styles.textColor}>-t</Text> ending:{'\n'}</Text>
+            <Text style={styles.text}>Many verbs with one consonant and a few with a double consonant at the end belong in this group: -pp, -nn, -mm, -l, -p. Also this with stem ending with a double consonant that sound like one: -nd, -lg.{'\n\n\n'}They get the <Text style={styles.textColor}>-t</Text> ending:{'\n'}</Text>
           </View>
 
           <View style={styles.exampleContainer}>

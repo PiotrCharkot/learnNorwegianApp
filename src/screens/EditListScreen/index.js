@@ -143,24 +143,24 @@ const EditListScreen = ({ route }) => {
     }
 
     const updateList = async () => {
-        console.log('add list to firebase');
+        
         if (dataFlatList.length > 0) {
             await updateDoc(docRefOwn, {
                 wordsArr: dataFlatList
             })
             .then(docRef => {
-                console.log("own list update from edit screen");
+                
                 updateUserInfo();
             })
             .catch(error => {
                 console.log(error);
             })
         } else {
-            console.log('display message cant be empty');
+            
             showConfirmation();
         }
         
-        //display message cant be empty
+        
     }
 
 
@@ -172,7 +172,7 @@ const EditListScreen = ({ route }) => {
         tempArr.map(obj => {
             if (obj.refToList === refToList) {
                 obj.words1 = [...obj.words1, ...newWordIdArr];
-                //myArray = myArray.filter( ( el ) => !toRemove.includes( el ) );
+                
                 obj.words1 = obj.words1.filter(el => !removedWordIdArr.includes(el))
                 obj.words2 = obj.words2.filter(el => !removedWordIdArr.includes(el))
                 obj.words3 = obj.words3.filter(el => !removedWordIdArr.includes(el))

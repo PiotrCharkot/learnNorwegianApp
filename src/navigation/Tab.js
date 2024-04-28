@@ -96,7 +96,7 @@ const Tabs = () => {
 
             }
             if (authUser && !authUser.isAnonymous) {
-                console.log('loging as registred user: ', authUser);
+                console.log('loging as registred user: ', authUser.uid);
                 
             } else if (!authUser) {
                 signInAnonymously(authentication)
@@ -121,7 +121,6 @@ const Tabs = () => {
 
 
     useEffect(() => {
-        console.log('runing use efect');
 
         let randomGuestId = Math.floor(Math.random() * 1000000);
         let stringId = randomGuestId.toString()

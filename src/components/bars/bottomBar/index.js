@@ -39,12 +39,11 @@ const BottomBar = (params) => {
 
     const goBack = () => {
 
-        console.log('is coming back: ', params.comeBack);
         if (params.questionScreen && pathIcon === 'next' && buttonFunction === 'goToNext' && params.currentScreen === params.latestScreen && letGoBack) {
-            console.log('btn functions is: ', buttonFunction);
+            
             setButtonFunction(params.callbackButton);
             setPathIcon('tick');
-            console.log('failed answer in goback is: ', failedAnswer);
+            
             
             setCurrentPoints(() => {
                 return failedAnswer ? params.userPoints : params.userPoints - params.answerBonus;
@@ -64,8 +63,6 @@ const BottomBar = (params) => {
             }).start();
         } else {
            
-            console.log('current points when go back: ', currentPoints);
-            console.log('num when go back: ', params.currentScreen);
             navigation.navigate({
                 name: params.linkPrevious,
                 params: { latestScreen: params.latestScreen, userPoints: currentPoints, latestAnswered: params.latestAnswered, allScreensNum: params.allScreensNum, exeList: params.questionList, linkList: params.links, nextScreen: params.currentScreen - 1, savedLang: params.savedLang },
@@ -409,7 +406,6 @@ const BottomBar = (params) => {
                     } else {
                         returnArr.push(0);
                         wrongAnswer++;
-                        console.log('pushing wrong');
                     }
                 } else {
                     returnArr.push(0)
@@ -552,6 +548,7 @@ const BottomBar = (params) => {
     }
 
     useEffect(() => {
+
         if (params.questionScreen) {
             setButtonFunction(params.callbackButton)
             setPathIcon('tick');
@@ -668,11 +665,13 @@ const styles = StyleSheet.create({
         elevation: 5
     },
     buttonContainer: {
-        height: 25,
-        width: 25,
+        height: generalStyles.buttonNextPrevSize,
+        width: generalStyles.buttonNextPrevSize,
         position: 'absolute',
         left: screenWidth - 60,
         top: 10,
+        borderRadius: generalStyles.buttonNextPrevSize / 2,
+        backgroundColor: 'white',
         shadowColor: 'black',
         shadowOffset: {
             width: 0,
@@ -683,11 +682,13 @@ const styles = StyleSheet.create({
         elevation: 5
     },
     buttonBackContainer: {
-        height: 25,
-        width: 25,
+        height: generalStyles.buttonNextPrevSize,
+        width: generalStyles.buttonNextPrevSize,
         position: 'absolute',
         left: 20,
         top: 10,
+        borderRadius: generalStyles.buttonNextPrevSize / 2,
+        backgroundColor: 'white',
         shadowColor: 'black',
         shadowOffset: {
             width: 0,

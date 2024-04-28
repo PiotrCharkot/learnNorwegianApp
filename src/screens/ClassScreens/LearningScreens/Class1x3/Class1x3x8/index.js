@@ -48,27 +48,27 @@ const Class1x3x8 = ({ route }) => { //name
           <View style={styles.textContainer}>
             <Text style={styles.text}>The unpredictable <Text style={styles.boldText}>irregular verbs</Text>.</Text>
           
-            <Text style={styles.text}>{'\n\n'}Irregular verbs do not follow the patterns mentioned above and have their own unique past forms that you'll just have to memorize. For instance:</Text>
+            <Text style={styles.text}>{'\n\n'}Irregular verbs do not follow the patterns mentioned before and have their own unique past forms that you'll just have to memorize. For instance:</Text>
           </View>
 
           <View style={styles.exampleContainer}>
             <Text style={styles.exampleText}>å være - var</Text>
-            <Text style={styles.text}>(to be)</Text>
+            <Text style={styles.text}>(to be - was, were)</Text>
           </View>
 
           <View style={styles.exampleContainer}>
             <Text style={styles.exampleText}>å gå - gikk</Text>
-            <Text style={styles.text}>(to walk)</Text>
+            <Text style={styles.text}>(to walk - went)</Text>
           </View>
 
           <View style={styles.exampleContainer}>
             <Text style={styles.exampleText}>å stå - sto</Text>
-            <Text style={styles.text}>(to stand)</Text>
+            <Text style={styles.text}>(to stand - stood)</Text>
           </View>
 
           <View style={styles.exampleContainer}>
             <Text style={styles.exampleText}>å ta - tok</Text>
-            <Text style={styles.text}>(to take)</Text>
+            <Text style={styles.text}>(to take - took)</Text>
           </View>
 
             

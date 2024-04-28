@@ -223,27 +223,23 @@ const TextScreen = ({route}) => {
   async function getValueFor(key) {
     let result = await SecureStore.getItemAsync(key);
     if (result) {
-      console.log("Here's your value", result);
       setDarkMode(result)
     } else {
-      console.log('No values stored under that key.');
+      console.log('No values stored under that key: ', key);
     }
   }
 
   async function getValueForTxtSize(key) {
     let result = await SecureStore.getItemAsync(key);
     if (result) {
-      console.log("Here's your value", result);
       let tempNummer = parseInt(result)
       setFontSize(tempNummer)
     } else {
-      console.log('No values stored under that key font.');
+      console.log('No values stored under that key font: ', key);
     }
   }
 
   useEffect(() => {
-
-    console.log('my language in text screen is: ', route.params.language);
 
     getValueFor('darkMode');
     getValueForTxtSize('fontSize')

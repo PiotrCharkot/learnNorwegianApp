@@ -5,11 +5,10 @@ import { useFocusEffect, useIsFocused } from "@react-navigation/native";
 import { onAuthStateChanged  } from 'firebase/auth';
 import { useNavigation } from "@react-navigation/native";
 import { db } from '../../../firebase/firebase-config'
-import { collection, getDocs, query, where, doc, setDoc } from "firebase/firestore";
+import { collection } from "firebase/firestore";
 import { LinearGradient } from 'expo-linear-gradient';
 import styles from './style'
 import { authentication } from '../../../firebase/firebase-config';
-import uuid from 'react-native-uuid';
 import CardFlashList from '../../components/cards/CardFlashList';
 
 
@@ -197,7 +196,6 @@ const FlashcardScreen = () => {
   async function getValueFor(key) {
     let result = await SecureStore.getItemAsync(key);
     if (result) {
-      console.log("Here's your value", result);
       setChoosenLanguage(result);
     } else {
       console.log('No values stored under that key.');

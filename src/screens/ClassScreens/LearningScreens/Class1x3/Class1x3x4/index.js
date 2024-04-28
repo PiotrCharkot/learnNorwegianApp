@@ -39,7 +39,7 @@ const Class1x3x4 = ({route}) => {  //screen name
             <Text style={{...styles.text , fontSize: 20, fontWeight: '600', color: '#6441A5'}}>Group one:</Text>
           </View>
           <View style={styles.textContainer}>
-            <Text style={styles.text}>In this group you'll find many verbs with two consonants at the end of stem and some verbs with -t, -g, and -d at the end.{'\n\n\n'}Here you can add ending <Text style={styles.textColor}>-et</Text>:{'\n'}</Text>
+            <Text style={styles.text}>In this group you'll find many verbs with two consonants at the end of stem (-nt, -sk) and some verbs with -t, -g, and -d at the end.{'\n\n\n'}Here you can add ending <Text style={styles.textColor}>-et</Text>:{'\n'}</Text>
           </View>
 
           <View style={styles.exampleContainer}>

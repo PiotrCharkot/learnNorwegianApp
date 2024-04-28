@@ -1,23 +1,23 @@
-import { View, Text, Image, Animated, ScrollView, FlatList, Dimensions, TouchableOpacity } from 'react-native'
+import { View, Text, Image, Animated, Dimensions, TouchableOpacity } from 'react-native'
 import React, {useState, useRef, useEffect, useCallback} from 'react'
 import * as SecureStore from 'expo-secure-store';
 import { useFocusEffect, useIsFocused } from "@react-navigation/native";
 import { LinearGradient } from 'expo-linear-gradient';
 import { useNavigation } from "@react-navigation/native";
-import { collection, getDocs, query, where, doc, setDoc, updateDoc, deleteDoc } from "firebase/firestore";
-import { getStorage, ref, getDownloadURL, uploadBytesResumable } from "firebase/storage";
+import { collection, getDocs, query, where } from "firebase/firestore";
+import { getStorage, ref, getDownloadURL } from "firebase/storage";
 import { db } from '../../../firebase/firebase-config'
-import { onAuthStateChanged, getAuth  } from 'firebase/auth';
+import { getAuth  } from 'firebase/auth';
 import { Audio } from 'expo-av';
 import styles from './style'
-import Card from '../../components/cards/Card';
-import CardExerciseList from '../../components/cards/CardExerciseList';
+import LoaderSmall from '../../components/other/LoaderSmall';
 import CardExe from '../../components/cards/CardExe';
 import exerciseList1 from '../../listData/exerciseLists/exerciseList1';
 import exerciseList2 from '../../listData/exerciseLists/exerciseList2';
 import exerciseList3 from '../../listData/exerciseLists/exerciseList3';
 import exerciseList4 from '../../listData/exerciseLists/exerciseList4';
 import exerciseList5 from '../../listData/exerciseLists/exerciseList5';
+
 
 const screenWidth = Dimensions.get('window').width;
 const cardSize = screenWidth * 0.6 + 20;
@@ -50,12 +50,8 @@ const ExerciseScreen = () => {
   const overlayOffset = useRef(new Animated.Value(0)).current;
   const scaleLanguageHight = useRef(new Animated.Value(0)).current;
   const translateLanguage = useRef(new Animated.Value(100)).current;
-  const lastPlayedAtRef = useRef(0);
-  const lastPlayedAtRef2 = useRef(0);
-  const lastPlayedAtRef3 = useRef(0);
-  const lastPlayedAtRef4 = useRef(0);
-  const lastPlayedAtRef5 = useRef(0);
-
+  
+  
   const [choosenLanguage, setChoosenLanguage] = useState('EN');
   const [languageListOpen, setLanguageListOpen] = useState(false);
   const [dataFlatList, setDataFlatList] = useState([]);
@@ -74,6 +70,7 @@ const ExerciseScreen = () => {
   const [isSoundOn, setIsSoundOn] = useState(true);
   const [sound, setSound] = useState();
   const [sound2, setSound2] = useState();
+  const [showLists, setShowLists] = useState(false);
 
   const opacityImgBlur = scrollY.interpolate({
     inputRange: [0, 60],
@@ -131,7 +128,7 @@ const ExerciseScreen = () => {
         setChoosenLanguage(result);
       }
     } else {
-      console.log('No values stored under that key.');
+      console.log('No values stored under that key:', key);
     }
   }
 
@@ -215,11 +212,8 @@ const ExerciseScreen = () => {
         
     })
     .catch((error) => {
-      console.log('my error is :', error);
-      if (error.code === 'storage/object-not-found') {
-        //console.log('no file for profile');
-        
-      }
+      
+      console.log('error logged in exercise screen', error);
     });
 
 
@@ -234,11 +228,7 @@ const ExerciseScreen = () => {
         
     })
     .catch((error) => {
-      console.log('my error is :', error);
-      if (error.code === 'storage/object-not-found') {
-        //console.log('no file for profile');
-        
-      }
+      console.log('error logged in exercise screen', error);
     });
 
 
@@ -253,11 +243,7 @@ const ExerciseScreen = () => {
         
     })
     .catch((error) => {
-      console.log('my error is :', error);
-      if (error.code === 'storage/object-not-found') {
-        //console.log('no file for profile');
-        
-      }
+      console.log('error logged in exercise screen', error);
     });
 
     getDownloadURL(ref(storage, 'exerciseData/B2JsonFormat.json'))
@@ -271,11 +257,7 @@ const ExerciseScreen = () => {
         
     })
     .catch((error) => {
-      console.log('my error is :', error);
-      if (error.code === 'storage/object-not-found') {
-        //console.log('no file for profile');
-        
-      }
+      console.log('error logged in exercise screen', error);
     });
 
     getDownloadURL(ref(storage, 'exerciseData/C1JsonFormat.json'))
@@ -289,11 +271,7 @@ const ExerciseScreen = () => {
         
     })
     .catch((error) => {
-      console.log('my error is :', error);
-      if (error.code === 'storage/object-not-found') {
-        //console.log('no file for profile');
-        
-      }
+      console.log('error logged in exercise screen', error);
     });
     
   }, [])
@@ -382,7 +360,7 @@ const ExerciseScreen = () => {
 
   useEffect(() => {
     const loadSound = async () => {
-      console.log('Loading Sound');
+      
       const { sound } = await Audio.Sound.createAsync(
         require('./../../../assets/sounds/cameraClick.wav')
       );
@@ -464,51 +442,7 @@ const ExerciseScreen = () => {
       exerciseList5[5].bars = doc.data().exercise.section5.class5;
 
 
-      // for (let i = 0; i < exerciseList1.length; i++) {
-
-      //   if (exerciseList1[i].key === 1) {
-      //     exerciseList1[i].bars = doc.data().exercise.section1.class0
-      //   } else if (exerciseList1[i].key === 2) {
-      //     exerciseList1[i].bars = doc.data().exercise.section1.class1
-      //   } else if (exerciseList1[i].key === 3) {
-      //     exerciseList1[i].bars = doc.data().exercise.section1.class2
-      //   } else if (exerciseList1[i].key === 4) {
-      //     exerciseList1[i].bars = doc.data().exercise.section1.class3
-      //   } else if (exerciseList1[i].key === 5) {
-      //     exerciseList1[i].bars = doc.data().exercise.section1.class4
-      //   } else if (exerciseList1[i].key === 6) {
-      //     exerciseList1[i].bars = doc.data().exercise.section1.class5
-      //   } else if (exerciseList1[i].key === 7) {
-      //     exerciseList1[i].bars = doc.data().exercise.section1.class6
-      //   } else if (exerciseList1[i].key === 8) {
-      //     exerciseList1[i].bars = doc.data().exercise.section1.class7
-      //   } else if (exerciseList1[i].key === 9) {
-      //     exerciseList1[i].bars = doc.data().exercise.section1.class8
-      //   } else if (exerciseList1[i].key === 10) {
-      //     exerciseList1[i].bars = doc.data().exercise.section1.class9
-      //   } 
-        
-      // }
-
-
-
-      // for (let i = 0; i < exerciseList2.length; i++) {
-
-      //   if (exerciseList2[i].key === 1) {
-      //     exerciseList2[i].bars = doc.data().exercise.section2.class0
-      //   } else if (exerciseList2[i].key === 2) {
-      //     exerciseList2[i].bars = doc.data().exercise.section2.class1
-      //   } else if (exerciseList2[i].key === 3) {
-      //     exerciseList2[i].bars = doc.data().exercise.section2.class2
-      //   } else if (exerciseList2[i].key === 4) {
-      //     exerciseList2[i].bars = doc.data().exercise.section2.class3
-      //   } else if (exerciseList2[i].key === 5) {
-      //     exerciseList2[i].bars = doc.data().exercise.section2.class4
-      //   } else if (exerciseList2[i].key === 6) {
-      //     exerciseList2[i].bars = doc.data().exercise.section2.class5
-      //   } 
-        
-      // }
+      
     })
 
 
@@ -518,124 +452,129 @@ const ExerciseScreen = () => {
     setDataFlatList4([{key: 'left-spacer'}, ...exerciseList4, {key: 'right-spacer'}]);
     setDataFlatList5([{key: 'left-spacer'}, ...exerciseList5, {key: 'right-spacer'}]);
 
+
+    setTimeout(() => {
+      
+      setShowLists(true);
+    }, 1500);
     
 
   }
 
   const handleScroll = (event) => {
-    // First, process the animated event
+    
     Animated.event(
       [{ nativeEvent: { contentOffset: { x: scrollX } } }],
       { useNativeDriver: false }
-    )(event); // Manually invoke the animated event handler
+    )(event);
 
-    // Then, add your logic for playing sound at certain scroll positions
-    const x = event.nativeEvent.contentOffset.x; // Get the current horizontal scroll position
-    const threshold = cardSize * 0.5; // Define your threshold here
+    // // Then, add your logic for playing sound at certain scroll positions
+    // const x = event.nativeEvent.contentOffset.x; // Get the current horizontal scroll position
+    // const threshold = cardSize * 0.5; // Define your threshold here
 
-    // Calculate the absolute difference from the last played position
-    const diff = Math.abs(x - lastPlayedAtRef.current);
+    // // Calculate the absolute difference from the last played position
+    // const diff = Math.abs(x - lastPlayedAtRef.current);
 
-    if (diff >= threshold && isSoundOn) {
-      playSound2();
-      // Update the last played position to the current, adjusted for multiples of 200
-      // This adjustment ensures correct behavior in both forward and backward scrolling
-      lastPlayedAtRef.current = x - (x % threshold) + (x > lastPlayedAtRef.current ? threshold : 0);
-    }
+    // if (diff >= threshold && isSoundOn) {
+    //   playSound2();
+    //   // Update the last played position to the current, adjusted for multiples of 200
+    //   // This adjustment ensures correct behavior in both forward and backward scrolling
+    //   lastPlayedAtRef.current = x - (x % threshold) + (x > lastPlayedAtRef.current ? threshold : 0);
+    // }
   };
 
 
   const handleScroll2 = (event) => {
-    // First, process the animated event
+    
     Animated.event(
       [{ nativeEvent: { contentOffset: { x: scrollX2 } } }],
       { useNativeDriver: false }
-    )(event); // Manually invoke the animated event handler
+    )(event); 
 
-    // Then, add your logic for playing sound at certain scroll positions
-    const x = event.nativeEvent.contentOffset.x; // Get the current horizontal scroll position
-    const threshold = cardSize * 0.5; // Define your threshold here
+    // // Then, add your logic for playing sound at certain scroll positions
+    // const x = event.nativeEvent.contentOffset.x; // Get the current horizontal scroll position
+    // const threshold = cardSize * 0.5; // Define your threshold here
 
-    // Calculate the absolute difference from the last played position
-    const diff = Math.abs(x - lastPlayedAtRef2.current);
+    // // Calculate the absolute difference from the last played position
+    // const diff = Math.abs(x - lastPlayedAtRef2.current);
 
-    if (diff >= threshold && isSoundOn) {
-      playSound2();
-      // Update the last played position to the current, adjusted for multiples of 200
-      // This adjustment ensures correct behavior in both forward and backward scrolling
-      lastPlayedAtRef2.current = x - (x % threshold) + (x > lastPlayedAtRef2.current ? threshold : 0);
-    }
+    // if (diff >= threshold && isSoundOn) {
+    //   playSound2();
+    //   // Update the last played position to the current, adjusted for multiples of 200
+    //   // This adjustment ensures correct behavior in both forward and backward scrolling
+    //   lastPlayedAtRef2.current = x - (x % threshold) + (x > lastPlayedAtRef2.current ? threshold : 0);
+    // }
   };
 
 
   const handleScroll3 = (event) => {
-    // First, process the animated event
+    
     Animated.event(
       [{ nativeEvent: { contentOffset: { x: scrollX3 } } }],
       { useNativeDriver: false }
-    )(event); // Manually invoke the animated event handler
+    )(event); 
 
-    // Then, add your logic for playing sound at certain scroll positions
-    const x = event.nativeEvent.contentOffset.x; // Get the current horizontal scroll position
-    const threshold = cardSize * 0.5; // Define your threshold here
+    // // Then, add your logic for playing sound at certain scroll positions
+    // const x = event.nativeEvent.contentOffset.x; // Get the current horizontal scroll position
+    // const threshold = cardSize * 0.5; // Define your threshold here
 
-    // Calculate the absolute difference from the last played position
-    const diff = Math.abs(x - lastPlayedAtRef3.current);
+    // // Calculate the absolute difference from the last played position
+    // const diff = Math.abs(x - lastPlayedAtRef3.current);
 
-    if (diff >= threshold && isSoundOn) {
-      playSound2();
-      // Update the last played position to the current, adjusted for multiples of 200
-      // This adjustment ensures correct behavior in both forward and backward scrolling
-      lastPlayedAtRef3.current = x - (x % threshold) + (x > lastPlayedAtRef3.current ? threshold : 0);
-    }
+    // if (diff >= threshold && isSoundOn) {
+    //   playSound2();
+    //   // Update the last played position to the current, adjusted for multiples of 200
+    //   // This adjustment ensures correct behavior in both forward and backward scrolling
+    //   lastPlayedAtRef3.current = x - (x % threshold) + (x > lastPlayedAtRef3.current ? threshold : 0);
+    // }
   };
 
 
 
   const handleScroll4 = (event) => {
-    // First, process the animated event
+    
     Animated.event(
       [{ nativeEvent: { contentOffset: { x: scrollX4 } } }],
       { useNativeDriver: false }
-    )(event); // Manually invoke the animated event handler
+    )(event); 
 
-    // Then, add your logic for playing sound at certain scroll positions
-    const x = event.nativeEvent.contentOffset.x; // Get the current horizontal scroll position
-    const threshold = cardSize * 0.5; // Define your threshold here
+    // // Then, add your logic for playing sound at certain scroll positions
+    // const x = event.nativeEvent.contentOffset.x; // Get the current horizontal scroll position
+    // const threshold = cardSize * 0.5; // Define your threshold here
 
-    // Calculate the absolute difference from the last played position
-    const diff = Math.abs(x - lastPlayedAtRef4.current);
+    // // Calculate the absolute difference from the last played position
+    // const diff = Math.abs(x - lastPlayedAtRef4.current);
 
-    if (diff >= threshold && isSoundOn) {
-      playSound2();
-      // Update the last played position to the current, adjusted for multiples of 200
-      // This adjustment ensures correct behavior in both forward and backward scrolling
-      lastPlayedAtRef4.current = x - (x % threshold) + (x > lastPlayedAtRef4.current ? threshold : 0);
-    }
+    // if (diff >= threshold && isSoundOn) {
+    //   playSound2();
+    //   // Update the last played position to the current, adjusted for multiples of 200
+    //   // This adjustment ensures correct behavior in both forward and backward scrolling
+    //   lastPlayedAtRef4.current = x - (x % threshold) + (x > lastPlayedAtRef4.current ? threshold : 0);
+    // }
   };
 
 
 
   const handleScroll5 = (event) => {
-    // First, process the animated event
+    
     Animated.event(
       [{ nativeEvent: { contentOffset: { x: scrollX5 } } }],
       { useNativeDriver: false }
-    )(event); // Manually invoke the animated event handler
+    )(event); 
 
-    // Then, add your logic for playing sound at certain scroll positions
-    const x = event.nativeEvent.contentOffset.x; // Get the current horizontal scroll position
-    const threshold = cardSize * 0.5; // Define your threshold here
+    // // Then, add your logic for playing sound at certain scroll positions
+    // const x = event.nativeEvent.contentOffset.x; // Get the current horizontal scroll position
+    // const threshold = cardSize * 0.5; // Define your threshold here
 
-    // Calculate the absolute difference from the last played position
-    const diff = Math.abs(x - lastPlayedAtRef5.current);
+    // // Calculate the absolute difference from the last played position
+    // const diff = Math.abs(x - lastPlayedAtRef5.current);
 
-    if (diff >= threshold && isSoundOn) {
-      playSound2();
-      // Update the last played position to the current, adjusted for multiples of 200
-      // This adjustment ensures correct behavior in both forward and backward scrolling
-      lastPlayedAtRef5.current = x - (x % threshold) + (x > lastPlayedAtRef5.current ? threshold : 0);
-    }
+    // if (diff >= threshold && isSoundOn) {
+    //   playSound2();
+    //   // Update the last played position to the current, adjusted for multiples of 200
+    //   // This adjustment ensures correct behavior in both forward and backward scrolling
+    //   lastPlayedAtRef5.current = x - (x % threshold) + (x > lastPlayedAtRef5.current ? threshold : 0);
+    // }
   };
 
 
@@ -967,7 +906,8 @@ const ExerciseScreen = () => {
           <View style={styles.titleContainer}>
             <Text style={styles.titleText}>{choosenLanguage === 'AR' ? '' : title1} A1 {choosenLanguage === 'AR' ? title1 : ''}</Text>
           </View>
-          <Animated.FlatList 
+
+          {showLists ? <Animated.FlatList 
             style={styles.flatlist}
             horizontal
             showsHorizontalScrollIndicator={false}
@@ -978,7 +918,8 @@ const ExerciseScreen = () => {
             keyExtractor={(item) => item.key}
             onScroll={handleScroll}
             scrollEventThrottle={16}
-          />
+          /> : <LoaderSmall />}
+          
           
 
         </Animated.View>
@@ -991,7 +932,8 @@ const ExerciseScreen = () => {
           <View style={styles.titleContainer}>
             <Text style={styles.titleText}>{choosenLanguage === 'AR' ? '' : title1} A2 {choosenLanguage === 'AR' ? title1 : ''}</Text>
           </View>
-          <Animated.FlatList 
+
+          {showLists ? <Animated.FlatList 
             style={styles.flatlist}
             horizontal
             showsHorizontalScrollIndicator={false}
@@ -1002,7 +944,8 @@ const ExerciseScreen = () => {
             keyExtractor={(item) => item.key}
             onScroll={handleScroll2}
             scrollEventThrottle={16}
-          />
+          /> : <LoaderSmall />}
+          
           
 
         </Animated.View>
@@ -1016,7 +959,9 @@ const ExerciseScreen = () => {
           <View style={styles.titleContainer}>
             <Text style={styles.titleText}>{choosenLanguage === 'AR' ? '' : title1} B1 {choosenLanguage === 'AR' ? title1 : ''}</Text>
           </View>
-          <Animated.FlatList 
+
+
+          {showLists ? <Animated.FlatList 
             style={styles.flatlist}
             horizontal
             showsHorizontalScrollIndicator={false}
@@ -1027,7 +972,8 @@ const ExerciseScreen = () => {
             keyExtractor={(item) => item.key}
             onScroll={handleScroll3}
             scrollEventThrottle={16}
-          />
+          /> : <LoaderSmall />}
+          
           
 
         </Animated.View>
@@ -1041,7 +987,9 @@ const ExerciseScreen = () => {
           <View style={styles.titleContainer}>
             <Text style={styles.titleText}>{choosenLanguage === 'AR' ? '' : title1} B2 {choosenLanguage === 'AR' ? title1 : ''}</Text>
           </View>
-          <Animated.FlatList 
+
+
+          {showLists ? <Animated.FlatList 
             style={styles.flatlist}
             horizontal
             showsHorizontalScrollIndicator={false}
@@ -1052,7 +1000,8 @@ const ExerciseScreen = () => {
             keyExtractor={(item) => item.key}
             onScroll={handleScroll4}
             scrollEventThrottle={16}
-          />
+          /> : <LoaderSmall />}
+          
           
 
         </Animated.View>
@@ -1066,7 +1015,9 @@ const ExerciseScreen = () => {
           <View style={styles.titleContainer}>
             <Text style={styles.titleText}>{choosenLanguage === 'AR' ? '' : title1} C1 {choosenLanguage === 'AR' ? title1 : ''}</Text>
           </View>
-          <Animated.FlatList 
+
+
+          {showLists ? <Animated.FlatList 
             style={styles.flatlist}
             horizontal
             showsHorizontalScrollIndicator={false}
@@ -1077,7 +1028,8 @@ const ExerciseScreen = () => {
             keyExtractor={(item) => item.key}
             onScroll={handleScroll5}
             scrollEventThrottle={16}
-          />
+          /> : <LoaderSmall />}
+          
           
 
         </Animated.View>

@@ -422,7 +422,7 @@ const TestWordScreen = ({route}) => {
 
     useEffect(() => {
 
-        console.log('show me my user name here: ', userN);
+        
         openTime = new Date().getTime();
 
 

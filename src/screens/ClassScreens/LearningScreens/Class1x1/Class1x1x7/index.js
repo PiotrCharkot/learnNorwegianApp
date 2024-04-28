@@ -41,7 +41,7 @@ const Class1x1x7 = ({route}) => {
             <Text style={styles.textSmall}> - an action is a regular thing,</Text>
             <Text style={styles.textSmall}> - something is happening as we speak,</Text>
             <Text style={styles.textSmall}> - something is going to happen soon,</Text>
-            <Text style={styles.textSmall}> - or we're talking about the current state, abilities or characteristics</Text>
+            <Text style={styles.textSmall}> - we're talking about the current state, abilities or characteristics</Text>
 
             
 

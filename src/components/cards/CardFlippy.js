@@ -252,13 +252,6 @@ const styles = StyleSheet.create({
         height: 30,
         width: 30,
         tintColor: 'white',
-        shadowColor: 'black',
-        shadowOffset: {
-            width: 0,
-            height: 0,
-        },
-        shadowOpacity: 0.9,
-        shadowRadius: 1.2,
     },
     textNor: {
         color: 'white',
@@ -266,13 +259,6 @@ const styles = StyleSheet.create({
         fontWeight: '500',
         textAlign: 'center',
         paddingHorizontal: 10,
-        shadowColor: 'black',
-        shadowOffset: {
-            width: 0,
-            height: 0,
-        },
-        shadowOpacity: 0.9,
-        shadowRadius: 1.2,
     },
     textNorExample: {
         color: 'white',
@@ -285,41 +271,37 @@ const styles = StyleSheet.create({
         color: 'white',
         fontSize: 24,
         fontWeight: '500',
-        shadowColor: 'black',
         textAlign: 'center',
         paddingHorizontal: 10,
-        shadowOffset: {
-            width: 0,
-            height: 0,
-        },
-        shadowOpacity: 0.9,
-        shadowRadius: 1.2,
-        elevation: 5
     },
     buttonYesContainer: {
         position: 'absolute',
         bottom: 60,
         right: 20,
+        backgroundColor: 'black',
+        borderRadius: 15,
         shadowColor: 'black',
         shadowOffset: {
             width: 0,
             height: 0,
         },
         shadowOpacity: 0.45,
-        shadowRadius: 14.5,
+        shadowRadius: 4.5,
         elevation: 5
     },
     buttonNoContainer: {
         position: 'absolute',
         bottom: 60,
         left: 20,
+        backgroundColor: 'black',
+        borderRadius: 15,
         shadowColor: 'black',
         shadowOffset: {
             width: 0,
             height: 0,
         },
         shadowOpacity: 0.45,
-        shadowRadius: 14.5,
+        shadowRadius: 4.5,
         elevation: 5
     },
     iconContainer: {
@@ -331,12 +313,5 @@ const styles = StyleSheet.create({
         height: 25,
         width: 25,
         tintColor: 'white',
-        shadowColor: 'black',
-        shadowOffset: {
-            width: 0,
-            height: 0,
-        },
-        shadowOpacity: 1,
-        shadowRadius: 1.2,
     },
 });

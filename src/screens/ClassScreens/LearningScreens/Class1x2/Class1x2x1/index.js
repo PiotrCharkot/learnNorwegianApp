@@ -50,7 +50,7 @@ const Class1x2x1 = ({route}) => {   //name
               Hei{user.isAnonymous ? <Text style={styles.textName}></Text> : <Text style={styles.textName}> {user.displayName}</Text>}!
             </Text>
             <Text style={styles.text}>
-            We'll talk now about the <Text style={styles.textColor}>future tense</Text> in Norwegian language. {'\n\n'}We often come across the term <Text style={styles.textColor}>'presens futurum'</Text> or just 'futurum'. It's the way to express things, events, or states set to occur in future.
+            We'll talk now about the <Text style={styles.textColor}>future tense</Text> in Norwegian language. {'\n\n'}We often come across the term <Text style={styles.textColor}>'presens futurum'</Text> or just <Text style={styles.textColor}>'futurum'</Text>. It's the way to express things, events, or states set to occur in future.
             </Text>
 
             

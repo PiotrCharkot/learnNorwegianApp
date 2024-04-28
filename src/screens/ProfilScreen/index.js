@@ -3,13 +3,12 @@ import React, { useState, useEffect, useRef, useCallback } from 'react'
 import { useNavigation, useIsFocused, useFocusEffect } from "@react-navigation/native";
 import * as SecureStore from 'expo-secure-store';
 import { LinearGradient } from 'expo-linear-gradient';
-import { collection, getDocs, query, where, doc, setDoc, updateDoc, deleteDoc } from "firebase/firestore";
+import { collection, getDocs, query, where } from "firebase/firestore";
 import { db } from '../../../firebase/firebase-config'
 import styles from './style'
-import { getAuth, onAuthStateChanged  } from 'firebase/auth';
-import { authentication } from '../../../firebase/firebase-config';
+import { getAuth } from 'firebase/auth';
 import { getStorage, ref, getDownloadURL, uploadBytesResumable } from "firebase/storage";
-import { signOut } from "firebase/auth";
+
 
 
 const screenWidth = Dimensions.get('window').width;
@@ -50,8 +49,6 @@ const ProfilScreen = () => {
   const [userEmail, setUserEmail] = useState('No email');
   const [userPoints, setUserPoints] = useState(0);
   const [userDays, setUserDays] = useState(0);
-  const [userId, setUserId] = useState('');
-  const [userAnonymous, setUserAnonymous] = useState(false);
   const [userDailyPoints, setUserDailyPoints] = useState(0);
   const [userWeeklyPoints, setUserWeeklyPoints] = useState(0);
   const [userShortId, setUserShortId] = useState('');
@@ -92,17 +89,16 @@ const ProfilScreen = () => {
   async function getValueFor(key) {
     let result = await SecureStore.getItemAsync(key);
     if (result) {
-      console.log("Here's your value", result);
       setChoosenLanguage(result);
     } else {
-      console.log('No values stored under that key.');
+      console.log('No values stored under that key: ', key);
     }
   }
 
 
   const downloadFromFb = async () => {
     
-    console.log( 'id to download picture', user.uid);
+ 
 
 
     if (user) {
@@ -115,7 +111,7 @@ const ProfilScreen = () => {
       .catch((error) => {
         console.log(error);
         if (error.code === 'storage/object-not-found') {
-          //console.log('no file for profile');
+          
 
           getDownloadURL(ref(storage, 'profilePictures/' + newProfilePic))
             .then((url) => {
@@ -229,12 +225,6 @@ const ProfilScreen = () => {
 
   useEffect(() => {
 
-
-    
-    if (user) {
-      console.log('user id in Profile screen: ', user.uid);
-      //setUserId(user.uid); 
-    }
 
     if (user && !user.isAnonymous) {
       setUserLoged(true);
