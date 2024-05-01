@@ -37,7 +37,7 @@ const Class3x3x5 = ({route}) => { // name
     <View style={styles.mainContainer}> 
         <ScrollView showsVerticalScrollIndicator={false} style={styles.body}>
           <View style={styles.textContainer}>
-            <Text style={styles.text}>Adding the <Text style={styles.textColor}>-s</Text>" suffix:</Text>
+            <Text style={styles.text}>Adding the "<Text style={styles.textColor}>-s</Text>" suffix:</Text>
           </View>
 
           <View style={styles.exampleContainer}>

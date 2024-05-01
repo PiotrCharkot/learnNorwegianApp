@@ -37,39 +37,39 @@ const Class3x1x8 = ({route}) => { // name
     <View style={styles.mainContainer}> 
         <ScrollView showsVerticalScrollIndicator={false} style={styles.body}>
           <View style={styles.textContainer}>
-            <Text style={styles.text}>We can also use <Text style={styles.textColor}>modal verbs</Text> with the present perfect tense like this:</Text>
+            <Text style={styles.text}>We can also use <Text style={styles.textColor}>modal verbs</Text> with the present perfect tense. This structure typically includes the modal verb in its present tense, followed by "ha" (to have) and the past participle of the main verb:</Text>
 
             
           </View>
 
           <View style={styles.exampleContainer}>
             <Text style={styles.exampleTextSmall}>å kunne (can, to be able to)</Text>
-            <Text style={styles.textSmall}>Jeg <Text style={styles.exampleTextSmallColor}>har kunnet</Text> snakke norsk siden jeg var barn.</Text>
-            <Text style={styles.textSmall}>I could have spoken Norwegian since I was a child.</Text>
+            <Text style={styles.textSmall}>Han <Text style={styles.exampleTextSmallColor}>kan ha</Text> gjort det.</Text>
+            <Text style={styles.textSmall}>He may have done it.</Text>
           </View>
 
           <View style={styles.exampleContainer}>
             <Text style={styles.exampleTextSmall}>å måtte (must, to have to)</Text>
-            <Text style={styles.textSmall}>Vi <Text style={styles.exampleTextSmallColor}>har måttet</Text> fullføre prosjektet før fristen.</Text>
-            <Text style={styles.textSmall}>We had to have completed the project before the deadline.</Text>
+            <Text style={styles.textSmall}>Hun <Text style={styles.exampleTextSmallColor}>må ha</Text> gjort det.</Text>
+            <Text style={styles.textSmall}>She must have done it.</Text>
           </View>
 
           <View style={styles.exampleContainer}>
             <Text style={styles.exampleTextSmall}>å skulle (shall, should)</Text>
-            <Text style={styles.textSmall}>Du <Text style={styles.exampleTextSmallColor}>har skullet</Text> sagt noe tidligere.</Text>
-            <Text style={styles.textSmall}>You should have said something earlier.</Text>
+            <Text style={styles.textSmall}>De <Text style={styles.exampleTextSmallColor}>skal ha</Text> gjort det.</Text>
+            <Text style={styles.textSmall}>They are supposed to have done it.</Text>
           </View>
 
           <View style={styles.exampleContainer}>
             <Text style={styles.exampleTextSmall}>å ville (will, would, want)</Text>
-            <Text style={styles.textSmall}>Jeg <Text style={styles.exampleTextSmallColor}>har villet</Text> hjelpe deg, men jeg hadde ikke tid.</Text>
-            <Text style={styles.textSmall}>I would have helped you, but I didn't have time.</Text>
+            <Text style={styles.textSmall}>Jeg <Text style={styles.exampleTextSmallColor}>vil ha</Text> gjort det.</Text>
+            <Text style={styles.textSmall}>I will have done it.</Text>
           </View>
 
           <View style={styles.exampleContainer}>
             <Text style={styles.exampleTextSmall}>å burde (ought to, should)</Text>
-            <Text style={styles.textSmall}>Han <Text style={styles.exampleTextSmallColor}>har burdet</Text> studert mer for eksamen.</Text>
-            <Text style={styles.textSmall}>He should have studied more for the exam.</Text>
+            <Text style={styles.textSmall}>Han <Text style={styles.exampleTextSmallColor}>burde ha</Text> gjort det.</Text>
+            <Text style={styles.textSmall}>He should have done it.</Text>
           </View>
 
           

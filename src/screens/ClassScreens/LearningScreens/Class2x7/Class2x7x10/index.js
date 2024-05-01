@@ -87,7 +87,7 @@ const Class2x7x10 = ({ route }) => {  //screen name
 
             <View style={styles.topView}>
                 <Text style={styles.questionText}>Add emphasis to the sentence. Drag the correct answer into the gap.</Text>
-                <Text style={styles.textBody}>Du bør ______ lese den boka.</Text>
+                <Text style={styles.textBody}>You should ______ read that book.</Text>
             </View>
 
             <View style={styles.squaresViewContainer}>

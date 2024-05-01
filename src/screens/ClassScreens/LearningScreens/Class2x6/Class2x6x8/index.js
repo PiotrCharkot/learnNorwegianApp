@@ -41,13 +41,13 @@ const Class2x6x8 = ({route}) => { // name
           </View>
 
           <View style={styles.exampleContainer}>
-            <Text style={styles.exampleTextSmall}>Hun studerer <Text style={styles.exampleTextSmallColor}>for å bli lege</Text> høy.</Text>
+            <Text style={styles.exampleTextSmall}>Hun studerer <Text style={styles.exampleTextSmallColor}>for å bli lege</Text>.</Text>
             <Text style={styles.textSmall}>She studies to become a doctor.</Text>
           </View>
 
 
           <View style={styles.textContainer}>
-            <Text style={styles.text}>In this sentence, "<Text style={styles.textColor}>for å bli lege</Text>" (to become a doctor) is the <Text style={styles.textColor}>adverbial</Text> describes the purpose of the action.</Text>
+            <Text style={styles.text}>In this sentence, "<Text style={styles.textColor}>for å bli lege</Text>" (to become a doctor) is the <Text style={styles.textColor}>adverbial</Text> that describes the purpose of the action.</Text>
           </View>
           
 

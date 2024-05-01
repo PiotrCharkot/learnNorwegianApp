@@ -47,11 +47,11 @@ const Class2x4x6 = ({route}) => {
 
           <View style={styles.exampleContainer}>
             <Text style={styles.exampleTextSmallColor2}>Direct speech</Text>
-            <Text style={styles.textSmall}>Han spurte, "Kan du hjelpe meg med dette?"</Text>
+            <Text style={styles.textSmall}>Han spurte, "Kan du hjelpe meg med det?"</Text>
             <Text style={styles.textSmall}>(He asked, "Can you help me with this?")</Text>
             <Text style={styles.exampleTextSmallColor}>Indirect speech</Text>
             <Text style={styles.textSmall}>Han spurte om jeg kunne hjelpe ham med det.</Text>
-            <Text style={styles.textSmall}>(He asked if I could help him with that.)</Text>
+            <Text style={styles.textSmall}>(He asked if I could help him with this.)</Text>
           </View>
 
           <View style={styles.textContainer}>

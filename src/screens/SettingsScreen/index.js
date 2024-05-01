@@ -257,12 +257,12 @@ const SettingsScreen = ({route}) => {
             <Text style={styles.buttonText}>{buttonsLabelArray[5]}</Text>
           </TouchableOpacity>
 
-          <TouchableOpacity style={styles.btnOpacity} >
+          <TouchableOpacity style={styles.btnOpacity} onPress={() => navigation.navigate({name: 'Contact', params: {choosenLanguage: choosenLanguage}})}>
           <Image source={require('../../../assets/send.png')}  style={{...styles.buttonImg, tintColor: 'purple'}}/>
             <Text style={styles.buttonText}>{buttonsLabelArray[6]}</Text>
           </TouchableOpacity>
 
-          <TouchableOpacity style={styles.btnOpacity} >
+          <TouchableOpacity style={styles.btnOpacity} onPress={() => navigation.navigate({name: 'About', params: {choosenLanguage: choosenLanguage}})}>
           <Image source={require('../../../assets/about.png')}  style={{...styles.buttonImg, tintColor: 'salmon'}}/>
             <Text style={styles.buttonText}>{buttonsLabelArray[7]}</Text>
           </TouchableOpacity>
@@ -272,7 +272,7 @@ const SettingsScreen = ({route}) => {
             <Text style={styles.buttonText}>{buttonsLabelArray[8]}</Text>
           </TouchableOpacity>
 
-          <TouchableOpacity style={styles.btnOpacity} >
+          <TouchableOpacity style={styles.btnOpacity} onPress={() => navigation.navigate({name: 'Privacy', params: {choosenLanguage: choosenLanguage}})}>
           <Image source={require('../../../assets/file.png')}  style={{...styles.buttonImg, tintColor: 'grey'}}/>
             <Text style={styles.buttonText}>{buttonsLabelArray[9]}</Text>
           </TouchableOpacity>

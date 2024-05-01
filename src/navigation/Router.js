@@ -22,6 +22,9 @@ import ExitExcScreen from "../screens/ExitExcScreen";
 import EditListScreen from "../screens/EditListScreen";
 import PublicListScreen from "../screens/PublicListsScreen";
 import TermsScreen from "../screens/TermsScreen";
+import PrivacyScreen from "../screens/PrivacyScreen";
+import AboutScreen from "../screens/AboutScreen";
+import ContactScreen from "../screens/ContactScreen";
 import Class1x1x1 from "../screens/ClassScreens/LearningScreens/Class1x1/Class1x1x1";
 import Class1x1x2 from "../screens/ClassScreens/LearningScreens/Class1x1/Class1x1x2";
 import Class1x1x3 from "../screens/ClassScreens/LearningScreens/Class1x1/Class1x1x3";
@@ -453,6 +456,9 @@ const Router = () => {
                 <Stack.Screen name="PublicLists" component={PublicListScreen} options={{headerShown: false, animationEnabled: false }}/>
                 <Stack.Screen name="CreateList" component={CreateListScreen} options={{headerShown: false, animationEnabled: false }}/>
                 <Stack.Screen name="Terms" component={TermsScreen} options={{headerShown: false, animationEnabled: false }}/>
+                <Stack.Screen name="Privacy" component={PrivacyScreen} options={{headerShown: false, animationEnabled: false }}/>
+                <Stack.Screen name="About" component={AboutScreen} options={{headerShown: false, animationEnabled: false }}/>
+                <Stack.Screen name="Contact" component={ContactScreen} options={{headerShown: false, animationEnabled: false }}/>
                 <Stack.Screen name="Class1x1x1" component={Class1x1x1} options={{headerShown: false, animationEnabled: false }}/>
                 <Stack.Screen name="Class1x1x2" component={Class1x1x2} options={{headerShown: false, animationEnabled: false }}/>
                 <Stack.Screen name="Class1x2x1" component={Class1x2x1} options={{headerShown: false, animationEnabled: false }}/>

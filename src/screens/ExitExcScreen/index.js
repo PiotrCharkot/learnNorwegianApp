@@ -117,10 +117,6 @@ const ExitExcScreen = ({route}) => {
 
   useEffect(() => {
 
-    console.log('on exit points: ', userPoints);
-
-    console.log('some markers', dataMarkers);
-
     
 
     const getDataFb = async () => {
@@ -251,13 +247,11 @@ const ExitExcScreen = ({route}) => {
 
       if (querySnapshot.empty) {
         
-        //setDataToFb();
+        
       } else {
     
-        //setIsNewUser(false);
-        
         querySnapshot.forEach((doc) => {
-          console.log('my date in fb: ', doc.data().lastUpdate, 'date new:', new Date().toLocaleDateString());
+          
           if (doc.data().lastUpdate !== new Date().toLocaleDateString()) {
             setCurrentDailyScore(0);
           } else {
@@ -499,12 +493,12 @@ const ExitExcScreen = ({route}) => {
 
   const goToMain = () => {
     navigation.navigate("Main");
-    console.log('routing to main');
+    
   }
 
   const goToResults = () => {
     navigation.navigate("results");
-    console.log('routing to main');
+    
   }
     
 

@@ -57,7 +57,7 @@ const Class3x1x7 = ({route}) => { // name
           <View style={styles.exampleContainer}>
             <Text style={styles.exampleTextSmall}>å skulle (shall, should)</Text>
             <Text style={styles.textSmall}>Vi <Text style={styles.exampleTextSmallColor}>skulle</Text> hjelpe henne, men hun sa nei.</Text>
-            <Text style={styles.textSmall}>We were supposed to travel to Oslo.</Text>
+            <Text style={styles.textSmall}>We were going to help her, but she said no.</Text>
           </View>
 
           <View style={styles.exampleContainer}>

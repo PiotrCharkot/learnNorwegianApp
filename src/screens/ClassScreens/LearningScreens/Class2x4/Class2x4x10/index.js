@@ -52,7 +52,7 @@ const Class2x4x10 = ({route}) => {  //name
 
             <View style={styles.topView}>
                 <Text style={styles.questionText}>Which option correctly converts the given sentence into indirect speech?</Text>
-                <Text style={styles.textBody}>Direct: Han spurte, "Kan du hjelpe meg med dette?"</Text>
+                <Text style={styles.textBody}>Direct: Han spurte, "Kan du hjelpe meg med det?"</Text>
                 <Text style={styles.textBody}>Indirect: Han spurte om ____________ med det.</Text>
                 <Text style={styles.textBody}>(He asked if I could help him with that.)</Text>
             </View>

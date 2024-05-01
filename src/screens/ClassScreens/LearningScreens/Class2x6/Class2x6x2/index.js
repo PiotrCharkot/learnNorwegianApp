@@ -39,12 +39,12 @@ const Class2x6x2 = ({route}) => {  //name
             <Text style={styles.text}><Text style={styles.textColor}>Adverbials</Text> can be placed in different positions within a sentence, but they often come after the verb. {'\n\n'}There are different types of adverbials:</Text>
             <Text style={styles.text}></Text>
 
-            <Text style={styles.textSmall}> - Manner (how it's done),</Text>
-            <Text style={styles.textSmall}> - Place (where it’s at),</Text>
-            <Text style={styles.textSmall}> - Time (when it happend),</Text>
-            <Text style={styles.textSmall}> - Frequency (how often)</Text>
-            <Text style={styles.textSmall}> - Degree (to what extent)</Text>
-            <Text style={styles.textSmall}> - Purpose (why)</Text>
+            <Text style={styles.textSmall}> - manner (how it's done),</Text>
+            <Text style={styles.textSmall}> - place (where it’s at),</Text>
+            <Text style={styles.textSmall}> - time (when it happend),</Text>
+            <Text style={styles.textSmall}> - frequency (how often)</Text>
+            <Text style={styles.textSmall}> - degree (to what extent)</Text>
+            <Text style={styles.textSmall}> - purpose (why)</Text>
 
 
             <Text style={styles.text}>{'\n\n'}Let's have a look on some examples, shall we?</Text>
