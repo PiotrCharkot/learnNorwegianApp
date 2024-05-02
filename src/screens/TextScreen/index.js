@@ -47,6 +47,7 @@ const TextScreen = ({route}) => {
   const [title, setTitle] = useState('');
   const [text, setText] = useState('');
   const [expressions, setExpressions] = useState([]);
+  const [pictures, setPictures] = useState([]);
   const [fontSize, setFontSize] = useState(16);
   const [darkMode, setDarkMode] = useState('0');
   const [currentDailyScore, setCurrentDailyScore] = useState(0);
@@ -245,9 +246,12 @@ const TextScreen = ({route}) => {
     getValueForTxtSize('fontSize')
     textData.map(el => {
         if (el.textId === route.params.textId) {
-            setTitle(el.title);
-            setText(el.text)
-            setExpressions(el.expressions);
+          setTitle(el.title);
+          setText(el.text)
+          setExpressions(el.expressions);
+          if (el.links) {
+            setPictures(el.links);
+          }
         }
     })
 
@@ -435,6 +439,20 @@ const TextScreen = ({route}) => {
                 </View>
               )
             })}
+
+
+            <View style={styles.photosContainer}>
+
+              {pictures.map((picture) => {
+                return(
+                  <View key={picture.key} style={styles.photoHolder}>
+                    <Image style={styles.photo} source={{uri: picture.link}}/>
+                    <Text style={{...styles.photoDesc, color: darkMode === '1' ?  'white' : 'black'}}>{picture.desc}</Text>
+                  </View>
+                )
+              })}
+
+            </View>
 
           <View style={{height: 200}}></View>
           </ScrollView>

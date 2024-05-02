@@ -49,7 +49,8 @@ const styles = StyleSheet.create({
     textTitle: {
         fontSize: 26,
         fontWeight: '600',
-        color: 'white'
+        color: 'white',
+        textAlign: 'center'
     },
     textTitleExp: {
         fontSize: 26,
@@ -101,6 +102,27 @@ const styles = StyleSheet.create({
         width: 20,
         tintColor: 'brown'
     },
+    photosContainer: {
+        width: '100%',
+        marginTop: 80
+    },
+    photoHolder: {
+        width: '100%', 
+        alignItems: 'center',
+        marginBottom: 20
+        
+    },
+    photo: {
+        width: screenWidth - 50, 
+        height: screenWidth - 50,
+        borderRadius: 6,
+        borderWidth: 3,
+        borderColor: 'white',
+        marginBottom: 5
+    },
+    photoDesc: {
+
+    }
 });
 
 

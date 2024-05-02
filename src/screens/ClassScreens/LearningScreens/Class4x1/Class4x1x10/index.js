@@ -46,12 +46,12 @@ const Class4x1x10 = ({ route }) => { //name
         <ScrollView showsVerticalScrollIndicator={false} style={styles.body}>
 
           <View style={styles.textContainer}>
-            <Text style={styles.text}>You use the <Text style={styles.boldText}>indefinite article</Text>: {'\n\n'}- When mentioning something for the first time: "Det er en bok på bordet." (There's a book on the table.){'\n'}- When speaking about something in a general sense: "En hund er et trofast dyr." (A dog is a faithful animal.)</Text>
+            <Text style={styles.text}>You use the <Text style={styles.boldText}>indefinite article</Text>: {'\n\n'}- when mentioning something for the first time: "Det er en bok på bordet." (There's a book on the table.){'\n'}- when speaking about something in a general sense: "En hund er et trofast dyr." (A dog is a faithful animal.)</Text>
           </View>
 
 
           <View style={styles.textContainer}>
-            <Text style={styles.text}>You use the <Text style={styles.boldText}>definite article</Text>: {'\n\n'}- When you're talking about a specific item or items known to both the speaker and the listener.{'\n'}- After the first mention of an item, when it's clear which specific item you're referring to. {'\n'}- With most nouns in subject position: "Boken er interessant." (The book is interesting.)</Text>
+            <Text style={styles.text}>You use the <Text style={styles.boldText}>definite article</Text>: {'\n\n'}- when you're talking about a specific item or items known to both the speaker and the listener.{'\n'}- after the first mention of an item, when it's clear which specific item you're referring to. {'\n'}- with most nouns in subject position: "Boken er interessant." (The book is interesting.)</Text>
           </View>
 
 

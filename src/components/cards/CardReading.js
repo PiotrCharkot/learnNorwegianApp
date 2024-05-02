@@ -119,7 +119,7 @@ const styles = StyleSheet.create({
         right: 15
     },
     levelText: {
-        fontSize: 24,
+        fontSize: 10,
         fontWeight: '900'
     },
     orangeSquare: {

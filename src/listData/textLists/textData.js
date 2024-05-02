@@ -1,820 +1,511 @@
 export default textInfo = [
     {
-        textId: 0,
-        title: 'Studentlivet i Oslo',
-        text: 'Hei! Jeg heter Anna. Jeg er fra Norge. Jeg bor i Oslo. Oslo er hovedstaden i Norge. Jeg snakker norsk og litt engelsk. Jeg er student. Jeg studerer historie ved Universitetet i Oslo. Jeg liker å lese bøker og gå på tur i naturen. Norge har mange vakre fjell og innsjøer. På fritiden min liker jeg også å trene og se på filmer. Jeg har en katt som heter Luna. Hun er veldig søt. Hva med deg? Hvor kommer du fra? Hva liker du å gjøre?',
-        expressions: [
-            {
-              nor: "Hei! Jeg heter...",
-              eng: "Hi! My name is...",
-              pl: "Cześć! Nazywam się...",
-              ar: "مرحبا! اسمي",
-              ger: "Hallo! Mein Name ist...",
-              lt: "Sveiki! Mano vardas...",
-              ua: "Привіт! Мене звати...",
-              sp: "¡Hola! Me llamo...",
-              key: 0
-            },
-            {
-              nor: "Jeg er fra...",
-              eng: "I am from...",
-              pl: "Jestem z...",
-              ar: "أنا من",
-              ger: "Ich komme aus...",
-              lt: "Aš esu iš...",
-              ua: "Я з...",
-              sp: "Soy de...",
-              key: 1
-            },
-            {
-              nor: "Jeg bor i...",
-              eng: "I live in...",
-              pl: "Mieszkam w...",
-              ar: "أعيش في",
-              ger: "Ich wohne in...",
-              lt: "Aš gyvenu...",
-              ua: "Я живу в...",
-              sp: "Vivo en...",
-              key: 2
-            },
-            {
-              nor: "Jeg snakker...",
-              eng: "I speak...",
-              pl: "Mówię po...",
-              ar: "أنا أتحدث",
-              ger: "Ich spreche...",
-              lt: "Aš kalbu...",
-              ua: "Я розмовляю...",
-              sp: "Hablo...",
-              key: 3
-            },
-            {
-              nor: "Jeg er student.",
-              eng: "I am a student.",
-              pl: "Jestem studentem.",
-              ar: "أنا طالب",
-              ger: "Ich bin Student.",
-              lt: "Aš esu studentas.",
-              ua: "Я студент.",
-              sp: "Soy estudiante.",
-              key: 4
-            },
-            {
-              nor: "Jeg studerer... ved...",
-              eng: "I study... at...",
-              pl: "Studiuję... na...",
-              ar: "أدرس في",
-              ger: "Ich studiere... an...",
-              lt: "Aš studijuoju... ...universitete.",
-              ua: "Я вчуся... в...",
-              sp: "Estudio... en...",
-              key: 5
-            },
-            {
-              nor: "Jeg liker å...",
-              eng: "I like to...",
-              pl: "Lubię...",
-              ar: "أحب أن",
-              ger: "Ich mag es zu...",
-              lt: "Man patinka...",
-              ua: "Мені подобається...",
-              sp: "Me gusta...",
-              key: 6
-            },
-            {
-              nor: "Hva med deg?",
-              eng: "What about you?",
-              pl: "A ty?",
-              ar: "ماذا عنك؟",
-              ger: "Und du?",
-              lt: "O kaip tu?",
-              ua: "А що про тебе?",
-              sp: "¿Y tú?",
-              key: 7
-            }
-          ]
-    },
-    {
-        textId: 1,
-        title: 'Min Daglige Rutine',
-        text: 'Jeg våkner tidlig hver morgen. Jeg står opp klokken syv. Først pusser jeg tennene og tar en dusj. Så spiser jeg frokost. Jeg liker å spise brød med ost og drikke kaffe om morgenen. Etter frokosten, går jeg til jobb. Jeg jobber på et kontor i sentrum. Jeg starter å jobbe klokken åtte. Til lunsj spiser jeg vanligvis en salat eller en sandwich. Jeg jobber til klokken fire. Når jeg kommer hjem, liker jeg å slappe av litt. Jeg ser på TV eller leser en bok. Jeg spiser middag med familien min klokken seks. Vi liker å spise fisk eller kylling med grønnsaker. Etter middag går jeg ofte en tur. Jeg legger meg tidlig. Jeg går til sengs klokken ti. Jeg liker å sove godt for å være klar for neste dag.',
-        expressions: [
-            {
-                nor: "Jeg våkner tidlig.",
-                eng: "I wake up early.",
-                pl: "Budzę się wcześnie.",
-                ar: "أستيقظ مبكرًا.",
-                ger: "Ich wache früh auf.",
-                lt: "Aš keliosi anksti.",
-                ua: "Я прокидаюсь рано.",
-                sp: "Me despierto temprano.",
-                key: 0
-              },
-              {
-                nor: "Pusser tennene.",
-                eng: "Brush teeth.",
-                pl: "Myję zęby.",
-                ar: "أنظف أسناني.",
-                ger: "Zähne putzen.",
-                lt: "Valausi dantis.",
-                ua: "Чищу зуби.",
-                sp: "Cepillo los dientes.",
-                key: 1
-              },
-              {
-                nor: "Spiser frokost.",
-                eng: "Eat breakfast.",
-                pl: "Jem śniadanie.",
-                ar: "آكل الفطور.",
-                ger: "Frühstück essen.",
-                lt: "Valgau pusryčius.",
-                ua: "Їм сніданок.",
-                sp: "Desayuno.",
-                key: 2
-              },
-              {
-                nor: "Jobber på kontor.",
-                eng: "Work in office.",
-                pl: "Pracuję w biurze.",
-                ar: "أعمل في مكتب.",
-                ger: "Im Büro arbeiten.",
-                lt: "Dirbu biure.",
-                ua: "Працюю в офісі.",
-                sp: "Trabajo en la oficina.",
-                key: 3
-              },
-              {
-                nor: "Slapper av.",
-                eng: "Relax.",
-                pl: "Relaksuję się.",
-                ar: "أسترخي.",
-                ger: "Entspannen.",
-                lt: "Atsipalaiduoju.",
-                ua: "Розслабляюсь.",
-                sp: "Relajo.",
-                key: 4
-              },
-              {
-                nor: "Går til sengs klokken ti.",
-                eng: "Go to bed at ten.",
-                pl: "Idę spać o dziesiątej.",
-                ar: "أذهب للنوم الساعة العاشرة.",
-                ger: "Gehe um zehn ins Bett.",
-                lt: "Eiu miegoti dešimtą.",
-                ua: "Лягаю спати о десятій.",
-                sp: "Me voy a la cama a las diez.",
-                key: 5
-              }
-        ]
-    },
-    {
-        textId: 20,
-        title: 'Reise og Transport',
-        text: 'Når jeg reiser, liker jeg å utforske forskjellige transportmåter. I Norge er det mange måter å reise på. For korte distanser bruker jeg ofte sykkel eller går til fots. Det er miljøvennlig og sunt. I byene er det lett å ta buss eller trikk. De er vanligvis punktlige og effektive. For lengre avstander tar jeg ofte tog eller fly. Norges tognettverk er fantastisk; det tar meg gjennom vakre landskap. Når jeg skal til andre land, foretrekker jeg å fly. Det er raskt og komfortabelt. Jeg pleier å bestille billettene på nettet for å få de beste tilbudene. Å spørre om veibeskrivelser er også viktig. Jeg spør ofte lokalbefolkningen om hjelp. "Unnskyld, hvordan kommer jeg meg til flyplassen?" er en nyttig setning. Folk er vanligvis vennlige og hjelpsomme. Når jeg trenger å leie en bil, går jeg til en bilutleiekiosk. Jeg sier, "Jeg ønsker å leie en bil fra i morgen." Det er viktig å ha gyldig førerkort og kredittkort. Reise i Norge gir meg frihet og eventyr. Det er alltid noe nytt å oppdage, enten jeg tar bussen, toget, flyet, eller sykler.',
-        expressions: [
-            {
-            nor: "Hvordan kommer jeg meg til...?",
-            eng: "How do I get to...?",
-            pl: "Jak mogę dostać się do...?",
-            ar: "كيف يمكنني الوصول إلى...؟",
-            ger: "Wie komme ich zu...?",
-            lt: "Kaip nuvykti iki...?",
-            ua: "Як мені дістатися до...?",
-            sp: "¿Cómo llego a...?",
+      textId: 0,
+      title: 'Emilies Oslo',
+      text: `Emilie bor i Oslo. Hun er 29 år gammel. Hun jobber med miljøet. Emilie liker å hjelpe naturen. Hun går ofte i parken og elver for å rydde. Emilie vil gjøre Oslo grønnere. ${'\n\n'}En dag møter Emilie Mikkel. Mikkel lager en app. Appen hjelper folk å være snille mot naturen. Emilie og Mikkel jobber sammen. De vil hjelpe Oslo. ${'\n\n'}Emilie har en venn, Nora. Nora skriver i en avis. Hun liker eventyr. Emilie og Nora har det gøy sammen. De går på kafé i Grünerløkka. ${'\n\n'}Emilie er glad i Oslo. Hun vil hjelpe byen og naturen. Hun jobber hardt hver dag. Emilie tror på å gjøre en forskjell.`,
+      expressions: [
+        {
+            nor: "Bor i Oslo",
+            eng: "Lives in Oslo",
+            pl: "Mieszka w Oslo",
+            ar: "يعيش في أوسلو",
+            ger: "Lebt in Oslo",
+            lt: "Gyvena Osle",
+            ua: "Живе в Осло",
+            sp: "Vive en Oslo",
             key: 0
-            },
-            {
-            nor: "Jeg ønsker å bestille...",
-            eng: "I would like to book...",
-            pl: "Chciałbym zarezerwować...",
-            ar: "أود أن أحجز...",
-            ger: "Ich möchte buchen...",
-            lt: "Norėčiau užsakyti...",
-            ua: "Я б хотів забронювати...",
-            sp: "Quisiera reservar...",
+        },
+        {
+            nor: "Jobber med miljøet",
+            eng: "Works with the environment",
+            pl: "Pracuje nad środowiskiem",
+            ar: "يعمل في مجال البيئة",
+            ger: "Arbeitet mit der Umwelt",
+            lt: "Dirba su aplinka",
+            ua: "Працює з довкіллям",
+            sp: "Trabaja con el medio ambiente",
             key: 1
-            },
-            {
-            nor: "Har du ledige rom?",
-            eng: "Do you have any available rooms?",
-            pl: "Czy macie wolne pokoje?",
-            ar: "هل لديكم غرف متاحة؟",
-            ger: "Haben Sie freie Zimmer?",
-            lt: "Ar turite laisvų kambarių?",
-            ua: "Чи є у вас вільні номери?",
-            sp: "¿Tiene habitaciones disponibles?",
+        },
+        {
+            nor: "Går i parken",
+            eng: "Goes to the park",
+            pl: "Chodzi do parku",
+            ar: "يذهب إلى الحديقة",
+            ger: "Geht in den Park",
+            lt: "Eina į parką",
+            ua: "Ходить до парку",
+            sp: "Va al parque",
             key: 2
-            },
-            {
-            nor: "Når går neste buss/tog?",
-            eng: "When does the next bus/train leave?",
-            pl: "Kiedy odjeżdża następny autobus/pociąg?",
-            ar: "متى يغادر الحافلة/القطار التالي؟",
-            ger: "Wann fährt der nächste Bus/Zug ab?",
-            lt: "Kada išvyksta kitas autobusas/traukinys?",
-            ua: "Коли відправляється наступний автобус/поїзд?",
-            sp: "¿Cuándo sale el próximo autobús/tren?",
+        },
+        {
+            nor: "Jobber sammen",
+            eng: "Work together",
+            pl: "Pracują razem",
+            ar: "يعملون معًا",
+            ger: "Arbeiten zusammen",
+            lt: "Dirba kartu",
+            ua: "Працюють разом",
+            sp: "Trabajan juntos",
             key: 3
-            },
-            {
-            nor: "Kan jeg få et kart?",
-            eng: "Can I have a map?",
-            pl: "Czy mogę dostać mapę?",
-            ar: "هل يمكنني الحصول على خريطة؟",
-            ger: "Kann ich eine Karte bekommen?",
-            lt: "Ar galiu gauti žemėlapį?",
-            ua: "Чи можу я отримати карту?",
-            sp: "¿Puedo tener un mapa?",
+        },
+        {
+            nor: "Har det gøy",
+            eng: "Have fun",
+            pl: "Dobrze się bawią",
+            ar: "يمرحون",
+            ger: "Haben Spaß",
+            lt: "Linksmintis",
+            ua: "Веселитися",
+            sp: "Se divierten",
             key: 4
-            },
-            {
-            nor: "Jeg har en reservasjon.",
-            eng: "I have a reservation.",
-            pl: "Mam rezerwację.",
-            ar: "لدي حجز.",
-            ger: "Ich habe eine Reservierung.",
-            lt: "Aš turiu rezervaciją.",
-            ua: "У мене є бронювання.",
-            sp: "Tengo una reserva.",
+        },
+        {
+            nor: "Gjøre en forskjell",
+            eng: "Make a difference",
+            pl: "Robić różnicę",
+            ar: "يحدث فرقًا",
+            ger: "Einen Unterschied machen",
+            lt: "Padaryti skirtumą",
+            ua: "Зробити різницю",
+            sp: "Hacer la diferencia",
             key: 5
-            }
-        ]
+        }
+      ],
+      links: [
+        {
+          link: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/textPhotos%2Foslo.jpg?alt=media&token=bebd8dcf-2e21-4fe7-8b29-91eff1ee4a9c',
+          desc: 'Oslo - Aker Brygge',
+          key: 0
+        }
+
+      ]
     },
     {
-        textId: 21,
-        title: 'Helse og Trening',
-        text: 'Å ta vare på helsen er veldig viktig. Jeg prøver å være aktiv hver dag. Jeg liker å gå på lange turer eller jogge i parken. Det hjelper meg å holde meg i form. Å spise sunt er også essensielt. Jeg inkluderer frukt og grønnsaker i måltidene mine. Når jeg føler meg syk, bestiller jeg en time hos legen. Jeg sier, "Jeg trenger en legetime så snart som mulig." Det er viktig å beskrive symptomene nøyaktig. For eksempel, "Jeg har vondt i hodet og feber." På apoteket kan jeg kjøpe medisiner. Jeg spør apotekeren, "Hva anbefaler du mot hodepine?" Det er alltid lurt å følge legens råd og lese instruksjonene på medisinen nøye. For å styrke kroppen min, gjør jeg forskjellige øvelser. Jeg går på yoga og trener på treningsstudio. Det er mange måter å holde seg aktiv på. Å finne en aktivitet som du liker, er nøkkelen til regelmessig trening. Å være i god form er ikke bare bra for kroppen, men også for sinnet. Det forbedrer humøret og gir mer energi til daglige aktiviteter.',
-        expressions: [
-            {
-            nor: "Jeg trenger en legetime.",
-            eng: "I need a doctor's appointment.",
-            pl: "Potrzebuję wizyty u lekarza.",
-            ar: "أحتاج إلى موعد مع الطبيب.",
-            ger: "Ich brauche einen Arzttermin.",
-            lt: "Man reikia gydytojo vizito.",
-            ua: "Мені потрібна консультація лікаря.",
-            sp: "Necesito una cita con el doctor.",
+      textId: 1,
+      title: 'Trolltunga: Et eventyr i Vest-Norge',
+      text: `Trolltunga er et vakkert sted i Vest-Norge. Det er kjent for sin fantastiske utsikt. Det er et stort fjell som ser ut som en tunge. Folk går langt for å se Trolltunga. Turen er lang, men veldig fin. ${'\n\n'}For å komme til Trolltunga, må du gå en lang tur. Turen tar mange timer. Det er viktig å ha gode sko og klær. På veien kan du se fjell, vann og trær. Naturen er veldig vakker. Mange tar bilder når de kommer til Trolltunga. ${'\n\n'}På Trolltunga kan du se fjorder og fjell. Utsikten er fantastisk. Du kan se langt i alle retninger. Mange sitter på kanten for å ta et bilde. Det er viktig å være forsiktig.${'\n\n'}Trolltunga er et spesielt sted for mange mennesker. Det er et eventyr å gå dit. Du må være i god form for å gå turen. Det er best å gå om sommeren. Da er det ikke snø, og været er bedre.${'\n\n'}Mange mennesker fra hele verden kommer til Trolltunga. De vil se den vakre naturen i Norge. Trolltunga er et av de mest kjente stedene i Norge.`,
+      expressions: [
+        {
+            nor: 'en lang tur',
+            eng: 'a long hike',
+            pl: 'długa wędrówka',
+            ar: 'رحلة طويلة',
+            ger: 'eine lange Wanderung',
+            lt: 'ilga iškyla',
+            ua: 'довгий похід',
+            sp: 'una larga caminata',
             key: 0
-            },
-            {
-            nor: "Jeg har vondt i...",
-            eng: "My... hurts.",
-            pl: "Boli mnie...",
-            ar: "يؤلمني...",
-            ger: "Mein(e)... tut weh.",
-            lt: "Man skauda...",
-            ua: "У мене болить...",
-            sp: "Me duele...",
+        },
+        {
+            nor: 'gode sko',
+            eng: 'good shoes',
+            pl: 'dobre buty',
+            ar: 'أحذية جيدة',
+            ger: 'gute Schuhe',
+            lt: 'geri batai',
+            ua: 'хороше взуття',
+            sp: 'buenos zapatos',
             key: 1
-            },
-            {
-            nor: "Hva anbefaler du mot...?",
-            eng: "What do you recommend for...?",
-            pl: "Co polecasz na...?",
-            ar: "ماذا توصي لـ...؟",
-            ger: "Was empfehlen Sie gegen...?",
-            lt: "Ką rekomenduojate prieš...?",
-            ua: "Що ви рекомендуєте проти...?",
-            sp: "¿Qué recomienda para...?",
+        },
+        {
+            nor: 'fantastisk utsikt',
+            eng: 'fantastic view',
+            pl: 'fantastyczny widok',
+            ar: 'منظر رائع',
+            ger: 'fantastische Aussicht',
+            lt: 'nuostabi panorama',
+            ua: 'чудовий вид',
+            sp: 'vista fantástica',
             key: 2
-            },
-            {
-            nor: "Jeg føler meg syk.",
-            eng: "I feel sick.",
-            pl: "Czuję się chory.",
-            ar: "أشعر بالمرض.",
-            ger: "Ich fühle mich krank.",
-            lt: "Jaučiuosi sergantis.",
-            ua: "Я почуваюсь хворим.",
-            sp: "Me siento enfermo.",
+        },
+        {
+            nor: 'å ta et bilde',
+            eng: 'to take a picture',
+            pl: 'zrobić zdjęcie',
+            ar: 'التقاط صورة',
+            ger: 'ein Bild machen',
+            lt: 'padaryti nuotrauką',
+            ua: 'зробити фотографію',
+            sp: 'tomar una foto',
             key: 3
-            },
-            {
-            nor: "Hvordan kan jeg holde meg i form?",
-            eng: "How can I stay fit?",
-            pl: "Jak mogę utrzymać formę?",
-            ar: "كيف يمكنني الحفاظ على لياقتي؟",
-            ger: "Wie kann ich fit bleiben?",
-            lt: "Kaip galiu išlaikyti formą?",
-            ua: "Як я можу залишатися у формі?",
-            sp: "¿Cómo puedo mantenerme en forma?",
+        },
+        {
+            nor: 'å være forsiktig',
+            eng: 'to be careful',
+            pl: 'być ostrożnym',
+            ar: 'كن حذرًا',
+            ger: 'vorsichtig sein',
+            lt: 'būti atsargiam',
+            ua: 'бути обережним',
+            sp: 'ser cuidadoso',
             key: 4
-            },
-            {
-            nor: "Jeg går på yoga.",
-            eng: "I attend yoga classes.",
-            pl: "Chodzę na jogę.",
-            ar: "أحضر دروس اليوغا.",
-            ger: "Ich besuche Yoga-Kurse.",
-            lt: "Lankausi jogos pamokose.",
-            ua: "Я ходжу на йогу.",
-            sp: "Asisto a clases de yoga.",
+        },
+        {
+            nor: 'i god form',
+            eng: 'in good shape',
+            pl: 'w dobrej formie',
+            ar: 'في حالة جيدة',
+            ger: 'in guter Verfassung',
+            lt: 'geroje būklėje',
+            ua: 'у гарній формі',
+            sp: 'en buena forma',
             key: 5
-            }
-        ]
-    },
-    {
-        textId: 40,
-        title: 'Mat og Matlaging',
-        text: 'Å lage mat er en kunst og en viktig del av norsk kultur. Norge er kjent for sin sjømat, spesielt laks og torsk. Men det norske kjøkkenet har mye mer å tilby. For eksempel, "kjøttkaker i brun saus" er en tradisjonell rett som mange nordmenn elsker. Når jeg lager mat, starter jeg med å velge ferske ingredienser. Å forstå oppskrifter krever kjennskap til forskjellige matlagingsverb som å koke (to boil), steke (to fry), bake (to bake), og grille (to grill). For eksempel, hvis du vil lage en enkel, men deilig middag, kan du prøve "laks i ovn". Du trenger laks, olivenolje, sitron, salt, og pepper. Forvarm ovnen til 200 grader, krydre laksen, og bak den i ovnen i 20 minutter. Server med kokte grønnsaker eller en frisk salat. Å eksperimentere med krydder kan også forvandle et enkelt måltid til et kulinarisk mesterverk. For eksempel, "dill" er et krydder som ofte brukes i norsk fiskeretter. Det tilfører en frisk og unik smak. Å lage mat sammen kan være en sosial aktivitet. Mange nordmenn samles med familie eller venner for å lage mat og nyte måltider sammen, spesielt i helgene.',
-        expressions: [
-            {
-            nor: "Å koke",
-            eng: "To boil",
-            pl: "Gotować",
-            ar: "لغلي",
-            ger: "Kochen",
-            lt: "Virti",
-            ua: "Варити",
-            sp: "Hervir",
-            key: 0
-            },
-            {
-            nor: "Å steke",
-            eng: "To fry",
-            pl: "Smażyć",
-            ar: "لقلي",
-            ger: "Braten",
-            lt: "Kepti",
-            ua: "Смажити",
-            sp: "Freír",
-            key: 1
-            },
-            {
-            nor: "Å bake",
-            eng: "To bake",
-            pl: "Piec",
-            ar: "لخبز",
-            ger: "Backen",
-            lt: "Kepti orkaitėje",
-            ua: "Випікати",
-            sp: "Hornear",
-            key: 2
-            },
-            {
-            nor: "Å grille",
-            eng: "To grill",
-            pl: "Grillować",
-            ar: "لشواء",
-            ger: "Grillen",
-            lt: "Grilinti",
-            ua: "Гриль",
-            sp: "Asar a la parrilla",
-            key: 3
-            },
-            {
-            nor: "Krydre laksen",
-            eng: "Season the salmon",
-            pl: "Przyprawić łososia",
-            ar: "تتبيل السلمون",
-            ger: "Den Lachs würzen",
-            lt: "Įtrinti lašišą prieskoniais",
-            ua: "Приправити лосося",
-            sp: "Sazonar el salmón",
-            key: 4
-            },
-            {
-            nor: "Server med...",
-            eng: "Serve with...",
-            pl: "Podawać z...",
-            ar: "قدم مع...",
-            ger: "Servieren mit...",
-            lt: "Patiekti su...",
-            ua: "Подавати з...",
-            sp: "Servir con...",
-            key: 5
-            },
-            {
-            nor: "Forvarm ovnen til...",
-            eng: "Preheat the oven to...",
-            pl: "Rozgrzać piekarnik do...",
-            ar: "سخن الفرن إلى...",
-            ger: "Den Ofen vorheizen auf...",
-            lt: "Įkaitinti orkaitę iki...",
-            ua: "Розігріти духовку до...",
-            sp: "Precalentar el horno a...",
+        },
+        {
+            nor: 'mest kjente',
+            eng: 'most famous',
+            pl: 'najbardziej znany',
+            ar: 'الأكثر شهرة',
+            ger: 'am bekanntesten',
+            lt: 'žymiausias',
+            ua: 'найвідоміший',
+            sp: 'más famoso',
             key: 6
-            }
-        ]
+        }
+        
+      ],
+      // links: [
+      //   {
+      //     link: '',
+      //     desc: '',
+      //     key: 0
+      //   }
+
+      // ]
     },
     {
-        textId: 41,
-        title: 'Mat og Matlaging B11',
-        text: 'Å lage mat er en kunst og en viktig del av norsk kultur. Norge er kjent for sin sjømat, spesielt laks og torsk. Men det norske kjøkkenet har mye mer å tilby. For eksempel, "kjøttkaker i brun saus" er en tradisjonell rett som mange nordmenn elsker. Når jeg lager mat, starter jeg med å velge ferske ingredienser. Å forstå oppskrifter krever kjennskap til forskjellige matlagingsverb som å koke (to boil), steke (to fry), bake (to bake), og grille (to grill). For eksempel, hvis du vil lage en enkel, men deilig middag, kan du prøve "laks i ovn". Du trenger laks, olivenolje, sitron, salt, og pepper. Forvarm ovnen til 200 grader, krydre laksen, og bak den i ovnen i 20 minutter. Server med kokte grønnsaker eller en frisk salat. Å eksperimentere med krydder kan også forvandle et enkelt måltid til et kulinarisk mesterverk. For eksempel, "dill" er et krydder som ofte brukes i norsk fiskeretter. Det tilfører en frisk og unik smak. Å lage mat sammen kan være en sosial aktivitet. Mange nordmenn samles med familie eller venner for å lage mat og nyte måltider sammen, spesielt i helgene.',
-        expressions: [
-            {
-            nor: "Å koke",
-            eng: "To boil",
-            pl: "Gotować",
-            ar: "لغلي",
-            ger: "Kochen",
-            lt: "Virti",
-            ua: "Варити",
-            sp: "Hervir",
+      textId: 2,
+      title: 'Nora sin bursdag',
+      text: `I dag er det Noras bursdag. Emilie og Nora sitter på en kafé i Grünerløkka. De drikker kaffe og snakker. Nora er veldig glad. Hun har bursdag!${'\n\n'}- Gratulerer med dagen, Nora! - sier Emilie. ${'\n\n'}- Takk, Emilie! - sier Nora.${'\n\n'}Emilie forteller Nora om Mikkel. Mikkel er Emilies nye venn. Han lager en app for miljøet. Emilie liker Mikkel. Hun synes han er smart og snill.${'\n\n'}Nora spør om Mikkel. Hun vil vite mer. Emilie smiler og sier at Mikkel er veldig interessert i naturen. Han vil hjelpe Oslo å være grønnere. Nora synes det er en god idé. Hun vil også møte Mikkel.${'\n\n'}De snakker og ler. De er gode venner. Emilie gir Nora en gave. Nora er veldig takknemlig. De har en fin dag sammen.`,
+      expressions: [
+        {
+            nor: "Ha bursdag",
+            eng: "To have a birthday",
+            pl: "Obchodzić urodziny",
+            ar: "يحتفل بعيد ميلاده",
+            ger: "Geburtstag haben",
+            lt: "Švęsti gimtadienį",
+            ua: "Мати день народження",
+            sp: "Tener un cumpleaños",
             key: 0
-            },
-            {
-            nor: "Å steke",
-            eng: "To fry",
-            pl: "Smażyć",
-            ar: "لقلي",
-            ger: "Braten",
-            lt: "Kepti",
-            ua: "Смажити",
-            sp: "Freír",
+        },
+        {
+            nor: "Drikke kaffe",
+            eng: "To drink coffee",
+            pl: "Pić kawę",
+            ar: "يشرب قهوة",
+            ger: "Kaffee trinken",
+            lt: "Gerti kavą",
+            ua: "Пити каву",
+            sp: "Tomar café",
             key: 1
-            },
-            {
-            nor: "Å bake",
-            eng: "To bake",
-            pl: "Piec",
-            ar: "لخبز",
-            ger: "Backen",
-            lt: "Kepti orkaitėje",
-            ua: "Випікати",
-            sp: "Hornear",
+        },
+        {
+            nor: "Være glad",
+            eng: "To be happy",
+            pl: "Być szczęśliwym",
+            ar: "أن يكون سعيدا",
+            ger: "Glücklich sein",
+            lt: "Būti laimingam",
+            ua: "Бути щасливим",
+            sp: "Estar feliz",
             key: 2
-            },
-            {
-            nor: "Å grille",
-            eng: "To grill",
-            pl: "Grillować",
-            ar: "لشواء",
-            ger: "Grillen",
-            lt: "Grilinti",
-            ua: "Гриль",
-            sp: "Asar a la parrilla",
+        },
+        {
+            nor: "Være interessert i",
+            eng: "To be interested in",
+            pl: "Być zainteresowanym",
+            ar: "أن يكون مهتمًا بـ",
+            ger: "Interessiert sein an",
+            lt: "Domėtis",
+            ua: "Цікавитися",
+            sp: "Estar interesado en",
             key: 3
-            },
-            {
-            nor: "Krydre laksen",
-            eng: "Season the salmon",
-            pl: "Przyprawić łososia",
-            ar: "تتبيل السلمون",
-            ger: "Den Lachs würzen",
-            lt: "Įtrinti lašišą prieskoniais",
-            ua: "Приправити лосося",
-            sp: "Sazonar el salmón",
+        },
+        {
+            nor: "Være takknemlig",
+            eng: "To be thankful",
+            pl: "Być wdzięcznym",
+            ar: "أن يكون شاكرًا",
+            ger: "Dankbar sein",
+            lt: "Būti dėkingam",
+            ua: "Бути вдячним",
+            sp: "Estar agradecido",
             key: 4
-            },
-            {
-            nor: "Server med...",
-            eng: "Serve with...",
-            pl: "Podawać z...",
-            ar: "قدم مع...",
-            ger: "Servieren mit...",
-            lt: "Patiekti su...",
-            ua: "Подавати з...",
-            sp: "Servir con...",
-            key: 5
-            },
-            {
-            nor: "Forvarm ovnen til...",
-            eng: "Preheat the oven to...",
-            pl: "Rozgrzać piekarnik do...",
-            ar: "سخن الفرن إلى...",
-            ger: "Den Ofen vorheizen auf...",
-            lt: "Įkaitinti orkaitę iki...",
-            ua: "Розігріти духовку до...",
-            sp: "Precalentar el horno a...",
-            key: 6
-            }
-        ]
+        }
+        
+      ],
+      // links: [
+      //   {
+      //     link: '',
+      //     desc: '',
+      //     key: 0
+      //   }
+
+      // ]
     },
     {
-        textId: 60,
-        title: 'Mat og Matlaging B2',
-        text: 'Å lage mat er en kunst og en viktig del av norsk kultur. Norge er kjent for sin sjømat, spesielt laks og torsk. Men det norske kjøkkenet har mye mer å tilby. For eksempel, "kjøttkaker i brun saus" er en tradisjonell rett som mange nordmenn elsker. Når jeg lager mat, starter jeg med å velge ferske ingredienser. Å forstå oppskrifter krever kjennskap til forskjellige matlagingsverb som å koke (to boil), steke (to fry), bake (to bake), og grille (to grill). For eksempel, hvis du vil lage en enkel, men deilig middag, kan du prøve "laks i ovn". Du trenger laks, olivenolje, sitron, salt, og pepper. Forvarm ovnen til 200 grader, krydre laksen, og bak den i ovnen i 20 minutter. Server med kokte grønnsaker eller en frisk salat. Å eksperimentere med krydder kan også forvandle et enkelt måltid til et kulinarisk mesterverk. For eksempel, "dill" er et krydder som ofte brukes i norsk fiskeretter. Det tilfører en frisk og unik smak. Å lage mat sammen kan være en sosial aktivitet. Mange nordmenn samles med familie eller venner for å lage mat og nyte måltider sammen, spesielt i helgene.',
-        expressions: [
-            {
-            nor: "Å koke",
-            eng: "To boil",
-            pl: "Gotować",
-            ar: "لغلي",
-            ger: "Kochen",
-            lt: "Virti",
-            ua: "Варити",
-            sp: "Hervir",
+      textId: 3,
+      title: 'Dyrene i Norge',
+      text: `I Norge kan du se mange forskjellige dyr. Noen dyr bor i skogen, og noen bor i fjellene eller ved sjøen. Norge har mange vakre dyr.${'\n\n'}Elgen er veldig stor og kalles ofte for "skogens konge". Den bor i skogen. Mange mennesker liker å se elgen, men den er sky og ikke lett å finne.${'\n\n'}Reinen er et annet dyr i Norge. Reinen er viktig for samene i nord. Samene bruker reinen for mat og klær. Reinen kan leve i kalde steder.${'\n\n'}I havet rundt Norge kan du se hvaler. Hvalene er store og svømmer i havet. Noen hvaler er veldig store, som blåhvalen. Det er spennende å se hvaler.${'\n\n'}I fjellene i Norge bor det fjellrev og geiter. Fjellreven er liten og har tykk pels. Geitene kan klatre høyt opp i fjellene.${'\n\n'}I norske skoger kan du også finne ulver og bjørner, men de er sjeldne. Mange barn i Norge liker historier om ulver og bjørner.${'\n\n'}Dyr i Norge er vakre. Det er viktig å passe på dem og naturen de bor i.`,
+      expressions: [
+        {
+            nor: 'klatre opp',
+            eng: 'climb up',
+            pl: 'wspiąć się',
+            ar: 'تسلق للأعلى',
+            ger: 'hinaufklettern',
+            lt: 'lipti į viršų',
+            ua: 'лазити вгору',
+            sp: 'subir',
             key: 0
-            },
-            {
-            nor: "Å steke",
-            eng: "To fry",
-            pl: "Smażyć",
-            ar: "لقلي",
-            ger: "Braten",
-            lt: "Kepti",
-            ua: "Смажити",
-            sp: "Freír",
+        },
+        {
+            nor: 'lett å finne',
+            eng: 'easy to find',
+            pl: 'łatwo znaleźć',
+            ar: 'سهل العثور عليه',
+            ger: 'leicht zu finden',
+            lt: 'lengva rasti',
+            ua: 'легко знайти',
+            sp: 'fácil de encontrar',
             key: 1
-            },
-            {
-            nor: "Å bake",
-            eng: "To bake",
-            pl: "Piec",
-            ar: "لخبز",
-            ger: "Backen",
-            lt: "Kepti orkaitėje",
-            ua: "Випікати",
-            sp: "Hornear",
+        },
+        {
+            nor: 'skogens konge',
+            eng: 'king of the forest',
+            pl: 'król lasu',
+            ar: 'ملك الغابة',
+            ger: 'der König des Waldes',
+            lt: 'miško karalius',
+            ua: 'король лісу',
+            sp: 'rey del bosque',
             key: 2
-            },
-            {
-            nor: "Å grille",
-            eng: "To grill",
-            pl: "Grillować",
-            ar: "لشواء",
-            ger: "Grillen",
-            lt: "Grilinti",
-            ua: "Гриль",
-            sp: "Asar a la parrilla",
+        },
+        {
+            nor: 'viktig for',
+            eng: 'important for',
+            pl: 'ważny dla',
+            ar: 'مهم لـ',
+            ger: 'wichtig für',
+            lt: 'svarbu',
+            ua: 'важливо для',
+            sp: 'importante para',
             key: 3
-            },
-            {
-            nor: "Krydre laksen",
-            eng: "Season the salmon",
-            pl: "Przyprawić łososia",
-            ar: "تتبيل السلمون",
-            ger: "Den Lachs würzen",
-            lt: "Įtrinti lašišą prieskoniais",
-            ua: "Приправити лосося",
-            sp: "Sazonar el salmón",
+        },
+        {
+            nor: 'passe på',
+            eng: 'take care of',
+            pl: 'zajmować się',
+            ar: 'اعتني ب',
+            ger: 'sich kümmern um',
+            lt: 'rūpintis',
+            ua: 'піклуватися про',
+            sp: 'cuidar de',
             key: 4
-            },
-            {
-            nor: "Server med...",
-            eng: "Serve with...",
-            pl: "Podawać z...",
-            ar: "قدم مع...",
-            ger: "Servieren mit...",
-            lt: "Patiekti su...",
-            ua: "Подавати з...",
-            sp: "Servir con...",
-            key: 5
-            },
-            {
-            nor: "Forvarm ovnen til...",
-            eng: "Preheat the oven to...",
-            pl: "Rozgrzać piekarnik do...",
-            ar: "سخن الفرن إلى...",
-            ger: "Den Ofen vorheizen auf...",
-            lt: "Įkaitinti orkaitę iki...",
-            ua: "Розігріти духовку до...",
-            sp: "Precalentar el horno a...",
-            key: 6
-            }
-        ]
+        }
+        
+      ],
+      // links: [
+      //   {
+      //     link: '',
+      //     desc: '',
+      //     key: 0
+      //   }
+
+      // ]
     },
     {
-        textId: 61,
-        title: 'Mat og Matlaging B22',
-        text: 'Å lage mat er en kunst og en viktig del av norsk kultur. Norge er kjent for sin sjømat, spesielt laks og torsk. Men det norske kjøkkenet har mye mer å tilby. For eksempel, "kjøttkaker i brun saus" er en tradisjonell rett som mange nordmenn elsker. Når jeg lager mat, starter jeg med å velge ferske ingredienser. Å forstå oppskrifter krever kjennskap til forskjellige matlagingsverb som å koke (to boil), steke (to fry), bake (to bake), og grille (to grill). For eksempel, hvis du vil lage en enkel, men deilig middag, kan du prøve "laks i ovn". Du trenger laks, olivenolje, sitron, salt, og pepper. Forvarm ovnen til 200 grader, krydre laksen, og bak den i ovnen i 20 minutter. Server med kokte grønnsaker eller en frisk salat. Å eksperimentere med krydder kan også forvandle et enkelt måltid til et kulinarisk mesterverk. For eksempel, "dill" er et krydder som ofte brukes i norsk fiskeretter. Det tilfører en frisk og unik smak. Å lage mat sammen kan være en sosial aktivitet. Mange nordmenn samles med familie eller venner for å lage mat og nyte måltider sammen, spesielt i helgene.',
-        expressions: [
-            {
-            nor: "Å koke",
-            eng: "To boil",
-            pl: "Gotować",
-            ar: "لغلي",
-            ger: "Kochen",
-            lt: "Virti",
-            ua: "Варити",
-            sp: "Hervir",
+      textId: 4,
+      title: 'Tur ved Akerselva',
+      text: `Emilie og Mikkel går en tur langs Akerselva. Det er en solrik dag, og Oslo ser veldig pent ut.${'\n\n'}- Solen skinner så sterkt i dag, - sier Emilie - Det er veldig fint vær for en tur.${'\n\n'}- Ja, jeg liker solen - svarer Mikkel - Det er perfekt vær for å være ute.${'\n\n'}De går langs elva og snakker om forskjellige ting. De snakker om dagen og planene sine. De ler og nyter den fine dagen.${'\n\n'}- Det er alltid fint å gå her - sier Emilie.${'\n\n'}- Ja, det er det - sier Mikkel. - En fin dag gjør alt bedre.${'\n\n'}De fortsetter å gå og planlegger å stoppe for en pause snart. De er glade for å tilbringe dagen sammen.${'\n\n'}- Oslo er så fint når solen skinner - sier Emilie.${'\n\n'}- Absolutt - sier Mikkel. - Det er en flott dag for en tur.${'\n\n'}De ser frem til resten av dagen og å tilbringe mer tid sammen.`,
+      expressions: [
+        {
+            nor: 'en solrik dag',
+            eng: 'a sunny day',
+            pl: 'słoneczny dzień',
+            ar: 'يوم مشمس',
+            ger: 'ein sonniger Tag',
+            lt: 'saulėta diena',
+            ua: 'сонячний день',
+            sp: 'un día soleado',
             key: 0
-            },
-            {
-            nor: "Å steke",
-            eng: "To fry",
-            pl: "Smażyć",
-            ar: "لقلي",
-            ger: "Braten",
-            lt: "Kepti",
-            ua: "Смажити",
-            sp: "Freír",
+        },
+        {
+            nor: 'veldig fint vær',
+            eng: 'very nice weather',
+            pl: 'bardzo ładna pogoda',
+            ar: 'طقس جميل جدا',
+            ger: 'sehr schönes Wetter',
+            lt: 'labai geras oras',
+            ua: 'дуже гарна погода',
+            sp: 'tiempo muy bonito',
             key: 1
-            },
-            {
-            nor: "Å bake",
-            eng: "To bake",
-            pl: "Piec",
-            ar: "لخبز",
-            ger: "Backen",
-            lt: "Kepti orkaitėje",
-            ua: "Випікати",
-            sp: "Hornear",
+        },
+        {
+            nor: 'å gå langs elva',
+            eng: 'to walk along the river',
+            pl: 'spacerować wzdłuż rzeki',
+            ar: 'السير على طول النهر',
+            ger: 'entlang des Flusses gehen',
+            lt: 'eiti šalia upės',
+            ua: 'гуляти вздовж річки',
+            sp: 'caminar a lo largo del río',
             key: 2
-            },
-            {
-            nor: "Å grille",
-            eng: "To grill",
-            pl: "Grillować",
-            ar: "لشواء",
-            ger: "Grillen",
-            lt: "Grilinti",
-            ua: "Гриль",
-            sp: "Asar a la parrilla",
+        },
+        {
+            nor: 'å snakke om forskjellige ting',
+            eng: 'to talk about different things',
+            pl: 'rozmawiać o różnych rzeczach',
+            ar: 'التحدث عن أشياء مختلفة',
+            ger: 'über verschiedene Dinge sprechen',
+            lt: 'kalbėtis apie įvairius dalykus',
+            ua: 'говорити про різні речі',
+            sp: 'hablar de diferentes cosas',
             key: 3
-            },
-            {
-            nor: "Krydre laksen",
-            eng: "Season the salmon",
-            pl: "Przyprawić łososia",
-            ar: "تتبيل السلمون",
-            ger: "Den Lachs würzen",
-            lt: "Įtrinti lašišą prieskoniais",
-            ua: "Приправити лосося",
-            sp: "Sazonar el salmón",
+        },
+        {
+            nor: 'å stoppe for en pause',
+            eng: 'to stop for a break',
+            pl: 'zatrzymać się na przerwę',
+            ar: 'التوقف لأخذ استراحة',
+            ger: 'für eine Pause anhalten',
+            lt: 'sustoti pertraukai',
+            ua: 'зупинитися на перерву',
+            sp: 'parar para tomar un descanso',
             key: 4
-            },
-            {
-            nor: "Server med...",
-            eng: "Serve with...",
-            pl: "Podawać z...",
-            ar: "قدم مع...",
-            ger: "Servieren mit...",
-            lt: "Patiekti su...",
-            ua: "Подавати з...",
-            sp: "Servir con...",
+        },
+        {
+            nor: 'å tilbringe dagen sammen',
+            eng: 'to spend the day together',
+            pl: 'spędzić dzień razem',
+            ar: 'قضاء اليوم معًا',
+            ger: 'den Tag zusammen verbringen',
+            lt: 'praleisti dieną kartu',
+            ua: 'провести день разом',
+            sp: 'pasar el día juntos',
             key: 5
-            },
-            {
-            nor: "Forvarm ovnen til...",
-            eng: "Preheat the oven to...",
-            pl: "Rozgrzać piekarnik do...",
-            ar: "سخن الفرن إلى...",
-            ger: "Den Ofen vorheizen auf...",
-            lt: "Įkaitinti orkaitę iki...",
-            ua: "Розігріти духовку до...",
-            sp: "Precalentar el horno a...",
+        },
+        {
+            nor: 'å se frem til resten av dagen',
+            eng: 'to look forward to the rest of the day',
+            pl: 'nie móc się doczekać reszty dnia',
+            ar: 'التطلع إلى بقية اليوم',
+            ger: 'sich auf den Rest des Tages freuen',
+            lt: 'laukti likusios dienos',
+            ua: 'чекати на решту дня',
+            sp: 'esperar con ilusión el resto del día',
             key: 6
-            }
-        ]
+        }
+        
+      ],
+      // links: [
+      //   {
+      //     link: '',
+      //     desc: '',
+      //     key: 0
+      //   }
+
+      // ]
     },
     {
-        textId: 80,
-        title: 'Mat og Matlaging C1',
-        text: 'Å lage mat er en kunst og en viktig del av norsk kultur. Norge er kjent for sin sjømat, spesielt laks og torsk. Men det norske kjøkkenet har mye mer å tilby. For eksempel, "kjøttkaker i brun saus" er en tradisjonell rett som mange nordmenn elsker. Når jeg lager mat, starter jeg med å velge ferske ingredienser. Å forstå oppskrifter krever kjennskap til forskjellige matlagingsverb som å koke (to boil), steke (to fry), bake (to bake), og grille (to grill). For eksempel, hvis du vil lage en enkel, men deilig middag, kan du prøve "laks i ovn". Du trenger laks, olivenolje, sitron, salt, og pepper. Forvarm ovnen til 200 grader, krydre laksen, og bak den i ovnen i 20 minutter. Server med kokte grønnsaker eller en frisk salat. Å eksperimentere med krydder kan også forvandle et enkelt måltid til et kulinarisk mesterverk. For eksempel, "dill" er et krydder som ofte brukes i norsk fiskeretter. Det tilfører en frisk og unik smak. Å lage mat sammen kan være en sosial aktivitet. Mange nordmenn samles med familie eller venner for å lage mat og nyte måltider sammen, spesielt i helgene.',
-        expressions: [
-            {
-            nor: "Å koke",
-            eng: "To boil",
-            pl: "Gotować",
-            ar: "لغلي",
-            ger: "Kochen",
-            lt: "Virti",
-            ua: "Варити",
-            sp: "Hervir",
+      textId: 5,
+      title: '17. mai i Norge',
+      text: `I Norge er 17. mai en veldig spesiell dag. Det er Norges nasjonaldag. På denne dagen feirer folk Norges grunnlov. Alle er veldig glade og feirer sammen.${'\n\n'}Om morgenen, begynner dagen med barnetog. Barn fra skoler går i tog gjennom byene. De har på seg fine klær. Barna vinker med norske flagg og synger sanger.${'\n\n'}Folk ser på toget og klapper. Mange har på seg bunad som er en tradisjonell norsk drakt. Overalt er det norske flagg. Det er musikk og dans i gatene. Folk sier "Gratulerer med dagen" til hverandre.${'\n\n'}Etter toget, spiser folk is og pølser. Det er veldig vanlig å spise mye is på 17. mai. Familier og venner er sammen hele dagen. De spiser god mat og er glade.${'\n\n'}Om kvelden, er det fyrverkeri i noen byer. Himmelen blir fylt med vakre farger. 17. mai er en dag full av glede og stolthet for Norge.`,
+      expressions: [
+        {
+            nor: 'nasjonaldag',
+            eng: 'national day',
+            pl: 'dzień narodowy',
+            ar: 'اليوم الوطني',
+            ger: 'Nationalfeiertag',
+            lt: 'nacionalinė diena',
+            ua: 'національний день',
+            sp: 'día nacional',
             key: 0
-            },
-            {
-            nor: "Å steke",
-            eng: "To fry",
-            pl: "Smażyć",
-            ar: "لقلي",
-            ger: "Braten",
-            lt: "Kepti",
-            ua: "Смажити",
-            sp: "Freír",
+        },
+        {
+            nor: 'barnetog',
+            eng: 'children\'s parade',
+            pl: 'parada dzieci',
+            ar: 'مسيرة الأطفال',
+            ger: 'Kinderumzug',
+            lt: 'vaikų paradas',
+            ua: 'дитячий парад',
+            sp: 'desfile de niños',
             key: 1
-            },
-            {
-            nor: "Å bake",
-            eng: "To bake",
-            pl: "Piec",
-            ar: "لخبز",
-            ger: "Backen",
-            lt: "Kepti orkaitėje",
-            ua: "Випікати",
-            sp: "Hornear",
+        },
+        {
+            nor: 'bunad',
+            eng: 'traditional Norwegian dress',
+            pl: 'tradycyjny norweski strój',
+            ar: 'الزي النرويجي التقليدي',
+            ger: 'traditionelle norwegische Tracht',
+            lt: 'tradicinis norvegiškas drabužis',
+            ua: 'традиційний норвезький одяг',
+            sp: 'traje tradicional noruego',
             key: 2
-            },
-            {
-            nor: "Å grille",
-            eng: "To grill",
-            pl: "Grillować",
-            ar: "لشواء",
-            ger: "Grillen",
-            lt: "Grilinti",
-            ua: "Гриль",
-            sp: "Asar a la parrilla",
+        },
+        {
+            nor: 'Gratulerer med dagen',
+            eng: 'Happy National Day',
+            pl: 'Wszystkiego najlepszego z okazji Dnia Narodowego',
+            ar: 'عيد وطني سعيد',
+            ger: 'Glücklicher Nationaltag',
+            lt: 'Su nacionaline švente',
+            ua: 'З Днем Нації',
+            sp: 'Feliz día nacional',
             key: 3
-            },
-            {
-            nor: "Krydre laksen",
-            eng: "Season the salmon",
-            pl: "Przyprawić łososia",
-            ar: "تتبيل السلمون",
-            ger: "Den Lachs würzen",
-            lt: "Įtrinti lašišą prieskoniais",
-            ua: "Приправити лосося",
-            sp: "Sazonar el salmón",
+        },
+        {
+            nor: 'fyrverkeri',
+            eng: 'fireworks',
+            pl: 'fajerwerki',
+            ar: 'الألعاب النارية',
+            ger: 'Feuerwerke',
+            lt: 'fejerverkai',
+            ua: 'феєрверки',
+            sp: 'fuegos artificiales',
             key: 4
-            },
-            {
-            nor: "Server med...",
-            eng: "Serve with...",
-            pl: "Podawać z...",
-            ar: "قدم مع...",
-            ger: "Servieren mit...",
-            lt: "Patiekti su...",
-            ua: "Подавати з...",
-            sp: "Servir con...",
+        },
+        {
+            nor: 'fylt med',
+            eng: 'filled with',
+            pl: 'wypełniony',
+            ar: 'مليء بـ',
+            ger: 'gefüllt mit',
+            lt: 'pripildytas',
+            ua: 'наповнений',
+            sp: 'lleno de',
             key: 5
-            },
-            {
-            nor: "Forvarm ovnen til...",
-            eng: "Preheat the oven to...",
-            pl: "Rozgrzać piekarnik do...",
-            ar: "سخن الفرن إلى...",
-            ger: "Den Ofen vorheizen auf...",
-            lt: "Įkaitinti orkaitę iki...",
-            ua: "Розігріти духовку до...",
-            sp: "Precalentar el horno a...",
-            key: 6
-            }
-        ]
+        }
+        
+      ],
+      // links: [
+      //   {
+      //     link: '',
+      //     desc: '',
+      //     key: 0
+      //   }
+
+      // ]
     },
-    {
-        textId: 81,
-        title: 'Mat og Matlaging C11',
-        text: 'Å lage mat er en kunst og en viktig del av norsk kultur. Norge er kjent for sin sjømat, spesielt laks og torsk. Men det norske kjøkkenet har mye mer å tilby. For eksempel, "kjøttkaker i brun saus" er en tradisjonell rett som mange nordmenn elsker. Når jeg lager mat, starter jeg med å velge ferske ingredienser. Å forstå oppskrifter krever kjennskap til forskjellige matlagingsverb som å koke (to boil), steke (to fry), bake (to bake), og grille (to grill). For eksempel, hvis du vil lage en enkel, men deilig middag, kan du prøve "laks i ovn". Du trenger laks, olivenolje, sitron, salt, og pepper. Forvarm ovnen til 200 grader, krydre laksen, og bak den i ovnen i 20 minutter. Server med kokte grønnsaker eller en frisk salat. Å eksperimentere med krydder kan også forvandle et enkelt måltid til et kulinarisk mesterverk. For eksempel, "dill" er et krydder som ofte brukes i norsk fiskeretter. Det tilfører en frisk og unik smak. Å lage mat sammen kan være en sosial aktivitet. Mange nordmenn samles med familie eller venner for å lage mat og nyte måltider sammen, spesielt i helgene.',
-        expressions: [
-            {
-            nor: "Å koke",
-            eng: "To boil",
-            pl: "Gotować",
-            ar: "لغلي",
-            ger: "Kochen",
-            lt: "Virti",
-            ua: "Варити",
-            sp: "Hervir",
-            key: 0
-            },
-            {
-            nor: "Å steke",
-            eng: "To fry",
-            pl: "Smażyć",
-            ar: "لقلي",
-            ger: "Braten",
-            lt: "Kepti",
-            ua: "Смажити",
-            sp: "Freír",
-            key: 1
-            },
-            {
-            nor: "Å bake",
-            eng: "To bake",
-            pl: "Piec",
-            ar: "لخبز",
-            ger: "Backen",
-            lt: "Kepti orkaitėje",
-            ua: "Випікати",
-            sp: "Hornear",
-            key: 2
-            },
-            {
-            nor: "Å grille",
-            eng: "To grill",
-            pl: "Grillować",
-            ar: "لشواء",
-            ger: "Grillen",
-            lt: "Grilinti",
-            ua: "Гриль",
-            sp: "Asar a la parrilla",
-            key: 3
-            },
-            {
-            nor: "Krydre laksen",
-            eng: "Season the salmon",
-            pl: "Przyprawić łososia",
-            ar: "تتبيل السلمون",
-            ger: "Den Lachs würzen",
-            lt: "Įtrinti lašišą prieskoniais",
-            ua: "Приправити лосося",
-            sp: "Sazonar el salmón",
-            key: 4
-            },
-            {
-            nor: "Server med...",
-            eng: "Serve with...",
-            pl: "Podawać z...",
-            ar: "قدم مع...",
-            ger: "Servieren mit...",
-            lt: "Patiekti su...",
-            ua: "Подавати з...",
-            sp: "Servir con...",
-            key: 5
-            },
-            {
-            nor: "Forvarm ovnen til...",
-            eng: "Preheat the oven to...",
-            pl: "Rozgrzać piekarnik do...",
-            ar: "سخن الفرن إلى...",
-            ger: "Den Ofen vorheizen auf...",
-            lt: "Įkaitinti orkaitę iki...",
-            ua: "Розігріти духовку до...",
-            sp: "Precalentar el horno a...",
-            key: 6
-            }
-        ]
-    },
+    // {
+    //   textId: ,
+    //   title: '',
+    //   text: ``,
+    //   expressions: [
+        
+    //   ],
+    //   links: [
+    //     {
+    //       link: '',
+    //       desc: '',
+    //       key: 0
+    //     }
+
+    //   ]
+    // },
 ]
+
+

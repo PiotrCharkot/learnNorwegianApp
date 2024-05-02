@@ -58,7 +58,7 @@ const Class4x2x5 = ({route}) => { // name
 
 
           <View style={styles.textContainer}>
-            <Text style={styles.text}>Don't stop there! Keep an eye out for more, like "<Text style={styles.textColor}>en bok</Text>" (book), "<Text style={styles.textColor}>en mus</Text>" (mouse), "<Text style={styles.textColor}>et kne</Text>" (knee), "<Text style={styles.textColor}>ei hånd</Text>" (hand), and "<Text style={styles.textColor}>en bror</Text>" (brother).</Text>
+            <Text style={styles.text}>Don't stop there! Keep an eye out for more, like "<Text style={styles.textColor}>en bok</Text>" (book), "<Text style={styles.textColor}>en mus</Text>" (mouse), "<Text style={styles.textColor}>et kne</Text>" (knee), "<Text style={styles.textColor}>ei hånd</Text>" (hand), "<Text style={styles.textColor}>en bror</Text>" (brother) and many others.</Text>
           </View>
 
         </ScrollView>
