@@ -43,7 +43,7 @@ const Class5x1x7 = ({route}) => {  //screen name
 
           <View style={styles.exampleContainer}>
             <Text style={styles.exampleTextSmall}>rask (fast) → raskt (quickly)</Text>
-            <Text style={styles.exampleTextSmall}>åpen (open) → åpent (openly)</Text>
+            <Text style={styles.exampleTextSmall}>god (good) → godt (well)</Text>
             <Text style={styles.textSmall}></Text>
             <Text style={styles.textSmall}>Han løper raskt for å nå bussen.</Text>
             <Text style={styles.textSmall}>He runs quickly to catch the bus.</Text>

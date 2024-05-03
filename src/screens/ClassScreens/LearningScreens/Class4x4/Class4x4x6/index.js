@@ -37,7 +37,7 @@ const Class4x4x6 = ({route}) => { // name
     <View style={styles.mainContainer}> 
         <ScrollView showsVerticalScrollIndicator={false} style={styles.body}>
           <View style={styles.textContainer}>
-            <Text style={styles.text}>This <Text style={styles.textColor}>genitive</Text> case is often replaced by using "<Text style={styles.textColor1}>til</Text>" (to) or "<Text style={styles.textColor1}>sin</Text>/<Text style={styles.textColor1}>sitt</Text>/<Text style={styles.textColor1}>sine</Text>" (his/her/its/their).</Text>
+            <Text style={styles.text}>Let's look at these examples of using "<Text style={styles.textColor1}>sin</Text>/<Text style={styles.textColor1}>sitt</Text>/<Text style={styles.textColor1}>sine</Text>" (his/her/its/their).</Text>
           </View>
 
           <View style={styles.exampleContainer}>

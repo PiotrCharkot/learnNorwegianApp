@@ -32,7 +32,7 @@ export default dataObj = [
     showPro: false,
    },
     {
-    title: 'Noun phrase',
+    title: 'Noun phrases',
     description: 'Substantivfraser',
     level: 'A1',
     link: 'Class4x5x1',

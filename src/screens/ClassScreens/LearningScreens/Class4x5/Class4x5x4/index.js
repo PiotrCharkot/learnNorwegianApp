@@ -47,7 +47,7 @@ const Class4x5x4 = ({route}) => { // name
             <Text style={styles.textSmall}>Demonstrative pronoun: <Text style={styles.exampleTextSmall}>det</Text> (that, this)</Text>
             <Text style={styles.textSmall}>Adjective: <Text style={styles.exampleTextSmall}>vakre</Text> (beautiful)</Text>
             <Text style={styles.textSmall}>Noun: <Text style={styles.exampleTextSmall}>huset</Text> (the house)</Text>
-            <Text style={styles.textSmall}>Prepositional phrase: <Text style={styles.exampleTextSmall}>ved sjøen</Text> (by the sea)</Text>
+            <Text style={styles.textSmall}>Adverb of place: <Text style={styles.exampleTextSmall}>ved sjøen</Text> (by the sea)</Text>
           </View>
 
           <View style={styles.textContainer}>

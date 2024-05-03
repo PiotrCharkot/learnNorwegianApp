@@ -42,7 +42,7 @@ const Class4x6x1 = ({route}) => {   //name
     <View style={styles.mainContainer}>
         <ScrollView showsVerticalScrollIndicator={false} style={styles.body}>
           <View style={styles.topView}>
-            <Text style={styles.title}>Here is place for title in bold text</Text>
+            <Text style={styles.title}>Compound words - samskriving</Text>
           </View>
 
           <View style={styles.middleView}>

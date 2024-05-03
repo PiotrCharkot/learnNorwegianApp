@@ -37,7 +37,7 @@ const Class5x2x3 = ({route}) => { // name
     <View style={styles.mainContainer}> 
         <ScrollView showsVerticalScrollIndicator={false} style={styles.body}>
           <View style={styles.textContainer}>
-            <Text style={styles.text}>As you could see in previous example the rule is that we add <Text style={styles.textColor}>-t</Text> to adjective in neuter gender and we add <Text style={styles.textColor}>-e</Text> to adjective in plural.</Text>
+            <Text style={styles.text}>As you could see in previous examples the rule is that we add <Text style={styles.textColor}>-t</Text> to adjective in neuter gender and we add <Text style={styles.textColor}>-e</Text> to adjective in plural.</Text>
           </View>
 
           <View style={styles.exampleContainer}>

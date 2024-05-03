@@ -60,7 +60,7 @@ const Class4x6x3 = ({ route }) => { //name
 
           <View style={styles.exampleContainer}>
             <Text style={styles.exampleTextSmall}>gammeldags (old-fashioned)</Text>
-            <Text style={styles.textInEgz}>gammel (old) + dags (days, fashion)</Text>
+            <Text style={styles.textInEgz}>gammel (old) + dags (days)</Text>
           </View>
 
 

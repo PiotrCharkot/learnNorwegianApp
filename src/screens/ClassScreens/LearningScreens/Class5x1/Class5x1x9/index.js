@@ -12,7 +12,7 @@ const answerBonus = generalStyles.answerBonus;
 const currentScreen = 9; //current screen
 const answerOne = 'langsomt';  //answer a
 const answerTwo = 'pent'; //answer b
-const answerThree = 'dyrt'; //answer c
+const answerThree = 'pen'; //answer c
 const answerFour = 'hardt'; //answer d
 const correctAnswers = [false, true, false, false];  //correct answer true or false
 

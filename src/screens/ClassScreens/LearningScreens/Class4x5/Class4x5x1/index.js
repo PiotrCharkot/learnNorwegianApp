@@ -42,14 +42,14 @@ const Class4x5x1 = ({route}) => {   //name
     <View style={styles.mainContainer}>
         <ScrollView showsVerticalScrollIndicator={false} style={styles.body}>
           <View style={styles.topView}>
-            <Text style={styles.title}>Here is place for title in bold text</Text>
+            <Text style={styles.title}>Noun phrases - substantivfraser</Text>
           </View>
 
           <View style={styles.middleView}>
             <Text style={styles.textGreeting}>
               Hei{user.isAnonymous ? <Text style={styles.textName}></Text> : <Text style={styles.textName}> {user.displayName}</Text>}!
             </Text>
-            <Text style={styles.text}><Text style={styles.textColor}>Noun phrase</Text> (<Text style={styles.textColor}>substantivfrase</Text>) is a group of words that functions as a single unit and has a noun or pronoun as its main element, or head. {'\n\n'}A <Text style={styles.textColor}>noun phrase</Text> can include other elements such as articles, adjectives, possessive pronouns, and sometimes even other noun phrases. They can stand before or after main noun
+            <Text style={styles.text}><Text style={styles.textColor}>Noun phrases</Text> (<Text style={styles.textColor}>substantivfraser</Text>) is a group of words that functions as a single unit and has a noun or pronoun as its main element, or head. {'\n\n'}A <Text style={styles.textColor}>noun phrase</Text> can include other elements such as articles, adjectives, possessive pronouns, and sometimes even other noun phrases. They can stand before or after main noun
             </Text>
 
             

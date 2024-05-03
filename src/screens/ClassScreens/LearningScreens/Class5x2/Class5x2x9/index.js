@@ -37,7 +37,7 @@ const Class5x2x9 = ({route}) => {  //screen name
         <ScrollView showsVerticalScrollIndicator={false} style={styles.body}>
           
           <View style={styles.textContainer}>
-            <Text style={styles.text}>Plural:</Text>
+            <Text style={styles.text}><Text style={styles.boldText}>Pronouns</Text> for plural:</Text>
           </View>
 
           <View style={styles.exampleContainer}>

@@ -37,7 +37,7 @@ const Class5x2x10 = ({route}) => {  //screen name
         <ScrollView showsVerticalScrollIndicator={false} style={styles.body}>
           
           <View style={styles.textContainer}>
-            <Text style={styles.text}>We use form <Text style={styles.textColor1}>sin</Text>/<Text style={styles.textColor1}>sitt</Text>/<Text style={styles.textColor1}>sine</Text> when we want to emphasize that object belongs to person in the sentence. {'\n\n'}Look at these to sentences:</Text>
+            <Text style={styles.text}>We use form <Text style={styles.textColor1}>sin</Text>/<Text style={styles.textColor1}>sitt</Text>/<Text style={styles.textColor1}>sine</Text> when we want to emphasize that object belongs to person in the sentence. {'\n\n'}Look at these two sentences:</Text>
           </View>
 
           <View style={styles.exampleContainer}>
@@ -57,7 +57,7 @@ const Class5x2x10 = ({route}) => {  //screen name
           </View>
 
           <View style={styles.textContainer}>
-            <Text style={styles.text}>In the second case we indicate that Lill kissed somebody's else boyfriend and Ole painted somebody's else house.</Text>
+            <Text style={styles.text}>In the second cases we indicate that Lill kissed somebody's else boyfriend and Ole painted somebody's else house.</Text>
           </View>
 
 
