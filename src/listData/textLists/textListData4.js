@@ -2,20 +2,56 @@ export default dataObj = [
     {
         key: 0,
         textId: 60,
-        title: 'Studentlivet i Oslo',
-        level: 'B2'
+        title: 'Norges tilnærming til strafferett og rehabilitering',
+        level: 'Norge på Tvers'
    },
     {
         key: 1,
         textId: 61,
-        title: 'Min Daglige Rutine',
-        level: 'B2'
+        title: 'Forberedelser til Ryddeaksjon i Ekebergparken',
+        level: 'Echoer fra Oslo'
    },
    {
        key: 2,
-       textId: 61,
-       title: 'Min Daglige Rutine bb',
-       level: 'B2'
-  },
+       textId: 62,
+       title: 'Svalbard: Et arktisk paradis',
+       level: 'Rundt om Norge'
+   },
+   {
+        key: 3,
+        textId: 63,
+        title: 'Velferdssystemet i Norge',
+        level: 'Norge på Tvers'
+    },
+    {
+        key: 4,
+        textId: 64,
+        title: 'Ettertanker fra Ekeberg',
+        level: 'Echoer fra Oslo'
+    },
+    {
+        key: 5,
+        textId: 65,
+        title: 'Samene: Norges urfolk',
+        level: 'Kultur i Norge'
+    },
+    {
+        key: 6,
+        textId: 66,
+        title: 'Norges rolle i internasjonal fred',
+        level: 'Norge på Tvers'
+    },
+    {
+        key: 7,
+        textId: 68,
+        title: 'Engasjementets Vekkelse',
+        level: 'Echoer fra Oslo'
+    },
+    {
+        key: 8,
+        textId: 68,
+        title: 'Norsk økonomi og oljeindustri',
+        level: 'Norge på Tvers'
+    },
    
 ];

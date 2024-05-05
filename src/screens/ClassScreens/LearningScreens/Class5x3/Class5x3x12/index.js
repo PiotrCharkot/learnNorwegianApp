@@ -21,7 +21,7 @@ const dataForMarkers = {
   class: 2
 }
 
-const correctAnswers = ['Vi', 'har', 'et', 'lite', 'barn', 'hjemme']; // array with correct words in line up to the word that goes in gap. exapmle ==> const correctAnswers = ['Jeg', 'trenger'];
+const correctAnswers = ['Vi', 'har', 'et', 'lite', 'barn', 'hjemme.']; // array with correct words in line up to the word that goes in gap. exapmle ==> const correctAnswers = ['Jeg', 'trenger'];
 
 const indexOfGaps = [3] // array with index of a gap in text
 const indexOfText = [0, 1, 2, 4, 5] // array with indexes of text
@@ -35,7 +35,7 @@ const Class5x3x12 = ({ route }) => {  //screen name
     
     const [movingDraggable, setMovingDraggable] = useState(null);
     const [releaseDraggable, setReleaseDraggable] = useState(null);
-    const [words, setWords] = useState(['Vi', 'har', 'et','            ', 'barn', 'hjemme', '!!!' ,'lita', 'små', 'liten', 'lille', 'lite' ]); // arr with word in order, after '!!!' comes word to choose from Vi har et lite barn hjemme.
+    const [words, setWords] = useState(['Vi', 'har', 'et','            ', 'barn', 'hjemme.', '!!!' ,'lita', 'små', 'liten', 'lille', 'lite' ]); // arr with word in order, after '!!!' comes word to choose from Vi har et lite barn hjemme.
     const [currentPoints, setCurrentPoints] = useState(userPoints);
     const [latestScreenDone, setLatestScreenDone] = useState(currentScreen);
     const [comeBack, setComeBack] = useState(false);

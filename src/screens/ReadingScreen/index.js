@@ -788,7 +788,7 @@ const ReadingScreen = () => {
 
         </Animated.View>
 
-        <Animated.View style={{...styles.flatListsContainerBottom, backgroundColor: backgroundFlatlist5}}>
+        <Animated.View style={{...styles.flatListsContainerLast, backgroundColor: backgroundFlatlist5}}>
           
           <LinearGradient colors={['white', 'rgba(255,255,255,0)', 'white']} start={[0.0, 0.1]} end={[0.0, 1.0]}  style={styles.gradinetFlatlist}>
             </LinearGradient>
@@ -812,7 +812,7 @@ const ReadingScreen = () => {
         </Animated.View>
 
 
-        <Animated.View style={{...styles.flatListsContainerBottom, backgroundColor: backgroundFlatlist6}}>
+        {/* <Animated.View style={{...styles.flatListsContainerLast, backgroundColor: backgroundFlatlist6}}>
           
           <LinearGradient colors={['white', 'rgba(255,255,255,0)', 'white']} start={[0.0, 0.1]} end={[0.0, 1.0]}  style={styles.gradinetFlatlist}>
             </LinearGradient>
@@ -833,7 +833,10 @@ const ReadingScreen = () => {
             scrollEventThrottle={16}
           />
 
-        </Animated.View>
+        </Animated.View> */}
+
+
+
       </Animated.ScrollView>
         
 

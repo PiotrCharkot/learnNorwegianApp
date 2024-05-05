@@ -56,6 +56,10 @@ const styles = StyleSheet.create({
     flatListsContainerBottom: {
         marginTop: 50,
     },
+    flatListsContainerLast: {
+        marginTop: 50,
+        marginBottom: 150
+    },
     titleContainer: {
         position: 'absolute',
         alignItems: 'center',

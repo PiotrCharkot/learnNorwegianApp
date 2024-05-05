@@ -64,7 +64,7 @@ const styles = StyleSheet.create({
     },
     textMain: {
         color: 'white',
-        textAlign: 'justify',
+        textAlign: 'auto',
         paddingTop: 30,
         paddingBottom: 80,
     },

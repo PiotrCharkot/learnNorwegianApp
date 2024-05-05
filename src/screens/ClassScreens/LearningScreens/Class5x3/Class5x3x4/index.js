@@ -41,8 +41,8 @@ const Class5x3x4 = ({route}) => { // name
           </View>
 
           <View style={styles.exampleContainer}>
-            <Text style={styles.exampleTextSmall}>en blå hund</Text>
-            <Text style={styles.textSmall}>a blue dog</Text>
+            <Text style={styles.exampleTextSmall}>en blå jakke</Text>
+            <Text style={styles.textSmall}>a blue jacket</Text>
             <Text style={styles.textSmall}></Text>
             <Text style={styles.exampleTextSmall}>et blå<Text style={styles.exampleTextSmallColor}>tt</Text> hus</Text>
             <Text style={styles.textSmall}>a blue house</Text>

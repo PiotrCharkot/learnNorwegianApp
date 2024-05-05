@@ -37,7 +37,7 @@ const Class5x6x5 = ({route}) => { // name
     <View style={styles.mainContainer}> 
         <ScrollView showsVerticalScrollIndicator={false} style={styles.body}>
           <View style={styles.textContainer}>
-            <Text style={styles.text}><Text style={styles.boldText}>spennende </Text> (exciting):</Text>
+            <Text style={styles.text}><Text style={styles.boldText}>spennende</Text> (exciting):</Text>
           </View>
 
           <View style={styles.exampleContainer}>
