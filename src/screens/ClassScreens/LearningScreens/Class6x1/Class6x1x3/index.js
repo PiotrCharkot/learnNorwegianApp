@@ -47,7 +47,7 @@ const Class6x1x3 = ({route}) => { // name
           </View>
 
           <View style={styles.exampleContainer}>
-            <Text style={styles.exampleTextSmall}><Text style={styles.exampleTextSmallColor}>du</Text> - you [plural]</Text>
+            <Text style={styles.exampleTextSmall}><Text style={styles.exampleTextSmallColor}>dere</Text> - you [plural]</Text>
             <Text style={styles.textSmall}>Dere er vennlige.</Text>
             <Text style={styles.textSmall}>You are friendly.</Text>
           </View>

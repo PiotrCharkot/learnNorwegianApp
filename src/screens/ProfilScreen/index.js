@@ -372,6 +372,11 @@ const ProfilScreen = () => {
               <Text style={styles.fieldValText}>{userShortId}</Text>  
             </View>
           </View>
+
+
+          {user.uid === 'HZM7dIZ33mewcrN70AigjvZmAKA3' ? <TouchableOpacity style={styles.btnChangePicOpacity} onPress={() => navigation.navigate('Users')}>
+            <Text style={styles.btnChangePicOpacityText}>Users manager</Text>
+          </TouchableOpacity> : <View></View>}
           
         </ScrollView>
         </View>

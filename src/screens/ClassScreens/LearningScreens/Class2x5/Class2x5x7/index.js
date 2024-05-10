@@ -87,7 +87,7 @@ const Class2x5x7 = ({ route }) => { // name
 
           <View style={styles.topView}>
               <Text style={styles.questionText}>Rearrange words to start with the conditional sentences.</Text>
-              <Text style={styles.textBody}>(Du skulle føle deg bedre hvis du sov nok.)</Text>
+              <Text style={styles.textBody}>Du skulle føle deg bedre hvis du sov nok.</Text>
               <Text style={styles.textBody}>(You should feel better if you got enough sleep.)</Text>
           </View>
 

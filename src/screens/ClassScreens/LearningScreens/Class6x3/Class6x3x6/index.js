@@ -55,7 +55,7 @@ const Class6x3x6 = ({ route }) => { //name
             <Text style={styles.exampleTextSmall}>Hvem er han?</Text>
             <Text style={styles.textInEgz}>Who is he?</Text>
             <Text style={styles.textInEgz}></Text>
-            <Text style={styles.exampleTextSmall}>Hvem har tatt boken min?</Text>
+            <Text style={styles.exampleTextSmall}>Hvem tok boken min?</Text>
             <Text style={styles.textInEgz}>Who took my book?</Text>
           </View>
 

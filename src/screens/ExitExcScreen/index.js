@@ -1,7 +1,7 @@
 import { View, Text, Dimensions, Easing, Animated, StyleSheet } from 'react-native'
 import React, {useState, useEffect, useRef}  from 'react'
 import { onAuthStateChanged  } from 'firebase/auth';
-import { db } from '../../../firebase/firebase-config'
+import { db } from '../../../firebase/firebase-config';
 import { collection, getDocs, query, where, doc, setDoc, updateDoc } from "firebase/firestore";
 import { authentication } from '../../../firebase/firebase-config';
 import { LinearGradient } from 'expo-linear-gradient';

@@ -78,6 +78,8 @@ const Class6x1x2 = ({route}) => { // name
             <Text style={styles.text}>Choose '<Text style={styles.textColor}>det</Text>' for neuter gender nouns and '<Text style={styles.textColor}>den</Text>' for masculine/feminine gender nouns.</Text>
           </View>
 
+
+
         </ScrollView>
 
         <View style={styles.progressBarContainer}>

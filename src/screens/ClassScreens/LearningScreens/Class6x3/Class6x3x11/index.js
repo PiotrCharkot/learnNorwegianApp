@@ -35,7 +35,7 @@ const Class6x3x11 = ({ route }) => {  //screen name
     
     const [movingDraggable, setMovingDraggable] = useState(null);
     const [releaseDraggable, setReleaseDraggable] = useState(null);
-    const [words, setWords] = useState(['            ', 'bøker', 'har', 'du', 'lest?' ,'!!!' , 'Hvilken' ,'Hvilken' ,'Hvor', 'Når' , 'Hvilke' ]); // arr with word in order, after '!!!' comes word to choose from Hvilke bøker har du lest?
+    const [words, setWords] = useState(['            ', 'bøker', 'har', 'du', 'lest?' ,'!!!' , 'Hvilket' ,'Hvilken' ,'Hvor', 'Når' , 'Hvilke' ]); // arr with word in order, after '!!!' comes word to choose from Hvilke bøker har du lest?
     const [currentPoints, setCurrentPoints] = useState(userPoints);
     const [latestScreenDone, setLatestScreenDone] = useState(currentScreen);
     const [comeBack, setComeBack] = useState(false);
@@ -249,7 +249,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     height: 30,
     marginVertical: 6,
-    marginHorizontal: 3
+    marginHorizontal: 2
     
   },
   spacer: {

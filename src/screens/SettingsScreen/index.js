@@ -49,7 +49,8 @@ const SettingsScreen = ({route}) => {
         console.log('user  loged out');
         setUserLoged(false);
       })
-      .catch(() => {
+      .catch((error) => {
+        console.log("Could not log out! Error: ", error);
         console.log("Could not log out!");
       });
   };
@@ -281,7 +282,6 @@ const SettingsScreen = ({route}) => {
           <Image source={require('../../../assets/terms.png')} style={{...styles.buttonImg, tintColor: 'grey'}}/>
             <Text style={styles.buttonText}>{buttonsLabelArray[10]}</Text>
           </TouchableOpacity>
-
 
           <View style={{height: 80}}></View>
 

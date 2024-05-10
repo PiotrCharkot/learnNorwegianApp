@@ -29,7 +29,7 @@ const Class5x2x12 = ({ route }) => {  //screen name
     
     const [movingDraggable, setMovingDraggable] = useState(null);
     const [releaseDraggable, setReleaseDraggable] = useState(null);
-    const [words, setWords] = useState(['Vi', 'håper', 'at', 'barnet', '            ', 'vinner', 'spillet','!!!' , 'våre', 'vår' ,'vårt']); // arr with word in order, after '!!!' comes word to choose from Vi håper at barnet vårt vinner spillet.
+    const [words, setWords] = useState(['Vi', 'håper', 'at', 'barnet', '            ', 'vinner', 'spillet.','!!!' , 'våre', 'vår' ,'vårt']); // arr with word in order, after '!!!' comes word to choose from Vi håper at barnet vårt vinner spillet.
     const [currentPoints, setCurrentPoints] = useState(userPoints);
     const [latestScreenDone, setLatestScreenDone] = useState(currentScreen);
     const [comeBack, setComeBack] = useState(false);
@@ -240,7 +240,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     height: 30,
     marginVertical: 6,
-    marginHorizontal: 3
+    marginHorizontal: 2
     
   },
   spacer: {

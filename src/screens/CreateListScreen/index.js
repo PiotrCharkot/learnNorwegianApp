@@ -15,6 +15,9 @@ const CreateListScreen = ({ route }) => {
 
     const {userReference, choosenLang} = route.params;
     const navigation = useNavigation();
+    const maxLengthTitle = 30;
+    const maxLengthLang = 20;
+    const maxLengthWords = 200;
     let wordIdentification = 0;
 
 
@@ -30,6 +33,7 @@ const CreateListScreen = ({ route }) => {
     const [btnAdd, setBtnAdd] = useState('Add');
     const [btnCreate, setBtnCreate] = useState('Create list');
     const [messageEmpty, setMessageEmpty] = useState('Please fill in the Title and Language fields before creating your list.');
+    const [messageNotCreated, setMessageNotCreated] = useState('The word list was not created. Are you sure you want to exit?')
     const [textAddTwo, setTextAddTwo] = useState('Add at least two pairs of words to create a list')
     const [placeholder1, setPlaceholder1] = useState('Title e.g. Nouns - A1')
     const [placeholder2, setPlaceholder2] = useState('Your language e.g. english')
@@ -48,7 +52,9 @@ const CreateListScreen = ({ route }) => {
 
     const interpolatedValueForX = useRef(new Animated.Value(0)).current;
     const messageOpacity = useRef(new Animated.Value(0)).current;
-    const [showMessage, setShowMessage] = useState(false)
+    const messageOpacity2 = useRef(new Animated.Value(0)).current;
+    const [showMessage, setShowMessage] = useState(false);
+    const [showMessage2, setShowMessage2] = useState(false);
 
 
     const xPositionDeg = interpolatedValueForX.interpolate({
@@ -59,13 +65,13 @@ const CreateListScreen = ({ route }) => {
     const deletePosition = (pairKey) => {
         let tempObj = [];
         
-        dataFlatList.map(item => {
+        dataFlatList.reverse().map(item => {
             if (item.key !== pairKey) {
                 tempObj.push(item)
             }
         } );
 
-        setDataFlatList(tempObj);
+        setDataFlatList(tempObj.reverse());
         
     }
 
@@ -80,15 +86,26 @@ const CreateListScreen = ({ route }) => {
         }, 500);
     }
 
+    const dismissMessage2 = () => {
+        Animated.timing(messageOpacity2, {
+            toValue: 0,
+            duration: 500,
+            useNativeDriver: true,
+        }).start();
+        setTimeout(() => {
+            setShowMessage2(false);
+        }, 500);
+    }
+
     const renderWords = ({item, index}) => {
 
     
         return <View style={styles.wordsContainer}>
     
-          <Text style={styles.wordsText}>{item.nor} - {item.eng} </Text>
           <TouchableOpacity onPress={() => {deletePosition(item.key)}}>
             <Image style={styles.image} source={require('../../../assets/close.png')} />
           </TouchableOpacity>
+          <Text style={styles.wordsText}>{item.nor} - {item.eng} </Text>
         </View>
     }
 
@@ -96,7 +113,7 @@ const CreateListScreen = ({ route }) => {
 
         if (norWord !== '' && transWord !== '') {
             let wordKey = uuid.v4();
-            let tempObj = JSON.parse(JSON.stringify(dataFlatList))
+            let tempObj = JSON.parse(JSON.stringify(dataFlatList.reverse()))
             tempObj.push({
                 nor: norWord,
                 eng: transWord,
@@ -105,13 +122,15 @@ const CreateListScreen = ({ route }) => {
                 soundLink: ''
             })
 
-            
+            console.log('my temp obj', tempObj);
             norInput.current.clear();
             transInput.current.clear();
             setNorWord('');
             setTransWord('');
             
-            setDataFlatList(tempObj);
+            setDataFlatList(tempObj.reverse());
+
+
         }
         
         
@@ -129,11 +148,18 @@ const CreateListScreen = ({ route }) => {
                 listTitle: title,
                 public: isSelectedPublic,
                 useRef: userReference,
-                wordsArr: dataFlatList
+                wordsArr: dataFlatList.reverse()
             })
 
             
-            let tempArr = Array.from(Array(dataFlatList.length).keys())
+            let tempArr = [];
+            
+
+            for (let i = 0; i < dataFlatList.length; i++) {
+                
+                tempArr.push(dataFlatList[i].wordId)
+            }
+
             console.log('temporrary arr ', tempArr);
             let addToUserInfo = {
                 refToList: listRef,
@@ -176,6 +202,8 @@ const CreateListScreen = ({ route }) => {
 
     const exitButton = () => {
 
+        dismissMessage2();
+
         Animated.spring(interpolatedValueForX, {
             toValue: 360,
             speed: 1,
@@ -190,6 +218,20 @@ const CreateListScreen = ({ route }) => {
                 params: {userRef: userReference, language: choosenLang}
               });
         }, 800)
+    }
+
+
+    const tryExitButton = () => {
+        if (dataFlatList.length > 1) {
+            setShowMessage2(true);
+            Animated.timing(messageOpacity2, {
+                toValue: 1,
+                duration: 1000,
+                useNativeDriver: true,
+            }).start();
+        } else {
+            exitButton();
+        }
     }
 
     const getTransform = (viewHeight, viewWidth, transValA, transValB, valX, valY) => {
@@ -238,7 +280,7 @@ const CreateListScreen = ({ route }) => {
             setPlaceholder2('Twój język np. polski');
             setPlaceholder3('Norweskie słowo');
             setPlaceholder4('Tłumaczenie');
-
+            setMessageNotCreated('Lista słów nie została utworzona. Czy na pewno chcesz wyjść?');
         } else if (choosenLang === 'DE') {
             setMessageEmpty('Bitte füllen Sie die Felder Titel und Sprache aus, bevor Sie Ihre Liste erstellen');
             setLabelTitle('Titel');
@@ -251,7 +293,7 @@ const CreateListScreen = ({ route }) => {
             setPlaceholder2('Deine Sprache z.B. Deutsch');
             setPlaceholder3('Norwegisches Wort');
             setPlaceholder4('Übersetzung');
-            
+            setMessageNotCreated('Die Wortliste wurde nicht erstellt. Sind Sie sicher, dass Sie beenden möchten?');
         } else if (choosenLang === 'LT') {
             setMessageEmpty('Prašome užpildyti Laukelius Pavadinimas ir Kalba prieš kuriant sąrašą');
             setLabelTitle('Pavadinimas');
@@ -264,7 +306,7 @@ const CreateListScreen = ({ route }) => {
             setPlaceholder2('Tavo kalba pvz., lietuvių');
             setPlaceholder3('Norvegiškas žodis');
             setPlaceholder4('Vertimas');
-            
+            setMessageNotCreated('Žodžių sąrašas nebuvo sukurtas. Ar tikrai norite išeiti?');
         } else if (choosenLang === 'AR') {
             setMessageEmpty('الرجاء ملء حقول العنوان واللغة قبل إنشاء قائمتك');
             setLabelTitle('العنوان');
@@ -277,7 +319,7 @@ const CreateListScreen = ({ route }) => {
             setPlaceholder2('لغتك مثلاً، العربية');
             setPlaceholder3('كلمة نرويجية');
             setPlaceholder4('ترجمة');
-            
+            setMessageNotCreated('لم يتم إنشاء قائمة الكلمات. هل أنت متأكد أنك تريد الخروج؟');
         } else if (choosenLang === 'UA') {
             setMessageEmpty('Будь ласка, заповніть поля Назва та Мова перед створенням списку');
             setLabelTitle('Назва');
@@ -290,7 +332,7 @@ const CreateListScreen = ({ route }) => {
             setPlaceholder2('Твоя мова напр., українська');
             setPlaceholder3('Норвезьке слово');
             setPlaceholder4('Переклад');
-            
+            setMessageNotCreated('Список слів не було створено. Ви впевнені, що хочете вийти?');
         } else if (choosenLang === 'ES') {
             setMessageEmpty('Por favor, rellene los campos de Título e Idioma antes de crear su lista');
             setLabelTitle('Título');
@@ -303,7 +345,7 @@ const CreateListScreen = ({ route }) => {
             setPlaceholder2('Tu idioma p.ej., español');
             setPlaceholder3('Palabra noruega');
             setPlaceholder4('Traducción');
-          
+            setMessageNotCreated('La lista de palabras no fue creada. ¿Estás seguro de que quieres salir?');
         }
 
     }, [])
@@ -313,7 +355,7 @@ const CreateListScreen = ({ route }) => {
     <View style={styles.mainContainer}> 
        
       <Animated.View style={{...styles.iconXContainer, ...getTransform(25, 25, { rotate: xPositionDeg }, { translateX: 0 }, 0.5, 0.5)}}>
-        <TouchableOpacity onPress={() => exitButton()}>
+        <TouchableOpacity onPress={() => tryExitButton()}>
             <Image style={{...styles.iconX}} source={require('../../../assets/close.png')} />
 
         </TouchableOpacity>
@@ -323,12 +365,14 @@ const CreateListScreen = ({ route }) => {
         <Input 
         style={styles.input}
         placeholder={placeholder1}
+        maxLength={maxLengthTitle}
         onChangeText={(text) => setTitle(text)}
         />
         <Text style={styles.labelText}>{labelLanguage}</Text>
         <Input 
         style={styles.input}
         placeholder={placeholder2}
+        maxLength={maxLengthLang}
         onChangeText={(text) => setLanguage(text)}
         autoCapitalize='none'
         />
@@ -341,6 +385,7 @@ const CreateListScreen = ({ route }) => {
                 style={styles.input}
                 ref={norInput}
                 placeholder={placeholder3}
+                maxLength={maxLengthWords}
                 inputContainerStyle={styles.inputSmallContainerStyle}
                 onChangeText={(text) => setNorWord(text)}
                 autoCapitalize='none'
@@ -354,6 +399,7 @@ const CreateListScreen = ({ route }) => {
                 style={styles.input}
                 ref={transInput}
                 placeholder={placeholder4}
+                maxLength={maxLengthWords}
                 inputContainerStyle={styles.inputSmallContainerStyle}
                 onChangeText={(text) => setTransWord(text)}
                 autoCapitalize='none'
@@ -422,6 +468,20 @@ const CreateListScreen = ({ route }) => {
                 <Text style={styles.opacityBtnText}>OK</Text>
             </TouchableOpacity>
         </Animated.View> : <View></View>}   
+
+
+        {showMessage2 ? <Animated.View style={{...styles.messageContainer, opacity: messageOpacity2}}>
+            <Text style={styles.opacityBtnTextInfo}>{messageNotCreated}</Text>
+            <View style={styles.buttonsMessageContainer}>
+                <TouchableOpacity  style={styles.secondBtn} onPress={() => exitButton()}>
+                    <Text style={styles.opacityBtnText}>Yes</Text>
+                </TouchableOpacity>
+                <TouchableOpacity  style={styles.secondBtn} onPress={() => dismissMessage2()}>
+                    <Text style={styles.opacityBtnText}>No</Text>
+                </TouchableOpacity>
+            </View>
+            
+        </Animated.View> : <View></View>}
         
     </View>
   )

@@ -35,7 +35,7 @@ const Class5x1x10 = ({ route }) => {  //screen name
     
     const [movingDraggable, setMovingDraggable] = useState(null);
     const [releaseDraggable, setReleaseDraggable] = useState(null);
-    const [words, setWords] = useState(['De', 'stod', '            ', 'sammen','!!!' , 'glatt', 'fritt' ,'sparsomt' , 'tett' ]); // arr with word in order, after '!!!' comes word to choose from De stod tett sammen. (They stood closely together.)
+    const [words, setWords] = useState(['De', 'stod', '            ', 'sammen.','!!!' , 'glatt', 'fritt' ,'sparsomt' , 'tett' ]); // arr with word in order, after '!!!' comes word to choose from De stod tett sammen. (They stood closely together.)
     const [currentPoints, setCurrentPoints] = useState(userPoints);
     const [latestScreenDone, setLatestScreenDone] = useState(currentScreen);
     const [comeBack, setComeBack] = useState(false);
@@ -249,7 +249,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     height: 30,
     marginVertical: 6,
-    marginHorizontal: 3
+    marginHorizontal: 2
     
   },
   spacer: {

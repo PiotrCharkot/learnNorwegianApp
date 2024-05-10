@@ -16,6 +16,7 @@ const EditListScreen = ({ route }) => {
     const {userReference, refToList, choosenLang} = route.params;
     const navigation = useNavigation();
     
+    const maxLengthWords = 200;
     
     const [norWord, setNorWord] = useState('');
     const [transWord, setTransWord] = useState('');
@@ -29,6 +30,7 @@ const EditListScreen = ({ route }) => {
     const [removedWordIdArr, setRemovedWordIdArr] = useState([]);
     const [messageAdd, setMessageAdd] = useState('Add words and update list');
     const [confirmDelete, setConfirmDelete] = useState('Are you sure you want to delete this list?');
+    const [messageNotSaved, setMessageNotSaved] = useState('The word list was not updated. Are you sure you want to exit?')
     const [placeholder3, setPlaceholder3] = useState('Norwegian word');
     const [placeholder4, setPlaceholder4] = useState('translation');
     const [checkBoxLabel, setCheckBoxLabel] = useState('share this list with other users');
@@ -45,7 +47,8 @@ const EditListScreen = ({ route }) => {
     
     const [dataFlatList, setDataFlatList] = useState([]);
     
-    const confirmationPos = useRef(new Animated.Value(200)).current;
+    const confirmationPos = useRef(new Animated.Value(300)).current;
+    const confirmationPos2 = useRef(new Animated.Value(300)).current;
     const interpolatedValueForX = useRef(new Animated.Value(0)).current;
 
 
@@ -57,7 +60,7 @@ const EditListScreen = ({ route }) => {
     const deletePosition = (pairKey) => {
         let tempObj = [];
         
-        dataFlatList.map(item => {
+        dataFlatList.reverse().map(item => {
             if (item.key !== pairKey) {
                 tempObj.push(item)
             } else {
@@ -68,7 +71,7 @@ const EditListScreen = ({ route }) => {
         } );
 
         setIsChanged(true);
-        setDataFlatList(tempObj);
+        setDataFlatList(tempObj.reverse());
         
     }
 
@@ -78,10 +81,10 @@ const EditListScreen = ({ route }) => {
     
         return <View style={styles.wordsContainer}>
     
-          <Text style={styles.wordsText}>{item.nor} - {item.eng} </Text>
           <TouchableOpacity onPress={() => {deletePosition(item.key)}}>
             <Image style={styles.image} source={require('../../../assets/close.png')} />
           </TouchableOpacity>
+          <Text style={styles.wordsText}>{item.nor} - {item.eng} </Text>
         </View>
     }
 
@@ -90,7 +93,7 @@ const EditListScreen = ({ route }) => {
         if (norWord !== '' && transWord !== '') {
             
             let wordKey = uuid.v4();
-            let tempObj = JSON.parse(JSON.stringify(dataFlatList))
+            let tempObj = JSON.parse(JSON.stringify(dataFlatList.reverse()))
             let tempNewArr = JSON.parse(JSON.stringify(newWordIdArr))
             tempObj.push({
                 nor: norWord,
@@ -109,7 +112,7 @@ const EditListScreen = ({ route }) => {
             setNorWord('');
             setTransWord('');
             setIsChanged(true);
-            setDataFlatList(tempObj);
+            setDataFlatList(tempObj.reverse());
         }
         
         
@@ -128,7 +131,7 @@ const EditListScreen = ({ route }) => {
 
     const hideConfirmation = () => {
         Animated.spring(confirmationPos, {
-            toValue: 200,
+            toValue: 300,
             speed: 10,
             bounciness: 5,
             useNativeDriver: true,
@@ -146,7 +149,7 @@ const EditListScreen = ({ route }) => {
         
         if (dataFlatList.length > 0) {
             await updateDoc(docRefOwn, {
-                wordsArr: dataFlatList
+                wordsArr: dataFlatList.reverse()
             })
             .then(docRef => {
                 
@@ -215,6 +218,8 @@ const EditListScreen = ({ route }) => {
             bounciness: 12,
             useNativeDriver: true,
         }).start();
+
+        dismissMessageNotSaved();
     
         
         setTimeout(() => {
@@ -232,6 +237,34 @@ const EditListScreen = ({ route }) => {
         };
         return withAnchorPoint(transform, { x: valX, y: valY }, { width: viewWidth * 1.5, height: viewHeight * 1.5 });
     };
+
+
+    const tryExitButton = () => {
+        if (isChanged) {
+            showMessageNotSaved();
+        } else {
+            exitButton();
+        }
+    }
+
+    const showMessageNotSaved = () => {
+        Animated.spring(confirmationPos2, {
+            toValue: -screenHight / 2 + 65,
+            speed: 3,
+            bounciness: 5,
+            useNativeDriver: true,
+        }).start();
+    
+    }
+
+    const dismissMessageNotSaved = () => {
+        Animated.spring(confirmationPos2, {
+            toValue: 300,
+            speed: 10,
+            bounciness: 5,
+            useNativeDriver: true,
+        }).start();
+    }
 
 
     useEffect(() => {
@@ -257,7 +290,7 @@ const EditListScreen = ({ route }) => {
                 setLastIdentification(doc.data().wordsArr[doc.data().wordsArr.length - 1].wordId + 1);
                 
                 setDocumentId(doc.id);
-                setDataFlatList(doc.data().wordsArr);
+                setDataFlatList(doc.data().wordsArr.reverse());
                 setIsSelectedPublic(doc.data().public)
                 
             })
@@ -279,7 +312,8 @@ const EditListScreen = ({ route }) => {
             setCheckBoxLabel('udostępnij tę listę innym użytkownikom');
             setPlaceholder3('Norweskie słowo');
             setPlaceholder4('Tłumaczenie');
-            setButtonsArray(["Dodaj", "Zaktualizuj listę", "Usuń listę", "Tak", "Nie"])
+            setButtonsArray(["Dodaj", "Zaktualizuj listę", "Usuń listę", "Tak", "Nie"]);
+            setMessageNotSaved('Lista słów nie została zaktualizowana. Czy na pewno chcesz wyjść?');
         } else if (choosenLang === 'DE') {
             setConfirmDelete('Bist du sicher, dass du diese Liste löschen möchtest?');
             setMessageAdd('Wörter hinzufügen und Liste aktualisieren');
@@ -287,6 +321,7 @@ const EditListScreen = ({ route }) => {
             setPlaceholder3('Norwegisches Wort');
             setPlaceholder4('Übersetzung');
             setButtonsArray(["Hinzufügen", "Liste aktualisieren", "Liste löschen", "Ja", "Nein"]);
+            setMessageNotSaved('Die Wortliste wurde nicht aktualisiert. Sind Sie sicher, dass Sie beenden möchten?');
         } else if (choosenLang === 'LT') {
             setConfirmDelete('Ar tikrai norite ištrinti šį sąrašą?');
             setMessageAdd('Pridėti žodžius ir atnaujinti sąrašą');
@@ -294,6 +329,7 @@ const EditListScreen = ({ route }) => {
             setPlaceholder3('Norvegiškas žodis');
             setPlaceholder4('Vertimas');
             setButtonsArray(["Pridėti", "Atnaujinti sąrašą", "Ištrinti sąrašą", "Taip", "Ne"]);
+            setMessageNotSaved('Žodžių sąrašas nebuvo atnaujintas. Ar tikrai norite išeiti?');
         } else if (choosenLang === 'AR') {
             setConfirmDelete('هل أنت متأكد من أنك تريد حذف هذه القائمة؟');
             setMessageAdd('إضافة كلمات وتحديث القائمة');
@@ -301,6 +337,7 @@ const EditListScreen = ({ route }) => {
             setPlaceholder3('كلمة نرويجية');
             setPlaceholder4('ترجمة');
             setButtonsArray(["إضافة", "تحديث القائمة", "حذف القائمة", "نعم", "لا"]);
+            setMessageNotSaved('لم يتم تحديث قائمة الكلمات. هل أنت متأكد أنك تريد الخروج؟');
         } else if (choosenLang === 'UA') {
             setConfirmDelete('Ви впевнені, що хочете видалити цей список?');
             setMessageAdd('Додати слова та оновити список');
@@ -308,6 +345,7 @@ const EditListScreen = ({ route }) => {
             setPlaceholder3('Норвезьке слово');
             setPlaceholder4('Переклад');
             setButtonsArray(["Додати", "Оновити список", "Видалити список", "Так", "Ні"]);
+            setMessageNotSaved('Список слів не був оновлений. Ви впевнені, що хочете вийти?');
         } else if (choosenLang === 'ES') {
             setConfirmDelete('¿Estás seguro de que quieres eliminar esta lista?');
             setMessageAdd('Añadir palabras y actualizar la lista');
@@ -315,6 +353,7 @@ const EditListScreen = ({ route }) => {
             setPlaceholder3('Palabra noruega');
             setPlaceholder4('Traducción');
             setButtonsArray(["Añadir", "Actualizar lista", "Eliminar lista", "Sí", "No"]);
+            setMessageNotSaved('La lista de palabras no se actualizó. ¿Estás seguro de que quieres salir?');
         }
 
     }, [])
@@ -324,7 +363,7 @@ const EditListScreen = ({ route }) => {
     <View style={styles.mainContainer}> 
 
       <Animated.View style={{...styles.iconXContainer, ...getTransform(25, 25, { rotate: xPositionDeg }, { translateX: 0 }, 0.5, 0.5)}}>
-        <TouchableOpacity onPress={() => exitButton()}>
+        <TouchableOpacity onPress={() => tryExitButton()}>
             <Image style={{...styles.iconX}} source={require('../../../assets/close.png')} />
 
         </TouchableOpacity>
@@ -340,6 +379,7 @@ const EditListScreen = ({ route }) => {
                 style={styles.input}
                 ref={norInput}
                 placeholder={placeholder3}
+                maxLength={maxLengthWords}
                 inputContainerStyle={styles.inputSmallContainerStyle}
                 onChangeText={(text) => setNorWord(text)}
                 autoCapitalize='none'
@@ -353,6 +393,7 @@ const EditListScreen = ({ route }) => {
                 style={styles.input}
                 ref={transInput}
                 placeholder={placeholder4}
+                maxLength={maxLengthWords}
                 inputContainerStyle={styles.inputSmallContainerStyle}
                 onChangeText={(text) => setTransWord(text)}
                 autoCapitalize='none'
@@ -433,6 +474,24 @@ const EditListScreen = ({ route }) => {
                         <Text style={styles.confirmationBtnTxt}>{buttonsArray[3]}</Text>
                     </TouchableOpacity>
                     <TouchableOpacity style={styles.confirmationBtn} onPress={hideConfirmation}>
+                        <Text style={styles.confirmationBtnTxt}>{buttonsArray[4]}</Text>
+                    </TouchableOpacity>
+                </View>
+            </View>
+        </Animated.View>
+
+
+
+        <Animated.View style={{...styles.confirmationContainer, transform: [{translateY: confirmationPos2}]}}>
+            <View style={styles.confirmationContainerInside}>
+
+                <Text style={styles.confirmationText}>{messageNotSaved}</Text>
+
+                <View style={styles.confirmationBtnCont}>
+                    <TouchableOpacity style={styles.confirmationBtn} onPress={exitButton}>
+                        <Text style={styles.confirmationBtnTxt}>{buttonsArray[3]}</Text>
+                    </TouchableOpacity>
+                    <TouchableOpacity style={styles.confirmationBtn} onPress={dismissMessageNotSaved}>
                         <Text style={styles.confirmationBtnTxt}>{buttonsArray[4]}</Text>
                     </TouchableOpacity>
                 </View>

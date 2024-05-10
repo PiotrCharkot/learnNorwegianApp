@@ -49,7 +49,7 @@ const Class6x1x1 = ({route}) => {   //name
             <Text style={styles.textGreeting}>
             Heisann{user.isAnonymous ? <Text style={styles.textName}></Text> : <Text style={styles.textName}> {user.displayName}</Text>}!
             </Text>
-            <Text style={styles.text}><Text style={styles.textColor}>Personal pronouns</Text> in Norwegian  are used to replace nouns, representing people or things, and to avoid repetition. {'\n\n'}<Text style={styles.textColor}>Personal pronouns</Text> change their look depending on whether you're talking about yourself, someone else, or a thing, and whether it's just one or a bunch. {'\n\n'}There are two main players here: <Text style={styles.textColor1}>subject pronouns</Text> and <Text style={styles.textColor2}>object pronouns</Text>. {'\n\n'}Let's check out <Text style={styles.textColor1}>subject pronouns</Text> first.
+            <Text style={styles.text}><Text style={styles.textColor}>Personal pronouns</Text> in Norwegian are used to replace nouns, represent people or things, and to avoid repetition. {'\n\n'}<Text style={styles.textColor}>Personal pronouns</Text> change their look depending on whether you're talking about yourself, someone else or a thing and whether it's just one or a bunch. {'\n\n'}There are two main players here: <Text style={styles.textColor1}>subject pronouns</Text> and <Text style={styles.textColor2}>object pronouns</Text>. {'\n\n'}Let's check out <Text style={styles.textColor1}>subject pronouns</Text> first.
             </Text>
 
             

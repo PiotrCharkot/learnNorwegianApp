@@ -103,17 +103,20 @@ const styles = StyleSheet.create({
         transform: [{translateX: -screenWidth * 0.05}, {translateY: screenWidth * 0.05}],
         justifyContent: 'center',
         alignItems: 'flex-end',
-        paddingRight: 20
+        paddingRight: 20,
+        paddingLeft: screenWidth * 0.3
     },
     textTitle: {
         color: 'white',
         fontSize: 20,
-        fontWeight: '600'
+        fontWeight: '600',
+        textAlign: 'right'
     },
     textLang: {
         color: 'white',
         fontSize: 16,
-        fontWeight: '500'
+        fontWeight: '500',
+        textAlign: 'right'
     },
     touchableEdit: {
         position: 'absolute',

@@ -119,8 +119,8 @@ const ReadingScreen = () => {
 
 
 
-  const imagesMain = [require('../../../assets/reindeerBook1.png'), require('../../../assets/reindeerBook2.png'), require('../../../assets/reindeerBook3.png'), require('../../../assets/reindeerBook4.png'), require('../../../assets/reindeerBook5.png')];
-  const imagesMainBlurred = [require('../../../assets/reindeerBook1Blurred.png'), require('../../../assets/reindeerBook2Blurred.png'), require('../../../assets/reindeerBook3Blurred.png'), require('../../../assets/reindeerBook4Blurred.png'), require('../../../assets/reindeerBook5Blurred.png')];
+  const imagesMain = [require('../../../assets/reading1.png'), require('../../../assets/reading2.png'), require('../../../assets/reading3.png'), require('../../../assets/reading4.png'), require('../../../assets/reading5.png'), require('../../../assets/reading6.png')];
+  const imagesMainBlurred = [require('../../../assets/reading1Blurred.png'), require('../../../assets/reading2Blurred.png'), require('../../../assets/reading3Blurred.png'), require('../../../assets/reading4Blurred.png'), require('../../../assets/reading5Blurred.png'), require('../../../assets/reading6Blurred.png')];
 
 
 

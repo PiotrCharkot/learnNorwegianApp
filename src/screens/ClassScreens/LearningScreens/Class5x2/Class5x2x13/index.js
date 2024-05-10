@@ -23,7 +23,7 @@ const dataForMarkers = {
   class: 1
 }
 
-const correctAnswers = ['Han', 'har', 'alltid', 'tatt', 'vare', 'på', 'sine', 'bøker']; // array with correct words in line up to the word that goes in gap. exapmle ==> const correctAnswers = ['Jeg', 'trenger'];
+const correctAnswers = ['Han', 'har', 'alltid', 'tatt', 'vare', 'på', 'sine', 'bøker.']; // array with correct words in line up to the word that goes in gap. exapmle ==> const correctAnswers = ['Jeg', 'trenger'];
 
 const indexOfGaps = [6] // array with index of a gap in text
 const indexOfText = [0, 1, 2, 3, 4, 5, 7] // array with indexes of text
@@ -37,7 +37,7 @@ const Class5x2x13 = ({ route }) => {  //screen name
     
     const [movingDraggable, setMovingDraggable] = useState(null);
     const [releaseDraggable, setReleaseDraggable] = useState(null);
-    const [words, setWords] = useState(['Han', 'har', 'alltid', 'tatt', 'vare', 'på', '            ', 'bøker', '!!!' , 'sitt', 'sine' , 'sin', 'si']); // arr with word in order, after '!!!' comes word to choose from Han har alltid tatt vare på sine bøker.
+    const [words, setWords] = useState(['Han', 'har', 'alltid', 'tatt', 'vare', 'på', '            ', 'bøker.', '!!!' , 'sitt', 'sine' , 'sin', 'si']); // arr with word in order, after '!!!' comes word to choose from Han har alltid tatt vare på sine bøker.
     const [currentPoints, setCurrentPoints] = useState(userPoints);
     const [latestScreenDone, setLatestScreenDone] = useState(currentScreen);
     const [comeBack, setComeBack] = useState(false);
@@ -251,7 +251,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     height: 30,
     marginVertical: 6,
-    marginHorizontal: 3
+    marginHorizontal: 2
     
   },
   spacer: {

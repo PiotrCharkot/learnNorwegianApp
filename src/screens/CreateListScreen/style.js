@@ -73,17 +73,19 @@ const styles = StyleSheet.create({
     wordsContainer: {
         height: 20,
         flexDirection: 'row',
-        alignItems: 'center'
+        alignItems: 'center',
+        marginTop: 15
     },
     flatList: {
         
     },
     wordsText: {
-        fontSize: 16
+        fontSize: 16,
+        paddingLeft: 15
     },
     image: {
-        height: 16,
-        width: 16,
+        height: 20,
+        width: 20,
         marginLeft: 10,
     },
     checkboxContainer: {
@@ -122,6 +124,21 @@ const styles = StyleSheet.create({
         marginTop: 20,
         paddingHorizontal: 10
 
+    },
+    buttonsMessageContainer: {
+        flexDirection: 'row'
+    },
+    secondBtn: {
+        marginHorizontal: 20,
+        borderWidth: 2,
+        borderColor: 'white',
+        padding: 5,
+        width: 100,
+        justifyContent: 'center',
+        alignItems: 'center',
+        borderRadius: 8,
+        marginBottom: 20,
+        marginTop: 20
     }
 
 });

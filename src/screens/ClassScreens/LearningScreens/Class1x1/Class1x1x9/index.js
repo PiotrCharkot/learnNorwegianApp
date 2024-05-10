@@ -237,7 +237,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     height: 30,
     marginVertical: 6,
-    marginHorizontal: 3
+    marginHorizontal: 2
     
   },
   spacer: {

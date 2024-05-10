@@ -63,7 +63,7 @@ const Class6x5x6 = ({ route }) => { //name
 
 
           <View style={styles.textContainer}>
-            <Text style={styles.text}>We must use '<Text style={styles.textColor}>ikke noe</Text>' in the perfect tense and when we have modal verbs:</Text>
+            <Text style={styles.text}>We must use '<Text style={styles.textColor}>ikke noe</Text>' in the present perfect tense and when we have modal verbs:</Text>
           </View>
 
 
@@ -72,8 +72,8 @@ const Class6x5x6 = ({ route }) => { //name
             <Text style={styles.exampleTextSmall}>Jeg har <Text style={styles.exampleTextSmallColor}>ikke</Text> kjøpt <Text style={styles.exampleTextSmallColor}>noe</Text>.</Text>
             <Text style={styles.textSmall}>I haven't bought anything.</Text>
             <Text style={styles.textSmall}></Text>
-            <Text style={styles.exampleTextSmall}>Jeg skal <Text style={styles.exampleTextSmallColor}>ikke</Text> kjøpe <Text style={styles.exampleTextSmallColor}>noe</Text>.</Text>
-            <Text style={styles.textSmall}>I'm not going to buy anything.</Text>
+            <Text style={styles.exampleTextSmall}>Jeg burde <Text style={styles.exampleTextSmallColor}>ikke</Text> kjøpe <Text style={styles.exampleTextSmallColor}>noe</Text>.</Text>
+            <Text style={styles.textSmall}>I shouldn't buy anything.</Text>
           </View>
           
 

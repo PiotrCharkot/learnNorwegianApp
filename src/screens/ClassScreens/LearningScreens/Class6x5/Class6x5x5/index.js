@@ -69,7 +69,7 @@ const Class6x5x5 = ({ route }) => { //name
           
 
           <View style={styles.textContainer}>
-            <Text style={styles.text}>We cannot use '<Text style={styles.textColor}>ingen</Text>' in the sentence in the perfect tense or when we have modal verb. Then we must use '<Text style={styles.textColor}>ikke noen</Text>':</Text>
+            <Text style={styles.text}>We cannot use '<Text style={styles.textColor}>ingen</Text>' in the sentence in the present perfect tense or when we have modal verb. Then we must use '<Text style={styles.textColor}>ikke noen</Text>':</Text>
           </View>
 
 

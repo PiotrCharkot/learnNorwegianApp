@@ -45,7 +45,7 @@ const Class6x4x4 = ({ route }) => { //name
         <ScrollView showsVerticalScrollIndicator={false} style={styles.body}>
 
           <View style={styles.textContainer}>
-            <Text style={styles.text}>Followed by <Text style={styles.boldText}>flere</Text> and <Text style={styles.boldText}>mer</Text>:</Text>
+            <Text style={styles.text}>We'll carry on with <Text style={styles.boldText}>flere</Text> and <Text style={styles.boldText}>mer</Text>:</Text>
           </View>
 
 
