@@ -18,8 +18,8 @@ export default dataObj = [
     },
     {
         typeOfScreen: '3',
-        correctAnswers: ['Da', 'vi', 'ankom', 'til', 'stasjonen', 'oppdaget', 'vi', 'at', 'toget', 'allerede', 'hadde', 'gått.', 'Vi', 'måtte', 'vente', 'i', 'to', 'timer', 'for', 'neste', 'tog.', 'Mens', 'vi', 'ventet', 'spilte', 'vi', 'kort', 'og', 'drukket', 'kaffe.', 'Tiden', 'gikk', 'fort', 'og', 'snart', 'var', 'vårt', 'tog', 'klart', 'til', 'avgang.'],
-        wordsWithGaps: ['Da', 'vi', '            ', 'til', 'stasjonen', '            ', 'vi', 'at', 'toget', 'allerede', 'hadde', 'gått.', 'Vi', '            ', 'vente', 'i', 'to', 'timer', 'for', 'neste', 'tog.', 'Mens', 'vi', 'ventet', '            ', 'vi', 'kort', 'og', '            ', 'kaffe.', 'Tiden', '            ', 'fort', 'og', 'snart', '            ', 'vårt', 'tog', 'klart', 'til', 'avgang.', '!!!', 'måtte', 'spilte', 'gitt', 'gikk', 'var', 'drukket', 'ankom', 'oppdaget'],
+        correctAnswers: ['Da', 'vi', 'ankom', 'til', 'stasjonen', 'oppdaget', 'vi', 'at', 'toget', 'allerede', 'hadde', 'gått.', 'Vi', 'måtte', 'vente', 'i', 'to', 'timer', 'for', 'neste', 'tog.', 'Mens', 'vi', 'ventet', 'spilte', 'vi', 'kort', 'og', 'drakk', 'kaffe.', 'Tiden', 'gikk', 'fort', 'og', 'snart', 'var', 'vårt', 'tog', 'klart', 'til', 'avgang.'],
+        wordsWithGaps: ['Da', 'vi', '            ', 'til', 'stasjonen', '            ', 'vi', 'at', 'toget', 'allerede', 'hadde', 'gått.', 'Vi', '            ', 'vente', 'i', 'to', 'timer', 'for', 'neste', 'tog.', 'Mens', 'vi', 'ventet', '            ', 'vi', 'kort', 'og', '            ', 'kaffe.', 'Tiden', '            ', 'fort', 'og', 'snart', '            ', 'vårt', 'tog', 'klart', 'til', 'avgang.', '!!!', 'måtte', 'spilte', 'gitt', 'gikk', 'var', 'drakk', 'ankom', 'oppdaget'],
         gapsIndex: [],
         textIndex: [],
         lineBreaker: [],

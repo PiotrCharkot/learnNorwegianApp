@@ -5,7 +5,7 @@ export default dataObj = [
         nuberOfQuestions: 5,
         questions: [
             ['Hun ', 'har så', 'har sett', ' den nye filmen allerede.'],
-            ['Vi ', 'har reist', ' har reiste', ' til Spania mange ganger.'],
+            ['Vi ', 'har reist', 'har reiste', ' til Spania mange ganger.'],
             ['Han ', 'har lært', 'har lærte', ' norsk i tre år nå.'],
             ['De ', 'bestemte seg ikke', 'har ikke bestemt seg', ' ennå.'],
             ['Jeg ', 'har allerede spist', 'spiste allerede', ' middag.'],

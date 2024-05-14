@@ -8,8 +8,8 @@ export default dataObj = [
     },
     {
         typeOfScreen: '2',
-        correctAnswers: ['tydelig på mandager', 'vanligvis før middag', 'nesten alltid hjemme', 'bare i nødstilfeller', 'kun med venner'],
-        leftSideWords: ['tydelig på ', 'vanligvis før ', 'nesten alltid ', 'bare i ', 'kun med '],
+        correctAnswers: ['tidlig på mandager', 'vanligvis før middag', 'nesten alltid hjemme', 'bare i nødstilfeller', 'kun med venner'],
+        leftSideWords: ['tidlig på ', 'vanligvis før ', 'nesten alltid ', 'bare i ', 'kun med '],
         rightSideWords: ['middag', 'hjemme', 'mandager', 'venner', 'nødstilfeller']
     },
     {

@@ -15,7 +15,7 @@ export default dataObj = [
         typeOfScreen: '2',
         correctAnswers: ['jobber effektivt', 'kjører forsiktig', 'lærer grundig', 'gråter stille', 'danser vakkert'],
         leftSideWords: ['jobber ', 'kjører ', 'lærer ', 'gråter ', 'danser '],
-        rightSideWords: ['effektivt', 'forsiktig', 'grundig', 'stille', 'vakkert']
+        rightSideWords: ['grundig', 'effektivt', 'stille', 'vakkert', 'forsiktig']
     },
     {
         typeOfScreen: '2',
@@ -39,7 +39,7 @@ export default dataObj = [
         typeOfScreen: '2',
         correctAnswers: ['kjører forsiktig', 'synger vakkert', 'lærer grundig', 'smiler bredt', 'tenker positivt'],
         leftSideWords: ['kjører ', 'synger ', 'lærer ', 'smiler ', 'tenker '],
-        rightSideWords: ['forsiktig', 'vakkert', 'grundig', 'bredt', 'positivt']
+        rightSideWords: ['bredt', 'forsiktig', 'grundig', 'positivt', 'vakkert']
     },    
 ]
     

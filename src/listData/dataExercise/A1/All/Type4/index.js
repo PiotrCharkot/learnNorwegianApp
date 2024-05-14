@@ -25,7 +25,7 @@ export default dataObj = [
             ['Han snakker ', ''],  
             ['Kaken smaker ', '']    
         ],
-        correctAnswers: [['sakte'], ['deilig']],
+        correctAnswers: [['sakte', 'langsomt'], ['deilig']],
         translations: {
             eng: ['slowly', 'deliciously'],
             pl: ['wolno', 'pysznie'],

@@ -38,6 +38,7 @@ const ReAuthScreen = ({route}) => {
     const [errorMessage4, setErrorMessage4] = useState("Wrong password. Please try again or contact support for assistance");
     const [errorMessage5, setErrorMessage5] = useState("We encountered an issue while trying to delete your account. Please try again or contact support for assistance.");
     const [errorMessage6, setErrorMessage6] = useState("Are you sure you want to delete your account?");
+    const [btnLabels, setBtnLabels] = useState(['Yes', 'No'])
 
     const credential = EmailAuthProvider.credential(email, password);
 
@@ -234,6 +235,7 @@ useEffect(() => {
         setErrorMessage4("Błędne hasło. Proszę spróbuj ponownie lub skontaktuj się z pomocą techniczną.");
         setErrorMessage5("Napotkaliśmy problem podczas próby usunięcia Twojego konta. Proszę spróbuj ponownie lub skontaktuj się z pomocą techniczną.");
         setErrorMessage6("Czy na pewno chcesz usunąć swoje konto?");
+        setBtnLabels(["Tak", "Nie"]);
     } else if (choosenLanguage === 'DE') {
         setMsgForDelete("Geben Sie Ihre E-Mail und Ihr Passwort ein, um fortzufahren");
         setMsgForChange("Geben Sie Ihre E-Mail und Ihr aktuelles Passwort ein, um fortzufahren");
@@ -244,6 +246,7 @@ useEffect(() => {
         setErrorMessage4("Falsches Passwort. Bitte versuchen Sie es erneut oder kontaktieren Sie den Support zur Unterstützung.");
         setErrorMessage5("Wir haben ein Problem beim Versuch, Ihr Konto zu löschen, festgestellt. Bitte versuchen Sie es erneut oder kontaktieren Sie den Support.");
         setErrorMessage6("Sind Sie sicher, dass Sie Ihr Konto löschen möchten?");
+        setBtnLabels(["Ja", "Nein"]);
     } else if (choosenLanguage === 'LT') {
         setMsgForDelete("Įveskite savo el. pašto adresą ir slaptažodį, kad tęstumėte");
         setMsgForChange("Įveskite savo el. pašto adresą ir dabartinį slaptažodį, kad tęstumėte");
@@ -254,6 +257,7 @@ useEffect(() => {
         setErrorMessage4("Neteisingas slaptažodis. Bandykite dar kartą arba susisiekite su palaikymo tarnyba.");
         setErrorMessage5("Susidūrėme su problema bandydami ištrinti jūsų paskyrą. Prašome bandyti dar kartą arba susisiekti su pagalbos tarnyba.");
         setErrorMessage6("Ar tikrai norite ištrinti savo paskyrą?");
+        setBtnLabels(["Taip", "Ne"]);
     } else if (choosenLanguage === 'AR') {
         setMsgForDelete("أدخل بريدك الإلكتروني وكلمة المرور للمتابعة");
         setMsgForChange("أدخل بريدك الإلكتروني وكلمة المرور الحالية للمتابعة");
@@ -264,6 +268,7 @@ useEffect(() => {
         setErrorMessage4("كلمة المرور خاطئة. يرجى المحاولة مرة أخرى أو اتصل بالدعم للحصول على المساعدة");
         setErrorMessage5("واجهنا مشكلة أثناء محاولة حذف حسابك. الرجاء المحاولة مرة أخرى أو الاتصال بالدعم للحصول على المساعدة");
         setErrorMessage6("هل أنت متأكد من أنك تريد حذف حسابك؟");
+        setBtnLabels(["نعم", "لا"]);
     } else if (choosenLanguage === 'UA') {
         setMsgForDelete("Введіть свою електронну адресу та пароль, щоб продовжити");
         setMsgForChange("Введіть свою електронну адресу та поточний пароль, щоб продовжити");
@@ -274,6 +279,7 @@ useEffect(() => {
         setErrorMessage4("Неправильний пароль. Будь ласка, спробуйте ще раз або зверніться до служби підтримки.");
         setErrorMessage5("Ми зіткнулися з проблемою під час спроби видалити ваш акаунт. Будь ласка, спробуйте ще раз або зверніться за допомогою до служби підтримки.");
         setErrorMessage6("Ви впевнені, що хочете видалити свій акаунт?");
+        setBtnLabels(["Так", "Ні"]);
     } else if (choosenLanguage === 'ES') {
         setMsgForDelete("Ingresa tu correo electrónico y contraseña para continuar");
         setMsgForChange("Ingresa tu correo electrónico y contraseña actual para continuar");
@@ -284,6 +290,7 @@ useEffect(() => {
         setErrorMessage4("Contraseña incorrecta. Por favor, inténtalo de nuevo o contacta con soporte para obtener ayuda.");
         setErrorMessage5("Nos encontramos con un problema al intentar eliminar tu cuenta. Por favor, intenta de nuevo o contacta al soporte técnico para obtener ayuda.");
         setErrorMessage6("¿Estás seguro de que quieres eliminar tu cuenta?");
+        setBtnLabels(["Sí", "No"]);
     } 
    
 },[]);
@@ -386,11 +393,11 @@ useEffect(() => {
                     <View style={styles.messageButtonsContainer}>
 
                         {showDeleteBtn ? <TouchableOpacity style={styles.messageButtons} onPress={deleteAccount}>
-                            <Text style={styles.messageButtonsText}>Yes</Text>
+                            <Text style={styles.messageButtonsText}>{btnLabels[0]}</Text>
                         </TouchableOpacity> : <View></View>}
 
                         <TouchableOpacity style={styles.messageButtons} onPress={hideMessage}>
-                            <Text style={styles.messageButtonsText}>{showDeleteBtn ? 'No' : 'OK'}</Text>
+                            <Text style={styles.messageButtonsText}>{showDeleteBtn ? btnLabels[1] : 'OK'}</Text>
                         </TouchableOpacity>
                     </View>
                     

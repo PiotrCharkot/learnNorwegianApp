@@ -1106,7 +1106,7 @@ export default dataObj = [
       },
       {
         correctAnswers: ['Snakker', 'du', 'noen', 'andre', 'språk', 'enn', 'ditt', 'morsmål', '?'],
-        wordsWithGaps: ['          ', '          ', '          ', '          ', '          ', '          ', '          ', '          ', '          ', '!!!', '?', 'morsmål', 'du', 'enn', 'andre', 'ditt', 'Snakker', 'språk', 'noen'],
+        wordsWithGaps: ['          ', '          ', '          ', '          ', '          ', '          ', '          ', '          ', '?', '!!!', 'morsmål', 'du', 'enn', 'andre', 'ditt', 'Snakker', 'språk', 'noen'],
         gapsIndex: [],
         textIndex: [],
         translations: {

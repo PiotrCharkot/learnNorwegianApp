@@ -202,8 +202,8 @@ export default dataObj = [
     },
     {
         typeOfScreen: '3',
-        correctAnswers: ['Hvordan', 'kan', 'jeg', 'hjelpe', 'deg', 'i', 'dag', '?', 'Kan', 'du', 'hjelpe', 'meg', 'med', 'leksene', 'mine', '?', 'Selvfølgelig', ',', 'jeg', 'vil', 'gjerne', 'hjelpe', '.', 'Har', 'du', 'noen', 'planer', 'for', 'helgen', '?', 'Nei', ',', 'jeg', 'har', 'ikke', 'noen', 'spesielle', 'planer', '.'],
-        wordsWithGaps: ['            ', 'kan', 'jeg', 'hjelpe', 'deg', 'i', '            ', '?', 'Kan', 'du', 'hjelpe', 'meg', '            ', 'leksene', 'mine', '?', '            ', ',', 'jeg', 'vil', 'gjerne', 'hjelpe', '.', '            ', 'du', 'noen', 'planer', 'for', 'helgen', '?', 'Nei', ',', 'jeg', 'har', '            ', 'noen', '            ', 'planer', '.', '!!!', 'ikke', 'dag', 'spesielle', 'Hvordan',  'Selvfølgelig', 'med',  'Har'],
+        correctAnswers: ['Hvordan', 'kan', 'jeg', 'hjelpe', 'deg', 'i', 'dag', '?', 'Kan', 'du', 'hjelpe', 'meg', 'med', 'leksene', 'mine', '?', 'Selvfølgelig', ',', 'jeg', 'vil', 'gjerne', 'hjelpe', '.', 'lineBreaker', 'Har', 'du', 'noen', 'planer', 'for', 'helgen', '?', 'Nei', ',', 'jeg', 'har', 'ikke', 'noen', 'spesielle', 'planer', '.'],
+        wordsWithGaps: ['            ', 'kan', 'jeg', 'hjelpe', 'deg', 'i', '            ', '?', 'Kan', 'du', 'hjelpe', 'meg', '            ', 'leksene', 'mine', '?', '            ', ',', 'jeg', 'vil', 'gjerne', 'hjelpe', '.', 'lineBreaker', '            ', 'du', 'noen', 'planer', 'for', 'helgen', '?', 'Nei', ',', 'jeg', 'har', '            ', 'noen', '            ', 'planer', '.', '!!!', 'ikke', 'dag', 'spesielle', 'Hvordan',  'Selvfølgelig', 'med',  'Har'],
         gapsIndex: [],
         textIndex: [],
         lineBreaker: [],

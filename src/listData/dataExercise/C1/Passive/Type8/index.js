@@ -80,6 +80,7 @@ export default dataObj = [
         wordsCorrect: [
             [
                 ['dokumentene', 'skal', 'være', 'signert', 'av', 'alle', 'parter'],
+                ['alle', 'dokumentene', 'skal', 'være', 'signert', 'av', 'parter']
             ],
             [
                 ['gatene', 'har', 'blitt', 'rengjort', 'etter', 'festivalen'],

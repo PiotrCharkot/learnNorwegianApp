@@ -40,6 +40,7 @@ export default dataObj = [
                 ['etter', 'at', 'vi', 'hadde', 'sett', 'filmen', 'diskuterte', 'vi', 'den'],
                 ['etter', 'at', 'vi', 'hadde', 'sett', 'den', 'filmen', 'diskuterte', 'vi'],
                 ['vi', 'diskuterte', 'den', 'etter', 'at', 'vi', 'hadde', 'sett', 'filmen'],
+                ['vi', 'diskuterte', 'filmen', 'etter', 'at', 'vi', 'hadde', 'sett', 'den'],
                 ['vi', 'diskuterte', 'etter', 'at', 'vi', 'hadde', 'sett', 'den', 'filmen']
             ],
             [
@@ -348,6 +349,7 @@ export default dataObj = [
         wordsCorrect: [
             [
                 ['dokumentene', 'skal', 'være', 'signert', 'av', 'alle', 'parter'],
+                ['alle', 'dokumentene', 'skal', 'være', 'signert', 'av', 'parter']
             ],
             [
                 ['gatene', 'har', 'blitt', 'rengjort', 'etter', 'festivalen'],
