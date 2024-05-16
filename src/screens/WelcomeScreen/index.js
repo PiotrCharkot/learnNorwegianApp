@@ -43,7 +43,7 @@ const WelcomeScreen = () => {
       setTimeout(() => {
           moveToMain();
           
-      }, 3800); //in production change to 3800 ms
+      }, 100); //in production change to 3800 ms
 
     }, [])
     

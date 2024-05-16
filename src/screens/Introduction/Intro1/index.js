@@ -1,8 +1,11 @@
 import { View, Text, StyleSheet, Animated, TouchableOpacity, Image } from 'react-native'
 import React, {useEffect, useRef } from 'react'
+import { useNavigation } from "@react-navigation/native";
 
 const Intro1 = () => {
 
+
+    const navigation = useNavigation();
 
     const opacityTitle = useRef(new Animated.Value(0)).current;
     const opacityText1 = useRef(new Animated.Value(0)).current;
@@ -73,7 +76,7 @@ const Intro1 = () => {
         </Animated.View>
 
         <Animated.View style={{...styles.buttonContainer, opacity: opacityText3}}>
-            <TouchableOpacity>
+            <TouchableOpacity onPress={() => navigation.replace("Intro2")}>
 
                 <Image source={require('../../../../assets/arrow-right.png')} style={styles.iconImg}/>
             </TouchableOpacity>

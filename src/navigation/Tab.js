@@ -636,7 +636,7 @@ const Tabs = () => {
                                         <Text
                                             style={{
                                                 ...styles.iconText
-                                            }}>LEARN</Text>    
+                                            }}>LÆR</Text>    
                                     </View>}
                         >
                         
@@ -698,7 +698,7 @@ const Tabs = () => {
                                 <Text
                                 style={{
                                     ...styles.iconText
-                                }}>TRAIN</Text>
+                                }}>ØVE</Text>
                                     </View>
                         }>
                             <LinearGradient colors={focused ? [focusedIconColor, focusedIconColor2] : [iconColor, iconColor2]} 
@@ -741,7 +741,7 @@ const Tabs = () => {
                         style={{
                             color: focused ? 'pink' :  'white',
                             ...styles.iconText
-                        }}>RESULTS</Text>
+                        }}>TOPP</Text>
                     </Pressable>
                 ),
             }}/>
@@ -771,7 +771,7 @@ const Tabs = () => {
                                 style={{
                                     color: focused ? focusedIconColor : iconColor,
                                     ...styles.iconText
-                                }}>CARDS</Text>
+                                }}>ORD</Text>
                             </View>
                          }>
                             <LinearGradient colors={focused ? [focusedIconColor, focusedIconColor2] : [iconColor, iconColor2]} 
