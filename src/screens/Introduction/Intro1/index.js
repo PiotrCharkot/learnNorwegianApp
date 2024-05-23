@@ -10,7 +10,8 @@ const Intro1 = () => {
     const opacityTitle = useRef(new Animated.Value(0)).current;
     const opacityText1 = useRef(new Animated.Value(0)).current;
     const opacityText2 = useRef(new Animated.Value(0)).current;
-    const opacityText3 = useRef(new Animated.Value(0)).current;
+    const opacityNextBtn = useRef(new Animated.Value(0)).current;
+    const xPosNextBtn = useRef(new Animated.Value(300)).current;
 
 
     useEffect(() => {
@@ -36,11 +37,19 @@ const Intro1 = () => {
             toValue: 1,
             useNativeDriver: true
         }).start();
+
+
+        Animated.timing(xPosNextBtn, {
+            duration: 100,
+            delay: 6000, 
+            toValue: 0,
+            useNativeDriver: true
+        }).start();
     
 
-        Animated.timing(opacityText3, {
+        Animated.timing(opacityNextBtn, {
             duration: 2000,
-            delay: 7000,
+            delay: 7000, // change to 7000 when in prod
             toValue: 1,
             useNativeDriver: true
         }).start();
@@ -66,16 +75,16 @@ const Intro1 = () => {
 
         <Animated.View style={{...styles.textContainer, opacity: opacityText2}}>
 
-            <Text style={styles.bodyText}>Start your Norwegian language journey with our innovative app, designed to make learning engaging and effective.</Text>
+            <Text style={styles.bodyText}>Start your Norwegian language journey with our app, designed to make learning engaging and effective.</Text>
         </Animated.View>
 
 
-        <Animated.View style={{...styles.textContainer, opacity: opacityText3}}>
+        <Animated.View style={{...styles.textContainer, opacity: opacityNextBtn}}>
 
             <Text style={styles.bodyText}>There’s plenty to do here. Let's explore together!</Text>
         </Animated.View>
 
-        <Animated.View style={{...styles.buttonContainer, opacity: opacityText3}}>
+        <Animated.View style={{...styles.buttonContainer, opacity: opacityNextBtn, transform: [{translateX: xPosNextBtn}]}}>
             <TouchableOpacity onPress={() => navigation.replace("Intro2")}>
 
                 <Image source={require('../../../../assets/arrow-right.png')} style={styles.iconImg}/>
@@ -94,6 +103,7 @@ const styles = StyleSheet.create({
         width: '100%',
         height: '100%',
         alignItems: 'center',
+        backgroundColor: 'white'
     },
     titleContainer: {
         marginTop: 100
@@ -109,11 +119,11 @@ const styles = StyleSheet.create({
     },
     bodyText: {
         fontSize: 20,
-        textAlign: 'justify'
+        textAlign: 'center'
     },
     buttonContainer: {
         position: 'absolute',
-        bottom: 100,
+        bottom: 120,
         right: 0,
         height: 70,
         width: 70,
@@ -123,6 +133,6 @@ const styles = StyleSheet.create({
     iconImg: {
         height: 50,
         width: 50,
-        tintColor: '#3F00FF'
+        tintColor: 'purple'
     },
 })

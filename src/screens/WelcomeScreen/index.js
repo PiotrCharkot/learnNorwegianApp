@@ -18,7 +18,7 @@ const WelcomeScreen = () => {
       if (false) { // get value from SecureStore to check if intro was shown
         navigation.replace("Main");
       } else {
-        navigation.replace("Intro1");  
+        navigation.replace("Intro3");  
         // change value in SecureStore to => intro shown
       }
     }

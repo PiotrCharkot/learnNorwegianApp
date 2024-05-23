@@ -5,7 +5,8 @@ const screenWidth = Dimensions.get("window").width;
 const styles = StyleSheet.create({
    mainContainer: {
     height: '100%',
-    width: '100%'
+    width: '100%',
+    backgroundColor: 'white'
    },
    createButtonContainer: {
     position: 'absolute',
