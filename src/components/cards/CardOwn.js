@@ -83,7 +83,7 @@ const styles = StyleSheet.create({
         width: screenWidth * 0.8,
         justifyContent: 'center',
         alignItems: 'center',
-        backgroundColor: 'white',
+        backgroundColor: '#e8e8e8',
         borderRadius: 30,
         marginBottom: 20,
         overflow: 'hidden'

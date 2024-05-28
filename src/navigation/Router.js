@@ -29,6 +29,7 @@ import UsersScreen from "../screens/UsersScreen";
 import Intro1 from "../screens/Introduction/Intro1";
 import Intro2 from "../screens/Introduction/Intro2";
 import Intro3 from "../screens/Introduction/Intro3";
+import Intro4 from "../screens/Introduction/Intro4";
 import Class1x1x1 from "../screens/ClassScreens/LearningScreens/Class1x1/Class1x1x1";
 import Class1x1x2 from "../screens/ClassScreens/LearningScreens/Class1x1/Class1x1x2";
 import Class1x1x3 from "../screens/ClassScreens/LearningScreens/Class1x1/Class1x1x3";
@@ -467,6 +468,7 @@ const Router = () => {
                 <Stack.Screen name="Intro1" component={Intro1} options={{headerShown: false, animationEnabled: false }}/>
                 <Stack.Screen name="Intro2" component={Intro2} options={{headerShown: false, animationEnabled: false }}/>
                 <Stack.Screen name="Intro3" component={Intro3} options={{headerShown: false, animationEnabled: false }}/>
+                <Stack.Screen name="Intro4" component={Intro4} options={{headerShown: false, animationEnabled: false }}/>
                 <Stack.Screen name="Class1x1x1" component={Class1x1x1} options={{headerShown: false, animationEnabled: false }}/>
                 <Stack.Screen name="Class1x1x2" component={Class1x1x2} options={{headerShown: false, animationEnabled: false }}/>
                 <Stack.Screen name="Class1x2x1" component={Class1x2x1} options={{headerShown: false, animationEnabled: false }}/>

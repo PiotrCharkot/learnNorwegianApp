@@ -54,7 +54,7 @@ const Intro2 = () => {
             delay: 300, 
             toValue: -300,
             useNativeDriver: true
-        }),
+        }).start();
 
         Animated.sequence([
             Animated.timing(barPosition, {
@@ -578,7 +578,9 @@ const styles = StyleSheet.create({
     },
     titleText: {
         fontSize: 40,
-        fontWeight: '450'
+        fontWeight: '450',
+        textAlign: 'center',
+        marginHorizontal: 20,
     },
     textContainer: {
         marginTop: 100,

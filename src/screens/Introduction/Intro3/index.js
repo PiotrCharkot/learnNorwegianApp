@@ -20,7 +20,7 @@ const Intro3 = () => {
     const xPosNextBtn = useRef(new Animated.Value(300)).current;
     const xPosReplayBtn = useRef(new Animated.Value(-300)).current;
 
-    const opacityBar = useRef(new Animated.Value(0)).current;
+    const opacityBar = useRef(new Animated.Value(1)).current;
     const barPosition = useRef(new Animated.Value(0)).current;
 
     const opacityPointer = useRef(new Animated.Value(1)).current;
@@ -30,16 +30,38 @@ const Intro3 = () => {
     const opacityUpperText = useRef(new Animated.Value(0)).current;
     const opacityLowerText = useRef(new Animated.Value(0)).current;
     const opacityMiddleText = useRef(new Animated.Value(0)).current;
+    const opacityMiddleText2 = useRef(new Animated.Value(0)).current;
     
 
     const opacityFlashcardBtn = useRef(new Animated.Value(0)).current;
+    const opacityExploreCardsBtn = useRef(new Animated.Value(0)).current;
     const opacityCreateBtn = useRef(new Animated.Value(0)).current;
+    const opacityForm = useRef(new Animated.Value(0)).current;
+    const opacityFormFilled = useRef(new Animated.Value(0)).current;
+    const opacityShare = useRef(new Animated.Value(0)).current;
+    const opacityMarkedShare = useRef(new Animated.Value(0)).current;
+    const opacityOwnCard = useRef(new Animated.Value(0)).current;
     
 
 
 
 
     const runAnimation = () => {
+
+
+        Animated.timing(opacityReplayBtn, {
+            duration: 300,
+            toValue: 0,
+            useNativeDriver: true
+        }).start();
+
+
+        Animated.timing(xPosReplayBtn, {
+            duration: 100,
+            delay: 300, 
+            toValue: -300,
+            useNativeDriver: true
+        }).start();
 
 
         Animated.sequence([
@@ -104,6 +126,186 @@ const Intro3 = () => {
                     useNativeDriver: true
                 })
             ]),
+            Animated.timing(opacityForm, {
+                duration: 1300,
+                delay: 200,     
+                easing: Easing.bezier(.3,.88,0,.98),
+                toValue: 1,
+                useNativeDriver: true
+            }),
+            Animated.parallel([
+                Animated.timing(opacityCreateBtn, {
+                    duration: 1000,
+                    delay: 200,     
+                    toValue: 0,
+                    useNativeDriver: true
+                }),
+                Animated.timing(opacityBar, {
+                    duration: 1000,
+                    delay: 200,     
+                    toValue: 0,
+                    useNativeDriver: true
+                }),
+            ]),
+            Animated.timing(opacityFormFilled, {
+                duration: 1000,
+                delay: 700,     
+                toValue: 1,
+                useNativeDriver: true
+            }),
+            Animated.timing(opacityShare, {
+                duration: 1000,
+                delay: 500,     
+                toValue: 1,
+                useNativeDriver: true
+            }),
+            Animated.timing(pointerPositionY, {
+                duration: 1300,
+                delay: 300,     
+                easing: Easing.bezier(.3,.88,0,.98),
+                toValue: 110 + (screenWidth - 60) / 1.07,
+                useNativeDriver: true
+            }),
+            Animated.timing(opacityMarkedShare, {
+                duration: 300,
+                delay: 200,     
+                toValue: 1,
+                useNativeDriver: true
+            }),
+            Animated.parallel([
+                Animated.timing(opacityLowerText, {
+                    duration: 1500,
+                    delay: 500,     
+                    toValue: 1,
+                    useNativeDriver: true
+                }),
+                Animated.timing(pointerPositionY, {
+                    duration: 1000,
+                    delay: 500,     
+                    easing: Easing.bezier(.3,.88,0,.98),
+                    toValue: 80 + (screenWidth - 60) / 1.07 * 0.75,
+                    useNativeDriver: true
+                }),
+            ]),
+            Animated.parallel([
+                Animated.timing(opacityForm, {
+                    duration: 100,
+                    delay: 100,     
+                    easing: Easing.bezier(.3,.88,0,.98),
+                    toValue: 0,
+                    useNativeDriver: true
+                }),
+                Animated.timing(opacityShare, {
+                    duration: 100,
+                    delay: 100,     
+                    toValue: 0,
+                    useNativeDriver: true
+                }),
+                Animated.timing(opacityFormFilled, {
+                    duration: 1000,
+                    delay: 1500,     
+                    toValue: 0,
+                    useNativeDriver: true
+                }),
+                Animated.timing(opacityMarkedShare, {
+                    duration: 1000,
+                    delay: 1200,     
+                    toValue: 0,
+                    useNativeDriver: true
+                }),
+                Animated.timing(opacityLowerText, {
+                    duration: 1500,
+                    delay: 3000,     
+                    toValue: 0,
+                    useNativeDriver: true
+                }),
+                Animated.timing(opacityOwnCard, {
+                    duration: 1500,
+                    delay: 3000,     
+                    toValue: 1,
+                    useNativeDriver: true
+                }),
+                Animated.timing(opacityExploreCardsBtn, {
+                    duration: 1500,
+                    delay: 3200,     
+                    toValue: 1,
+                    useNativeDriver: true
+                }),
+            ]),
+            Animated.parallel([
+                Animated.timing(pointerPositionY, {
+                    duration: 1300,
+                    delay: 700,     
+                    easing: Easing.bezier(.3,.88,0,.98),
+                    toValue: 55,
+                    useNativeDriver: true
+                }),
+                Animated.timing(pointerPositionX, {
+                    duration: 1300,
+                    delay: 1000,     
+                    easing: Easing.bezier(.3,.88,0,.98),
+                    toValue: - screenWidth / 2 + 70,
+                    useNativeDriver: true
+                }),
+                Animated.timing(opacityMiddleText2, {
+                    duration: 1500,
+                    delay: 1500,     
+                    toValue: 1,
+                    useNativeDriver: true
+                })
+            ]),
+            Animated.parallel([
+                Animated.timing(opacityOwnCard, {
+                    duration: 1500,
+                    delay: 3000,     
+                    toValue: 0,
+                    useNativeDriver: true
+                }),
+                Animated.timing(opacityExploreCardsBtn, {
+                    duration: 1500,
+                    delay: 3200,     
+                    toValue: 0,
+                    useNativeDriver: true
+                }),
+                Animated.timing(opacityMiddleText2, {
+                    duration: 1500,
+                    delay: 5500,     
+                    toValue: 0,
+                    useNativeDriver: true
+                })
+            ]),
+            Animated.parallel([
+                Animated.timing(opacityBar, {
+                    duration: 1000,
+                    delay: 700,     
+                    toValue: 1,
+                    useNativeDriver: true
+                }),
+                Animated.timing(xPosNextBtn, {
+                    duration: 100,
+                    delay: 200, 
+                    toValue: 0,
+                    useNativeDriver: true
+                }),
+                Animated.timing(xPosReplayBtn, {
+                    duration: 100,
+                    delay: 200, 
+                    toValue: 0,
+                    useNativeDriver: true
+                }),
+                Animated.timing(opacityNextBtn, {
+                    duration: 2000,
+                    delay: 700, 
+                    toValue: 1,
+                    useNativeDriver: true
+                }),
+                Animated.timing(opacityReplayBtn, {
+                    duration: 2000,
+                    delay: 700, 
+                    toValue: 1,
+                    useNativeDriver: true
+                })
+            ])
 
 
         ]).start();
@@ -144,8 +346,14 @@ const Intro3 = () => {
         </Animated.View>
 
 
+        <Animated.View style={{...styles.middleTextContainer, opacity: opacityMiddleText2}}>
+            <Text style={styles.bodyText}>Explore flashcards created by other users. Save and use them as your own.</Text>
+
+        </Animated.View>
+
+
         <Animated.View style={{...styles.lowerTextContainer, opacity: opacityLowerText}}>
-            <Text style={styles.bodyText}></Text>
+            <Text style={styles.bodyText}>Create, edit and share your word lists with other users</Text>
 
         </Animated.View>
 
@@ -156,7 +364,35 @@ const Intro3 = () => {
             <Animated.Image source={require('../../../../assets/myFlashBtn.png')} style={{...styles.flashcardIntroBtnImg, opacity: opacityFlashcardBtn}}/>
         </Animated.View>
 
+        <Animated.View style={{...styles.exploreCardsBtnContainer}}>
+            <Animated.Image source={require('../../../../assets/exploreCardsBtn.png')} style={{...styles.exploreCardsBtnImg, opacity: opacityExploreCardsBtn}}/>
+        </Animated.View>
+
         
+
+        <Animated.View style={{...styles.formContainer}}>
+            <Animated.Image source={require('../../../../assets/ownFlashCard.png')} style={{...styles.formImg, opacity: opacityForm}}/>
+        </Animated.View>
+
+
+        <Animated.View style={{...styles.formContainer}}>
+            <Animated.Image source={require('../../../../assets/ownFlashCardFilled.png')} style={{...styles.formFilledImg, opacity: opacityFormFilled}}/>
+        </Animated.View>
+
+
+        <Animated.View style={{...styles.shareContainer}}>
+            <Animated.Image source={require('../../../../assets/shareImg.png')} style={{...styles.shareImg, opacity: opacityShare}}/>
+        </Animated.View>
+
+
+        <Animated.View style={{...styles.shareContainer}}>
+            <Animated.Image source={require('../../../../assets/shareMarkedImg.png')} style={{...styles.shareImg, opacity: opacityMarkedShare}}/>
+        </Animated.View>
+
+
+        <Animated.View style={{...styles.ownCardContainer}}>
+            <Animated.Image source={require('../../../../assets/ownCard.png')} style={{...styles.ownCardImg, opacity: opacityOwnCard}}/>
+        </Animated.View>
 
 
 
@@ -175,8 +411,7 @@ const Intro3 = () => {
 
 
         <Animated.View style={{...styles.barImgContainer, transform: [{translateY: barPosition}]}}>
-            <Image source={require('../../../../assets/bar-word.png')} style={styles.barImg}/>
-            <Animated.Image source={require('../../../../assets/bar-empty.png')} style={{...styles.barImg, opacity: opacityBar}}/>
+            <Animated.Image source={require('../../../../assets/bar-word.png')} style={{...styles.barImg, opacity: opacityBar}}/>
         </Animated.View>
 
 
@@ -193,7 +428,7 @@ const Intro3 = () => {
 
 
         <Animated.View style={{...styles.buttonContainer, opacity: opacityNextBtn, transform: [{translateX: xPosNextBtn}]}}>
-            <TouchableOpacity>
+            <TouchableOpacity onPress={() => navigation.replace("Intro4")}>
 
                 <Image source={require('../../../../assets/arrow-right.png')} style={styles.iconImg}/>
             </TouchableOpacity>
@@ -219,7 +454,9 @@ const styles = StyleSheet.create({
     },
     titleText: {
         fontSize: 40,
-        fontWeight: '450'
+        fontWeight: '450',
+        textAlign: 'center',
+        marginHorizontal: 20,
     },
     textContainer: {
         marginTop: 100,
@@ -309,7 +546,7 @@ const styles = StyleSheet.create({
     },
     lowerTextContainer: {
         position: 'absolute',
-        bottom: 200,
+        top: 140 + (screenWidth - 60) / 1.07 + screenWidth / 13.8,
         marginHorizontal: 20,
     },
     flashcardBtnContainer: {
@@ -321,6 +558,15 @@ const styles = StyleSheet.create({
         height: 30,
         width: 90
     },
+    exploreCardsBtnContainer: {
+        position: 'absolute',
+        left: 25,
+        top: 40
+    },
+    exploreCardsBtnImg: {
+        height: 30,
+        width: 90
+    },
     createBtnContainer: {
         position: 'absolute',
         top: screenHeight - 160 - screenWidth / 7.2,
@@ -328,5 +574,37 @@ const styles = StyleSheet.create({
     createBtnImg: {
         width: screenWidth,
         height: screenWidth / 7.2
+    },
+    formContainer: {
+        position: 'absolute',
+        top: 80
+    },
+    formImg: {
+        width: screenWidth - 60,
+        height: (screenWidth - 60) / 1.47
+    },
+    formFilledContainer:  {
+        position: 'absolute',
+        top: 80
+    },
+    formFilledImg: {
+        width: screenWidth - 60,
+        height: (screenWidth - 60) / 1.07
+    },
+    shareContainer: {
+        position: 'absolute',
+        top: 100 + (screenWidth - 60) / 1.07
+    },
+    shareImg: {
+        width: screenWidth,
+        height: screenWidth / 13.8
+    },
+    ownCardContainer: {
+        position: 'absolute',
+        top: 80
+    },
+    ownCardImg: {
+        width: screenWidth,
+        height: screenWidth / 1.9
     }
 })

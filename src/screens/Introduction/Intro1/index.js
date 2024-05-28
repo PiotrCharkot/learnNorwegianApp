@@ -1,6 +1,10 @@
-import { View, Text, StyleSheet, Animated, TouchableOpacity, Image } from 'react-native'
+import { View, Text, StyleSheet, Animated, TouchableOpacity, Image, Dimensions } from 'react-native'
 import React, {useEffect, useRef } from 'react'
 import { useNavigation } from "@react-navigation/native";
+
+
+const screenWidth = Dimensions.get('window').width;
+const screenHeight = Dimensions.get('window').height;
 
 const Intro1 = () => {
 
@@ -67,19 +71,19 @@ const Intro1 = () => {
         </Animated.View>
 
 
-        <Animated.View style={{...styles.textContainer, opacity: opacityText1}}>
+        <Animated.View style={{...styles.upperTextContainer, opacity: opacityText1}}>
 
             <Text style={styles.bodyText}>Discover Language, Discover the World.</Text>
         </Animated.View>
 
 
-        <Animated.View style={{...styles.textContainer, opacity: opacityText2}}>
+        <Animated.View style={{...styles.middleTextContainer, opacity: opacityText2}}>
 
             <Text style={styles.bodyText}>Start your Norwegian language journey with our app, designed to make learning engaging and effective.</Text>
         </Animated.View>
 
 
-        <Animated.View style={{...styles.textContainer, opacity: opacityNextBtn}}>
+        <Animated.View style={{...styles.lowerTextContainer, opacity: opacityNextBtn}}>
 
             <Text style={styles.bodyText}>There’s plenty to do here. Let's explore together!</Text>
         </Animated.View>
@@ -106,15 +110,33 @@ const styles = StyleSheet.create({
         backgroundColor: 'white'
     },
     titleContainer: {
-        marginTop: 100
-        
+        position: 'absolute',
+        top: 100,
+        marginHorizontal: 20,
     },
     titleText: {
         fontSize: 40,
-        fontWeight: '450'
+        fontWeight: '450',
+        textAlign: 'center',
+        marginHorizontal: 20,
     },
     textContainer: {
         marginTop: 100,
+        marginHorizontal: 20,
+    },
+    upperTextContainer: {
+        position: 'absolute',
+        top: 220,
+        marginHorizontal: 20,
+    },
+    middleTextContainer: {
+        position: 'absolute',
+        top: 320,
+        marginHorizontal: 20,
+    },
+    lowerTextContainer: {
+        position: 'absolute',
+        bottom: 170,
         marginHorizontal: 20,
     },
     bodyText: {
@@ -123,7 +145,7 @@ const styles = StyleSheet.create({
     },
     buttonContainer: {
         position: 'absolute',
-        bottom: 120,
+        bottom: 90,
         right: 0,
         height: 70,
         width: 70,
