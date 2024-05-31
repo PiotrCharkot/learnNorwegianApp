@@ -15,10 +15,10 @@ const WelcomeScreen = () => {
 
 
     const moveToMain = () => {
-      if (false) { // get value from SecureStore to check if intro was shown
+      if (true) { // get value from SecureStore to check if intro was shown
         navigation.replace("Main");
       } else {
-        navigation.replace("Intro4");  
+        navigation.replace("Intro1");  
         // change value in SecureStore to => intro shown
       }
     }
@@ -43,7 +43,7 @@ const WelcomeScreen = () => {
       setTimeout(() => {
           moveToMain();
           
-      }, 100); //in production change to 3800 ms
+      }, 3800); //in production change to 3800 ms
 
     }, [])
     

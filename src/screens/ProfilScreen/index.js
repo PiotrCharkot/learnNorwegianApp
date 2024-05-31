@@ -35,7 +35,7 @@ const ProfilScreen = () => {
   let allDaysOfWeek = [today, yesterday, twoDaysAgo, threeDaysAgo, fourDaysAgo, fiveDaysAgo, sixDaysAgo];
   let currentWeek = allDaysOfWeek.slice(0, dayOfWeek)
  
-  const randomPicture = ['reindeer-profile.png', 'reindeer-profile2.png', 'reindeer-profile3.png','reindeer-profile4.png', 'reindeer-profile5.png', 'reindeer-profile6.png', 'reindeer-profile7.png', 'reindeer-profile8.png']
+  const randomPicture = ['reindeer-profile.png', 'reindeer-profile2.png', 'reindeer-profile3.png','reindeer-profile4.png', 'reindeer-profile5.png', 'reindeer-profile6.png', 'reindeer-profile7.png', 'reindeer-profile8.png', 'reindeer-profile9.png', 'reindeer-profile10.png', 'reindeer-profile11.png','reindeer-profile12.png', 'reindeer-profile13.png', 'reindeer-profile14.png', 'reindeer-profile15.png', 'reindeer-profile16.png', 'reindeer-profile17.png', 'reindeer-profile18.png', 'reindeer-profile19.png','reindeer-profile20.png', 'reindeer-profile21.png', 'reindeer-profile22.png', 'reindeer-profile23.png']
   
 
   const navigation = useNavigation();

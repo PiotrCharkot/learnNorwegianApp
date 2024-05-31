@@ -91,6 +91,26 @@ const Intro4 = () => {
         }).start();
 
 
+        Animated.timing(yPosMenu, {
+            duration: 100,
+            toValue: 0,
+            useNativeDriver: true
+        }).start();
+
+        Animated.timing(pointerPositionY, {
+            duration: 1000,
+            delay: 500, 
+            toValue: screenHeight / 2,
+            useNativeDriver: true
+        }).start();
+
+        Animated.timing(pointerPositionX, {
+            duration: 1000,
+            delay: 200, 
+            toValue: 0,
+            useNativeDriver: true
+        }).start();
+
         Animated.sequence([
             Animated.timing(barPosition, {
                 duration: 1500,
@@ -145,20 +165,20 @@ const Intro4 = () => {
             Animated.parallel([
                 Animated.timing(yPosMenu, {
                     duration: 3000,
-                    delay: 1000, 
+                    delay: 500, 
                     toValue: -300,
                     useNativeDriver: true
                 }),
                 Animated.timing(pointerPositionY, {
                     duration: 2800,
-                    delay: 1000, 
+                    delay: 500, 
                     toValue: 100,
                     useNativeDriver: true
                 })
             ]),
             Animated.parallel([
                 Animated.timing(opacityLowerText, {
-                    duration: 2800,
+                    duration: 2000,
                     toValue: 1,
                     useNativeDriver: true
                 }),
@@ -172,13 +192,13 @@ const Intro4 = () => {
             Animated.parallel([
                 Animated.timing(yPosMenu, {
                     duration: 3000,
-                    delay: 1000, 
+                    delay: 100, 
                     toValue: -600,
                     useNativeDriver: true
                 }),
                 Animated.timing(pointerPositionY, {
                     duration: 2800,
-                    delay: 1000, 
+                    delay: 100, 
                     toValue: 100,
                     useNativeDriver: true
                 })
@@ -327,13 +347,13 @@ const Intro4 = () => {
                     useNativeDriver: false,
                 }),
                 Animated.timing(opacityFillGap3, {
-                    duration: 600,
-                    delay: 1500,
+                    duration: 1000,
+                    delay: 2000,
                     toValue: 1,
                     useNativeDriver: false,
                 }),
                 Animated.timing(opacityFillGap4, {
-                    duration: 600,
+                    duration: 1000,
                     delay: 3500,
                     toValue: 1,
                     useNativeDriver: false,
@@ -468,19 +488,19 @@ const Intro4 = () => {
                 }),
                 Animated.timing(opacitySort4, {
                     duration: 1000,
-                    delay: 1000,
+                    delay: 1800,
                     toValue: 1,
                     useNativeDriver: false,
                 }),
                 Animated.timing(opacitySort5, {
                     duration: 1000,
-                    delay: 2500,
+                    delay: 3500,
                     toValue: 1,
                     useNativeDriver: false,
                 }),
                 Animated.timing(opacitySort6, {
                     duration: 1000,
-                    delay: 4500,
+                    delay: 5500,
                     toValue: 1,
                     useNativeDriver: false,
                 }),
@@ -534,25 +554,25 @@ const Intro4 = () => {
             Animated.parallel([
                 Animated.timing(xPosNextBtn, {
                     duration: 100,
-                    delay: 2000, 
+                    delay: 200, 
                     toValue: 0,
                     useNativeDriver: true
                 }),
                 Animated.timing(xPosReplayBtn, {
                     duration: 100,
-                    delay: 2000, 
+                    delay: 200, 
                     toValue: 0,
                     useNativeDriver: true
                 }),
                 Animated.timing(opacityNextBtn, {
                     duration: 2000,
-                    delay: 2500, 
+                    delay: 500, 
                     toValue: 1,
                     useNativeDriver: true
                 }),
                 Animated.timing(opacityReplayBtn, {
                     duration: 2000,
-                    delay: 2500, 
+                    delay: 500, 
                     toValue: 1,
                     useNativeDriver: true
                 })
@@ -653,7 +673,7 @@ const Intro4 = () => {
 
 
         <Animated.View style={{...styles.lowerTextContainer2, opacity: opacityLowerText2}}>
-            <Text style={styles.bodyText}>Fill in gaps, drag and drop words, match words, listen and sort sentences and many more interactive exercises</Text>
+            <Text style={styles.bodyText}>Drag and drop words, fill in gaps, match words, listen and sort sentences and many more interactive exercises</Text>
 
         </Animated.View>
 
@@ -680,7 +700,7 @@ const Intro4 = () => {
 
 
         <Animated.View style={{...styles.buttonContainer, opacity: opacityNextBtn, transform: [{translateX: xPosNextBtn}]}}>
-            <TouchableOpacity>
+            <TouchableOpacity onPress={() => navigation.replace("Intro5")}>
 
                 <Image source={require('../../../../assets/arrow-right.png')} style={styles.iconImg}/>
             </TouchableOpacity>
