@@ -23,6 +23,8 @@ const Tab = createBottomTabNavigator();
 const Tabs = () => {
 
 
+
+
     const auth = getAuth();
    
 
@@ -83,7 +85,6 @@ const Tabs = () => {
 
     useEffect(() => {
 
-        
         
         const unscubscribe = onAuthStateChanged(authentication, (authUser) => {
 
@@ -610,7 +611,7 @@ const Tabs = () => {
             }
         }}
         >
-            <Tab.Screen name="learning" component={LearningScreen} 
+            <Tab.Screen name="learning" component={LearningScreen}
             options={{
                 headerShown: false,
                 tabBarIcon: ({focused}) => (

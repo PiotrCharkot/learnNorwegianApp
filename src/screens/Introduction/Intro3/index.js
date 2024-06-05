@@ -7,9 +7,12 @@ import { useNavigation } from "@react-navigation/native";
 const screenWidth = Dimensions.get('window').width;
 const screenHeight = Dimensions.get('window').height;
 
-const Intro3 = () => {
+const Intro3 = ({route}) => {
 
     const navigation = useNavigation();
+
+
+    const {skipable, language} = route.params
 
 
     const opacityTitle = useRef(new Animated.Value(0)).current;
@@ -47,6 +50,23 @@ const Intro3 = () => {
 
 
     const runAnimation = () => {
+
+
+        if (skipable) {
+            Animated.timing(xPosNextBtn, {
+                duration: 100,
+                delay: 2800, 
+                toValue: 1,
+                useNativeDriver: true
+            }).start();
+
+            Animated.timing(opacityNextBtn, {
+                duration: 2000,
+                delay: 3000, 
+                toValue: 1,
+                useNativeDriver: true
+            }).start();
+        }
 
 
         Animated.timing(opacityReplayBtn, {
@@ -361,49 +381,49 @@ const Intro3 = () => {
 
         
         <Animated.View style={{...styles.flashcardBtnContainer}}>
-            <Animated.Image source={require('../../../../assets/myFlashBtn.png')} style={{...styles.flashcardIntroBtnImg, opacity: opacityFlashcardBtn}}/>
+            <Animated.Image source={require('../../../../assets/introPictures/myFlashBtn.png')} style={{...styles.flashcardIntroBtnImg, opacity: opacityFlashcardBtn}}/>
         </Animated.View>
 
         <Animated.View style={{...styles.exploreCardsBtnContainer}}>
-            <Animated.Image source={require('../../../../assets/exploreCardsBtn.png')} style={{...styles.exploreCardsBtnImg, opacity: opacityExploreCardsBtn}}/>
+            <Animated.Image source={require('../../../../assets/introPictures/exploreCardsBtn.png')} style={{...styles.exploreCardsBtnImg, opacity: opacityExploreCardsBtn}}/>
         </Animated.View>
 
         
 
         <Animated.View style={{...styles.formContainer}}>
-            <Animated.Image source={require('../../../../assets/ownFlashCard.png')} style={{...styles.formImg, opacity: opacityForm}}/>
+            <Animated.Image source={require('../../../../assets/introPictures/ownFlashCard.png')} style={{...styles.formImg, opacity: opacityForm}}/>
         </Animated.View>
 
 
         <Animated.View style={{...styles.formContainer}}>
-            <Animated.Image source={require('../../../../assets/ownFlashCardFilled.png')} style={{...styles.formFilledImg, opacity: opacityFormFilled}}/>
+            <Animated.Image source={require('../../../../assets/introPictures/ownFlashCardFilled.png')} style={{...styles.formFilledImg, opacity: opacityFormFilled}}/>
         </Animated.View>
 
 
         <Animated.View style={{...styles.shareContainer}}>
-            <Animated.Image source={require('../../../../assets/shareImg.png')} style={{...styles.shareImg, opacity: opacityShare}}/>
+            <Animated.Image source={require('../../../../assets/introPictures/shareImg.png')} style={{...styles.shareImg, opacity: opacityShare}}/>
         </Animated.View>
 
 
         <Animated.View style={{...styles.shareContainer}}>
-            <Animated.Image source={require('../../../../assets/shareMarkedImg.png')} style={{...styles.shareImg, opacity: opacityMarkedShare}}/>
+            <Animated.Image source={require('../../../../assets/introPictures/shareMarkedImg.png')} style={{...styles.shareImg, opacity: opacityMarkedShare}}/>
         </Animated.View>
 
 
         <Animated.View style={{...styles.ownCardContainer}}>
-            <Animated.Image source={require('../../../../assets/ownCard.png')} style={{...styles.ownCardImg, opacity: opacityOwnCard}}/>
+            <Animated.Image source={require('../../../../assets/introPictures/ownCard.png')} style={{...styles.ownCardImg, opacity: opacityOwnCard}}/>
         </Animated.View>
 
 
 
         <Animated.View style={{...styles.createBtnContainer}}>
-            <Animated.Image source={require('../../../../assets/createBtn.png')} style={{...styles.createBtnImg, opacity: opacityCreateBtn}}/>
+            <Animated.Image source={require('../../../../assets/introPictures/createBtn.png')} style={{...styles.createBtnImg, opacity: opacityCreateBtn}}/>
         </Animated.View>
 
 
 
         <Animated.View style={{...styles.pointerContainer, transform: [{translateY: pointerPositionY}, {translateX: pointerPositionX}]}}>
-            <Animated.Image source={require('../../../../assets/pointer.png')} style={{...styles.pointerImg, opacity: opacityPointer}}/>
+            <Animated.Image source={require('../../../../assets/introPictures/pointer.png')} style={{...styles.pointerImg, opacity: opacityPointer}}/>
         </Animated.View>
 
 
@@ -411,7 +431,7 @@ const Intro3 = () => {
 
 
         <Animated.View style={{...styles.barImgContainer, transform: [{translateY: barPosition}]}}>
-            <Animated.Image source={require('../../../../assets/bar-word.png')} style={{...styles.barImg, opacity: opacityBar}}/>
+            <Animated.Image source={require('../../../../assets/introPictures/bar-word.png')} style={{...styles.barImg, opacity: opacityBar}}/>
         </Animated.View>
 
 
@@ -422,15 +442,15 @@ const Intro3 = () => {
         <Animated.View style={{...styles.buttonContainerReplay, opacity: opacityReplayBtn, transform: [{translateX: xPosReplayBtn}]}}>
             <TouchableOpacity onPress={runAnimation}>
 
-                <Image source={require('../../../../assets/reload.png')} style={styles.iconReplayImg}/>
+                <Image source={require('../../../../assets/introPictures/reload.png')} style={styles.iconReplayImg}/>
             </TouchableOpacity>
         </Animated.View>
 
 
         <Animated.View style={{...styles.buttonContainer, opacity: opacityNextBtn, transform: [{translateX: xPosNextBtn}]}}>
-            <TouchableOpacity onPress={() => navigation.replace("Intro4")}>
+            <TouchableOpacity onPress={() => navigation.replace("Intro4", {skipable, language})}>
 
-                <Image source={require('../../../../assets/arrow-right.png')} style={styles.iconImg}/>
+                <Image source={require('../../../../assets/introPictures/arrow-right.png')} style={styles.iconImg}/>
             </TouchableOpacity>
         </Animated.View>
         

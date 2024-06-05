@@ -116,7 +116,7 @@ const Intro8 = () => {
         <Animated.View style={{...styles.langListContainer, opacity: opacityLangList}}>
 
             <TouchableOpacity style={styles.btn} onPress={() => changeLanguage('EN')}>
-                <Image source={require('../../../../assets/united-kingdom.png')} style={styles.flagImg}/>
+                <Image source={require('../../../../assets/flags/united-kingdom.png')} style={styles.flagImg}/>
 
                 <Text style={styles.textInBtn}>English</Text>
 
@@ -124,7 +124,7 @@ const Intro8 = () => {
 
 
             <TouchableOpacity style={styles.btn} onPress={() => changeLanguage('DE')}>
-                <Image source={require('../../../../assets/german.png')} style={styles.flagImg}/>
+                <Image source={require('../../../../assets/flags/german.png')} style={styles.flagImg}/>
 
                 <Text style={styles.textInBtn}>Deutsch</Text>
 
@@ -132,7 +132,7 @@ const Intro8 = () => {
 
 
             <TouchableOpacity style={styles.btn} onPress={() => changeLanguage('PL')}>
-                <Image source={require('../../../../assets/poland.png')} style={styles.flagImg}/>
+                <Image source={require('../../../../assets/flags/poland.png')} style={styles.flagImg}/>
 
                 <Text style={styles.textInBtn}>Polski</Text>
 
@@ -140,7 +140,7 @@ const Intro8 = () => {
 
 
             <TouchableOpacity style={styles.btn} onPress={() => changeLanguage('LT')}>
-                <Image source={require('../../../../assets/lithuania.png')} style={styles.flagImg}/>
+                <Image source={require('../../../../assets/flags/lithuania.png')} style={styles.flagImg}/>
 
                 <Text style={styles.textInBtn}>Lietuvių</Text>
 
@@ -148,7 +148,7 @@ const Intro8 = () => {
 
 
             <TouchableOpacity style={styles.btn} onPress={() => changeLanguage('UA')}>
-                <Image source={require('../../../../assets/ukraine.png')} style={styles.flagImg}/>
+                <Image source={require('../../../../assets/flags/ukraine.png')} style={styles.flagImg}/>
 
                 <Text style={styles.textInBtn}>Українська</Text>
 
@@ -157,7 +157,7 @@ const Intro8 = () => {
 
 
             <TouchableOpacity style={styles.btn} onPress={() => changeLanguage('ES')}>
-                <Image source={require('../../../../assets/spain.png')} style={styles.flagImg}/>
+                <Image source={require('../../../../assets/flags/spain.png')} style={styles.flagImg}/>
 
                 <Text style={styles.textInBtn}>Español</Text>
 
@@ -166,7 +166,7 @@ const Intro8 = () => {
 
 
             <TouchableOpacity style={styles.btn} onPress={() => changeLanguage('AR')}>
-                <Image source={require('../../../../assets/arabic.png')} style={styles.flagImg}/>
+                <Image source={require('../../../../assets/flags/arabic.png')} style={styles.flagImg}/>
 
                 <Text style={styles.textInBtn}>العربية</Text>
 

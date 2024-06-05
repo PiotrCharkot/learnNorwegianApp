@@ -441,7 +441,7 @@ const TextScreen = ({route}) => {
             })}
 
 
-            <View style={styles.photosContainer}>
+            <Animated.View style={{...styles.photosContainer, opacity: titleOpacity}}>
 
               {pictures.map((picture) => {
                 return(
@@ -452,7 +452,7 @@ const TextScreen = ({route}) => {
                 )
               })}
 
-            </View>
+            </Animated.View>
 
           <View style={{height: 200}}></View>
           </ScrollView>

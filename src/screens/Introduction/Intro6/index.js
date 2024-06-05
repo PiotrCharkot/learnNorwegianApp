@@ -7,9 +7,12 @@ import { useNavigation } from "@react-navigation/native";
 const screenWidth = Dimensions.get('window').width;
 const screenHeight = Dimensions.get('window').height;
 
-const Intro6 = () => {
+const Intro6 = ({route}) => {
 
     const navigation = useNavigation();
+
+
+    const {skipable, language} = route.params
 
 
     const opacityTitle = useRef(new Animated.Value(0)).current;
@@ -61,6 +64,24 @@ const Intro6 = () => {
     const runAnimation = () => {
 
 
+
+        if (skipable) {
+            Animated.timing(xPosNextBtn, {
+                duration: 100,
+                delay: 2800, 
+                toValue: 1,
+                useNativeDriver: true
+            }).start();
+
+            Animated.timing(opacityNextBtn, {
+                duration: 2000,
+                delay: 3000, 
+                toValue: 1,
+                useNativeDriver: true
+            }).start();
+        }
+
+
         Animated.timing(opacityReplayBtn, {
             duration: 300,
             toValue: 0,
@@ -102,7 +123,6 @@ const Intro6 = () => {
 
         
 
-/////////////////////////////////
         Animated.sequence([
             Animated.timing(opacityTitle, {
                 duration: 1500,
@@ -272,11 +292,6 @@ const Intro6 = () => {
             ]),
             
             
-           
-            
-            
-
-/////////////////////////////////
             Animated.parallel([
                 Animated.timing(xPosNextBtn, {
                     duration: 100,
@@ -325,25 +340,25 @@ const Intro6 = () => {
         
 
         <Animated.View style={{...styles.readingBtnContainer}}>
-            <Animated.Image source={require('../../../../assets/readingHubBtn.png')} style={{...styles.readingBtnImg, opacity: opacityReadingBtn}}/>
+            <Animated.Image source={require('../../../../assets/introPictures/readingHubBtn.png')} style={{...styles.readingBtnImg, opacity: opacityReadingBtn}}/>
         </Animated.View>
 
 
 
         <Animated.View style={{...styles.exerciseMenuContainer, transform: [{translateY: yPosMenu}]}}>
-            <Animated.Image source={require('../../../../assets/readingMenu.png')} style={{...styles.exerciseMenuImg, opacity: opacityExerciseMenu}}/>
+            <Animated.Image source={require('../../../../assets/introPictures/readingMenu.png')} style={{...styles.exerciseMenuImg, opacity: opacityExerciseMenu}}/>
         </Animated.View>
 
 
         <Animated.View style={{...styles.textImgContainer, transform: [{translateY: yPosTextImg}]}}>
-            <Animated.Image source={require('../../../../assets/textImg.png')} style={{...styles.textImg, opacity: opacityTextImg}}/>
+            <Animated.Image source={require('../../../../assets/introPictures/textImg.png')} style={{...styles.textImg, opacity: opacityTextImg}}/>
         </Animated.View>
         
 
         
 
         <Animated.View style={{...styles.barImgContainer, transform: [{translateY: barPosition}]}}>
-            <Animated.Image source={require('../../../../assets/bar-learn.png')} style={{...styles.barImg, opacity: opacityBar}}/>
+            <Animated.Image source={require('../../../../assets/introPictures/bar-learn.png')} style={{...styles.barImg, opacity: opacityBar}}/>
         </Animated.View>
 
 
@@ -385,7 +400,7 @@ const Intro6 = () => {
 
 
         <Animated.View style={{...styles.pointerContainer, transform: [{translateY: pointerPositionY}, {translateX: pointerPositionX}]}}>
-            <Animated.Image source={require('../../../../assets/pointer.png')} style={{...styles.pointerImg, opacity: opacityPointer}}/>
+            <Animated.Image source={require('../../../../assets/introPictures/pointer.png')} style={{...styles.pointerImg, opacity: opacityPointer}}/>
         </Animated.View>
 
 
@@ -393,15 +408,15 @@ const Intro6 = () => {
         <Animated.View style={{...styles.buttonContainerReplay, opacity: opacityReplayBtn, transform: [{translateX: xPosReplayBtn}]}}>
             <TouchableOpacity onPress={runAnimation}>
 
-                <Image source={require('../../../../assets/reload.png')} style={styles.iconReplayImg}/>
+                <Image source={require('../../../../assets/introPictures/reload.png')} style={styles.iconReplayImg}/>
             </TouchableOpacity>
         </Animated.View>
 
 
         <Animated.View style={{...styles.buttonContainer, opacity: opacityNextBtn, transform: [{translateX: xPosNextBtn}]}}>
-            <TouchableOpacity onPress={() => navigation.replace("Intro7")}>
+            <TouchableOpacity onPress={() => navigation.replace("Intro7", {skipable, language})}>
 
-                <Image source={require('../../../../assets/arrow-right.png')} style={styles.iconImg}/>
+                <Image source={require('../../../../assets/introPictures/arrow-right.png')} style={styles.iconImg}/>
             </TouchableOpacity>
         </Animated.View>
         

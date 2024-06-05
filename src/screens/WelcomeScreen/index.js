@@ -1,7 +1,8 @@
 import { View, Text, StyleSheet, Image, Dimensions, Animated} from 'react-native'
-import React, {useEffect, useRef } from 'react'
+import React, { useState, useEffect, useRef } from 'react'
 import { useNavigation } from "@react-navigation/native";
 import MaskedView from '@react-native-community/masked-view';
+import * as SecureStore from 'expo-secure-store';
 
 const screenWidth = Dimensions.get('window').width;
 const screenHeight = Dimensions.get('window').height;
@@ -14,16 +15,41 @@ const WelcomeScreen = () => {
     const opacityText = useRef(new Animated.Value(1)).current;
 
 
+    const [playIntro, setPlayIntro] = useState(false);
+
+
+    //get timestamp from securestore for appFirstLunch. If value === undefinde than show intro and set value
+
     const moveToMain = () => {
-      if (true) { // get value from SecureStore to check if intro was shown
-        navigation.replace("Main");
+      if (playIntro) { // get value from SecureStore to check if intro was shown
+        navigation.replace('Intro1', {skipable: false, language: 'EN'});  
       } else {
-        navigation.replace("Intro1");  
+        navigation.replace("Main");
         // change value in SecureStore to => intro shown
       }
     }
 
     useEffect(() => {
+
+      const checkFirstLaunch = async () => {
+        try {
+          const firstLaunch = await SecureStore.getItemAsync('firstLaunchTime'); 
+          if (firstLaunch === null) {
+
+            console.log('luanching for the first time');
+            setPlayIntro(true);
+            const currentTime = new Date().toISOString();
+            await SecureStore.setItemAsync('firstLaunchTime', currentTime);
+          } 
+  
+        } catch (error) {
+          console.error('Error setting first launch time:', error);
+        }
+      };
+  
+      checkFirstLaunch();
+
+
 
       Animated.timing(opacityFront, {
         duration: 2000,

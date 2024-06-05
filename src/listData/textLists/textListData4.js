@@ -43,7 +43,7 @@ export default dataObj = [
     },
     {
         key: 7,
-        textId: 68,
+        textId: 67,
         title: 'Engasjementets Vekkelse',
         level: 'Echoer fra Oslo'
     },

@@ -7,9 +7,12 @@ import { useNavigation } from "@react-navigation/native";
 const screenWidth = Dimensions.get('window').width;
 const screenHeight = Dimensions.get('window').height;
 
-const Intro5 = () => {
+const Intro5 = ({route}) => {
 
     const navigation = useNavigation();
+
+
+    const {skipable, language} = route.params
 
 
     const opacityTitle = useRef(new Animated.Value(0)).current;
@@ -60,6 +63,23 @@ const Intro5 = () => {
 
 
     const runAnimation = () => {
+
+
+        if (skipable) {
+            Animated.timing(xPosNextBtn, {
+                duration: 100,
+                delay: 2800, 
+                toValue: 1,
+                useNativeDriver: true
+            }).start();
+
+            Animated.timing(opacityNextBtn, {
+                duration: 2000,
+                delay: 3000, 
+                toValue: 1,
+                useNativeDriver: true
+            }).start();
+        }
 
 
         Animated.timing(opacityReplayBtn, {
@@ -128,7 +148,6 @@ const Intro5 = () => {
         ]).start();
 
 
-/////////////////////////////////
         Animated.sequence([
             Animated.timing(opacityTitle, {
                 duration: 1500,
@@ -299,7 +318,6 @@ const Intro5 = () => {
             ]),
             
 
-/////////////////////////////////
             Animated.parallel([
                 Animated.timing(xPosNextBtn, {
                     duration: 100,
@@ -351,24 +369,24 @@ const Intro5 = () => {
 
 
         <Animated.View style={{...styles.exerciseMenuContainer, transform: [{translateY: yPosMenu}]}}>
-            <Animated.Image source={require('../../../../assets/learningMenu.png')} style={{...styles.exerciseMenuImg, opacity: opacityExerciseMenu}}/>
+            <Animated.Image source={require('../../../../assets/introPictures/learningMenu.png')} style={{...styles.exerciseMenuImg, opacity: opacityExerciseMenu}}/>
         </Animated.View>
         
 
 
         <Animated.View style={styles.learnContainer}>
-            <Animated.Image source={require('../../../../assets/learn1.png')} style={{...styles.learnImg, opacity: opacityLearn1}}/>
-            <Animated.Image source={require('../../../../assets/learn2.png')} style={{...styles.learnImg, opacity: opacityLearn2}}/>
-            <Animated.Image source={require('../../../../assets/learn3.png')} style={{...styles.learnImg, opacity: opacityLearn3}}/>
-            <Animated.Image source={require('../../../../assets/learn4.png')} style={{...styles.learnImg, opacity: opacityLearn4}}/>
+            <Animated.Image source={require('../../../../assets/introPictures/learn1.png')} style={{...styles.learnImg, opacity: opacityLearn1}}/>
+            <Animated.Image source={require('../../../../assets/introPictures/learn2.png')} style={{...styles.learnImg, opacity: opacityLearn2}}/>
+            <Animated.Image source={require('../../../../assets/introPictures/learn3.png')} style={{...styles.learnImg, opacity: opacityLearn3}}/>
+            <Animated.Image source={require('../../../../assets/introPictures/learn4.png')} style={{...styles.learnImg, opacity: opacityLearn4}}/>
         </Animated.View>
 
 
         
 
         <Animated.View style={{...styles.barImgContainer, transform: [{translateY: barPosition}]}}>
-            <Animated.Image source={require('../../../../assets/bar-exe.png')} style={{...styles.barImg, opacity: opacityBar}}/>
-            <Animated.Image source={require('../../../../assets/bar-learn.png')} style={{...styles.barImg, opacity: opacityBar2}}/>
+            <Animated.Image source={require('../../../../assets/introPictures/bar-exe.png')} style={{...styles.barImg, opacity: opacityBar}}/>
+            <Animated.Image source={require('../../../../assets/introPictures/bar-learn.png')} style={{...styles.barImg, opacity: opacityBar2}}/>
         </Animated.View>
 
 
@@ -410,7 +428,7 @@ const Intro5 = () => {
 
 
         <Animated.View style={{...styles.pointerContainer, transform: [{translateY: pointerPositionY}, {translateX: pointerPositionX}]}}>
-            <Animated.Image source={require('../../../../assets/pointer.png')} style={{...styles.pointerImg, opacity: opacityPointer}}/>
+            <Animated.Image source={require('../../../../assets/introPictures/pointer.png')} style={{...styles.pointerImg, opacity: opacityPointer}}/>
         </Animated.View>
 
 
@@ -418,15 +436,15 @@ const Intro5 = () => {
         <Animated.View style={{...styles.buttonContainerReplay, opacity: opacityReplayBtn, transform: [{translateX: xPosReplayBtn}]}}>
             <TouchableOpacity onPress={runAnimation}>
 
-                <Image source={require('../../../../assets/reload.png')} style={styles.iconReplayImg}/>
+                <Image source={require('../../../../assets/introPictures/reload.png')} style={styles.iconReplayImg}/>
             </TouchableOpacity>
         </Animated.View>
 
 
         <Animated.View style={{...styles.buttonContainer, opacity: opacityNextBtn, transform: [{translateX: xPosNextBtn}]}}>
-            <TouchableOpacity onPress={() => navigation.replace("Intro6")}>
+            <TouchableOpacity onPress={() => navigation.replace("Intro6", {skipable, language})}>
 
-                <Image source={require('../../../../assets/arrow-right.png')} style={styles.iconImg}/>
+                <Image source={require('../../../../assets/introPictures/arrow-right.png')} style={styles.iconImg}/>
             </TouchableOpacity>
         </Animated.View>
         

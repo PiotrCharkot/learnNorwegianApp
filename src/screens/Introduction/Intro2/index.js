@@ -7,9 +7,12 @@ import { useNavigation } from "@react-navigation/native";
 const screenWidth = Dimensions.get('window').width;
 const screenHeight = Dimensions.get('window').height;
 
-const Intro2 = () => {
+const Intro2 = ({route}) => {
 
     const navigation = useNavigation();
+
+
+    const {skipable, language} = route.params
 
 
     const opacityTitle = useRef(new Animated.Value(0)).current;
@@ -41,6 +44,23 @@ const Intro2 = () => {
 
     const runAnimation = () => {
 
+
+
+        if (skipable) {
+            Animated.timing(xPosNextBtn, {
+                duration: 100,
+                delay: 2800, 
+                toValue: 1,
+                useNativeDriver: true
+            }).start();
+
+            Animated.timing(opacityNextBtn, {
+                duration: 2000,
+                delay: 3000, 
+                toValue: 1,
+                useNativeDriver: true
+            }).start();
+        }
 
         Animated.timing(opacityReplayBtn, {
             duration: 300,
@@ -497,40 +517,40 @@ const Intro2 = () => {
 
 
         <Animated.View style={{...styles.flashcardBtnContainer}}>
-            <Animated.Image source={require('../../../../assets/flashcardIntroBtn2.png')} style={{...styles.flashcardIntroBtnImg, opacity: opacityFlashcardBtn2}}/>
+            <Animated.Image source={require('../../../../assets/introPictures/flashcardIntroBtn2.png')} style={{...styles.flashcardIntroBtnImg, opacity: opacityFlashcardBtn2}}/>
         </Animated.View>
 
 
         <Animated.View style={{...styles.flashcardBtnContainer}}>
-            <Animated.Image source={require('../../../../assets/flashcardIntroBtn.png')} style={{...styles.flashcardIntroBtnImg, opacity: opacityFlashcardBtn}}/>
+            <Animated.Image source={require('../../../../assets/introPictures/flashcardIntroBtn.png')} style={{...styles.flashcardIntroBtnImg, opacity: opacityFlashcardBtn}}/>
         </Animated.View>
 
         
         <Animated.View style={{...styles.langContainer}}>
-            <Animated.Image source={require('../../../../assets/langOne.png')} style={{...styles.langOneImg, opacity: opacityLangOne}}/>
-            <Animated.Image source={require('../../../../assets/langList.png')} style={{...styles.langImg, opacity: opacityLang}}/>
+            <Animated.Image source={require('../../../../assets/introPictures/langOne.png')} style={{...styles.langOneImg, opacity: opacityLangOne}}/>
+            <Animated.Image source={require('../../../../assets/introPictures/langList.png')} style={{...styles.langImg, opacity: opacityLang}}/>
         </Animated.View>
 
 
 
         <Animated.View style={{...styles.cardImgContainer}}>
-            <Animated.Image source={require('../../../../assets/flashcardIntro.png')} style={{...styles.cardImg, opacity: opacityCard}}/>
+            <Animated.Image source={require('../../../../assets/introPictures/flashcardIntro.png')} style={{...styles.cardImg, opacity: opacityCard}}/>
         </Animated.View>
 
 
         <Animated.View style={{...styles.cardImgContainer2}}>
-            <Animated.Image source={require('../../../../assets/flashcardIntro2rev.png')} style={{...styles.cardImg2, opacity: opacityCard2rev}}/>
+            <Animated.Image source={require('../../../../assets/introPictures/flashcardIntro2rev.png')} style={{...styles.cardImg2, opacity: opacityCard2rev}}/>
         </Animated.View>
 
 
 
         <Animated.View style={{...styles.cardImgContainer2}}>
-            <Animated.Image source={require('../../../../assets/flashcardIntro2.png')} style={{...styles.cardImg2, opacity: opacityCard2}}/>
+            <Animated.Image source={require('../../../../assets/introPictures/flashcardIntro2.png')} style={{...styles.cardImg2, opacity: opacityCard2}}/>
         </Animated.View>
 
 
         <Animated.View style={{...styles.pointerContainer, transform: [{translateY: pointerPositionY}, {translateX: pointerPositionX}]}}>
-            <Animated.Image source={require('../../../../assets/pointer.png')} style={{...styles.pointerImg, opacity: opacityPointer}}/>
+            <Animated.Image source={require('../../../../assets/introPictures/pointer.png')} style={{...styles.pointerImg, opacity: opacityPointer}}/>
         </Animated.View>
 
 
@@ -538,23 +558,23 @@ const Intro2 = () => {
 
 
         <Animated.View style={{...styles.barImgContainer, transform: [{translateY: barPosition}]}}>
-            <Image source={require('../../../../assets/bar-word.png')} style={styles.barImg}/>
-            <Animated.Image source={require('../../../../assets/bar-empty.png')} style={{...styles.barImg, opacity: opacityBar}}/>
+            <Image source={require('../../../../assets/introPictures/bar-word.png')} style={styles.barImg}/>
+            <Animated.Image source={require('../../../../assets/introPictures/bar-empty.png')} style={{...styles.barImg, opacity: opacityBar}}/>
         </Animated.View>
 
 
         <Animated.View style={{...styles.buttonContainerReplay, opacity: opacityReplayBtn, transform: [{translateX: xPosReplayBtn}]}}>
             <TouchableOpacity onPress={runAnimation}>
 
-                <Image source={require('../../../../assets/reload.png')} style={styles.iconReplayImg}/>
+                <Image source={require('../../../../assets/introPictures/reload.png')} style={styles.iconReplayImg}/>
             </TouchableOpacity>
         </Animated.View>
 
 
         <Animated.View style={{...styles.buttonContainer, opacity: opacityNextBtn, transform: [{translateX: xPosNextBtn}]}}>
-            <TouchableOpacity  onPress={() => navigation.replace("Intro3")}>
+            <TouchableOpacity  onPress={() => navigation.replace("Intro3", {skipable, language})}>
 
-                <Image source={require('../../../../assets/arrow-right.png')} style={styles.iconImg}/>
+                <Image source={require('../../../../assets/introPictures/arrow-right.png')} style={styles.iconImg}/>
             </TouchableOpacity>
         </Animated.View>
         

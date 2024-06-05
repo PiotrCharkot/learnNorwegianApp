@@ -6,8 +6,9 @@ import { useNavigation } from "@react-navigation/native";
 const screenWidth = Dimensions.get('window').width;
 const screenHeight = Dimensions.get('window').height;
 
-const Intro1 = () => {
+const Intro1 = ({route}) => {
 
+    const {skipable, language} = route.params
 
     const navigation = useNavigation();
 
@@ -19,6 +20,9 @@ const Intro1 = () => {
 
 
     useEffect(() => {
+
+
+
         Animated.timing(opacityTitle, {
             duration: 2000,
             delay: 500,
@@ -53,7 +57,7 @@ const Intro1 = () => {
 
         Animated.timing(opacityNextBtn, {
             duration: 2000,
-            delay: 7000, // change to 7000 when in prod
+            delay: 7000,
             toValue: 1,
             useNativeDriver: true
         }).start();
@@ -89,9 +93,9 @@ const Intro1 = () => {
         </Animated.View>
 
         <Animated.View style={{...styles.buttonContainer, opacity: opacityNextBtn, transform: [{translateX: xPosNextBtn}]}}>
-            <TouchableOpacity onPress={() => navigation.replace("Intro2")}>
+            <TouchableOpacity onPress={() => navigation.replace("Intro2", {skipable, language})}>
 
-                <Image source={require('../../../../assets/arrow-right.png')} style={styles.iconImg}/>
+                <Image source={require('../../../../assets/introPictures/arrow-right.png')} style={styles.iconImg}/>
             </TouchableOpacity>
         </Animated.View>
         

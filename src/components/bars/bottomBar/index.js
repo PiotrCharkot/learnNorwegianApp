@@ -8,7 +8,7 @@ import generalStyles from '../../../styles/generalStyles';
 const screenWidth = Dimensions.get('window').width;
 const iconColor = 'white';
 
-const imgLinks = [require('../../../../assets/reindeerSmile_NoBackground.png'), require('../../../../assets/reindeerSmile4_NoBackground.png'), require('../../../../assets/reindeerSmile8_NoBackground.png'), require('../../../../assets/reindeerSmile10_NoBackground.png'), require('../../../../assets/reindeerSmile11_NoBackground.png')]
+const imgLinks = [require('../../../../assets/bottomBarPic/reindeerSmile_NoBackground.png'), require('../../../../assets/bottomBarPic/reindeerSmile4_NoBackground.png'), require('../../../../assets/bottomBarPic/reindeerSmile8_NoBackground.png'), require('../../../../assets/bottomBarPic/reindeerSmile10_NoBackground.png'), require('../../../../assets/bottomBarPic/reindeerSmile11_NoBackground.png')]
 
 
 

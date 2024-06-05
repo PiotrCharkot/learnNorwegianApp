@@ -164,14 +164,19 @@ export default textInfo = [
         }
         
       ],
-      // links: [
-      //   {
-      //     link: '',
-      //     desc: '',
-      //     key: 0
-      //   }
+      links: [
+        {
+          link: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/textPhotos%2FTrolltunga2.jpg?alt=media&token=31bf884e-2bf3-411b-9d53-387a25205c48',
+          desc: 'Trolltunga',
+          key: 0
+        },
+        {
+            link: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/textPhotos%2FTrolltunga.jpg?alt=media&token=fefba6af-ae0a-4abe-82f1-4472f1bbf496',
+            desc: 'Trolltunga',
+            key: 1
+        }
 
-      // ]
+      ]
     },
     {
       textId: 2,
@@ -235,14 +240,14 @@ export default textInfo = [
         }
         
       ],
-      // links: [
-      //   {
-      //     link: '',
-      //     desc: '',
-      //     key: 0
-      //   }
+      links: [
+        {
+          link: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/textPhotos%2Fgrunerl%C3%B8kka3.jpg?alt=media&token=b831043d-0958-48da-9954-8e244a8e8769',
+          desc: 'Søndre gate - Grunerløkka',
+          key: 0
+        }
 
-      // ]
+      ]
     },
     {
       textId: 3,
@@ -306,14 +311,24 @@ export default textInfo = [
         }
         
       ],
-      // links: [
-      //   {
-      //     link: '',
-      //     desc: '',
-      //     key: 0
-      //   }
+      links: [
+        {
+          link: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/textPhotos%2Freindeer.webp?alt=media&token=1a8fd185-bd51-46cf-8108-b5a7104c2b9c',
+          desc: 'Reinsdyr',
+          key: 0
+        },
+        {
+            link: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/textPhotos%2Fdyr3.jpg?alt=media&token=17589779-feda-4c77-8b99-1014b9c6db37',
+            desc: 'Bjørn',
+            key: 1
+        },
+        {
+            link: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/textPhotos%2Fdyr1.jpg?alt=media&token=dca1c509-1d0b-4be2-aff0-4bd07d938b35',
+            desc: 'Elg',
+            key: 2
+        }
 
-      // ]
+      ]
     },
     {
       textId: 4,
@@ -399,14 +414,19 @@ export default textInfo = [
         }
         
       ],
-      // links: [
-      //   {
-      //     link: '',
-      //     desc: '',
-      //     key: 0
-      //   }
+      links: [
+        {
+          link: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/textPhotos%2Ffoss%20p%C3%A5%20Akerselva2.jpg?alt=media&token=a5e2e469-6874-47b3-8d65-cba74a3df579',
+          desc: 'Vøyenfallene på Akerselva',
+          key: 0
+        },
+        {
+            link: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/textPhotos%2Fkajakker%20p%C3%A5%20Akerselva.jpg?alt=media&token=b21f1e68-cde9-4212-82d7-fc03274d498a',
+            desc: 'Kajakker på Akerselva',
+            key: 1
+        }
 
-      // ]
+      ]
     },
     {
       textId: 5,
@@ -481,14 +501,19 @@ export default textInfo = [
         }
         
       ],
-      // links: [
-      //   {
-      //     link: '',
-      //     desc: '',
-      //     key: 0
-      //   }
+      links: [
+        {
+          link: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/textPhotos%2F17%20mai%20Karls%20Johans%20gate.jpg?alt=media&token=078cb262-5e2c-443c-b48f-898bb2a92896',
+          desc: 'Karl Johans gate - 17 mai',
+          key: 0
+        },
+        {
+            link: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/textPhotos%2F17.mai.jpg?alt=media&token=69a2e249-6ac7-4c9a-8ca8-1c52ccd6e7b1',
+            desc: 'Barnetog - 17 mai',
+            key: 1
+        }
 
-      // ]
+      ]
     },
     {
       textId: 20,
@@ -552,14 +577,19 @@ export default textInfo = [
         }
         
       ],
-      // links: [
-      //   {
-      //     link: '',
-      //     desc: '',
-      //     key: 0
-      //   }
+      links: [
+        {
+          link: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/textPhotos%2Flangrenn2.jpg?alt=media&token=d46b3c2f-13ed-4c49-b04d-081270cad703',
+          desc: 'Langrenn',
+          key: 0
+        },
+        {
+            link: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/textPhotos%2Fskihop.jpg?alt=media&token=de9f8711-c169-43f5-a076-df0f672fe31e',
+            desc: 'Skihopping',
+            key: 1
+        }
 
-      // ]
+      ]
     },
     {
       textId: 21,
@@ -678,14 +708,19 @@ export default textInfo = [
         }
         
       ],
-      // links: [
-      //   {
-      //     link: '',
-      //     desc: '',
-      //     key: 0
-      //   }
+      links: [
+        {
+            link: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/textPhotos%2Felbuss1.jpg?alt=media&token=4c028ebe-baa5-4438-bc41-7ca33819d0c5',
+            desc: 'Elbusser',
+            key: 0
+        },
+        {
+          link: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/textPhotos%2Fbuss.webp?alt=media&token=b0e95c58-f562-44c1-9a80-fa2592de38ca',
+          desc: 'Selvkjørende buss',
+          key: 1
+        }
 
-      // ]
+      ]
     },
     {
       textId: 22,
@@ -749,14 +784,24 @@ export default textInfo = [
         }
         
       ],
-      // links: [
-      //   {
-      //     link: '',
-      //     desc: '',
-      //     key: 0
-      //   }
+      links: [
+        {
+            link: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/textPhotos%2FvikingShip.jpg?alt=media&token=28a4e2c1-0e47-4b26-8cb0-82e5f9e33028',
+            desc: 'Vikingskip',
+            key: 0
+        },
+        {
+            link: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/textPhotos%2Fvikings.jpg?alt=media&token=d9cbde4d-ed81-490f-a65a-fd3a5fb32481',
+            desc: 'Viking krigere',
+            key: 1
+        },
+        {
+            link: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/textPhotos%2FvikingShip2.webp?alt=media&token=19b53bcd-7572-447a-b8e5-6a42be7dd5d4',
+            desc: 'Vikingskip',
+            key: 2
+        }
 
-      // ]
+      ]
     },
     {
       textId: 23,
@@ -831,14 +876,14 @@ export default textInfo = [
         }
         
       ],
-      // links: [
-      //   {
-      //     link: '',
-      //     desc: '',
-      //     key: 0
-      //   }
+      links: [
+        {
+          link: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/textPhotos%2Fvoksen2.webp?alt=media&token=8ec3968b-2b50-4514-8c9e-a93e3f598714',
+          desc: 'Voksenopplæring',
+          key: 0
+        }
 
-      // ]
+      ]
     },
     {
       textId: 24,
@@ -913,14 +958,24 @@ export default textInfo = [
         }
         
       ],
-      // links: [
-      //   {
-      //     link: '',
-      //     desc: '',
-      //     key: 0
-      //   }
+      links: [
+        {
+          link: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/textPhotos%2Fbarcode%20oslo.jpg?alt=media&token=b174a413-88fc-4118-a336-d3221e1f68e6',
+          desc: 'Barcode - næringsbygg i Oslo',
+          key: 0
+        },
+        {
+            link: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/textPhotos%2Fbarcode%20skyline%20i%20oslo.jpg?alt=media&token=847df0ba-0c85-4734-915d-49fc29fca1b7',
+            desc: 'Barcode skyline i Oslo',
+            key: 1
+        },
+        {
+            link: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/textPhotos%2Fbarcode%20oslo3.jpg?alt=media&token=8a320e0a-37a2-4fcf-8872-912141084917',
+            desc: 'Barcode skyline i Oslo',
+            key: 2
+        }
 
-      // ]
+      ]
     },
     {
       textId: 25,
@@ -1016,14 +1071,19 @@ export default textInfo = [
           key: 7
         }
       ],
-      // links: [
-      //   {
-      //     link: '',
-      //     desc: '',
-      //     key: 0
-      //   }
+      links: [
+        {
+          link: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/textPhotos%2FPreikestolen.jpg?alt=media&token=1ab99261-0ef9-4ec0-89e2-49f982155347',
+          desc: 'Preikestolen',
+          key: 0
+        },
+        {
+            link: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/textPhotos%2FPreikestolen2.jpg?alt=media&token=8ce6caab-7e01-4504-b5f4-f6a9a719e5b3',
+            desc: 'Preikestolen',
+            key: 1
+        }
 
-      // ]
+      ]
     },
     {
       textId: 26,
@@ -1109,14 +1169,14 @@ export default textInfo = [
         }
         
       ],
-      // links: [
-      //   {
-      //     link: '',
-      //     desc: '',
-      //     key: 0
-      //   }
+      links: [
+        {
+          link: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/textPhotos%2Fdugnad.jpg?alt=media&token=f8d27d73-f222-4484-8f87-bf139ec9f075',
+          desc: 'Dugnad',
+          key: 0
+        }
 
-      // ]
+      ]
     },
     {
       textId: 27,
@@ -1191,14 +1251,19 @@ export default textInfo = [
         }
         
       ],
-      // links: [
-      //   {
-      //     link: '',
-      //     desc: '',
-      //     key: 0
-      //   }
+      links: [
+        {
+            link: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/textPhotos%2Flegevakt2.jpg?alt=media&token=4d290c1b-f1e5-4b7c-9bf1-98ecee91d350',
+            desc: 'Legevakten i Oslo',
+            key: 0
+        },
+        {
+          link: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/textPhotos%2FUllevaal_sykehus.jpg?alt=media&token=78268ae8-f4ad-4368-bb36-e133924e8e98',
+          desc: 'Oslo universitetssykehus',
+          key: 1
+        }
 
-      // ]
+      ]
     },
     {
       textId: 40,
@@ -1295,14 +1360,14 @@ export default textInfo = [
         }
         
       ],
-      // links: [
-      //   {
-      //     link: '',
-      //     desc: '',
-      //     key: 0
-      //   }
+      links: [
+        {
+          link: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/textPhotos%2Flofoten%203.jpeg?alt=media&token=604b8a14-764c-4e79-829e-0338cb6b7cd3',
+          desc: 'Lofoten',
+          key: 0
+        }
 
-      // ]
+      ]
     },
     {
       textId: 41,
@@ -1377,14 +1442,19 @@ export default textInfo = [
         }
         
       ],
-      // links: [
-      //   {
-      //     link: '',
-      //     desc: '',
-      //     key: 0
-      //   }
+      links: [
+        {
+          link: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/textPhotos%2Flaks.jpg?alt=media&token=53ffcc9a-e0b6-4016-b52a-cad1e4e92d8a',
+          desc: 'Laksoppdrett',
+          key: 0
+        },
+        {
+            link: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/textPhotos%2Fostehovel.jpg?alt=media&token=819a5373-8195-4b96-8aa5-a736db76be8b',
+            desc: 'Ostehøvel',
+            key: 1
+        }
 
-      // ]
+      ]
     },
     {
       textId: 42,
@@ -1448,14 +1518,19 @@ export default textInfo = [
         }
         
       ],
-      // links: [
-      //   {
-      //     link: '',
-      //     desc: '',
-      //     key: 0
-      //   }
+      links: [
+        {
+          link: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/textPhotos%2Fnorway-sankt-hans.webp?alt=media&token=f964cfc8-5efc-42b4-b8bf-6b4713627f85',
+          desc: 'et bål på Sankthansaften',
+          key: 0
+        },
+        {
+            link: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/textPhotos%2Fnorway-sankt-hans%20(1).webp?alt=media&token=4670a9d1-5afb-4de7-a2c3-3f0059055ed8',
+            desc: 'et bål på Sankthansaften',
+            key: 1
+        }
 
-      // ]
+      ]
     },
     {
       textId: 43,
@@ -1541,14 +1616,14 @@ export default textInfo = [
         }
         
       ],
-      // links: [
-      //   {
-      //     link: '',
-      //     desc: '',
-      //     key: 0
-      //   }
+      links: [
+        {
+          link: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/textPhotos%2Fvei%20mellom%20Trondheim%20og%20Oslo3.jpg?alt=media&token=bf0b929d-e59e-42d9-90d1-80f9e31a29fd',
+          desc: 'Vei mellom Trondheim og Oslo',
+          key: 0
+        }
 
-      // ]
+      ]
     },
     {
       textId: 44,
@@ -1634,14 +1709,24 @@ export default textInfo = [
         }
         
       ],
-      // links: [
-      //   {
-      //     link: '',
-      //     desc: '',
-      //     key: 0
-      //   }
+      links: [
+        {
+          link: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/textPhotos%2Ffriluft2.jpeg?alt=media&token=f0cfbc73-4e83-44c4-90a9-7a21aeb88f21',
+          desc: 'far leker med sønnen sin',
+          key: 0
+        },
+        {
+            link: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/textPhotos%2Ffriluft3.jpg?alt=media&token=12358c5e-ae46-44b6-8b1c-abfe277265c2',
+            desc: 'en lang skitur',
+            key: 1
+        },
+        {
+            link: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/textPhotos%2Ffriluft.webp?alt=media&token=67f7ca5b-3471-441e-857d-ec02619637e3',
+            desc: 'tur i en skog',
+            key: 2
+        }
 
-      // ]
+      ]
     },
     {
       textId: 45,
@@ -1716,14 +1801,19 @@ export default textInfo = [
         }
         
       ],
-      // links: [
-      //   {
-      //     link: '',
-      //     desc: '',
-      //     key: 0
-      //   }
+      links: [
+        {
+          link: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/textPhotos%2Flofoten%203.jpeg?alt=media&token=604b8a14-764c-4e79-829e-0338cb6b7cd3',
+          desc: 'Lofoten',
+          key: 0
+        },
+        {
+            link: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/textPhotos%2FHenninsgvaer-football_stadium-Lofoten.jpg?alt=media&token=949e7142-4333-41ed-88f0-4771556c7dc8',
+            desc: 'Henninsgvaer fotballstadion - Lofoten',
+            key: 1
+        }
 
-      // ]
+      ]
     },
     {
       textId: 46,
@@ -1809,14 +1899,19 @@ export default textInfo = [
         }
         
       ],
-      // links: [
-      //   {
-      //     link: '',
-      //     desc: '',
-      //     key: 0
-      //   }
+      links: [
+        {
+            link: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/textPhotos%2F17mai-SkienKommune.jpg?alt=media&token=fd26c809-6c68-48b0-bebc-f333c8f2d31d',
+            desc: 'Skien kommune - 17 mai',
+            key: 0
+          },
+          {
+              link: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/textPhotos%2F17_mai_2018.jpg?alt=media&token=4f1beca7-d0d8-4d21-b2bb-c97193529b53',
+              desc: 'Barnetog - 17 mai',
+              key: 1
+          }
 
-      // ]
+      ]
     },
     {
       textId: 47,
@@ -1902,14 +1997,14 @@ export default textInfo = [
         }
         
       ],
-      // links: [
-      //   {
-      //     link: '',
-      //     desc: '',
-      //     key: 0
-      //   }
+      links: [
+        {
+          link: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/textPhotos%2Ffagforbundet.jpg?alt=media&token=ad105d1a-e2a3-4c6b-adb6-60b947853880',
+          desc: 'Fagforbundet',
+          key: 0
+        }
 
-      // ]
+      ]
     },
     {
       textId: 60,
@@ -1995,14 +2090,14 @@ export default textInfo = [
         }
         
       ],
-      // links: [
-      //   {
-      //     link: '',
-      //     desc: '',
-      //     key: 0
-      //   }
+      links: [
+        {
+          link: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/textPhotos%2Ffengsel.jpg?alt=media&token=031d6be4-1efd-419d-9eb3-2bb67aaee9a6',
+          desc: 'Oslo fengsel',
+          key: 0
+        }
 
-      // ]
+      ]
     },
     {
       textId: 61,
@@ -2099,14 +2194,19 @@ export default textInfo = [
         }
         
       ],
-      // links: [
-      //   {
-      //     link: '',
-      //     desc: '',
-      //     key: 0
-      //   }
+      links: [
+        {
+          link: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/textPhotos%2FEkebergparken.jpg?alt=media&token=0e052f67-075f-48ae-a5ce-4f5e5fda8161',
+          desc: 'Ekebergparken',
+          key: 0
+        },
+        {
+            link: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/textPhotos%2FEkebergparken%20Skulptur%20av%20engel%20som%20sitter%20p%C3%A5%20en%20stein.jpg?alt=media&token=ffa4bdf2-147f-495d-aaa6-65d36c816569',
+            desc: 'Ekebergparken - Skulptur av engel som sitter på en stein',
+            key: 1
+          }
 
-      // ]
+      ]
     },
     {
       textId: 62,
@@ -2192,14 +2292,14 @@ export default textInfo = [
         }
         
       ],
-      // links: [
-      //   {
-      //     link: '',
-      //     desc: '',
-      //     key: 0
-      //   }
+      links: [
+        {
+          link: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/textPhotos%2Fsvalbard.webp?alt=media&token=0a888ce8-e5e8-4753-9ea9-0c2028160152',
+          desc: 'Svalbard',
+          key: 0
+        }
 
-      // ]
+      ]
     },
     {
       textId: 63,
@@ -2263,14 +2363,14 @@ export default textInfo = [
         }
         
       ],
-      // links: [
-      //   {
-      //     link: '',
-      //     desc: '',
-      //     key: 0
-      //   }
+      links: [
+        {
+          link: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/textPhotos%2Fnav.jpg?alt=media&token=c76538c7-f7a4-4406-9324-818f8a902af6',
+          desc: 'NAV-kontor i Oslo',
+          key: 0
+        }
 
-      // ]
+      ]
     },
     {
       textId: 64,
@@ -2356,14 +2456,14 @@ export default textInfo = [
         }
         
       ],
-      // links: [
-      //   {
-      //     link: '',
-      //     desc: '',
-      //     key: 0
-      //   }
+      links: [
+        {
+          link: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/textPhotos%2FwomanKitchen.png?alt=media&token=0a5268cb-2c07-4c29-81a0-b379e08aed09',
+          desc: 'Emilie Solberg',
+          key: 0
+        }
 
-      // ]
+      ]
     },
     {
       textId: 65,
@@ -2427,14 +2527,14 @@ export default textInfo = [
         }
         
       ],
-      // links: [
-      //   {
-      //     link: '',
-      //     desc: '',
-      //     key: 0
-      //   }
+      links: [
+        {
+          link: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/textPhotos%2Fsamer.jpg?alt=media&token=89c03f36-f5ed-409a-ab72-c2a63426f7f1',
+          desc: 'Samene',
+          key: 0
+        }
 
-      // ]
+      ]
     },
     {
       textId: 66,
@@ -2498,17 +2598,17 @@ export default textInfo = [
         }
         
       ],
-      // links: [
-      //   {
-      //     link: '',
-      //     desc: '',
-      //     key: 0
-      //   }
+      links: [
+        {
+          link: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/textPhotos%2Fnobel.jpg?alt=media&token=75cb6a69-94aa-4436-b6cf-e670cb9a40b4',
+          desc: 'Nobels Fredssenter',
+          key: 0
+        }
 
-      // ]
+      ]
     },
     {
-      textId: 68,
+      textId: 67,
       title: 'Engasjementets Vekkelse',
       text: `I hjertet av Oslo, under de lange skyggene av Akershus festning, samles Emilie, Mikkel og Nora for å vekke byens engasjement for miljøet. De arrangerer et offentlig forum i et av byens kulturelle samlingspunkter, der innbyggerne inviteres til å dele sine tanker, ideer og bekymringer om miljøutfordringer.${'\n\n'}- Vi trenger deres stemmer for å skape forandring - uttaler Emilie med en lidenskapelig tone til forsamlingen.${'\n\n'}Mikkel demonstrerer den nyeste versjonen av deres app, som nå inkluderer funksjoner basert på tidligere tilbakemeldinger. Nora, med mikrofonen i hånden, vandrer blant publikum, og inviterer folk til å uttrykke sine meninger.${'\n\n'}Forumet blir en smeltedigel av ideer, der historier om personlige initiativer og forslag til bærekraftige løsninger veksler mellom deltakerne. Stemningen er elektrisk, fylt med et nyfødt håp og et felles mål. Dette øyeblikket blir et vendepunkt, ikke bare for Emilie, Mikkel og Nora, men for hele Oslo. Samfunnets entusiasme for miljøaktivisme blir tent på ny, drevet av kraften i åpen dialog og fellesskapets engasjement.`,
       expressions: [
@@ -2625,14 +2725,19 @@ export default textInfo = [
         
         
       ],
-      // links: [
-      //   {
-      //     link: '',
-      //     desc: '',
-      //     key: 0
-      //   }
+      links: [
+        {
+            link: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/textPhotos%2FAkershus%20festning.webp?alt=media&token=965c1573-807b-4eb9-8ece-69da67aee801',
+            desc: 'Akershus festning',
+            key: 0
+        },
+        {
+            link: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/textPhotos%2FOslo-Akershus-festning.jpg?alt=media&token=a1479edf-1b0b-4ddf-8131-c005fdf1c502',
+            desc: 'Akershus festning',
+            key: 1
+        }
 
-      // ]
+      ]
     },
     {
       textId: 68,
@@ -2707,14 +2812,19 @@ export default textInfo = [
         }
         
       ],
-      // links: [
-      //   {
-      //     link: '',
-      //     desc: '',
-      //     key: 0
-      //   }
+      links: [
+        {
+          link: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/textPhotos%2FVannkraftverk.png?alt=media&token=857e82ec-2272-4786-97ac-a9bc380aa443',
+          desc: 'Vannkraftverk',
+          key: 0
+        },
+        {
+            link: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/textPhotos%2Foilrig.jpg?alt=media&token=62a950ef-36c8-48d5-a1e3-3cdcd8fabaf1',
+            desc: 'Oljerigg',
+            key: 1
+        }
 
-      // ]
+      ]
     },
     {
       textId: 80,
@@ -2801,14 +2911,19 @@ export default textInfo = [
              }
         
       ],
-      // links: [
-      //   {
-      //     link: '',
-      //     desc: '',
-      //     key: 0
-      //   }
+      links: [
+        {
+          link: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/textPhotos%2Fbergen.jpg?alt=media&token=acdcbfe7-bb46-4604-8655-b875557398c0',
+          desc: 'Bergen',
+          key: 0
+        },
+        {
+            link: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/textPhotos%2Fbergen2.jpg?alt=media&token=0e447dfb-bec6-419b-a2d5-01d785e7be65',
+            desc: 'Bergen',
+            key: 1
+        }
 
-      // ]
+      ]
     },
     {
       textId: 81,
@@ -2905,14 +3020,24 @@ export default textInfo = [
         }
         
       ],
-      // links: [
-      //   {
-      //     link: '',
-      //     desc: '',
-      //     key: 0
-      //   }
+      links: [
+        {
+            link: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/textPhotos%2Ffrogner%20park2.jpg?alt=media&token=ca930278-fedf-40cd-baf9-634bfed8f54d',
+            desc: 'Frogner Park',
+            key: 0
+        },
+        {
+            link: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/textPhotos%2Fskulpturer%20i%20Frogner%20Park%20-%20Gustav%20Vigeland.webp?alt=media&token=dfe6be38-529f-4ee2-b72f-187be6b091cd',
+            desc: 'Skulpturer i Frogner Park - Gustav Vigeland',
+            key: 1
+        },
+        {
+            link: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/textPhotos%2Ffrogner%20park.jpg?alt=media&token=513681b3-3ded-43c9-95e4-af94863c7533',
+            desc: 'Frogner Park',
+            key: 2
+        }
 
-      // ]
+      ]
     },
     {
       textId: 82,
@@ -2987,14 +3112,14 @@ export default textInfo = [
         }
         
       ],
-      // links: [
-      //   {
-      //     link: '',
-      //     desc: '',
-      //     key: 0
-      //   }
+      links: [
+        {
+          link: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/textPhotos%2Felbil2.jpg?alt=media&token=02f0d474-3c23-49d1-823e-51f15c37ca6a',
+          desc: 'Elektriske biler',
+          key: 0
+        }
 
-      // ]
+      ]
     },
     {
       textId: 83,
@@ -3047,14 +3172,24 @@ export default textInfo = [
         }
         
       ],
-      // links: [
-      //   {
-      //     link: '',
-      //     desc: '',
-      //     key: 0
-      //   }
+      links: [
+        {
+          link: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/textPhotos%2FThor.png?alt=media&token=cb8386b2-3384-41f7-9db1-1258ae9ee1b0',
+          desc: 'Thor',
+          key: 0
+        },
+        {
+            link: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/textPhotos%2FLokki.png?alt=media&token=59555f73-dcd1-4e5a-8591-8ae698ad2696',
+            desc: 'Loki',
+            key: 1
+        },
+        {
+            link: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/textPhotos%2FOdin.png?alt=media&token=338250ac-edc8-4b77-8b10-5899773e8a91',
+            desc: 'Odin',
+            key: 2
+        }
 
-      // ]
+      ]
     },
     {
       textId: 84,
@@ -3118,14 +3253,14 @@ export default textInfo = [
         }
         
       ],
-      // links: [
-      //   {
-      //     link: '',
-      //     desc: '',
-      //     key: 0
-      //   }
+      links: [
+        {
+          link: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/textPhotos%2FwomanWriting.png?alt=media&token=de2e3396-5b4f-427e-b639-33397ef87e94',
+          desc: 'Nora Helgesen',
+          key: 0
+        }
 
-      // ]
+      ]
     },
     {
       textId: 85,
@@ -3200,14 +3335,14 @@ export default textInfo = [
         }
         
       ],
-      // links: [
-      //   {
-      //     link: '',
-      //     desc: '',
-      //     key: 0
-      //   }
+      links: [
+        {
+          link: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/textPhotos%2Fteknologi.jpg?alt=media&token=9152d9f8-9b73-4882-b0b5-2962a059ff95',
+          desc: 'Teknologisk utvikling',
+          key: 0
+        }
 
-      // ]
+      ]
     },
 ]
 

@@ -109,7 +109,7 @@ const styles = StyleSheet.create({
     photoHolder: {
         width: '100%', 
         alignItems: 'center',
-        marginBottom: 20
+        marginBottom: 40
         
     },
     photo: {
@@ -121,7 +121,8 @@ const styles = StyleSheet.create({
         marginBottom: 5
     },
     photoDesc: {
-
+        textAlign: 'center',
+        paddingHorizontal: 30
     }
 });
 

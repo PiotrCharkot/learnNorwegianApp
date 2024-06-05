@@ -39,6 +39,8 @@ const usersAchivments = collection(db, 'usersAchivments');
 const LearningScreen = () => {
 
 
+
+
   const isFocused = useIsFocused();
   const navigation = useNavigation();
   
@@ -70,6 +72,9 @@ const LearningScreen = () => {
   const [choosenLanguage, setChoosenLanguage] = useState('EN');
   const [isSoundOn, setIsSoundOn] = useState(true);
   const [sound, setSound] = useState();
+  const [firstLaunchTime, setFirstLaunchTime] = useState(null);
+  const [within168Hours, setWithin168Hours] = useState(true);
+
 
   const opacityImgBlur = scrollY.interpolate({
     inputRange: [0, 60],
@@ -113,12 +118,10 @@ const LearningScreen = () => {
   })
 
 
-  
-  // const imagesMain = [require('../../../assets/reindeerRobo1.png'), require('../../../assets/reindeerRobo2.png'), require('../../../assets/reindeerRobo3.png'), require('../../../assets/reindeerRobo4.png'), require('../../../assets/reindeerRobo5.png'), require('../../../assets/reindeerRobo6.png')];
-  // const imagesMainBlurred = [require('../../../assets/reindeerRobo1Blurred.png'), require('../../../assets/reindeerRobo2Blurred.png'), require('../../../assets/reindeerRobo3Blurred.png'), require('../../../assets/reindeerRobo4Blurred.png'), require('../../../assets/reindeerRobo5Blurred.png'), require('../../../assets/reindeerRobo6Blurred.png')];
 
-  const imagesMain = [require('../../../assets/snow1.png'), require('../../../assets/snow2.png'), require('../../../assets/snow3.png')];
-  const imagesMainBlurred = [require('../../../assets/snow1blur.png'), require('../../../assets/snow2blur.png'), require('../../../assets/snow3blur.png')];
+
+  const imagesMain = [require('../../../assets/topPictures/learning/snow1.png'), require('../../../assets/topPictures/learning/snow2.png'), require('../../../assets/topPictures/learning/snow4.png'), require('../../../assets/topPictures/learning/snow5.png'), require('../../../assets/topPictures/learning/snow6.png'), require('../../../assets/topPictures/learning/snow8.png'), require('../../../assets/topPictures/learning/snow9.png'), require('../../../assets/topPictures/learning/snow10.png'), require('../../../assets/topPictures/learning/snow11.png')];
+  const imagesMainBlurred = [require('../../../assets/topPictures/learning/snow1blur.png'), require('../../../assets/topPictures/learning/snow2blur.png'), require('../../../assets/topPictures/learning/snow4blur.png'), require('../../../assets/topPictures/learning/snow5blur.png'), require('../../../assets/topPictures/learning/snow6blur.png'), require('../../../assets/topPictures/learning/snow8blur.png'), require('../../../assets/topPictures/learning/snow9blur.png'), require('../../../assets/topPictures/learning/snow10blur.png'), require('../../../assets/topPictures/learning/snow11blur.png')];
 
 
 
@@ -160,6 +163,7 @@ const LearningScreen = () => {
     let tempVal = Math.floor(Math.random() * imagesMain.length);
     setRandom(tempVal);
     
+
     
     setDataFlatList([{key: 'left-spacer'}, ...learningList1, {key: 'right-spacer'}])
     setDataFlatList2([{key: 'left-spacer'}, ...learningList2, {key: 'right-spacer'}])
@@ -168,6 +172,52 @@ const LearningScreen = () => {
     setDataFlatList5([{key: 'left-spacer'}, ...learningList5, {key: 'right-spacer'}])
     setDataFlatList6([{key: 'left-spacer'}, ...learningList6, {key: 'right-spacer'}])
   }, [])
+
+
+
+  useEffect(() => {
+    
+    const checkFirstLaunch = async () => {
+      try {
+        const firstLaunch = await SecureStore.getItemAsync('firstLaunchTime'); 
+        if (firstLaunch === null) {
+
+          const currentTime = new Date().toISOString();
+          await SecureStore.setItemAsync('firstLaunchTime', currentTime);
+          setFirstLaunchTime(currentTime);
+        } else {
+          setFirstLaunchTime(firstLaunch);
+          console.log('in learning screen it has launched before: ', firstLaunch);
+        }
+
+        // Calculate the time difference and set the boolean value
+        if (firstLaunch !== null) {
+          const firstLaunchDate = new Date(firstLaunch);
+          const currentDate = new Date();
+          const timeDifference = currentDate - firstLaunchDate;
+
+          
+          const hoursDifference = timeDifference / (1000 * 60 * 60);
+
+          console.log('it has launched before and hours difference in learning screen is: ', hoursDifference);
+
+
+          if (hoursDifference >= 168) {
+            setWithin168Hours(false);
+            console.log('free loading is over');
+          }
+        }
+      } catch (error) {
+        console.error('Error setting first launch time:', error);
+      }
+    };
+
+    checkFirstLaunch();
+    
+  }, [])
+  
+
+
 
   useEffect(() => {
 
@@ -563,7 +613,7 @@ const LearningScreen = () => {
       <View style={styles.head}>
         <View style={styles.headBottom}>
           <View style={styles.readingButtonContainer}>
-            <TouchableOpacity style={styles.buttonContainer} onPress={() => navigation.navigate('Reading')}>
+            <TouchableOpacity style={styles.buttonContainer} onPress={() => navigation.navigate('Reading', {within168Hours})}>
               <Text style={styles.textButton}>{readingBtnTxt}</Text>
               <Image style={styles.bookPic} source={require('../../../assets/book.png')} />
             </TouchableOpacity>

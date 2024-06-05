@@ -26,7 +26,10 @@ const colorsBackFlatlist5 = ['#b0faac', '#acf9fa', '#b4acfa', '#faacf3', '#faaca
 const transparent = 'rgba(255,255,255,0)';
 
 
-const ReadingScreen = () => {
+const ReadingScreen = ({route}) => {
+
+
+  const {within168Hours} = route.params;
    
   const isFocused = useIsFocused();
   const navigation = useNavigation();
@@ -119,8 +122,8 @@ const ReadingScreen = () => {
 
 
 
-  const imagesMain = [require('../../../assets/reading1.png'), require('../../../assets/reading2.png'), require('../../../assets/reading3.png'), require('../../../assets/reading4.png'), require('../../../assets/reading5.png'), require('../../../assets/reading6.png')];
-  const imagesMainBlurred = [require('../../../assets/reading1Blurred.png'), require('../../../assets/reading2Blurred.png'), require('../../../assets/reading3Blurred.png'), require('../../../assets/reading4Blurred.png'), require('../../../assets/reading5Blurred.png'), require('../../../assets/reading6Blurred.png')];
+  const imagesMain = [require('../../../assets/topPictures/reading/reading1.png'), require('../../../assets/topPictures/reading/reading2.png'), require('../../../assets/topPictures/reading/reading3.png'), require('../../../assets/topPictures/reading/reading4.png'), require('../../../assets/topPictures/reading/reading5.png'), require('../../../assets/topPictures/reading/reading6.png')];
+  const imagesMainBlurred = [require('../../../assets/topPictures/reading/reading1Blurred.png'), require('../../../assets/topPictures/reading/reading2Blurred.png'), require('../../../assets/topPictures/reading/reading3Blurred.png'), require('../../../assets/topPictures/reading/reading4Blurred.png'), require('../../../assets/topPictures/reading/reading5Blurred.png'), require('../../../assets/topPictures/reading/reading6Blurred.png')];
 
 
 
@@ -176,6 +179,8 @@ const ReadingScreen = () => {
 
 
   useEffect(() => {
+
+    console.log('in reading: ', within168Hours);
     const loadSound = async () => {
       const { sound } = await Audio.Sound.createAsync(
         require('./../../../assets/sounds/tick.mp3')
@@ -674,7 +679,7 @@ const ReadingScreen = () => {
           <View style={styles.choosenLanguageContainer}>
             <TouchableOpacity style={styles.languageContainer} onPress={() => changeLanguage(choosenLanguage)}>
             <Text style={styles.languageText}>{choosenLanguage}</Text>
-              <Image style={styles.iconLanguageImg} source={require('../../../assets/language.png')} />
+              <Image style={styles.iconLanguageImg} source={require('../../../assets/flags/language.png')} />
             </TouchableOpacity>
             
           </View>
@@ -843,31 +848,31 @@ const ReadingScreen = () => {
       <Animated.View style={{...styles.languageList, transform: [{scaleY: scaleLanguageHight}, {translateY: translateLanguage}]}}>
         <TouchableOpacity style={styles.languageContainerList} onPress={() => changeLanguage('EN')}>
           <Text style={styles.languageText}>EN</Text>
-          <Image style={styles.flagImg} source={require('../../../assets/united-kingdom.png')} />
+          <Image style={styles.flagImg} source={require('../../../assets/flags/united-kingdom.png')} />
         </TouchableOpacity>
         <TouchableOpacity style={styles.languageContainerList} onPress={() => changeLanguage('DE')}>
           <Text style={styles.languageText}>DE</Text>
-          <Image style={styles.flagImg} source={require('../../../assets/german.png')} />
+          <Image style={styles.flagImg} source={require('../../../assets/flags/german.png')} />
         </TouchableOpacity>
         <TouchableOpacity style={styles.languageContainerList} onPress={() => changeLanguage('PL')}>
           <Text style={styles.languageText}>PL</Text>
-          <Image style={styles.flagImg} source={require('../../../assets/poland.png')} />
+          <Image style={styles.flagImg} source={require('../../../assets/flags/poland.png')} />
         </TouchableOpacity>
         <TouchableOpacity style={styles.languageContainerList} onPress={() => changeLanguage('LT')}>
           <Text style={styles.languageText}>LT</Text>
-          <Image style={styles.flagImg} source={require('../../../assets/lithuania.png')} />
+          <Image style={styles.flagImg} source={require('../../../assets/flags/lithuania.png')} />
         </TouchableOpacity>
         <TouchableOpacity style={styles.languageContainerList} onPress={() => changeLanguage('UA')}>
           <Text style={styles.languageText}>UA</Text>
-          <Image style={styles.flagImg} source={require('../../../assets/ukraine.png')} />
+          <Image style={styles.flagImg} source={require('../../../assets/flags/ukraine.png')} />
         </TouchableOpacity>
         <TouchableOpacity style={styles.languageContainerList} onPress={() => changeLanguage('ES')}>
           <Text style={styles.languageText}>SP</Text>
-          <Image style={styles.flagImg} source={require('../../../assets/spain.png')} />
+          <Image style={styles.flagImg} source={require('../../../assets/flags/spain.png')} />
         </TouchableOpacity>
         <TouchableOpacity style={styles.languageContainerList} onPress={() => changeLanguage('AR')}>
           <Text style={styles.languageText}>AR</Text>
-          <Image style={styles.flagImg} source={require('../../../assets/arabic.png')} />
+          <Image style={styles.flagImg} source={require('../../../assets/flags/arabic.png')} />
         </TouchableOpacity>
       </Animated.View>
       

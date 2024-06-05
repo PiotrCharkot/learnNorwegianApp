@@ -7,9 +7,12 @@ import { useNavigation } from "@react-navigation/native";
 const screenWidth = Dimensions.get('window').width;
 const screenHeight = Dimensions.get('window').height;
 
-const Intro4 = () => {
+const Intro4 = ({route}) => {
 
     const navigation = useNavigation();
+
+
+    const {skipable, language} = route.params
 
 
     const opacityTitle = useRef(new Animated.Value(0)).current;
@@ -74,6 +77,22 @@ const Intro4 = () => {
 
 
     const runAnimation = () => {
+
+        if (skipable) {
+            Animated.timing(xPosNextBtn, {
+                duration: 100,
+                delay: 2800, 
+                toValue: 1,
+                useNativeDriver: true
+            }).start();
+
+            Animated.timing(opacityNextBtn, {
+                duration: 2000,
+                delay: 3000, 
+                toValue: 1,
+                useNativeDriver: true
+            }).start();
+        }
 
 
         Animated.timing(opacityReplayBtn, {
@@ -142,7 +161,6 @@ const Intro4 = () => {
         ]).start();
 
 
-/////////////////////////////////
         Animated.sequence([
             Animated.timing(opacityTitle, {
                 duration: 1500,
@@ -550,7 +568,7 @@ const Intro4 = () => {
                 }),
             ]),
 
-/////////////////////////////////
+
             Animated.parallel([
                 Animated.timing(xPosNextBtn, {
                     duration: 100,
@@ -602,45 +620,45 @@ const Intro4 = () => {
 
 
         <Animated.View style={{...styles.exerciseMenuContainer, transform: [{translateY: yPosMenu}]}}>
-            <Animated.Image source={require('../../../../assets/exerciseMenu.png')} style={{...styles.exerciseMenuImg, opacity: opacityExerciseMenu}}/>
+            <Animated.Image source={require('../../../../assets/introPictures/exerciseMenu.png')} style={{...styles.exerciseMenuImg, opacity: opacityExerciseMenu}}/>
         </Animated.View>
         
 
 
         <Animated.View style={styles.fillGapContainer}>
-            <Animated.Image source={require('../../../../assets/fillGap1.png')} style={{...styles.fillGapImg, opacity: opacityFillGap1}}/>
-            <Animated.Image source={require('../../../../assets/fillGap2.png')} style={{...styles.fillGapImg, opacity: opacityFillGap2}}/>
-            <Animated.Image source={require('../../../../assets/fillGap5.png')} style={{...styles.fillGapImg, opacity: opacityFillGap5}}/>
-            <Animated.Image source={require('../../../../assets/fillGap3.png')} style={{...styles.fillGapImg, opacity: opacityFillGap3}}/>
-            <Animated.Image source={require('../../../../assets/fillGap4.png')} style={{...styles.fillGapImg, opacity: opacityFillGap4}}/>
+            <Animated.Image source={require('../../../../assets/introPictures/fillGap1.png')} style={{...styles.fillGapImg, opacity: opacityFillGap1}}/>
+            <Animated.Image source={require('../../../../assets/introPictures/fillGap2.png')} style={{...styles.fillGapImg, opacity: opacityFillGap2}}/>
+            <Animated.Image source={require('../../../../assets/introPictures/fillGap5.png')} style={{...styles.fillGapImg, opacity: opacityFillGap5}}/>
+            <Animated.Image source={require('../../../../assets/introPictures/fillGap3.png')} style={{...styles.fillGapImg, opacity: opacityFillGap3}}/>
+            <Animated.Image source={require('../../../../assets/introPictures/fillGap4.png')} style={{...styles.fillGapImg, opacity: opacityFillGap4}}/>
         </Animated.View>
 
 
         <Animated.View style={styles.sortContainer}>
-            <Animated.Image source={require('../../../../assets/sort1.png')} style={{...styles.sortImg, opacity: opacitySort1}}/>
-            <Animated.Image source={require('../../../../assets/sort2.png')} style={{...styles.sortImg, opacity: opacitySort2}}/>
-            <Animated.Image source={require('../../../../assets/sort3.png')} style={{...styles.sortImg, opacity: opacitySort3}}/>
-            <Animated.Image source={require('../../../../assets/sort4.png')} style={{...styles.sortImg, opacity: opacitySort4}}/>
-            <Animated.Image source={require('../../../../assets/sort5.png')} style={{...styles.sortImg, opacity: opacitySort5}}/>
-            <Animated.Image source={require('../../../../assets/sort6.png')} style={{...styles.sortImg, opacity: opacitySort6}}/>
+            <Animated.Image source={require('../../../../assets/introPictures/sort1.png')} style={{...styles.sortImg, opacity: opacitySort1}}/>
+            <Animated.Image source={require('../../../../assets/introPictures/sort2.png')} style={{...styles.sortImg, opacity: opacitySort2}}/>
+            <Animated.Image source={require('../../../../assets/introPictures/sort3.png')} style={{...styles.sortImg, opacity: opacitySort3}}/>
+            <Animated.Image source={require('../../../../assets/introPictures/sort4.png')} style={{...styles.sortImg, opacity: opacitySort4}}/>
+            <Animated.Image source={require('../../../../assets/introPictures/sort5.png')} style={{...styles.sortImg, opacity: opacitySort5}}/>
+            <Animated.Image source={require('../../../../assets/introPictures/sort6.png')} style={{...styles.sortImg, opacity: opacitySort6}}/>
         </Animated.View>
 
 
         <Animated.View style={{...styles.dragableImgContainer, transform: [{translateY: dragablePositionY}, {translateX: dragablePositionX}]}}>
-            <Animated.Image source={require('../../../../assets/dragableImg.png')} style={{...styles.dragableImg, opacity: opacityDragableImg}}/>
+            <Animated.Image source={require('../../../../assets/introPictures/dragableImg.png')} style={{...styles.dragableImg, opacity: opacityDragableImg}}/>
         </Animated.View>
 
 
         <Animated.View style={{...styles.dragableImgContainer, transform: [{translateY: dragable2PositionY}, {translateX: dragable2PositionX}]}}>
-            <Animated.Image source={require('../../../../assets/dragableImg2.png')} style={{...styles.dragable2Img, opacity: opacityDragable2Img}}/>
+            <Animated.Image source={require('../../../../assets/introPictures/dragableImg2.png')} style={{...styles.dragable2Img, opacity: opacityDragable2Img}}/>
         </Animated.View>
 
 
 
 
         <Animated.View style={{...styles.barImgContainer, transform: [{translateY: barPosition}]}}>
-            <Animated.Image source={require('../../../../assets/bar-word.png')} style={{...styles.barImg, opacity: opacityBar}}/>
-            <Animated.Image source={require('../../../../assets/bar-exe.png')} style={{...styles.barImg, opacity: opacityBar2}}/>
+            <Animated.Image source={require('../../../../assets/introPictures/bar-word.png')} style={{...styles.barImg, opacity: opacityBar}}/>
+            <Animated.Image source={require('../../../../assets/introPictures/bar-exe.png')} style={{...styles.barImg, opacity: opacityBar2}}/>
         </Animated.View>
 
 
@@ -686,7 +704,7 @@ const Intro4 = () => {
 
 
         <Animated.View style={{...styles.pointerContainer, transform: [{translateY: pointerPositionY}, {translateX: pointerPositionX}]}}>
-            <Animated.Image source={require('../../../../assets/pointer.png')} style={{...styles.pointerImg, opacity: opacityPointer}}/>
+            <Animated.Image source={require('../../../../assets/introPictures/pointer.png')} style={{...styles.pointerImg, opacity: opacityPointer}}/>
         </Animated.View>
 
 
@@ -694,15 +712,15 @@ const Intro4 = () => {
         <Animated.View style={{...styles.buttonContainerReplay, opacity: opacityReplayBtn, transform: [{translateX: xPosReplayBtn}]}}>
             <TouchableOpacity onPress={runAnimation}>
 
-                <Image source={require('../../../../assets/reload.png')} style={styles.iconReplayImg}/>
+                <Image source={require('../../../../assets/introPictures/reload.png')} style={styles.iconReplayImg}/>
             </TouchableOpacity>
         </Animated.View>
 
 
         <Animated.View style={{...styles.buttonContainer, opacity: opacityNextBtn, transform: [{translateX: xPosNextBtn}]}}>
-            <TouchableOpacity onPress={() => navigation.replace("Intro5")}>
+            <TouchableOpacity onPress={() => navigation.replace("Intro5", {skipable, language})}>
 
-                <Image source={require('../../../../assets/arrow-right.png')} style={styles.iconImg}/>
+                <Image source={require('../../../../assets/introPictures/arrow-right.png')} style={styles.iconImg}/>
             </TouchableOpacity>
         </Animated.View>
         

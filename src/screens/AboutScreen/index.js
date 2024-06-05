@@ -63,6 +63,15 @@ const AboutScreen = ({route}) => {
                 <Text style={styles.text}>
                     
 <Text style={styles.titleText}>About [App Name]</Text>{'\n\n\n'}
+
+<View style={styles.btnContainer}>
+
+    <TouchableOpacity style={styles.btn} onPress={() => navigation.navigate('Intro1', {skipable: true, language: route.params.choosenLanguage})}>
+        <Text style={styles.btnText}>Watch intro</Text>
+    </TouchableOpacity>
+</View>
+
+{'\n\n\n'}
 <Text style={styles.subtitleText}>Discover Language, Discover the World</Text>{'\n\n'}
 
 Welcome to <Text style={styles.textCursive}>[App Name]</Text>, the innovative mobile application launched in 2024, designed to revolutionize the way you learn Norwegian. Whether you are starting from scratch or looking to master the language, our app offers a comprehensive set of tools to help you achieve your goals. Available in multiple languages including English, German, Polish, Spanish, Ukrainian, Lithuanian, and Arabic, <Text style={styles.textCursive}>[App Name]</Text> caters to a global audience, making language learning accessible to everyone.{'\n\n\n'}
@@ -121,7 +130,7 @@ const styles = StyleSheet.create({
     textContainer: {
         width: '100%',
         marginTop: 100,
-        paddingHorizontal: 20
+        paddingHorizontal: 20,
     },
     titleText: {
         fontSize: 20,
@@ -138,6 +147,24 @@ const styles = StyleSheet.create({
         fontSize: 14,
         fontStyle: 'italic',
         fontWeight: '600'
+    },
+    btnContainer: {
+        width: screenWidth - 40,
+        alignItems: 'center',
+    },
+    btn: {
+        width: screenWidth - 80,
+        height: 44,
+        borderRadius: 22,
+        borderWidth: 3,
+        alignItems: 'center',
+        justifyContent: 'center',
+        backgroundColor: 'black'
+    },
+    btnText: {
+        fontSize: 25,
+        fontWeight: '500',
+        color: 'white'
     }
-  
+    
 })

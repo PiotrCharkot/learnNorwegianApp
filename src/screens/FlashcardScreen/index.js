@@ -36,7 +36,9 @@ const FlashcardScreen = () => {
   const [userName, setUserName] = useState('');
   const [random, setRandom] = useState(0);
   const [cardText, setCardText] = useState(['part', 'Expressions', 'Irregular verbs']);
-  const [buttonText, setButtonText] = useState('')
+  const [buttonText, setButtonText] = useState('');
+  const [firstLaunchTime, setFirstLaunchTime] = useState(null);
+  const [within168Hours, setWithin168Hours] = useState(true);
 
   const opacityImgBlur = scrollY.interpolate({
     inputRange: [0, 60],
@@ -186,8 +188,8 @@ const FlashcardScreen = () => {
   });
 
 
-  const imagesMain = [require('../../../assets/reindeerRobo1.png'), require('../../../assets/reindeerRobo2.png'), require('../../../assets/reindeerRobo3.png'), require('../../../assets/reindeerRobo4.png'), require('../../../assets/reindeerRobo5.png'), require('../../../assets/reindeerRobo6.png')];
-  const imagesMainBlurred = [require('../../../assets/reindeerRobo1Blurred.png'), require('../../../assets/reindeerRobo2Blurred.png'), require('../../../assets/reindeerRobo3Blurred.png'), require('../../../assets/reindeerRobo4Blurred.png'), require('../../../assets/reindeerRobo5Blurred.png'), require('../../../assets/reindeerRobo6Blurred.png')];
+  const imagesMain = [require('../../../assets/topPictures/flashcards/cards2.png'), require('../../../assets/topPictures/flashcards/cards3.png'), require('../../../assets/topPictures/flashcards/cards4.png'), require('../../../assets/topPictures/flashcards/cards5.png'), require('../../../assets/topPictures/flashcards/cards6.png'), require('../../../assets/topPictures/flashcards/cards7.png'), require('../../../assets/topPictures/flashcards/cards8.png'), require('../../../assets/topPictures/flashcards/cards9.png'), require('../../../assets/topPictures/flashcards/cards10.png'), require('../../../assets/topPictures/flashcards/cards12.png')];
+  const imagesMainBlurred = [require('../../../assets/topPictures/flashcards/cards2blur.png'), require('../../../assets/topPictures/flashcards/cards3blur.png'), require('../../../assets/topPictures/flashcards/cards4blur.png'), require('../../../assets/topPictures/flashcards/cards5blur.png'), require('../../../assets/topPictures/flashcards/cards6blur.png'), require('../../../assets/topPictures/flashcards/cards7blur.png'), require('../../../assets/topPictures/flashcards/cards8blur.png'), require('../../../assets/topPictures/flashcards/cards9blur.png'), require('../../../assets/topPictures/flashcards/cards10blur.png'), require('../../../assets/topPictures/flashcards/cards12blur.png')];
 
   async function save(key, value) {
     await SecureStore.setItemAsync(key, value);
@@ -238,6 +240,51 @@ const FlashcardScreen = () => {
       
     }, [])
   );
+
+
+  
+
+  useEffect(() => {
+    
+    const checkFirstLaunch = async () => {
+      try {
+        const firstLaunch = await SecureStore.getItemAsync('firstLaunchTime'); 
+        if (firstLaunch === null) {
+
+          const currentTime = new Date().toISOString();
+          await SecureStore.setItemAsync('firstLaunchTime', currentTime);
+          setFirstLaunchTime(currentTime);
+        } else {
+          setFirstLaunchTime(firstLaunch);
+          console.log('in flashcard screen it has launched before: ', firstLaunch);
+        }
+
+        // Calculate the time difference and set the boolean value
+        if (firstLaunch !== null) {
+          const firstLaunchDate = new Date(firstLaunch);
+          const currentDate = new Date();
+          const timeDifference = currentDate - firstLaunchDate;
+
+          
+          const hoursDifference = timeDifference / (1000 * 60 * 60);
+
+          console.log('it has launched before and hours difference in flashcard screen is: ', hoursDifference);
+
+
+          if (hoursDifference >= 168) {
+            setWithin168Hours(false);
+            console.log('free loading is over');
+          }
+        }
+      } catch (error) {
+        console.error('Error setting first launch time:', error);
+      }
+    };
+
+    checkFirstLaunch();
+    
+  }, [])
+  
 
 
   useEffect(() => {
@@ -348,7 +395,7 @@ const FlashcardScreen = () => {
           <View style={styles.choosenLanguageContainer}>
             <TouchableOpacity style={styles.languageContainer} onPress={() => changeLanguage(choosenLanguage)}>
             <Text style={styles.languageText}>{choosenLanguage}</Text>
-              <Image style={styles.iconLanguageImg} source={require('../../../assets/language.png')} />
+              <Image style={styles.iconLanguageImg} source={require('../../../assets/flags/language.png')} />
             </TouchableOpacity>
             
           </View>
@@ -494,31 +541,31 @@ const FlashcardScreen = () => {
       <Animated.View style={{...styles.languageList, transform: [{scaleY: scaleLanguageHight}, {translateY: translateLanguage}]}}>
         <TouchableOpacity style={styles.languageContainerList} onPress={() => changeLanguage('EN')}>
           <Text style={styles.languageText}>EN</Text>
-          <Image style={styles.flagImg} source={require('../../../assets/united-kingdom.png')} />
+          <Image style={styles.flagImg} source={require('../../../assets/flags/united-kingdom.png')} />
         </TouchableOpacity>
         <TouchableOpacity style={styles.languageContainerList} onPress={() => changeLanguage('DE')}>
           <Text style={styles.languageText}>DE</Text>
-          <Image style={styles.flagImg} source={require('../../../assets/german.png')} />
+          <Image style={styles.flagImg} source={require('../../../assets/flags/german.png')} />
         </TouchableOpacity>
         <TouchableOpacity style={styles.languageContainerList} onPress={() => changeLanguage('PL')}>
           <Text style={styles.languageText}>PL</Text>
-          <Image style={styles.flagImg} source={require('../../../assets/poland.png')} />
+          <Image style={styles.flagImg} source={require('../../../assets/flags/poland.png')} />
         </TouchableOpacity>
         <TouchableOpacity style={styles.languageContainerList} onPress={() => changeLanguage('LT')}>
           <Text style={styles.languageText}>LT</Text>
-          <Image style={styles.flagImg} source={require('../../../assets/lithuania.png')} />
+          <Image style={styles.flagImg} source={require('../../../assets/flags/lithuania.png')} />
         </TouchableOpacity>
         <TouchableOpacity style={styles.languageContainerList} onPress={() => changeLanguage('UA')}>
           <Text style={styles.languageText}>UA</Text>
-          <Image style={styles.flagImg} source={require('../../../assets/ukraine.png')} />
+          <Image style={styles.flagImg} source={require('../../../assets/flags/ukraine.png')} />
         </TouchableOpacity>
         <TouchableOpacity style={styles.languageContainerList} onPress={() => changeLanguage('ES')}>
           <Text style={styles.languageText}>SP</Text>
-          <Image style={styles.flagImg} source={require('../../../assets/spain.png')} />
+          <Image style={styles.flagImg} source={require('../../../assets/flags/spain.png')} />
         </TouchableOpacity>
         <TouchableOpacity style={styles.languageContainerList} onPress={() => changeLanguage('AR')}>
           <Text style={styles.languageText}>AR</Text>
-          <Image style={styles.flagImg} source={require('../../../assets/arabic.png')} />
+          <Image style={styles.flagImg} source={require('../../../assets/flags/arabic.png')} />
         </TouchableOpacity>
       </Animated.View>
 
