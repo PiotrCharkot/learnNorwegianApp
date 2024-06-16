@@ -28,6 +28,7 @@ const SettingsScreen = ({route}) => {
   const [notificationsOn, setNotificationsOn] = useState('0');
   const [userLoged, setUserLoged] = useState(false);
   const [sound, setSound] = useState();
+  const [sound2, setSound2] = useState();
   const [buttonsLabelArray, setButtonsLabelArray] = useState(['Get a PRO account', 'Sound', 'Notifications', 'Log out', 'Log in', 'Change password', 'Contact us', 'About App', 'Delete account', 'Privacy policy', 'Terms and conditions']);
   const [msgText, setMsgText] = useState('You must be logged in to proceed with further action');
   
@@ -106,6 +107,11 @@ const SettingsScreen = ({route}) => {
     await sound?.replayAsync(); 
   };
 
+
+  const playSound2 = async () => {
+    await sound2?.replayAsync(); 
+  };
+
   async function save(key, value) {
     await SecureStore.setItemAsync(key, value);
   }
@@ -147,6 +153,10 @@ const SettingsScreen = ({route}) => {
         bounciness: 12,
         useNativeDriver: true,
     }).start();
+
+    if (soundOn === '1') {
+      playSound2();
+    }
 
     setTimeout(() => {
 
@@ -212,6 +222,23 @@ const SettingsScreen = ({route}) => {
       sound?.unloadAsync();
     };
   }, []);
+
+
+  useEffect(() => {
+    const loadSound2 = async () => {
+      const { sound } = await Audio.Sound.createAsync(
+        require('./../../../assets/sounds/pebbelsClick.wav')
+      );
+      setSound2(sound);
+    };
+
+    loadSound2();
+
+    return () => {
+      sound2?.unloadAsync();
+    };
+  }, []);
+
 
   return (
     <View style={styles.mainContainer}>

@@ -22,13 +22,19 @@ const ProfilScreen = () => {
 
   const storage = getStorage();
 
-  let sixDaysAgo = new Date(new Date().setDate(new Date().getDate()-6)).toLocaleDateString();
-  let fiveDaysAgo = new Date(new Date().setDate(new Date().getDate()-5)).toLocaleDateString();
-  let fourDaysAgo = new Date(new Date().setDate(new Date().getDate()-4)).toLocaleDateString();
-  let threeDaysAgo = new Date(new Date().setDate(new Date().getDate()-3)).toLocaleDateString();
-  let twoDaysAgo = new Date(new Date().setDate(new Date().getDate()-2)).toLocaleDateString();
-  let yesterday = new Date(new Date().setDate(new Date().getDate()-1)).toLocaleDateString();
-  let today = new Date().toLocaleDateString();
+  const formatDate = (date) => {
+    const isoString = date.toISOString(); // Get the ISO string
+    const [year, month, day] = isoString.split('T')[0].split('-'); // Extract year, month, and day
+    return `${day}/${month}/${year}`; // Format the date as dd/MM/yyyy
+  };
+
+  let sixDaysAgo = formatDate(new Date(new Date().setDate(new Date().getDate()-6)));
+  let fiveDaysAgo = formatDate(new Date(new Date().setDate(new Date().getDate()-5)));
+  let fourDaysAgo = formatDate(new Date(new Date().setDate(new Date().getDate()-4)));
+  let threeDaysAgo = formatDate(new Date(new Date().setDate(new Date().getDate()-3)));
+  let twoDaysAgo = formatDate(new Date(new Date().setDate(new Date().getDate()-2)));
+  let yesterday = formatDate(new Date(new Date().setDate(new Date().getDate()-1)));
+  let today = formatDate(new Date());
 
   let dayOfWeek = new Date(new Date().setDate(new Date().getDate())).getDay() === 0 ? 7 : new Date(new Date().setDate(new Date().getDate())).getDay();
 
@@ -53,13 +59,13 @@ const ProfilScreen = () => {
   const [userWeeklyPoints, setUserWeeklyPoints] = useState(0);
   const [userShortId, setUserShortId] = useState('');
   const [profilePicUrl, setProfilePicUrl] = useState(null);
-  const [newProfilePic, setNewProfilePic] = useState('reindeer-profile3.png');
+  const [newProfilePic, setNewProfilePic] = useState(randomPicture[Math.floor(Math.random() * randomPicture.length)]);
   const [labelsArray, setLabelsArray] = useState(['Points', 'Day', 'Days', 'Username', 'Email', 'Daily points', 'Weekly points', 'My Id', 'Change picture']);
   const [loginLabel, setLoginLabel] = useState('Log in')
   const overlayOpacity = useRef(new Animated.Value(1)).current;
   const overlayOffset = useRef(new Animated.Value(0)).current;
   
-  let randomIndex;
+  //let randomIndex;
 
 
   const uploadToFb = async (urlParam) => {
@@ -153,7 +159,7 @@ const ProfilScreen = () => {
           setUserDays(0);
         }
   
-        if (doc.data().lastUpdate !== new Date().toLocaleDateString()) {
+        if (doc.data().lastUpdate !== formatDate(new Date())) {
           setUserDailyPoints(0);
         }
   
@@ -213,13 +219,13 @@ const ProfilScreen = () => {
 
 
 
-  useEffect(() => {
+  // useEffect(() => {
   
-    randomIndex = Math.floor(Math.random() * randomPicture.length);
-    setNewProfilePic(randomPicture[randomIndex]);
+  //   randomIndex = Math.floor(Math.random() * randomPicture.length);
+  //   setNewProfilePic(randomPicture[randomIndex]);
 
     
-  }, [])
+  // }, [])
   
   
 

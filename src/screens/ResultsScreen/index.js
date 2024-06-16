@@ -23,26 +23,37 @@ let extraItem = {
   weeklyPoints: 0
 }
 
-let sixDaysAgo = new Date(new Date().setDate(new Date().getDate()-6)).toLocaleDateString();
-let fiveDaysAgo = new Date(new Date().setDate(new Date().getDate()-5)).toLocaleDateString();
-let fourDaysAgo = new Date(new Date().setDate(new Date().getDate()-4)).toLocaleDateString();
-let threeDaysAgo = new Date(new Date().setDate(new Date().getDate()-3)).toLocaleDateString();
-let twoDaysAgo = new Date(new Date().setDate(new Date().getDate()-2)).toLocaleDateString();
-let yesterday = new Date(new Date().setDate(new Date().getDate()-1)).toLocaleDateString();
-let today = new Date().toLocaleDateString();
-
-let dayOfWeek = new Date(new Date().setDate(new Date().getDate())).getDay() === 0 ? 7 : new Date(new Date().setDate(new Date().getDate())).getDay();
-
-let allDaysOfWeek = [today, yesterday, twoDaysAgo, threeDaysAgo, fourDaysAgo, fiveDaysAgo, sixDaysAgo];
-let currentWeek = allDaysOfWeek.slice(0, dayOfWeek)
-
-const rotationTime = 300;
-
 
 const ResultsScreen = () => {
 
+  
   const storage = getStorage();
   const auth = getAuth();
+
+
+  const formatDate = (date) => {
+    const isoString = date.toISOString(); // Get the ISO string
+    const [year, month, day] = isoString.split('T')[0].split('-'); // Extract year, month, and day
+    return `${day}/${month}/${year}`; // Format the date as dd/MM/yyyy
+  };
+
+  let sixDaysAgo = formatDate(new Date(new Date().setDate(new Date().getDate()-6)));
+  let fiveDaysAgo = formatDate(new Date(new Date().setDate(new Date().getDate()-5)));
+  let fourDaysAgo = formatDate(new Date(new Date().setDate(new Date().getDate()-4)));
+  let threeDaysAgo = formatDate(new Date(new Date().setDate(new Date().getDate()-3)));
+  let twoDaysAgo = formatDate(new Date(new Date().setDate(new Date().getDate()-2)));
+  let yesterday = formatDate(new Date(new Date().setDate(new Date().getDate()-1)));
+  let today = formatDate(new Date());
+
+  let dayOfWeek = new Date(new Date().setDate(new Date().getDate())).getDay() === 0 ? 7 : new Date(new Date().setDate(new Date().getDate())).getDay();
+
+  let allDaysOfWeek = [today, yesterday, twoDaysAgo, threeDaysAgo, fourDaysAgo, fiveDaysAgo, sixDaysAgo];
+  let currentWeek = allDaysOfWeek.slice(0, dayOfWeek)
+
+  const rotationTime = 300;
+
+
+
 
   const userNumCap = 50;
 
@@ -185,6 +196,8 @@ const ResultsScreen = () => {
 
       
       for (let i = 0; i < tempDataArrayWeekly.length; i++) {
+
+
         if (!currentWeek.includes(tempDataArrayWeekly[i].lastUpdate)) {
           tempDataArrayWeekly[i].weeklyPoints = 0;
         }

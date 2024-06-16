@@ -7,6 +7,7 @@ import { useNavigation } from "@react-navigation/native";
 import { db } from '../../../firebase/firebase-config'
 import { collection } from "firebase/firestore";
 import { LinearGradient } from 'expo-linear-gradient';
+import { Audio } from 'expo-av';
 import styles from './style'
 import { authentication } from '../../../firebase/firebase-config';
 import CardFlashList from '../../components/cards/CardFlashList';
@@ -37,6 +38,8 @@ const FlashcardScreen = () => {
   const [random, setRandom] = useState(0);
   const [cardText, setCardText] = useState(['part', 'Expressions', 'Irregular verbs']);
   const [buttonText, setButtonText] = useState('');
+  const [isSoundOn, setIsSoundOn] = useState(true);
+  const [sound, setSound] = useState();
   const [firstLaunchTime, setFirstLaunchTime] = useState(null);
   const [within168Hours, setWithin168Hours] = useState(true);
 
@@ -188,8 +191,8 @@ const FlashcardScreen = () => {
   });
 
 
-  const imagesMain = [require('../../../assets/topPictures/flashcards/cards2.png'), require('../../../assets/topPictures/flashcards/cards3.png'), require('../../../assets/topPictures/flashcards/cards4.png'), require('../../../assets/topPictures/flashcards/cards5.png'), require('../../../assets/topPictures/flashcards/cards6.png'), require('../../../assets/topPictures/flashcards/cards7.png'), require('../../../assets/topPictures/flashcards/cards8.png'), require('../../../assets/topPictures/flashcards/cards9.png'), require('../../../assets/topPictures/flashcards/cards10.png'), require('../../../assets/topPictures/flashcards/cards12.png')];
-  const imagesMainBlurred = [require('../../../assets/topPictures/flashcards/cards2blur.png'), require('../../../assets/topPictures/flashcards/cards3blur.png'), require('../../../assets/topPictures/flashcards/cards4blur.png'), require('../../../assets/topPictures/flashcards/cards5blur.png'), require('../../../assets/topPictures/flashcards/cards6blur.png'), require('../../../assets/topPictures/flashcards/cards7blur.png'), require('../../../assets/topPictures/flashcards/cards8blur.png'), require('../../../assets/topPictures/flashcards/cards9blur.png'), require('../../../assets/topPictures/flashcards/cards10blur.png'), require('../../../assets/topPictures/flashcards/cards12blur.png')];
+  const imagesMain = [require('../../../assets/topPictures/flashcards/cards2.png'), require('../../../assets/topPictures/flashcards/cards3.png'), require('../../../assets/topPictures/flashcards/cards4.png'), require('../../../assets/topPictures/flashcards/cards5.png'), require('../../../assets/topPictures/flashcards/cards6.png'), require('../../../assets/topPictures/flashcards/cards8.png'), require('../../../assets/topPictures/flashcards/cards9.png'), require('../../../assets/topPictures/flashcards/cards10.png'), require('../../../assets/topPictures/flashcards/cards12.png')];
+  const imagesMainBlurred = [require('../../../assets/topPictures/flashcards/cards2blur.png'), require('../../../assets/topPictures/flashcards/cards3blur.png'), require('../../../assets/topPictures/flashcards/cards4blur.png'), require('../../../assets/topPictures/flashcards/cards5blur.png'), require('../../../assets/topPictures/flashcards/cards6blur.png'), require('../../../assets/topPictures/flashcards/cards8blur.png'), require('../../../assets/topPictures/flashcards/cards9blur.png'), require('../../../assets/topPictures/flashcards/cards10blur.png'), require('../../../assets/topPictures/flashcards/cards12blur.png')];
 
   async function save(key, value) {
     await SecureStore.setItemAsync(key, value);
@@ -198,7 +201,13 @@ const FlashcardScreen = () => {
   async function getValueFor(key) {
     let result = await SecureStore.getItemAsync(key);
     if (result) {
-      setChoosenLanguage(result);
+      if (key === 'sound' && result === '0') {
+        setIsSoundOn(false);
+      } else if (key === 'sound' && result === '1') {
+        setIsSoundOn(true);
+      } else if (key === 'language') {
+        setChoosenLanguage(result);
+      }
     } else {
       console.log('No values stored under that key.');
     }
@@ -227,6 +236,10 @@ const FlashcardScreen = () => {
         useNativeDriver: true
       }).start()
     }
+
+    if (isSoundOn) {
+      playSound();
+    }
     
   }
 
@@ -236,10 +249,32 @@ const FlashcardScreen = () => {
 
       
       getValueFor('language');
-  
+      getValueFor('sound');
       
     }, [])
   );
+
+
+  useEffect(() => {
+
+    const loadSound = async () => {
+      const { sound } = await Audio.Sound.createAsync(
+        require('./../../../assets/sounds/cameraClick.wav')
+      );
+      setSound(sound);
+    };
+
+    loadSound();
+
+    return () => {
+      sound?.unloadAsync();
+    };
+  }, []);
+
+
+  const playSound = async () => {
+    await sound?.replayAsync(); 
+  };
 
 
   

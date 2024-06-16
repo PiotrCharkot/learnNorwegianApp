@@ -47,7 +47,7 @@ const styles = StyleSheet.create({
     buttonContainer: {
         borderWidth: 1,
         borderColor: 'rgba(184, 41, 227, 0.5)',
-        padding: 5,
+        paddingHorizontal: 5,
         borderRadius: 5,
         backgroundColor: 'rgba(184, 41, 227, 0.1)',
         justifyContent: 'center',
@@ -73,7 +73,7 @@ const styles = StyleSheet.create({
     },
     flatListsContainerLast: {
         marginTop: 50,
-        marginBottom: 200
+        marginBottom: 200,
     },
     titleContainer: {
         position: 'absolute',
@@ -91,7 +91,6 @@ const styles = StyleSheet.create({
     },
     flatlist: {
         height: screenWidth * 0.35 + 110,
-        paddingTop: 85,
     },
     gradinetFlatlist: {
         top: 0.5,

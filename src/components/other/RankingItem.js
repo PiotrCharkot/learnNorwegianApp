@@ -1,4 +1,4 @@
-import { View, Text, Image, StyleSheet, Dimensions, Animated } from 'react-native'
+import { View, Text, Image, StyleSheet, Dimensions, Animated, Platform } from 'react-native'
 import React, { useState, useEffect, useRef} from 'react';
 import { getStorage, ref, getDownloadURL, uploadBytesResumable } from "firebase/storage";
 import { LinearGradient } from 'expo-linear-gradient';
@@ -83,8 +83,12 @@ const RankingItem = (item) => {
 
         
         <LinearGradient colors={ item.params.userRef === item.userRef ? ['#1D976C', '#93F9B9'] : ['#6190E8', '#A7BFE8']} start={[0.8, 0.2]} style={styles.gradient}>
-            <LinearGradient colors={ item.params.userRef === item.userRef ? ['#93F9B9', 'white'] : [ '#A7BFE8', 'white']} start={[0.85, 0.5]} end={[0.3, 0.5]} style={styles.colorLine}></LinearGradient>
             <View  style={{...styles.mainContainer}}>
+
+            {Platform.OS === 'ios' ? (
+                <LinearGradient colors={ item.params.userRef === item.userRef ? ['#93F9B9', 'white'] : [ '#A7BFE8', 'white']} start={[0.85, 0.5]} end={[0.3, 0.5]} style={styles.colorLine}></LinearGradient>
+            ) : null}
+            
             
 
                 <View style={styles.proContainer}>

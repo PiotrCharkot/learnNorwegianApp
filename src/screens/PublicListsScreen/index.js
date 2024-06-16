@@ -1,11 +1,13 @@
 import { View, Text, TouchableOpacity, FlatList, Animated, Image } from 'react-native'
 import React, {useState, useEffect, useRef, useCallback} from 'react'
 import { getAuth, onAuthStateChanged  } from 'firebase/auth';
+import * as SecureStore from 'expo-secure-store';
 import { collection, getDocs, query, where, doc, setDoc } from "firebase/firestore";
 import { db } from '../../../firebase/firebase-config'
 import { authentication } from '../../../firebase/firebase-config';
 import { useNavigation, useIsFocused } from "@react-navigation/native";
 import { withAnchorPoint } from 'react-native-anchor-point';
+import { Audio } from 'expo-av';
 import Loader from '../../components/other/Loader';
 import styles from './style'
 import CardPublic from '../../components/cards/CardPublic';
@@ -23,12 +25,14 @@ const PublicListScreen = ({ route }) => {
     const user = auth.currentUser;
     const navigation = useNavigation();
 
-    const [isContent, setIsContent] = useState(false); //diplay message if thera are no lists!!
+    const [isContent, setIsContent] = useState(false); 
     const [dataFlatlist, setDataFlatlist] = useState([]);
     const [userId, setUserId] = useState('');
     const [documentId, setDocumentId] = useState('tempid');
     const [allUsersArrs, setAllUsersArrs] = useState([]);
     const [getNewData, setGetNewData] = useState('');
+    const [isSoundOn, setIsSoundOn] = useState(true);
+    const [sound, setSound] = useState();
 
 
     const userWordsData = collection(db, 'usersWordsInfo');
@@ -64,7 +68,33 @@ const PublicListScreen = ({ route }) => {
       return withAnchorPoint(transform, { x: valX, y: valY }, { width: viewWidth * 1.5, height: viewHeight * 1.5 });
     };
 
+
+    async function getValueFor(key) {
+      let result = await SecureStore.getItemAsync(key);
+      if (result) {
+        if (key === 'sound' && result === '0') {
+          setIsSoundOn(false);
+        } else if (key === 'sound' && result === '1') {
+          setIsSoundOn(true);
+        }
+      } else {
+        console.log('No values stored under that key: ', key);
+      }
+    }
+
+
+    const playSound = async () => {
+      await sound?.replayAsync(); 
+    };
+
+
     const exitButton = () => {
+
+
+      if (isSoundOn) {
+
+        playSound();
+      }
 
       Animated.spring(interpolatedValueForX, {
           toValue: 360,
@@ -121,6 +151,23 @@ const PublicListScreen = ({ route }) => {
     
 
 
+    useEffect(() => {
+
+      const loadSound = async () => {
+        const { sound } = await Audio.Sound.createAsync(
+          require('./../../../assets/sounds/pebbelsClick.wav')
+        );
+        setSound(sound);
+      };
+  
+      loadSound();
+
+      getValueFor('sound');
+  
+      return () => {
+        sound?.unloadAsync();
+      };
+    }, []);
 
 
 

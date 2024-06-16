@@ -640,7 +640,7 @@ const ExerciseScreen = () => {
 
     const translateY = scrollX.interpolate({
       inputRange,
-      outputRange: [0, -50, 0]
+      outputRange: [-20, -70, -20]
     })
 
     if (choosenLanguage === 'PL') {
@@ -696,7 +696,7 @@ const ExerciseScreen = () => {
 
     const translateY = scrollX2.interpolate({
       inputRange,
-      outputRange: [0, -50, 0]
+      outputRange: [-20, -70, -20]
     })
 
     if (choosenLanguage === 'PL') {
@@ -753,7 +753,7 @@ const ExerciseScreen = () => {
 
     const translateY = scrollX3.interpolate({
       inputRange,
-      outputRange: [0, -50, 0]
+      outputRange: [-20, -70, -20]
     })
 
     if (choosenLanguage === 'PL') {
@@ -809,7 +809,7 @@ const ExerciseScreen = () => {
 
     const translateY = scrollX4.interpolate({
       inputRange,
-      outputRange: [0, -50, 0]
+      outputRange: [-20, -70, -20]
     })
 
     if (choosenLanguage === 'PL') {
@@ -866,7 +866,7 @@ const ExerciseScreen = () => {
 
     const translateY = scrollX5.interpolate({
       inputRange,
-      outputRange: [0, -50, 0]
+      outputRange: [-20, -70, -20]
     })
 
     if (choosenLanguage === 'PL') {
@@ -954,6 +954,9 @@ const ExerciseScreen = () => {
 
           {showLists ? <Animated.FlatList 
             style={styles.flatlist}
+            contentContainerStyle={{
+              alignItems: 'flex-end'
+            }}
             horizontal
             showsHorizontalScrollIndicator={false}
             snapToInterval={cardSize}
@@ -980,6 +983,9 @@ const ExerciseScreen = () => {
 
           {showLists ? <Animated.FlatList 
             style={styles.flatlist}
+            contentContainerStyle={{
+              alignItems: 'flex-end'
+            }}
             horizontal
             showsHorizontalScrollIndicator={false}
             snapToInterval={cardSize}
@@ -1008,6 +1014,9 @@ const ExerciseScreen = () => {
 
           {showLists ? <Animated.FlatList 
             style={styles.flatlist}
+            contentContainerStyle={{
+              alignItems: 'flex-end'
+            }}
             horizontal
             showsHorizontalScrollIndicator={false}
             snapToInterval={cardSize}
@@ -1036,6 +1045,9 @@ const ExerciseScreen = () => {
 
           {showLists ? <Animated.FlatList 
             style={styles.flatlist}
+            contentContainerStyle={{
+              alignItems: 'flex-end'
+            }}
             horizontal
             showsHorizontalScrollIndicator={false}
             snapToInterval={cardSize}
@@ -1063,7 +1075,9 @@ const ExerciseScreen = () => {
 
 
           {showLists ? <Animated.FlatList 
-            style={styles.flatlist}
+            style={styles.flatlist}contentContainerStyle={{
+              alignItems: 'flex-end'
+            }}
             horizontal
             showsHorizontalScrollIndicator={false}
             snapToInterval={cardSize}

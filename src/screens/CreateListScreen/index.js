@@ -40,6 +40,8 @@ const CreateListScreen = ({ route }) => {
     const [placeholder3, setPlaceholder3] = useState('Norwegian word')
     const [placeholder4, setPlaceholder4] = useState('translation')
     const [checkBoxLabel, setCheckBoxLabel] = useState('share this list with other users')
+    const [btnLabels, setBtnLabels] = useState(['Yes', 'No'])
+
 
 
     const userWordsData = collection(db, 'usersWordsInfo');
@@ -281,6 +283,7 @@ const CreateListScreen = ({ route }) => {
             setPlaceholder3('Norweskie słowo');
             setPlaceholder4('Tłumaczenie');
             setMessageNotCreated('Lista słów nie została utworzona. Czy na pewno chcesz wyjść?');
+            setBtnLabels(["Tak", "Nie"]);
         } else if (choosenLang === 'DE') {
             setMessageEmpty('Bitte füllen Sie die Felder Titel und Sprache aus, bevor Sie Ihre Liste erstellen');
             setLabelTitle('Titel');
@@ -294,6 +297,7 @@ const CreateListScreen = ({ route }) => {
             setPlaceholder3('Norwegisches Wort');
             setPlaceholder4('Übersetzung');
             setMessageNotCreated('Die Wortliste wurde nicht erstellt. Sind Sie sicher, dass Sie beenden möchten?');
+            setBtnLabels(["Ja", "Nein"]);
         } else if (choosenLang === 'LT') {
             setMessageEmpty('Prašome užpildyti Laukelius Pavadinimas ir Kalba prieš kuriant sąrašą');
             setLabelTitle('Pavadinimas');
@@ -307,6 +311,7 @@ const CreateListScreen = ({ route }) => {
             setPlaceholder3('Norvegiškas žodis');
             setPlaceholder4('Vertimas');
             setMessageNotCreated('Žodžių sąrašas nebuvo sukurtas. Ar tikrai norite išeiti?');
+            setBtnLabels(["Taip", "Ne"]);
         } else if (choosenLang === 'AR') {
             setMessageEmpty('الرجاء ملء حقول العنوان واللغة قبل إنشاء قائمتك');
             setLabelTitle('العنوان');
@@ -320,6 +325,7 @@ const CreateListScreen = ({ route }) => {
             setPlaceholder3('كلمة نرويجية');
             setPlaceholder4('ترجمة');
             setMessageNotCreated('لم يتم إنشاء قائمة الكلمات. هل أنت متأكد أنك تريد الخروج؟');
+            setBtnLabels(["نعم", "لا"]);
         } else if (choosenLang === 'UA') {
             setMessageEmpty('Будь ласка, заповніть поля Назва та Мова перед створенням списку');
             setLabelTitle('Назва');
@@ -333,6 +339,7 @@ const CreateListScreen = ({ route }) => {
             setPlaceholder3('Норвезьке слово');
             setPlaceholder4('Переклад');
             setMessageNotCreated('Список слів не було створено. Ви впевнені, що хочете вийти?');
+            setBtnLabels(["Так", "Ні"]);
         } else if (choosenLang === 'ES') {
             setMessageEmpty('Por favor, rellene los campos de Título e Idioma antes de crear su lista');
             setLabelTitle('Título');
@@ -346,6 +353,7 @@ const CreateListScreen = ({ route }) => {
             setPlaceholder3('Palabra noruega');
             setPlaceholder4('Traducción');
             setMessageNotCreated('La lista de palabras no fue creada. ¿Estás seguro de que quieres salir?');
+            setBtnLabels(["Sí", "No"]);
         }
 
     }, [])
@@ -474,10 +482,10 @@ const CreateListScreen = ({ route }) => {
             <Text style={styles.opacityBtnTextInfo}>{messageNotCreated}</Text>
             <View style={styles.buttonsMessageContainer}>
                 <TouchableOpacity  style={styles.secondBtn} onPress={() => exitButton()}>
-                    <Text style={styles.opacityBtnText}>Yes</Text>
+                    <Text style={styles.opacityBtnText}>{btnLabels[0]}</Text>
                 </TouchableOpacity>
                 <TouchableOpacity  style={styles.secondBtn} onPress={() => dismissMessage2()}>
-                    <Text style={styles.opacityBtnText}>No</Text>
+                    <Text style={styles.opacityBtnText}>{btnLabels[1]}</Text>
                 </TouchableOpacity>
             </View>
             

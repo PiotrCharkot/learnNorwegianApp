@@ -1,13 +1,14 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { useNavigation } from "@react-navigation/native";
-import { StyleSheet, Text, View, Dimensions, Animated, Pressable } from 'react-native';
+import { StyleSheet, Text, View, Dimensions, Animated, Pressable, Image } from 'react-native';
 import MaskedView from '@react-native-community/masked-view';
 import { LinearGradient } from 'expo-linear-gradient';
 import { authentication } from '../../firebase/firebase-config';
 import { signInAnonymously, onAuthStateChanged, getAuth  } from 'firebase/auth';
 import { db } from '../../firebase/firebase-config'
 import { collection, doc, setDoc } from "firebase/firestore";
+import { getStorage, ref, getDownloadURL, uploadBytesResumable } from "firebase/storage";
 import uuid from 'react-native-uuid';
 import LearningScreen from '../screens/LearningScreen';
 import FlashcardScreen from '../screens/FlashcardScreen';
@@ -26,6 +27,10 @@ const Tabs = () => {
 
 
     const auth = getAuth();
+
+    const storage = getStorage();
+
+    const randomPicture = ['reindeer-profile.png', 'reindeer-profile2.png', 'reindeer-profile3.png','reindeer-profile4.png', 'reindeer-profile5.png', 'reindeer-profile6.png', 'reindeer-profile7.png', 'reindeer-profile8.png', 'reindeer-profile9.png', 'reindeer-profile10.png', 'reindeer-profile11.png','reindeer-profile12.png', 'reindeer-profile13.png', 'reindeer-profile14.png', 'reindeer-profile15.png', 'reindeer-profile16.png', 'reindeer-profile17.png', 'reindeer-profile18.png', 'reindeer-profile19.png','reindeer-profile20.png', 'reindeer-profile21.png', 'reindeer-profile22.png', 'reindeer-profile23.png']
    
 
     const focusedIconColor = 'red'
@@ -54,6 +59,8 @@ const Tabs = () => {
     const [triggerCircelFive, setTriggerCircleFive] = useState(0);
     const [numberOfCircleTriggered, setNumberOfCircleTriggered] = useState(0);
     const [allowDataUpload, setAllowDataUpload] = useState(false);
+    const [imageLoaded, setImageLoaded] = useState(false);
+    const [newProfilePic, setNewProfilePic] = useState(randomPicture[Math.floor(Math.random() * randomPicture.length)]);
 
     const shakeOffset = 5;
 
@@ -405,10 +412,57 @@ const Tabs = () => {
             });
         }
 
+
+        const uploadPictureToFb = async (urlParam, idParam) => {
+        
+
+            const blob = await new Promise((resolve, reject) => {
+              const xhr = new XMLHttpRequest();
+              xhr.onload = () => {
+                resolve(xhr.response);
+              };
+              xhr.onerror = (e) => {
+                reject(new TypeError("Network request failed"));
+              };
+              xhr.responseType = "blob";
+              xhr.open("GET", urlParam, true);
+              xhr.send(null);
+            });
+        
+            uploadBytesResumable(ref(storage, `profilePictures/${idParam}`), blob).then((snapshot) => {
+                console.log('Uploaded a blob or file!');
+            });
+            
+           
+          }
+
         if (allowDataUpload && auth.currentUser.uid) {
             
             
             console.log('show me a user identification current user: ', auth.currentUser.uid);
+
+            getDownloadURL(ref(storage, 'profilePictures/' + auth.currentUser.uid))
+            .then((url) => {
+                
+                console.log('got url for profile picture in tab navigator');
+                
+            })
+            .catch((error) => {
+                console.log(error);
+                if (error.code === 'storage/object-not-found') {
+                
+
+                getDownloadURL(ref(storage, 'profilePictures/' + newProfilePic))
+                    .then((url) => {
+                    
+                        uploadPictureToFb(url, auth.currentUser.uid);
+                    })
+                    .catch((error) => {
+                    console.log('Didnt get profile picture here');
+                    })
+                
+                }
+            });
 
 
             setDataToFbPoints(auth.currentUser.uid);
@@ -600,6 +654,57 @@ const Tabs = () => {
     }, [triggerCircelOne, triggerCircelTwo, triggerCircelThree, triggerCircelFour, triggerCircelFive]);
 
 
+
+    useEffect(() => {
+        const loadImage = async () => {
+            const source = require('../../assets/learn.png');
+            const uri = Image.resolveAssetSource(source).uri;
+
+            const source2 = require('../../assets/exercise.png');
+            const uri2 = Image.resolveAssetSource(source2).uri;
+
+            const source3 = require('../../assets/flashcard.png');
+            const uri3 = Image.resolveAssetSource(source3).uri;
+
+            const source4 = require('../../assets/profil.png');
+            const uri4 = Image.resolveAssetSource(source4).uri;
+
+
+            Image.getSize(uri, () => {
+                setImageLoaded(true);
+                
+            }, (error) => {
+                console.error('Failed to get image size:', error);
+            });
+
+
+            Image.getSize(uri2, () => {
+                setImageLoaded(true);
+                
+            }, (error) => {
+                console.error('Failed to get image size:', error);
+            });
+
+            Image.getSize(uri3, () => {
+                setImageLoaded(true);
+                
+            }, (error) => {
+                console.error('Failed to get image size:', error);
+            });
+
+
+            Image.getSize(uri4, () => {
+                setImageLoaded(true);
+                
+            }, (error) => {
+                console.error('Failed to get image size:', error);
+            });
+        };
+
+        loadImage();
+    }, []);
+    
+
     return (
         <Tab.Navigator
         screenOptions={{
@@ -624,6 +729,8 @@ const Tabs = () => {
                             style={{ ...styles.maskView }}
                             maskElement={
                                     <View style={{...styles.maskView}}>
+
+
                                     
                                         <Animated.Image
                                             source={require('../../assets/learn.png')} 
@@ -632,12 +739,13 @@ const Tabs = () => {
                                                 ...styles.iconImg,
                                                 transform: [{translateX: shakeFirstIcon}]
                                             }}
-                                            />
-                
+                                            
+                                        />
+            
                                         <Text
                                             style={{
-                                                ...styles.iconText
-                                            }}>LÆR</Text>    
+                                            ...styles.iconText
+                                        }}>LÆR</Text>    
                                     </View>}
                         >
                         
@@ -866,9 +974,10 @@ const styles = StyleSheet.create({
 
     },
     pressableMenu: {
+        position: 'absolute',
         alignItems: 'center', 
         justifyContent: 'center', 
-        top: 10, 
+        top: 0, 
         width: 80,
         height: 80,
     },
@@ -879,9 +988,10 @@ const styles = StyleSheet.create({
         height: 80,
     },
     centerIcon: {
+        position: 'absolute',
         alignItems: 'center', 
         justifyContent: 'center', 
-        top: -30, 
+        top: -35, 
         backgroundColor: 'red',
         width: 70,
         height: 70,

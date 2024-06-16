@@ -63,6 +63,7 @@ const ReadingScreen = ({route}) => {
   const [dataFlatList6, setDataFlatList6] = useState([]);
   const [title, setTitle] = useState('Level')
   const [random, setRandom] = useState(0);
+  const [isSoundOn, setIsSoundOn] = useState(true);
   const [sound, setSound] = useState();
   const [sound2, setSound2] = useState();
   const [sound3, setSound3] = useState();
@@ -134,8 +135,13 @@ const ReadingScreen = ({route}) => {
   async function getValueFor(key) {
     let result = await SecureStore.getItemAsync(key);
     if (result) {
-      
-      setChoosenLanguage(result);
+      if (key === 'sound' && result === '0') {
+        setIsSoundOn(false);
+      } else if (key === 'sound' && result === '1') {
+        setIsSoundOn(true);
+      } else if (key === 'language') {
+        setChoosenLanguage(result);
+      }
     } else {
       console.log('No values stored under that key: ', key);
     }
@@ -163,7 +169,11 @@ const ReadingScreen = ({route}) => {
         useNativeDriver: true
       }).start()
     }
-    playSound3();
+
+    console.log('sound in reading is: ', isSoundOn);
+    if (isSoundOn) {
+      playSound3();
+    }
   }
 
 
@@ -172,6 +182,7 @@ const ReadingScreen = ({route}) => {
 
       
       getValueFor('language');
+      getValueFor('sound');
   
       
     }, [])
@@ -180,7 +191,6 @@ const ReadingScreen = ({route}) => {
 
   useEffect(() => {
 
-    console.log('in reading: ', within168Hours);
     const loadSound = async () => {
       const { sound } = await Audio.Sound.createAsync(
         require('./../../../assets/sounds/tick.mp3')
@@ -222,7 +232,7 @@ const ReadingScreen = ({route}) => {
     loadSound3();
 
     return () => {
-      sound2?.unloadAsync();
+      sound3?.unloadAsync();
     };
   }, []);
 
@@ -396,7 +406,12 @@ const ReadingScreen = ({route}) => {
 
 
   const exitButton = () => {
-    playSound2();
+    
+    if (isSoundOn) {
+
+      playSound2();
+    }
+
     Animated.spring(interpolatedValueForX, {
         toValue: 360,
         speed: 1,

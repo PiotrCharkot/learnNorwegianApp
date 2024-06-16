@@ -405,7 +405,7 @@ const LearningScreen = () => {
 
     const translateY1 = scrollX.interpolate({
       inputRange,
-      outputRange: [0, -50, 0]
+      outputRange: [-20, -70, -20]
     })
 
     return <Animated.View style={{transform: [{translateY: translateY1}]}}>
@@ -440,7 +440,7 @@ const LearningScreen = () => {
 
     const translateY2 = scrollX2.interpolate({
       inputRange,
-      outputRange: [0, -50, 0]
+      outputRange: [-20, -70, -20]
     })
 
     return <Animated.View style={{transform: [{translateY: translateY2}]}}>
@@ -475,7 +475,7 @@ const LearningScreen = () => {
 
     const translateY3 = scrollX3.interpolate({
       inputRange,
-      outputRange: [0, -50, 0]
+      outputRange: [-20, -70, -20]
     })
 
     return <Animated.View style={{transform: [{translateY: translateY3}]}}>
@@ -510,7 +510,7 @@ const LearningScreen = () => {
 
     const translateY4 = scrollX4.interpolate({
       inputRange,
-      outputRange: [0, -50, 0]
+      outputRange: [-20, -70, -20]
     })
 
     return <Animated.View style={{transform: [{translateY: translateY4}]}}>
@@ -545,7 +545,7 @@ const LearningScreen = () => {
 
     const translateY5 = scrollX5.interpolate({
       inputRange,
-      outputRange: [0, -50, 0]
+      outputRange: [-20, -70, -20]
     })
 
     return <Animated.View style={{transform: [{translateY: translateY5}]}}>
@@ -580,7 +580,7 @@ const LearningScreen = () => {
 
     const translateY6 = scrollX6.interpolate({
       inputRange,
-      outputRange: [0, -50, 0]
+      outputRange: [-20, -70, -20]
     })
 
 
@@ -655,6 +655,9 @@ const LearningScreen = () => {
           </View>
           <Animated.FlatList 
             style={styles.flatlist}
+            contentContainerStyle={{
+              alignItems: 'flex-end'
+            }}
             horizontal
             showsHorizontalScrollIndicator={false}
             snapToInterval={cardSize}
@@ -681,6 +684,9 @@ const LearningScreen = () => {
           </View>
           <Animated.FlatList 
             style={styles.flatlist}
+            contentContainerStyle={{
+              alignItems: 'flex-end'
+            }}
             horizontal
             showsHorizontalScrollIndicator={false}
             snapToInterval={cardSize}
@@ -707,6 +713,9 @@ const LearningScreen = () => {
           </View>
           <Animated.FlatList 
             style={styles.flatlist}
+            contentContainerStyle={{
+              alignItems: 'flex-end'
+            }}
             horizontal
             showsHorizontalScrollIndicator={false}
             snapToInterval={cardSize}
@@ -733,6 +742,9 @@ const LearningScreen = () => {
           </View>
           <Animated.FlatList 
             style={styles.flatlist}
+            contentContainerStyle={{
+              alignItems: 'flex-end'
+            }}
             horizontal
             showsHorizontalScrollIndicator={false}
             snapToInterval={cardSize}
@@ -759,6 +771,9 @@ const LearningScreen = () => {
           </View>
           <Animated.FlatList 
             style={styles.flatlist}
+            contentContainerStyle={{
+              alignItems: 'flex-end'
+            }}
             horizontal
             showsHorizontalScrollIndicator={false}
             snapToInterval={cardSize}
@@ -785,6 +800,9 @@ const LearningScreen = () => {
           </View>
           <Animated.FlatList 
             style={styles.flatlist}
+            contentContainerStyle={{
+              alignItems: 'flex-end'
+            }}
             horizontal
             showsHorizontalScrollIndicator={false}
             snapToInterval={cardSize}

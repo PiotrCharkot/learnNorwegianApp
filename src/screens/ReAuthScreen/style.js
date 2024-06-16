@@ -75,7 +75,7 @@ const styles = StyleSheet.create({
         height: 20, 
         borderBottomColor: 'transparent',
         justifyContent: 'center',
-        
+        borderBottomWidth: 0,
     },
     inputHolder: {
         justifyContent: 'center',

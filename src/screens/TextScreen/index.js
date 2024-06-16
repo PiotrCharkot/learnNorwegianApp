@@ -141,7 +141,7 @@ const TextScreen = ({route}) => {
 
     setTimeout(() => {
 
-        navigation.navigate('Reading');
+      navigation.navigate('Reading', {within168Hours: route.params.within168Hours});
     }, 800)
   }
 

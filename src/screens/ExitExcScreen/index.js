@@ -23,14 +23,20 @@ const ExitExcScreen = ({route}) => {
   const navigation = useNavigation();
   const { userPoints, allPoints, dataMarkers, savedLang } = route.params;
 
+  const formatDate = (date) => {
+    const isoString = date.toISOString(); // Get the ISO string
+    const [year, month, day] = isoString.split('T')[0].split('-'); // Extract year, month, and day
+    return `${day}/${month}/${year}`; // Format the date as dd/MM/yyyy
+  };
 
-  let sixDaysAgo = new Date(new Date().setDate(new Date().getDate()-6)).toLocaleDateString();
-  let fiveDaysAgo = new Date(new Date().setDate(new Date().getDate()-5)).toLocaleDateString();
-  let fourDaysAgo = new Date(new Date().setDate(new Date().getDate()-4)).toLocaleDateString();
-  let threeDaysAgo = new Date(new Date().setDate(new Date().getDate()-3)).toLocaleDateString();
-  let twoDaysAgo = new Date(new Date().setDate(new Date().getDate()-2)).toLocaleDateString();
-  let yesterday = new Date(new Date().setDate(new Date().getDate()-1)).toLocaleDateString();
-  let today = new Date().toLocaleDateString();
+
+  let sixDaysAgo = formatDate(new Date(new Date().setDate(new Date().getDate()-6)));
+  let fiveDaysAgo = formatDate(new Date(new Date().setDate(new Date().getDate()-5)));
+  let fourDaysAgo = formatDate(new Date(new Date().setDate(new Date().getDate()-4)));
+  let threeDaysAgo = formatDate(new Date(new Date().setDate(new Date().getDate()-3)));
+  let twoDaysAgo = formatDate(new Date(new Date().setDate(new Date().getDate()-2)));
+  let yesterday = formatDate(new Date(new Date().setDate(new Date().getDate()-1)));
+  let today = formatDate(new Date());
 
   let dayOfWeek = new Date(new Date().setDate(new Date().getDate())).getDay() === 0 ? 7 : new Date(new Date().setDate(new Date().getDate())).getDay();
 
@@ -48,10 +54,12 @@ const ExitExcScreen = ({route}) => {
   const [myDocumentId, setMyDocumentId] = useState('tempid');
   const [showLineOffset, setShowLineOffset] = useState(false);
   const [dayUp, setDayUp] = useState(false);
+  const [underFiveDone, setUnderFiveDone] = useState(true);
   const [tempObj, setTempObj] = useState({});
   const [allowChangesFb, setAllowChangesFb] = useState(false);
   const [pointsText, setPointsText] = useState('points');
   const [todaysScoreText, setTodaysScoreText] = useState('Today\'s score');
+  const [transformStyle, setTransformStyle] = useState({});
   const [daysInRowText, setDaysInRowText] = useState(() => {
     if (savedLang === 'PL') {
       return 'dni z rzędu'
@@ -75,6 +83,7 @@ const ExitExcScreen = ({route}) => {
   const [btnRankingText, setBtnRankingText] = useState('View rankings');
 
   const interpolatedValue = useRef(new Animated.Value(-180)).current;
+  const interpolatedValueFull = useRef(new Animated.Value(-180)).current;
   const interpolatedValueFlipFirst = useRef(new Animated.Value(0)).current;
   const interpolatedValueFlipSecond = useRef(new Animated.Value(-90)).current;
   const lineOffset = useRef(new Animated.Value(currentDailyScore - pointsToScore)).current;
@@ -90,13 +99,19 @@ const ExitExcScreen = ({route}) => {
   })
 
   const rotateValTrans = interpolatedValueFlipSecond.interpolate({
-      inputRange: [-90, 0],
-      outputRange: ["-90deg", "0deg"]
+    inputRange: [-90, 0],
+    outputRange: ["-90deg", "0deg"]
   })
 
   const coverPositionDeg = interpolatedValue.interpolate({
-      inputRange: [0, 180],
-      outputRange: ["0deg", "180deg"]
+    inputRange: [0, 180],
+    outputRange: ["0deg", "180deg"]
+  })
+
+
+  const coverPositionDegFull = interpolatedValueFull.interpolate({
+    inputRange: [0, 180],
+    outputRange: ["0deg", "180deg"]
   })
 
   useEffect(() => {
@@ -147,7 +162,13 @@ const ExitExcScreen = ({route}) => {
 
 
 
-            let newArr = objectDescritpror2.value.map((item, index) => index === dataMarkers.class ? item + 1 : item) 
+            let newArr = objectDescritpror2.value.map((item, index) => index === dataMarkers.class ? item + 1 : item);
+            
+            
+
+            objectDescritpror2.value.map((item, index) => index === dataMarkers.class && item >= 5 ? setUnderFiveDone(false) : null)
+
+            
             
 
             for (const key in objectDescritprorCopy) {
@@ -252,7 +273,7 @@ const ExitExcScreen = ({route}) => {
     
         querySnapshot.forEach((doc) => {
           
-          if (doc.data().lastUpdate !== new Date().toLocaleDateString()) {
+          if (doc.data().lastUpdate !== formatDate(new Date())) {
             setCurrentDailyScore(0);
           } else {
             setCurrentDailyScore(doc.data().dailyPoints);
@@ -307,13 +328,23 @@ const ExitExcScreen = ({route}) => {
     setIndicatorValue(Math.floor(userPoints / allPoints * 100))
 
     Animated.timing(interpolatedValue, {
-        toValue: resultIndicatorValue,
-        duration: 3000,
-        speed: 1,
-        delay: 300,
-        easing: Easing.bezier(.35,-0.01,.63,1),
-        bounciness: 12,
-        useNativeDriver: true,
+      toValue: resultIndicatorValue,
+      duration: 3000,
+      speed: 1,
+      delay: 300,
+      easing: Easing.bezier(.35,-0.01,.63,1),
+      bounciness: 12,
+      useNativeDriver: true,
+    }).start();
+
+    Animated.timing(interpolatedValueFull, {
+      toValue: 0,
+      duration: 3000,
+      speed: 1,
+      delay: 300,
+      easing: Easing.bezier(.35,-0.01,.63,1),
+      bounciness: 12,
+      useNativeDriver: true,
     }).start();
     
     Animated.timing(buttonOpacity, {
@@ -335,7 +366,7 @@ const ExitExcScreen = ({route}) => {
         setDayUp(true);
       }
 
-      if (currentDailyScore < pointsToScore && currentDailyScore + userPoints >= pointsToScore) {
+      if (currentDailyScore < pointsToScore && currentDailyScore + userPoints >= pointsToScore && underFiveDone) {
 
         if (daysInRowVal + 1 === 1) {
           setTimeout(() => {
@@ -380,7 +411,7 @@ const ExitExcScreen = ({route}) => {
         }),
   
         Animated.timing(lineOffset, {
-          toValue: currentDailyScore - pointsToScore + userPoints >= 0 ? 0 : currentDailyScore - pointsToScore + userPoints,
+          toValue: currentDailyScore - pointsToScore + userPoints >= 0 && underFiveDone ? 0 : underFiveDone ? currentDailyScore - pointsToScore + userPoints : currentDailyScore - pointsToScore < 0 ? currentDailyScore - pointsToScore : 0,
           duration: 4000,
           speed: 1,
           delay: 0,
@@ -389,7 +420,7 @@ const ExitExcScreen = ({route}) => {
         })
       ]).start();
 
-      if (dataMarkers.part === 'learning' && allowChangesFb) {
+      if (dataMarkers.part === 'learning' && allowChangesFb && underFiveDone) {
 
         updateDoc(myDocRef, {
           learning: tempObj
@@ -413,19 +444,25 @@ const ExitExcScreen = ({route}) => {
         })
       }
 
-      updateDoc(docRef, {
-        dailyPoints: lastUpdateVal === new Date().toLocaleDateString() ? currentDailyScore + userPoints : userPoints,
-        totalPoints: totalPointsVal + userPoints,
-        weeklyPoints: currentWeek.includes(lastUpdateVal) ? weeklyPointsVal + userPoints : userPoints,
-        lastUpdate: new Date().toLocaleDateString(),
-        daysInRow: currentDailyScore < pointsToScore && currentDailyScore + userPoints >= pointsToScore ? daysInRowVal + 1 : daysInRowVal
-      })
-      .then(docRef => {
-          console.log("A New Document Field has been added to an existing document Points part");
-      })
-      .catch(error => {
-          console.log(error);
-      })
+
+      if (underFiveDone) {
+
+        updateDoc(docRef, {
+          dailyPoints: lastUpdateVal === formatDate(new Date()) ? currentDailyScore + userPoints : userPoints,
+          totalPoints: totalPointsVal + userPoints,
+          weeklyPoints: currentWeek.includes(lastUpdateVal) ? weeklyPointsVal + userPoints : userPoints,
+          lastUpdate: formatDate(new Date()),
+          daysInRow: currentDailyScore < pointsToScore && currentDailyScore + userPoints >= pointsToScore ? daysInRowVal + 1 : daysInRowVal
+        })
+        .then(docRef => {
+            console.log("A New Document Field has been added to an existing document Points part");
+        })
+        .catch(error => {
+            console.log(error);
+        })
+        
+
+      }
       
      
     }
@@ -482,13 +519,25 @@ const ExitExcScreen = ({route}) => {
   }, [])
 
 
+
+  useEffect(() => {
+    
+    if (underFiveDone !== null) {
+      
+      const newTransformStyle = getTransform(screenWidth, screenWidth, { rotate: underFiveDone ? coverPositionDeg : coverPositionDegFull }, { translateX: 0 }, 0.5, 0);
+      setTransformStyle(newTransformStyle);
+    }
+  }, [underFiveDone]);
+
   
 
   const getTransform = (viewHeight, viewWidth, transValA, transValB, valX, valY) => {
-      let transform = {
-          transform: [{ perspective: 100 }, transValA, transValB],
-      };
-      return withAnchorPoint(transform, { x: valX, y: valY }, { width: viewWidth, height: viewHeight});
+
+  
+    let transform = {
+        transform: [{ perspective: 100 }, transValA, transValB],
+    };
+    return withAnchorPoint(transform, { x: valX, y: valY }, { width: viewWidth, height: viewHeight});
   };
 
   const goToMain = () => {
@@ -509,7 +558,7 @@ const ExitExcScreen = ({route}) => {
     
       <View style={styles.topView}>
         <View style={styles.topLeftView}>
-          <Text style={styles.numbersTxt}>+ {userPoints}</Text>
+          <Text style={styles.numbersTxt}>+ {underFiveDone ? userPoints : 0}</Text>
           <Text style={styles.resultsTxt}>{pointsText}</Text>
         </View>
         <View style={styles.topRightView}>
@@ -535,7 +584,7 @@ const ExitExcScreen = ({route}) => {
               alignItems: indicatotValue > 55 ? 'center' : 'flex-start', 
               paddingTop: indicatotValue > 55 ? 35 : indicatotValue > 30 ? 50 : 70, 
               paddingLeft: indicatotValue > 55 ? 0 : indicatotValue > 30 ? 40 : 20 }}>
-              <Text style={styles.resultPecentText}>{indicatotValue }%</Text>
+              <Text style={styles.resultPecentText}>{underFiveDone ? indicatotValue : 0} %</Text>
             </View>
           </View>
         }
@@ -550,7 +599,7 @@ const ExitExcScreen = ({route}) => {
 
           <Animated.View style={{
             ...styles.animatedView,
-            ...getTransform(screenWidth, screenWidth, { rotate: coverPositionDeg }, { translateX: 0 }, 0.5, 0)
+            ...transformStyle
           }}>
 
             <LinearGradient colors={[ 'rgba(255,255,255,0)',  'white']} start={[1.0, 0.0]} end={[1.0, 0.03]} style={styles.animatedViewGradient} />
@@ -628,7 +677,7 @@ const ExitExcScreen = ({route}) => {
           </View>
 
         </View>
-        <Text style={styles.todayScoreText}>{todaysScoreText}: {showLineOffset ? currentDailyScore + userPoints : 0}</Text>
+        <Text style={styles.todayScoreText}>{todaysScoreText}: {showLineOffset && underFiveDone ? currentDailyScore + userPoints : showLineOffset ? currentDailyScore : 0}</Text>
 
       </View>
       

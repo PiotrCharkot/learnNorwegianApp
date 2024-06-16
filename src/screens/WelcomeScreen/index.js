@@ -20,11 +20,12 @@ const WelcomeScreen = () => {
 
     //get timestamp from securestore for appFirstLunch. If value === undefinde than show intro and set value
 
-    const moveToMain = () => {
-      if (playIntro) { // get value from SecureStore to check if intro was shown
+    const moveToMain = (shouldPlayIntro) => {
+
+      if (shouldPlayIntro) { // get value from SecureStore to check if intro was shown
         navigation.replace('Intro1', {skipable: false, language: 'EN'});  
       } else {
-        navigation.replace("Main");
+        navigation.navigate("Main");
         // change value in SecureStore to => intro shown
       }
     }
@@ -33,43 +34,51 @@ const WelcomeScreen = () => {
 
       const checkFirstLaunch = async () => {
         try {
-          const firstLaunch = await SecureStore.getItemAsync('firstLaunchTime'); 
+          const firstLaunch = await SecureStore.getItemAsync('firstLaunchTime166'); 
           if (firstLaunch === null) {
 
             console.log('luanching for the first time');
-            setPlayIntro(true);
+            //setPlayIntro(true);
             const currentTime = new Date().toISOString();
-            await SecureStore.setItemAsync('firstLaunchTime', currentTime);
-          } 
+            await SecureStore.setItemAsync('firstLaunchTime166', currentTime);
+
+            setTimeout(() => {
+              moveToMain(true);
+              
+            }, 3800); //in production change to 3800 ms
+          } else {
+
+            setTimeout(() => {
+              moveToMain(false);
+              
+            }, 3800); //in production change to 3800 ms
+          }
   
         } catch (error) {
           console.error('Error setting first launch time:', error);
         }
       };
   
-      checkFirstLaunch();
-
-
-
+      
+      
+      
       Animated.timing(opacityFront, {
         duration: 2000,
         delay: 0,
         toValue: 0,
         useNativeDriver: true
       }).start()
-
+      
       Animated.timing(opacityText, {
         duration: 2000,
         delay: 2000,
         toValue: 0,
         useNativeDriver: true
       }).start()
-
-
-      setTimeout(() => {
-          moveToMain();
-          
-      }, 3800); //in production change to 3800 ms
+      
+      
+      
+      checkFirstLaunch();
 
     }, [])
     
@@ -125,7 +134,7 @@ const styles = StyleSheet.create({
     height: screenWidth  ,
     width: screenWidth ,
     marginBottom: 0,
-    marginLeft: 7 
+    marginLeft: 0
   },
   pictureFlagTop: {
     position: 'absolute',
@@ -137,7 +146,7 @@ const styles = StyleSheet.create({
   },
   logoText: {
     marginTop: 80,
-    fontSize: 48,
+    fontSize: 40,
     color: 'black',
     fontWeight: 'bold',
     opacity: 1
