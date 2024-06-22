@@ -370,7 +370,7 @@ useEffect(() => {
 
 
                         <View style={styles.msgCont}>
-                            <Text style={styles.msgTxt}>{changePass ? msgForChange : msgForDelete}</Text>
+                            <Text style={styles.msgTxt} allowFontScaling={false}>{changePass ? msgForChange : msgForDelete}</Text>
                         </View>
                             
                     </View>

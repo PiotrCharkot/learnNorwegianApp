@@ -722,7 +722,7 @@ const ReadingScreen = ({route}) => {
             </LinearGradient>
         
           <View style={styles.titleContainer}>
-            <Text style={styles.titleText}>{choosenLanguage === 'AR' ? '' : title} A1 {choosenLanguage === 'AR' ? title : ''}</Text>
+            <Text style={styles.titleText} allowFontScaling={false}>{choosenLanguage === 'AR' ? '' : title} A1 {choosenLanguage === 'AR' ? title : ''}</Text>
           </View>
           <Animated.FlatList 
             style={styles.flatlist}
@@ -745,7 +745,7 @@ const ReadingScreen = ({route}) => {
             </LinearGradient>
         
           <View style={styles.titleContainer}>
-            <Text style={styles.titleText}>{choosenLanguage === 'AR' ? '' : title} A2 {choosenLanguage === 'AR' ? title : ''}</Text>
+            <Text style={styles.titleText} allowFontScaling={false}>{choosenLanguage === 'AR' ? '' : title} A2 {choosenLanguage === 'AR' ? title : ''}</Text>
           </View>
           <Animated.FlatList 
             style={styles.flatlist}
@@ -768,7 +768,7 @@ const ReadingScreen = ({route}) => {
             </LinearGradient>
         
           <View style={styles.titleContainer}>
-            <Text style={styles.titleText}>{choosenLanguage === 'AR' ? '' : title} B1 {choosenLanguage === 'AR' ? title : ''}</Text>
+            <Text style={styles.titleText} allowFontScaling={false}>{choosenLanguage === 'AR' ? '' : title} B1 {choosenLanguage === 'AR' ? title : ''}</Text>
           </View>
           <Animated.FlatList 
             style={styles.flatlist}
@@ -791,7 +791,7 @@ const ReadingScreen = ({route}) => {
             </LinearGradient>
         
           <View style={styles.titleContainer}>
-            <Text style={styles.titleText}>{choosenLanguage === 'AR' ? '' : title} B2 {choosenLanguage === 'AR' ? title : ''}</Text>
+            <Text style={styles.titleText} allowFontScaling={false}>{choosenLanguage === 'AR' ? '' : title} B2 {choosenLanguage === 'AR' ? title : ''}</Text>
           </View>
           <Animated.FlatList 
             style={styles.flatlist}
@@ -814,7 +814,7 @@ const ReadingScreen = ({route}) => {
             </LinearGradient>
         
           <View style={styles.titleContainer}>
-            <Text style={styles.titleText}>{choosenLanguage === 'AR' ? '' : title} C1 {choosenLanguage === 'AR' ? title : ''}</Text>
+            <Text style={styles.titleText} allowFontScaling={false}>{choosenLanguage === 'AR' ? '' : title} C1 {choosenLanguage === 'AR' ? title : ''}</Text>
           </View>
           <Animated.FlatList 
             style={styles.flatlist}

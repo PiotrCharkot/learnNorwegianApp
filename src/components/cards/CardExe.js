@@ -58,8 +58,8 @@ const CardExe = (params) => {
             <View style={styles.innerContainer}>
                 <LinearGradient colors={['#6441A5', '#2a0845', '#2a0845']} style={styles.gradient} >
 
-                <Text style={styles.textTitle}>{title}</Text>
-                <Text style={styles.textDescription}>{params.description}</Text>
+                <Text style={styles.textTitle} allowFontScaling={false}>{title}</Text>
+                <Text style={styles.textDescription} allowFontScaling={false}>{params.description}</Text>
 
 
                 

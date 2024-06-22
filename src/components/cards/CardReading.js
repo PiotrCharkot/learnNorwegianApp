@@ -68,7 +68,7 @@ const CardReading = (params) => {
             <View style={styles.blackSquare}></View>
         </View>
         <View style={styles.titleContainer}> 
-            <Text style={styles.titleText}>{params.title}</Text>
+            <Text style={styles.titleText} allowFontScaling={false}>{params.title}</Text>
         </View>
         
     </TouchableOpacity>

@@ -724,7 +724,7 @@ const styles = StyleSheet.create({
     },
     imageContainer: {
         position: 'absolute',
-        width: 170,
+        width: 210,
         height: 160,
         top: -100,
         backgroundColor: 'transparent',

@@ -125,9 +125,9 @@ const CardPublic = (params) => {
         
         <View style={styles.bigCircle}>
             <View style={styles.smallCircle}>
-                <Text style={styles.textTitle}>{params.title}</Text>
-                <Text style={styles.textLang}>{params.lang}</Text>
-                <Text style={styles.textLang}></Text>
+                <Text style={styles.textTitle} allowFontScaling={false}>{params.title}</Text>
+                <Text style={styles.textLang} allowFontScaling={false}>{params.lang}</Text>
+                <Text style={styles.textLang} allowFontScaling={false}></Text>
                 
             </View>
         </View>
@@ -197,7 +197,6 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         alignItems: 'center',
         height: 20,
-        //width: 110,
         paddingHorizontal: 10,
         borderRadius: 5,
         bottom: 10,

@@ -415,7 +415,7 @@ const ResultsScreen = () => {
 
       <View style={styles.toggleContainer}>
         <TouchableOpacity onPress={() => changeSide()}>
-          <Text style={styles.toggleText}>{toggleText}</Text>
+          <Text style={styles.toggleText} allowFontScaling={false}>{toggleText}</Text>
 
         </TouchableOpacity>
       </View>
@@ -424,13 +424,13 @@ const ResultsScreen = () => {
 
         <Animated.View style={{...styles.switcherHolder, transform: [{perspective: 500}, {rotateY: rotateVal}]}}>
           <TouchableOpacity onPress={() => changeSide()}>
-            <Text style={styles.switcherText}>{alltimeText}</Text>
+            <Text style={styles.switcherText} allowFontScaling={false}>{alltimeText}</Text>
 
           </TouchableOpacity>
         </Animated.View>
         <Animated.View style={{...styles.switcherHolder, position: 'absolute', transform: [{perspective: 500}, {rotateY: rotateValTrans}]}}>
           <TouchableOpacity onPress={() => changeSide()}>
-          <Text style={styles.switcherText}>{weeklyText}</Text>
+          <Text style={styles.switcherText} allowFontScaling={false}>{weeklyText}</Text>
             </TouchableOpacity>
         </Animated.View>
       </View>
@@ -438,40 +438,40 @@ const ResultsScreen = () => {
       {weekly ?  <View style={styles.topContainer}>
         <View style={{...styles.positionSecond, borderColor: idSecondWeekly === auth.currentUser.uid ? '#1D976C': '#A7BFE8'}}>
           <Image style={styles.pictureSecond}  source={{ uri: imgSrc2Weekly }} />
-          <Text style={styles.positionText}>2</Text>
-          <Text style={styles.userNameTop} numberOfLines={1}>{secondNameWeekly}</Text>
-          <Text style={styles.pointsTop}>{daysSecondWeekly} / {pointsSecondWeekly}</Text>
+          <Text style={styles.positionText} allowFontScaling={false}>2</Text>
+          <Text style={styles.userNameTop} numberOfLines={1} allowFontScaling={false}>{secondNameWeekly}</Text>
+          <Text style={styles.pointsTop} allowFontScaling={false}>{daysSecondWeekly} / {pointsSecondWeekly}</Text>
         </View>
         <View style={{...styles.positionThird, borderColor: idThirdWeekly === auth.currentUser.uid ? '#1D976C': '#A7BFE8'}}>
           <Image style={styles.pictureThird}  source={{ uri: imgSrc3Weekly }} />
-          <Text style={styles.positionText}>3</Text>
-          <Text style={styles.userNameTop} numberOfLines={1}>{thirdNameWeekly}</Text>
-          <Text style={styles.pointsTop}>{daysThirdWeekly} / {pointsThirdWeekly}</Text>
+          <Text style={styles.positionText} allowFontScaling={false}>3</Text>
+          <Text style={styles.userNameTop} numberOfLines={1} allowFontScaling={false}>{thirdNameWeekly}</Text>
+          <Text style={styles.pointsTop} allowFontScaling={false}>{daysThirdWeekly} / {pointsThirdWeekly}</Text>
         </View>
         <View style={{...styles.positionFirst, borderColor: idFirstWeekly === auth.currentUser.uid ? '#1D976C': '#6190E8'}}>
           <Image style={styles.pictureFirst}  source={{ uri: imgSrcWeekly }} />
-          <Text style={styles.positionText}>1</Text>
-          <Text style={styles.userNameTop} numberOfLines={1} >{firstNameWeekly}</Text>
-          <Text style={styles.pointsTop}>{daysFirstWeekly} / {pointsFirstWeekly}</Text>
+          <Text style={styles.positionText} allowFontScaling={false}>1</Text>
+          <Text style={styles.userNameTop} numberOfLines={1}  allowFontScaling={false}>{firstNameWeekly}</Text>
+          <Text style={styles.pointsTop} allowFontScaling={false}>{daysFirstWeekly} / {pointsFirstWeekly}</Text>
         </View>
       </View> : <View style={styles.topContainer}>
         <View style={{...styles.positionSecond, borderColor: idSecond === auth.currentUser.uid ? '#1D976C' : '#A7BFE8'}}>
           <Image style={{...styles.pictureSecond}}  source={{ uri: imgSrc2 }} />
-          <Text style={styles.positionText}>2</Text>
-          <Text style={styles.userNameTop} numberOfLines={1}>{secondName}</Text>
-          <Text style={styles.pointsTop}>{daysSecond} / {pointsSecond}</Text>
+          <Text style={styles.positionText} allowFontScaling={false}>2</Text>
+          <Text style={styles.userNameTop} numberOfLines={1} allowFontScaling={false}>{secondName}</Text>
+          <Text style={styles.pointsTop} allowFontScaling={false}>{daysSecond} / {pointsSecond}</Text>
         </View>
         <View style={{...styles.positionThird, borderColor: idThird === auth.currentUser.uid ? '#1D976C' : '#A7BFE8'}}>
           <Image style={styles.pictureThird}  source={{ uri: imgSrc3 }} />
-          <Text style={styles.positionText}>3</Text>
-          <Text style={styles.userNameTop} numberOfLines={1}>{thirdName}</Text>
-          <Text style={styles.pointsTop}>{daysThird} / {pointsThird}</Text>
+          <Text style={styles.positionText} allowFontScaling={false}>3</Text>
+          <Text style={styles.userNameTop} numberOfLines={1} allowFontScaling={false}>{thirdName}</Text>
+          <Text style={styles.pointsTop}  allowFontScaling={false}>{daysThird} / {pointsThird}</Text>
         </View>
         <View style={{...styles.positionFirst, borderColor: idFirst === auth.currentUser.uid ? '#1D976C' : '#6190E8'}}>
           <Image style={styles.pictureFirst}  source={{ uri: imgSrc }} />
-          <Text style={styles.positionText}>1</Text>
-          <Text style={styles.userNameTop} numberOfLines={1} >{firstName}</Text>
-          <Text style={styles.pointsTop}>{daysFirst} / {pointsFirst}</Text>
+          <Text style={styles.positionText} allowFontScaling={false}>1</Text>
+          <Text style={styles.userNameTop} numberOfLines={1}  allowFontScaling={false}>{firstName}</Text>
+          <Text style={styles.pointsTop} allowFontScaling={false}>{daysFirst} / {pointsFirst}</Text>
         </View>
       </View>}
 

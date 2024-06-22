@@ -20,7 +20,7 @@ const SettingsScreen = ({route}) => {
   const {choosenLanguage} = route.params;
 
   const scrollY = useRef(new Animated.Value(0)).current;
-  const confirmationPos = useRef(new Animated.Value(200)).current;
+  const confirmationPos = useRef(new Animated.Value(300)).current;
   const interpolatedValueForX = useRef(new Animated.Value(0)).current;
   
 
@@ -82,7 +82,7 @@ const SettingsScreen = ({route}) => {
 
   const hideConfirmation = () => {
       Animated.spring(confirmationPos, {
-          toValue: 200,
+          toValue: 300,
           speed: 10,
           bounciness: 5,
           useNativeDriver: true,

@@ -949,7 +949,7 @@ const ExerciseScreen = () => {
             </LinearGradient>
         
           <View style={styles.titleContainer}>
-            <Text style={styles.titleText}>{choosenLanguage === 'AR' ? '' : title1} A1 {choosenLanguage === 'AR' ? title1 : ''}</Text>
+            <Text style={styles.titleText} allowFontScaling={false}>{choosenLanguage === 'AR' ? '' : title1} A1 {choosenLanguage === 'AR' ? title1 : ''}</Text>
           </View>
 
           {showLists ? <Animated.FlatList 
@@ -978,7 +978,7 @@ const ExerciseScreen = () => {
             </LinearGradient>
         
           <View style={styles.titleContainer}>
-            <Text style={styles.titleText}>{choosenLanguage === 'AR' ? '' : title1} A2 {choosenLanguage === 'AR' ? title1 : ''}</Text>
+            <Text style={styles.titleText} allowFontScaling={false}>{choosenLanguage === 'AR' ? '' : title1} A2 {choosenLanguage === 'AR' ? title1 : ''}</Text>
           </View>
 
           {showLists ? <Animated.FlatList 
@@ -1008,7 +1008,7 @@ const ExerciseScreen = () => {
             </LinearGradient>
         
           <View style={styles.titleContainer}>
-            <Text style={styles.titleText}>{choosenLanguage === 'AR' ? '' : title1} B1 {choosenLanguage === 'AR' ? title1 : ''}</Text>
+            <Text style={styles.titleText} allowFontScaling={false}>{choosenLanguage === 'AR' ? '' : title1} B1 {choosenLanguage === 'AR' ? title1 : ''}</Text>
           </View>
 
 
@@ -1039,7 +1039,7 @@ const ExerciseScreen = () => {
             </LinearGradient>
         
           <View style={styles.titleContainer}>
-            <Text style={styles.titleText}>{choosenLanguage === 'AR' ? '' : title1} B2 {choosenLanguage === 'AR' ? title1 : ''}</Text>
+            <Text style={styles.titleText} allowFontScaling={false}>{choosenLanguage === 'AR' ? '' : title1} B2 {choosenLanguage === 'AR' ? title1 : ''}</Text>
           </View>
 
 
@@ -1070,7 +1070,7 @@ const ExerciseScreen = () => {
             </LinearGradient>
         
           <View style={styles.titleContainer}>
-            <Text style={styles.titleText}>{choosenLanguage === 'AR' ? '' : title1} C1 {choosenLanguage === 'AR' ? title1 : ''}</Text>
+            <Text style={styles.titleText} allowFontScaling={false}>{choosenLanguage === 'AR' ? '' : title1} C1 {choosenLanguage === 'AR' ? title1 : ''}</Text>
           </View>
 
 

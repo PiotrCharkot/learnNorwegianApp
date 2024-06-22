@@ -63,9 +63,9 @@ const PrivacyScreen = ({route}) => {
                 <Text style={styles.text}>
                     
 <Text style={styles.titleText}>Privacy Policy</Text>{'\n\n\n'}
-<Text style={styles.subtitleText}>Effective Date: [Insert Date]</Text>{'\n\n'}
+<Text style={styles.subtitleText}>Effective Date: 06.22.2024</Text>{'\n\n'}
 
-Welcome to <Text style={styles.textCursive}>[App Name]</Text>, the mobile application designed to help you learn the Norwegian language. Your privacy is important to us, and we are committed to protecting the personal information you share with us. This Privacy Policy explains how <Text style={styles.textCursive}>[Your Company Name]("we", "us", or "our")</Text>  collects, uses, discloses, and safeguards your information when you use our app.{'\n\n\n'}
+Welcome to <Text style={styles.textCursive}>Learn Norwegian</Text>, the mobile application designed to help you learn the Norwegian language. Your privacy is important to us, and we are committed to protecting the personal information you share with us. This Privacy Policy explains how <Text style={styles.textCursive}>Norsk Navigator ("we", "us", or "our")</Text>  collects, uses, discloses, and safeguards your information when you use our app.{'\n\n\n'}
 
 <Text style={styles.subtitleText}>1. Information Collection</Text>{'\n\n'}
 We collect information in the following ways:{'\n\n'}
@@ -107,7 +107,7 @@ Your information may be transferred to, and maintained on, computers located out
 We may update this Privacy Policy from time to time. You are advised to review this Privacy Policy periodically for any changes. Changes to this Privacy Policy are effective when they are posted on this page.{'\n\n\n'}
 
 <Text style={styles.subtitleText}>8. Contact Us</Text>{'\n\n'}
-If you have any questions about this Privacy Policy, please contact us at <Text style={styles.textCursive}>[Your Contact Information]</Text>.{'\n\n\n\n\n\n'}
+If you have any questions about this Privacy Policy, please contact us at: <Text style={styles.textCursive}>support@learnnorwegianapp.com</Text>{'\n\n\n\n\n\n'}
 
 </Text>
             </ScrollView>

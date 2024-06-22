@@ -74,6 +74,7 @@ const LearningScreen = () => {
   const [sound, setSound] = useState();
   const [firstLaunchTime, setFirstLaunchTime] = useState(null);
   const [within168Hours, setWithin168Hours] = useState(true);
+  const [getProBtn, setGetProBtn] = useState('upgrade to Pro')
 
 
   const opacityImgBlur = scrollY.interpolate({
@@ -260,18 +261,25 @@ const LearningScreen = () => {
   useEffect(() => {
     if (choosenLanguage === 'PL') {
       setReadingButtonTxt('Czytaj');
+      setGetProBtn('Załóż konto PRO');
     } else if (choosenLanguage === 'DE') {
       setReadingButtonTxt('Lesen');
+      setGetProBtn('Hol dir ein PRO-Konto');
     } else if (choosenLanguage === 'LT') {
       setReadingButtonTxt('Skaityk');
+      setGetProBtn('Įsigyk PRO paskyrą');
     } else if (choosenLanguage === 'AR') {
       setReadingButtonTxt('اقرأ');
+      setGetProBtn('احصل على حساب برو');
     } else if (choosenLanguage === 'UA') {
       setReadingButtonTxt('Читай');
+      setGetProBtn('Отримайте PRO-акаунт');
     } else if (choosenLanguage === 'ES') {
       setReadingButtonTxt('Leer');
+      setGetProBtn('Obtén una cuenta PRO');
     } else if (choosenLanguage === 'EN') {
       setReadingButtonTxt('Reading Hub');
+      setGetProBtn('upgrade to Pro');
     }
   }, [choosenLanguage])
 
@@ -622,7 +630,7 @@ const LearningScreen = () => {
          
           <View style={styles.readingButtonContainer}>
             <TouchableOpacity style={styles.buttonContainer} onPress={sendToPro}>
-              <Text style={styles.textButton}>upgrade to Pro</Text>
+              <Text style={styles.textButton}>{getProBtn}</Text>
             </TouchableOpacity>
           </View>
           
@@ -651,7 +659,7 @@ const LearningScreen = () => {
             </LinearGradient>
         
           <View style={{...styles.titleContainer, width: 240, left: screenWidth / 2 - 120}}>
-            <Text style={styles.titleText}>Grammatical tenses</Text>
+            <Text style={styles.titleText} allowFontScaling={false}>Grammatical tenses</Text>
           </View>
           <Animated.FlatList 
             style={styles.flatlist}
@@ -680,7 +688,7 @@ const LearningScreen = () => {
             </LinearGradient>
         
           <View style={{...styles.titleContainer, width: 240, left: screenWidth / 2 - 120}}>
-            <Text style={styles.titleText}>Sentence structure</Text>
+            <Text style={styles.titleText} allowFontScaling={false}>Sentence structure</Text>
           </View>
           <Animated.FlatList 
             style={styles.flatlist}
@@ -709,7 +717,7 @@ const LearningScreen = () => {
             </LinearGradient>
         
           <View style={{...styles.titleContainer, width: 120, left: screenWidth / 2 - 60}}>
-            <Text style={styles.titleText}>Verb</Text>
+            <Text style={styles.titleText} allowFontScaling={false}>Verb</Text>
           </View>
           <Animated.FlatList 
             style={styles.flatlist}
@@ -738,7 +746,7 @@ const LearningScreen = () => {
             </LinearGradient>
         
           <View style={{...styles.titleContainer, width: 120, left: screenWidth / 2 - 60}}>
-            <Text style={styles.titleText}>Noun</Text>
+            <Text style={styles.titleText} allowFontScaling={false}>Noun</Text>
           </View>
           <Animated.FlatList 
             style={styles.flatlist}
@@ -767,7 +775,7 @@ const LearningScreen = () => {
             </LinearGradient>
         
           <View style={{...styles.titleContainer, width: 260, left: screenWidth / 2 - 130}}>
-            <Text style={styles.titleText}>Adjectives and Adverbs</Text>
+            <Text style={styles.titleText} allowFontScaling={false}>Adjectives and Adverbs</Text>
           </View>
           <Animated.FlatList 
             style={styles.flatlist}
@@ -796,7 +804,7 @@ const LearningScreen = () => {
             </LinearGradient>
         
           <View style={{...styles.titleContainer, width: 280, left: screenWidth / 2 - 140}}>
-            <Text style={styles.titleText}>Pronoun and Determinative</Text>
+            <Text style={styles.titleText} allowFontScaling={false}>Pronoun and Determinative</Text>
           </View>
           <Animated.FlatList 
             style={styles.flatlist}

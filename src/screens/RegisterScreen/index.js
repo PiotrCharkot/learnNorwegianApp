@@ -471,7 +471,7 @@ useEffect(() => {
                         </View>
 
                         <View style={styles.inputTakenMsgCont}>
-                            <Text style={styles.inputTakenMsgTxt}>{isUsernameTaken ? msgTaken : ""}</Text>
+                            <Text style={styles.inputTakenMsgTxt} allowFontScaling={false}>{isUsernameTaken ? msgTaken : ""}</Text>
                         </View>
                     
                     </View>

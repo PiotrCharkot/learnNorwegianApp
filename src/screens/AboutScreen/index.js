@@ -62,7 +62,7 @@ const AboutScreen = ({route}) => {
             <ScrollView style={styles.textContainer}>
                 <Text style={styles.text}>
                     
-<Text style={styles.titleText}>About [App Name]</Text>{'\n\n\n'}
+<Text style={styles.titleText}>About Learn Norwegian</Text>{'\n\n\n'}
 
 <View style={styles.btnContainer}>
 
@@ -74,11 +74,11 @@ const AboutScreen = ({route}) => {
 {'\n\n\n'}
 <Text style={styles.subtitleText}>Discover Language, Discover the World</Text>{'\n\n'}
 
-Welcome to <Text style={styles.textCursive}>[App Name]</Text>, the innovative mobile application launched in 2024, designed to revolutionize the way you learn Norwegian. Whether you are starting from scratch or looking to master the language, our app offers a comprehensive set of tools to help you achieve your goals. Available in multiple languages including English, German, Polish, Spanish, Ukrainian, Lithuanian, and Arabic, <Text style={styles.textCursive}>[App Name]</Text> caters to a global audience, making language learning accessible to everyone.{'\n\n\n'}
+Welcome to <Text style={styles.textCursive}>Learn Norwegian</Text>, the innovative mobile application launched in 2024, designed to revolutionize the way you learn Norwegian. Whether you are starting from scratch or looking to master the language, our app offers a comprehensive set of tools to help you achieve your goals. Available in multiple languages including English, German, Polish, Spanish, Ukrainian, Lithuanian, and Arabic, <Text style={styles.textCursive}>Learn Norwegian</Text> caters to a global audience, making language learning accessible to everyone.{'\n\n\n'}
 
 <Text style={styles.subtitleText}>Our Approach</Text>{'\n\n'}
 <Text style={styles.textCursive}>Diverse Learning Sections</Text>:{'\n\n'}
-<Text style={styles.textCursive}>[App Name]</Text> is structured into distinct sections, each tailored to different aspects of language learning:{'\n\n'}
+<Text style={styles.textCursive}>Learn Norwegian</Text> is structured into distinct sections, each tailored to different aspects of language learning:{'\n\n'}
 
 <Text style={styles.textCursive}>Grammar Guide (English Only)</Text>:{'\n\n'}
 Dive deep into the intricacies of Norwegian grammar with our exclusive English-only section. This part of the app provides step-by-step explanations of various grammatical concepts, helping you grasp complex rules with ease.{'\n\n'}
@@ -93,12 +93,12 @@ Improve your reading skills with texts tailored to various difficulty levels. Ea
 Join a community of learners and compete in our rankings. Earn points through activities like grammar exercises, reading, or using flashcards. Track your progress with daily streaks by earning a minimum of 200 points a day, and see how you stack up in our weekly and all-time rankings.{'\n\n\n'}
 
 <Text style={styles.subtitleText}>Continuous Improvement</Text>{'\n\n'}
-Our commitment to enhancing your learning experience is reflected in our constant updates. We continuously add, change, and improve content within <Text style={styles.textCursive}>[App Name]</Text> to keep the learning process dynamic and up-to-date.{'\n\n\n'}
+Our commitment to enhancing your learning experience is reflected in our constant updates. We continuously add, change, and improve content within <Text style={styles.textCursive}>Learn Norwegian</Text> to keep the learning process dynamic and up-to-date.{'\n\n\n'}
 
 <Text style={styles.subtitleText}>Get Started Today!</Text>{'\n\n'}
-Create your account, customize your profile with your username and picture, and embark on your language learning journey with <Text style={styles.textCursive}>[App Name]</Text>. Discover the joy of learning Norwegian and unlock new opportunities.{'\n\n'}
+Create your account, customize your profile with your username and picture, and embark on your language learning journey with <Text style={styles.textCursive}>Learn Norwegian</Text>. Discover the joy of learning Norwegian and unlock new opportunities.{'\n\n'}
 
-For any inquiries or feedback, please contact us at <Text style={styles.textCursive}>[Your Contact Information]</Text>.{'\n\n\n\n\n\n'}
+For any inquiries or feedback, please contact us at: <Text style={styles.textCursive}>support@learnnorwegianapp.com</Text>{'\n\n\n\n\n\n'}
 
 </Text>
             </ScrollView>

@@ -82,7 +82,8 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         borderColor: 'black',
         bottom: - 50,
-        fontSize: 12
+        fontSize: 12,
+        fontWeight: '600'
     },
     toggleContainer: {
         position: 'absolute',

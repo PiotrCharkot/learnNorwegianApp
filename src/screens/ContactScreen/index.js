@@ -69,19 +69,14 @@ const ContactScreen = ({route}) => {
 Have questions, feedback, or need assistance? Reach out to us, and we'll ensure your language learning journey is smooth and enjoyable. Here’s how you can contact us:{'\n\n'}
 
 <Text style={styles.subtitleText}>Email Us</Text>{'\n\n'}
-<Text style={styles.textCursive}>Support</Text>: support@[appname].com - Get help with any issues or questions.{'\n'}
-<Text style={styles.textCursive}>Feedback</Text>: feedback@[appname].com - Send us your feedback, suggestions, and ideas.{'\n\n'}
-<Text style={styles.subtitleText}>Call Us</Text>{'\n\n'}
-<Text style={styles.textCursive}>Phone</Text>: +123 456 7890 (Available from 9 AM to 5 PM on weekdays){'\n\n'}
+<Text style={styles.textCursive}>Support: support@learnnorwegianapp.com</Text> - Get help with any issues or questions. Send us your feedback, suggestions, and ideas.{'\n\n'}
 <Text style={styles.subtitleText}>Follow Us</Text>{'\n\n'}
-<Text style={styles.textCursive}>Facebook</Text>: Facebook.com/AppName{'\n'}
-<Text style={styles.textCursive}>Twitter</Text>: @AppName{'\n'}
-<Text style={styles.textCursive}>Instagram</Text>: @AppName{'\n\n'}
+{/* <Text style={styles.textCursive}>Facebook</Text>: Facebook.com/AppName{'\n'}
+<Text style={styles.textCursive}>Twitter</Text>: @AppName{'\n'} */}
+<Text style={styles.textCursive}>Instagram: @learnnorwegiannow{'\n\n'}</Text>
 <Text style={styles.subtitleText}>Frequently Asked Questions</Text>{'\n\n'}
-For quick answers, check out our FAQ section on our website: www.appname.com/faq{'\n\n'}
-<Text style={styles.subtitleText}>Visit Us</Text>{'\n\n'}
-<Text style={styles.textCursive}>Address</Text>: 123 App Street, App City, APP 12345{'\n\n'}
-We look forward to hearing from you and are eager to help you make the most of <Text style={styles.textCursive}>[App Name]</Text>. Whether you have a question, a problem, or just want to share your experiences, don't hesitate to get in touch!{'\n\n\n\n\n\n'}
+For quick answers, check out our FAQ section on our website: <Text style={styles.textCursive}>www.learnnorwegianapp.com/faq</Text>{'\n\n'}
+We look forward to hearing from you and are eager to help you make the most of <Text style={styles.textCursive}>Learn Norwegian</Text>. Whether you have a question, a problem, or just want to share your experiences, don't hesitate to get in touch!{'\n\n\n\n\n\n'}
 
 </Text>
             </ScrollView>

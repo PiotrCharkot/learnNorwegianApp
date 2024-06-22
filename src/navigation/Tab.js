@@ -30,6 +30,13 @@ const Tabs = () => {
 
     const storage = getStorage();
 
+
+    const formatDate = (date) => {
+        const isoString = date.toISOString(); // Get the ISO string
+        const [year, month, day] = isoString.split('T')[0].split('-'); // Extract year, month, and day
+        return `${day}/${month}/${year}`; // Format the date as dd/MM/yyyy
+    };
+
     const randomPicture = ['reindeer-profile.png', 'reindeer-profile2.png', 'reindeer-profile3.png','reindeer-profile4.png', 'reindeer-profile5.png', 'reindeer-profile6.png', 'reindeer-profile7.png', 'reindeer-profile8.png', 'reindeer-profile9.png', 'reindeer-profile10.png', 'reindeer-profile11.png','reindeer-profile12.png', 'reindeer-profile13.png', 'reindeer-profile14.png', 'reindeer-profile15.png', 'reindeer-profile16.png', 'reindeer-profile17.png', 'reindeer-profile18.png', 'reindeer-profile19.png','reindeer-profile20.png', 'reindeer-profile21.png', 'reindeer-profile22.png', 'reindeer-profile23.png']
    
 
@@ -144,7 +151,7 @@ const Tabs = () => {
                 weeklyPoints: 0,
                 dailyPoints: 0,
                 daysInRow: 0,
-                lastUpdate: new Date().toLocaleDateString(),
+                lastUpdate: formatDate(new Date()),
                 userIsPro: false,
                 gold: 0,
                 silver: 0,

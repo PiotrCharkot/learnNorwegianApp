@@ -26,8 +26,8 @@ const CardBlack = (params) => {
                         </View>
 
                             <View style={styles.titleContainer}>
-                                <Text style={{...styles.textTitle, shadowColor: params.color3}}>{params.title}</Text>
-                                <Text style={styles.textDescription}>{params.description}</Text>
+                                <Text style={{...styles.textTitle, shadowColor: params.color3}} allowFontScaling={false}>{params.title}</Text>
+                                <Text style={styles.textDescription} allowFontScaling={false}>{params.description}</Text>
                             </View>
                             <View style={styles.reindeerContainer}>
                                 <Image style={{...styles.reindeerPikto, tintColor: params.stars > 0 ? '#faf739' : '#252626'}} source={require('../../../assets/reindeerPikto.png')} />

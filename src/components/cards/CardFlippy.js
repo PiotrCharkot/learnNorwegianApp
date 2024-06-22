@@ -213,7 +213,7 @@ const styles = StyleSheet.create({
         },
         shadowOpacity: 0.45,
         shadowRadius: 14.5,
-        elevation: 5
+        //elevation: 5
     },
     gradientNor: {
         height: '100%',
@@ -237,7 +237,7 @@ const styles = StyleSheet.create({
         },
         shadowOpacity: 0.45,
         shadowRadius: 14.5,
-        elevation: 5     
+        //elevation: 5     
     },
     opacityFlip: {
         justifyContent: 'center',

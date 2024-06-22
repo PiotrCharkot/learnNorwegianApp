@@ -77,7 +77,7 @@ const RankingItem = (item) => {
         
 
         <View style={styles.positionContainer}>
-            <Text style={styles.positionText}>{item.params.position}</Text>
+            <Text style={styles.positionText} allowFontScaling={false}>{item.params.position}</Text>
         </View>
 
 
@@ -92,20 +92,20 @@ const RankingItem = (item) => {
             
 
                 <View style={styles.proContainer}>
-                    <Text style={styles.proText}>{item.params.userIsPro ? 'PRO' : ''}</Text>
+                    <Text style={styles.proText} allowFontScaling={false}>{item.params.userIsPro ? 'PRO' : ''}</Text>
                 </View>
 
                 <View style={styles.nameContainer}>
-                    <Text style={styles.nameText}>{item.params.userName}</Text>
+                    <Text style={styles.nameText} allowFontScaling={false}>{item.params.userName}</Text>
                 </View>
 
                 <View style={styles.resultsContainer}>
                     <View style={styles.daysContainer}>
-                        <Text style={styles.daysText}>{item.params.lastUpdate !== item.today && item.params.lastUpdate !== item.yesterday ? 0 : item.params.daysInRow}  </Text> 
+                        <Text style={styles.daysText} allowFontScaling={false}>{item.params.lastUpdate !== item.today && item.params.lastUpdate !== item.yesterday ? 0 : item.params.daysInRow}  </Text> 
                         <Animated.Image style={{...styles.pictureSun, transform: [{rotate: circlePositionDeg}] }}  source={require('../../../assets/sun.png')} />
                     </View>
                     <View style={styles.pointsContainer}>
-                        <Text style={styles.pointsText}>{item.weekly ? item.params.weeklyPoints : item.params.totalPoints}</Text>
+                        <Text style={styles.pointsText} allowFontScaling={false}>{item.weekly ? item.params.weeklyPoints : item.params.totalPoints}</Text>
                     </View>
                 </View>
                 
@@ -206,7 +206,7 @@ const styles = StyleSheet.create({
     },
     pointsText: {
         fontSize: 16,
-        fontWeight: '400',
+        fontWeight: '600',
     },
     proContainer: {
         position: 'absolute',
@@ -215,7 +215,7 @@ const styles = StyleSheet.create({
         
     },
     proText: {
-        fontSize: 70,
+        fontSize: 80,
         color: 'rgba(255, 255, 255, 0.15)',
         fontWeight: '900'
     },

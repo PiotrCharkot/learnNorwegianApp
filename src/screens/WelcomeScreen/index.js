@@ -15,32 +15,48 @@ const WelcomeScreen = () => {
     const opacityText = useRef(new Animated.Value(1)).current;
 
 
-    const [playIntro, setPlayIntro] = useState(false);
+    async function save(key, value) {
+      await SecureStore.setItemAsync(key, value);
+    }
+    
+    async function getValueFor(key) {
+      let result = await SecureStore.getItemAsync(key);
+      if (result) {
+        console.log('result is in SecureStore');
+      } else {
+        if (key === 'sound') {
+          save('sound', '1');  
+        } else if (key === 'notifications') {
+          save('notifications', '0'); 
+        } else if (key === 'language') {
+          save('language', 'EN');
+        }
+        
+      }
+    }
 
-
-    //get timestamp from securestore for appFirstLunch. If value === undefinde than show intro and set value
+    
 
     const moveToMain = (shouldPlayIntro) => {
 
-      if (shouldPlayIntro) { // get value from SecureStore to check if intro was shown
+      if (shouldPlayIntro) { 
         navigation.replace('Intro1', {skipable: false, language: 'EN'});  
       } else {
         navigation.navigate("Main");
-        // change value in SecureStore to => intro shown
       }
     }
 
     useEffect(() => {
-
+console.log('width',screenWidth);
       const checkFirstLaunch = async () => {
         try {
-          const firstLaunch = await SecureStore.getItemAsync('firstLaunchTime166'); 
+          const firstLaunch = await SecureStore.getItemAsync('firstLaunchTime'); 
           if (firstLaunch === null) {
 
             console.log('luanching for the first time');
-            //setPlayIntro(true);
+
             const currentTime = new Date().toISOString();
-            await SecureStore.setItemAsync('firstLaunchTime166', currentTime);
+            await SecureStore.setItemAsync('firstLaunchTime', currentTime);
 
             setTimeout(() => {
               moveToMain(true);
@@ -77,6 +93,9 @@ const WelcomeScreen = () => {
       }).start()
       
       
+      getValueFor('sound');
+      getValueFor('notifications');
+      getValueFor('language');
       
       checkFirstLaunch();
 
@@ -98,7 +117,7 @@ const WelcomeScreen = () => {
           >
             
 
-            <Animated.Text style={{...styles.logoText, opacity: opacityText,}}>Lær norsk</Animated.Text>
+            <Animated.Text style={{...styles.logoText, opacity: opacityText,}} allowFontScaling={false}>Lær norsk</Animated.Text>
           
           </Animated.View>
         }
@@ -146,7 +165,7 @@ const styles = StyleSheet.create({
   },
   logoText: {
     marginTop: 80,
-    fontSize: 40,
+    fontSize: Math.floor(screenWidth / 8.5),
     color: 'black',
     fontWeight: 'bold',
     opacity: 1

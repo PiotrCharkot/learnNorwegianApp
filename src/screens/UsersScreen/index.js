@@ -21,13 +21,20 @@ const UsersScreen = () => {
 
     const pointsToScore = 200;
 
-    let sixDaysAgo = new Date(new Date().setDate(new Date().getDate()-6)).toLocaleDateString();
-    let fiveDaysAgo = new Date(new Date().setDate(new Date().getDate()-5)).toLocaleDateString();
-    let fourDaysAgo = new Date(new Date().setDate(new Date().getDate()-4)).toLocaleDateString();
-    let threeDaysAgo = new Date(new Date().setDate(new Date().getDate()-3)).toLocaleDateString();
-    let twoDaysAgo = new Date(new Date().setDate(new Date().getDate()-2)).toLocaleDateString();
-    let yesterday = new Date(new Date().setDate(new Date().getDate()-1)).toLocaleDateString();
-    let today = new Date().toLocaleDateString();
+
+    const formatDate = (date) => {
+        const isoString = date.toISOString(); // Get the ISO string
+        const [year, month, day] = isoString.split('T')[0].split('-'); // Extract year, month, and day
+        return `${day}/${month}/${year}`; // Format the date as dd/MM/yyyy
+    };
+
+    let sixDaysAgo = formatDate(new Date(new Date().setDate(new Date().getDate()-6)));
+    let fiveDaysAgo = formatDate(new Date(new Date().setDate(new Date().getDate()-5)));
+    let fourDaysAgo = formatDate(new Date(new Date().setDate(new Date().getDate()-4)));
+    let threeDaysAgo = formatDate(new Date(new Date().setDate(new Date().getDate()-3)));
+    let twoDaysAgo = formatDate(new Date(new Date().setDate(new Date().getDate()-2)));
+    let yesterday = formatDate(new Date(new Date().setDate(new Date().getDate()-1)));
+    let today = formatDate(new Date());
 
     let dayOfWeek = new Date(new Date().setDate(new Date().getDate())).getDay() === 0 ? 7 : new Date(new Date().setDate(new Date().getDate())).getDay();
 
@@ -56,8 +63,8 @@ const UsersScreen = () => {
             key: 0
         },
         {
-            userName: 'testing33',
-            userId: 'XgSk3fUb3ZQJ0r6XoxnBi2tebDj1',
+            userName: 'Cryptowave',
+            userId: '6erXeolvGlPwGMs9AN5HOm8cn492',
             key: 1
         },
         {
@@ -134,6 +141,116 @@ const UsersScreen = () => {
             userName: 'nebulux',
             userId: 'L4XAAmzbINP5Mon1t4Kwep8meR73',
             key: 16
+        },
+        {
+            userName: 'Juno Eclipse',
+            userId: 'jKdVAif84xhz0ryVOCAMNFwzNs23',
+            key: 17
+        },
+        {
+            userName: 'Feuerwerk',
+            userId: 'YxDpyRrBU8M9HoF9QpdKzMsOJFO2',
+            key: 18
+        },
+        {
+            userName: 'zima',
+            userId: 'LasHJ9YGhLMtZkPimWaYybyCoYZ2',
+            key: 19
+        },
+        {
+            userName: 'Dubina',
+            userId: 'VZPtCPFFuGTW5PHJs4gwNckoU8b2',
+            key: 20
+        },
+        {
+            userName: 'Daina',
+            userId: '6EVQLYyvp4NXjWjojDEqIx4oYbr2',
+            key: 21
+        },
+        {
+            userName: 'Spellbound',
+            userId: 'EfCuBDZlvSZq03z6XGTxUzzS4zL2',
+            key: 22
+        },
+        {
+            userName: 'Mimosa',
+            userId: 'kkqIyNMJvKTEU71s3Z37ZQXxxNT2',
+            key: 23
+        },
+        {
+            userName: 'Chabry',
+            userId: 'E1Z33VyWABbhKodydBKBqBuCccu2',
+            key: 24
+        },
+        {
+            userName: 'Geisterwolf',
+            userId: 'wbclBxTpY5MMZBUrFqLObxmkU4g2',
+            key: 25
+        },
+        {
+            userName: 'Vilkas',
+            userId: 'LMXKPVF46cZgTywInubbOvKNcz92',
+            key: 26
+        },
+        {
+            userName: 'Astrocore',
+            userId: 'LA3DEVvFoRf9QrLHnYkWg5wLi9A2',
+            key: 27
+        },
+        {
+            userName: 'Usniak',
+            userId: 'eLgL05rHspUeFinIFZFg0E9HFPu2',
+            key: 28
+        },
+        {
+            userName: 'Nebesa',
+            userId: 'OonXUsYMlPgppxK1YzbhnMzOaAE2',
+            key: 29
+        },
+        {
+            userName: 'Lunarscape',
+            userId: 'RpxYlAMIJLPmCjMkq19PTC7k3nD2',
+            key: 30
+        },
+        {
+            userName: 'Ambar',
+            userId: '5pN8DGNndCZjkoYpB0jLn5yDbqA2',
+            key: 31
+        },
+        {
+            userName: 'Marea',
+            userId: 'HQf974VYVuWqymt7CDR684VWaLv1',
+            key: 32
+        },
+        {
+            userName: 'Kalyna',
+            userId: 'AwYXHybC7UeewmoiWAowP6vOpri1',
+            key: 33
+        },
+        {
+            userName: 'zima86',
+            userId: 'Y76jyGLnEWhd7OXj8FVHydS5J8q2',
+            key: 34
+        },
+        {
+            userName: 'juno',
+            userId: '0da0F32UHjXEHWMdXtoSdph04Co2',
+            key: 35
+        },
+        {
+            userName: 'Ionpulse',
+            userId: 'z1jMxf2x9tToP5GLLljMiQ1kE803',
+            key: 36
+        },
+        {
+            userName: 'Wanderlust',
+            userId: 'qscHk9zIbveUClSpfyWeIl7Ljvh2',
+            key: 37
+        },
+        {
+            userName: 'Emberveil',
+            userId: 'gBKHxti5mwQkIrhuBb4gp9NNyC53',
+            key: 38
         }
 
 
@@ -231,10 +348,10 @@ const UsersScreen = () => {
     
     
             updateDoc(docRef, {
-                dailyPoints: lastUpdateVal === new Date().toLocaleDateString() ? currentDailyScore + myNumericValue : myNumericValue,
+                dailyPoints: lastUpdateVal === formatDate(new Date()) ? currentDailyScore + myNumericValue : myNumericValue,
                 totalPoints: totalPointsVal + myNumericValue,
                 weeklyPoints: currentWeek.includes(lastUpdateVal) ? weeklyPointsVal + myNumericValue : myNumericValue,
-                lastUpdate: new Date().toLocaleDateString(),
+                lastUpdate: formatDate(new Date()),
                 daysInRow: currentDailyScore < pointsToScore && currentDailyScore + myNumericValue >= pointsToScore ? daysInRowVal + 1 : daysInRowVal
             })
             .then(docRef => {

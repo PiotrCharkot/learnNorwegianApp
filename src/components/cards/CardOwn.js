@@ -56,9 +56,9 @@ const CardOwn = (params) => {
         
         <View style={styles.bigCircle}>
             <View style={styles.smallCircle}>
-                <Text style={styles.textTitle}>{params.title}</Text>
-                <Text style={styles.textLang}>{params.lang}</Text>
-                <Text style={styles.textLang}></Text>
+                <Text style={styles.textTitle} allowFontScaling={false}>{params.title}</Text>
+                <Text style={styles.textLang} allowFontScaling={false}>{params.lang}</Text>
+                <Text style={styles.textLang} allowFontScaling={false}></Text>
                 
             </View>
         </View>
@@ -132,7 +132,7 @@ const styles = StyleSheet.create({
     },
     touchableEditText: {
         color: 'white',
-        fontSize: 12
+        fontSize: 10
     },
     touchableTest: {
         position: 'absolute',
@@ -144,12 +144,12 @@ const styles = StyleSheet.create({
         bottom: 10,
         right: 25,
         borderWidth: 1.5,
-        borderColor: '#282e38'
+        borderColor: '#282e38',
     },
     touchableTestText: {
         color: '#282e38',
         fontWeight: '500',
-        fontSize: 12
+        fontSize: 10
     },
    
 });
