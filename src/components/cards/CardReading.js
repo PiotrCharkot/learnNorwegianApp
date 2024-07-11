@@ -21,10 +21,19 @@ const CardReading = (params) => {
 
 
     const goToReading = () => {
-        navigation.navigate({
-            name: 'Text',
-            params: {textId: params.textId, language: params.language}
-          })
+
+        if (params.hasAccess || !params.requiresPro) {
+            navigation.navigate({
+                name: 'Text',
+                params: {textId: params.textId, language: params.language}
+            })
+        } else {
+            navigation.navigate({
+                name: 'Paywall',
+                params: {language: params.language}
+            })
+        }
+        
     }
 
     //'#fad346', '#ff8c00' nice orange gradient
@@ -70,6 +79,12 @@ const CardReading = (params) => {
         <View style={styles.titleContainer}> 
             <Text style={styles.titleText} allowFontScaling={false}>{params.title}</Text>
         </View>
+
+        
+        {params.hasAccess || !params.requiresPro ? null : <View style={styles.proContainer}>
+            <Image style={styles.proLockImg} source={require('../../../assets/padlock2.png')} />
+            <Text style={styles.proText}>PRO</Text>
+        </View>}
         
     </TouchableOpacity>
   )
@@ -217,6 +232,25 @@ const styles = StyleSheet.create({
     titleText: {
         color: 'white',
         fontSize: 12
+    },
+    proContainer: {
+        position: 'absolute',
+        alignItems: 'center',
+        bottom: 35,
+        right: 15,
+        transform: [{rotate: '-20deg'}]
+    },
+    proText: {
+        fontSize: 18,
+        color: '#4a4a4a',
+        fontWeight: '900',
+        opacity: 0.5
+    },
+    proLockImg: {
+        height: 15,
+        width: 15,
+        tintColor: '#4a4a4a',
+        opacity: 0.5
     }
     
    

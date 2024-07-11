@@ -1,4 +1,4 @@
-import { View, Text, StyleSheet, Dimensions, TouchableOpacity, Animated } from 'react-native'
+import { View, Text, StyleSheet, Dimensions, TouchableOpacity, Animated, Image } from 'react-native'
 import React, { useRef, useEffect, useState } from 'react'
 import { useNavigation } from "@react-navigation/native";
 import { LinearGradient } from 'expo-linear-gradient';
@@ -45,13 +45,28 @@ const CardExe = (params) => {
         }
 
         
-    }, [barOffset, barOffsetAver, params.barsData])
+    }, [barOffset, barOffsetAver, params.barsData]);
+
+
+    
+
+    const handlePress = () => {
+
+        if (params.hasAccess || !params.requiresPro) {
+            navigation.navigate(params.link, {savedLang: language, data: dataExercie})
+        } else {
+            navigation.navigate({
+                name: 'Paywall',
+                params: {language: language}
+            })
+        }
+    }
 
     
 
     
   return (
-    <TouchableOpacity style={styles.mainContainer} onPress={() => navigation.navigate(params.link, {savedLang: language, data: dataExercie})}>
+    <TouchableOpacity style={styles.mainContainer} onPress={handlePress}>
         <LinearGradient colors={[ '#6441A5','#6441A5', '#6441A5',  '#2a0845']} style={styles.outterContainer} >
 
 
@@ -106,8 +121,13 @@ const CardExe = (params) => {
             </View>
 
 
+            {params.hasAccess || !params.requiresPro ? null : <View style={styles.proContainer}>
+                <Image style={styles.proLockImg} source={require('../../../assets/padlock2.png')} />
+                <Text style={styles.proText}>PRO</Text>
+            </View>}
 
-            <View style={styles.bestContainer}></View>
+
+
         </View>
 
     </TouchableOpacity>
@@ -240,4 +260,23 @@ const styles = StyleSheet.create({
         width: screenWidth * 0.2,
         height: screenWidth * 0.2,
     },
+    proContainer: {
+        position: 'absolute',
+        alignItems: 'center',
+        bottom: 40,
+        right: 15,
+        transform: [{rotate: '-20deg'}]
+    },
+    proText: {
+        fontSize: 20,
+        color: '#4a4a4a',
+        fontWeight: '900',
+        opacity: 0.5
+    },
+    proLockImg: {
+        height: 15,
+        width: 15,
+        tintColor: '#4a4a4a',
+        opacity: 0.5
+    }
 })

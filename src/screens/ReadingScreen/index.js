@@ -13,7 +13,7 @@ import textListData2 from '../../listData/textLists/textListData2';
 import textListData3 from '../../listData/textLists/textListData3';
 import textListData4 from '../../listData/textLists/textListData4';
 import textListData5 from '../../listData/textLists/textListData5';
-import textListData6 from '../../listData/textLists/textListData6';
+import useRevenueCat from '../../../hooks/useRevenueCat';
 
 const screenWidth = Dimensions.get('window').width;
 const cardSize = screenWidth * 0.6;
@@ -33,6 +33,8 @@ const ReadingScreen = ({route}) => {
    
   const isFocused = useIsFocused();
   const navigation = useNavigation();
+
+  const { currentOffering, customerInfo, isProMember} = useRevenueCat();
   
   const scrollY = useRef(new Animated.Value(0)).current;
   const scrollX = useRef(new Animated.Value(0)).current;
@@ -60,7 +62,6 @@ const ReadingScreen = ({route}) => {
   const [dataFlatList3, setDataFlatList3] = useState([]);
   const [dataFlatList4, setDataFlatList4] = useState([]);
   const [dataFlatList5, setDataFlatList5] = useState([]);
-  const [dataFlatList6, setDataFlatList6] = useState([]);
   const [title, setTitle] = useState('Level')
   const [random, setRandom] = useState(0);
   const [isSoundOn, setIsSoundOn] = useState(true);
@@ -68,6 +69,7 @@ const ReadingScreen = ({route}) => {
   const [sound2, setSound2] = useState();
   const [sound3, setSound3] = useState();
 
+  const userHasAccess = isProMember || within168Hours;
 
 
   const xPositionDeg = interpolatedValueForX.interpolate({
@@ -424,7 +426,7 @@ const ReadingScreen = ({route}) => {
 
         navigation.navigate('Main');
     }, 800)
-}
+  }
 
   useEffect(() => {
     let tempVal = Math.floor(Math.random() * imagesMain.length);
@@ -434,7 +436,6 @@ const ReadingScreen = ({route}) => {
     setDataFlatList3([{key: 'left-spacer'}, ...textListData3, {key: 'right-spacer'}])
     setDataFlatList4([{key: 'left-spacer'}, ...textListData4, {key: 'right-spacer'}])
     setDataFlatList5([{key: 'left-spacer'}, ...textListData5, {key: 'right-spacer'}])
-    setDataFlatList6([{key: 'left-spacer'}, ...textListData6, {key: 'right-spacer'}])
   }, [])
 
   useEffect(() => {
@@ -520,7 +521,7 @@ const ReadingScreen = ({route}) => {
 
     return <Animated.View style={{transform: [{perspective: 3000}, {rotateY: rotateVal}, {scaleY: scaleVal}]}}>
 
-      <CardReading title={item.title} textId={item.textId} level={item.level} language={choosenLanguage}/>
+      <CardReading title={item.title} textId={item.textId} level={item.level} language={choosenLanguage} hasAccess={userHasAccess} requiresPro={item.requiresPro}/>
     </Animated.View>
   }
 
@@ -552,7 +553,7 @@ const ReadingScreen = ({route}) => {
 
     return <Animated.View style={{transform: [{perspective: 3000}, {rotateY: rotateVal}, {scaleY: scaleVal}]}}>
 
-      <CardReading title={item.title} textId={item.textId} level={item.level} language={choosenLanguage} />
+      <CardReading title={item.title} textId={item.textId} level={item.level} language={choosenLanguage} hasAccess={userHasAccess} requiresPro={item.requiresPro}/>
     </Animated.View>
   }
 
@@ -583,7 +584,7 @@ const ReadingScreen = ({route}) => {
 
     return <Animated.View style={{transform: [{perspective: 3000}, {rotateY: rotateVal}, {scaleY: scaleVal}]}}>
 
-      <CardReading title={item.title} textId={item.textId} level={item.level} language={choosenLanguage} />
+      <CardReading title={item.title} textId={item.textId} level={item.level} language={choosenLanguage} hasAccess={userHasAccess} requiresPro={item.requiresPro} />
     </Animated.View>
   }
 
@@ -613,7 +614,7 @@ const ReadingScreen = ({route}) => {
 
     return <Animated.View style={{transform: [{perspective: 3000}, {rotateY: rotateVal}, {scaleY: scaleVal}]}}>
 
-      <CardReading title={item.title} textId={item.textId} level={item.level} language={choosenLanguage} />
+      <CardReading title={item.title} textId={item.textId} level={item.level} language={choosenLanguage} hasAccess={userHasAccess} requiresPro={item.requiresPro}/>
     </Animated.View>
   }
 
@@ -643,7 +644,7 @@ const ReadingScreen = ({route}) => {
 
     return <Animated.View style={{transform: [{perspective: 3000}, {rotateY: rotateVal}, {scaleY: scaleVal}]}}>
 
-      <CardReading title={item.title} textId={item.textId} level={item.level} language={choosenLanguage} />
+      <CardReading title={item.title} textId={item.textId} level={item.level} language={choosenLanguage} hasAccess={userHasAccess} requiresPro={item.requiresPro} />
     </Animated.View>
   }
 
@@ -673,7 +674,7 @@ const ReadingScreen = ({route}) => {
 
     return <Animated.View style={{transform: [{perspective: 3000}, {rotateY: rotateVal}, {scaleY: scaleVal}]}}>
 
-      <CardReading title={item.title} textId={item.textId} level={item.level} language={choosenLanguage} />
+      <CardReading title={item.title} textId={item.textId} level={item.level} language={choosenLanguage} hasAccess={userHasAccess} requiresPro={item.requiresPro}/>
     </Animated.View>
   }
 

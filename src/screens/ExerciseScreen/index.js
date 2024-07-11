@@ -17,6 +17,7 @@ import exerciseList2 from '../../listData/exerciseLists/exerciseList2';
 import exerciseList3 from '../../listData/exerciseLists/exerciseList3';
 import exerciseList4 from '../../listData/exerciseLists/exerciseList4';
 import exerciseList5 from '../../listData/exerciseLists/exerciseList5';
+import useRevenueCat from '../../../hooks/useRevenueCat';
 
 
 const screenWidth = Dimensions.get('window').width;
@@ -40,6 +41,9 @@ const ExerciseScreen = () => {
    
   const isFocused = useIsFocused();
   const navigation = useNavigation();
+
+  const { currentOffering, customerInfo, isProMember} = useRevenueCat();
+
   const scrollY = useRef(new Animated.Value(0)).current;
   const scrollX = useRef(new Animated.Value(0)).current;
   const scrollX2 = useRef(new Animated.Value(0)).current;
@@ -73,6 +77,8 @@ const ExerciseScreen = () => {
   const [showLists, setShowLists] = useState(false);
   const [firstLaunchTime, setFirstLaunchTime] = useState(null);
   const [within168Hours, setWithin168Hours] = useState(true);
+
+  const userHasAccess = isProMember || within168Hours;
 
   const opacityImgBlur = scrollY.interpolate({
     inputRange: [0, 60],
@@ -216,7 +222,7 @@ const ExerciseScreen = () => {
           console.log('it has launched before and hours difference in exercise screen is: ', hoursDifference);
 
 
-          if (hoursDifference >= 168) {
+          if (hoursDifference >= 1680) { // change to 168
             setWithin168Hours(false);
             console.log('free loading is over');
           }
@@ -675,6 +681,8 @@ const ExerciseScreen = () => {
       link={item.link}
       language={choosenLanguage}
       barsData={item.bars}
+      hasAccess={userHasAccess}
+      requiresPro={item.requiresPro}
       dataExercie={dataExerciseA1}/>
     </Animated.View>
   }
@@ -731,6 +739,8 @@ const ExerciseScreen = () => {
       link={item.link}
       language={choosenLanguage}
       barsData={item.bars}
+      hasAccess={userHasAccess}
+      requiresPro={item.requiresPro}
       dataExercie={dataExerciseA2}/>
     </Animated.View>
   }
@@ -788,6 +798,8 @@ const ExerciseScreen = () => {
       link={item.link}
       language={choosenLanguage}
       barsData={item.bars}
+      hasAccess={userHasAccess}
+      requiresPro={item.requiresPro}
       dataExercie={dataExerciseB1}/>
     </Animated.View>
   }
@@ -844,6 +856,8 @@ const ExerciseScreen = () => {
       link={item.link}
       language={choosenLanguage}
       barsData={item.bars}
+      hasAccess={userHasAccess}
+      requiresPro={item.requiresPro}
       dataExercie={dataExerciseB2}/>
     </Animated.View>
   }
@@ -901,6 +915,8 @@ const ExerciseScreen = () => {
       link={item.link}
       language={choosenLanguage}
       barsData={item.bars}
+      hasAccess={userHasAccess}
+      requiresPro={item.requiresPro}
       dataExercie={dataExerciseC1}/>
     </Animated.View>
   }

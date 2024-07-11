@@ -1,6 +1,7 @@
 import { View, Text, StyleSheet, Animated, TouchableOpacity, Image, Easing, Dimensions } from 'react-native'
 import React, {useEffect, useRef, useState } from 'react'
 import { useNavigation } from "@react-navigation/native";
+import useRevenueCat from '../../../../hooks/useRevenueCat';
 
 
 
@@ -11,8 +12,13 @@ const Intro7 = ({route}) => {
 
     const navigation = useNavigation();
 
+    const { currentOffering, customerInfo, isProMember} = useRevenueCat();
 
-    const {skipable, language} = route.params
+
+    const {skipable, language} = route.params;
+
+    const price = '4.99 $'
+
 
 
     const opacityTitle = useRef(new Animated.Value(0)).current;
@@ -342,7 +348,7 @@ const Intro7 = ({route}) => {
 
 
         <Animated.View style={{...styles.lowerTextContainer2, opacity: opacityLowerText3}}>
-            <Text style={styles.bodyText}>Enjoy full access to all features for the first week at no charge. After seven days, register and upgrade to the <Text style={styles.bodyTextBold}>PRO version</Text> with a monthly subscription. Cancel anytime.</Text>
+            <Text style={styles.bodyText}>Enjoy full access to all features for the first week at no charge. After seven days upgrade to the <Text style={styles.bodyTextBold}>PRO version</Text> with a monthly subscription for only {currentOffering ? currentOffering.monthly.product.priceString : price} / month. Cancel anytime.</Text>
 
         </Animated.View>
 

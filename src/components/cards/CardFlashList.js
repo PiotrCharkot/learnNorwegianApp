@@ -1,4 +1,4 @@
-import { View, Text, StyleSheet, Dimensions, TouchableOpacity } from 'react-native'
+import { View, Text, StyleSheet, Dimensions, TouchableOpacity, Image } from 'react-native'
 import React, {useState, useEffect} from 'react'
 import { useNavigation } from "@react-navigation/native";
 import { LinearGradient } from 'expo-linear-gradient';
@@ -8,7 +8,7 @@ const screenHeight = Dimensions.get('window').height;
 
 const CardFlashList = (params) => {
 
-    const { refNummer, userIdRef, title, language, userName } = params;
+    const { refNummer, userIdRef, title, language, userName, hasAccess } = params;
     const navigation = useNavigation();
 
 
@@ -16,13 +16,29 @@ const CardFlashList = (params) => {
     const [testBtn, setTestBtn] = useState('Test');
 
     const pressLearn = () => {
-       
-        navigation.navigate('LearnWord', {refToList: refNummer, userId: userIdRef, savedLang: language, userN: userName})
-    }
 
+        if (hasAccess) {
+            navigation.navigate('LearnWord', {refToList: refNummer, userId: userIdRef, savedLang: language, userN: userName})
+        } else {
+            navigation.navigate({
+                name: 'Paywall',
+                params: {language: language}
+            })
+        }
+        
+    }
+    
     const pressTest = () => {
         
-        navigation.navigate('TestWord', {refToList: refNummer, userId: userIdRef, savedLang: language, own: false, userN: userName})
+        if (hasAccess) {
+            navigation.navigate('TestWord', {refToList: refNummer, userId: userIdRef, savedLang: language, own: false, userN: userName})
+        } else {
+            navigation.navigate({
+                name: 'Paywall',
+                params: {language: language}
+            })
+        }
+        
     }
 
 
@@ -75,6 +91,11 @@ const CardFlashList = (params) => {
                     </LinearGradient>
                 </View>
             </TouchableOpacity>
+
+            {hasAccess ? null : <View style={styles.proContainer}>
+                <Image style={styles.proLockImg} source={require('../../../assets/padlock2.png')} />
+                <Text style={styles.proText}>PRO</Text>
+            </View>}
     </View>
   )
 }
@@ -151,4 +172,23 @@ const styles = StyleSheet.create({
         fontSize: 14,
         fontWeight: '700'
     },
+    proContainer: {
+        position: 'absolute',
+        alignItems: 'center',
+        top: 15,
+        left: 15,
+        transform: [{rotate: '-20deg'}]
+    },
+    proText: {
+        fontSize: 23,
+        color: '#4a4a4a',
+        fontWeight: '900',
+        opacity: 0.5
+    },
+    proLockImg: {
+        height: 15,
+        width: 15,
+        tintColor: '#4a4a4a',
+        opacity: 0.5
+    }
 });

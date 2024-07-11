@@ -6,6 +6,7 @@ import { authentication } from '../../../firebase/firebase-config';
 import { withAnchorPoint } from 'react-native-anchor-point';
 import { Audio } from 'expo-av';
 import * as SecureStore from 'expo-secure-store';
+import useRevenueCat from '../../../hooks/useRevenueCat';
 import styles from './style'
 
 const screenHight = Dimensions.get('window').height;
@@ -19,6 +20,8 @@ const SettingsScreen = ({route}) => {
 
   const {choosenLanguage} = route.params;
 
+  const { currentOffering, customerInfo, isProMember} = useRevenueCat();
+
   const scrollY = useRef(new Animated.Value(0)).current;
   const confirmationPos = useRef(new Animated.Value(300)).current;
   const interpolatedValueForX = useRef(new Animated.Value(0)).current;
@@ -31,6 +34,7 @@ const SettingsScreen = ({route}) => {
   const [sound2, setSound2] = useState();
   const [buttonsLabelArray, setButtonsLabelArray] = useState(['Get a PRO account', 'Sound', 'Notifications', 'Log out', 'Log in', 'Change password', 'Contact us', 'About App', 'Delete account', 'Privacy policy', 'Terms and conditions']);
   const [msgText, setMsgText] = useState('You must be logged in to proceed with further action');
+  const [btnManage, setBtnManage] = useState('Manage subscription')
   
 
   const rotateWheel = scrollY.interpolate({
@@ -88,6 +92,15 @@ const SettingsScreen = ({route}) => {
           useNativeDriver: true,
       }).start();
   };
+
+
+  const handaleUpgradeBtn = () => {
+    if (isProMember) {
+      navigation.navigate('ManageSub', {language: choosenLanguage})
+    } else {
+      navigation.navigate('Paywall', {language: choosenLanguage})
+    }
+  }
 
 
   const switchNotifications = () => {
@@ -172,21 +185,27 @@ const SettingsScreen = ({route}) => {
     if (choosenLanguage === 'PL') {
       setButtonsLabelArray(["Załóż konto PRO", "Dźwięk", "Powiadomienia", "Wyloguj się", "Zaloguj się", "Zmień hasło", "Skontaktuj się z nami", "O aplikacji", "Usuń konto", "Polityka prywatności", "Warunki użytkowania"]);
       setMsgText('Musisz być zalogowany, aby kontynuować dalsze działanie.');
+      setBtnManage('Zarządzaj subskrypcją');
     } else if (choosenLanguage === 'DE') {
       setButtonsLabelArray(["Hol dir ein PRO-Konto", "Ton", "Benachrichtigungen", "Abmelden", "Anmelden", "Passwort ändern", "Kontaktiere uns", "Über die App", "Konto löschen", "Datenschutzrichtlinie", "Nutzungsbedingungen"]);
       setMsgText('Sie müssen angemeldet sein, um mit weiteren Aktionen fortzufahren.');
+      setBtnManage('Abonnement verwalten');
     } else if (choosenLanguage === 'LT') {
       setButtonsLabelArray(["Įsigyk PRO paskyrą", "Garsas", "Pranešimai", "Atsijungti", "Prisijungti", "Pakeisti slaptažodį", "Susisiekite su mumis", "Apie programą", "Ištrinti paskyrą", "Privatumo politika", "Naudojimosi sąlygos"]);
       setMsgText('Privalote būti prisijungęs, kad galėtumėte tęsti tolesnius veiksmus.');
+      setBtnManage('Tvarkyti prenumeratą');
     } else if (choosenLanguage === 'AR') {
       setButtonsLabelArray(["احصل على حساب برو", "الصوت", "الإشعارات", "تسجيل الخروج", "تسجيل الدخول", "تغيير كلمة السر", "اتصل بنا", "عن التطبيق", "حذف الحساب", "سياسة الخصوصية", "الشروط والأحكام"]);
       setMsgText('يجب أن تكون مسجلاً للدخول للمتابعة بأي إجراءات أخرى');
+      setBtnManage('إدارة الاشتراك');
     } else if (choosenLanguage === 'UA') {
       setButtonsLabelArray(["Отримайте PRO-акаунт", "Звук", "Сповіщення", "Вийти", "Увійти", "Змінити пароль", "Зв'яжіться з нами", "Про додаток", "Видалити акаунт", "Політика конфіденційності", "Умови користування"]);
       setMsgText('Ви повинні бути увійшли, щоб продовжити діяльність.');
+      setBtnManage('Керувати підпискою');
     } else if (choosenLanguage === 'ES') {
       setButtonsLabelArray(["Obtén una cuenta PRO", "Sonido", "Notificaciones", "Cerrar sesión", "Iniciar sesión", "Cambiar contraseña", "Contáctanos", "Acerca de la aplicación", "Eliminar cuenta", "Política de privacidad", "Términos y condiciones"]);
       setMsgText('Debes estar registrado para continuar con la acción.');
+      setBtnManage('Gestionar suscripción');
     } 
   }, [])
   
@@ -260,9 +279,9 @@ const SettingsScreen = ({route}) => {
           scrollEventThrottle={16}
           showsVerticalScrollIndicator={false}>
         
-          <TouchableOpacity style={styles.btnOpacity} >
+          <TouchableOpacity style={styles.btnOpacity} onPress={handaleUpgradeBtn}>
           <Image source={require('../../../assets/crown.png')}  style={styles.buttonImg}/>
-            <Text style={styles.buttonText}>{buttonsLabelArray[0]}</Text>
+            <Text style={styles.buttonText}>{isProMember ? btnManage : buttonsLabelArray[0]}</Text>
           </TouchableOpacity>
 
           <TouchableOpacity style={styles.btnOpacity} onPress={switchSound}>

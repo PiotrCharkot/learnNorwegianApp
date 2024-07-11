@@ -5,7 +5,7 @@ export default dataObj = [
     level: 'A1',
     link: 'Class1x1x1',
     key: 1,
-    showPro: false,
+    requiresPro: false
    },
     {
     title: 'Future tense',
@@ -13,7 +13,7 @@ export default dataObj = [
     level: 'A1',
     link: 'Class1x2x1',
     key: 2,
-    showPro: false,
+    requiresPro: false
    },
     {
     title: 'Past tense',
@@ -21,7 +21,7 @@ export default dataObj = [
     level: 'A1',
     link: 'Class1x3x1',
     key: 3,
-    showPro: false,
+    requiresPro: false
    },
     {
     title: 'Present perfect',
@@ -29,7 +29,7 @@ export default dataObj = [
     level: 'A1',
     link: 'Class1x4x1',
     key: 4,
-    showPro: false,
+    requiresPro: true
    },
     {
     title: 'Past perfect',
@@ -37,6 +37,6 @@ export default dataObj = [
     level: 'A1',
     link: 'Class1x5x1',
     key: 5,
-    showPro: false,
+    requiresPro: true
    }
 ];

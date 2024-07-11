@@ -5,7 +5,7 @@ export default dataObj = [
     level: 'A1',
     link: 'Class5x1x1',
     key: 1,
-    showPro: false,
+    requiresPro: true
     },
     {
     title: 'Agreement',
@@ -13,7 +13,7 @@ export default dataObj = [
     level: 'A1',
     link: 'Class5x2x1',
     key: 2,
-    showPro: false,
+    requiresPro: true
    },
     {
     title: 'Irregular adjectives',
@@ -21,7 +21,7 @@ export default dataObj = [
     level: 'A1',
     link: 'Class5x3x1',
     key: 3,
-    showPro: false,
+    requiresPro: true
    },
     {
     title: 'The degree of comparison',
@@ -29,7 +29,7 @@ export default dataObj = [
     level: 'A1',
     link: 'Class5x4x1',
     key: 4,
-    showPro: false,
+    requiresPro: true
    },
     {
     title: 'Irregular degree of comparison',
@@ -37,7 +37,7 @@ export default dataObj = [
     level: 'A1',
     link: 'Class5x5x1',
     key: 5,
-    showPro: false,
+    requiresPro: true
    },
     {
     title: 'The degree of comparison II',
@@ -45,7 +45,7 @@ export default dataObj = [
     level: 'A1',
     link: 'Class5x6x1',
     key: 6,
-    showPro: false,
+    requiresPro: true
    },
    {
     title: 'Perfect participle',
@@ -53,6 +53,6 @@ export default dataObj = [
     level: 'A1',
     link: 'Class5x7x1',
     key: 7,
-    showPro: false,
+    requiresPro: true
    }
 ];

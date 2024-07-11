@@ -20,6 +20,7 @@ export default dataObj = [
     },
     link: 'Exc3x1x1',
     key: 1,
+    requiresPro: true
     },
     {
     title: {
@@ -42,6 +43,7 @@ export default dataObj = [
     },
     link: 'Exc3x2x1',
     key: 2,
+    requiresPro: true
    },
     {
     title: {
@@ -64,6 +66,7 @@ export default dataObj = [
     },
     link: 'Exc3x3x1',
     key: 3,
+    requiresPro: true
    },
     {
     title: {
@@ -86,6 +89,7 @@ export default dataObj = [
     },
     link: 'Exc3x4x1',
     key: 4,
+    requiresPro: true
    },
     {
     title: {
@@ -108,6 +112,7 @@ export default dataObj = [
     },
     link: 'Exc3x5x1',
     key: 5,
+    requiresPro: true
    },
    {
     title: {
@@ -130,5 +135,6 @@ export default dataObj = [
     },
     link: 'Exc3x6x1',
     key: 6,
+    requiresPro: true
    }
 ];

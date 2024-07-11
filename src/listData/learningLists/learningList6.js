@@ -5,7 +5,7 @@ export default dataObj = [
     level: 'A1',
     link: 'Class6x1x1',
     key: 1,
-    showPro: false,
+    requiresPro: true
    },
     {
     title: 'Possessive pronouns',
@@ -13,7 +13,7 @@ export default dataObj = [
     level: 'A1',
     link: 'Class6x2x1',
     key: 2,
-    showPro: false,
+    requiresPro: true
    },
     {
     title: 'Demonstrative pronouns',
@@ -21,7 +21,7 @@ export default dataObj = [
     level: 'A1',
     link: 'Class6x3x1',
     key: 3,
-    showPro: false,
+    requiresPro: true
    },
     {
     title: 'Quantifiers',
@@ -29,7 +29,7 @@ export default dataObj = [
     level: 'A1',
     link: 'Class6x4x1',
     key: 4,
-    showPro: false,
+    requiresPro: true
    },
    {
     title: 'Indefinite pronouns',
@@ -37,7 +37,7 @@ export default dataObj = [
     level: 'A1',
     link: 'Class6x5x1',
     key: 5,
-    showPro: false,
+    requiresPro: true
    },
    {
     title: 'Reflexive pronouns',
@@ -45,6 +45,6 @@ export default dataObj = [
     level: 'A1',
     link: 'Class6x6x1',
     key: 6,
-    showPro: false,
+    requiresPro: true
    }
 ];

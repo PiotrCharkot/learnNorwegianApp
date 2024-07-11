@@ -11,16 +11,35 @@ const CardBlack = (params) => {
 
     const navigation = useNavigation();
 
-  return (
-    <TouchableOpacity style={styles.mainContainer} onPress={() => navigation.navigate(params.link, {savedLang: params.savedLang})}>
-        <View style={styles.gradientWrap}>
 
+    const handlePress = () => {
+
+        if (params.hasAccess || !params.requiresPro) {
+            navigation.navigate(params.link, {savedLang: params.savedLang})
+        } else {
+            navigation.navigate({
+                name: 'Paywall',
+                params: {language: params.savedLang}
+            })
+        }
+    }
+
+  return (
+    <TouchableOpacity style={styles.mainContainer} onPress={handlePress}>
+        <View style={styles.gradientWrap}>
+            
             <LinearGradient colors={['black', '#252626']} style={styles.gradientBig}>
             <View style={{...styles.lightCircle, shadowColor: params.color3}}></View>
                 <View style={styles.innerContainer}>
 
+
+                    
+
                     <View style={styles.middleContainer}>
+
                         <LinearGradient colors={['#252626', 'black']} style={styles.gradient} >
+
+                        
                         <View style={styles.whiteLine}>
                             <LinearGradient colors={['#252626', params.color3, '#252626']} style={styles.gradient} />
                         </View>
@@ -29,6 +48,11 @@ const CardBlack = (params) => {
                                 <Text style={{...styles.textTitle, shadowColor: params.color3}} allowFontScaling={false}>{params.title}</Text>
                                 <Text style={styles.textDescription} allowFontScaling={false}>{params.description}</Text>
                             </View>
+
+
+                            
+
+                            
                             <View style={styles.reindeerContainer}>
                                 <Image style={{...styles.reindeerPikto, tintColor: params.stars > 0 ? '#faf739' : '#252626'}} source={require('../../../assets/reindeerPikto.png')} />
                                 <Image style={{...styles.reindeerPikto, tintColor: params.stars > 1 ? '#faf739' : '#252626'}} source={require('../../../assets/reindeerPikto.png')} />
@@ -39,10 +63,21 @@ const CardBlack = (params) => {
                             </View>
 
 
+                            
+
+
                         <View style={styles.whiteLine}>
                             <LinearGradient colors={['#252626', params.color3, '#252626']} style={styles.gradient} />
                         </View>
                         </LinearGradient>
+
+                        {params.hasAccess || !params.requiresPro ? null : <View style={styles.proContainer}>
+                            <Image style={styles.proLockImg} source={require('../../../assets/padlock2.png')} />
+                            <Text style={styles.proText}>PRO</Text>
+                        </View>}
+                        
+
+
                     </View>
                 </View>
             </LinearGradient>
@@ -157,6 +192,25 @@ const styles = StyleSheet.create({
         width: 25,
         tintColor: '#faf739',
         
+    },
+    proContainer: {
+        position: 'absolute',
+        alignItems: 'center',
+        bottom: 35,
+        left: screenWidth * 0.35 - 40,
+        transform: [{rotate: '-20deg'}]
+    },
+    proText: {
+        fontSize: 20,
+        color: '#4a4a4a',
+        fontWeight: '900',
+        opacity: 0.5
+    },
+    proLockImg: {
+        height: 15,
+        width: 15,
+        tintColor: '#4a4a4a',
+        opacity: 0.5
     }
 })
 

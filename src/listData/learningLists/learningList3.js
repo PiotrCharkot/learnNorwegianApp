@@ -5,7 +5,7 @@ export default dataObj = [
     level: 'A1',
     link: 'Class3x1x1',
     key: 1,
-    showPro: false,
+    requiresPro: true
    },
     {
     title: 'Imperative',
@@ -13,7 +13,7 @@ export default dataObj = [
     level: 'A1',
     link: 'Class3x2x1',
     key: 2,
-    showPro: false,
+    requiresPro: true
    },
     {
     title: 'Passive voice',
@@ -21,7 +21,7 @@ export default dataObj = [
     level: 'A1',
     link: 'Class3x3x1',
     key: 3,
-    showPro: false,
+    requiresPro: true
    },
     {
     title: 'S-verbs',
@@ -29,7 +29,7 @@ export default dataObj = [
     level: 'A1',
     link: 'Class3x4x1',
     key: 4,
-    showPro: false,
+    requiresPro: true
    },
     {
     title: 'Verbal compound',
@@ -37,7 +37,7 @@ export default dataObj = [
     level: 'A1',
     link: 'Class3x5x1',
     key: 5,
-    showPro: false,
+    requiresPro: true
    }
 ];
 

@@ -11,6 +11,7 @@ import { Audio } from 'expo-av';
 import styles from './style'
 import { authentication } from '../../../firebase/firebase-config';
 import CardFlashList from '../../components/cards/CardFlashList';
+import useRevenueCat from '../../../hooks/useRevenueCat';
 
 
 const screenWidth = Dimensions.get('window').width;
@@ -23,6 +24,9 @@ const FlashcardScreen = () => {
   
   const navigation = useNavigation();
   const isFocused = useIsFocused();
+
+  const { currentOffering, customerInfo, isProMember} = useRevenueCat();
+
   const scrollY = useRef(new Animated.Value(0)).current;
   const scrollX = useRef(new Animated.Value(0)).current;
   const scaleLanguageHight = useRef(new Animated.Value(0)).current;
@@ -42,6 +46,8 @@ const FlashcardScreen = () => {
   const [sound, setSound] = useState();
   const [firstLaunchTime, setFirstLaunchTime] = useState(null);
   const [within168Hours, setWithin168Hours] = useState(true);
+
+  const userHasAccess = isProMember || within168Hours;
 
   const opacityImgBlur = scrollY.interpolate({
     inputRange: [0, 60],
@@ -306,7 +312,7 @@ const FlashcardScreen = () => {
           console.log('it has launched before and hours difference in flashcard screen is: ', hoursDifference);
 
 
-          if (hoursDifference >= 168) {
+          if (hoursDifference >= 1680) { // 168 in prod
             setWithin168Hours(false);
             console.log('free loading is over');
           }
@@ -449,112 +455,112 @@ const FlashcardScreen = () => {
         <View style={styles.listContainer}>
           <Animated.View style={{...styles.cardHolder, transform: [{scale: scaleCardHolder}]}}>
 
-            <CardFlashList refNummer={'1'} userIdRef={userId} title={`A1 - ${cardText[0]} 1 - (55)`} language={choosenLanguage} userName={userName}/>
+            <CardFlashList refNummer={'1'} userIdRef={userId} title={`A1 - ${cardText[0]} 1 - (55)`} language={choosenLanguage} userName={userName} hasAccess={true}/>
           </Animated.View>
 
           <Animated.View style={{...styles.cardHolder, transform: [{scale: scaleCardHolder2}]}}>
 
-            <CardFlashList refNummer={'2'} userIdRef={userId} title={`A1 - ${cardText[0]} 2 - (55)`} language={choosenLanguage} userName={userName}/>
+            <CardFlashList refNummer={'2'} userIdRef={userId} title={`A1 - ${cardText[0]} 2 - (55)`} language={choosenLanguage} userName={userName} hasAccess={userHasAccess}/>
           </Animated.View>
 
           <Animated.View style={{...styles.cardHolder, transform: [{scale: scaleCardHolder3}]}}>
 
-            <CardFlashList refNummer={'3'} userIdRef={userId} title={`A1 - ${cardText[0]} 3 - (54)`} language={choosenLanguage} userName={userName}/>
+            <CardFlashList refNummer={'3'} userIdRef={userId} title={`A1 - ${cardText[0]} 3 - (54)`} language={choosenLanguage} userName={userName} hasAccess={userHasAccess}/>
           </Animated.View>
 
           <Animated.View style={{...styles.cardHolder, transform: [{scale: scaleCardHolder4}]}}>
 
-            <CardFlashList refNummer={'4'} userIdRef={userId} title={`A1 - ${cardText[1]} - (61)`} language={choosenLanguage} userName={userName}/>
+            <CardFlashList refNummer={'4'} userIdRef={userId} title={`A1 - ${cardText[1]} - (61)`} language={choosenLanguage} userName={userName} hasAccess={userHasAccess}/>
           </Animated.View>
 
           <Animated.View style={{...styles.cardHolder, transform: [{scale: scaleCardHolder5}]}}>
 
-            <CardFlashList refNummer={'5'} userIdRef={userId} title={`A2 - ${cardText[0]} 1 - (51)`} language={choosenLanguage} userName={userName}/>
+            <CardFlashList refNummer={'5'} userIdRef={userId} title={`A2 - ${cardText[0]} 1 - (51)`} language={choosenLanguage} userName={userName} hasAccess={userHasAccess}/>
           </Animated.View>
 
           <Animated.View style={{...styles.cardHolder, transform: [{scale: scaleCardHolder6}]}}>
 
-            <CardFlashList refNummer={'6'} userIdRef={userId} title={`A2 - ${cardText[0]} 2 - (51)`} language={choosenLanguage} userName={userName}/>
+            <CardFlashList refNummer={'6'} userIdRef={userId} title={`A2 - ${cardText[0]} 2 - (51)`} language={choosenLanguage} userName={userName} hasAccess={userHasAccess}/>
           </Animated.View>
 
           <Animated.View style={{...styles.cardHolder, transform: [{scale: scaleCardHolder7}]}}>
 
-            <CardFlashList refNummer={'7'} userIdRef={userId} title={`A2 - ${cardText[0]} 3 - (49)`} language={choosenLanguage} userName={userName}/>
+            <CardFlashList refNummer={'7'} userIdRef={userId} title={`A2 - ${cardText[0]} 3 - (49)`} language={choosenLanguage} userName={userName} hasAccess={userHasAccess}/>
           </Animated.View>
           
           <Animated.View style={{...styles.cardHolder, transform: [{scale: scaleCardHolder8}]}}>
 
-            <CardFlashList refNummer={'8'} userIdRef={userId} title={`B1 - ${cardText[0]} 1 - (45)`} language={choosenLanguage} userName={userName}/>
+            <CardFlashList refNummer={'8'} userIdRef={userId} title={`B1 - ${cardText[0]} 1 - (45)`} language={choosenLanguage} userName={userName} hasAccess={userHasAccess}/>
           </Animated.View>
           
           <Animated.View style={{...styles.cardHolder, transform: [{scale: scaleCardHolder9}]}}>
 
-            <CardFlashList refNummer={'9'} userIdRef={userId} title={`B1 - ${cardText[0]} 2 - (46)`} language={choosenLanguage} userName={userName}/>
+            <CardFlashList refNummer={'9'} userIdRef={userId} title={`B1 - ${cardText[0]} 2 - (46)`} language={choosenLanguage} userName={userName} hasAccess={userHasAccess}/>
           </Animated.View>
           
           <Animated.View style={{...styles.cardHolder, transform: [{scale: scaleCardHolder10}]}}>
 
-            <CardFlashList refNummer={'10'} userIdRef={userId} title={`B1 - ${cardText[0]} 3 - (46)`} language={choosenLanguage} userName={userName}/>
+            <CardFlashList refNummer={'10'} userIdRef={userId} title={`B1 - ${cardText[0]} 3 - (46)`} language={choosenLanguage} userName={userName} hasAccess={userHasAccess}/>
           </Animated.View>
           
           <Animated.View style={{...styles.cardHolder, transform: [{scale: scaleCardHolder11}]}}>
 
-            <CardFlashList refNummer={'11'} userIdRef={userId} title={`${cardText[2]} - ${cardText[0]} 1 - (55)`} language={choosenLanguage} userName={userName}/>
+            <CardFlashList refNummer={'11'} userIdRef={userId} title={`${cardText[2]} - ${cardText[0]} 1 - (55)`} language={choosenLanguage} userName={userName} hasAccess={userHasAccess}/>
           </Animated.View>
           
           <Animated.View style={{...styles.cardHolder, transform: [{scale: scaleCardHolder12}]}}>
 
-            <CardFlashList refNummer={'12'} userIdRef={userId} title={`B2 - ${cardText[0]} 1 - (45)`} language={choosenLanguage} userName={userName}/>
+            <CardFlashList refNummer={'12'} userIdRef={userId} title={`B2 - ${cardText[0]} 1 - (45)`} language={choosenLanguage} userName={userName} hasAccess={userHasAccess}/>
           </Animated.View>
           
           <Animated.View style={{...styles.cardHolder, transform: [{scale: scaleCardHolder13}]}}>
 
-            <CardFlashList refNummer={'13'} userIdRef={userId} title={`B2 - ${cardText[0]} 2 - (45)`} language={choosenLanguage} userName={userName}/>
+            <CardFlashList refNummer={'13'} userIdRef={userId} title={`B2 - ${cardText[0]} 2 - (45)`} language={choosenLanguage} userName={userName} hasAccess={userHasAccess}/>
           </Animated.View>
           
           <Animated.View style={{...styles.cardHolder, transform: [{scale: scaleCardHolder14}]}}>
 
-            <CardFlashList refNummer={'14'} userIdRef={userId} title={`B2 - ${cardText[0]} 3 - (44)`} language={choosenLanguage} userName={userName}/>
+            <CardFlashList refNummer={'14'} userIdRef={userId} title={`B2 - ${cardText[0]} 3 - (44)`} language={choosenLanguage} userName={userName} hasAccess={userHasAccess}/>
           </Animated.View>
           
           <Animated.View style={{...styles.cardHolder, transform: [{scale: scaleCardHolder15}]}}>
 
-            <CardFlashList refNummer={'15'} userIdRef={userId} title={`${cardText[2]} - ${cardText[0]} 2 - (55)`} language={choosenLanguage} userName={userName}/>
+            <CardFlashList refNummer={'15'} userIdRef={userId} title={`${cardText[2]} - ${cardText[0]} 2 - (55)`} language={choosenLanguage} userName={userName} hasAccess={userHasAccess}/>
           </Animated.View>
           
           <Animated.View style={{...styles.cardHolder, transform: [{scale: scaleCardHolder16}]}}>
 
-            <CardFlashList refNummer={'16'} userIdRef={userId} title={`C1 - ${cardText[0]} 1 - (43)`} language={choosenLanguage} userName={userName}/>
+            <CardFlashList refNummer={'16'} userIdRef={userId} title={`C1 - ${cardText[0]} 1 - (43)`} language={choosenLanguage} userName={userName} hasAccess={userHasAccess}/>
           </Animated.View>
           
           <Animated.View style={{...styles.cardHolder, transform: [{scale: scaleCardHolder17}]}}>
 
-            <CardFlashList refNummer={'17'} userIdRef={userId} title={`C1 - ${cardText[0]} 2 - (44)`} language={choosenLanguage} userName={userName}/>
+            <CardFlashList refNummer={'17'} userIdRef={userId} title={`C1 - ${cardText[0]} 2 - (44)`} language={choosenLanguage} userName={userName} hasAccess={userHasAccess}/>
           </Animated.View>
           
           <Animated.View style={{...styles.cardHolder, transform: [{scale: scaleCardHolder18}]}}>
 
-            <CardFlashList refNummer={'18'} userIdRef={userId} title={`C1 - ${cardText[0]} 3 - (43)`} language={choosenLanguage} userName={userName}/>
+            <CardFlashList refNummer={'18'} userIdRef={userId} title={`C1 - ${cardText[0]} 3 - (43)`} language={choosenLanguage} userName={userName} hasAccess={userHasAccess}/>
           </Animated.View>
           
           <Animated.View style={{...styles.cardHolder, transform: [{scale: scaleCardHolder19}]}}>
 
-            <CardFlashList refNummer={'19'} userIdRef={userId} title={`${cardText[2]} - ${cardText[0]} 3 - (55)`} language={choosenLanguage} userName={userName}/>
+            <CardFlashList refNummer={'19'} userIdRef={userId} title={`${cardText[2]} - ${cardText[0]} 3 - (55)`} language={choosenLanguage} userName={userName} hasAccess={userHasAccess}/>
           </Animated.View>
           
           <Animated.View style={{...styles.cardHolder, transform: [{scale: scaleCardHolder20}]}}>
 
-            <CardFlashList refNummer={'20'} userIdRef={userId} title={`C2 - ${cardText[0]} 1 - (42)`} language={choosenLanguage} userName={userName}/>
+            <CardFlashList refNummer={'20'} userIdRef={userId} title={`C2 - ${cardText[0]} 1 - (42)`} language={choosenLanguage} userName={userName} hasAccess={userHasAccess}/>
           </Animated.View>
 
           <Animated.View style={{...styles.cardHolder, transform: [{scale: scaleCardHolder21}]}}>
 
-            <CardFlashList refNummer={'21'} userIdRef={userId} title={`C2 - ${cardText[0]} 2 - (42)`} language={choosenLanguage} userName={userName}/>
+            <CardFlashList refNummer={'21'} userIdRef={userId} title={`C2 - ${cardText[0]} 2 - (42)`} language={choosenLanguage} userName={userName} hasAccess={userHasAccess}/>
           </Animated.View>
 
           <Animated.View style={{...styles.cardHolder, transform: [{scale: scaleCardHolder22}]}}>
 
-            <CardFlashList refNummer={'22'} userIdRef={userId} title={`C2 - ${cardText[0]} 3 - (40)`} language={choosenLanguage} userName={userName}/>
+            <CardFlashList refNummer={'22'} userIdRef={userId} title={`C2 - ${cardText[0]} 3 - (40)`} language={choosenLanguage} userName={userName} hasAccess={userHasAccess}/>
           </Animated.View>
 
 

@@ -22,7 +22,7 @@ const WelcomeScreen = () => {
     async function getValueFor(key) {
       let result = await SecureStore.getItemAsync(key);
       if (result) {
-        console.log('result is in SecureStore');
+        
       } else {
         if (key === 'sound') {
           save('sound', '1');  
@@ -47,7 +47,6 @@ const WelcomeScreen = () => {
     }
 
     useEffect(() => {
-console.log('width',screenWidth);
       const checkFirstLaunch = async () => {
         try {
           const firstLaunch = await SecureStore.getItemAsync('firstLaunchTime'); 

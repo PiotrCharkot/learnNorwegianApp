@@ -1,3 +1,4 @@
+import 'react-native-gesture-handler';
 import React from "react";
 
 import { NavigationContainer } from "@react-navigation/native";
@@ -34,6 +35,8 @@ import Intro5 from "../screens/Introduction/Intro5";
 import Intro6 from "../screens/Introduction/Intro6";
 import Intro7 from "../screens/Introduction/Intro7";
 import Intro8 from "../screens/Introduction/Intro8";
+import Paywall from "../screens/Paywall";
+import ManageSubScreen from '../screens/ManageSubScreen';
 import Class1x1x1 from "../screens/ClassScreens/LearningScreens/Class1x1/Class1x1x1";
 import Class1x1x2 from "../screens/ClassScreens/LearningScreens/Class1x1/Class1x1x2";
 import Class1x1x3 from "../screens/ClassScreens/LearningScreens/Class1x1/Class1x1x3";
@@ -477,6 +480,8 @@ const Router = () => {
                 <Stack.Screen name="Intro6" component={Intro6} options={{headerShown: false, animationEnabled: false }}/>
                 <Stack.Screen name="Intro7" component={Intro7} options={{headerShown: false, animationEnabled: false }}/>
                 <Stack.Screen name="Intro8" component={Intro8} options={{headerShown: false, animationEnabled: false }}/>
+                <Stack.Screen name="Paywall" component={Paywall} options={{headerShown: false, presentation: 'modal' }}/>
+                <Stack.Screen name="ManageSub" component={ManageSubScreen} options={{headerShown: false, presentation: 'modal' }}/>
                 <Stack.Screen name="Class1x1x1" component={Class1x1x1} options={{headerShown: false, animationEnabled: false }}/>
                 <Stack.Screen name="Class1x1x2" component={Class1x1x2} options={{headerShown: false, animationEnabled: false }}/>
                 <Stack.Screen name="Class1x2x1" component={Class1x2x1} options={{headerShown: false, animationEnabled: false }}/>

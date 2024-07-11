@@ -5,7 +5,7 @@ export default dataObj = [
     level: 'A1',
     link: 'Class4x1x1',
     key: 1,
-    showPro: false,
+    requiresPro: true
    },
     {
     title: 'Irregular inflection',
@@ -13,7 +13,7 @@ export default dataObj = [
     level: 'A1',
     link: 'Class4x2x1',
     key: 2,
-    showPro: false,
+    requiresPro: true
    },
     {
     title: 'Uncountable nouns',
@@ -21,7 +21,7 @@ export default dataObj = [
     level: 'A1',
     link: 'Class4x3x1',
     key: 3,
-    showPro: false,
+    requiresPro: true
    },
    {
     title: 'Genitive',
@@ -29,7 +29,7 @@ export default dataObj = [
     level: 'A1',
     link: 'Class4x4x1',
     key: 4,
-    showPro: false,
+    requiresPro: true
    },
     {
     title: 'Noun phrases',
@@ -37,7 +37,7 @@ export default dataObj = [
     level: 'A1',
     link: 'Class4x5x1',
     key: 5,
-    showPro: false,
+    requiresPro: true
    },
     {
     title: 'Compound words',
@@ -45,6 +45,6 @@ export default dataObj = [
     level: 'A1',
     link: 'Class4x6x1',
     key: 6,
-    showPro: false,
+    requiresPro: true
    }
 ];

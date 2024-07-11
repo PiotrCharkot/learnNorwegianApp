@@ -5,7 +5,7 @@ export default dataObj = [
     level: 'A1',
     link: 'Class2x1x1',
     key: 1,
-    showPro: false,
+    requiresPro: true
    },
     {
     title: 'Questions and negations',
@@ -13,7 +13,7 @@ export default dataObj = [
     level: 'A1',
     link: 'Class2x2x1',
     key: 2,
-    showPro: false,
+    requiresPro: true
    },
     {
     title: `Clauses`,
@@ -21,7 +21,7 @@ export default dataObj = [
     level: 'A1',
     link: 'Class2x3x1',
     key: 3,
-    showPro: false,
+    requiresPro: true
    },
     {
     title: 'Indirect speech',
@@ -29,7 +29,7 @@ export default dataObj = [
     level: 'A1',
     link: 'Class2x4x1',
     key: 4,
-    showPro: true,
+    requiresPro: true
    },
     {
     title: 'Conditional statement',
@@ -37,7 +37,7 @@ export default dataObj = [
     level: 'A1',
     link: 'Class2x5x1',
     key: 5,
-    showPro: true,
+    requiresPro: true
    },
    {
     title: 'Adverbial',
@@ -45,7 +45,7 @@ export default dataObj = [
     level: 'A1',
     link: 'Class2x6x1',
     key: 6,
-    showPro: true,
+    requiresPro: true
    },
     {
     title: 'Sentence adverbial',
@@ -53,6 +53,6 @@ export default dataObj = [
     level: 'A1',
     link: 'Class2x7x1',
     key: 7,
-    showPro: true,
+    requiresPro: true
    }
 ];

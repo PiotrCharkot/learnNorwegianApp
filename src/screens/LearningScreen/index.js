@@ -19,6 +19,7 @@ import learningList3 from '../../listData/learningLists/learningList3';
 import learningList4 from '../../listData/learningLists/learningList4';
 import learningList5 from '../../listData/learningLists/learningList5';
 import learningList6 from '../../listData/learningLists/learningList6';
+import useRevenueCat from '../../../hooks/useRevenueCat';
 
 const screenWidth = Dimensions.get('window').width;
 const cardSize = screenWidth * 0.6 + 20;
@@ -43,6 +44,10 @@ const LearningScreen = () => {
 
   const isFocused = useIsFocused();
   const navigation = useNavigation();
+
+  const { currentOffering, customerInfo, isProMember} = useRevenueCat();
+  
+
   
   const scrollY = useRef(new Animated.Value(0)).current;
   const scrollX = useRef(new Animated.Value(0)).current;
@@ -76,6 +81,8 @@ const LearningScreen = () => {
   const [within168Hours, setWithin168Hours] = useState(true);
   const [getProBtn, setGetProBtn] = useState('upgrade to Pro')
 
+  const userHasAccess = isProMember || within168Hours;
+  
 
   const opacityImgBlur = scrollY.interpolate({
     inputRange: [0, 60],
@@ -203,7 +210,7 @@ const LearningScreen = () => {
           console.log('it has launched before and hours difference in learning screen is: ', hoursDifference);
 
 
-          if (hoursDifference >= 168) {
+          if (hoursDifference >= 1680) { // 168 in production
             setWithin168Hours(false);
             console.log('free loading is over');
           }
@@ -419,16 +426,13 @@ const LearningScreen = () => {
     return <Animated.View style={{transform: [{translateY: translateY1}]}}>
 
       <CardBlack
-      color1={'#FF2E4C'}
-      color2={'#333333'}
       color3={'#7affff'}
       title={item.title} 
-      description={item.description} 
-      level={item.level} 
+      description={item.description}
       link={item.link} 
-      showPro={item.showPro}
-      colorSmallSqu={colorSqu}
       stars={item.stars}
+      hasAccess={userHasAccess}
+      requiresPro={item.requiresPro}
       savedLang={choosenLanguage}/>
     </Animated.View>
   }
@@ -454,16 +458,13 @@ const LearningScreen = () => {
     return <Animated.View style={{transform: [{translateY: translateY2}]}}>
 
       <CardBlack 
-      color1={'#e9d362'}
-      color2={'#333333'}
       color3={'#fffa96'}
       title={item.title} 
       description={item.description} 
-      level={item.level} 
       link={item.link} 
-      showPro={item.showPro}
-      colorSmallSqu={colorSqu}
       stars={item.stars}
+      hasAccess={userHasAccess}
+      requiresPro={item.requiresPro}
       savedLang={choosenLanguage}/>
     </Animated.View>
   }
@@ -489,16 +490,13 @@ const LearningScreen = () => {
     return <Animated.View style={{transform: [{translateY: translateY3}]}}>
 
       <CardBlack 
-      color1={'#73C8A9'}
-      color2={'#333333'}
       color3={'#ff94f6'}
       title={item.title} 
       description={item.description} 
-      level={item.level} 
       link={item.link} 
-      showPro={item.showPro}
-      colorSmallSqu={colorSqu}
       stars={item.stars}
+      hasAccess={userHasAccess}
+      requiresPro={item.requiresPro}
       savedLang={choosenLanguage}/>
     </Animated.View>
   }
@@ -524,16 +522,13 @@ const LearningScreen = () => {
     return <Animated.View style={{transform: [{translateY: translateY4}]}}>
 
       <CardBlack 
-      color1={'#3a7bd5'}
-      color2={'#333333'}
       color3={'#9cffa2'}
       title={item.title} 
       description={item.description} 
-      level={item.level} 
       link={item.link} 
-      showPro={item.showPro}
-      colorSmallSqu={colorSqu}
       stars={item.stars}
+      hasAccess={userHasAccess}
+      requiresPro={item.requiresPro}
       savedLang={choosenLanguage}/>
     </Animated.View>
   }
@@ -559,16 +554,13 @@ const LearningScreen = () => {
     return <Animated.View style={{transform: [{translateY: translateY5}]}}>
 
       <CardBlack
-      color1={'#3a7bd5'}
-      color2={'#333333'}
       color3={'#ffa6a6'}
       title={item.title} 
       description={item.description} 
-      level={item.level} 
       link={item.link} 
-      showPro={item.showPro}
-      colorSmallSqu={colorSqu}
       stars={item.stars}
+      hasAccess={userHasAccess}
+      requiresPro={item.requiresPro}
       savedLang={choosenLanguage}/>
     </Animated.View>
   }
@@ -596,22 +588,22 @@ const LearningScreen = () => {
     return <Animated.View style={{transform: [{translateY: translateY6}]}}>
 
       <CardBlack 
-      color1={'#3a7bd5'}
-      color2={'#333333'}
       color3={'#ffffff'}
       title={item.title} 
       description={item.description} 
-      level={item.level} 
       link={item.link} 
-      showPro={item.showPro}
-      colorSmallSqu={colorSqu}
       stars={item.stars}
+      hasAccess={userHasAccess}
+      requiresPro={item.requiresPro}
       savedLang={choosenLanguage}/>
     </Animated.View>
   }
 
   const sendToPro = () => {
-    console.log('send to upgrade');
+    navigation.navigate({
+      name: 'Paywall',
+      params: {language: choosenLanguage}
+  })
   }
 
 
@@ -628,11 +620,12 @@ const LearningScreen = () => {
           </View>
         
          
-          <View style={styles.readingButtonContainer}>
+          {isProMember ? null : <View style={styles.readingButtonContainer}>
             <TouchableOpacity style={styles.buttonContainer} onPress={sendToPro}>
               <Text style={styles.textButton}>{getProBtn}</Text>
             </TouchableOpacity>
-          </View>
+          </View>}
+          
           
           
         </View>
