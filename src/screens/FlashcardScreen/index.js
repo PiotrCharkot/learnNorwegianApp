@@ -312,7 +312,7 @@ const FlashcardScreen = () => {
           console.log('it has launched before and hours difference in flashcard screen is: ', hoursDifference);
 
 
-          if (hoursDifference >= 1680) { // 168 in prod
+          if (hoursDifference >= 168) { // 168 in prod
             setWithin168Hours(false);
             console.log('free loading is over');
           }

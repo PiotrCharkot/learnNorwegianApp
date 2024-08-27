@@ -25,7 +25,7 @@ const CardReading = (params) => {
         if (params.hasAccess || !params.requiresPro) {
             navigation.navigate({
                 name: 'Text',
-                params: {textId: params.textId, language: params.language}
+                params: {textId: params.textId, language: params.language, within168Hours: params.within168Hours}
             })
         } else {
             navigation.navigate({

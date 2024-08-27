@@ -210,7 +210,7 @@ const LearningScreen = () => {
           console.log('it has launched before and hours difference in learning screen is: ', hoursDifference);
 
 
-          if (hoursDifference >= 1680) { // 168 in production
+          if (hoursDifference >= 168) { // 168 in production
             setWithin168Hours(false);
             console.log('free loading is over');
           }

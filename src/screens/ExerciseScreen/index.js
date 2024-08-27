@@ -222,7 +222,7 @@ const ExerciseScreen = () => {
           console.log('it has launched before and hours difference in exercise screen is: ', hoursDifference);
 
 
-          if (hoursDifference >= 1680) { // change to 168
+          if (hoursDifference >= 168) { // change to 168
             setWithin168Hours(false);
             console.log('free loading is over');
           }

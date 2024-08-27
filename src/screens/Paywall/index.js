@@ -107,6 +107,9 @@ const Paywall = ({route}) => {
 
 
     useEffect(() => {
+
+
+        //console.log('current offerings are: ', currentOffering);
       
         if (language === 'PL') {
             setTitile('Odblokuj treści premium');

@@ -31,6 +31,7 @@ function useRevenueCat() {
             Purchases.setLogLevel(LOG_LEVEL.VERBOSE);
 
             if (Platform.OS == 'android') {
+                console.log('setting Purchases for android');
                 await Purchases.configure({ apiKey: APIKeys.google})
             } else if (Platform.OS == 'ios') {
                 await Purchases.configure({ apiKey: APIKeys.apple})
@@ -39,15 +40,13 @@ function useRevenueCat() {
             const offerings = await Purchases.getOfferings();
             const customerInfo = await Purchases.getCustomerInfo();
 
-            
-
-            console.log('linkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk: ', customerInfo.managementURL);
-
 
             setCurrentOffering(offerings.current);
             setCustomerInfo(customerInfo);
             setManagementURL(customerInfo.managementURL);
 
+            console.log('cutomer info is: ', customerInfo);
+            console.log('offerings in setup are: ', offerings.current);
         }
     
 

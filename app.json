@@ -1,6 +1,6 @@
 {
   "expo": {
-    "name": "LearnNorwegianApp",
+    "name": "Learn Norwegian",
     "slug": "LearnNorwegianApp",
     "version": "1.0.0",
     "orientation": "portrait",
@@ -19,6 +19,10 @@
       "bundleIdentifier": "com.piotrcharkot.LearnNorwegianApp"
     },
     "android": {
+      "package": "com.piotrcharkot.LearnNorwegianApp",
+      "permissions": [
+        "com.android.vending.BILLING"
+      ],
       "adaptiveIcon": {
         "foregroundImage": "./assets/logo3.png",
         "backgroundColor": "#ffffff"

@@ -521,7 +521,7 @@ const ReadingScreen = ({route}) => {
 
     return <Animated.View style={{transform: [{perspective: 3000}, {rotateY: rotateVal}, {scaleY: scaleVal}]}}>
 
-      <CardReading title={item.title} textId={item.textId} level={item.level} language={choosenLanguage} hasAccess={userHasAccess} requiresPro={item.requiresPro}/>
+      <CardReading title={item.title} textId={item.textId} level={item.level} language={choosenLanguage} hasAccess={userHasAccess} requiresPro={item.requiresPro} within168Hours={within168Hours}/>
     </Animated.View>
   }
 
@@ -553,7 +553,7 @@ const ReadingScreen = ({route}) => {
 
     return <Animated.View style={{transform: [{perspective: 3000}, {rotateY: rotateVal}, {scaleY: scaleVal}]}}>
 
-      <CardReading title={item.title} textId={item.textId} level={item.level} language={choosenLanguage} hasAccess={userHasAccess} requiresPro={item.requiresPro}/>
+      <CardReading title={item.title} textId={item.textId} level={item.level} language={choosenLanguage} hasAccess={userHasAccess} requiresPro={item.requiresPro} within168Hours={within168Hours}/>
     </Animated.View>
   }
 
@@ -584,7 +584,7 @@ const ReadingScreen = ({route}) => {
 
     return <Animated.View style={{transform: [{perspective: 3000}, {rotateY: rotateVal}, {scaleY: scaleVal}]}}>
 
-      <CardReading title={item.title} textId={item.textId} level={item.level} language={choosenLanguage} hasAccess={userHasAccess} requiresPro={item.requiresPro} />
+      <CardReading title={item.title} textId={item.textId} level={item.level} language={choosenLanguage} hasAccess={userHasAccess} requiresPro={item.requiresPro} within168Hours={within168Hours}/>
     </Animated.View>
   }
 
@@ -614,7 +614,7 @@ const ReadingScreen = ({route}) => {
 
     return <Animated.View style={{transform: [{perspective: 3000}, {rotateY: rotateVal}, {scaleY: scaleVal}]}}>
 
-      <CardReading title={item.title} textId={item.textId} level={item.level} language={choosenLanguage} hasAccess={userHasAccess} requiresPro={item.requiresPro}/>
+      <CardReading title={item.title} textId={item.textId} level={item.level} language={choosenLanguage} hasAccess={userHasAccess} requiresPro={item.requiresPro} within168Hours={within168Hours}/>
     </Animated.View>
   }
 
@@ -644,7 +644,7 @@ const ReadingScreen = ({route}) => {
 
     return <Animated.View style={{transform: [{perspective: 3000}, {rotateY: rotateVal}, {scaleY: scaleVal}]}}>
 
-      <CardReading title={item.title} textId={item.textId} level={item.level} language={choosenLanguage} hasAccess={userHasAccess} requiresPro={item.requiresPro} />
+      <CardReading title={item.title} textId={item.textId} level={item.level} language={choosenLanguage} hasAccess={userHasAccess} requiresPro={item.requiresPro} within168Hours={within168Hours}/>
     </Animated.View>
   }
 
@@ -674,7 +674,7 @@ const ReadingScreen = ({route}) => {
 
     return <Animated.View style={{transform: [{perspective: 3000}, {rotateY: rotateVal}, {scaleY: scaleVal}]}}>
 
-      <CardReading title={item.title} textId={item.textId} level={item.level} language={choosenLanguage} hasAccess={userHasAccess} requiresPro={item.requiresPro}/>
+      <CardReading title={item.title} textId={item.textId} level={item.level} language={choosenLanguage} hasAccess={userHasAccess} requiresPro={item.requiresPro} within168Hours={within168Hours}/>
     </Animated.View>
   }
 
