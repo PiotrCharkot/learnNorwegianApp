@@ -1,12 +1,15 @@
 import { useEffect, useState } from "react";
 import { Platform } from "react-native";
 import Purchases, { CustomerInfo, LOG_LEVEL, PurchasesOffering } from "react-native-purchases";
-import { API_KEY_APPLE, API_KEY_GOOGLE } from '@env';
+import Constants from 'expo-constants';
+import { EXPO_PUBLIC_API_KEY_APPLE, EXPO_PUBLIC_API_KEY_GOOGLE } from '@env';
 
+
+const extra = Constants.expoConfig?.extra;
 
 const APIKeys = {
-    apple: API_KEY_APPLE,
-    google: API_KEY_GOOGLE
+    apple: extra?.EXPO_PUBLIC_API_KEY_APPLE,
+    google: extra?.EXPO_PUBLIC_API_KEY_GOOGLE
 };
 
 const typesOfMembership = {

@@ -5,18 +5,45 @@
   "build": {
     "development": {
       "developmentClient": true,
-      "distribution": "internal"
+      "distribution": "internal",
+      "env": {
+        "EXPO_PUBLIC_API_KEY_APPLE": "appl_IMWyRnlKxLnNbmkykUvvFHLlfmt",
+        "EXPO_PUBLIC_API_KEY_GOOGLE": "goog_KdMfZYnGJCEwnLRaQjVTNywthKQ"
+      }
     },
     "preview": {
-      "distribution": "internal"
+      "distribution": "internal",
+      "env": {
+        "EXPO_PUBLIC_API_KEY_APPLE": "appl_IMWyRnlKxLnNbmkykUvvFHLlfmt",
+        "EXPO_PUBLIC_API_KEY_GOOGLE": "goog_KdMfZYnGJCEwnLRaQjVTNywthKQ"
+      }
     },
     "production": {
       "android": {
         "buildType": "app-bundle"
+      },
+      "env": {
+        "EXPO_PUBLIC_API_KEY_APPLE": "appl_IMWyRnlKxLnNbmkykUvvFHLlfmt",
+        "EXPO_PUBLIC_API_KEY_GOOGLE": "goog_KdMfZYnGJCEwnLRaQjVTNywthKQ"
+      }
+    },
+    "simulator": {
+      "ios": {
+        "simulator": true
+      },
+      "env": {
+        "EXPO_PUBLIC_API_KEY_APPLE": "appl_IMWyRnlKxLnNbmkykUvvFHLlfmt",
+        "EXPO_PUBLIC_API_KEY_GOOGLE": "goog_KdMfZYnGJCEwnLRaQjVTNywthKQ"
       }
     }
   },
   "submit": {
-    "production": {}
+    "production": {
+      "ios": {
+        "appleId": "piotr.charkot@gmail.com",
+        "ascAppId": "6504736023",
+        "appleTeamId": "US2RC72ALH"
+      }
+    }
   }
 }
