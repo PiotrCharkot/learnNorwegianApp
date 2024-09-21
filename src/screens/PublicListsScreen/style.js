@@ -39,7 +39,7 @@ const styles = StyleSheet.create({
     top: 50
    },
    cardsContainer: {
-    height: '75%',
+    height: '85%',
     width: '100%',
     alignItems: 'center',
     justifyContent: 'center',

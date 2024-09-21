@@ -7,6 +7,9 @@ import { useNavigation } from "@react-navigation/native";
 const screenWidth = Dimensions.get('window').width;
 const screenHeight = Dimensions.get('window').height;
 
+const isWideScreen = screenWidth > 550;
+const ratioForWideScreen = 2;
+
 const Intro5 = ({route}) => {
 
     const navigation = useNavigation();
@@ -385,8 +388,9 @@ const Intro5 = ({route}) => {
         
 
         <Animated.View style={{...styles.barImgContainer, transform: [{translateY: barPosition}]}}>
-            <Animated.Image source={require('../../../../assets/introPictures/bar-exe.png')} style={{...styles.barImg, opacity: opacityBar}}/>
-            <Animated.Image source={require('../../../../assets/introPictures/bar-learn.png')} style={{...styles.barImg, opacity: opacityBar2}}/>
+            {isWideScreen ? <Animated.Image source={require('../../../../assets/introPictures/bar-exe-ipad2.png')} style={{...styles.barImg, opacity: opacityBar}}/> : <Animated.Image source={require('../../../../assets/introPictures/bar-exe.png')} style={{...styles.barImg, opacity: opacityBar}}/>}
+            {isWideScreen ? <Animated.Image source={require('../../../../assets/introPictures/bar-learn-ipad2.png')} style={{...styles.barImg, opacity: opacityBar2}}/> : <Animated.Image source={require('../../../../assets/introPictures/bar-learn.png')} style={{...styles.barImg, opacity: opacityBar2}}/>}
+            
         </Animated.View>
 
 
@@ -466,7 +470,7 @@ const styles = StyleSheet.create({
         
     },
     titleText: {
-        fontSize: 40,
+        fontSize: isWideScreen ? 50 : 40,
         fontWeight: '450',
         textAlign: 'center',
         marginHorizontal: 20,
@@ -475,7 +479,7 @@ const styles = StyleSheet.create({
         marginTop: 100
     },
     bodyText: {
-        fontSize: 20,
+        fontSize: isWideScreen ? 30 : 20,
         textAlign: 'center',
     },
     bodyText2: {
@@ -529,13 +533,13 @@ const styles = StyleSheet.create({
         position: 'absolute',
         bottom: 0,
         width: '100%',
-        height: 150
+        height: isWideScreen ? 180 : 150
         
     },
     barImg: {
         position: 'absolute',
         width: '100%',
-        height: 150
+        height: isWideScreen ? 180 : 150
     },
     pointerContainer: {
         position: 'absolute',
@@ -543,8 +547,8 @@ const styles = StyleSheet.create({
         width: 30
     },
     pointerImg: {
-        height: 30,
-        width: 30
+        height: isWideScreen ? 30 * ratioForWideScreen : 30,
+        width: isWideScreen ? 30 * ratioForWideScreen : 30
     },
     upperTextContainer: {
         position: 'absolute',
@@ -558,7 +562,7 @@ const styles = StyleSheet.create({
     },
     lowerTextContainer: {
         position: 'absolute',
-        bottom: 150,
+        bottom: isWideScreen ? 180 : 150,
         width: '100%',
         paddingVertical: 30,
         paddingHorizontal: 20,
@@ -566,10 +570,11 @@ const styles = StyleSheet.create({
     },
     lowerTextContainer2: {
         position: 'absolute',
-        bottom: 150,
+        bottom: isWideScreen ? 180 : 150,
         width: '100%',
         paddingVertical: 30,
         paddingHorizontal: 20,
+        backgroundColor: 'rgba(255, 255, 255, 0.4)'
     },
     exerciseMenuContainer: {
         position: 'absolute',

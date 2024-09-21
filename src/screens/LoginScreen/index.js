@@ -18,11 +18,13 @@ const LoginScreen = ({route}) => {
     const {choosenLanguage} = route.params;
 
     const screenWidth = Dimensions.get("window").width;
+    const screenHeight = Dimensions.get("window").height;
+    const isTablet = screenWidth / screenHeight > 0.65;
     const interpolatedValue = useRef(new Animated.Value(0)).current;
     const interpolatedValueForX = useRef(new Animated.Value(0)).current;
     const buttonForgetPos = useRef(new Animated.Value(-290)).current;
     const buttonRegisterPos = useRef(new Animated.Value(-290)).current;
-    const messageContainerPos = useRef(new Animated.Value(-500)).current;
+    const messageContainerPos = useRef(new Animated.Value(-screenWidth)).current;
     const [imageLink, setImageLink] = useState(require('../../../assets/login.png'));
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
@@ -206,7 +208,7 @@ const exitButton = (boolean) => {
 const hideMessage = () => {
 
     Animated.spring(messageContainerPos, {
-        toValue: -500,
+        toValue: -screenWidth,
         speed: 1,
         bounciness: 0,
         useNativeDriver: true,
@@ -232,6 +234,8 @@ useFocusEffect(
 
 useEffect(() => {
 
+    console.log('is it ipad: ', isTablet);
+    console.log('width of screen is: ', screenWidth);
     openLoginAnimation();
 
 
@@ -368,7 +372,7 @@ useEffect(() => {
                     <Animated.View style={{...styles.forgotButtonCont, ...styles.shadowStrong, transform: [{translateX: buttonForgetPos}]}}>
                         <GradientButton  
                             height={40} 
-                            width={screenWidth * 1.5 / 2.8 + offsetButton }
+                            width={isTablet? screenWidth * 1 / 2.8 + offsetButton : screenWidth * 1.5 / 2.8 + offsetButton }
                             colorA={'white'} 
                             colorB={'#e8cceb'} 
                             callbackFunc={forgotButton} 
@@ -391,7 +395,7 @@ useEffect(() => {
                     <Animated.View style={{...styles.regButtonCont, ...styles.shadowStrong, transform: [{translateX: buttonRegisterPos}]}}>
                         <GradientButton  
                             height={40} 
-                            width={screenWidth * 1.5 / 3.7 + offsetButton}
+                            width={isTablet? screenWidth * 1 / 3.7 + offsetButton : screenWidth * 1.5 / 3.7 + offsetButton}
                             colorA={'white'} 
                             colorB={'#e8cceb'} 
                             callbackFunc={registerButton} 

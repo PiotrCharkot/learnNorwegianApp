@@ -5,6 +5,7 @@ import { LinearGradient } from 'expo-linear-gradient';
 
 const screenWidth = Dimensions.get('window').width;
 const transparent = 'rgba(255,255,255,0)';
+const isWideScreen = screenWidth > 550
 
 
 const CardBlack = (params) => {
@@ -164,7 +165,7 @@ const styles = StyleSheet.create({
     },
     textTitle: {
         color: 'white',
-        fontSize: 15,
+        fontSize: isWideScreen ? 30 : 15,
         fontWeight: '800',
         shadowOffset: {
             width: -1,
@@ -176,7 +177,7 @@ const styles = StyleSheet.create({
     },
     textDescription: {
         color: 'white',
-        fontSize: 11,
+        fontSize: isWideScreen ? 20 : 11,
         fontWeight: '500'
     },
     reindeerContainer: {

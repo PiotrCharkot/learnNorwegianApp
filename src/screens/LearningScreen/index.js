@@ -22,6 +22,7 @@ import learningList6 from '../../listData/learningLists/learningList6';
 import useRevenueCat from '../../../hooks/useRevenueCat';
 
 const screenWidth = Dimensions.get('window').width;
+const isWideScreen = screenWidth > 550;
 const cardSize = screenWidth * 0.6 + 20;
 const spacerSize = (screenWidth - cardSize) / 2;
 
@@ -651,7 +652,7 @@ const LearningScreen = () => {
           <LinearGradient colors={['white', 'rgba(255,255,255,0)', 'white']} start={[0.0, 0.1]} end={[0.0, 1.0]}  style={styles.gradinetFlatlist}>
             </LinearGradient>
         
-          <View style={{...styles.titleContainer, width: 240, left: screenWidth / 2 - 120}}>
+          <View style={{...styles.titleContainer, width: isWideScreen ? 300 : 240, left: isWideScreen ? screenWidth / 2 -150 : screenWidth / 2 - 120}}>
             <Text style={styles.titleText} allowFontScaling={false}>Grammatical tenses</Text>
           </View>
           <Animated.FlatList 
@@ -680,7 +681,7 @@ const LearningScreen = () => {
           <LinearGradient colors={['white', 'rgba(255,255,255,0)', 'white']} start={[0.0, 0.1]} end={[0.0, 1.0]}  style={styles.gradinetFlatlist}>
             </LinearGradient>
         
-          <View style={{...styles.titleContainer, width: 240, left: screenWidth / 2 - 120}}>
+          <View style={{...styles.titleContainer, width: isWideScreen ? 300 : 240, left: isWideScreen ? screenWidth / 2 -150 : screenWidth / 2 - 120}}>
             <Text style={styles.titleText} allowFontScaling={false}>Sentence structure</Text>
           </View>
           <Animated.FlatList 
@@ -709,7 +710,7 @@ const LearningScreen = () => {
           <LinearGradient colors={['white', 'rgba(255,255,255,0)', 'white']} start={[0.0, 0.1]} end={[0.0, 1.0]}  style={styles.gradinetFlatlist}>
             </LinearGradient>
         
-          <View style={{...styles.titleContainer, width: 120, left: screenWidth / 2 - 60}}>
+          <View style={{...styles.titleContainer, width: isWideScreen ? 180 : 120, left:isWideScreen ? screenWidth / 2 -90 : screenWidth / 2 - 60}}>
             <Text style={styles.titleText} allowFontScaling={false}>Verb</Text>
           </View>
           <Animated.FlatList 
@@ -738,7 +739,7 @@ const LearningScreen = () => {
           <LinearGradient colors={['white', 'rgba(255,255,255,0)', 'white']} start={[0.0, 0.1]} end={[0.0, 1.0]}  style={styles.gradinetFlatlist}>
             </LinearGradient>
         
-          <View style={{...styles.titleContainer, width: 120, left: screenWidth / 2 - 60}}>
+          <View style={{...styles.titleContainer, width: isWideScreen ? 180 : 120, left: isWideScreen ? screenWidth / 2 -90 : screenWidth / 2 - 60}}>
             <Text style={styles.titleText} allowFontScaling={false}>Noun</Text>
           </View>
           <Animated.FlatList 
@@ -767,7 +768,7 @@ const LearningScreen = () => {
           <LinearGradient colors={['white', 'rgba(255,255,255,0)', 'white']} start={[0.0, 0.1]} end={[0.0, 1.0]}  style={styles.gradinetFlatlist}>
             </LinearGradient>
         
-          <View style={{...styles.titleContainer, width: 260, left: screenWidth / 2 - 130}}>
+          <View style={{...styles.titleContainer, width: isWideScreen ? 340 :  260, left: isWideScreen ? screenWidth / 2 -170 : screenWidth / 2 - 130}}>
             <Text style={styles.titleText} allowFontScaling={false}>Adjectives and Adverbs</Text>
           </View>
           <Animated.FlatList 
@@ -796,7 +797,7 @@ const LearningScreen = () => {
           <LinearGradient colors={['white', 'rgba(255,255,255,0)', 'white']} start={[0.0, 0.1]} end={[0.0, 1.0]}  style={styles.gradinetFlatlist}>
             </LinearGradient>
         
-          <View style={{...styles.titleContainer, width: 280, left: screenWidth / 2 - 140}}>
+          <View style={{...styles.titleContainer, width: isWideScreen ? 380 : 280, left: isWideScreen ? screenWidth / 2 -190 : screenWidth / 2 - 140}}>
             <Text style={styles.titleText} allowFontScaling={false}>Pronoun and Determinative</Text>
           </View>
           <Animated.FlatList 

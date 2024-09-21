@@ -7,6 +7,9 @@ import { useNavigation } from "@react-navigation/native";
 const screenWidth = Dimensions.get('window').width;
 const screenHeight = Dimensions.get('window').height;
 
+const isWideScreen = screenWidth > 550;
+const ratioForWideScreen = 2;
+
 const Intro3 = ({route}) => {
 
     const navigation = useNavigation();
@@ -358,24 +361,7 @@ const Intro3 = ({route}) => {
 
         </Animated.View>
 
-        
-
-        <Animated.View style={{...styles.middleTextContainer, opacity: opacityMiddleText}}>
-            <Text style={styles.bodyText}>Create your own flashcards</Text>
-
-        </Animated.View>
-
-
-        <Animated.View style={{...styles.middleTextContainer, opacity: opacityMiddleText2}}>
-            <Text style={styles.bodyText}>Explore flashcards created by other users. Save and use them as your own.</Text>
-
-        </Animated.View>
-
-
-        <Animated.View style={{...styles.lowerTextContainer, opacity: opacityLowerText}}>
-            <Text style={styles.bodyText}>Create, edit and share your word lists with other users</Text>
-
-        </Animated.View>
+    
 
 
 
@@ -422,19 +408,33 @@ const Intro3 = ({route}) => {
 
 
 
-        <Animated.View style={{...styles.pointerContainer, transform: [{translateY: pointerPositionY}, {translateX: pointerPositionX}]}}>
-            <Animated.Image source={require('../../../../assets/introPictures/pointer.png')} style={{...styles.pointerImg, opacity: opacityPointer}}/>
+        <Animated.View style={{...styles.middleTextContainer, opacity: opacityMiddleText}}>
+            <Text style={styles.bodyText}>Create your own flashcards</Text>
+
         </Animated.View>
 
+
+        <Animated.View style={{...styles.middleTextContainer, opacity: opacityMiddleText2}}>
+            <Text style={styles.bodyText}>Explore flashcards created by other users. Save and use them as your own.</Text>
+
+        </Animated.View>
+
+        <Animated.View style={{...styles.lowerTextContainer, opacity: opacityLowerText}}>
+            <Text style={styles.bodyText}>Create, edit and share your word lists with other users</Text>
+
+        </Animated.View>
 
 
 
 
         <Animated.View style={{...styles.barImgContainer, transform: [{translateY: barPosition}]}}>
-            <Animated.Image source={require('../../../../assets/introPictures/bar-word.png')} style={{...styles.barImg, opacity: opacityBar}}/>
+            {isWideScreen ? <Animated.Image source={require('../../../../assets/introPictures/bar-word-ipad2.png')} style={{...styles.barImg, opacity: opacityBar}}/> : <Animated.Image source={require('../../../../assets/introPictures/bar-word.png')} style={{...styles.barImg, opacity: opacityBar}}/>}
         </Animated.View>
 
 
+        <Animated.View style={{...styles.pointerContainer, transform: [{translateY: pointerPositionY}, {translateX: pointerPositionX}]}}>
+            <Animated.Image source={require('../../../../assets/introPictures/pointer.png')} style={{...styles.pointerImg, opacity: opacityPointer}}/>
+        </Animated.View>
 
 
 
@@ -483,7 +483,7 @@ const styles = StyleSheet.create({
         marginHorizontal: 20,
     },
     bodyText: {
-        fontSize: 20,
+        fontSize: isWideScreen ? 30 : 20,
         textAlign: 'center',
     },
     bodyText2: {
@@ -537,13 +537,13 @@ const styles = StyleSheet.create({
         position: 'absolute',
         bottom: 0,
         width: '100%',
-        height: 150
+        height: isWideScreen ? 180 : 150
         
     },
     barImg: {
         position: 'absolute',
         width: '100%',
-        height: 150
+        height: isWideScreen ? 180 : 150
     },
     pointerContainer: {
         position: 'absolute',
@@ -551,8 +551,8 @@ const styles = StyleSheet.create({
         width: 30
     },
     pointerImg: {
-        height: 30,
-        width: 30
+        height: isWideScreen ? 30 * ratioForWideScreen : 30,
+        width: isWideScreen ? 30 * ratioForWideScreen : 30
     },
     upperTextContainer: {
         position: 'absolute',
@@ -563,11 +563,13 @@ const styles = StyleSheet.create({
         position: 'absolute',
         top: screenHeight / 2,
         marginHorizontal: 20,
+        backgroundColor: 'rgba(255, 255, 255, 0.9)'
     },
     lowerTextContainer: {
         position: 'absolute',
         top: 140 + (screenWidth - 60) / 1.07 + screenWidth / 13.8,
         marginHorizontal: 20,
+        backgroundColor: 'rgba(255, 255, 255, 0.9)'
     },
     flashcardBtnContainer: {
         position: 'absolute',
@@ -575,8 +577,8 @@ const styles = StyleSheet.create({
         top: 40
     },
     flashcardIntroBtnImg: {
-        height: 30,
-        width: 90
+        height: isWideScreen ? ratioForWideScreen * 30 : 30,
+        width: isWideScreen ? ratioForWideScreen * 90 : 90
     },
     exploreCardsBtnContainer: {
         position: 'absolute',
@@ -584,8 +586,8 @@ const styles = StyleSheet.create({
         top: 40
     },
     exploreCardsBtnImg: {
-        height: 30,
-        width: 90
+        height: isWideScreen ? ratioForWideScreen * 30 : 30,
+        width: isWideScreen ? ratioForWideScreen * 90 : 90
     },
     createBtnContainer: {
         position: 'absolute',
@@ -621,10 +623,10 @@ const styles = StyleSheet.create({
     },
     ownCardContainer: {
         position: 'absolute',
-        top: 80
+        top: isWideScreen ? ratioForWideScreen * 120 : 80
     },
     ownCardImg: {
-        width: screenWidth,
-        height: screenWidth / 1.9
+        width: isWideScreen ? screenWidth * 0.7 : screenWidth,
+        height: isWideScreen ? screenWidth / 1.9  * 0.7 : screenWidth / 1.9 
     }
 })

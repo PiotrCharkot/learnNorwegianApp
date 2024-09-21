@@ -5,6 +5,7 @@ import { useNavigation } from "@react-navigation/native";
 
 const screenWidth = Dimensions.get('window').width;
 const screenHeight = Dimensions.get('window').height;
+const isWideScreen = screenWidth > 550;
 
 const Intro1 = ({route}) => {
 
@@ -119,7 +120,7 @@ const styles = StyleSheet.create({
         marginHorizontal: 20,
     },
     titleText: {
-        fontSize: 40,
+        fontSize: isWideScreen ? 50 : 40,
         fontWeight: '450',
         textAlign: 'center',
         marginHorizontal: 20,
@@ -144,7 +145,7 @@ const styles = StyleSheet.create({
         marginHorizontal: 20,
     },
     bodyText: {
-        fontSize: 20,
+        fontSize: isWideScreen ? 30 : 20,
         textAlign: 'center'
     },
     buttonContainer: {

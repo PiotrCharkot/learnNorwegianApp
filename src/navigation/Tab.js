@@ -19,6 +19,9 @@ import ExerciseScreen from '../screens/ExerciseScreen';
 
 const Tab = createBottomTabNavigator();
 
+const screenWidth = Dimensions.get("window").width;
+const screenHeight = Dimensions.get('window').height;
+const isWideScreen = screenWidth > 550
 
 
 const Tabs = () => {
@@ -44,7 +47,7 @@ const Tabs = () => {
     const focusedIconColor2 = '#b829e3'
     const iconColor = 'grey'
     const iconColor2 = '#b829e3'
-    const screenWidth = Dimensions.get("window").width;
+    
     const scale = useRef(new Animated.Value(1)).current;
     const scaleTwo = useRef(new Animated.Value(1)).current;
     const scaleThree = useRef(new Animated.Value(1)).current;
@@ -967,7 +970,7 @@ const styles = StyleSheet.create({
         right: 20,
         elevation: 0,
         borderRadius: 15,
-        height: 90,
+        height: isWideScreen ? 120 : 90,
     },
     shadow: {
         shadowColor: '#7F5DF0',
@@ -984,7 +987,7 @@ const styles = StyleSheet.create({
         position: 'absolute',
         alignItems: 'center', 
         justifyContent: 'center', 
-        top: 0, 
+        top: isWideScreen ? 10 : 0, 
         width: 80,
         height: 80,
     },
@@ -998,11 +1001,11 @@ const styles = StyleSheet.create({
         position: 'absolute',
         alignItems: 'center', 
         justifyContent: 'center', 
-        top: -35, 
+        top: isWideScreen ? -50 : -35, 
         backgroundColor: 'red',
-        width: 70,
-        height: 70,
-        borderRadius: 35,
+        width: isWideScreen ? 100 : 70,
+        height: isWideScreen ? 100 : 70,
+        borderRadius: isWideScreen ? 50 : 35,
     },
     greyCircle: {
         height: 40, 
@@ -1013,12 +1016,12 @@ const styles = StyleSheet.create({
         borderRadius: 20,
     },
     iconImg: {
-        width: 25,
-        height: 25,
+        width: isWideScreen ? 35 : 25,
+        height: isWideScreen ? 35 : 25,
         tintColor: 'black'
     },
     iconText: {
-        fontSize: 10,
+        fontSize: isWideScreen ? 14 : 10,
         top: 6,
     },
     redLineMenu: {

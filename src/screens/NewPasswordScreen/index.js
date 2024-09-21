@@ -20,9 +20,11 @@ const NewPasswordScreen = ({route}) => {
     const {choosenLanguage} = route.params;
 
     const screenWidth = Dimensions.get("window").width;
+    const screenHight = Dimensions.get("window").height;
+    const isTablet = screenWidth / screenHight > 0.65;
     const interpolatedValue = useRef(new Animated.Value(0)).current;
     const interpolatedValueForX = useRef(new Animated.Value(0)).current;
-    const messageContainerPos = useRef(new Animated.Value(-500)).current;
+    const messageContainerPos = useRef(new Animated.Value(-screenHight)).current;
     const buttonLoginPos = useRef(new Animated.Value(-290)).current;
     const [imageLink, setImageLink] = useState(require('../../../assets/fingerprint.png'));
     const [password, setPassword] = useState("");
@@ -91,7 +93,7 @@ const closeScreenAnimation = () => {
 const hideMessage = () => {
 
     Animated.spring(messageContainerPos, {
-        toValue: -500,
+        toValue: -screenHight,
         speed: 1,
         bounciness: 0,
         useNativeDriver: true,

@@ -5,6 +5,7 @@ import { LinearGradient } from 'expo-linear-gradient';
 
 const screenWidth = Dimensions.get('window').width;
 const screenHeight = Dimensions.get('window').height;
+const isWideScreen = screenWidth > 550
 
 const CardFlashList = (params) => {
 
@@ -121,7 +122,7 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         backgroundColor: '#6d28ed',
         position: 'absolute',
-        bottom: -10,
+        bottom: isWideScreen ? -20 : -10,
         left: 30,
         borderRadius: 10,
         shadowColor: 'black',
@@ -141,7 +142,7 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         backgroundColor: '#b829e3',
         position: 'absolute',
-        bottom: -10,
+        bottom: isWideScreen ? -20 : -10,
         right: 30,
         borderRadius: 10,
         shadowColor: 'black',
@@ -163,13 +164,13 @@ const styles = StyleSheet.create({
     },
     textTitle: {
         color: 'white',
-        fontSize: 20,
+        fontSize: isWideScreen ? 32 : 20,
         fontWeight: '700',
         textAlign: 'center'
     },
     buttonText: {
         color: 'white',
-        fontSize: 14,
+        fontSize: isWideScreen ? 25 : 14,
         fontWeight: '700'
     },
     proContainer: {

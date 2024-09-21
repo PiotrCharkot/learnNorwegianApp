@@ -6,6 +6,9 @@ import { LinearGradient } from 'expo-linear-gradient';
 const screenWidth = Dimensions.get('window').width;
 const screenHeight = Dimensions.get('window').height;
 
+const isWideScreen = screenWidth > 550;
+const ratioForWideScreen = 2;
+
 const CardOwn = (params) => {
 
     const navigation = useNavigation();
@@ -108,13 +111,13 @@ const styles = StyleSheet.create({
     },
     textTitle: {
         color: 'white',
-        fontSize: 20,
+        fontSize:  isWideScreen ? 30 : 20,
         fontWeight: '600',
         textAlign: 'right'
     },
     textLang: {
         color: 'white',
-        fontSize: 16,
+        fontSize:  isWideScreen ? 24 : 16,
         fontWeight: '500',
         textAlign: 'right'
     },
@@ -122,7 +125,7 @@ const styles = StyleSheet.create({
         position: 'absolute',
         justifyContent: 'center',
         alignItems: 'center',
-        height: 20,
+        height: isWideScreen ? 20 * ratioForWideScreen : 20,
         paddingHorizontal: 10,
         borderRadius: 5,
         bottom: 10,
@@ -132,14 +135,14 @@ const styles = StyleSheet.create({
     },
     touchableEditText: {
         color: 'white',
-        fontSize: 10
+        fontSize: isWideScreen ? 20 : 10
     },
     touchableTest: {
         position: 'absolute',
         justifyContent: 'center',
         alignItems: 'center',
-        height: 20,
-        width: 70,
+        height: isWideScreen ? 20 * ratioForWideScreen : 20,
+        width: isWideScreen ? 70 * ratioForWideScreen : 70,
         borderRadius: 5,
         bottom: 10,
         right: 25,
@@ -149,7 +152,7 @@ const styles = StyleSheet.create({
     touchableTestText: {
         color: '#282e38',
         fontWeight: '500',
-        fontSize: 10
+        fontSize: isWideScreen ? 20 :  10
     },
    
 });

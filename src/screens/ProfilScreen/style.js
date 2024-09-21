@@ -2,6 +2,8 @@ import { StyleSheet, Dimensions } from "react-native";
 
 const screenWidth = Dimensions.get("window").width;
 const screenHeight = Dimensions.get("window").height;
+
+const isWideScreen = screenWidth > 550
 const picSize = 150;
 
 const styles = StyleSheet.create({
@@ -21,7 +23,7 @@ const styles = StyleSheet.create({
     loginButtonContainer: {
         paddingLeft: 10,
         marginTop: 0,
-        marginRight: screenWidth - 250,
+        marginRight: isWideScreen ? screenWidth - 350 : screenWidth - 250,
         width: 200,
     },
     settingsImgContainer: {
@@ -29,8 +31,8 @@ const styles = StyleSheet.create({
         width: 40,
     },
     settingsImg: {
-        height: 20,
-        width: 20,
+        height: isWideScreen ? 40 : 20,
+        width: isWideScreen ? 40 : 20,
         tintColor: 'white'
     },
     backgroundTop: {
@@ -152,7 +154,7 @@ const styles = StyleSheet.create({
     textLoginButton: {
         color: 'white',
         fontWeight: '900',
-        fontSize: 16
+        fontSize: isWideScreen ? 20 : 16
     },
     btnChangePicOpacity: {
         marginTop: 30,

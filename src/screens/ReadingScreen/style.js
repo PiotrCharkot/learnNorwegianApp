@@ -1,6 +1,7 @@
 import { StyleSheet, Dimensions } from "react-native";
 
 const screenWidth = Dimensions.get('window').width
+const isWideScreen = screenWidth > 550
 
 const styles = StyleSheet.create({
     mainContainer: {
@@ -15,18 +16,18 @@ const styles = StyleSheet.create({
     },
     gradinetImg: {
         position: 'absolute',
-        height: 200,
+        height: isWideScreen ? 400 : 200,
         width: '100%'
     },
     mainImg: {
         position: 'absolute',
-        height: 200,
+        height: isWideScreen ? 400 : 200,
         width: '100%',
         
     },
     gradientContainer: {
         position: 'absolute',
-        height: 200,
+        height: isWideScreen ? 400 : 200,
         width: '100%',
     },
     head: {
@@ -51,7 +52,7 @@ const styles = StyleSheet.create({
         height: 28
     },
     flatListsContainer: {
-        marginTop: 235,
+        marginTop: isWideScreen ? 435 : 235,
     },
     flatListsContainerBottom: {
         marginTop: 50,
@@ -66,14 +67,14 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         backgroundColor: 'rgba(255,255,255, 0.8)',
         borderRadius: 10,
-        height: 20,
-        width: 160,
-        top: -10,
-        left: screenWidth / 2 - 80
+        height: isWideScreen ? 32 : 20,
+        width: isWideScreen ? 240 : 160,
+        top: isWideScreen ? -15 : -10,
+        left: isWideScreen ? screenWidth / 2 - 120 : screenWidth / 2 - 80
     },
     titleText: {
         fontWeight: '900',
-        fontSize: 16 ,
+        fontSize: isWideScreen ? 24 : 16 ,
         color: 'brown'
     },
     flatlist: {
@@ -108,21 +109,21 @@ const styles = StyleSheet.create({
     languageText: {
         marginRight: 5,
         fontWeight: '800',
-        fontSize: 14,
+        fontSize: isWideScreen ? 20 : 14,
         color: 'brown'
     },
     iconLanguageImg:{
-        height: 20,
-        width: 20,
+        height: isWideScreen ? 25 : 20,
+        width: isWideScreen ? 25 : 20,
         tintColor: 'black',
     },
     flagImg:{
-        height: 20,
-        width: 20,
+        height: isWideScreen ? 25 : 20,
+        width: isWideScreen ? 25 : 20,
     },
     languageList: {
         position: 'absolute',
-        width: 55,
+        width: isWideScreen ? 70 : 55,
         backgroundColor: 'rgba(255, 255, 255, 0.75)',
         right: 10,
         padding: 5,

@@ -6,6 +6,9 @@
     "development": {
       "developmentClient": true,
       "distribution": "internal",
+      "ios": {
+        "simulator": true
+      },
       "env": {
         "EXPO_PUBLIC_API_KEY_APPLE": "appl_IMWyRnlKxLnNbmkykUvvFHLlfmt",
         "EXPO_PUBLIC_API_KEY_GOOGLE": "goog_KdMfZYnGJCEwnLRaQjVTNywthKQ"
@@ -21,15 +24,6 @@
     "production": {
       "android": {
         "buildType": "app-bundle"
-      },
-      "env": {
-        "EXPO_PUBLIC_API_KEY_APPLE": "appl_IMWyRnlKxLnNbmkykUvvFHLlfmt",
-        "EXPO_PUBLIC_API_KEY_GOOGLE": "goog_KdMfZYnGJCEwnLRaQjVTNywthKQ"
-      }
-    },
-    "simulator": {
-      "ios": {
-        "simulator": true
       },
       "env": {
         "EXPO_PUBLIC_API_KEY_APPLE": "appl_IMWyRnlKxLnNbmkykUvvFHLlfmt",

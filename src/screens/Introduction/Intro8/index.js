@@ -8,6 +8,9 @@ import { useNavigation } from "@react-navigation/native";
 const screenWidth = Dimensions.get('window').width;
 const screenHeight = Dimensions.get('window').height;
 
+const isWideScreen = screenWidth > 550;
+const ratioForWideScreen = 2;
+
 const Intro8 = () => {
 
     const navigation = useNavigation();
@@ -199,7 +202,7 @@ const styles = StyleSheet.create({
         
     },
     titleText: {
-        fontSize: 25,
+        fontSize: isWideScreen ? 35 : 25,
         fontWeight: '450',
         textAlign: 'center',
         marginHorizontal: 20,

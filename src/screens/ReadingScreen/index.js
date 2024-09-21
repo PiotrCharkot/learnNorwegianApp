@@ -16,6 +16,8 @@ import textListData5 from '../../listData/textLists/textListData5';
 import useRevenueCat from '../../../hooks/useRevenueCat';
 
 const screenWidth = Dimensions.get('window').width;
+
+const isWideScreen = screenWidth > 550
 const cardSize = screenWidth * 0.6;
 const spacerSize = (screenWidth - cardSize) / 2;
 const colorsBackFlatlist = ['#f2d891', '#96f291', '#9aedd4', '#91c8f2', '#f291df', '#f29191', '#f2ae91']
@@ -44,7 +46,7 @@ const ReadingScreen = ({route}) => {
   const scrollX5 = useRef(new Animated.Value(0)).current;
   const scrollX6 = useRef(new Animated.Value(0)).current;
   const scaleLanguageHight = useRef(new Animated.Value(0)).current;
-  const translateLanguage = useRef(new Animated.Value(100)).current;
+  const translateLanguage = useRef(new Animated.Value(isWideScreen ? 110 : 100)).current;
   const overlayOpacity = useRef(new Animated.Value(1)).current;
   const overlayOffset = useRef(new Animated.Value(0)).current;
   const interpolatedValueForX = useRef(new Animated.Value(0)).current;

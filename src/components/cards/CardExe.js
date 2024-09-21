@@ -4,6 +4,7 @@ import { useNavigation } from "@react-navigation/native";
 import { LinearGradient } from 'expo-linear-gradient';
 
 const screenWidth = Dimensions.get('window').width;
+const isWideScreen = screenWidth > 550
 
 const widthOfBar = Math.ceil(screenWidth * 0.405)  // 0.6 * 0.75 * 0.9
 
@@ -180,9 +181,9 @@ const styles = StyleSheet.create({
     gradient: {
         height: '100%',
         width: '100%',
-        paddingTop: 10,
-        paddingLeft: 10,
-        paddingRight: 10,
+        paddingTop: isWideScreen ? 20 : 10,
+        paddingLeft: isWideScreen ? 20 : 10,
+        paddingRight: isWideScreen ? 20 : 10,
         borderBottomLeftRadius: 70,
         borderBottomRightRadius: 18,
         borderTopLeftRadius: 18,
@@ -199,7 +200,7 @@ const styles = StyleSheet.create({
     },
     averageText: {
         color: '#faf739',
-        fontSize: 8
+        fontSize: isWideScreen ? 20 : 8
     },
     barHolder: {
         backgroundColor: 'grey',
@@ -222,12 +223,12 @@ const styles = StyleSheet.create({
     },
     averageNumText: {
         color: '#faf739',
-        fontSize: 10,
+        fontSize: isWideScreen ? 20 : 10,
         fontWeight: '600'
     },
     textTitle: {
         color: 'white',
-        fontSize: 15,
+        fontSize: isWideScreen ? 30 : 15,
         fontWeight: '800',
         shadowColor: 'black',
         paddingRight: 10,
@@ -241,7 +242,7 @@ const styles = StyleSheet.create({
     },
     textDescription: {
         color: 'white',
-        fontSize: 11,
+        fontSize: isWideScreen ? 20 : 11,
         fontWeight: '500'
     },
     textLevel: {

@@ -7,6 +7,7 @@ import GradientButton from '../buttons/GradientButton';
 
 const screenWidth = Dimensions.get('window').width;
 const screenHeight = Dimensions.get('window').height;
+const isWideScreen = screenWidth > 550
 const rotationTime = 400;
 
 const CardFlippy = (params) => {
@@ -80,7 +81,7 @@ const CardFlippy = (params) => {
 
     
     useEffect(() => {
-
+        console.log('height of card is: ', screenHeight * 0.6);
         if (flipFromStart) {
             Animated.timing(interpolatedValue, {
                 toValue: 90,
@@ -119,10 +120,10 @@ const CardFlippy = (params) => {
 
   return (
     <View style={styles.mainContainer}>
-      <Animated.View style={{...styles.norView, transform: [{perspective: 500}, {rotateY: rotateVal}]}}>
+      <Animated.View style={{...styles.norView, transform: [{perspective: isWideScreen ? 2000 : 500}, {rotateY: rotateVal}]}}>
         <LinearGradient colors={['#002D72', '#7B68EE']} style={styles.gradientNor}>
             <Text style={styles.textNor}>{wordData.nor}</Text>
-            <Text style={{...styles.textNorExample, marginTop: wordData.norexp ? 0 : 160}}>{wordData.irr ? translation : wordData.norEgz}</Text>
+            <Text style={{...styles.textNorExample, marginTop: wordData.norexp ? 0 : screenHeight * 0.6 / 4}}>{wordData.irr ? translation : wordData.norEgz}</Text>
 
             <View style={styles.buttonYesContainer}>
                 <GradientButton  
@@ -173,7 +174,7 @@ const CardFlippy = (params) => {
             
         </LinearGradient>
       </Animated.View>
-      <Animated.View style={{...styles.transView, transform: [{perspective: 500}, {rotateY: rotateValTrans}]}}>
+      <Animated.View style={{...styles.transView, transform: [{perspective: isWideScreen ? 2000 : 500}, {rotateY: rotateValTrans}]}}>
         <LinearGradient colors={['#00BFFF', '#6d28ed']} style={styles.gradientNor}>
             <Text style={styles.textTranslation}>{wordData.irr ? wordData.norEgz : translation}</Text>
             <Pressable style={styles.opacityFlip}  onPress={rotateCardBack}>
@@ -255,21 +256,21 @@ const styles = StyleSheet.create({
     },
     textNor: {
         color: 'white',
-        fontSize: 24,
+        fontSize: isWideScreen? 44 : 24,
         fontWeight: '500',
         textAlign: 'center',
         paddingHorizontal: 10,
     },
     textNorExample: {
         color: 'white',
-        fontSize: 16,
+        fontSize: isWideScreen? 34 : 16,
         paddingHorizontal: 18,
         fontWeight: '500',
         textAlign: 'center',
     },
     textTranslation: {
         color: 'white',
-        fontSize: 24,
+        fontSize: isWideScreen? 44 : 24,
         fontWeight: '500',
         textAlign: 'center',
         paddingHorizontal: 10,

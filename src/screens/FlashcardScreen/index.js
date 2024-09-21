@@ -15,6 +15,8 @@ import useRevenueCat from '../../../hooks/useRevenueCat';
 
 
 const screenWidth = Dimensions.get('window').width;
+
+const isWideScreen = screenWidth > 550
 const cardHeight = screenWidth * 0.5
 const transparent = 'rgba(255,255,255,0)';
 
@@ -30,7 +32,7 @@ const FlashcardScreen = () => {
   const scrollY = useRef(new Animated.Value(0)).current;
   const scrollX = useRef(new Animated.Value(0)).current;
   const scaleLanguageHight = useRef(new Animated.Value(0)).current;
-  const translateLanguage = useRef(new Animated.Value(100)).current;
+  const translateLanguage = useRef(new Animated.Value(isWideScreen ? 110 : 100)).current;
   const overlayOpacity = useRef(new Animated.Value(1)).current;
   const overlayOffset = useRef(new Animated.Value(0)).current;
 

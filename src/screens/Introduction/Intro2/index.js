@@ -7,6 +7,9 @@ import { useNavigation } from "@react-navigation/native";
 const screenWidth = Dimensions.get('window').width;
 const screenHeight = Dimensions.get('window').height;
 
+const isWideScreen = screenWidth > 550;
+const ratioForWideScreen = 2;
+
 const Intro2 = ({route}) => {
 
     const navigation = useNavigation();
@@ -276,7 +279,7 @@ const Intro2 = ({route}) => {
                     duration: 1200,
                     delay: 700,     
                     easing: Easing.bezier(.3,.88,0,.98),
-                    toValue: screenHeight - 150 - 40,
+                    toValue: isWideScreen ? screenHeight - 150 - 110 : screenHeight - 150 - 40,
                     useNativeDriver: true
                 }),
                 Animated.timing(pointerPositionX, {
@@ -463,7 +466,7 @@ const Intro2 = ({route}) => {
     useEffect(() => {
 
         runAnimation();
-      
+        console.log('width', screenWidth);
 
     }, [])
     
@@ -471,6 +474,52 @@ const Intro2 = ({route}) => {
 
   return (
     <View style={styles.mainContainer}>
+
+
+        <Animated.View style={{...styles.flashcardBtnContainer}}>
+            <Animated.Image source={require('../../../../assets/introPictures/flashcardIntroBtn2.png')} style={{...styles.flashcardIntroBtnImg, opacity: opacityFlashcardBtn2}}/>
+        </Animated.View>
+
+
+        <Animated.View style={{...styles.flashcardBtnContainer}}>
+            <Animated.Image source={require('../../../../assets/introPictures/flashcardIntroBtn.png')} style={{...styles.flashcardIntroBtnImg, opacity: opacityFlashcardBtn}}/>
+        </Animated.View>
+
+        
+        <Animated.View style={{...styles.langContainer}}>
+            <Animated.Image source={require('../../../../assets/introPictures/langOne.png')} style={{...styles.langOneImg, opacity: opacityLangOne}}/>
+            <Animated.Image source={require('../../../../assets/introPictures/langList.png')} style={{...styles.langImg, opacity: opacityLang}}/>
+        </Animated.View>
+
+
+
+        <Animated.View style={{...styles.cardImgContainer}}>
+            <Animated.Image source={require('../../../../assets/introPictures/flashcardIntro.png')} style={{...styles.cardImg, opacity: opacityCard}}/>
+        </Animated.View>
+
+
+        <Animated.View style={{...styles.cardImgContainer2}}>
+            <Animated.Image source={require('../../../../assets/introPictures/flashcardIntro2rev.png')} style={{...styles.cardImg2, opacity: opacityCard2rev}}/>
+        </Animated.View>
+
+
+
+        <Animated.View style={{...styles.cardImgContainer2}}>
+            <Animated.Image source={require('../../../../assets/introPictures/flashcardIntro2.png')} style={{...styles.cardImg2, opacity: opacityCard2}}/>
+        </Animated.View>
+
+
+
+        <Animated.View style={{...styles.barImgContainer, transform: [{translateY: barPosition}]}}>
+            {isWideScreen ? <Image source={require('../../../../assets/introPictures/bar-word-ipad2.png')} style={styles.barImg}/> : <Image source={require('../../../../assets/introPictures/bar-word.png')} style={styles.barImg}/>}
+            
+            {isWideScreen ? <Animated.Image source={require('../../../../assets/introPictures/bar-empty-ipad2.png')} style={{...styles.barImg, opacity: opacityBar}}/> : <Animated.Image source={require('../../../../assets/introPictures/bar-empty.png')} style={{...styles.barImg, opacity: opacityBar}}/>}
+            
+        </Animated.View>
+
+
+
+
 
         <Animated.View style={{...styles.titleContainer, opacity: opacityTitle}}>
 
@@ -516,50 +565,10 @@ const Intro2 = ({route}) => {
 
 
 
-        <Animated.View style={{...styles.flashcardBtnContainer}}>
-            <Animated.Image source={require('../../../../assets/introPictures/flashcardIntroBtn2.png')} style={{...styles.flashcardIntroBtnImg, opacity: opacityFlashcardBtn2}}/>
-        </Animated.View>
-
-
-        <Animated.View style={{...styles.flashcardBtnContainer}}>
-            <Animated.Image source={require('../../../../assets/introPictures/flashcardIntroBtn.png')} style={{...styles.flashcardIntroBtnImg, opacity: opacityFlashcardBtn}}/>
-        </Animated.View>
-
-        
-        <Animated.View style={{...styles.langContainer}}>
-            <Animated.Image source={require('../../../../assets/introPictures/langOne.png')} style={{...styles.langOneImg, opacity: opacityLangOne}}/>
-            <Animated.Image source={require('../../../../assets/introPictures/langList.png')} style={{...styles.langImg, opacity: opacityLang}}/>
-        </Animated.View>
-
-
-
-        <Animated.View style={{...styles.cardImgContainer}}>
-            <Animated.Image source={require('../../../../assets/introPictures/flashcardIntro.png')} style={{...styles.cardImg, opacity: opacityCard}}/>
-        </Animated.View>
-
-
-        <Animated.View style={{...styles.cardImgContainer2}}>
-            <Animated.Image source={require('../../../../assets/introPictures/flashcardIntro2rev.png')} style={{...styles.cardImg2, opacity: opacityCard2rev}}/>
-        </Animated.View>
-
-
-
-        <Animated.View style={{...styles.cardImgContainer2}}>
-            <Animated.Image source={require('../../../../assets/introPictures/flashcardIntro2.png')} style={{...styles.cardImg2, opacity: opacityCard2}}/>
-        </Animated.View>
 
 
         <Animated.View style={{...styles.pointerContainer, transform: [{translateY: pointerPositionY}, {translateX: pointerPositionX}]}}>
             <Animated.Image source={require('../../../../assets/introPictures/pointer.png')} style={{...styles.pointerImg, opacity: opacityPointer}}/>
-        </Animated.View>
-
-
-
-
-
-        <Animated.View style={{...styles.barImgContainer, transform: [{translateY: barPosition}]}}>
-            <Image source={require('../../../../assets/introPictures/bar-word.png')} style={styles.barImg}/>
-            <Animated.Image source={require('../../../../assets/introPictures/bar-empty.png')} style={{...styles.barImg, opacity: opacityBar}}/>
         </Animated.View>
 
 
@@ -597,7 +606,7 @@ const styles = StyleSheet.create({
         
     },
     titleText: {
-        fontSize: 40,
+        fontSize: isWideScreen ? 50 : 40,
         fontWeight: '450',
         textAlign: 'center',
         marginHorizontal: 20,
@@ -607,25 +616,25 @@ const styles = StyleSheet.create({
         marginHorizontal: 20,
     },
     bodyText: {
-        fontSize: 20,
+        fontSize: isWideScreen ? 30 : 20,
         textAlign: 'center',
     },
     bodyText2: {
-        fontSize: 18,
+        fontSize: isWideScreen ? 26 : 18,
         textAlign: 'center',
     },
     bodyTextBold: {
-        fontSize: 20,
+        fontSize: isWideScreen ? 30 : 20,
         color: 'green',
         fontWeight: '700'
     },
     bodyTextBold2: {
-        fontSize: 18,
+        fontSize: isWideScreen ? 26 : 18,
         color: 'red',
         fontWeight: '700'
     },
     bodyTextBold3: {
-        fontSize: 18,
+        fontSize: isWideScreen ? 26 : 18,
         color: 'green',
         fontWeight: '700'
     },
@@ -661,13 +670,13 @@ const styles = StyleSheet.create({
         position: 'absolute',
         bottom: 0,
         width: '100%',
-        height: 150
+        height: isWideScreen ? 180 : 150
         
     },
     barImg: {
         position: 'absolute',
         width: '100%',
-        height: 150
+        height: isWideScreen ? 180 : 150
     },
     pointerContainer: {
         position: 'absolute',
@@ -675,8 +684,8 @@ const styles = StyleSheet.create({
         width: 30
     },
     pointerImg: {
-        height: 30,
-        width: 30
+        height: isWideScreen ? 30 * ratioForWideScreen : 30,
+        width: isWideScreen ? 30 * ratioForWideScreen : 30
     },
     langContainer: {
         position: 'absolute',
@@ -684,18 +693,19 @@ const styles = StyleSheet.create({
         top: 45
     },
     langOneImg: {
-        height: 20,
-        width: 50
+        height: isWideScreen ? 20 * ratioForWideScreen : 20,
+        width: isWideScreen ? 50 * ratioForWideScreen : 50
     },
     langImg: {
         position: 'absolute',
-        width: 50,
-        height: 236
+        width: isWideScreen ? 50 * ratioForWideScreen : 50,
+        height: isWideScreen ? 236 * ratioForWideScreen : 236
     },
     upperTextContainer: {
         position: 'absolute',
-        top: 70,
+        top: isWideScreen ? 70 * ratioForWideScreen : 70,
         marginHorizontal: 20,
+        backgroundColor: 'rgba(255, 255, 255, 0.9)'
     },
     middleTextContainer: {
         position: 'absolute',
@@ -709,11 +719,11 @@ const styles = StyleSheet.create({
     },
     cardImgContainer: {
         position: 'absolute',
-        top: screenHeight - 150 - 375,
+        top: isWideScreen ? screenHeight - 250 - 375 * ratioForWideScreen : screenHeight - 150 - 375,
     },
     cardImg: {
-        width: 260,
-        height: 375
+        width: isWideScreen ? 260 * ratioForWideScreen : 260,
+        height: isWideScreen ? 375 * ratioForWideScreen : 375
     },
     cardImgContainer2: {
         position: 'absolute',
@@ -729,7 +739,7 @@ const styles = StyleSheet.create({
         top: 40
     },
     flashcardIntroBtnImg: {
-        height: 25,
-        width: 52
+        height: isWideScreen ? 25 * ratioForWideScreen : 25,
+        width: isWideScreen ? 52 * ratioForWideScreen : 52
     }
 })

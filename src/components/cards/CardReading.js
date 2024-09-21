@@ -8,6 +8,7 @@ import uuid from 'react-native-uuid';
 
 const screenWidth = Dimensions.get('window').width;
 const screenHeight = Dimensions.get('window').height;
+const isWideScreen = screenWidth > 550
 
 const CardReading = (params) => {
 
@@ -134,7 +135,7 @@ const styles = StyleSheet.create({
         right: 15
     },
     levelText: {
-        fontSize: 10,
+        fontSize: isWideScreen ? 22 : 10,
         fontWeight: '900'
     },
     orangeSquare: {
@@ -227,11 +228,11 @@ const styles = StyleSheet.create({
         position: 'absolute',
         top: 30,
         left: 10,
-        width: screenWidth * 0.30,
+        width: isWideScreen ? screenWidth * 0.20 : screenWidth * 0.30,
     },
     titleText: {
         color: 'white',
-        fontSize: 12
+        fontSize: isWideScreen ? 22 : 12
     },
     proContainer: {
         position: 'absolute',

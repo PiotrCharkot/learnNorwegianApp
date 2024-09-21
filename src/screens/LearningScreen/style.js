@@ -1,6 +1,7 @@
 import { StyleSheet, Dimensions } from "react-native";
 
 const screenWidth = Dimensions.get('window').width
+const isWideScreen = screenWidth > 550
 
 const styles = StyleSheet.create({
     mainContainer: {
@@ -15,18 +16,18 @@ const styles = StyleSheet.create({
     },
     gradinetImg: {
         position: 'absolute',
-        height: 200,
+        height: isWideScreen ? 400 : 200,
         width: '100%'
     },
     mainImg: {
         position: 'absolute',
-        height: 200,
+        height: isWideScreen ? 400 : 200,
         width: '100%',
         
     },
     gradientContainer: {
         position: 'absolute',
-        height: 200,
+        height: isWideScreen ? 400 : 200,
         width: '100%',
     },
     head: {
@@ -47,7 +48,7 @@ const styles = StyleSheet.create({
     buttonContainer: {
         borderWidth: 1,
         borderColor: 'rgba(184, 41, 227, 0.5)',
-        paddingHorizontal: 5,
+        paddingHorizontal: isWideScreen ? 8 : 5,
         borderRadius: 5,
         backgroundColor: 'rgba(184, 41, 227, 0.1)',
         justifyContent: 'center',
@@ -55,18 +56,18 @@ const styles = StyleSheet.create({
         flexDirection: 'row'
     },
     bookPic: {
-        height: 16,
-        width: 16, 
+        height: isWideScreen ? 20 : 16,
+        width: isWideScreen ? 20 : 16, 
         marginLeft: 10,
         tintColor: 'brown'
     },
     textButton: {
         fontWeight: '600',
         color: 'brown',
-        fontSize: 12
+        fontSize: isWideScreen ? 18 : 12
     },
     flatListsContainer: {
-        marginTop: 235,
+        marginTop: isWideScreen ? 435 : 235,
     },
     flatListsContainerBottom: {
         marginTop: 50,
@@ -81,12 +82,12 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         backgroundColor: 'rgba(255,255,255, 0.8)',
         borderRadius: 10,
-        height: 20,
-        top: -10,
+        height: isWideScreen ? 30 : 20,
+        top: isWideScreen ? -15 : -10,
     },
     titleText: {
         fontWeight: '900',
-        fontSize: 16,
+        fontSize: isWideScreen ? 24 : 16,
         color: 'brown'
     },
     flatlist: {

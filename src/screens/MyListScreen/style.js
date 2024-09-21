@@ -41,7 +41,7 @@ const styles = StyleSheet.create({
     top: 50
    },
    cardsContainer: {
-    height: '75%',
+    height: '80%',
     width: '100%',
     alignItems: 'center',
     justifyContent: 'center',
@@ -64,7 +64,7 @@ const styles = StyleSheet.create({
    buttonContainer: {
     marginTop: 20,
     width: '100%',
-    alignItems: 'center'
+    alignItems: 'center',
    },
    opacityBtn: {
     height: 50,

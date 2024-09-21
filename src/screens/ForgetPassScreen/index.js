@@ -18,10 +18,12 @@ const ForgetPassScreen = ({route}) => {
     const {choosenLanguage} = route.params;
 
     const screenWidth = Dimensions.get("window").width;
+    const screenHight = Dimensions.get("window").height;
+    const isTablet = screenWidth / screenHight > 0.65;
     const interpolatedValue = useRef(new Animated.Value(0)).current;
     const interpolatedValueForX = useRef(new Animated.Value(0)).current;
     const buttonLoginPos = useRef(new Animated.Value(-290)).current;
-    const messageContainerPos = useRef(new Animated.Value(-500)).current;
+    const messageContainerPos = useRef(new Animated.Value(-screenWidth)).current;
     const [imageLink, setImageLink] = useState(require('../../../assets/lock-question.png'));
     const [email, setEmail] = useState("");
     const [messageText, setMessageText] = useState("");
@@ -160,7 +162,7 @@ const exitButton = () => {
 const hideMessage = () => {
 
     Animated.spring(messageContainerPos, {
-        toValue: -500,
+        toValue: -screenWidth,
         speed: 1,
         bounciness: 0,
         useNativeDriver: true,
@@ -297,7 +299,7 @@ useEffect(() => {
                     <Animated.View style={{...styles.regButtonCont, ...styles.shadowStrong, transform: [{translateX: buttonLoginPos}]}}>
                         <GradientButton  
                             height={40} 
-                            width={screenWidth * 1.5 / 4 + offsetButton}
+                            width={isTablet? screenWidth * 1 / 4 + offsetButton : screenWidth * 1.5 / 4 + offsetButton}
                             colorA={'white'} 
                             colorB={'#e8cceb'} 
                             callbackFunc={backToLogIn} 

@@ -12,6 +12,7 @@ import GradientButton from '../../components/buttons/GradientButton';
 
 const screenWidth = Dimensions.get('window').width;
 const screenHeight = Dimensions.get('window').height;
+const isTablet = screenWidth / screenHeight > 0.65;
 const pointsToScore = 200;
 const rotationTime = 300;
 
@@ -584,7 +585,7 @@ const ExitExcScreen = ({route}) => {
               alignItems: indicatotValue > 55 ? 'center' : 'flex-start', 
               paddingTop: indicatotValue > 55 ? 35 : indicatotValue > 30 ? 50 : 70, 
               paddingLeft: indicatotValue > 55 ? 0 : indicatotValue > 30 ? 40 : 20 }}>
-              <Text style={styles.resultPecentText}>{underFiveDone ? indicatotValue : 0} %</Text>
+              <Text style={styles.resultPercentText}>{underFiveDone ? indicatotValue : 0} %</Text>
             </View>
           </View>
         }
@@ -728,17 +729,17 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   circleIndicator: {
-    height: screenWidth - 100,
-    width: screenWidth - 100,
-    borderRadius: (screenWidth - 100 / 2),
+    height: isTablet ? screenWidth - 400 : screenWidth - 100,
+    width: isTablet ? screenWidth - 400 : screenWidth - 100,
+    borderRadius: isTablet ? (screenWidth - 400 / 2) : (screenWidth - 100 / 2),
     backgroundColor: 'transparent',
-    borderWidth: 40,
+    borderWidth: isTablet ? 60 : 35,
     borderColor: 'black',
     
     justifyContent: 'flex-start',
     
   },
-  resultPecentText: {
+  resultPercentText: {
     fontSize: 24,
     fontWeight: '700'
   },
@@ -751,7 +752,7 @@ const styles = StyleSheet.create({
     position: 'absolute',
     alignItems: 'center',
     borderTopColor: '#E5E5BE',
-    top: screenHeight / 4 + 10,
+    top: isTablet ? screenHeight / 4 + 30 : screenHeight / 4 + 10,
     justifyContent: 'center',
     backgroundColor: 'rgba(255,255,255,0)',
   },
