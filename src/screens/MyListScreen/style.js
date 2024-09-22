@@ -1,6 +1,7 @@
 import { StyleSheet, Dimensions } from "react-native";
 
 const screenWidth = Dimensions.get("window").width;
+const isWideScreen = screenWidth > 550;
 
 const styles = StyleSheet.create({
    mainContainer: {
@@ -41,7 +42,7 @@ const styles = StyleSheet.create({
     top: 50
    },
    cardsContainer: {
-    height: '80%',
+    height: isWideScreen ? '80%' : '75%',
     width: '100%',
     alignItems: 'center',
     justifyContent: 'center',

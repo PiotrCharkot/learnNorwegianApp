@@ -532,13 +532,23 @@ const Exc3x2x1 = ({route}) => {
 
                         <View style={styles.inputContainer}>
 
+                          <TouchableOpacity
+                              activeOpacity={1}
+                              hitSlop={{ top: 50, bottom: 70, left: 50, right: 50 }}
+                              onPress={() => {
+                                this.inputRef.focus();
+                              }}
+                            >
+
                             <Input 
+                            ref={(input) => { this.inputRef = input; }}
                             inputStyle={styles.inputContainerTextStyle}
                             inputContainerStyle={styles.inputContainerStyle}
                             autoCapitalize='none'
                             onChangeText={(text) => {setA1(text.toLowerCase().trim())}}
                             onSelectionChange={() => resetAnimation()}
                             /> 
+                          </TouchableOpacity>
                         </View>
                     <Text style={styles.textRight}>{exeList[0].questions[0][1]} <Text style={styles.textTranslation}>{exeList[0].translations ? `(`+translations[0]+`)` : ''}</Text></Text>
                   </Animated.ScrollView>
@@ -551,13 +561,23 @@ const Exc3x2x1 = ({route}) => {
 
                         <View style={styles.inputContainer}>
 
+                          <TouchableOpacity
+                              activeOpacity={1}
+                              hitSlop={{ top: 50, bottom: 70, left: 50, right: 50 }}
+                              onPress={() => {
+                                this.inputRef2.focus();
+                              }}
+                            >
+
                             <Input 
+                            ref={(input) => { this.inputRef2 = input; }}
                             inputStyle={styles.inputContainerTextStyle}
                             inputContainerStyle={styles.inputContainerStyle}
                             autoCapitalize='none'
                             onChangeText={(text) => setA2(text.toLowerCase().trim())}
                             onSelectionChange={() => resetAnimation()}
-                            /> 
+                            />  
+                          </TouchableOpacity>
                         </View>
                     <Text style={styles.textRight}>{exeList[0].questions[1][1]} <Text style={styles.textTranslation}>{exeList[0].translations ? `(`+translations[1]+`)` : ''}</Text></Text>
                   </Animated.ScrollView>
@@ -571,13 +591,23 @@ const Exc3x2x1 = ({route}) => {
 
                         <View style={styles.inputContainer}>
 
+                          <TouchableOpacity
+                              activeOpacity={1}
+                              hitSlop={{ top: 50, bottom: 70, left: 50, right: 50 }}
+                              onPress={() => {
+                                this.inputRef3.focus();
+                              }}
+                            >
+
                             <Input 
+                            ref={(input) => { this.inputRef3 = input; }}
                             inputStyle={styles.inputContainerTextStyle}
                             inputContainerStyle={styles.inputContainerStyle}
                             autoCapitalize='none'
                             onChangeText={(text) => setA3(text.toLowerCase().trim())}
                             onSelectionChange={() => resetAnimation()}
-                            /> 
+                            />  
+                          </TouchableOpacity>
                         </View>
                     <Text style={styles.textRight}>{exeList[0].questions[2][1]} <Text style={styles.textTranslation}>{exeList[0].translations ? `(`+translations[2]+`)` : ''}</Text></Text>
                   </Animated.ScrollView>
@@ -591,13 +621,23 @@ const Exc3x2x1 = ({route}) => {
 
                         <View style={styles.inputContainer}>
 
+                          <TouchableOpacity
+                              activeOpacity={1}
+                              hitSlop={{ top: 50, bottom: 70, left: 50, right: 50 }}
+                              onPress={() => {
+                                this.inputRef4.focus();
+                              }}
+                            >
+
                             <Input 
+                            ref={(input) => { this.inputRef4 = input; }}
                             inputStyle={styles.inputContainerTextStyle}
                             inputContainerStyle={styles.inputContainerStyle}
                             autoCapitalize='none'
                             onChangeText={(text) => setA4(text.toLowerCase().trim())}
                             onSelectionChange={() => resetAnimation()}
-                            /> 
+                            />  
+                          </TouchableOpacity>
                         </View>
                     <Text style={styles.textRight}>{exeList[0].questions[3][1]} <Text style={styles.textTranslation}>{exeList[0].translations ? `(`+translations[3]+`)` : ''}</Text></Text>
                   </Animated.ScrollView>
@@ -612,13 +652,24 @@ const Exc3x2x1 = ({route}) => {
 
                         <View style={styles.inputContainer}>
 
+
+                          <TouchableOpacity
+                              activeOpacity={1}
+                              hitSlop={{ top: 50, bottom: 70, left: 50, right: 50 }}
+                              onPress={() => {
+                                this.inputRef5.focus();
+                              }}
+                            >
+
                             <Input 
+                            ref={(input) => { this.inputRef5 = input; }}
                             inputStyle={styles.inputContainerTextStyle}
                             inputContainerStyle={styles.inputContainerStyle}
                             autoCapitalize='none'
                             onChangeText={(text) => setA5(text.toLowerCase().trim())}
                             onSelectionChange={() => resetAnimation()}
-                            /> 
+                            />  
+                          </TouchableOpacity>
                         </View>
                     <Text style={styles.textRight}>{exeList[0].questions[4][1]} <Text style={styles.textTranslation}>{exeList[0].translations ? `(`+translations[4]+`)` : ''}</Text></Text>
                   </Animated.ScrollView>
@@ -632,13 +683,24 @@ const Exc3x2x1 = ({route}) => {
 
                         <View style={styles.inputContainer}>
 
+
+                          <TouchableOpacity
+                              activeOpacity={1}
+                              hitSlop={{ top: 50, bottom: 70, left: 50, right: 50 }}
+                              onPress={() => {
+                                this.inputRef6.focus();
+                              }}
+                            >
+
                             <Input 
+                            ref={(input) => { this.inputRef6 = input; }}
                             inputStyle={styles.inputContainerTextStyle}
                             inputContainerStyle={styles.inputContainerStyle}
                             autoCapitalize='none'
                             onChangeText={(text) => setA6(text.toLowerCase().trim())}
                             onSelectionChange={() => resetAnimation()}
-                            /> 
+                            />  
+                          </TouchableOpacity>
                         </View>
                     <Text style={styles.textRight}>{exeList[0].questions[5][1]} <Text style={styles.textTranslation}>{exeList[0].translations ? `(`+translations[5]+`)` : ''}</Text></Text>
                   </Animated.ScrollView>
@@ -652,13 +714,23 @@ const Exc3x2x1 = ({route}) => {
 
                         <View style={styles.inputContainer}>
 
+                          <TouchableOpacity
+                              activeOpacity={1}
+                              hitSlop={{ top: 50, bottom: 70, left: 50, right: 50 }}
+                              onPress={() => {
+                                this.inputRef7.focus();
+                              }}
+                            >
+
                             <Input 
+                            ref={(input) => { this.inputRef7 = input; }}
                             inputStyle={styles.inputContainerTextStyle}
                             inputContainerStyle={styles.inputContainerStyle}
                             autoCapitalize='none'
                             onChangeText={(text) => setA7(text.toLowerCase().trim())}
                             onSelectionChange={() => resetAnimation()}
-                            /> 
+                            />  
+                          </TouchableOpacity>
                         </View>
                     <Text style={styles.textRight}>{exeList[0].questions[6][1]} <Text style={styles.textTranslation}>{exeList[0].translations ? `(`+translations[6]+`)` : ''}</Text></Text>
                   </Animated.ScrollView>
@@ -672,13 +744,23 @@ const Exc3x2x1 = ({route}) => {
 
                         <View style={styles.inputContainer}>
 
+                          <TouchableOpacity
+                              activeOpacity={1}
+                              hitSlop={{ top: 50, bottom: 70, left: 50, right: 50 }}
+                              onPress={() => {
+                                this.inputRef8.focus();
+                              }}
+                            >
+
                             <Input 
+                            ref={(input) => { this.inputRef8 = input; }}
                             inputStyle={styles.inputContainerTextStyle}
                             inputContainerStyle={styles.inputContainerStyle}
                             autoCapitalize='none'
                             onChangeText={(text) => setA8(text.toLowerCase().trim())}
                             onSelectionChange={() => resetAnimation()}
-                            /> 
+                            />  
+                          </TouchableOpacity>
                         </View>
                     <Text style={styles.textRight}>{exeList[0].questions[7][1]} <Text style={styles.textTranslation}>{exeList[0].translations ? `(`+translations[7]+`)` : ''}</Text></Text>
                   </Animated.ScrollView>
@@ -800,12 +882,12 @@ const styles = StyleSheet.create({
   },
   text: {
     fontSize: 16,
-    paddingBottom: 4,
+    paddingBottom: 2,
     fontWeight: '400',
   },
   textRight: {
     fontSize: 16,
-    paddingBottom: 4,
+    paddingBottom: 2,
     fontWeight: '400',
     marginRight: 20
   },
@@ -822,9 +904,10 @@ const styles = StyleSheet.create({
     width: 100,
   },
   inputContainerStyle: {
-    height: 40, 
+    height: 50, 
     borderBottomColor: 'transparent',
     marginBottom: -21,
+    borderBottomWidth: 0,
   },
   bottomBarContainer: {
     position: 'absolute',

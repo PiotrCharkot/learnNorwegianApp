@@ -293,12 +293,12 @@ const ProfilScreen = () => {
 
       <LinearGradient colors={['#4c669f', '#3b5998', '#192f6a']} style={styles.backgroundTop}>
         <View style={styles.loginButtonContainer}>
-          {userLoged ? null : <TouchableOpacity onPress={() => navigation.navigate("Login", {choosenLanguage: choosenLanguage})}>
+          {userLoged ? null : <TouchableOpacity hitSlop={{ top: 20, bottom: 20, left: 20, right: 20 }} onPress={() => navigation.navigate("Login", {choosenLanguage: choosenLanguage})}>
             <Text style={styles.textLoginButton}>{loginLabel}</Text>
           </TouchableOpacity>}  
         </View>
 
-        <TouchableOpacity style={styles.settingsImgContainer} onPress={() => navigation.navigate('Settings', {choosenLanguage: choosenLanguage})}>
+        <TouchableOpacity style={styles.settingsImgContainer} hitSlop={{ top: 20, bottom: 20, left: 20, right: 20 }} onPress={() => navigation.navigate('Settings', {choosenLanguage: choosenLanguage})}>
           <Image style={styles.settingsImg} source={require('../../../assets/settings.png')} />
         </TouchableOpacity>
 

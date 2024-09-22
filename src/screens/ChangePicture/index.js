@@ -166,7 +166,7 @@ const ChangePictureScreen = ({route}) => {
 
             <LinearGradient colors={['#4c669f', '#3b5998', '#192f6a']} style={styles.backgroundTop} >
             
-                <TouchableOpacity style={styles.xImgContainer} onPress={() => navigation.navigate('profil')}>
+                <TouchableOpacity style={styles.xImgContainer} hitSlop={{ top: 20, bottom: 20, left: 20, right: 20 }} onPress={() => navigation.navigate('profil')}>
                 <Image style={styles.xImg} source={require('../../../assets/close.png')} />
                 </TouchableOpacity>
 

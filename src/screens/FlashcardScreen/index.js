@@ -427,7 +427,7 @@ const FlashcardScreen = () => {
       <View style={styles.head}>
         <View style={styles.headBottom}>
           <View style={styles.createButtonContainer}>
-            <TouchableOpacity style={styles.buttonContainer} onPress={() => navigation.navigate({
+            <TouchableOpacity style={styles.buttonContainer} hitSlop={{ top: 20, bottom: 20, left: 20, right: 20 }} onPress={() => navigation.navigate({
               name: 'MyList',
               params: {userRef: userId, language: choosenLanguage}
             })}>

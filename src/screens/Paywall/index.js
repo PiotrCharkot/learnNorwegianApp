@@ -256,7 +256,7 @@ const Paywall = ({route}) => {
             <Image style={styles.logoImg} source={require('../../../assets/logo3NoBackground.png')} />
         </View>
         <View style={styles.head}>
-            <TouchableOpacity onPress={() => exitButton()}>
+            <TouchableOpacity hitSlop={{ top: 20, bottom: 20, left: 20, right: 20 }} onPress={() => exitButton()}>
                 <Image style={{...styles.iconX}} source={require('../../../assets/close.png')} />
 
             </TouchableOpacity>

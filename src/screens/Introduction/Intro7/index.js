@@ -322,7 +322,7 @@ const Intro7 = ({route}) => {
 
         <Animated.View style={{...styles.titleContainer, opacity: opacityTitle}}>
 
-            <Text style={styles.titleText}>Profil</Text>
+            <Text style={styles.titleText} allowFontScaling={false}>Profil</Text>
         </Animated.View>
 
 
@@ -340,19 +340,19 @@ const Intro7 = ({route}) => {
 
 
         <Animated.View style={{...styles.lowerTextContainer, opacity: opacityLowerText}}>
-            <Text style={styles.bodyText}>Earn points for each activity. Track your progress and see how you rank among other learners.</Text>
+            <Text style={styles.bodyText} allowFontScaling={false}>Earn points for each activity. Track your progress and see how you rank among other learners.</Text>
 
         </Animated.View>
 
 
         <Animated.View style={{...styles.lowerTextContainer2, opacity: opacityLowerText2}}>
-            <Text style={styles.bodyText}>Create your account and customize your profile</Text>
+            <Text style={styles.bodyText} allowFontScaling={false}>Create your account and customize your profile</Text>
 
         </Animated.View>
 
 
         <Animated.View style={{...styles.lowerTextContainer2, opacity: opacityLowerText3}}>
-            <Text style={styles.bodyText}>Enjoy full access to all features for the first week at no charge. After seven days upgrade to the <Text style={styles.bodyTextBold}>PRO version</Text> with a monthly subscription for only {currentOffering ? currentOffering.monthly.product.priceString : price} / month. Cancel anytime.</Text>
+            <Text style={styles.bodyText} allowFontScaling={false}>Enjoy full access to all features for the first week at no charge. After seven days upgrade to the <Text style={styles.bodyTextBold}>PRO version</Text> with a monthly subscription for only {currentOffering ? currentOffering.monthly.product.priceString : price} / month. Cancel anytime.</Text>
 
         </Animated.View>
 

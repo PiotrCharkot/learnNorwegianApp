@@ -409,18 +409,18 @@ const Intro3 = ({route}) => {
 
 
         <Animated.View style={{...styles.middleTextContainer, opacity: opacityMiddleText}}>
-            <Text style={styles.bodyText}>Create your own flashcards</Text>
+            <Text style={styles.bodyText} allowFontScaling={false}>Create your own flashcards</Text>
 
         </Animated.View>
 
 
         <Animated.View style={{...styles.middleTextContainer, opacity: opacityMiddleText2}}>
-            <Text style={styles.bodyText}>Explore flashcards created by other users. Save and use them as your own.</Text>
+            <Text style={styles.bodyText} allowFontScaling={false}>Explore flashcards created by other users. Save and use them as your own.</Text>
 
         </Animated.View>
 
         <Animated.View style={{...styles.lowerTextContainer, opacity: opacityLowerText}}>
-            <Text style={styles.bodyText}>Create, edit and share your word lists with other users</Text>
+            <Text style={styles.bodyText} allowFontScaling={false}>Create, edit and share your word lists with other users</Text>
 
         </Animated.View>
 

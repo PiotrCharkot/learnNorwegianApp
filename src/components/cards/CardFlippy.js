@@ -168,7 +168,7 @@ const CardFlippy = (params) => {
             <Pressable style={styles.opacityFlip}  onPress={rotateCard}>
                 <Image style={styles.imgFlip} source={require('../../../assets/flip.png')} />
             </Pressable>
-            {wordData.soundLink === '' ? <View></View> : <TouchableOpacity style={styles.iconContainer} onPress={playWordSound}>
+            {wordData.soundLink === '' ? <View></View> : <TouchableOpacity style={styles.iconContainer} hitSlop={{ top: 25, bottom: 25, left: 25, right: 25 }} onPress={playWordSound}>
                 <Image style={styles.iconSoundImg} source={require('../../../assets/wordSound.png')} />
             </TouchableOpacity>}
             

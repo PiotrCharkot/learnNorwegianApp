@@ -52,7 +52,7 @@ const PrivacyScreen = ({route}) => {
         <View style={styles.mainContainer}>
 
             <Animated.View style={{...styles.iconXContainer, ...getTransform(25, 25, { rotate: xPositionDeg }, { translateX: 0 }, 0.5, 0.5)}}>
-                <TouchableOpacity onPress={() => exitButton()}>
+                <TouchableOpacity hitSlop={{ top: 20, bottom: 20, left: 20, right: 20 }} onPress={() => exitButton()}>
                     <Image style={{...styles.iconX}} source={require('../../../assets/close.png')} />
 
                 </TouchableOpacity>
@@ -63,7 +63,7 @@ const PrivacyScreen = ({route}) => {
                 <Text style={styles.text}>
                     
 <Text style={styles.titleText}>Privacy Policy</Text>{'\n\n\n'}
-<Text style={styles.subtitleText}>Effective Date: 06.22.2024---</Text>{'\n\n'}
+<Text style={styles.subtitleText}>Effective Date: 06.22.2024</Text>{'\n\n'}
 
 Welcome to <Text style={styles.textCursive}>Learn Norwegian</Text>, the mobile application designed to help you learn the Norwegian language. Your privacy is important to us, and we are committed to protecting the personal information you share with us. This Privacy Policy explains how <Text style={styles.textCursive}>Norsk Navigator ("we", "us", or "our")</Text>  collects, uses, discloses, and safeguards your information when you use our app.{'\n\n\n'}
 

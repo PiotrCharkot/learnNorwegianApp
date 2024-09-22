@@ -414,7 +414,7 @@ const ResultsScreen = () => {
 
 
       <View style={styles.toggleContainer}>
-        <TouchableOpacity onPress={() => changeSide()}>
+        <TouchableOpacity hitSlop={{ top: 20, bottom: 20, left: 20, right: 20 }} onPress={() => changeSide()}>
           <Text style={styles.toggleText} allowFontScaling={false}>{toggleText}</Text>
 
         </TouchableOpacity>
@@ -423,13 +423,13 @@ const ResultsScreen = () => {
       <View style={styles.switcherContainer}>
 
         <Animated.View style={{...styles.switcherHolder, transform: [{perspective: 500}, {rotateY: rotateVal}]}}>
-          <TouchableOpacity onPress={() => changeSide()}>
+          <TouchableOpacity hitSlop={{ top: 20, bottom: 20, left: 20, right: 20 }} onPress={() => changeSide()}>
             <Text style={styles.switcherText} allowFontScaling={false}>{alltimeText}</Text>
 
           </TouchableOpacity>
         </Animated.View>
         <Animated.View style={{...styles.switcherHolder, position: 'absolute', transform: [{perspective: 500}, {rotateY: rotateValTrans}]}}>
-          <TouchableOpacity onPress={() => changeSide()}>
+          <TouchableOpacity hitSlop={{ top: 20, bottom: 20, left: 20, right: 20 }} onPress={() => changeSide()}>
           <Text style={styles.switcherText} allowFontScaling={false}>{weeklyText}</Text>
             </TouchableOpacity>
         </Animated.View>

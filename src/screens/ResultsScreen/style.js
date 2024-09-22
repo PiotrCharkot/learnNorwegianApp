@@ -103,7 +103,7 @@ const styles = StyleSheet.create({
         position: 'absolute',
         top: 50,
         right: 0,
-        width: 150
+        width: 150,
 
     },
     switcherHolder: {

@@ -72,25 +72,25 @@ const Intro1 = ({route}) => {
 
         <Animated.View style={{...styles.titleContainer, opacity: opacityTitle}}>
 
-            <Text style={styles.titleText}>Welcome</Text>
+            <Text style={styles.titleText} allowFontScaling={false}>Welcome</Text>
         </Animated.View>
 
 
         <Animated.View style={{...styles.upperTextContainer, opacity: opacityText1}}>
 
-            <Text style={styles.bodyText}>Discover Language, Discover the World.</Text>
+            <Text style={styles.bodyText} allowFontScaling={false}>Discover Language, Discover the World.</Text>
         </Animated.View>
 
 
         <Animated.View style={{...styles.middleTextContainer, opacity: opacityText2}}>
 
-            <Text style={styles.bodyText}>Start your Norwegian language journey with our app, designed to make learning engaging and effective.</Text>
+            <Text style={styles.bodyText} allowFontScaling={false}>Start your Norwegian language journey with our app, designed to make learning engaging and effective.</Text>
         </Animated.View>
 
 
         <Animated.View style={{...styles.lowerTextContainer, opacity: opacityNextBtn}}>
 
-            <Text style={styles.bodyText}>There’s plenty to do here. Let's explore together!</Text>
+            <Text style={styles.bodyText} allowFontScaling={false}>There’s plenty to do here. Let's explore together!</Text>
         </Animated.View>
 
         <Animated.View style={{...styles.buttonContainer, opacity: opacityNextBtn, transform: [{translateX: xPosNextBtn}]}}>

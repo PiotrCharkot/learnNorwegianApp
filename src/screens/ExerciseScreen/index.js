@@ -927,7 +927,7 @@ const ExerciseScreen = () => {
       <View style={styles.head}>
         <View style={styles.headBottom}>
           <View style={styles.readingButtonContainer}>
-            <TouchableOpacity style={styles.buttonContainer} onPress={() => navigation.navigate('Reading', {within168Hours})}>
+            <TouchableOpacity style={styles.buttonContainer} hitSlop={{ top: 20, bottom: 20, left: 20, right: 20 }} onPress={() => navigation.navigate('Reading', {within168Hours})}>
               <Text style={styles.textButton}>{readingBtnTxt}</Text>
               <Image style={styles.bookPic} source={require('../../../assets/book.png')} />
             </TouchableOpacity>

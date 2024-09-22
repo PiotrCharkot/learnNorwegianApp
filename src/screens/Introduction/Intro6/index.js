@@ -371,7 +371,7 @@ const Intro6 = ({route}) => {
 
         <Animated.View style={{...styles.titleContainer, opacity: opacityTitle}}>
 
-            <Text style={styles.titleText}>Reading Hub</Text>
+            <Text style={styles.titleText} allowFontScaling={false}>Reading Hub</Text>
         </Animated.View>
 
 
@@ -389,13 +389,13 @@ const Intro6 = ({route}) => {
 
 
         <Animated.View style={{...styles.lowerTextContainer, opacity: opacityLowerText}}>
-            <Text style={styles.bodyText}>Improve your reading skills with texts on different levels</Text>
+            <Text style={styles.bodyText} allowFontScaling={false}>Improve your reading skills with texts on different levels</Text>
 
         </Animated.View>
 
 
         <Animated.View style={{...styles.lowerTextContainer2, opacity: opacityLowerText2}}>
-            <Text style={styles.bodyText}>Each text comes with translations of useful expressions</Text>
+            <Text style={styles.bodyText} allowFontScaling={false}>Each text comes with translations of useful expressions</Text>
 
         </Animated.View>
 

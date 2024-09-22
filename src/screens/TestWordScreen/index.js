@@ -689,7 +689,7 @@ const TestWordScreen = ({route}) => {
             <View style={styles.headBottom}>
                 
                 <View style={styles.createButtonContainer}>
-                    <TouchableOpacity style={styles.buttonContainer} onPress={changeSides}>
+                    <TouchableOpacity style={styles.buttonContainer} hitSlop={{ top: 25, bottom: 25, left: 25, right: 25 }} onPress={changeSides}>
                     {
                         flip ? (
                             <Text style={styles.textButton}>Nor - {own ? 'Trans' : btnTxt}</Text>
@@ -702,7 +702,7 @@ const TestWordScreen = ({route}) => {
                 </View>
                 
                 <Animated.View style={{...styles.iconXContainer, ...getTransform(25, 25, { rotate: xPositionDeg }, { translateX: 0 }, 0.5, 0.5)}}>
-                    <TouchableOpacity style={styles.xContainer} onPress={exitButton}>
+                    <TouchableOpacity style={styles.xContainer} hitSlop={{ top: 25, bottom: 25, left: 25, right: 25 }} onPress={exitButton}>
                     <Image style={styles.iconXImg} source={require('../../../assets/close.png')} />
                     </TouchableOpacity>
                     

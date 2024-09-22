@@ -705,12 +705,12 @@ const styles = StyleSheet.create({
   },
   text: {
     fontSize: 16,
-    paddingBottom: 4,
+    paddingBottom: 2,
     fontWeight: '400',
   },
   textRight: {
     fontSize: 16,
-    paddingBottom: 4,
+    paddingBottom: 2,
     fontWeight: '400',
     marginRight: 20
   },

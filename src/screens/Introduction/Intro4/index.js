@@ -673,7 +673,7 @@ const Intro4 = ({route}) => {
 
         <Animated.View style={{...styles.titleContainer, opacity: opacityTitle}}>
 
-            <Text style={styles.titleText}>Interactive Exercises</Text>
+            <Text style={styles.titleText} allowFontScaling={false}>Interactive Exercises</Text>
         </Animated.View>
 
 
@@ -691,19 +691,19 @@ const Intro4 = ({route}) => {
 
 
         <Animated.View style={{...styles.lowerTextContainer, opacity: opacityLowerText}}>
-            <Text style={styles.bodyText}>Select from various grammar exercises on different levels and topics</Text>
+            <Text style={styles.bodyText} allowFontScaling={false}>Select from various grammar exercises on different levels and topics</Text>
 
         </Animated.View>
 
 
         <Animated.View style={{...styles.lowerTextContainer2, opacity: opacityLowerText2}}>
-            <Text style={styles.bodyText}>Drag and drop words, fill in gaps, match words, listen and sort sentences and many more interactive exercises</Text>
+            <Text style={styles.bodyText} allowFontScaling={false}>Drag and drop words, fill in gaps, match words, listen and sort sentences and many more interactive exercises</Text>
 
         </Animated.View>
 
 
         <Animated.View style={{...styles.lowerTextContainer, opacity: opacityLowerText3}}>
-            <Text style={styles.bodyText}>There are hundreds of grammar exercises here and new are added every day!</Text>
+            <Text style={styles.bodyText} allowFontScaling={false}>There are hundreds of grammar exercises here and new are added every day!</Text>
 
         </Animated.View>
 

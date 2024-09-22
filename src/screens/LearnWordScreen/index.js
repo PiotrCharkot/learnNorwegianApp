@@ -339,7 +339,7 @@ const LearnWordScreen = ({route}) => {
                 </View>
                 
                 <Animated.View style={{...styles.iconXContainer, ...getTransform(25, 25, { rotate: xPositionDeg }, { translateX: 0 }, 0.5, 0.5)}}>
-                    <TouchableOpacity style={styles.xContainer} onPress={exitButton}>
+                    <TouchableOpacity style={styles.xContainer} hitSlop={{ top: 25, bottom: 25, left: 25, right: 25 }} onPress={exitButton}>
                     <Image style={styles.iconXImg} source={require('../../../assets/close.png')} />
                     </TouchableOpacity>
                     

@@ -523,43 +523,43 @@ const Intro2 = ({route}) => {
 
         <Animated.View style={{...styles.titleContainer, opacity: opacityTitle}}>
 
-            <Text style={styles.titleText}>Flashcards</Text>
+            <Text style={styles.titleText} allowFontScaling={false}>Flashcards</Text>
         </Animated.View>
 
 
         <Animated.View style={{...styles.upperTextContainer, opacity: opacityUpperText}}>
-            <Text style={styles.bodyText2}>Over <Text style={styles.bodyTextBold2}>1000</Text> words and expressions across all difficulty levels. Practical examples, pronunciations, and translations that help you master Norwegian.</Text>
+            <Text style={styles.bodyText2} allowFontScaling={false}>Over <Text style={styles.bodyTextBold2}>1000</Text> words and expressions across all difficulty levels. Practical examples, pronunciations, and translations that help you master Norwegian.</Text>
 
         </Animated.View>
 
         <Animated.View style={{...styles.upperTextContainer, opacity: opacityUpperText2}}>
             <Text style={styles.bodyText}></Text>
             <Text style={styles.bodyText}></Text>
-            <Text style={styles.bodyText}>Choose between '<Text style={styles.bodyTextBold}>Learn</Text>' and '<Text style={styles.bodyTextBold}>Test</Text>' mode.</Text>
+            <Text style={styles.bodyText} allowFontScaling={false}>Choose between '<Text style={styles.bodyTextBold}>Learn</Text>' and '<Text style={styles.bodyTextBold}>Test</Text>' mode.</Text>
 
         </Animated.View>
 
 
         <Animated.View style={{...styles.upperTextContainer, opacity: opacityUpperText3}}>
             <Text style={styles.bodyText2}></Text>
-            <Text style={styles.bodyText2}>You can choose which side of the flashcards is shown first. Select either the side with translations or the side with words in Norwegian.</Text>
+            <Text style={styles.bodyText2} allowFontScaling={false}>You can choose which side of the flashcards is shown first. Select either the side with translations or the side with words in Norwegian.</Text>
 
         </Animated.View>
 
 
         <Animated.View style={{...styles.upperTextContainer, opacity: opacityUpperText4}}>
             <Text style={styles.bodyText2}></Text>
-            <Text style={styles.bodyText2}>Use buttons with arrows. If you remember a word, press the <Text style={styles.bodyTextBold3}>up arrow</Text> to see it less often. If it is hard to remember, press the <Text style={styles.bodyTextBold2}>down arrow</Text> to see it more often.</Text>
+            <Text style={styles.bodyText2} allowFontScaling={false}>Use buttons with arrows. If you remember a word, press the <Text style={styles.bodyTextBold3}>up arrow</Text> to see it less often. If it is hard to remember, press the <Text style={styles.bodyTextBold2}>down arrow</Text> to see it more often.</Text>
 
         </Animated.View>
 
         <Animated.View style={{...styles.middleTextContainer, opacity: opacityMiddleText}}>
-            <Text style={styles.bodyText}>Build your vocabulary with flashcards</Text>
+            <Text style={styles.bodyText} allowFontScaling={false}>Build your vocabulary with flashcards</Text>
 
         </Animated.View>
 
         <Animated.View style={{...styles.lowerTextContainer, opacity: opacityLowerText}}>
-            <Text style={styles.bodyText}>First, select your preferred language from the list</Text>
+            <Text style={styles.bodyText} allowFontScaling={false}>First, select your preferred language from the list</Text>
 
         </Animated.View>
 

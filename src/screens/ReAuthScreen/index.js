@@ -304,7 +304,7 @@ useEffect(() => {
         <LinearGradient colors={['#6d28ed', '#b829e3']}
         style={styles.mainContainer}>
             <Animated.View style={{...styles.iconXContainer, ...getTransform(25, 25, { rotate: xPositionDeg }, { translateX: 0 }, 0.5, 0.5)}}>
-                <TouchableOpacity onPress={() => exitButton()}>
+                <TouchableOpacity hitSlop={{ top: 20, bottom: 20, left: 20, right: 20 }} onPress={() => exitButton()}>
                     <Image style={{...styles.iconX}} source={require('../../../assets/close.png')} />
 
                 </TouchableOpacity>

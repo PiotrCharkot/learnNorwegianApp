@@ -112,7 +112,7 @@ const Intro8 = () => {
 
         <Animated.View style={{...styles.titleContainer, opacity: opacityTitle}}>
 
-            <Text style={styles.titleText}>Choose your language</Text>
+            <Text style={styles.titleText} allowFontScaling={false}>Choose your language</Text>
         </Animated.View>
 
 

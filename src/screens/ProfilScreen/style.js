@@ -166,9 +166,12 @@ const styles = StyleSheet.create({
         borderWidth: 0.5,
         borderColor: 'lightgrey',
         borderRadius: 15,
+        backgroundColor: 'lightgrey'
     },
     btnChangePicOpacityText: {
-        fontSize: 12
+        fontSize: 14,
+        fontWeight: '800',
+        color: 'white'
     }
 });
 

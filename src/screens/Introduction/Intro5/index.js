@@ -399,7 +399,7 @@ const Intro5 = ({route}) => {
 
         <Animated.View style={{...styles.titleContainer, opacity: opacityTitle}}>
 
-            <Text style={styles.titleText}>Grammar Guide</Text>
+            <Text style={styles.titleText} allowFontScaling={false}>Grammar Guide</Text>
         </Animated.View>
 
 
@@ -417,13 +417,13 @@ const Intro5 = ({route}) => {
 
 
         <Animated.View style={{...styles.lowerTextContainer, opacity: opacityLowerText}}>
-            <Text style={styles.bodyText}>Understand Norwegian grammar with our step-by-step explanations (English only)</Text>
+            <Text style={styles.bodyText} allowFontScaling={false}>Understand Norwegian grammar with our step-by-step explanations (English only)</Text>
 
         </Animated.View>
 
 
         <Animated.View style={{...styles.lowerTextContainer2, opacity: opacityLowerText2}}>
-            <Text style={styles.bodyText}>Take a short test at the end of each lesson</Text>
+            <Text style={styles.bodyText} allowFontScaling={false}>Take a short test at the end of each lesson</Text>
 
         </Animated.View>
 
