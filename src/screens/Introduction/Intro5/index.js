@@ -15,7 +15,7 @@ const Intro5 = ({route}) => {
     const navigation = useNavigation();
 
 
-    const {skipable, language} = route.params
+    const {skipable, language, replayed} = route.params
 
 
     const opacityTitle = useRef(new Animated.Value(0)).current;
@@ -446,7 +446,7 @@ const Intro5 = ({route}) => {
 
 
         <Animated.View style={{...styles.buttonContainer, opacity: opacityNextBtn, transform: [{translateX: xPosNextBtn}]}}>
-            <TouchableOpacity onPress={() => navigation.replace("Intro6", {skipable, language})}>
+            <TouchableOpacity onPress={() => navigation.replace("Intro6", {skipable, language, replayed})}>
 
                 <Image source={require('../../../../assets/introPictures/arrow-right.png')} style={styles.iconImg}/>
             </TouchableOpacity>

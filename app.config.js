@@ -17,11 +17,11 @@ export default {
     ios: {
       supportsTablet: true,
       bundleIdentifier: "com.piotrcharkot.LearnNorwegianApp",
-      buildNumber: "2"
+      buildNumber: "3"
     },
     android: {
       package: "com.piotrcharkot.LearnNorwegianApp",
-      versionCode: "2",
+      versionCode: "3",
       permissions: [
         "com.android.vending.BILLING"
       ],

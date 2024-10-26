@@ -13,7 +13,7 @@ export default dataObj = [
             sp: 'Ya había dejado la oficina cuando llamaste.',
             ger: 'Ich hatte das Büro bereits verlassen, als du angerufen hast.'
         },
-        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FC1x1.mp3?alt=media&token=453f6026-0a4e-4d09-bdc7-d2884b813904',
+        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FC1x1v2.mp3?alt=media&token=1c3d2ae4-d567-4ea0-b479-3072ba25a97b',
         key: 0
     },
     {
@@ -30,7 +30,7 @@ export default dataObj = [
             sp: 'Había estado estudiando durante varias horas antes de tomar un descanso.',
             ger: 'Sie hatte mehrere Stunden gelernt, bevor sie eine Pause machte.'
         },
-        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FC1x2.mp3?alt=media&token=e3b62621-5621-49f2-b96d-5c83211bfc4f',
+        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FC1x2v2.mp3?alt=media&token=0bbb4929-1ea7-4137-94bf-370439bcc06a',
         key: 1
     },
     {
@@ -47,7 +47,7 @@ export default dataObj = [
             sp: 'Habíamos viajado por toda Europa antes de que comenzara la pandemia.',
             ger: 'Wir hatten ganz Europa bereist, bevor die Pandemie begann.'
         },
-        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FC1x3.mp3?alt=media&token=fe96ad92-46e6-4044-ba09-456c46e406ff',
+        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FC1x3v2.mp3?alt=media&token=929600a6-0e60-4b62-8e88-11c2b1fc3143',
         key: 2
     },
     {
@@ -64,7 +64,7 @@ export default dataObj = [
             sp: 'Había completado su proyecto antes de la fecha límite.',
             ger: 'Er hatte sein Projekt vor der Frist abgeschlossen.'
         },
-        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FC1x4.mp3?alt=media&token=7210a4e6-c836-4087-a1bc-de38ce0448b7',
+        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FC1x4v2.mp3?alt=media&token=03ebb7d9-0ed0-443a-9420-893513fbc9ef',
         key: 3
     },
     {
@@ -81,7 +81,7 @@ export default dataObj = [
             ua: 'Вони дивилися фільм кілька разів, перш ніж вирішили прочитати книгу.',
             sp: 'Habían visto la película varias veces antes de decidirse a leer el libro.',
         },
-        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FC1x5.mp3?alt=media&token=7fc50793-b467-4f32-8920-a347dd6c35bc',
+        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FC1x5v2.mp3?alt=media&token=24569971-6171-40bc-88c2-5151b52b1ada',
         key: 4
     },
     {
@@ -98,7 +98,7 @@ export default dataObj = [
             sp: 'Actualmente estoy desarrollando un nuevo método para la producción de energía ecológica.',
             ger: 'Ich entwickle derzeit eine neue Methode zur umweltfreundlichen Energieerzeugung.'
         },
-        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FC1x6.mp3?alt=media&token=cdd983f1-7899-4357-9fe3-1c2f519eff80',
+        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FC1x6v2.mp3?alt=media&token=824d0ac8-390b-4cc5-afd4-937a80ee3ebd',
         key: 5
     },
     {
@@ -115,7 +115,7 @@ export default dataObj = [
             sp: 'Está analizando datos del último estudio de investigación.',
             ger: 'Sie analysiert Daten aus der neuesten Forschungsstudie.'
         },
-        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FC1x7.mp3?alt=media&token=77838478-1303-43c8-89dc-ece3f5972a8a',
+        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FC1x7v2.mp3?alt=media&token=6db7c1be-ae5c-403a-be76-66451bdce7f4',
         key: 6
     },
     {
@@ -132,7 +132,7 @@ export default dataObj = [
             sp: 'A menudo discutimos las implicaciones de la inteligencia artificial para la sociedad.',
             ger: 'Wir diskutieren oft die Auswirkungen künstlicher Intelligenz auf die Gesellschaft.'
         },
-        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FC1x8.mp3?alt=media&token=2ba6c120-58a0-4201-9653-183176a45591',
+        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FC1x8v2.mp3?alt=media&token=d10a3163-de42-42c4-a615-a0ab679036c6',
         key: 7
     },
     {
@@ -149,7 +149,7 @@ export default dataObj = [
             sp: 'Mejora continuamente sus habilidades lingüísticas practicando diariamente.',
             ger: 'Er verbessert kontinuierlich seine Sprachkenntnisse durch tägliches Üben.'
         },
-        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FC1x9.mp3?alt=media&token=4d289728-c358-48b5-8ba9-c3c672aaaeb3',
+        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FC1x9v2.mp3?alt=media&token=f69b5e09-00cf-4a24-825e-8068df171dd7',
         key: 8
     },
     {
@@ -166,7 +166,7 @@ export default dataObj = [
             sp: 'Participan activamente en debates sobre problemas ambientales globales.',
             ger: 'Sie beteiligen sich aktiv an Debatten über globale Umweltfragen.'
         },
-        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FC1x10.mp3?alt=media&token=051f2e1b-ad62-4c15-bd96-564583230319',
+        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FC1x10v2.mp3?alt=media&token=74073574-5b02-4116-988c-b2267e259795',
         key: 9
     },
     {
@@ -183,7 +183,7 @@ export default dataObj = [
             sp: 'Habría viajado por el mundo si tuviera más tiempo libre.',
             ger: 'Ich hätte um die Welt gereist, wenn ich mehr Freizeit hätte.'
         },
-        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FC1x11.mp3?alt=media&token=1fa282f3-8280-4bb0-a1ef-9ab63d49e2a0',
+        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FC1x11v2.mp3?alt=media&token=55065b30-7bb4-43cb-b129-6c3fafe8a8e6',
         key: 10
     },
     {
@@ -200,7 +200,7 @@ export default dataObj = [
             sp: 'Habría estudiado medicina si no hubiera elegido ingeniería.',
             ger: 'Sie hätte Medizin studiert, wenn sie sich nicht für Ingenieurwissenschaften entschieden hätte.'
         },
-        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FC1x12.mp3?alt=media&token=0c2cfcc0-9871-4b60-aada-eadedca266cd',
+        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FC1x12v2.mp3?alt=media&token=8e0e8dab-7448-4ffc-add4-b9088dfba5c6',
         key: 11
     },
     {
@@ -217,7 +217,7 @@ export default dataObj = [
             sp: 'Podríamos haber resuelto el problema si hubiéramos tenido más información.',
             ger: 'Wir hätten das Problem lösen können, wenn wir mehr Informationen gehabt hätten.'
         },
-        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FC1x13.mp3?alt=media&token=7c8e7992-b7b0-4f24-8fec-5ea3032d69d0',
+        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FC1x13v2.mp3?alt=media&token=21a312c0-c5e4-4cf1-8f6b-158b6332f3a3',
         key: 12
     },
     {
@@ -234,7 +234,7 @@ export default dataObj = [
             sp: 'Habría escrito un libro sobre sus experiencias si tuviera tiempo para ello.',
             ger: 'Er hätte ein Buch über seine Erfahrungen geschrieben, wenn er die Zeit dafür gehabt hätte.'
         },
-        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FC1x14.mp3?alt=media&token=d762cdc7-2069-4377-a7ac-45cbad461909',
+        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FC1x14v2.mp3?alt=media&token=26b04759-78a9-43ce-83f7-3d1a88191e81',
         key: 13
     },
     {
@@ -251,7 +251,7 @@ export default dataObj = [
             sp: 'Habrían invertido en el proyecto si hubieran visto su potencial anteriormente.',
             ger: 'Sie hätten in das Projekt investiert, wenn sie sein Potenzial früher erkannt hätten.'
         },
-        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FC1x15.mp3?alt=media&token=7c4620d8-784f-454b-aba1-b8857ee58c4e',
+        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FC1x15v2.mp3?alt=media&token=bccb2b97-8f70-4f64-8351-3cb43e2cefcd',
         key: 14
     },
     {
@@ -268,7 +268,7 @@ export default dataObj = [
             sp: 'Los científicos en física cuántica han propuesto una nueva teoría.',
             ger: 'Wissenschaftler in der Quantenphysik haben eine neue Theorie vorgeschlagen.'
         },
-        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FC1x16.mp3?alt=media&token=eddf7063-2717-498b-8c5f-5c1f9606f284',
+        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FC1x16v2.mp3?alt=media&token=a2df403d-05a2-43fb-bd81-88c739cdd828',
         key: 15
     },
     {
@@ -285,7 +285,7 @@ export default dataObj = [
             sp: 'El libro fue escrito por un autor ganador del Premio Nobel.',
             ger: 'Das Buch wurde von einem Nobelpreisträger geschrieben.'
         },
-        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FC1x17.mp3?alt=media&token=ec0a78f6-60a4-4d37-8216-81aad0f017ec',
+        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FC1x17v2.mp3?alt=media&token=330d1f56-ab1b-49f6-9b60-544f66fe97e1',
         key: 16
     },
     {
@@ -302,7 +302,7 @@ export default dataObj = [
             sp: 'Nuestras ideas fueron cuidadosamente consideradas durante la reunión.',
             ger: 'Unsere Ideen wurden während des Treffens sorgfältig geprüft.'
         },
-        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FC1x18.mp3?alt=media&token=001a3227-58b5-4db1-8b4c-5055b9982329',
+        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FC1x18v2.mp3?alt=media&token=12ffc163-9a21-43ee-9c68-5c8994371696',
         key: 17
     },
     {
@@ -319,7 +319,7 @@ export default dataObj = [
             sp: 'Los resultados de la investigación han sido publicados en una revista científica de prestigio.',
             ger: 'Die Forschungsergebnisse wurden in einer renommierten wissenschaftlichen Zeitschrift veröffentlicht.'
         },
-        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FC1x19.mp3?alt=media&token=27d6bb7d-e074-4128-8c28-8a507eb18b21',
+        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FC1x19v2.mp3?alt=media&token=76875407-40c4-4977-a138-4b94d550fb11',
         key: 18
     },
     {
@@ -336,7 +336,7 @@ export default dataObj = [
             sp: 'La nueva legislación se introdujo para proteger las especies en peligro de extinción.',
             ger: 'Die neue Gesetzgebung wurde eingeführt, um bedrohte Arten zu schützen.'
         },
-        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FC1x20.mp3?alt=media&token=7e881d77-c93c-4ac5-a0cf-e99b53acbdc9',
+        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FC1x20v2.mp3?alt=media&token=b2ac5e74-e0bc-4d7c-8c00-ffbca3b5c48c',
         key: 19
     },
     {
@@ -353,7 +353,7 @@ export default dataObj = [
             sp: 'Ya había considerado las consecuencias antes de tomar una decisión.',
             ger: 'Ich hatte die Konsequenzen bereits bedacht, bevor ich eine Entscheidung traf.'
         },
-        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FC1x21.mp3?alt=media&token=1ad9013c-c76a-4d61-9ec7-2065ddece102',
+        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FC1x21v2.mp3?alt=media&token=3e868be0-aded-4c9f-a220-09d535c633bc',
         key: 20
     },
     {
@@ -370,7 +370,7 @@ export default dataObj = [
             sp: 'Se está preparando para una presentación que definirá su carrera académica.',
             ger: 'Sie bereitet sich auf eine Präsentation vor, die ihre akademische Karriere definieren wird.'
         },
-        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FC1x22.mp3?alt=media&token=498ad9fc-d12c-4702-ad0d-22cca22fc339',
+        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FC1x22v2.mp3?alt=media&token=2f6a6f7f-1e88-4fad-b8b9-7ec7d6043711',
         key: 21
     },
     {
@@ -387,7 +387,7 @@ export default dataObj = [
             sp: 'Habríamos participado en la conferencia si hubiera sido prácticamente posible.',
             ger: 'Wir hätten an der Konferenz teilgenommen, wenn es praktisch möglich gewesen wäre.'
         },
-        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FC1x23.mp3?alt=media&token=ffb20ef1-7f72-49e4-9b2f-a23d0b0f4509',
+        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FC1x23v2.mp3?alt=media&token=268f8a5f-b00b-4dc1-b4fb-8872a772301f',
         key: 22
     },
     {
@@ -404,7 +404,7 @@ export default dataObj = [
             sp: 'Se había realizado un estudio exhaustivo antes de implementar las medidas.',
             ger: 'Eine umfassende Studie war durchgeführt worden, bevor die Maßnahmen implementiert wurden.'
         },
-        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FC1x24.mp3?alt=media&token=7f15b838-b7bb-4024-8d06-bf4afc9ae5e4',
+        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FC1x24v2.mp3?alt=media&token=8db8d417-af8b-4c8a-8c56-4e3dfa9fcb2d',
         key: 23
     },
     {
@@ -421,7 +421,7 @@ export default dataObj = [
             sp: 'Se esfuerza por entender la complejidad de la psicología humana a través de sus estudios.',
             ger: 'Er strebt danach, die Komplexität der menschlichen Psychologie durch sein Studium zu verstehen.'
         },
-        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FC1x25.mp3?alt=media&token=a692e428-23d1-4209-aaec-c3ee892e0c53',
+        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FC1x25v2.mp3?alt=media&token=e5c6393c-45f1-4fd6-a954-681534c6f845',
         key: 24
     },
     {
@@ -438,7 +438,7 @@ export default dataObj = [
             sp: 'La propuesta habría sido aceptada si se hubiera presentado de manera diferente.',
             ger: 'Der Vorschlag wäre angenommen worden, wenn er anders präsentiert worden wäre.'
         },
-        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FC1x26.mp3?alt=media&token=ad574e32-bcc4-468f-a92d-28cc03b05f9c',
+        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FC1x26v2.mp3?alt=media&token=c934d80c-a628-470e-b41e-2ee375589e98',
         key: 25
     },
     {
@@ -455,7 +455,7 @@ export default dataObj = [
             sp: 'Analizo cómo los medios digitales afectan la auto percepción de los jóvenes.',
             ger: 'Ich analysiere, wie digitale Medien die Selbstwahrnehmung junger Menschen beeinflussen.'
         },
-        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FC1x27.mp3?alt=media&token=28b13111-bf08-432f-b88f-602e517fc0fb',
+        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FC1x27v2.mp3?alt=media&token=e82075e5-acb5-4f5f-8929-77c781501866',
         key: 26
     },
     {
@@ -472,7 +472,7 @@ export default dataObj = [
             sp: 'Una invención revolucionaria ha sido desarrollada por un equipo de jóvenes ingenieros.',
             ger: 'Eine revolutionäre Erfindung wurde von einem Team junger Ingenieure entwickelt.'
         },
-        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FC1x28.mp3?alt=media&token=b0c4a155-0310-4b3f-ba4d-67cc67d05262',
+        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FC1x28v2.mp3?alt=media&token=4ea9c690-bfd4-4a56-b12b-638973aaf58c',
         key: 27
     },
     {
@@ -489,7 +489,7 @@ export default dataObj = [
             sp: 'Habíamos explorado todas las alternativas antes de decidirnos por el plan actual.',
             ger: 'Wir hatten alle Alternativen erkundet, bevor wir uns für den aktuellen Plan entschieden.'
         },
-        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FC1x29.mp3?alt=media&token=58075ef8-09e6-4a24-968c-3e8c8f5d2cc3',
+        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FC1x29v2.mp3?alt=media&token=849e6b7a-4b34-4096-b614-000b21684c9c',
         key: 28
     },
     {
@@ -506,7 +506,7 @@ export default dataObj = [
             sp: 'Habría viajado a Marte si la tecnología lo hubiera permitido.',
             ger: 'Sie wäre zum Mars gereist, wenn die Technologie es erlaubt hätte.'
         },
-        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FC1x30.mp3?alt=media&token=77514792-242e-406e-8c15-a9f7ac86ef96',
+        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FC1x30v2.mp3?alt=media&token=e5d03528-e50e-42b9-a90e-23fe0d52cf3e',
         key: 29
     },
     {
@@ -523,7 +523,7 @@ export default dataObj = [
             sp: 'El diálogo entre las partes fue facilitado por un mediador experimentado.',
             ger: 'Der Dialog zwischen den Parteien wurde von einem erfahrenen Mediator erleichtert.'
         },
-        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FC1x31.mp3?alt=media&token=3f5ab672-d07a-4e38-9e78-4b7b7bd78dd9',
+        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FC1x31v2.mp3?alt=media&token=cac8827e-0060-4be9-bcd2-21b49209b5de',
         key: 30
     },
     {
@@ -540,7 +540,7 @@ export default dataObj = [
             sp: 'Había completado una formación avanzada en resolución de conflictos antes de empezar en este puesto.',
             ger: 'Ich hatte eine Fortbildung in Konfliktlösung abgeschlossen, bevor ich diese Stelle antrat.'
         },
-        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FC1x32.mp3?alt=media&token=1b5508a5-292a-4690-a8bf-970e8f99380a',
+        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FC1x32v2.mp3?alt=media&token=2705d9f9-3bf6-4fd4-a72b-514077bc1505',
         key: 31
     },
     {
@@ -557,7 +557,7 @@ export default dataObj = [
             sp: 'Reflexiona sobre cómo las decisiones tomadas a una temprana edad afectan la carrera futura de uno.',
             ger: 'Er reflektiert darüber, wie Entscheidungen, die in jungen Jahren getroffen wurden, die zukünftige Karriere beeinflussen.'
         },
-        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FC1x33.mp3?alt=media&token=157d6802-4b4a-42b7-926c-c50f126b017b',
+        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FC1x33v2.mp3?alt=media&token=e59f7cf6-73fa-4969-b245-3b790246e72f',
         key: 32
     },
     {
@@ -574,7 +574,7 @@ export default dataObj = [
             sp: 'Las innovaciones en tecnología sostenible son introducidas continuamente por empresas emergentes.',
             ger: 'Innovationen im Bereich der nachhaltigen Technologie werden kontinuierlich von Start-ups eingeführt.'
         },
-        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FC1x34.mp3?alt=media&token=1ee9b7cc-7e37-4c65-a146-d33902e9636a',
+        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FC1x34v2.mp3?alt=media&token=fd6f2154-c2de-4def-971a-256e0b4c4c87',
         key: 33
     },
     {
@@ -591,7 +591,7 @@ export default dataObj = [
             sp: 'Podríamos haber mejorado la eficiencia del sistema si tuviéramos acceso a tecnología más reciente.',
             ger: 'Wir hätten die Effizienz des Systems verbessern können, wenn wir Zugang zu neuerer Technologie gehabt hätten.'
         },
-        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FC1x35.mp3?alt=media&token=ea5c4b3b-ea47-463a-8572-61c6f75e3719',
+        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FC1x35v2.mp3?alt=media&token=e259bc75-7a12-4aff-83aa-bf0db65e5ca5',
         key: 34
     },
     {
@@ -608,7 +608,7 @@ export default dataObj = [
             sp: 'La evaluación crítica de la literatura es esencial para una comprensión más profunda de un tema.',
             ger: 'Die kritische Bewertung von Literatur ist wesentlich für ein tieferes Verständnis eines Themas.'
         },
-        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FC1x36.mp3?alt=media&token=87ecaf04-da1b-41a6-b583-89d1f0f9ecae',
+        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FC1x36v2.mp3?alt=media&token=ccdbc3aa-8d15-43d4-80c0-97a13ea158aa',
         key: 35
     },
     {
@@ -625,7 +625,7 @@ export default dataObj = [
             sp: 'Había adquirido una impresionante cantidad de conocimiento antes de participar en el debate.',
             ger: 'Sie hatte eine beeindruckende Menge an Wissen erworben, bevor sie an der Debatte teilnahm.'
         },
-        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FC1x37.mp3?alt=media&token=a497f957-00e5-4237-8cd2-e6eadecf441f',
+        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FC1x37v2.mp3?alt=media&token=55a312f3-d8c4-40c1-9c73-3d74a1a57bfb',
         key: 36
     },
     {
@@ -642,7 +642,7 @@ export default dataObj = [
             sp: 'Habríamos explorado más culturas si no se hubieran impuesto restricciones de viaje.',
             ger: 'Wir hätten mehr Kulturen erforscht, wenn keine Reisebeschränkungen verhängt worden wären.'
         },
-        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FC1x38.mp3?alt=media&token=00513eaf-c8c0-40dc-a274-2705ff2f7f66',
+        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FC1x38v2.mp3?alt=media&token=d95c4a2d-1ac6-4de5-9ec5-97ef04b09055',
         key: 37
     },
     {
@@ -659,7 +659,7 @@ export default dataObj = [
             sp: 'Los avances tecnológicos en energía renovable se informan regularmente en revistas científicas.',
             ger: 'Technologische Fortschritte im Bereich der erneuerbaren Energien werden regelmäßig in wissenschaftlichen Zeitschriften berichtet.'
         },
-        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FC1x39.mp3?alt=media&token=c97ac3c3-ff5e-4914-82de-b48437a9bd47',
+        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FC1x39v2.mp3?alt=media&token=e10ba17d-7d16-44af-9a65-8197559a9191',
         key: 38
     },
     {
@@ -676,7 +676,7 @@ export default dataObj = [
             sp: 'Los datos de investigación se habían recopilado durante una década antes de que comenzara el análisis.',
             ger: 'Die Forschungsdaten wurden über ein Jahrzehnt gesammelt, bevor die Analyse begann.'
         },
-        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FC1x40.mp3?alt=media&token=ca92428a-1a75-4d6c-98a8-16afb2515094',
+        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FC1x40v2.mp3?alt=media&token=60e567bc-00b3-431e-a3b6-3988a286dc28',
         key: 39
     },
     {
@@ -693,7 +693,7 @@ export default dataObj = [
             sp: 'Discute las posibilidades de integrar la realidad virtual en el sector educativo.',
             ger: 'Sie diskutiert die Möglichkeiten der Integration von virtueller Realität in den Bildungssektor.'
         },
-        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FC1x41.mp3?alt=media&token=0a9199b2-0aa4-40ee-bb9a-f13f23d125e6',
+        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FC1x41v2.mp3?alt=media&token=c50fef57-8c5b-4534-9b0d-d3734ab6f513',
         key: 40
     },
     {
@@ -710,7 +710,7 @@ export default dataObj = [
             sp: 'Un mejor entendimiento de la genética podría haber revolucionado la medicina si la ética no hubiera limitado la investigación.',
             ger: 'Ein besseres Verständnis der Genetik hätte die Medizin revolutionieren können, wenn die Ethik die Forschung nicht eingeschränkt hätte.'
         },
-        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FC1x42.mp3?alt=media&token=d1e4eace-abb0-429e-9fcd-a17a594ae4c4',
+        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FC1x42v2.mp3?alt=media&token=a2fb6e68-d2b5-41b6-869a-dfa3a190449a',
         key: 41
     },
     {
@@ -727,7 +727,7 @@ export default dataObj = [
             sp: 'Este documental fue producido para aumentar la conciencia sobre el cambio climático.',
             ger: 'Diese Dokumentation wurde produziert, um das Bewusstsein für den Klimawandel zu schärfen.'
         },
-        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FC1x43.mp3?alt=media&token=ccdd3742-8f4f-412a-9c65-e16f5207a47c',
+        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FC1x43v2.mp3?alt=media&token=6ce60ed5-d379-429b-9bf9-00647369e90a',
         key: 42
     },
     {
@@ -744,7 +744,7 @@ export default dataObj = [
             ua: 'Я досяг значного розуміння квантової механіки, перш ніж завершив навчання.',
             sp: 'Había logrado una comprensión significativa de la mecánica cuántica antes de completar mis estudios.'
         },
-        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FC1x44.mp3?alt=media&token=25fe9ce9-6a8d-48a8-9d04-d3cb60cecca3',
+        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FC1x44v2.mp3?alt=media&token=003339ce-e068-43d3-92cc-736a903390e5',
         key: 43
       },
       {
@@ -761,7 +761,7 @@ export default dataObj = [
             ua: 'Він би змінив свій кар\'єрний шлях, якби знав про всі альтернативи раніше.',
             sp: 'Habría cambiado su trayectoria profesional si hubiera conocido todas las alternativas anteriormente.'
         },
-        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FC1x45.mp3?alt=media&token=554c792f-a722-4072-bb1f-f121c3979bef',
+        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FC1x45v2.mp3?alt=media&token=148dc033-5553-4a1b-abd7-362c112d05e0',
         key: 44
       },
       {
@@ -778,7 +778,7 @@ export default dataObj = [
             ua: 'Дебати про зміну клімату часто впливають політичні інтереси, як повідомляють вчені.',
             sp: 'El debate sobre el cambio climático a menudo está influenciado por intereses políticos, según informan los científicos.'
         },
-        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FC1x46.mp3?alt=media&token=bee35d5e-79f5-45be-bdf7-9a56b623f039',
+        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FC1x46v2.mp3?alt=media&token=e170d28a-d47b-486f-85b9-f3027d36aa50',
         key: 45
       },
       {
@@ -795,7 +795,7 @@ export default dataObj = [
             ua: 'Інновації в сталому сільському господарстві стимульовані глобальними екологічними викликами.',
             sp: 'La innovación en la agricultura sostenible ha sido estimulada por los desafíos ambientales globales.'
         },
-        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FC1x47.mp3?alt=media&token=ef5882b0-24f3-4d75-bb06-6da6e0e99a43',
+        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FC1x47v2.mp3?alt=media&token=07a0d984-b1be-4d52-bd21-e64fc240f839',
         key: 46
       },
       {
@@ -812,7 +812,7 @@ export default dataObj = [
             ua: 'Ми врахували всі ризики, перш ніж інвестувати в новий ринок.',
             sp: 'Habíamos considerado todos los riesgos antes de invertir en el nuevo mercado.'
         },
-        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FC1x48.mp3?alt=media&token=7f0ecc5f-4cc4-46bf-86cd-fab85180dd8e',
+        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FC1x48v2.mp3?alt=media&token=dc2ef4d0-729f-41e6-bbb8-b93a86bf3b68',
         key: 47
       }
 

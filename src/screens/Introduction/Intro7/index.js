@@ -18,7 +18,7 @@ const Intro7 = ({route}) => {
     const { currentOffering, customerInfo, isProMember} = useRevenueCat();
 
 
-    const {skipable, language} = route.params;
+    const {skipable, language, replayed} = route.params;
 
     const price = '4.99 $'
 
@@ -376,7 +376,7 @@ const Intro7 = ({route}) => {
 
         <Animated.View style={{...styles.buttonContainer, opacity: opacityNextBtn, transform: [{translateX: xPosNextBtn}]}}>
             <TouchableOpacity onPress={() => {
-                    if (skipable) {
+                    if (replayed) {
                         navigation.replace("Settings", { choosenLanguage: language });
                     } else {
                         navigation.replace("Intro8");

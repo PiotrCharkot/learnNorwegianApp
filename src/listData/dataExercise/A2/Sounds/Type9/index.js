@@ -13,7 +13,7 @@ export default dataObj = [
             sp: "Mañana visitaré a mis abuelos en el campo.",
             ger: "Morgen werde ich meine Großeltern auf dem Land besuchen."
         },
-        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FA2x1.mp3?alt=media&token=95b77e57-20bc-40f9-ace3-77db2dbde2db',
+        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FA2x1v2.mp3?alt=media&token=bf2686fe-c55d-40e8-893f-bb9629db4141',
         key: 0
     },
     {
@@ -30,7 +30,7 @@ export default dataObj = [
             sp: "El próximo año comenzaré un nuevo curso de idiomas.",
             ger: "Nächstes Jahr werde ich einen neuen Sprachkurs beginnen."
         },
-        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FA2x2.mp3?alt=media&token=87656956-09b6-4455-a64d-b271ba2f1d2d',
+        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FA2x2v2.mp3?alt=media&token=64c9fc17-56db-459c-abce-07a146f00d7e',
         key: 1
     },
     {
@@ -47,7 +47,7 @@ export default dataObj = [
             sp: "Vamos a viajar a España las próximas vacaciones de verano.",
             ger: "Nächsten Sommerurlaub werden wir nach Spanien reisen."
         },
-        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FA2x3.mp3?alt=media&token=3f270622-5f00-4d8d-b11f-0684a7abf57e',
+        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FA2x3v2.mp3?alt=media&token=66d59801-a816-438f-b61e-cce480eaf586',
         key: 2
     },
     {
@@ -64,7 +64,7 @@ export default dataObj = [
             sp: "Aprenderé a tocar el piano después de terminar los exámenes.",
             ger: "Ich werde das Klavierspielen lernen, nachdem ich mit den Prüfungen fertig bin."
         },
-        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FA2x4.mp3?alt=media&token=fb047a95-1dd4-41a6-a30a-6ad4bef66790',
+        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FA2x4v2.mp3?alt=media&token=3785486e-42f4-44f7-9359-f3f02485e853',
         key: 3
     },
     {
@@ -81,7 +81,7 @@ export default dataObj = [
             sp: "Probablemente se unirá a nosotros en el cine el sábado.",
             ger: "Sie wird sich wahrscheinlich am Samstag im Kino zu uns gesellen."
         },
-        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FA2x5.mp3?alt=media&token=657b6164-351a-4041-978f-b5e01471527d',
+        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FA2x5v2.mp3?alt=media&token=a821e074-c961-4584-89f7-b4b2dcdfa04e',
         key: 4
     },
     {
@@ -98,7 +98,7 @@ export default dataObj = [
             sp: "Van a construir una nueva biblioteca en nuestra ciudad.",
             ger: "Sie werden eine neue Bibliothek in unserer Stadt bauen."
         },
-        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FA2x6.mp3?alt=media&token=d3a612fe-85d1-4bc7-b7f6-f0ad7c9e7595',
+        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FA2x6v2.mp3?alt=media&token=f9538ad5-d2fe-4bd1-bf19-54899fee8833',
         key: 5
     },
     {
@@ -115,7 +115,7 @@ export default dataObj = [
             sp: "Esta noche cenaremos en un restaurante italiano.",
             ger: "Heute Abend werden wir in einem italienischen Restaurant essen."
         },
-        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FA2x7..mp3?alt=media&token=9c835296-23fc-4550-bd32-067be8352f76',
+        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FA2x7v2.mp3?alt=media&token=00b471ad-7ffe-49dd-8a9b-478d44374b1f',
         key: 6
     },
     {
@@ -132,7 +132,7 @@ export default dataObj = [
             sp: "Planea comprar un coche nuevo el mes que viene.",
             ger: "Er plant, nächsten Monat ein neues Auto zu kaufen."
         },
-        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FA2x8.mp3?alt=media&token=13ec77e2-cf3c-449c-aba7-8bc75ccb3cbc',
+        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FA2x8v2.mp3?alt=media&token=b3607639-81d9-4b23-8777-5af3b81d0f29',
         key: 7
     },
     {
@@ -149,7 +149,7 @@ export default dataObj = [
             sp: "Celebraremos nuestro aniversario de boda en un restaurante especial.",
             ger: "Wir werden unseren Hochzeitstag in einem besonderen Restaurant feiern."
         },
-        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FA2x9.mp3?alt=media&token=34988c1c-2ffd-4a42-85ac-90219aa26e4f',
+        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FA2x9v2.mp3?alt=media&token=4036163c-78c6-4dd6-9065-bdbcdf167258',
         key: 8
     },
     {
@@ -166,7 +166,7 @@ export default dataObj = [
             ua: 'Я думаю, що завтра піде дощ',
             sp: 'Creo que va a llover mañana',
         },
-        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FA2x10.mp3?alt=media&token=8434267b-fda6-4748-9eff-ed92b61b3301',
+        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FA2x10v2.mp3?alt=media&token=90620e90-d626-43da-bdd9-b7a8a7c42db6',
         key: 9
     },
     {
@@ -183,7 +183,7 @@ export default dataObj = [
             ua: 'На наступному тижні я почну займатися у спортзалі',
             sp: 'La próxima semana voy a empezar a entrenar en el gimnasio',
         },
-        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FA2x11.mp3?alt=media&token=81a7c5bd-b979-48fd-b4b1-dd6d26e42a35',
+        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FA2x11v2.mp3?alt=media&token=43419724-096a-4b7a-9154-3ca084042d6e',
         key: 10
     },
     {
@@ -200,7 +200,7 @@ export default dataObj = [
             ua: 'Діти проведуть вихідні у бабусі та дідуся',
             sp: 'Los niños pasarán el fin de semana en casa de sus abuelos',
         },
-        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FA2x12.mp3?alt=media&token=98596fc6-74ef-4ecf-8a3e-bd247989b477',
+        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FA2x12v2.mp3?alt=media&token=a6bca4ac-4c9f-45c8-9c28-211e5988aa80',
         key: 11
     },
     {
@@ -217,7 +217,7 @@ export default dataObj = [
             ua: 'Я планую організувати сюрпризну вечірку для свого найкращого друга',
             sp: 'Voy a organizar una fiesta sorpresa para mi mejor amigo'
         },
-        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FA2x13.mp3?alt=media&token=e49b0c23-6607-4705-accc-a2d018a5b384',
+        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FA2x13v2.mp3?alt=media&token=25b8dd60-dfca-4164-8897-555421e0e620',
         key: 12
     },
     {
@@ -234,7 +234,7 @@ export default dataObj = [
             ua: 'Вона планує навчатися за кордоном наступного року',
             sp: 'Ella planea estudiar en el extranjero el próximo año'
         },
-        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FA2x14.mp3?alt=media&token=56806cb8-093b-420e-b3a7-76d48d0f2523',
+        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FA2x14v2.mp3?alt=media&token=b69db75f-ab48-49aa-bf8e-8867c7c4a87c',
         key: 13
     },
     {
@@ -251,7 +251,7 @@ export default dataObj = [
             ua: 'Ми плануємо влаштувати барбекю у саду наступної суботи',
             sp: 'Vamos a tener una barbacoa en el jardín el próximo sábado'
         },
-        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FA2x15.mp3?alt=media&token=08f053c1-838b-45d4-8d5f-111d97b0e555',
+        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FA2x15v2.mp3?alt=media&token=ee0ab574-2d41-4d81-9dd6-787822cdbe89',
         key: 14
     },
     {
@@ -268,7 +268,7 @@ export default dataObj = [
             ua: 'Ми плануємо подорожувати Норвегією потягом цього літа',
             sp: 'Vamos a viajar por Noruega en tren este verano'
         },
-        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FA2x16.mp3?alt=media&token=6e85fbad-0d6b-4318-a4a8-cce71c0c4ebf',
+        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FA2x16v2.mp3?alt=media&token=b021c53b-b0df-4754-9b90-eb963e7f06cc',
         key: 15
     },
     {
@@ -285,7 +285,7 @@ export default dataObj = [
             ua: 'Я планую написати книгу про свої подорожні враження',
             sp: 'Planeo escribir un libro sobre mis experiencias de viaje'
         },
-        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FA2x17.mp3?alt=media&token=1b5044f6-44c9-4f85-b223-e444fb7ffc5b',
+        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FA2x17v2.mp3?alt=media&token=aa4b330a-34f0-43a0-a39c-2829dd7dc61a',
         key: 16
     },
     {
@@ -302,7 +302,7 @@ export default dataObj = [
             ua: 'Тобі сподобається цей фільм',
             sp: 'Te va a encantar esta película'
         },
-        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FA2x18.mp3?alt=media&token=c35912b5-3cf7-45bd-9966-d33299cf575b',
+        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FA2x18v2.mp3?alt=media&token=57a16e91-9d61-4550-bfec-9c35ab32e111',
         key: 17
     },
     {
@@ -319,7 +319,7 @@ export default dataObj = [
             ua: 'Ми збираємося відвідати музей, щоб дізнатися більше про вікінгів',
             sp: 'Vamos a visitar un museo para aprender más sobre los vikingos'
         },
-        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FA2x19.mp3?alt=media&token=93e99929-b563-4673-a00b-233938f6fe83',
+        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FA2x19v2.mp3?alt=media&token=c228d98e-8a15-4cbd-a96e-8d5009e7cd6f',
         key: 18
     },
     {
@@ -336,7 +336,7 @@ export default dataObj = [
             ua: 'Вона принесе подарунок, коли відвідує нас',
             sp: 'Ella traerá un regalo cuando nos visite'
         },
-        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FA2x20.mp3?alt=media&token=18bea999-48bb-4a10-bf72-cd7e820abce7',
+        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FA2x20v2.mp3?alt=media&token=eed7d07b-cb3a-455a-a0e2-5deb3537e080',
         key: 19
     },
     {
@@ -353,7 +353,7 @@ export default dataObj = [
             ua: 'Я спробую заощадити гроші, щоб купити будинок',
             sp: 'Voy a intentar ahorrar dinero para comprar una casa'
         },
-        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FA2x21.mp3?alt=media&token=d7ca4193-e31b-463d-8346-c44ebc925e9c',
+        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FA2x21v2.mp3?alt=media&token=bcc909c5-79bb-44fc-80a6-78cbef02b0cb',
         key: 20
     },
     {
@@ -370,7 +370,7 @@ export default dataObj = [
             ua: 'Вони планують оновити свою кухню наступного року',
             sp: 'Planean renovar su cocina el próximo año'
         },
-        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FA2x22.mp3?alt=media&token=ba28b651-a76a-4cbc-8ab1-8e15a9e0068f',
+        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FA2x22v2.mp3?alt=media&token=9d62cd45-e560-4bbc-8a9c-1ce52c9aa418',
         key: 21
     },
     {
@@ -387,7 +387,7 @@ export default dataObj = [
             ua: 'Він візьме участь у марафоні вперше',
             sp: 'Va a participar en un maratón por primera vez'
         },
-        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FA2x23.mp3?alt=media&token=2161feed-c986-4cfd-8a50-a1e9f87aea0e',
+        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FA2x23v2.mp3?alt=media&token=b978b0d9-0c3e-4e13-9e87-42e54493f399',
         key: 22
     },
     {
@@ -404,7 +404,7 @@ export default dataObj = [
             ua: 'Ми хочемо запросити всіх наших друзів на день народження',
             sp: 'Queremos invitar a todos nuestros amigos a la fiesta de cumpleaños'
         },
-        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FA2x24.mp3?alt=media&token=b36430b2-57cf-4918-b750-b8584b4171a6',
+        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FA2x24v2.mp3?alt=media&token=1f50ba7f-24f1-4788-8e1f-cdb40b50e72a',
         key: 23
     },
     {
@@ -421,7 +421,7 @@ export default dataObj = [
             ua: 'Я збираюся навчитися пекти традиційні норвезькі торти',
             sp: 'Voy a aprender a hornear pasteles tradicionales noruegos'
         },
-        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FA2x25.mp3?alt=media&token=cbd9eecd-3cea-415b-8ab7-5979c54632ea',
+        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FA2x25v2.mp3?alt=media&token=202143a8-db3b-4808-a614-22d329af0a41',
         key: 24
     },
     {
@@ -438,7 +438,7 @@ export default dataObj = [
             ua: 'На наступні вихідні ми плануємо піти на довгий гірський похід',
             sp: 'El próximo fin de semana vamos a hacer una larga caminata por la montaña'
         },
-        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FA2x26.mp3?alt=media&token=a8230f87-b9fe-4040-858e-b205d1a852ca',
+        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FA2x26v2.mp3?alt=media&token=7823aacd-eb94-4b30-accc-a546caf9024c',
         key: 25
     },
     {
@@ -455,7 +455,7 @@ export default dataObj = [
             ua: 'Я б порадив тобі прочитати цю книгу',
             sp: 'Te recomendaría leer este libro'
         },
-        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FA2x27.mp3?alt=media&token=eac29f5d-88e2-4865-a908-69726e04590f',
+        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FA2x27v2.mp3?alt=media&token=802f6bc4-fa52-4733-a418-47b024ea7131',
         key: 26
     },
     {
@@ -472,7 +472,7 @@ export default dataObj = [
             ua: 'Ми збираємося побачити північне сяйво, коли відвідаємо Тромсе',
             sp: 'Vamos a ver la aurora boreal cuando visitemos Tromsø'
         },
-        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FA2x28.mp3?alt=media&token=c43f55cc-1157-46d4-94bd-abf9c08daaeb',
+        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FA2x28v2.mp3?alt=media&token=9a4c4690-c3d3-40f0-8894-fdec26e9d629',
         key: 27
     },
     {
@@ -489,7 +489,7 @@ export default dataObj = [
             ua: 'Вона планує відкрити власне кафе у місті',
             sp: 'Ella planea abrir su propio café en la ciudad'
         },
-        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FA2x29.mp3?alt=media&token=c57db16e-b850-4d7b-b0f1-4d0cd73f1f6a',
+        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FA2x29v2.mp3?alt=media&token=9a267cd0-8838-419c-ad55-0f39fc768cc9',
         key: 28
     },
     {
@@ -506,7 +506,7 @@ export default dataObj = [
             ua: 'Я отримаю водійські права, як тільки мені виповниться вісімнадцять',
             sp: 'Obtendré mi licencia de conducir en cuanto cumpla dieciocho'
         },
-        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FA2x30.mp3?alt=media&token=33bc5312-1793-4e5b-96d9-605f6a20bf24',
+        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FA2x30v2.mp3?alt=media&token=76827991-b56a-45a3-a994-4a58637068eb',
         key: 29
     },
     {
@@ -523,7 +523,7 @@ export default dataObj = [
             ua: 'Ми посадимо яблуню у нашому саду цієї весни',
             sp: 'Vamos a plantar un manzano en nuestro jardín esta primavera'
         },
-        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FA2x31.mp3?alt=media&token=489c49b6-0e3f-412e-ae7e-545e1f1f203f',
+        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FA2x31v2.mp3?alt=media&token=44a604ef-e076-4318-a352-0f20a1182295',
         key: 30
     },
     {
@@ -540,7 +540,7 @@ export default dataObj = [
             ua: "Він хоче змінити кар'єрний шлях, щоб слідувати за своєю пристрастю",
             sp: 'Quiere cambiar su trayectoria profesional para seguir su pasión'
         },
-        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FA2x32.mp3?alt=media&token=4e453bea-1348-4921-963e-9d27d760d3b9',
+        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FA2x32v2.mp3?alt=media&token=14cb4612-ae02-4062-b3de-fbbf75c15a03',
         key: 31
     },
     {
@@ -557,7 +557,7 @@ export default dataObj = [
             ua: 'Я покращу свої знання норвезької мови, більше розмовляючи',
             sp: 'Mejoraré mis habilidades en noruego hablando más'
         },
-        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FA2x33.mp3?alt=media&token=1962060a-d5be-4d14-913d-400f52213321',
+        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FA2x33v2.mp3?alt=media&token=6cb6d4d3-2a14-4d3e-97a1-7370a4e9b839',
         key: 32
     },
     {
@@ -574,7 +574,7 @@ export default dataObj = [
             ua: 'Вони планують велосипедну поїздку вздовж узбережжя Норвегії',
             sp: 'Están planeando un viaje en bicicleta a lo largo de la costa de Noruega'
         },
-        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FA2x34.mp3?alt=media&token=30d2b1ae-65db-429f-b896-554c8a3c0852',
+        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FA2x34v2.mp3?alt=media&token=0e7ac127-f139-44f1-b145-b1b49151e1f4',
         key: 33
     },
     {
@@ -591,7 +591,7 @@ export default dataObj = [
             ua: 'Я збираюся купити їй подарунок з Норвегії',
             sp: 'Voy a comprarle un regalo de Noruega'
         },
-        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FA2x35.mp3?alt=media&token=a70b675f-4e35-4326-9b5a-129a949b6652',
+        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FA2x35v2.mp3?alt=media&token=525929dd-0cb7-4c16-bfe1-e73829eb3367',
         key: 34
     },
     {
@@ -608,7 +608,7 @@ export default dataObj = [
             ua: 'Він хоче проводити більше часу зі своєю сім\'єю',
             sp: 'Quiere pasar más tiempo con su familia'
         },
-        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FA2x36.mp3?alt=media&token=fa2e8b2d-5281-49aa-987b-c70aff2e9845',
+        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FA2x36v2.mp3?alt=media&token=b34a1063-abed-4a3c-971f-e4ee762c0bec',
         key: 35
     },
     {
@@ -625,7 +625,7 @@ export default dataObj = [
             ua: 'Ми збираємося навчитися робити суші вдома',
             sp: 'Vamos a aprender a hacer sushi en casa'
         },
-        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FA2x37.mp3?alt=media&token=7aad7d0a-9369-4054-b31e-9631103e7a37',
+        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FA2x37v2.mp3?alt=media&token=c64f8186-a7f2-4c33-a64d-a82d0d95fa36',
         key: 36
     },
     {
@@ -642,7 +642,7 @@ export default dataObj = [
             ua: 'Під час відпустки я відвідав красивий замок у Франції',
             sp: 'Durante las vacaciones, visité un hermoso castillo en Francia'
         },
-        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FA2x38.mp3?alt=media&token=ba96c9ce-829c-4b4c-96d3-016c46037226',
+        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FA2x38v2.mp3?alt=media&token=eda71a21-b808-40ea-a1d1-cb6e14336bb2',
         key: 37
     },
     {
@@ -659,7 +659,7 @@ export default dataObj = [
             ua: 'На вечерю вчора я вперше зробив рибний суп',
             sp: 'Para cenar ayer, hice sopa de pescado por primera vez'
         },
-        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FA2x39..mp3?alt=media&token=80e21b18-ac4b-432d-8916-13b5f454b8a5',
+        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FA2x39v2.mp3?alt=media&token=0fd1c571-4c56-4a12-8a21-04949708e80d',
         key: 38
     },
     {
@@ -676,7 +676,7 @@ export default dataObj = [
             ua: "Я навчився плавати, коли мені було п'ять років",
             sp: 'Aprendí a nadar cuando tenía cinco años'
         },
-        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FA2x40.mp3?alt=media&token=134f990c-f724-406b-ad07-763edae80f51',
+        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FA2x40v2.mp3?alt=media&token=a985f820-722d-45c3-b5e2-cadf19f9c8f8',
         key: 39
     },
     {
@@ -693,7 +693,7 @@ export default dataObj = [
             ua: 'Нещодавно я змінив роботу, щоб спробувати щось нове та викликаюче',
             sp: 'Recientemente cambié de trabajo para probar algo nuevo y desafiante'
         },
-        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FA2x41.mp3?alt=media&token=181b896b-cf8c-476d-baef-14cbcf332df0',
+        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FA2x41v2.mp3?alt=media&token=11638880-0d9e-4cf2-bec2-b61530de8b71',
         key: 40
     },
     {
@@ -710,7 +710,7 @@ export default dataObj = [
             ua: 'Я завжди хотів побачити північне сяйво в Північній Норвегії',
             sp: 'Siempre he querido ver la aurora boreal en el norte de Noruega'
         },
-        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FA2x42.mp3?alt=media&token=86098892-4544-4c21-958e-7b222aa2033f',
+        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FA2x42v2.mp3?alt=media&token=43484de8-64f0-4f44-b879-08953e48601d',
         key: 41
     },
     {
@@ -727,7 +727,7 @@ export default dataObj = [
             ua: "У неділю сім'я зазвичай збирається на велику вечерю",
             sp: 'Los domingos, la familia suele reunirse para una gran cena'
         },
-        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FA2x43.mp3?alt=media&token=3f9e52e4-6460-489b-a790-ba5366072991',
+        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FA2x43v2.mp3?alt=media&token=4e9c253b-8d91-4aa4-b5f2-445b414eed79',
         key: 42
     },
     {
@@ -744,7 +744,7 @@ export default dataObj = [
             ua: 'Я часто читаю книги, щоб розслабитися перед сном',
             sp: 'A menudo leo libros para relajarme antes de dormir'
         },
-        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FA2x44.mp3?alt=media&token=1c594225-a9c2-408b-9dc8-5629557b6507',
+        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FA2x44v2.mp3?alt=media&token=bd1108b7-81f3-4fbf-a240-37aecb60d4a0',
         key: 43
     },
     {
@@ -761,7 +761,7 @@ export default dataObj = [
             ua: 'Я збираю поштові марки з різних країн світу.',
             sp: 'Colecciono sellos de diferentes países del mundo.'
         },
-        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FA2x45.mp3?alt=media&token=2c201b6a-1219-4b1f-ac8b-c21149955258',
+        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FA2x45v2.mp3?alt=media&token=29138d88-72e7-4caf-9be1-90478d4e134e',
         key: 44
     },
     {
@@ -778,7 +778,7 @@ export default dataObj = [
             ua: 'Мені подобається фотографувати природу та пейзажі під час подорожей.',
             sp: 'Me gusta fotografiar la naturaleza y paisajes cuando viajo.'
         },
-        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FA2x46.mp3?alt=media&token=a1b14746-d205-4a5c-9688-9055f8ca9eae',
+        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FA2x46v2.mp3?alt=media&token=f5aeed8f-749c-4bd9-a4c7-a82708c005bd',
         key: 45
     },
     {
@@ -795,7 +795,7 @@ export default dataObj = [
             ua: 'Вчора я дивився цікавий фільм про космос.',
             sp: 'Ayer vi una película interesante sobre el espacio.'
         },
-        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FA2x47.mp3?alt=media&token=4926f7eb-5bcb-4224-b6eb-67e32b906c79',
+        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FA2x47v2.mp3?alt=media&token=e984e249-ddb7-4722-8056-289d5d474db7',
         key: 46
     },
     {
@@ -812,7 +812,7 @@ export default dataObj = [
             ua: 'Щовечора я розмовляю по телефону зі своїм найкращим другом.',
             sp: 'Cada noche, hablo con mi mejor amigo por teléfono.'
         },
-        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FA2x48.mp3?alt=media&token=cc678fb1-f7c2-43b0-9fcd-53236e1264ba',
+        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FA2x48v2.mp3?alt=media&token=5140a48d-1fde-473d-ac3d-4a1918038e2e',
         key: 47
     },
     {
@@ -829,7 +829,7 @@ export default dataObj = [
           sp: 'Los sábados, me gusta dormir mucho y relajarme en casa.',
           ger: 'An Samstagen mag ich es, lange zu schlafen und zu Hause zu entspannen.'
         },
-        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FA2x49.mp3?alt=media&token=900343be-4ba1-4120-b1c2-d11b9a62ed3c',
+        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FA2x49v2.mp3?alt=media&token=f4dfe1c2-df48-43ab-8eb2-d42fa8f35c57',
         key: 48
       },
       {
@@ -846,7 +846,7 @@ export default dataObj = [
           sp: 'Mi mejor amigo me enseñó a jugar al ajedrez el mes pasado.',
           ger: 'Mein bester Freund hat mich letzten Monat Schach spielen gelehrt.'
         },
-        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FA2x50.mp3?alt=media&token=893708a0-f69d-474a-b1f4-eddb41cd2374',
+        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FA2x50v2.mp3?alt=media&token=660d8f56-c663-43cb-b9cb-f4492fdf60f6',
         key: 49
       },
       {
@@ -863,7 +863,7 @@ export default dataObj = [
           sp: 'Para mi cumpleaños, recibí una bicicleta nueva de mis amigos.',
           ger: 'Zu meinem Geburtstag habe ich von meinen Freunden ein neues Fahrrad bekommen.'
         },
-        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FA2x51.mp3?alt=media&token=949e9de2-59cb-469c-a49d-a29e2d32a17f',
+        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FA2x51v2.mp3?alt=media&token=de6e0600-3a7b-46d8-9f1e-130783b71ac9',
         key: 50
       },
       {
@@ -880,7 +880,7 @@ export default dataObj = [
           sp: 'No hablo francés, pero puedo hablar un poco de inglés.',
           ger: 'Ich spreche kein Französisch, aber ich kann ein wenig Englisch sprechen.'
         },
-        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FA2x52.mp3?alt=media&token=58eb6afd-c8e0-49e8-8d5d-47d918644c27',
+        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FA2x52v2.mp3?alt=media&token=31f0d94b-d947-4bbc-b24f-61d4b41cc85d',
         key: 51
       },
       {
@@ -897,7 +897,7 @@ export default dataObj = [
           sp: 'No me gusta el café, así que bebo té por la mañana.',
           ger: 'Ich mag keinen Kaffee, deshalb trinke ich morgens Tee.'
         },
-        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FA2x53.mp3?alt=media&token=d4bc27c8-4356-4237-ad7e-a10b4ae1a75b',
+        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FA2x53v2.mp3?alt=media&token=48fe6d13-8e8e-4d9c-8509-81aa181c2f23',
         key: 52
       },
       {
@@ -914,7 +914,7 @@ export default dataObj = [
           sp: 'No tengo coche, así que utilizo el transporte público.',
           ger: 'Ich habe kein Auto, also benutze ich öffentliche Verkehrsmittel.'
         },
-        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FA2x54.mp3?alt=media&token=d660c774-bdbd-48f0-8da9-2df1dffcd300',
+        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FA2x54v2.mp3?alt=media&token=ed97fa2d-7b35-4c38-99d4-bd27c4b1ea5d',
         key: 53
       },
       {
@@ -931,7 +931,7 @@ export default dataObj = [
           sp: 'No vivo en Oslo, pero visito la ciudad a menudo.',
           ger: 'Ich wohne nicht in Oslo, aber ich besuche die Stadt oft.'
         },
-        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FA2x55.mp3?alt=media&token=930194b7-16a8-445d-9df1-4a6484a3e66e',
+        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FA2x55v2.mp3?alt=media&token=22ecc803-6620-40a2-baf1-4c3b813cc0b8',
         key: 54
       },
       {
@@ -948,7 +948,7 @@ export default dataObj = [
           sp: 'No trabajo los sábados, así que uso los fines de semana para relajarme.',
           ger: 'Ich arbeite samstags nicht, deshalb nutze ich die Wochenenden zum Entspannen.'
         },
-        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FA2x56.mp3?alt=media&token=da5ffbbe-bacc-4caa-9120-d356bd35a0da',
+        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FA2x56v2.mp3?alt=media&token=dc26e11e-4ee1-4120-98bb-335da7690b10',
         key: 55
       },
       {
@@ -965,7 +965,7 @@ export default dataObj = [
           sp: 'No vamos al cine porque preferimos ver una película en casa.',
           ger: 'Wir gehen nicht ins Kino, weil wir es vorziehen, einen Film zu Hause zu sehen.'
         },
-        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FA2x57.mp3?alt=media&token=d8391248-3946-43ce-ab9f-5700bcac154f',
+        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FA2x57v2.mp3?alt=media&token=b07bff66-70bb-46c4-882f-3f05c7268983',
         key: 56
       },
       {
@@ -982,7 +982,7 @@ export default dataObj = [
           sp: 'Ella no tiene un gato, pero tiene un perro muy amigable.',
           ger: 'Sie hat keine Katze, aber sie hat einen sehr freundlichen Hund.'
         },
-        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FA2x58.mp3?alt=media&token=53543e9b-8d67-4716-8724-817d8135792f',
+        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FA2x58v2.mp3?alt=media&token=2faaea8e-7b1b-4d47-9f30-7bc98481253f',
         key: 57
       },
       {
@@ -999,7 +999,7 @@ export default dataObj = [
           sp: 'No comen carne, por lo que a menudo hacen platos vegetarianos.',
           ger: 'Sie essen kein Fleisch, deshalb machen sie oft vegetarische Gerichte.'
         },
-        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FA2x59.mp3?alt=media&token=2e06a97f-c36c-4c76-851c-5937de3606a8',
+        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FA2x59v2.mp3?alt=media&token=2ce334d6-b638-4591-9149-db51a523ba24',
         key: 58
       },
       {
@@ -1016,7 +1016,7 @@ export default dataObj = [
           sp: 'No lee libros a menudo, pero le gusta leer periódicos.',
           ger: 'Er liest nicht oft Bücher, aber er liest gerne Zeitungen.'
         },
-        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FA2x60.mp3?alt=media&token=d51e4b72-54ea-41a3-b47c-ce9f776419d7',
+        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FA2x60v2.mp3?alt=media&token=421f79b8-46c9-40d9-84b9-baba11ab3745',
         key: 59
       },
       {
@@ -1033,7 +1033,7 @@ export default dataObj = [
           sp: '¿Puedes decirme qué te gusta hacer en tu tiempo libre?',
           ger: 'Kannst du mir erzählen, was du in deiner Freizeit gerne machst?'
         },
-        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FA2x61.mp3?alt=media&token=d061fd88-0954-48f8-88e3-bc3564a5adcc',
+        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FA2x61v2.mp3?alt=media&token=38d48311-2c89-400e-bbbc-03b8647a22ac',
         key: 60
       },
       {
@@ -1050,7 +1050,7 @@ export default dataObj = [
           sp: '¿Cuándo es tu cumpleaños?',
           ger: 'Wann hast du Geburtstag?'
         },
-        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FA2x62.mp3?alt=media&token=d6b37a8f-dd7f-4849-a84d-b35cc4648aa7',
+        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FA2x62v2.mp3?alt=media&token=d7c0d159-e165-47b9-b977-3f22b40c8bc6',
         key: 61
       },
       {
@@ -1067,7 +1067,7 @@ export default dataObj = [
           sp: '¿Qué tipos de libros te gusta leer?',
           ger: 'Welche Arten von Büchern liest du gerne?'
         },
-        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FA2x63.mp3?alt=media&token=48214c5c-03c5-4015-9d71-496c017d431a',
+        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FA2x63v2.mp3?alt=media&token=a0e68f5e-81dc-4338-80c5-2ce5279d8d75',
         key: 62
       },
       {
@@ -1084,7 +1084,7 @@ export default dataObj = [
           sp: '¿Qué sueles comer en el desayuno en un día normal?',
           ger: 'Was isst du normalerweise zum Frühstück an einem gewöhnlichen Tag?'
         },
-        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FA2x64.mp3?alt=media&token=06935735-5a29-40a8-9dbb-2db5194c6992',
+        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FA2x64v2.mp3?alt=media&token=09a35c76-5b16-4c0d-8a9b-8eb4c14182bf',
         key: 63
       },
       {
@@ -1101,7 +1101,7 @@ export default dataObj = [
           sp: '¿Puedes describir dónde vives?',
           ger: 'Kannst du beschreiben, wo du wohnst?'
         },
-        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FA2x65.mp3?alt=media&token=20fa6400-30fb-4eef-a6e3-6dcbfecca526',
+        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FA2x65v2.mp3?alt=media&token=1967a4dd-9e59-4d35-835a-2460f8b05eee',
         key: 64
       },
       {
@@ -1118,7 +1118,7 @@ export default dataObj = [
           sp: '¿Hablas otros idiomas además de tu lengua materna?',
           ger: 'Sprichst du andere Sprachen als deine Muttersprache?'
         },
-        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FA2x66.mp3?alt=media&token=57170a69-7c67-4830-982f-10a7de58f6ae',
+        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FA2x66v2.mp3?alt=media&token=8679194b-917d-46d5-8593-c6877483afdb',
         key: 65
       },
       {
@@ -1135,7 +1135,7 @@ export default dataObj = [
           sp: 'Este es mi libro, y es muy interesante.',
           ger: 'Das ist mein Buch, und es ist sehr interessant.'
         },
-        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FA2x67.mp3?alt=media&token=3b523b39-bd84-4f57-b076-d81157a086ac',
+        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FA2x67v2.mp3?alt=media&token=5deaf4bd-756c-4ee7-ba5f-097050d13bc6',
         key: 66
       },
       {
@@ -1152,7 +1152,7 @@ export default dataObj = [
           sp: '¿Puedo tomar prestado tu bolígrafo?',
           ger: 'Kann ich deinen Stift ausleihen?'
         },
-        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FA2x68.mp3?alt=media&token=274e53e7-a1ba-41f3-914a-34b9fd3080fd',
+        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FA2x68v2.mp3?alt=media&token=c635bdd8-3e12-4544-aca2-a067a85cc470',
         key: 67
       },
       {
@@ -1169,7 +1169,7 @@ export default dataObj = [
           sp: 'Perdió su cartera en el camino al trabajo.',
           ger: 'Er hat seine Geldbörse auf dem Weg zur Arbeit verloren.'
         },
-        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FA2x69.mp3?alt=media&token=821a5b25-fe6d-4883-88ba-cc0c7a0ea3ef',
+        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FA2x69v2.mp3?alt=media&token=5651ec37-f7cb-45a1-b24c-75cc2ed1be7a',
         key: 68
       },
       {
@@ -1186,7 +1186,7 @@ export default dataObj = [
           sp: 'Su perro es muy amigable y juguetón.',
           ger: 'Ihr Hund ist sehr freundlich und verspielt.'
         },
-        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FA2x70.mp3?alt=media&token=eabd79e7-f87f-4584-a0c3-0fe15ca424a3',
+        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FA2x70v2.mp3?alt=media&token=acc4c7b4-1d9c-4d64-b8bb-211da532228b',
         key: 69
       },
       {
@@ -1203,7 +1203,7 @@ export default dataObj = [
           sp: 'He olvidado mis llaves en casa.',
           ger: 'Ich habe meine Schlüssel zu Hause vergessen.'
         },
-        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FA2x71.mp3?alt=media&token=28578cbe-2ee4-43fb-b503-a8c562f3f303',
+        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FA2x71v2.mp3?alt=media&token=0f1f3fa1-adc6-45d2-bd95-8b911976fc77',
         key: 70
       },
       {
@@ -1220,7 +1220,7 @@ export default dataObj = [
           sp: '¿Es esta tu bufanda?',
           ger: 'Ist das dein Schal?'
         },
-        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FA2x72.mp3?alt=media&token=cceebfea-90c4-4bc8-8998-e049934607b3',
+        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FA2x72v2.mp3?alt=media&token=13e00823-a84b-44d7-befa-d148f608200a',
         key: 71
       },
       {
@@ -1237,7 +1237,7 @@ export default dataObj = [
           ua: 'Вона завжди дивиться на свій годинник, перш ніж вийти.',
           sp: 'Siempre mira su reloj antes de salir.',
         },
-        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FA2x73.mp3?alt=media&token=9a33cd01-6b6f-428f-bbf6-be12865969b0',
+        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FA2x73v2.mp3?alt=media&token=1905dca6-1345-4407-945a-cd3249dea463',
         key: 72
       },
       {
@@ -1254,7 +1254,7 @@ export default dataObj = [
           ua: 'Ми маємо знайти наші місця перед початком концерту.',
           sp: 'Tenemos que encontrar nuestros asientos antes de que comience el concierto.',
         },
-        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FA2x74.mp3?alt=media&token=c0ce7fc2-1832-4942-a75a-a73713d07842',
+        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FA2x74v2.mp3?alt=media&token=a7bc646f-3840-4c20-b132-ced0532240da',
         key: 73
       },
       {
@@ -1271,7 +1271,7 @@ export default dataObj = [
           ua: 'Його автомобіль старіший за мій, але все ще добре їздить.',
           sp: 'Su coche es más viejo que el mío, pero todavía conduce bien.',
         },
-        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FA2x75.mp3?alt=media&token=fe8b5525-b0f2-402a-83cf-b6cf1f2aadad',
+        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FA2x75v2.mp3?alt=media&token=9cc7375b-8eae-4483-b220-3ac5c8e1742c',
         key: 74
       },
       {
@@ -1288,7 +1288,7 @@ export default dataObj = [
           ua: 'Вони пофарбували свій будинок у світло-блакитний колір.',
           sp: 'Han pintado su casa de un color azul claro.',
         },
-        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FA2x76.mp3?alt=media&token=613dd24b-d737-4b67-b079-b46f9532605c',
+        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FA2x76v2.mp3?alt=media&token=e3d5abd0-5d72-4a0e-9e1d-32e5803de31b',
         key: 75
       },
       {
@@ -1305,7 +1305,7 @@ export default dataObj = [
           ua: 'Їхні батьки приїжджають до міста відвідати їх наступного тижня.',
           sp: 'Sus padres vienen a la ciudad para visitarlos la próxima semana.',
         },
-        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FA2x77.mp3?alt=media&token=90a0d7a8-05eb-4aad-bdac-05abb40fc5da',
+        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FA2x77v2.mp3?alt=media&token=b26e721e-302e-4c93-b58f-2248069175a2',
         key: 76
       },
       {
@@ -1322,7 +1322,7 @@ export default dataObj = [
           ua: 'Наш вчитель вчора дав нам зворотний зв’язок щодо наших завдань.',
           sp: 'Nuestro profesor nos dio retroalimentación sobre nuestras tareas ayer.',
         },
-        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FA2x78.mp3?alt=media&token=c4d0504a-7cc1-4d52-971b-a1cd6051d78b',
+        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FA2x78v2.mp3?alt=media&token=160b4e86-e2be-4ef7-b091-76865291166b',
         key: 77
       },
       {
@@ -1339,7 +1339,7 @@ export default dataObj = [
           ua: 'Чи можеш ти допомогти мені відремонтувати мій велосипед?',
           sp: '¿Puedes ayudarme a reparar mi bicicleta?',
         },
-        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FA2x79.mp3?alt=media&token=2260d9b0-46e5-4a4b-8770-4ebd7adfcba5',
+        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FA2x79v2.mp3?alt=media&token=2188d964-de18-4066-8522-34dd3b502358',
         key: 78
       },
       {
@@ -1356,7 +1356,7 @@ export default dataObj = [
           ua: 'Її куртка тепліша за мою.',
           sp: 'Su chaqueta es más cálida que mi chaqueta.',
         },
-        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FA2x80.mp3?alt=media&token=a6fb0f6d-ec7c-42b8-ab01-1b0dd79262cf',
+        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FA2x80v2.mp3?alt=media&token=408c343d-8e1d-477a-84df-9edf1bdc7606',
         key: 79
       },
       {
@@ -1373,7 +1373,7 @@ export default dataObj = [
           ua: 'Вони ділять свою кімнату з молодшими братами та сестрами.',
           sp: 'Comparten su habitación con sus hermanos menores.',
         },
-        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FA2x81.mp3?alt=media&token=6ce1278e-ab3c-455c-8a59-7da5ef7e16b8',
+        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FA2x81v2.mp3?alt=media&token=f63982e5-d708-45b7-9888-939970541f32',
         key: 80
       },
       {
@@ -1390,7 +1390,7 @@ export default dataObj = [
           ua: 'Я не люблю, коли моя кава занадто міцна.',
           sp: 'No me gusta mi café demasiado fuerte.',
         },
-        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FA2x82.mp3?alt=media&token=8b9b87b7-a8ea-4249-a166-954df351c7ac',
+        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FA2x82v2.mp3?alt=media&token=83aa3c80-f1fb-4245-84d7-c3c7d78e6903',
         key: 81
       },
       {
@@ -1407,7 +1407,7 @@ export default dataObj = [
           ua: 'Ти бачив його ключі?',
           sp: '¿Has visto sus llaves?',
         },
-        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FA2x83.mp3?alt=media&token=526e363b-16a9-47b8-a563-8e0cca440da9',
+        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FA2x83v2.mp3?alt=media&token=2eb80667-a1a0-41b7-871a-ef87a6d4f214',
         key: 82
       },
       {
@@ -1424,7 +1424,7 @@ export default dataObj = [
           ua: 'Ви повинні пам’ятати свої паспорти, перш ніж йти до аеропорту.',
           sp: 'Deben recordar sus pasaportes antes de ir al aeropuerto.',
         },
-        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FA2x84.mp3?alt=media&token=1ee4c39c-c796-4c10-8557-bfd251d5f6d2',
+        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FA2x84v2.mp3?alt=media&token=4aa66569-c3c5-499f-b69a-c564215d43f3',
         key: 83
       },
       {
@@ -1441,7 +1441,7 @@ export default dataObj = [
           ua: 'Карта, яку ми знайшли на горищі, стара.',
           sp: 'El mapa que encontramos en el ático es antiguo.',
         },
-        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FA2x85.mp3?alt=media&token=5b588650-6efc-45f6-9e6d-66229967b7c9',
+        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FA2x85v2.mp3?alt=media&token=b1b33c83-44a0-4996-85df-372169ab2bf6',
         key: 84
       },
       {
@@ -1458,7 +1458,7 @@ export default dataObj = [
           ua: 'Склянка води була холодною.',
           sp: 'El vaso de agua estaba frío.',
         },
-        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FA2x86.mp3?alt=media&token=901e4383-c84c-4897-98d3-773fb6a5c345',
+        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FA2x86v2.mp3?alt=media&token=e67f3530-d459-40ce-ad11-28b23e739322',
         key: 85
       },
       {
@@ -1475,7 +1475,7 @@ export default dataObj = [
           ua: 'Будівля в центрі є сучасною.',
           sp: 'El edificio en el centro es moderno.',
         },
-        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FA2x87.mp3?alt=media&token=4f116419-bddd-4e44-8ad7-7b21a028b449',
+        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FA2x87v2.mp3?alt=media&token=61fcca90-3a46-4824-9cc4-740770169af1',
         key: 86
       },
       {
@@ -1492,7 +1492,7 @@ export default dataObj = [
           ua: 'Гра, яку ми купили, нова та захоплююча.',
           sp: 'El juego que compramos es nuevo y emocionante.',
         },
-        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FA2x88.mp3?alt=media&token=a532bc13-8f34-4c5e-a129-bb7cc6a2f486',
+        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FA2x88v2.mp3?alt=media&token=8628cb94-d8eb-4867-b4dc-56a5d00eb097',
         key: 87
       },
       {
@@ -1509,7 +1509,7 @@ export default dataObj = [
           ua: 'Кімната здається більшою з великим вікном.',
           sp: 'La habitación se siente más grande con una ventana grande.',
         },
-        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FA2x89.mp3?alt=media&token=90813ce1-70d9-49b9-a18d-485f64ecd3b4',
+        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FA2x89v2.mp3?alt=media&token=3fc2c85c-6567-417a-b563-0efa9257b1a6',
         key: 88
       },
       {
@@ -1526,7 +1526,7 @@ export default dataObj = [
           ua: 'Маленький столик ідеально підходить у куток кімнати.',
           sp: 'La mesa pequeña encaja perfectamente en la esquina de la habitación.',
         },
-        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FA2x90.mp3?alt=media&token=978bef56-2eec-4595-802e-4cce7d04652a',
+        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FA2x90v2.mp3?alt=media&token=5dfc18be-39dc-42d7-8663-b7be0696e791',
         key: 89
       },
       {
@@ -1543,7 +1543,7 @@ export default dataObj = [
           ua: 'Новий будинок має чудовий вид на фіорд.',
           sp: 'La nueva casa tiene una vista fantástica del fiordo.',
         },
-        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FA2x91.mp3?alt=media&token=a78b7048-bea7-4322-9736-f620cdb8910f',
+        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FA2x91v2.mp3?alt=media&token=3a2dc3ae-32e9-420b-b511-de7b69adfcf9',
         key: 90
       },
       {
@@ -1560,7 +1560,7 @@ export default dataObj = [
           ua: 'Велике вікно пропускає багато природного світла.',
           sp: 'La ventana grande deja entrar mucha luz natural.',
         },
-        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FA2x92.mp3?alt=media&token=13902087-3536-4daf-a31e-653d2577df4a',
+        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FA2x92v2.mp3?alt=media&token=42d6459a-36a2-474d-8b0c-6ff00cd0854c',
         key: 91
       },
       {
@@ -1577,7 +1577,7 @@ export default dataObj = [
           ua: 'Старе дерево в нашому саду впало.',
           sp: 'El viejo árbol en nuestro jardín ha caído.',
         },
-        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FA2x93.mp3?alt=media&token=6c9a1766-ecf9-4832-b455-2ae60e5181c4',
+        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FA2x93v2.mp3?alt=media&token=3cd499b3-6d06-4815-a783-0ab884c49614',
         key: 92
       },
       {
@@ -1594,7 +1594,7 @@ export default dataObj = [
           ua: 'Гарна картина тепер висить у нашій вітальні.',
           sp: 'El hermoso cuadro ahora cuelga en nuestro salón.',
         },
-        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FA2x94.mp3?alt=media&token=d612863c-54d6-466b-8e4c-4de4ecc011a8',
+        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FA2x94v2.mp3?alt=media&token=408b606d-c3c8-4d47-82d0-edf9215868a6',
         key: 93
       },
       {
@@ -1611,7 +1611,7 @@ export default dataObj = [
           ua: 'Холодна погода змушує нас одягатися тепло.',
           sp: 'El clima frío nos hace tener que vestirnos cálidamente.',
         },
-        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FA2x95.mp3?alt=media&token=285f1ae8-8bba-4ab4-bb96-02ebb9ff2d02',
+        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/sentences%2FA2x95v2.mp3?alt=media&token=caf39001-b6f0-4f31-a718-b76fa6e7ed4d',
         key: 94
       }
 

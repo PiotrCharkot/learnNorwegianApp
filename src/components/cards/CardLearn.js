@@ -55,7 +55,8 @@ const CardLearn = (params) => {
             <View style={styles.topHalf}>
 
                 <Text style={{...styles.textNor, fontSize: wordData.norexp ? isWideScreen? 32 : 20 : isWideScreen? 44 : 24}}>{wordData.nor}</Text>
-                <Text style={{...styles.textNorExample, marginTop: wordData.norexp ? 0 : 20}}>{wordData.norEgz}</Text>
+                {wordData.info? <Text style={styles.addInfo}>{wordData.info}</Text> : null}
+                <Text style={{...styles.textNorExample, marginTop: wordData.norexp ? 0 : 25}}>{wordData.norEgz}</Text>
                 
 
             </View>
@@ -121,6 +122,14 @@ const styles = StyleSheet.create({
         fontWeight: '500',
         textAlign: 'center',
         paddingHorizontal: 10
+      },
+      addInfo: {
+        color: 'white',
+        fontSize: isWideScreen? 34 : 15,
+        fontWeight: '500',
+        textAlign: 'center',
+        paddingHorizontal: 10,
+        marginTop: 25
     },
     textTranslation: {
         color: 'white',

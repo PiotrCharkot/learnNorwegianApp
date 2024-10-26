@@ -9,7 +9,7 @@ const isWideScreen = screenWidth > 550;
 
 const Intro1 = ({route}) => {
 
-    const {skipable, language} = route.params
+    const {skipable, language, replayed} = route.params
 
     const navigation = useNavigation();
 
@@ -94,7 +94,7 @@ const Intro1 = ({route}) => {
         </Animated.View>
 
         <Animated.View style={{...styles.buttonContainer, opacity: opacityNextBtn, transform: [{translateX: xPosNextBtn}]}}>
-            <TouchableOpacity onPress={() => navigation.replace("Intro2", {skipable, language})}>
+            <TouchableOpacity onPress={() => navigation.replace("Intro2", {skipable, language, replayed})}>
 
                 <Image source={require('../../../../assets/introPictures/arrow-right.png')} style={styles.iconImg}/>
             </TouchableOpacity>

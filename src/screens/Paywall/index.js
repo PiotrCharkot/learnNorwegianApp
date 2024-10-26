@@ -320,7 +320,8 @@ const styles = StyleSheet.create({
     infoContainer: {
         flex: 1,
         width: '100%',
-        height: screenWidth + 85,
+        marginBottom: 50,
+        //height: screenWidth + 85,
         justifyContent: 'flex-start',
         //backgroundColor: 'pink'
         //alignItems: 'center'
@@ -409,7 +410,7 @@ const styles = StyleSheet.create({
         //backgroundColor: 'salmon'
     },
     restoreBtn: {
-
+        marginBottom: 150,
     },
     restoreBtnText: {
         color: '#007FFF',

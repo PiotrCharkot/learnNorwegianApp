@@ -40,7 +40,7 @@ const WelcomeScreen = () => {
     const moveToMain = (shouldPlayIntro) => {
 
       if (shouldPlayIntro) { 
-        navigation.replace('Intro1', {skipable: false, language: 'EN'});  
+        navigation.replace('Intro1', {skipable: true, language: 'EN', replayed: false});  
       } else {
         navigation.navigate("Main");
       }

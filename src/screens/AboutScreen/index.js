@@ -66,7 +66,7 @@ const AboutScreen = ({route}) => {
 
 <View style={styles.btnContainer}>
 
-    <TouchableOpacity style={styles.btn} onPress={() => navigation.navigate('Intro1', {skipable: true, language: route.params.choosenLanguage})}>
+    <TouchableOpacity style={styles.btn} onPress={() => navigation.navigate('Intro1', {skipable: true, language: route.params.choosenLanguage, replayed: true})}>
         <Text style={styles.btnText}>Watch intro</Text>
     </TouchableOpacity>
 </View>
