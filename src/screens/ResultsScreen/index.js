@@ -153,7 +153,7 @@ const ResultsScreen = () => {
     } else if (choosenLanguage === 'LT') {
       setWeeeklyText('Savaitinis reitingas');
       setAlltimeText('Visų laikų reitingas');
-      setToggleText('');
+      setToggleText('Perjungti reitingus');
     } else if (choosenLanguage === 'AR') {
       setWeeeklyText('التصنيف الأسبوعي');
       setAlltimeText('التصنيف العام');
