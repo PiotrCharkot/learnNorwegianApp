@@ -503,7 +503,7 @@ const FlashcardScreen = () => {
 
           <Animated.View style={{...styles.cardHolder, transform: [{scale: scaleCardHolder5}]}}>
 
-            <CardFlashList refNummer={'4'} userIdRef={userId} title={`A1 - ${cardText[1]} - (61)`} language={choosenLanguage} userName={userName} hasAccess={true}/>
+            <CardFlashList refNummer={'4'} userIdRef={userId} title={`A1 - ${cardText[1]} - (61)`} language={choosenLanguage} userName={userName} hasAccess={userHasAccess}/>
           </Animated.View>
 
           <Animated.View style={{...styles.cardHolder, transform: [{scale: scaleCardHolder6}]}}>

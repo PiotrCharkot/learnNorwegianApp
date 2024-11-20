@@ -609,4 +609,264 @@ export default dataObj = [
         ua: 'навантаження',
         sp: 'carga'
       },
+      {
+        nor: 'en mangfoldighet',
+        eng: 'a diversity',
+        pl: 'różnorodność',
+        ar: 'تنوع',
+        ger: 'eine Vielfalt',
+        lt: 'įvairovė',
+        ua: 'різноманіття',
+        sp: 'diversidad'
+      },
+      {
+        nor: 'en attføring',
+        eng: 'a defecation',
+        pl: 'defekacja',
+        ar: 'تبرز',
+        ger: 'eine Stuhlentleerung',
+        lt: 'tuštinimasis',
+        ua: 'реабілітація',
+        sp: 'rehabilitación'
+      },
+      {
+        nor: 'en bivirkning',
+        eng: 'a side effect',
+        pl: 'efekt uboczny',
+        ar: 'تأثير جانبي',
+        ger: 'eine Nebenwirkung',
+        lt: 'šalutinis poveikis',
+        ua: 'побічний ефект',
+        sp: 'efecto secundario'
+      },
+      {
+        nor: 'en selvfølelse',
+        eng: 'a self-esteem',
+        pl: 'poczucie własnej wartości',
+        ar: 'تقدير الذات',
+        ger: 'ein Selbstwertgefühl',
+        lt: 'savigarbos jausmas',
+        ua: 'самооцінка',
+        sp: 'autoestima'
+      },
+      {
+        nor: 'en habitat',
+        eng: 'a habitat',
+        pl: 'siedlisko',
+        ar: 'موطن',
+        ger: 'ein Lebensraum',
+        lt: 'biotopas',
+        ua: 'середовище існування',
+        sp: 'hábitat'
+      },
+      {
+        nor: 'en kjernefysikk',
+        eng: 'nuclear physics',
+        pl: 'fizyka jądrowa',
+        ar: 'فيزياء نووية',
+        ger: 'Kernphysik',
+        lt: 'branduolinė fizika',
+        ua: 'ядерна фізика',
+        sp: 'física nuclear'
+      },
+      {
+        nor: 'en selvtillit',
+        eng: 'a self-confidence',
+        pl: 'pewność siebie',
+        ar: 'ثقة بالنفس',
+        ger: 'ein Selbstvertrauen',
+        lt: 'savigarba',
+        ua: 'впевненість у собі',
+        sp: 'confianza en sí mismo'
+      },
+      {
+        nor: 'en forfengelighet',
+        eng: 'a vanity',
+        pl: 'próżność',
+        ar: 'غرور',
+        ger: 'eine Eitelkeit',
+        lt: 'tuštumas',
+        ua: 'марнославство',
+        sp: 'vanidad'
+      },
+      {
+        nor: 'en forræderi',
+        eng: 'a betrayal',
+        pl: 'zdrada',
+        ar: 'خيانة',
+        ger: 'ein Verrat',
+        lt: 'išdavystė',
+        ua: 'зрада',
+        sp: 'traición'
+      },
+      {
+        nor: 'en fremmedgjøring',
+        eng: 'alienation',
+        pl: 'alienacja',
+        ar: 'اغتراب',
+        ger: 'Entfremdung',
+        lt: 'atsvetimėjimas',
+        ua: 'відчуженість',
+        sp: 'alienación'
+      },
+      {
+        nor: 'en eksil',
+        eng: 'an exile',
+        pl: 'wygnanie',
+        ar: 'منفى',
+        ger: 'ein Exil',
+        lt: 'tremtis',
+        ua: 'екзиль',
+        sp: 'exilio'
+      },
+      {
+        nor: 'en bevoktning',
+        eng: 'a guarding',
+        pl: 'straż',
+        ar: 'حراسة',
+        ger: 'eine Bewachung',
+        lt: 'sargyba',
+        ua: 'охорона',
+        sp: 'vigilancia'
+      },
+      {
+        nor: 'en erklæring',
+        eng: 'a declaration',
+        pl: 'oświadczenie',
+        ar: 'إعلان',
+        ger: 'eine Erklärung',
+        lt: 'deklaracija',
+        ua: 'заява',
+        sp: 'declaración'
+      },
+      {
+        nor: 'en erkjennelse',
+        eng: 'an acknowledgment',
+        pl: 'uznanie',
+        ar: 'اعتراف',
+        ger: 'eine Anerkennung',
+        lt: 'pripažinimas',
+        ua: 'визнання',
+        sp: 'reconocimiento'
+      },
+      {
+        nor: 'en erobring',
+        eng: 'a conquest',
+        pl: 'zdobycie',
+        ar: 'غزو',
+        ger: 'eine Eroberung',
+        lt: 'užkariavimas',
+        ua: 'завоювання',
+        sp: 'conquista'
+      },
+      {
+        nor: 'en samvittighet',
+        eng: 'a conscience',
+        pl: 'sumienie',
+        ar: 'ضمير',
+        ger: 'ein Gewissen',
+        lt: 'sąžinė',
+        ua: 'совість',
+        sp: 'una conciencia'
+      },
+      {
+        nor: 'en avskaffelse',
+        eng: 'an abolition',
+        pl: 'zniesienie',
+        ar: 'إلغاء',
+        ger: 'eine Abschaffung',
+        lt: 'panaikinimas',
+        ua: 'скасування',
+        sp: 'abolición'
+      },
+      {
+        nor: 'en avsky',
+        eng: 'a disgust',
+        pl: 'wstręt',
+        ar: 'اشمئزاز',
+        ger: 'ein Ekel',
+        lt: 'pasibjaurėjimas',
+        ua: 'відраза',
+        sp: 'aversión'
+      },
+      {
+        nor: 'et avdrag',
+        eng: 'an installment',
+        pl: 'rata',
+        ar: 'قسط',
+        ger: 'eine Rate',
+        lt: 'įmoka',
+        ua: 'розстрочка',
+        sp: 'plazo'
+      },
+      {
+        nor: 'en avholdenhet',
+        eng: 'an abstinence',
+        pl: 'wstrzemięźliwość',
+        ar: 'امتناع',
+        ger: 'eine Enthaltsamkeit',
+        lt: 'susilaikymas',
+        ua: 'трезвість',
+        sp: 'abstinencia'
+      },
+      {
+        nor: 'en antakelse',
+        eng: 'an assumption',
+        pl: 'założenie',
+        ar: 'افتراض',
+        ger: 'eine Annahme',
+        lt: 'prielaida',
+        ua: 'припущення',
+        sp: 'suposición'
+      },
+      {
+        nor: 'en bevilling',
+        eng: 'an allocation',
+        pl: 'przydział',
+        ar: 'تخصيص',
+        ger: 'eine Zuteilung',
+        lt: 'skirtis',
+        ua: 'дозвіл',
+        sp: 'concesión'
+      },
+      {
+        nor: 'en avsked',
+        eng: 'a farewell',
+        pl: 'pożegnanie',
+        ar: 'وداع',
+        ger: 'ein Abschied',
+        lt: 'atsisveikinimas',
+        ua: 'прощання',
+        sp: 'despedida'
+      },
+      {
+        nor: 'en arvegang',
+        eng: 'inheritance',
+        pl: 'dziedziczenie',
+        ar: 'وراثة',
+        ger: 'Erbschaft',
+        lt: 'paveldėjimas',
+        ua: 'спадщина',
+        sp: 'herencia'
+      },
+      {
+        nor: 'en beplantning',
+        eng: 'planting',
+        pl: 'nasadzenia',
+        ar: 'زراعة',
+        ger: 'Bepflanzung',
+        lt: 'auginimas',
+        ua: 'насадження',
+        sp: 'plantación'
+      },
+      {
+        nor: 'en anerkjennelse',
+        eng: 'an acknowledgement',
+        pl: 'uznanie',
+        ar: 'اعتراف',
+        ger: 'Anerkennung',
+        lt: 'pripažinimas',
+        ua: 'визнання',
+        sp: 'reconocimiento'
+      },
 ]

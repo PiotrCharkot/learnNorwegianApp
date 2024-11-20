@@ -1,13 +1,13 @@
-import { View, Text, StyleSheet, TouchableOpacity } from 'react-native'
-import React, { useState, useEffect } from 'react'
+import { View, Text, StyleSheet, Animated, TouchableOpacity, FlatList, Dimensions } from 'react-native'
+import React, { useState, useEffect, useRef } from 'react'
 import { useFocusEffect } from "@react-navigation/native";
 import { LinearGradient } from 'expo-linear-gradient';
 import ProgressBar from '../../../../../components/bars/progressBar'
 import BottomBar from '../../../../../components/bars/bottomBar'
 import Draggable from '../../../../../components/other/Draggable'
 import generalStyles from '../../../../../styles/generalStyles';
+import SoundLinkType10 from '../../../../../components/other/SoundLinkType10';
 import Loader from '../../../../../components/other/Loader';
-import Type10data from '../../../../../listData/dataExercise/Type10data';
 import A1Adjectives from '../../../../../listData/dataExercise/wordsGame/A1Adjectives';
 import A1Nouns from '../../../../../listData/dataExercise/wordsGame/A1Nouns';
 import A1Verbs from '../../../../../listData/dataExercise/wordsGame/A1Verbs';
@@ -40,13 +40,15 @@ const dataForMarkers = {
 // let typesInSet = [];
 
 
-let linkList = ['Type10opening', 'Type10X2', 'Type10last'];
+let linkList = ['Type10opening', 'Type10X2', 'Type10X3', 'Type10X4', 'Type10last'];
+
+const screenWidth = Dimensions.get('window').width;
 
 
 let usedItems = [];
 
 const currentScreen = 1;
-let allScreensNum = 3;
+let allScreensNum = linkList.length;
 
 
 const correct = generalStyles.gradientTopCorrectDraggable;
@@ -84,11 +86,16 @@ const Type10opening = ({route}) => {
     const [instructions, setInstructions] = useState('Match words to their translations.');
     const [newInstructions, setNewInstructions] = useState('');
     const [language, setLanguage] = useState('EN');
+    const [answersShown, setAnswersShown] = useState(false);
+    const [dataForAnswer, setDataForAnswers] = useState([]);
+    const [hideShowText, setHideShowText] = useState('pronunciation');
+    const [hideTxt, setHideTxt] = useState('hide')
 
     
 
-    const [contentReady, setContentReady] = useState(false)
-    const [exeList, setExeList] = useState([])
+    const [contentReady, setContentReady] = useState(false);
+    const [exeList, setExeList] = useState([]);
+    const answerPosition = useRef(new Animated.Value(220)).current;
 
 
     let wordsArray = [];
@@ -106,6 +113,11 @@ const Type10opening = ({route}) => {
 
     const joinString = (str1, str2) => {
         return str1 + str2;
+    }
+
+
+    const renderAnswer = (item) => {
+      return <SoundLinkType10 dataParams={item} />
     }
 
     useFocusEffect(() => {
@@ -147,16 +159,28 @@ const Type10opening = ({route}) => {
 
           if (savedLang === 'PL') {
             setInstructions('Dopasuj slowa do ich tlumaczen.')
+            setHideShowText('wymowa')
+            setHideTxt('ukryj')
           } else if (savedLang === 'DE') {
             setInstructions('Ordne die Elemente ihren Pendants zu.')
+            setHideShowText('aussprache')
+            setHideTxt('ausblenden')
           } else if (savedLang === 'LT') {
             setInstructions('Suderinkite elementus su jų poromis.')
+            setHideShowText('tarimas')
+            setHideTxt('slėpti')
           } else if (savedLang === 'AR') {
             setInstructions('طابق العناصر مع مثيلاتها')
+            setHideShowText('النطق')
+            setHideTxt('إخفاء')
           } else if (savedLang === 'UA') {
             setInstructions('Відповідайте елементи з їх парами.')
+            setHideShowText('вимова')
+            setHideTxt('сховати')
           } else if (savedLang === 'ES') {
             setInstructions('Empareja los elementos con sus pares.')
+            setHideShowText('pronunciación')
+            setHideTxt('ocultar')
           }
           
           setLanguage(savedLang)
@@ -173,9 +197,10 @@ const Type10opening = ({route}) => {
 
 
     
+        const pointsBonusForCorrectAnswer = 4;
+        const numberOfWordPairs = 6;
 
-
-        let sumOfAllPoints = 60;
+        let sumOfAllPoints = pointsBonusForCorrectAnswer * numberOfWordPairs * linkList.length;
 
         let temporaryRemoved = [];
         
@@ -186,30 +211,51 @@ const Type10opening = ({route}) => {
         let choosenWords1 = [];
         let choosenWords2 = [];
         let choosenWords3 = [];
+        let choosenWords4 = [];
+        let choosenWords5 = [];
 
         let tempObj1 = {
             typeOfScreen: '2',
             correctAnswers: [],
             leftSideWords: [],
-            rightSideWords: []
+            rightSideWords: [],
+            soundLinkString: []
         }
 
         let tempObj2 = {
             typeOfScreen: '2',
             correctAnswers: [],
             leftSideWords: [],
-            rightSideWords: []
+            rightSideWords: [],
+            soundLinkString: []
         }
 
         let tempObj3 = {
             typeOfScreen: '2',
             correctAnswers: [],
             leftSideWords: [],
-            rightSideWords: []
+            rightSideWords: [],
+            soundLinkString: []
+        }
+
+        let tempObj4 = {
+            typeOfScreen: '2',
+            correctAnswers: [],
+            leftSideWords: [],
+            rightSideWords: [],
+            soundLinkString: []
+        }
+
+        let tempObj5 = {
+            typeOfScreen: '2',
+            correctAnswers: [],
+            leftSideWords: [],
+            rightSideWords: [],
+            soundLinkString: []
         }
 
 
-        for (let i = 0; i < 5; i++) {
+        for (let i = 0; i < numberOfWordPairs; i++) {
 
           let random1 = Math.floor(Math.random() * wordsArray.length);
           choosenWords1.push(wordsArray[random1]);
@@ -229,11 +275,22 @@ const Type10opening = ({route}) => {
           choosenWords3.push(wordsArray[random3]);
           temporaryRemoved.push(wordsArray[random3]);
           wordsArray.splice(random3, 1);
-
-
-
-
             
+            
+            
+          let random4 = Math.floor(Math.random() * wordsArray.length);
+          choosenWords4.push(wordsArray[random4]);
+          temporaryRemoved.push(wordsArray[random4]);
+          wordsArray.splice(random4, 1);
+            
+            
+            
+          let random5 = Math.floor(Math.random() * wordsArray.length);
+          choosenWords5.push(wordsArray[random5]);
+          temporaryRemoved.push(wordsArray[random5]);
+          wordsArray.splice(random5, 1);
+
+
 
         }
 
@@ -269,6 +326,8 @@ const Type10opening = ({route}) => {
                 object.leftSideWords.push(words[i].nor);
     
                 object.rightSideWords.push(tempTranslation);
+
+                object.soundLinkString.push(words[i].soundLink)
     
     
             }
@@ -289,6 +348,8 @@ const Type10opening = ({route}) => {
         setupWords(choosenWords1, tempObj1);
         setupWords(choosenWords2, tempObj2);
         setupWords(choosenWords3, tempObj3);
+        setupWords(choosenWords4, tempObj4);
+        setupWords(choosenWords5, tempObj5);
 
         
 
@@ -298,6 +359,8 @@ const Type10opening = ({route}) => {
         tempArr.push(tempObj1);
         tempArr.push(tempObj2);
         tempArr.push(tempObj3);
+        tempArr.push(tempObj4);
+        tempArr.push(tempObj5);
 
 
         tempArr.push(sumOfAllPoints);
@@ -379,24 +442,78 @@ const Type10opening = ({route}) => {
 
 
 
+
+    useEffect(() => {
+      
+      let myFlatListArray = []; 
+
+      if (contentReady) {
+
+        for (let i = 0; i < exeList[0].correctAnswers.length; i++) {
+          myFlatListArray[i] = {
+            norWordForSounds: exeList[0].leftSideWords[i],
+            soundLinkForAnswers: exeList[0].soundLinkString[i],
+            key: i
+          }
+        }
+  
+  
+        setDataForAnswers(myFlatListArray);
+      }
+
+
+
+      
+
+
+    }, [contentReady])
+
+
+
     useEffect(() => {
 
-        if (answersChecked.length !== 0) {
-          setLatestScreenAnswered(currentScreen);
-          for (let i = 0; i < answersChecked.length; i++) {
+      if (answersChecked.length !== 0) {
+        setLatestScreenAnswered(currentScreen);
+        for (let i = 0; i < answersChecked.length; i++) {
 
-            const newArr = [...isCorrect];
-            newArr.map((val, ind) => {
-                answersChecked[ind] ? newArr[ind] = 1 : newArr[ind] = 2
-            })
+          const newArr = [...isCorrect];
+          newArr.map((val, ind) => {
+              answersChecked[ind] ? newArr[ind] = 1 : newArr[ind] = 2
+          })
 
-            setIsCorrect(newArr);
-            
-          }
+          setIsCorrect(newArr);
+        }
+
+        Animated.timing(answerPosition, {
+          toValue: 150,
+          duration: 500,
+          useNativeDriver: false
+        }).start()
+          
       }
       
     
     }, [answersChecked])
+
+
+    const showHideAnswers = () => {
+      if (answersShown) {
+          setAnswersShown(false);
+          Animated.timing(answerPosition, {
+              toValue: 150,
+              duration: 500,
+              useNativeDriver: false
+          }).start()
+      } else {
+          setAnswersShown(true);
+          Animated.timing(answerPosition, {
+              toValue: 0,
+              duration: 500,
+              useNativeDriver: false
+          }).start()
+      }
+  }
+
 
     const onMovingDraggable = (movingDraggable) => {
         setMovingDraggable(movingDraggable);
@@ -428,7 +545,6 @@ const Type10opening = ({route}) => {
 
   return (
     <View style={styles.mainContainer}>
-      <ProgressBar screenNum={1} totalLenghtNum={allScreensNum} latestScreen={latestScreenDone} comeBack={comeBack}/>
 
       {contentReady ? <View style={styles.body}>
 
@@ -506,9 +622,40 @@ const Type10opening = ({route}) => {
 
         </View>
 
+
+
+        
+
+
         </View> : <View style={styles.loaderDisplay}>
             <Loader />
         </View> }
+
+
+
+        <Animated.View style={{...styles.answerContainer, transform: [{translateY: answerPosition}]}}>
+            
+            <View style={styles.answersListContainer}>
+                <FlatList 
+                    showsVerticalScrollIndicator={false}
+                    decelerationRate={0}
+                    data={dataForAnswer}
+                    renderItem={renderAnswer}
+                    keyExtractor={(item) => item.key}
+                    scrollEventThrottle={16}
+                />
+            </View>
+            <TouchableOpacity style={styles.hideShowBtn} onPress={showHideAnswers}>
+                <Text style={styles.hideShowTxt}>{answersShown ? hideTxt : hideShowText}</Text>
+            </TouchableOpacity>
+        </Animated.View>
+
+
+
+        <View style={styles.progressBarContainer}>
+          <ProgressBar screenNum={1} totalLenghtNum={allScreensNum} latestScreen={latestScreenDone} comeBack={comeBack}/>
+
+        </View>
         
     
 
@@ -551,10 +698,14 @@ const styles = StyleSheet.create({
     height: '100%',
     width: '100%',
   },
+  progressBarContainer: {
+    width: '100%',
+    position: 'absolute',
+  },
   topView: {
-    marginTop: 20,
+    marginTop: 100,
     marginBottom: 20,
-    marginHorizontal: 20
+    marginHorizontal: 20,
   },
   questionText: {
     fontSize: generalStyles.exerciseScreenTitleSize,
@@ -625,5 +776,41 @@ rightContainer: {
     color: 'white',
     
   },
+  answerContainer: {
+    position: 'absolute',
+    marginHorizontal: 20,
+    bottom: 100,
+    width: screenWidth - 40
+  },
+  hideShowBtn: {
+    position: 'absolute',
+    bottom: 147,
+    borderWidth: 3,
+    borderColor: '#6441A5',
+    paddingHorizontal: 10,
+    borderBottomWidth: 0,
+    alignItems: 'center',
+    justifyContent: 'center',
+    paddingTop: 5,
+    paddingBottom: 8,
+    backgroundColor: '#e49dfa',
+    borderTopLeftRadius: 8,
+    borderTopRightRadius: 8
+  },
+  hideShowTxt: {
+    fontSize: 16,
+    fontWeight: '600',
+    color: 'white'
+  },
+  answersListContainer: {
+    borderWidth: 3,
+    borderColor: '#6441A5',
+    padding: 10,
+    backgroundColor: '#e49dfa',
+    height: 150,
+    borderTopRightRadius: 8,
+    borderBottomLeftRadius: 8,
+    borderBottomRightRadius: 8,
+  }
 
 })

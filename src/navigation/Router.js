@@ -442,6 +442,8 @@ import Type9x9 from "../screens/ClassScreens/ExerciseScreens/Types/Type9x9";
 import Type9x10 from "../screens/ClassScreens/ExerciseScreens/Types/Type9x10";
 import Type10opening from '../screens/ClassScreens/ExerciseScreens/Types/Type10opening';
 import Type10x2 from '../screens/ClassScreens/ExerciseScreens/Types/Type10x2';
+import Type10x3 from '../screens/ClassScreens/ExerciseScreens/Types/Type10x3';
+import Type10x4 from '../screens/ClassScreens/ExerciseScreens/Types/Type10x4';
 import Type10last from '../screens/ClassScreens/ExerciseScreens/Types/Type10last';
 
 
@@ -889,6 +891,8 @@ const Router = () => {
                 <Stack.Screen name="Type9x10" component={Type9x10} options={{headerShown: false, animationEnabled: false }}/>
                 <Stack.Screen name="Type10opening" component={Type10opening} options={{headerShown: false, animationEnabled: false }}/>
                 <Stack.Screen name="Type10X2" component={Type10x2} options={{headerShown: false, animationEnabled: false }}/>
+                <Stack.Screen name="Type10X3" component={Type10x3} options={{headerShown: false, animationEnabled: false }}/>
+                <Stack.Screen name="Type10X4" component={Type10x4} options={{headerShown: false, animationEnabled: false }}/>
                 <Stack.Screen name="Type10last" component={Type10last} options={{headerShown: false, animationEnabled: false }}/>
             </Stack.Navigator>
         </NavigationContainer>
