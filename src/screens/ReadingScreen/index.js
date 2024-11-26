@@ -4,7 +4,8 @@ import * as SecureStore from 'expo-secure-store';
 import { useFocusEffect, useIsFocused } from "@react-navigation/native";
 import { useNavigation } from "@react-navigation/native";
 import { LinearGradient } from 'expo-linear-gradient';
-import styles from './style'
+import styles from './style';
+import { getAuth } from 'firebase/auth';
 import { withAnchorPoint } from 'react-native-anchor-point';
 import { Audio } from 'expo-av';
 import CardReading from '../../components/cards/CardReading';
@@ -14,6 +15,8 @@ import textListData3 from '../../listData/textLists/textListData3';
 import textListData4 from '../../listData/textLists/textListData4';
 import textListData5 from '../../listData/textLists/textListData5';
 import useRevenueCat from '../../../hooks/useRevenueCat';
+import adminIDs from '../../listData/otherData/adminIDs';
+
 
 const screenWidth = Dimensions.get('window').width;
 
@@ -26,6 +29,10 @@ const colorsBackFlatlist3 = ['#f9faac', '#b0faac', '#acf9fa', '#b4acfa', '#faacf
 const colorsBackFlatlist4 = ['#b4acfa', '#faacf3', '#faacac', '#f9faac', '#b0faac', '#acf9fa', '#b4acfa', '#faacf3', '#faacac', '#f9faac', '#b0faac', '#acf9fa']
 const colorsBackFlatlist5 = ['#b0faac', '#acf9fa', '#b4acfa', '#faacf3', '#faacac', '#f9faac', '#b0faac', '#acf9fa', '#b4acfa', '#faacf3', '#faacac', '#f9faac']
 const transparent = 'rgba(255,255,255,0)';
+
+
+
+const auth = getAuth();
 
 
 const ReadingScreen = ({route}) => {
@@ -71,7 +78,7 @@ const ReadingScreen = ({route}) => {
   const [sound2, setSound2] = useState();
   const [sound3, setSound3] = useState();
 
-  const userHasAccess = isProMember || within168Hours;
+  const userHasAccess = isProMember || within168Hours || adminIDs.includes(auth.currentUser.uid);
 
 
   const xPositionDeg = interpolatedValueForX.interpolate({

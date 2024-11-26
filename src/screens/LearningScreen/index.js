@@ -20,6 +20,8 @@ import learningList4 from '../../listData/learningLists/learningList4';
 import learningList5 from '../../listData/learningLists/learningList5';
 import learningList6 from '../../listData/learningLists/learningList6';
 import useRevenueCat from '../../../hooks/useRevenueCat';
+import adminIDs from '../../listData/otherData/adminIDs';
+
 
 const screenWidth = Dimensions.get('window').width;
 const isWideScreen = screenWidth > 550;
@@ -82,7 +84,7 @@ const LearningScreen = () => {
   const [within168Hours, setWithin168Hours] = useState(true);
   const [getProBtn, setGetProBtn] = useState('upgrade to Pro')
 
-  const userHasAccess = isProMember || within168Hours;
+  const userHasAccess = isProMember || within168Hours || adminIDs.includes(userId);
   
 
   const opacityImgBlur = scrollY.interpolate({

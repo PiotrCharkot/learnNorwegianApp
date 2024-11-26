@@ -6,8 +6,8 @@ import { LinearGradient } from 'expo-linear-gradient';
 import { useNavigation } from "@react-navigation/native";
 import { collection, getDocs, query, where } from "firebase/firestore";
 import { getStorage, ref, getDownloadURL } from "firebase/storage";
-import { db } from '../../../firebase/firebase-config'
-import { getAuth  } from 'firebase/auth';
+import { db } from '../../../firebase/firebase-config';
+import { getAuth } from 'firebase/auth';
 import { Audio } from 'expo-av';
 import styles from './style'
 import LoaderSmall from '../../components/other/LoaderSmall';
@@ -18,6 +18,8 @@ import exerciseList3 from '../../listData/exerciseLists/exerciseList3';
 import exerciseList4 from '../../listData/exerciseLists/exerciseList4';
 import exerciseList5 from '../../listData/exerciseLists/exerciseList5';
 import useRevenueCat from '../../../hooks/useRevenueCat';
+import adminIDs from '../../listData/otherData/adminIDs';
+
 
 
 const screenWidth = Dimensions.get('window').width;
@@ -79,7 +81,7 @@ const ExerciseScreen = () => {
   const [firstLaunchTime, setFirstLaunchTime] = useState(null);
   const [within168Hours, setWithin168Hours] = useState(true);
 
-  const userHasAccess = isProMember || within168Hours;
+  const userHasAccess = isProMember || within168Hours || adminIDs.includes(auth.currentUser.uid);
 
   const opacityImgBlur = scrollY.interpolate({
     inputRange: [0, 60],

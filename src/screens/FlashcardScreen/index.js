@@ -13,6 +13,7 @@ import { authentication } from '../../../firebase/firebase-config';
 import CardFlashList from '../../components/cards/CardFlashList';
 import CardWordGame from '../../components/cards/CardWordGame';
 import useRevenueCat from '../../../hooks/useRevenueCat';
+import adminIDs from '../../listData/otherData/adminIDs';
 
 
 const screenWidth = Dimensions.get('window').width;
@@ -51,7 +52,7 @@ const FlashcardScreen = () => {
   const [firstLaunchTime, setFirstLaunchTime] = useState(null);
   const [within168Hours, setWithin168Hours] = useState(true);
 
-  const userHasAccess = isProMember || within168Hours;
+  const userHasAccess = isProMember || within168Hours || adminIDs.includes(userId);
 
   const opacityImgBlur = scrollY.interpolate({
     inputRange: [0, 60],

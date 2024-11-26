@@ -1198,26 +1198,26 @@ export default dataObj = [
       sp: 'una escalera',
       soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/wordsList1%2Ftrapp.mp3?alt=media&token=809c78f2-8a85-46e8-b608-f1a77d14c913',
     },
-    {
-      nor: 'en venn',
-      eng: 'a friend',
-      pl: 'przyjaciel',
-      ar: 'صديق',
-      ger: 'ein Freund',
-      lt: 'draugas',
-      ua: 'друг',
-      sp: 'un amigo'
-    },
-    {
-      nor: 'en fiende',
-      eng: 'an enemy',
-      pl: 'wróg',
-      ar: 'عدو',
-      ger: 'ein Feind',
-      lt: 'priešas',
-      ua: 'ворог',
-      sp: 'un enemigo'
-    },
+    // {
+    //   nor: 'en venn',
+    //   eng: 'a friend',
+    //   pl: 'przyjaciel',
+    //   ar: 'صديق',
+    //   ger: 'ein Freund',
+    //   lt: 'draugas',
+    //   ua: 'друг',
+    //   sp: 'un amigo'
+    // },
+    // {
+    //   nor: 'en fiende',
+    //   eng: 'an enemy',
+    //   pl: 'wróg',
+    //   ar: 'عدو',
+    //   ger: 'ein Feind',
+    //   lt: 'priešas',
+    //   ua: 'ворог',
+    //   sp: 'un enemigo'
+    // },
     {
       nor: 'en musiker',
       eng: 'a musician',
@@ -1340,7 +1340,7 @@ export default dataObj = [
       soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/wordsList1%2Fplanet.mp3?alt=media&token=eedc4bf5-1839-4782-aa2c-bbfdbd30bb73',
     },
     {
-      nor: 'et høst',
+      nor: 'en høst',
       eng: 'an autumn',
       pl: 'jesień',
       ar: 'خريف',

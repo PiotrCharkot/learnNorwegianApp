@@ -1,14 +1,16 @@
-import { View, Text, StyleSheet, TouchableOpacity } from 'react-native'
-import React, { useState, useEffect } from 'react'
+import { View, Text, StyleSheet, Animated, TouchableOpacity, FlatList, Dimensions } from 'react-native'
+import React, { useState, useEffect, useRef } from 'react'
 import { useFocusEffect } from "@react-navigation/native";
 import { LinearGradient } from 'expo-linear-gradient';
-import ProgressBar from '../../../../../components/bars/progressBar'
-import BottomBar from '../../../../../components/bars/bottomBar'
-import Draggable from '../../../../../components/other/Draggable'
+import ProgressBar from '../../../../../components/bars/progressBar';
+import BottomBar from '../../../../../components/bars/bottomBar';
+import Draggable from '../../../../../components/other/Draggable';
+import SoundLinkType10 from '../../../../../components/other/SoundLinkType10';
 import generalStyles from '../../../../../styles/generalStyles';
 
 
 
+const screenWidth = Dimensions.get('window').width;
 
 const correct = generalStyles.gradientTopCorrectDraggable;
 const correct1 = generalStyles.gradientBottomCorrectDraggable;
@@ -45,6 +47,14 @@ const Type10last = ({route}) => {
     const [latestScreenAnswered, setLatestScreenAnswered] = useState(latestAnswered);
     const [instructions, setInstructions] = useState('Match items to their matches.');
     const [newInstructions, setNewInstructions] = useState('');
+    
+    const [hideShowText, setHideShowText] = useState('pronunciation');
+    const [hideTxt, setHideTxt] = useState('hide');
+    const [dataForAnswer, setDataForAnswers] = useState([]);
+    const [answersShown, setAnswersShown] = useState(false);
+
+
+    const answerPosition = useRef(new Animated.Value(220)).current;
 
 
 
@@ -129,17 +139,29 @@ const Type10last = ({route}) => {
           }
         } else {
           if (savedLang === 'PL') {
-              setInstructions('Dopasuj elementy do ich par.')
-            } else if (savedLang === 'DE') {
-              setInstructions('Ordne die Elemente ihren Pendants zu.')
-            } else if (savedLang === 'LT') {
-              setInstructions('Suderinkite elementus su jų poromis.')
-            } else if (savedLang === 'AR') {
-              setInstructions('طابق العناصر مع مثيلاتها')
-            } else if (savedLang === 'UA') {
-              setInstructions('Відповідайте елементи з їх парами.')
-            } else if (savedLang === 'ES') {
-              setInstructions('Empareja los elementos con sus pares.')
+            setInstructions('Dopasuj elementy do ich par.')
+            setHideShowText('wymowa')
+            setHideTxt('ukryj')
+          } else if (savedLang === 'DE') {
+            setInstructions('Ordne die Elemente ihren Pendants zu.')
+            setHideShowText('aussprache')
+            setHideTxt('ausblenden')
+          } else if (savedLang === 'LT') {
+            setInstructions('Suderinkite elementus su jų poromis.')
+            setHideShowText('tarimas')
+            setHideTxt('slėpti')
+          } else if (savedLang === 'AR') {
+            setInstructions('طابق العناصر مع مثيلاتها')
+            setHideShowText('النطق')
+            setHideTxt('إخفاء')
+          } else if (savedLang === 'UA') {
+            setInstructions('Відповідайте елементи з їх парами.')
+            setHideShowText('вимова')
+            setHideTxt('сховати')
+          } else if (savedLang === 'ES') {
+            setInstructions('Empareja los elementos con sus pares.')
+            setHideShowText('pronunciación')
+            setHideTxt('ocultar')
           }
         }
     })
@@ -158,10 +180,58 @@ const Type10last = ({route}) => {
           setIsCorrect(newArr);
           
         }
+  
+
+        Animated.timing(answerPosition, {
+          toValue: 150,
+          duration: 500,
+          useNativeDriver: false
+        }).start()
       }
       
     
     }, [answersChecked])
+
+
+    const showHideAnswers = () => {
+      if (answersShown) {
+          setAnswersShown(false);
+          Animated.timing(answerPosition, {
+              toValue: 150,
+              duration: 500,
+              useNativeDriver: false
+          }).start()
+      } else {
+          setAnswersShown(true);
+          Animated.timing(answerPosition, {
+              toValue: 0,
+              duration: 500,
+              useNativeDriver: false
+          }).start()
+      }
+    }
+
+
+
+    useEffect(() => {
+      
+      let myFlatListArray = []; 
+    
+      for (let i = 0; i < exeList[nextScreen - 1].correctAnswers.length; i++) {
+        myFlatListArray[i] = {
+          norWordForSounds: exeList[nextScreen - 1].leftSideWords[i],
+          soundLinkForAnswers: exeList[nextScreen - 1].soundLinkString[i],
+          key: i
+        }
+      }
+
+
+      setDataForAnswers(myFlatListArray);
+
+
+    }, [])
+
+
 
     const onMovingDraggable = (movingDraggable) => {
         setMovingDraggable(movingDraggable);
@@ -191,86 +261,116 @@ const Type10last = ({route}) => {
         setResetCheck(!resetCheck)
     };
 
+
+    const renderAnswer = (item) => {
+      return <SoundLinkType10 dataParams={item} />
+    }
+
   return (
     <View style={styles.mainContainer}>
-      <ProgressBar screenNum={nextScreen} totalLenghtNum={allScreensNum} latestScreen={latestScreenDone} comeBack={comeBackRoute}/>
         <View style={styles.body}>
 
             <View style={styles.topView}>
-                <Text style={{...styles.questionText, textAlign: savedLang === 'AR' ? 'right' : 'left' }}>{exeList[nextScreen - 1].instructions ? newInstructions : instructions}</Text>
+                
             </View>
 
             <View style={styles.swapableContainer}>
 
                 <View style={styles.leftContainer}>
                     {wordsLeft.map((item, index) => {
-                        return (
-                            <Draggable
+                      return (
+                        <Draggable
+                        key={index}
+                        index={index}
+                        movingDraggable={movingDraggable}
+                        onMovingDraggable={onMovingDraggable}
+                        releaseDraggable={releaseDraggable}
+                        onReleaseDraggable={onReleaseDraggable}
+                        swap={swap}
+                        renderChild={(isMovedOver) => {
+                          return (
+                            
+                            <LinearGradient
+                            colors={ isCorrect[index] === 0 ? [gradientTop, gradientBottom] : isCorrect[index] === 1 ? [correct , correct1] : [incorrect1 , incorrect]}
                             key={index}
-                            index={index}
-                            movingDraggable={movingDraggable}
-                            onMovingDraggable={onMovingDraggable}
-                            releaseDraggable={releaseDraggable}
-                            onReleaseDraggable={onReleaseDraggable}
-                            swap={swap}
-                            renderChild={(isMovedOver) => {
-                                return (
-            
-                                <LinearGradient
-                                colors={ isCorrect[index] === 0 ? [gradientTop, gradientBottom] : isCorrect[index] === 1 ? [correct , correct1] : [incorrect1 , incorrect]}
-                                key={index}
-                                    style={[
-                                    isMovedOver && styles.draggableContainerSwap,
-                                    styles.draggableContainer,
-                                    ]}
-                                >
+                            style={[
+                              isMovedOver && styles.draggableContainerSwap,
+                              styles.draggableContainer,
+                            ]}
+                            >
                                     
                                     <Text style={styles.textInDraggable}>{item}</Text>
                                 </LinearGradient>
                                 );
                             }}
                             />
-                        );
-                        
-                    })}
+                          );
+                          
+                        })}
                 </View>
 
                 <View style={styles.rightContainer}>
                     {wordsRight.map((item, index) => {
-                        return (
-                            <Draggable
-                            key={index}
-                            index={index}
-                            movingDraggable={movingDraggable}
-                            onMovingDraggable={onMovingDraggable}
-                            releaseDraggable={releaseDraggable}
-                            onReleaseDraggable={onReleaseDraggable}
-                            swap={swapRight}
-                            renderChild={(isMovedOver) => {
-                                return (
-            
-                                <LinearGradient
+                      return (
+                        <Draggable
+                        key={index}
+                        index={index}
+                        movingDraggable={movingDraggable}
+                        onMovingDraggable={onMovingDraggable}
+                        releaseDraggable={releaseDraggable}
+                        onReleaseDraggable={onReleaseDraggable}
+                        swap={swapRight}
+                        renderChild={(isMovedOver) => {
+                          return (
+                            
+                            <LinearGradient
                                 colors={isCorrect[index] === 0 ? [gradientTop2, gradientBottom2] : isCorrect[index] === 1 ? [correct , correct1] : [incorrect1 , incorrect]}
                                 key={index}
-                                    style={[
-                                    isMovedOver && styles.draggableContainerSwap,
-                                    styles.draggableContainer,
-                                    ]}
+                                style={[
+                                  isMovedOver && styles.draggableContainerSwap,
+                                  styles.draggableContainer,
+                                ]}
                                 >
                                     
                                     <Text style={styles.textInDraggable}>{item}</Text>
                                 </LinearGradient>
                                 );
-                            }}
-                            />
-                        );
-                        
-                    })}
+                              }}
+                              />
+                            );
+                            
+                          })}
                 </View>
 
             </View>
           
         </View>
+
+
+        <Animated.View style={{...styles.answerContainer, transform: [{translateY: answerPosition}]}}>
+            
+            <View style={styles.answersListContainer}>
+                <FlatList 
+                    showsVerticalScrollIndicator={false}
+                    decelerationRate={0}
+                    data={dataForAnswer}
+                    renderItem={renderAnswer}
+                    keyExtractor={(item) => item.key}
+                    scrollEventThrottle={16}
+                />
+            </View>
+            <TouchableOpacity style={styles.hideShowBtn} onPress={showHideAnswers}>
+                <Text style={styles.hideShowTxt}>{answersShown ? hideTxt : hideShowText}</Text>
+            </TouchableOpacity>
+        </Animated.View>
+
+
+
+        <View style={styles.progressBarContainer}>
+          <ProgressBar screenNum={nextScreen} totalLenghtNum={allScreensNum} latestScreen={latestScreenDone} comeBack={comeBackRoute}/>
+
+        </View>
+
     
 
       <View style={styles.bottomBarContainer}>
@@ -314,8 +414,12 @@ const styles = StyleSheet.create({
     height: '100%',
     width: '100%',
   },
+  progressBarContainer: {
+    width: '100%',
+    position: 'absolute',
+  },
   topView: {
-    marginTop: 20,
+    marginTop: 100,
     marginBottom: 20,
     marginHorizontal: 20
   },
@@ -323,6 +427,7 @@ const styles = StyleSheet.create({
     fontSize: generalStyles.exerciseScreenTitleSize,
     fontWeight: generalStyles.exerciseScreenTitleFontWeight,
     marginVertical: 10,
+    color: 'transparent'
   },
   swapableContainer: {
     flexDirection: 'row',
@@ -388,5 +493,41 @@ rightContainer: {
     color: 'white',
     
   },
+  answerContainer: {
+    position: 'absolute',
+    marginHorizontal: 20,
+    bottom: 100,
+    width: screenWidth - 40
+  },
+  hideShowBtn: {
+    position: 'absolute',
+    bottom: 147,
+    borderWidth: 3,
+    borderColor: '#6441A5',
+    paddingHorizontal: 10,
+    borderBottomWidth: 0,
+    alignItems: 'center',
+    justifyContent: 'center',
+    paddingTop: 5,
+    paddingBottom: 8,
+    backgroundColor: '#e49dfa',
+    borderTopLeftRadius: 8,
+    borderTopRightRadius: 8
+  },
+  hideShowTxt: {
+    fontSize: 16,
+    fontWeight: '600',
+    color: 'white'
+  },
+  answersListContainer: {
+    borderWidth: 3,
+    borderColor: '#6441A5',
+    padding: 10,
+    backgroundColor: '#e49dfa',
+    height: 150,
+    borderTopRightRadius: 8,
+    borderBottomLeftRadius: 8,
+    borderBottomRightRadius: 8,
+  }
 
 })

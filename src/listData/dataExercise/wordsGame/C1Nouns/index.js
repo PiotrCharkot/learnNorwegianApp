@@ -7,7 +7,8 @@ export default dataObj = [
         ger: 'Teilchen',
         lt: 'dalelė',
         ua: 'частка',
-        sp: 'partícula'
+        sp: 'partícula',
+        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/wordsList1%2Fpartikkel.mp3?alt=media&token=60b2ba80-df65-4459-85ff-9f5fa3571a2e',
       },
       {
         nor: 'en benådning',
@@ -17,7 +18,8 @@ export default dataObj = [
         ger: 'Begnadigung',
         lt: 'malonė',
         ua: 'помилування',
-        sp: 'indulto'
+        sp: 'indulto',
+        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/wordsList1%2Fbenaadning.mp3?alt=media&token=acdfe139-5783-44b6-85a0-4dc4ae43db08',
       },
       {
         nor: 'en besettelse',
@@ -27,7 +29,8 @@ export default dataObj = [
         ger: 'eine Besessenheit',
         lt: 'obsesija',
         ua: 'одержимість',
-        sp: 'obsesión'
+        sp: 'obsesión',
+        soundLink: "https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/wordsList1%2Fbesettelse.mp3?alt=media&token=8cd4f386-5f9a-40a4-ab17-ade48064972e",
       },
       {
         nor: 'en bærekraft',
@@ -37,7 +40,8 @@ export default dataObj = [
         ger: 'eine Nachhaltigkeit',
         lt: 'tvarumas',
         ua: 'сталість',
-        sp: 'sostenibilidad'
+        sp: 'sostenibilidad',
+        soundLink: "https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/wordsList1%2Fbeerekraft.mp3?alt=media&token=26cc1958-dcb3-4fb2-a601-f02af02ee353",
       },
       {
         nor: 'en fortolkning',
@@ -47,7 +51,8 @@ export default dataObj = [
         ger: 'Interpretation',
         lt: 'interpretacija',
         ua: 'тлумачення',
-        sp: 'interpretación'
+        sp: 'interpretación',
+        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/wordsList1%2Ffortolkning.mp3?alt=media&token=e6ee7370-ed9d-471d-bf89-1569a7be1023',
       },
       {
         nor: 'en frigjøring',
@@ -57,7 +62,8 @@ export default dataObj = [
         ger: 'Befreiung',
         lt: 'išlaisvinimas',
         ua: 'звільнення',
-        sp: 'liberación'
+        sp: 'liberación',
+        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/wordsList1%2Ffrigjooring.mp3?alt=media&token=341cb875-d3fb-4185-8a3a-e162c400115a',
       },
       {
         nor: 'en avkastning',
@@ -67,7 +73,8 @@ export default dataObj = [
         ger: 'Rendite',
         lt: 'grąža',
         ua: 'дохід',
-        sp: 'retorno'
+        sp: 'retorno',
+        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/wordsList1%2Favkastning.mp3?alt=media&token=cb6d0430-02d5-4821-a4c6-9ccabc3ab8c8',
       },
       {
         nor: 'en bønne',
@@ -77,7 +84,8 @@ export default dataObj = [
         ger: 'eine Bohne',
         lt: 'pupelė',
         ua: 'боб',
-        sp: 'judía'
+        sp: 'judía',
+        soundLink: "https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/wordsList1%2Fboonne.mp3?alt=media&token=3c2583df-b71a-4426-a0ed-babdefbdf831",
       },
       {
         nor: 'en generalisering',
@@ -87,7 +95,8 @@ export default dataObj = [
         ger: 'Verallgemeinerung',
         lt: 'generalizacija',
         ua: 'узагальнення',
-        sp: 'generalización'
+        sp: 'generalización',
+        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/wordsList1%2Fgeneralisering.mp3?alt=media&token=00ea0720-490c-41f9-b380-c77e0f04e2f1',
       },
       {
         nor: 'en hjernevasking',
@@ -97,7 +106,8 @@ export default dataObj = [
         ger: 'Gehirnwäsche',
         lt: 'smegenų plovimas',
         ua: 'промивання мозків',
-        sp: 'lavado de cerebro'
+        sp: 'lavado de cerebro',
+        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/wordsList1%2Fhjernevasking.mp3?alt=media&token=3e397bd0-342f-46e1-82fc-631552c74c48',
       },
       {
         nor: 'en inkompetanse',
@@ -107,7 +117,8 @@ export default dataObj = [
         ger: 'Inkompetenz',
         lt: 'nekvalifikacija',
         ua: 'некомпетентність',
-        sp: 'incompetencia'
+        sp: 'incompetencia',
+        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/wordsList1%2Finkompetanse.mp3?alt=media&token=163b6b35-39d2-4eb4-a529-ef0a0baf0f05',
       },
       {
         nor: 'en kollaps',
@@ -117,7 +128,8 @@ export default dataObj = [
         ger: 'Zusammenbruch',
         lt: 'kolapsas',
         ua: 'колапс',
-        sp: 'colapso'
+        sp: 'colapso',
+        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/wordsList1%2Fkollaps.mp3?alt=media&token=2a9ad332-fd0b-458c-b5dd-b9652727f642',
       },
       {
         nor: 'en kvasivitenskap',
@@ -127,7 +139,8 @@ export default dataObj = [
         ger: 'Pseudowissenschaft',
         lt: 'pseudo mokslas',
         ua: 'псевдонаука',
-        sp: 'pseudociencia'
+        sp: 'pseudociencia',
+        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/wordsList1%2Fkvasivitenskap.mp3?alt=media&token=4cab9441-611d-4c3f-9859-51900cc93a06',
       },
       {
         nor: 'en cellekjerne',
@@ -137,7 +150,8 @@ export default dataObj = [
         ger: 'ein Zellkern',
         lt: 'ląstelės branduolys',
         ua: 'ядро клітини',
-        sp: 'núcleo celular'
+        sp: 'núcleo celular',
+        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/wordsList1%2Fcellekjerne.mp3?alt=media&token=1e8c5d14-12e8-4923-9a34-faa9a068027e',
       },
       {
         nor: 'en dimensjon',
@@ -147,17 +161,19 @@ export default dataObj = [
         ger: 'eine Dimension',
         lt: 'dimensija',
         ua: 'вимір',
-        sp: 'dimensión'
+        sp: 'dimensión',
+        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/wordsList1%2Fdimensjon.mp3?alt=media&token=7be2b444-2a5b-4fac-8a65-de90f2df30e7',
       },
       {
-        nor: 'en omdømme',
+        nor: 'et omdømme',
         eng: 'a reputation',
         pl: 'reputacja',
         ar: 'سمعة',
         ger: 'ein Ruf',
         lt: 'reputacija',
         ua: 'репутація',
-        sp: 'reputación'
+        sp: 'reputación',
+        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/wordsList1%2Fomdoomme.mp3?alt=media&token=1dbe1cd6-1042-45ea-b681-c3be1629fca6',
       },
       {
         nor: 'en omstilling',
@@ -167,7 +183,8 @@ export default dataObj = [
         ger: 'eine Umstrukturierung',
         lt: 'pertvarkymas',
         ua: 'перехід',
-        sp: 'reconversión'
+        sp: 'reconversión',
+        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/wordsList1%2Fomstilling.mp3?alt=media&token=86e4f168-56de-476c-997e-3b0f6ce04015',
       },
       {
         nor: 'en åpenbaring',
@@ -177,27 +194,30 @@ export default dataObj = [
         ger: 'eine Offenbarung',
         lt: 'atskleidimas',
         ua: 'відкриття',
-        sp: 'revelación'
+        sp: 'revelación',
+        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/wordsList1%2Faapenbaring.mp3?alt=media&token=f7c283bd-71cf-4c0a-a712-05baa93ce491',
       },
       {
-        nor: 'en bedrag',
+        nor: 'et bedrag',
         eng: 'a deception',
         pl: 'oszustwo',
         ar: 'خداع',
         ger: 'eine Täuschung',
         lt: 'apgaule',
         ua: 'обман',
-        sp: 'engaño'
+        sp: 'engaño',
+        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/wordsList1%2Fbedrag.mp3?alt=media&token=22e0a006-cccf-450b-9d8e-5783420220d5',
       },
       {
-        nor: 'en begjær',
+        nor: 'et begjær',
         eng: 'a desire',
         pl: 'pożądanie',
         ar: 'رغبة',
         ger: 'ein Verlangen',
         lt: 'trokštamas',
         ua: 'бажання',
-        sp: 'deseo'
+        sp: 'deseo',
+        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/wordsList1%2Fbegjeer.mp3?alt=media&token=c3861201-a81f-48ac-9df3-0bf8810e6434',
       },
       {
         nor: 'en beleiring',
@@ -207,7 +227,8 @@ export default dataObj = [
         ger: 'eine Belagerung',
         lt: 'apšauda',
         ua: 'облога',
-        sp: 'asedio'
+        sp: 'asedio',
+        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/wordsList1%2Fbeleiring.mp3?alt=media&token=2dd47bc1-fc44-4d60-85e4-f9f56757b899',
       },
       {
         nor: 'en borgerkrig',
@@ -217,7 +238,8 @@ export default dataObj = [
         ger: 'ein Bürgerkrieg',
         lt: 'pilietinis karas',
         ua: 'громадянська війна',
-        sp: 'guerra civil'
+        sp: 'guerra civil',
+        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/wordsList1%2Fborgerkrig.mp3?alt=media&token=115127a7-ebf6-497a-9581-997e2d1dc8e6',
       },
       {
         nor: 'en brøkdel',
@@ -227,7 +249,8 @@ export default dataObj = [
         ger: 'ein Bruchteil',
         lt: 'dalis',
         ua: 'дроби',
-        sp: 'fracciones'
+        sp: 'fracciones',
+        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/wordsList1%2Fbrookdel.mp3?alt=media&token=bcdacd34-9c92-4feb-8580-fceefb95d929',
       },
       {
         nor: 'en avhending',
@@ -237,7 +260,8 @@ export default dataObj = [
         ger: 'eine Verfügung',
         lt: 'atidavimas',
         ua: 'відчуження',
-        sp: 'enajenación'
+        sp: 'enajenación',
+        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/wordsList1%2Favhending.mp3?alt=media&token=aeef4581-0ed7-4631-977b-dbe604864120',
       },
       {
         nor: 'en avvikling',
@@ -247,7 +271,8 @@ export default dataObj = [
         ger: 'eine Liquidation',
         lt: 'likvidacija',
         ua: 'ліквідація',
-        sp: 'liquidación'
+        sp: 'liquidación',
+        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/wordsList1%2Favvikling.mp3?alt=media&token=85854652-cecb-4525-b5a3-9b094212d3d8',
       },
       {
         nor: 'en betegnelse',
@@ -257,17 +282,19 @@ export default dataObj = [
         ger: 'eine Bezeichnung',
         lt: 'pavadinimas',
         ua: 'позначення',
-        sp: 'denominación'
+        sp: 'denominación',
+        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/wordsList1%2Fbetegnelse.mp3?alt=media&token=e103c4b9-843a-4e10-a6c1-7b8dd04f9457',
       },
       {
-        nor: 'en byråkrati',
+        nor: 'et byråkrati',
         eng: 'a bureaucracy',
         pl: 'biurokracja',
         ar: 'بيروقراطية',
         ger: 'eine Bürokratie',
         lt: 'biurokratija',
         ua: 'бюрократія',
-        sp: 'burocracia'
+        sp: 'burocracia',
+        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/wordsList1%2Fbyraakrati.mp3?alt=media&token=b59c7bca-e83f-47c6-a57c-fc0b598417bf',
       },
       {
         nor: 'en avveining',
@@ -277,7 +304,8 @@ export default dataObj = [
         ger: 'ein Kompromiss',
         lt: 'kompromisas',
         ua: 'зважування',
-        sp: 'ponderación'
+        sp: 'ponderación',
+        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/wordsList1%2Favveining.mp3?alt=media&token=f83365ce-f25f-478f-8fad-7b5e750559fe',
       },
       {
         nor: 'en avgift',
@@ -287,17 +315,19 @@ export default dataObj = [
         ger: 'eine Gebühr',
         lt: 'mokestis',
         ua: 'плата',
-        sp: 'tarifa'
+        sp: 'tarifa',
+        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/wordsList1%2Favgift.mp3?alt=media&token=78250b9e-cf0b-4751-8238-f50646951544',
       },
       {
-        nor: 'en avløp',
+        nor: 'et avløp',
         eng: 'a drain',
         pl: 'odpływ',
         ar: 'مصرف',
         ger: 'ein Abfluss',
         lt: 'nutekėjimas',
         ua: 'відвод',
-        sp: 'desagüe'
+        sp: 'desagüe',
+        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/wordsList1%2Favloop.mp3?alt=media&token=3f77fc15-20c6-4f26-8a1b-00c1294f9fd8',
       },
       {
         nor: 'en dovenhet',
@@ -307,7 +337,8 @@ export default dataObj = [
         ger: 'eine Faulheit',
         lt: 'tinginystė',
         ua: 'лінощі',
-        sp: 'pereza'
+        sp: 'pereza',
+        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/wordsList1%2Fdovenhet.mp3?alt=media&token=d3a4a6f5-730c-4edb-a403-b58a26a6d78e',
       },
       {
         nor: 'en drage',
@@ -317,7 +348,8 @@ export default dataObj = [
         ger: 'ein Drachen',
         lt: 'aštuonkojis',
         ua: 'дракон',
-        sp: 'dragón'
+        sp: 'dragón',
+        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/wordsList1%2Fdrage.mp3?alt=media&token=372edd34-fb6e-4092-bb07-1ec8fe766335',
       },
       {
         nor: 'en dristighet',
@@ -327,7 +359,8 @@ export default dataObj = [
         ger: 'eine Kühnheit',
         lt: 'drąsos',
         ua: 'сміливість',
-        sp: 'osadía'
+        sp: 'osadía',
+        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/wordsList1%2Fdristighet.mp3?alt=media&token=746030f0-61db-427c-96f0-f943cd8d313c',
       },
       {
         nor: 'en duell',
@@ -337,7 +370,8 @@ export default dataObj = [
         ger: 'ein Duell',
         lt: 'dvikova',
         ua: 'дуель',
-        sp: 'duelo'
+        sp: 'duelo',
+        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/wordsList1%2Fduell.mp3?alt=media&token=4f170a84-1e39-4e23-835f-05d0bda278ee',
       },
       {
         nor: 'en dyd',
@@ -347,7 +381,8 @@ export default dataObj = [
         ger: 'eine Tugend',
         lt: 'dorybė',
         ua: 'чесність',
-        sp: 'virtud'
+        sp: 'virtud',
+        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/wordsList1%2Fdyd.mp3?alt=media&token=03acaee6-68f5-4911-88b4-7c0a023c850d',
       },
       {
         nor: 'en dykker',
@@ -357,7 +392,8 @@ export default dataObj = [
         ger: 'ein Taucher',
         lt: 'nardymo',
         ua: 'нуркач',
-        sp: 'buzo'
+        sp: 'buzo',
+        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/wordsList1%2Fdykker.mp3?alt=media&token=ed552769-3be8-4681-9387-0208c3f33115',
       },
       {
         nor: 'en dørstokk',
@@ -367,7 +403,8 @@ export default dataObj = [
         ger: 'eine Türschwelle',
         lt: 'slenkstis',
         ua: 'поріг',
-        sp: 'umbral'
+        sp: 'umbral',
+        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/wordsList1%2Fdoorstokk.mp3?alt=media&token=5d2420eb-3822-424a-959f-3c0a0159c8a5',
       },
       {
         nor: 'en døvstum',
@@ -377,7 +414,8 @@ export default dataObj = [
         ger: 'ein Taubstummer',
         lt: 'kurčias ir nebylus',
         ua: 'глухонімий',
-        sp: 'sordomudo'
+        sp: 'sordomudo',
+        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/wordsList1%2Fdoovstum.mp3?alt=media&token=68c68b78-5279-46f9-af20-778e98621ed7',
       },
       {
         nor: 'en bark',
@@ -387,7 +425,8 @@ export default dataObj = [
         ger: 'eine Rinde',
         lt: 'žievė',
         ua: 'кора',
-        sp: 'corteza'
+        sp: 'corteza',
+        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/wordsList1%2Fbark.mp3?alt=media&token=eac31e56-3cd7-4ebe-a2ad-1f91b318b522',
       },
       {
         nor: 'en badekåpe',
@@ -397,7 +436,8 @@ export default dataObj = [
         ger: 'ein Bademantel',
         lt: 'vonios kombinezonas',
         ua: 'халат для kupнання',
-        sp: 'bata de baño'
+        sp: 'bata de baño',
+        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/wordsList1%2Fbadekaape.mp3?alt=media&token=1a6a7a3b-f690-4cb6-8c96-0248b55d6515',
       },
       {
         nor: 'en bevissthet',
@@ -407,7 +447,8 @@ export default dataObj = [
         ger: 'Bewusstsein',
         lt: 'sąmoningumas',
         ua: 'свідомість',
-        sp: 'conciencia'
+        sp: 'conciencia',
+        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/wordsList1%2Fbevissthet.mp3?alt=media&token=22cf54fe-1127-4580-92e9-dba8f0ffef6c',
       },
       {
         nor: 'en blodpropp',
@@ -417,7 +458,8 @@ export default dataObj = [
         ger: 'Blutgerinnsel',
         lt: 'kraujo krešulys',
         ua: 'тромб',
-        sp: 'coágulo'
+        sp: 'coágulo',
+        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/wordsList1%2Fblodpropp.mp3?alt=media&token=b4b7554b-57fb-48a0-ab10-5516b46215c9',
       },
       {
         nor: 'en byrde',
@@ -427,7 +469,8 @@ export default dataObj = [
         ger: 'Last',
         lt: 'našta',
         ua: 'тягар',
-        sp: 'carga'
+        sp: 'carga',
+        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/wordsList1%2Fbyrde.mp3?alt=media&token=5a2bc03d-a9fa-4486-b25d-a95ecc4aecab',
       },
       {
         nor: 'en bukt',
@@ -437,7 +480,8 @@ export default dataObj = [
         ger: 'Bucht',
         lt: 'įlanka',
         ua: 'затока',
-        sp: 'bahía'
+        sp: 'bahía',
+        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/wordsList1%2Fbukt.mp3?alt=media&token=f029e80e-b312-49b6-9f4d-498a5f21d38d',
       },
       {
         nor: 'en eskalering',
@@ -447,7 +491,8 @@ export default dataObj = [
         ger: 'Eskalation',
         lt: 'eskalacija',
         ua: 'ескалація',
-        sp: 'escalada'
+        sp: 'escalada',
+        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/wordsList1%2Feskalering.mp3?alt=media&token=97d56b12-602c-44ed-a787-8eb4dc320b5f',
       },
       {
         nor: 'en arrangør',
@@ -457,7 +502,8 @@ export default dataObj = [
         ger: 'Organisator',
         lt: 'organizatorius',
         ua: 'організатор',
-        sp: 'organizador'
+        sp: 'organizador',
+        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/wordsList1%2Farrangoor.mp3?alt=media&token=1cdeedaf-4da1-4b60-9ed0-dd6158953c92',
       },
       {
         nor: 'en effektivitet',
@@ -467,7 +513,8 @@ export default dataObj = [
         ger: 'Effizienz',
         lt: 'efektyvumas',
         ua: 'ефективність',
-        sp: 'eficiencia'
+        sp: 'eficiencia',
+        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/wordsList1%2Feffektivitet.mp3?alt=media&token=e4e9a755-f22d-4e3f-9608-c6b57d9e95c7',
       },
       {
         nor: 'en fiendtlighet',
@@ -477,7 +524,8 @@ export default dataObj = [
         ger: 'Feindseligkeit',
         lt: 'priešiškumas',
         ua: 'ворожнеча',
-        sp: 'hostilidad'
+        sp: 'hostilidad',
+        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/wordsList1%2Ffiendtlighet.mp3?alt=media&token=40bbdc5a-0ff0-429c-a2f6-7bf721276d76',
       },
       {
         nor: 'en flukt',
@@ -487,7 +535,8 @@ export default dataObj = [
         ger: 'Flucht',
         lt: 'pabėgimas',
         ua: 'втеча',
-        sp: 'fuga'
+        sp: 'fuga',
+        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/wordsList1%2Fflukt.mp3?alt=media&token=c8de2636-07eb-441b-bfd7-7495839637c7',
       },
       {
         nor: 'en etterforskning',
@@ -497,7 +546,8 @@ export default dataObj = [
         ger: 'Ermittlung',
         lt: 'tyrimas',
         ua: 'розслідування',
-        sp: 'investigación'
+        sp: 'investigación',
+        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/wordsList1%2Fetterforskning.mp3?alt=media&token=6b95395d-4147-4269-abcf-490c56729fb1',
       },
       {
         nor: 'en ettergivelse',
@@ -507,7 +557,8 @@ export default dataObj = [
         ger: 'Zugeständnis',
         lt: 'nuolaida',
         ua: 'послаблення',
-        sp: 'condonación'
+        sp: 'condonación',
+        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/wordsList1%2Fettergivelse.mp3?alt=media&token=415a7582-c759-421e-a8a3-495c5bf24344',
       },
       {
         nor: 'en ettertanke',
@@ -517,7 +568,8 @@ export default dataObj = [
         ger: 'Nachdenken',
         lt: 'apmąstymas',
         ua: 'роздум',
-        sp: 'reflexión'
+        sp: 'reflexión',
+        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/wordsList1%2Fettertanke.mp3?alt=media&token=33f88475-42cb-4e18-9918-61ee1c402bd5',
       },
       {
         nor: 'en evighet',
@@ -527,7 +579,8 @@ export default dataObj = [
         ger: 'eine Ewigkeit',
         lt: 'amžinybė',
         ua: 'вічність',
-        sp: 'eternidad'
+        sp: 'eternidad',
+        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/wordsList1%2Fevighet.mp3?alt=media&token=1d522ca6-2d90-484e-b300-4337a9477283',
       },
       {
         nor: 'en enke',
@@ -537,7 +590,8 @@ export default dataObj = [
         ger: 'eine Witwe',
         lt: 'našlė',
         ua: 'вдова',
-        sp: 'viuda'
+        sp: 'viuda',
+        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/wordsList1%2Fenke.mp3?alt=media&token=b141233e-95f8-41d9-be13-125017ac8c71',
       },
       {
         nor: 'en eremitt',
@@ -547,7 +601,8 @@ export default dataObj = [
         ger: 'ein Einsiedler',
         lt: 'eremitas',
         ua: 'отшельник',
-        sp: 'ermitaño'
+        sp: 'ermitaño',
+        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/wordsList1%2Feremitt.mp3?alt=media&token=67c45eda-ff41-4172-a2d6-5a1aaf5827fc',
       },
       {
         nor: 'en evaluering',
@@ -557,7 +612,8 @@ export default dataObj = [
         ger: 'eine Bewertung',
         lt: 'vertinimas',
         ua: 'оцінка',
-        sp: 'evaluación'
+        sp: 'evaluación',
+        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/wordsList1%2Fevaluering.mp3?alt=media&token=b74aed8d-8953-4792-884c-98f0f3ffff58',
       },
       {
         nor: 'en begivenhet',
@@ -567,7 +623,8 @@ export default dataObj = [
         ger: 'eine Veranstaltung',
         lt: 'įvykis',
         ua: 'подія',
-        sp: 'evento'
+        sp: 'evento',
+        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/wordsList1%2Fbegivenhet.mp3?alt=media&token=9eb375ff-9ab8-4456-b993-2e6969211b12',
       },
       {
         nor: 'en forvandling',
@@ -577,7 +634,8 @@ export default dataObj = [
         ger: 'eine Verwandlung',
         lt: 'transformacija',
         ua: 'перетворення',
-        sp: 'transformación'
+        sp: 'transformación',
+        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/wordsList1%2Fforvandling.mp3?alt=media&token=09752bb2-eea8-499d-8e6c-38a5f23acd04',
       },
       {
         nor: 'en fornektelse',
@@ -587,17 +645,19 @@ export default dataObj = [
         ger: 'eine Ablehnung',
         lt: 'neigimas',
         ua: 'заперечення',
-        sp: 'negación'
+        sp: 'negación',
+        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/wordsList1%2Ffornektelse.mp3?alt=media&token=5ef7e01a-e4a8-4472-9435-f105d5dd096c',
       },
       {
-        nor: 'en beist',
+        nor: 'et beist',
         eng: 'a beast',
         pl: 'bestia',
         ar: 'وحش',
         ger: 'ein Tier',
         lt: 'žvėris',
         ua: 'звір',
-        sp: 'bestia'
+        sp: 'bestia',
+        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/wordsList1%2Fbeist.mp3?alt=media&token=17a1bfc4-cce5-49f0-a4dc-70d4b64f5e24',
       },
       {
         nor: 'en belastning',
@@ -607,7 +667,8 @@ export default dataObj = [
         ger: 'eine Belastung',
         lt: 'našta',
         ua: 'навантаження',
-        sp: 'carga'
+        sp: 'carga',
+        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/wordsList1%2Fbelastning.mp3?alt=media&token=43d3aa5b-aa3e-4375-ae4b-4101ba021ac3',
       },
       {
         nor: 'en mangfoldighet',
@@ -617,7 +678,8 @@ export default dataObj = [
         ger: 'eine Vielfalt',
         lt: 'įvairovė',
         ua: 'різноманіття',
-        sp: 'diversidad'
+        sp: 'diversidad',
+        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/wordsList1%2Fmangfoldighet.mp3?alt=media&token=46cec13c-958a-4e4f-8447-5dff8d722a5b',
       },
       {
         nor: 'en attføring',
@@ -627,7 +689,8 @@ export default dataObj = [
         ger: 'eine Stuhlentleerung',
         lt: 'tuštinimasis',
         ua: 'реабілітація',
-        sp: 'rehabilitación'
+        sp: 'rehabilitación',
+        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/wordsList1%2Fattfooring.mp3?alt=media&token=514c8af2-dccd-46fe-b415-82ee568f01a5',
       },
       {
         nor: 'en bivirkning',
@@ -637,7 +700,8 @@ export default dataObj = [
         ger: 'eine Nebenwirkung',
         lt: 'šalutinis poveikis',
         ua: 'побічний ефект',
-        sp: 'efecto secundario'
+        sp: 'efecto secundario',
+        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/wordsList1%2Fbivirkning.mp3?alt=media&token=31f0f338-b1e0-4012-a787-fe5244989de6',
       },
       {
         nor: 'en selvfølelse',
@@ -647,17 +711,19 @@ export default dataObj = [
         ger: 'ein Selbstwertgefühl',
         lt: 'savigarbos jausmas',
         ua: 'самооцінка',
-        sp: 'autoestima'
+        sp: 'autoestima',
+        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/wordsList1%2Fselvfoolelse.mp3?alt=media&token=2fe96dbb-f7ad-470e-b06e-fec6b5bf9f99',
       },
       {
-        nor: 'en habitat',
+        nor: 'et habitat',
         eng: 'a habitat',
         pl: 'siedlisko',
         ar: 'موطن',
         ger: 'ein Lebensraum',
         lt: 'biotopas',
         ua: 'середовище існування',
-        sp: 'hábitat'
+        sp: 'hábitat',
+        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/wordsList1%2Fhabitat.mp3?alt=media&token=a8d54413-73d3-4983-bf42-37ae6e62b551',
       },
       {
         nor: 'en kjernefysikk',
@@ -667,7 +733,8 @@ export default dataObj = [
         ger: 'Kernphysik',
         lt: 'branduolinė fizika',
         ua: 'ядерна фізика',
-        sp: 'física nuclear'
+        sp: 'física nuclear',
+        soundLink: "https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/wordsList1%2Fkjernefysikk.mp3?alt=media&token=0d046b7f-4df7-41ca-a1bc-4f74825b6861",
       },
       {
         nor: 'en selvtillit',
@@ -677,7 +744,8 @@ export default dataObj = [
         ger: 'ein Selbstvertrauen',
         lt: 'savigarba',
         ua: 'впевненість у собі',
-        sp: 'confianza en sí mismo'
+        sp: 'confianza en sí mismo',
+        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/wordsList1%2Fselvtillit.mp3?alt=media&token=49c31c59-a6d5-49aa-85e4-bf3991934449',
       },
       {
         nor: 'en forfengelighet',
@@ -687,17 +755,19 @@ export default dataObj = [
         ger: 'eine Eitelkeit',
         lt: 'tuštumas',
         ua: 'марнославство',
-        sp: 'vanidad'
+        sp: 'vanidad',
+        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/wordsList1%2Fforfengelighet.mp3?alt=media&token=b501bb5a-3f85-4394-a2fd-354b3ef6865b',
       },
       {
-        nor: 'en forræderi',
+        nor: 'et forræderi',
         eng: 'a betrayal',
         pl: 'zdrada',
         ar: 'خيانة',
         ger: 'ein Verrat',
         lt: 'išdavystė',
         ua: 'зрада',
-        sp: 'traición'
+        sp: 'traición',
+        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/wordsList1%2Fforreederi.mp3?alt=media&token=0e834ecc-c7fc-4f80-8b73-3c22b02c2e64',
       },
       {
         nor: 'en fremmedgjøring',
@@ -707,17 +777,19 @@ export default dataObj = [
         ger: 'Entfremdung',
         lt: 'atsvetimėjimas',
         ua: 'відчуженість',
-        sp: 'alienación'
+        sp: 'alienación',
+        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/wordsList1%2Ffremmedgjooring.mp3?alt=media&token=09b8619a-401e-4018-9171-527415c6cce6',
       },
       {
-        nor: 'en eksil',
+        nor: 'et eksil',
         eng: 'an exile',
         pl: 'wygnanie',
         ar: 'منفى',
         ger: 'ein Exil',
         lt: 'tremtis',
         ua: 'екзиль',
-        sp: 'exilio'
+        sp: 'exilio',
+        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/wordsList1%2Feksil.mp3?alt=media&token=38c7f9de-d86a-4769-af6d-8dd47d494d6f',
       },
       {
         nor: 'en bevoktning',
@@ -727,7 +799,8 @@ export default dataObj = [
         ger: 'eine Bewachung',
         lt: 'sargyba',
         ua: 'охорона',
-        sp: 'vigilancia'
+        sp: 'vigilancia',
+        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/wordsList1%2Fbevoktning.mp3?alt=media&token=73142248-e8dd-4898-9ea0-59e24c46c80d',
       },
       {
         nor: 'en erklæring',
@@ -737,7 +810,8 @@ export default dataObj = [
         ger: 'eine Erklärung',
         lt: 'deklaracija',
         ua: 'заява',
-        sp: 'declaración'
+        sp: 'declaración',
+        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/wordsList1%2Ferkleering.mp3?alt=media&token=c4bf07f5-46a7-40cd-9dc7-7d49467118cd',
       },
       {
         nor: 'en erkjennelse',
@@ -747,7 +821,8 @@ export default dataObj = [
         ger: 'eine Anerkennung',
         lt: 'pripažinimas',
         ua: 'визнання',
-        sp: 'reconocimiento'
+        sp: 'reconocimiento',
+        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/wordsList1%2Ferkjennelse.mp3?alt=media&token=461ae66a-af5e-4a7d-8a80-f3501fdbc987',
       },
       {
         nor: 'en erobring',
@@ -757,7 +832,8 @@ export default dataObj = [
         ger: 'eine Eroberung',
         lt: 'užkariavimas',
         ua: 'завоювання',
-        sp: 'conquista'
+        sp: 'conquista',
+        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/wordsList1%2Ferobring.mp3?alt=media&token=30292078-96e4-4f4b-b7b5-4c6b59fd7c28',
       },
       {
         nor: 'en samvittighet',
@@ -767,7 +843,8 @@ export default dataObj = [
         ger: 'ein Gewissen',
         lt: 'sąžinė',
         ua: 'совість',
-        sp: 'una conciencia'
+        sp: 'una conciencia',
+        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/wordsList1%2Fsamvittighet.mp3?alt=media&token=5cd0c1cd-7ccc-4ea3-b42e-6ed7b517b15e',
       },
       {
         nor: 'en avskaffelse',
@@ -777,7 +854,8 @@ export default dataObj = [
         ger: 'eine Abschaffung',
         lt: 'panaikinimas',
         ua: 'скасування',
-        sp: 'abolición'
+        sp: 'abolición',
+        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/wordsList1%2Favskaffelse.mp3?alt=media&token=065e2428-5b18-4f52-ae7a-aea0a530a80d',
       },
       {
         nor: 'en avsky',
@@ -787,7 +865,8 @@ export default dataObj = [
         ger: 'ein Ekel',
         lt: 'pasibjaurėjimas',
         ua: 'відраза',
-        sp: 'aversión'
+        sp: 'aversión',
+        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/wordsList1%2Favsky.mp3?alt=media&token=f4281156-30b5-4b21-97ce-f7b51ae69017',
       },
       {
         nor: 'et avdrag',
@@ -797,7 +876,8 @@ export default dataObj = [
         ger: 'eine Rate',
         lt: 'įmoka',
         ua: 'розстрочка',
-        sp: 'plazo'
+        sp: 'plazo',
+        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/wordsList1%2Favdrag.mp3?alt=media&token=bbd6a495-3882-4256-856c-4e1a37e8b704',
       },
       {
         nor: 'en avholdenhet',
@@ -807,7 +887,8 @@ export default dataObj = [
         ger: 'eine Enthaltsamkeit',
         lt: 'susilaikymas',
         ua: 'трезвість',
-        sp: 'abstinencia'
+        sp: 'abstinencia',
+        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/wordsList1%2Favholdenhet.mp3?alt=media&token=31af29b3-7bf3-4820-bfee-d0395d58ab3e',
       },
       {
         nor: 'en antakelse',
@@ -817,7 +898,8 @@ export default dataObj = [
         ger: 'eine Annahme',
         lt: 'prielaida',
         ua: 'припущення',
-        sp: 'suposición'
+        sp: 'suposición',
+        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/wordsList1%2Fantakelse.mp3?alt=media&token=7bb3c5ec-5bef-49a0-b926-a6f7988bb713',
       },
       {
         nor: 'en bevilling',
@@ -827,7 +909,8 @@ export default dataObj = [
         ger: 'eine Zuteilung',
         lt: 'skirtis',
         ua: 'дозвіл',
-        sp: 'concesión'
+        sp: 'concesión',
+        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/wordsList1%2Fbevilling.mp3?alt=media&token=2f80eff9-22bf-46cf-b472-44aa42981387',
       },
       {
         nor: 'en avsked',
@@ -837,7 +920,8 @@ export default dataObj = [
         ger: 'ein Abschied',
         lt: 'atsisveikinimas',
         ua: 'прощання',
-        sp: 'despedida'
+        sp: 'despedida',
+        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/wordsList1%2Favsked.mp3?alt=media&token=8e6c408f-b648-456e-a670-817d9df0c781',
       },
       {
         nor: 'en arvegang',
@@ -847,7 +931,8 @@ export default dataObj = [
         ger: 'Erbschaft',
         lt: 'paveldėjimas',
         ua: 'спадщина',
-        sp: 'herencia'
+        sp: 'herencia',
+        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/wordsList1%2Farvegang.mp3?alt=media&token=3526f457-0dc0-475e-9e1a-c59634d754ed',
       },
       {
         nor: 'en beplantning',
@@ -857,7 +942,8 @@ export default dataObj = [
         ger: 'Bepflanzung',
         lt: 'auginimas',
         ua: 'насадження',
-        sp: 'plantación'
+        sp: 'plantación',
+        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/wordsList1%2Fbeplantning.mp3?alt=media&token=9413ba24-f9dc-4ec1-9b58-8170f41a2206',
       },
       {
         nor: 'en anerkjennelse',
@@ -867,6 +953,7 @@ export default dataObj = [
         ger: 'Anerkennung',
         lt: 'pripažinimas',
         ua: 'визнання',
-        sp: 'reconocimiento'
+        sp: 'reconocimiento',
+        soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/wordsList1%2Fanerkjennelse.mp3?alt=media&token=4580d3cb-fd74-46d5-a2db-742dc04e42ff',
       },
 ]

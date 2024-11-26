@@ -8,7 +8,8 @@ export default dataObj = [
       ger: 'erklären',
       lt: 'paaiškinti',
       ua: 'пояснювати',
-      sp: 'explicar'
+      sp: 'explicar',
+      soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/wordsList1%2Fforklare.mp3?alt=media&token=8f68d18f-5d74-401f-beaa-d896f5938eff',
   },
   {
       nor: 'å forsøke',
@@ -18,7 +19,8 @@ export default dataObj = [
       ger: 'versuchen',
       lt: 'bandyti',
       ua: 'намагатися',
-      sp: 'intentar'
+      sp: 'intentar',
+      soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/wordsList1%2Fforsooke.mp3?alt=media&token=b30f5ef4-22a8-48ed-a7c1-f04ebf13af53',
   },
   {
       nor: 'å godta',
@@ -28,7 +30,8 @@ export default dataObj = [
       ger: 'akzeptieren',
       lt: 'priimti',
       ua: 'приймати',
-      sp: 'aceptar'
+      sp: 'aceptar',
+      soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/wordsList1%2Fgodta.mp3?alt=media&token=b42d089e-d21b-4ff5-8309-51630d0aa3a8',
   },
   {
       nor: 'å hjelpe',
@@ -38,7 +41,8 @@ export default dataObj = [
       ger: 'helfen',
       lt: 'padėti',
       ua: 'допомагати',
-      sp: 'ayudar'
+      sp: 'ayudar',
+      soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/wordsList1%2Fhjelpe.mp3?alt=media&token=b88f5831-b259-4f15-8146-4514f77a83ac',
   },
   {
       nor: 'å invitere',
@@ -48,7 +52,8 @@ export default dataObj = [
       ger: 'einladen',
       lt: 'pakviesti',
       ua: 'запрошувати',
-      sp: 'invitar'
+      sp: 'invitar',
+      soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/wordsList1%2Finvitere.mp3?alt=media&token=e7118e87-6a73-4b0a-bb88-039b95bdf52d',
   },
   {
       nor: 'å klage',
@@ -58,7 +63,8 @@ export default dataObj = [
       ger: 'sich beschweren',
       lt: 'skųstis',
       ua: 'скаржитися',
-      sp: 'quejar'
+      sp: 'quejar',
+      soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/wordsList1%2Fklage.mp3?alt=media&token=91b20990-f63d-4281-b0e9-b2d3419713f5',
   },
   {
       nor: 'å låse',
@@ -68,7 +74,8 @@ export default dataObj = [
       ger: 'abschließen',
       lt: 'užrakinti',
       ua: 'замикати',
-      sp: 'cerrar con llave'
+      sp: 'cerrar con llave',
+      soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/wordsList1%2Flaase.mp3?alt=media&token=f4b89df4-5422-459c-87aa-6c2b7f30f34b',
   },
   {
       nor: 'å dra',
@@ -78,7 +85,8 @@ export default dataObj = [
       ger: 'ziehen',
       lt: 'traukti',
       ua: 'їхати',
-      sp: 'ir'
+      sp: 'ir',
+      soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/wordsList1%2Fdra.mp3?alt=media&token=69107f6a-cf4d-4e22-8140-09f2af86a2ae',
   },
   {
       nor: 'å brenne',
@@ -88,7 +96,8 @@ export default dataObj = [
       ger: 'brennen',
       lt: 'degti',
       ua: 'горіти',
-      sp: 'quemar'
+      sp: 'quemar',
+      soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/wordsList1%2Fbrenne.mp3?alt=media&token=cae53ee0-80ed-4e59-a9a8-63b3de058a74',
   },
   {
       nor: 'å falle',
@@ -98,7 +107,8 @@ export default dataObj = [
       ger: 'fallen',
       lt: 'kristi',
       ua: 'падати',
-      sp: 'caer'
+      sp: 'caer',
+      soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/wordsList1%2Ffalle.mp3?alt=media&token=b0a55019-4863-475a-9b4a-49e26afd9f17',
   },
   {
       nor: 'å klatre',
@@ -108,7 +118,8 @@ export default dataObj = [
       ger: 'klettern',
       lt: 'lipti',
       ua: 'лазити',
-      sp: 'escalar'
+      sp: 'escalar',
+      soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/wordsList1%2Fklatre.mp3?alt=media&token=f4d24127-ba61-4af3-9b77-e050466e8e3c',
   },
   {
       nor: 'å vokse',
@@ -118,7 +129,8 @@ export default dataObj = [
       ger: 'wachsen',
       lt: 'augti',
       ua: 'рости',
-      sp: 'crecer'
+      sp: 'crecer',
+      soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/wordsList1%2Fvokse.mp3?alt=media&token=a4dbf538-cfa0-4601-af00-50459756393f',
   },
   {
       nor: 'å lage',
@@ -128,7 +140,8 @@ export default dataObj = [
       ger: 'machen',
       lt: 'daryti',
       ua: 'робити',
-      sp: 'hacer'
+      sp: 'hacer',
+      soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/wordsList1%2Flage.mp3?alt=media&token=8754ce1f-532f-43b2-92e7-2978d4f25017',
   },
   {
       nor: 'å låne',
@@ -138,7 +151,8 @@ export default dataObj = [
       ger: 'ausleihen',
       lt: 'pasiskolinti',
       ua: 'позичати',
-      sp: 'prestar'
+      sp: 'prestar',
+      soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/wordsList1%2Flaane.mp3?alt=media&token=0b32cf74-f3bc-4876-ad4d-460e6c39c782',
   },
   {
       nor: 'å mene',
@@ -148,7 +162,8 @@ export default dataObj = [
       ger: 'meinen',
       lt: 'manyti',
       ua: 'вважати',
-      sp: 'pensar'
+      sp: 'pensar',
+      soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/wordsList1%2Fmene.mp3?alt=media&token=26123744-6154-436b-94ca-aad7c013e6a4',
   },
   {
       nor: 'å nekte',
@@ -158,7 +173,8 @@ export default dataObj = [
       ger: 'verneinen',
       lt: 'neigti',
       ua: 'відмовляти',
-      sp: 'negar'
+      sp: 'negar',
+      soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/wordsList1%2Fnekte.mp3?alt=media&token=dd5b783b-5249-4733-a370-8ec21523f29c',
   },
   {
       nor: 'å overraske',
@@ -168,7 +184,8 @@ export default dataObj = [
       ger: 'überraschen',
       lt: 'nustebinti',
       ua: 'здивувати',
-      sp: 'sorprender'
+      sp: 'sorprender',
+      soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/wordsList1%2Foverraske.mp3?alt=media&token=8920ee41-aaee-4c27-a968-ee9e3baf1741',
   },
   {
       nor: 'å regne',
@@ -178,7 +195,8 @@ export default dataObj = [
       ger: 'zählen',
       lt: 'skaičiuoti',
       ua: 'рахувати',
-      sp: 'contar'
+      sp: 'contar',
+      soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/wordsList1%2Fregne.mp3?alt=media&token=b0b63901-e554-4e5f-a52f-6c918e6cfcf1',
   },
   {
       nor: 'å skjønne',
@@ -188,7 +206,8 @@ export default dataObj = [
       ger: 'verstehen',
       lt: 'suprasti',
       ua: 'розуміти',
-      sp: 'entender'
+      sp: 'entender',
+      soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/wordsList1%2Fskjoonne.mp3?alt=media&token=94e1b9cc-a6a0-4807-8e7b-61d14ebbce6e',
   },
   {
       nor: 'å tillate',
@@ -198,7 +217,8 @@ export default dataObj = [
       ger: 'erlauben',
       lt: 'leisti',
       ua: 'дозволити',
-      sp: 'permitir'
+      sp: 'permitir',
+      soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/wordsList1%2Ftillate.mp3?alt=media&token=4e466c3d-dfbd-4267-b4b6-536a9b53294c',
   },
   {
       nor: 'å trenge',
@@ -208,7 +228,8 @@ export default dataObj = [
       ger: 'brauchen',
       lt: 'reikėti',
       ua: 'потребувати',
-      sp: 'necesitar'
+      sp: 'necesitar',
+      soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/wordsList1%2Ftrenge.mp3?alt=media&token=bbec5f45-c3d1-4a6c-a377-00470dcde450',
   },
   {
       nor: 'å velge',
@@ -218,7 +239,8 @@ export default dataObj = [
       ger: 'wählen',
       lt: 'pasirinkti',
       ua: 'вибирати',
-      sp: 'elegir'
+      sp: 'elegir',
+      soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/wordsList1%2Fvelge.mp3?alt=media&token=872381ee-26de-49b8-9020-ff87c2b0fbb9',
   },
   {
       nor: 'å ønske',
@@ -228,7 +250,8 @@ export default dataObj = [
       ger: 'wünschen',
       lt: 'norėti',
       ua: 'бажати',
-      sp: 'desear'
+      sp: 'desear',
+      soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/wordsList1%2Foonske.mp3?alt=media&token=29551ed8-a1d1-4756-9e17-8645b664e51b',
   },
   {
       nor: 'å diskutere',
@@ -238,7 +261,8 @@ export default dataObj = [
       ger: 'diskutieren',
       lt: 'diskutuoti',
       ua: 'обговорювати',
-      sp: 'discutir'
+      sp: 'discutir',
+      soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/wordsList1%2Fdiskutere.mp3?alt=media&token=b6baa901-24a5-4d7a-9a18-3f5dbe0151a5',
   },
   {
       nor: 'å hente',
@@ -248,7 +272,8 @@ export default dataObj = [
       ger: 'holen',
       lt: 'atnešti',
       ua: 'забирати',
-      sp: 'recoger'
+      sp: 'recoger',
+      soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/wordsList1%2Fhente.mp3?alt=media&token=330ef0dd-d570-4525-8598-54c1cdd92bec',
   },
   {
       nor: 'å fryse',
@@ -258,7 +283,8 @@ export default dataObj = [
       ger: 'einfrieren',
       lt: 'šaldyti',
       ua: 'замерзати',
-      sp: 'congelar'
+      sp: 'congelar',
+      soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/wordsList1%2Ffryse.mp3?alt=media&token=4cd7d625-d85b-41a7-9b02-2badd29b0aec',
   },
   {
       nor: 'å varme',
@@ -268,7 +294,8 @@ export default dataObj = [
       ger: 'erwärmen',
       lt: 'šildyti',
       ua: 'гріти',
-      sp: 'calentar'
+      sp: 'calentar',
+      soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/wordsList1%2Fvarme.mp3?alt=media&token=e054e240-8966-40e2-8c94-8552da5f543e',
   },
   {
       nor: 'å kaste',
@@ -278,7 +305,8 @@ export default dataObj = [
       ger: 'werfen',
       lt: 'mesti',
       ua: 'кидати',
-      sp: 'lanzar'
+      sp: 'lanzar',
+      soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/wordsList1%2Fkaste.mp3?alt=media&token=45112afc-681a-4e9e-add1-2301c3b71206',
   },
   {
       nor: 'å smelte',
@@ -288,7 +316,8 @@ export default dataObj = [
       ger: 'schmelzen',
       lt: 'tirpinti',
       ua: 'танути',
-      sp: 'derretir'
+      sp: 'derretir',
+      soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/wordsList1%2Fsmelte.mp3?alt=media&token=ec175d6d-35d9-47dc-b0ea-386195e67424',
   },
   {
       nor: 'å slå',
@@ -298,7 +327,8 @@ export default dataObj = [
       ger: 'schlagen',
       lt: 'mušti',
       ua: 'бити',
-      sp: 'golpear'
+      sp: 'golpear',
+      soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/wordsList1%2Fslaa.mp3?alt=media&token=6e7abc6d-b375-488c-994d-188b8a56e3a4',
   },
   {
       nor: 'å klemme',
@@ -308,7 +338,8 @@ export default dataObj = [
       ger: 'quetschen',
       lt: 'spausti',
       ua: 'обіймати',
-      sp: 'abrazar'
+      sp: 'abrazar',
+      soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/wordsList1%2Fklemme.mp3?alt=media&token=009976ae-4653-4407-bceb-2f78e0d95e8e',
   },
   {
       nor: 'å tegne',
@@ -318,7 +349,8 @@ export default dataObj = [
       ger: 'zeichnen',
       lt: 'piešti',
       ua: 'малювати',
-      sp: 'dibujar'
+      sp: 'dibujar',
+      soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/wordsList1%2Ftegne.mp3?alt=media&token=a8024084-54c6-4483-9e4b-7df00d403a77',
   },
   {
       nor: 'å male',
@@ -328,7 +360,8 @@ export default dataObj = [
       ger: 'malen',
       lt: 'dažyti',
       ua: 'фарбувати',
-      sp: 'pintar'
+      sp: 'pintar',
+      soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/wordsList1%2Fmale.mp3?alt=media&token=ad998837-34fd-4802-941b-bfdd21f90eb6',
   },
   {
       nor: 'å dele',
@@ -338,7 +371,8 @@ export default dataObj = [
       ger: 'teilen',
       lt: 'dalytis',
       ua: 'ділити',
-      sp: 'compartir'
+      sp: 'compartir',
+      soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/wordsList1%2Fdele.mp3?alt=media&token=df44b9e7-8a1a-45e8-b662-c0e5caf627e4',
   },
   {
       nor: 'å telle',
@@ -348,7 +382,8 @@ export default dataObj = [
       ger: 'zählen',
       lt: 'skaičiuoti',
       ua: 'рахувати',
-      sp: 'contar'
+      sp: 'contar',
+      soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/wordsList1%2Ftelle.mp3?alt=media&token=96392374-3905-4746-9775-1f5ad190eadf',
   },
   {
       nor: 'å bygge',
@@ -358,7 +393,8 @@ export default dataObj = [
       ger: 'bauen',
       lt: 'statyti',
       ua: 'будувати',
-      sp: 'construir'
+      sp: 'construir',
+      soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/wordsList1%2Fbygge.mp3?alt=media&token=b5a76118-d96f-49a9-9f0b-b55c1da824db',
   },
   {
       nor: 'å skyve',
@@ -368,7 +404,8 @@ export default dataObj = [
       ger: 'schieben',
       lt: 'stumti',
       ua: 'штовхати',
-      sp: 'empujar'
+      sp: 'empujar',
+      soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/wordsList1%2Fskyve.mp3?alt=media&token=375a7313-029b-4e0f-ba83-1748a31ec214',
   },
   {
       nor: 'å tilbringe',
@@ -378,7 +415,8 @@ export default dataObj = [
       ger: 'verbringen',
       lt: 'praleisti',
       ua: 'проводити (час)',
-      sp: 'pasar (tiempo)'
+      sp: 'pasar (tiempo)',
+      soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/wordsList1%2Ftilbringe.mp3?alt=media&token=9535a0f7-c755-43ea-bcc1-1e1e9ab22baa',
   },
   {
       nor: 'å sende',
@@ -388,7 +426,8 @@ export default dataObj = [
       ger: 'senden',
       lt: 'siųsti',
       ua: 'надсилати',
-      sp: 'enviar'
+      sp: 'enviar',
+      soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/wordsList1%2Fsende.mp3?alt=media&token=2a9d988e-29ed-4911-bfa2-feb0ed88b301',
   },
   {
       nor: 'å miste',
@@ -398,7 +437,8 @@ export default dataObj = [
       ger: 'verlieren',
       lt: 'prarasti',
       ua: 'губити',
-      sp: 'perder'
+      sp: 'perder',
+      soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/wordsList1%2Fmiste.mp3?alt=media&token=a12846bf-20d1-41cf-8a2e-7c70c796e780',
   },
   {
       nor: 'å krympe',
@@ -408,7 +448,8 @@ export default dataObj = [
       ger: 'schrumpfen',
       lt: 'traukti',
       ua: 'скорочувати',
-      sp: 'encoger'
+      sp: 'encoger',
+      soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/wordsList1%2Fkrympe.mp3?alt=media&token=3ec5eba9-7749-443d-ae6d-b86672c351db',
   },
   {
       nor: 'å bli kvitt',
@@ -418,7 +459,8 @@ export default dataObj = [
       ger: 'loswerden',
       lt: 'atbristi',
       ua: 'позбутися',
-      sp: 'deshacerse'
+      sp: 'deshacerse',
+      soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/wordsList1%2Fblikvitt.mp3?alt=media&token=d9cc0af5-b2d7-4d31-bcbf-c9e0fe8e4601',
   },
   {
       nor: 'å blande',
@@ -428,7 +470,8 @@ export default dataObj = [
       ger: 'mischen',
       lt: 'maišyti',
       ua: 'змішувати',
-      sp: 'mezclar'
+      sp: 'mezclar',
+      soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/wordsList1%2Fblande.mp3?alt=media&token=e73249ee-b2b1-4e9d-95bd-6ac7070ecfcf',
   },
   {
       nor: 'å bade',
@@ -438,7 +481,8 @@ export default dataObj = [
       ger: 'baden',
       lt: 'maudytis',
       ua: 'купатися',
-      sp: 'bañar'
+      sp: 'bañar',
+      soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/wordsList1%2Fbade.mp3?alt=media&token=53bdc581-7da3-4d9b-9e6e-295980120faf',
   },
   {
       nor: 'å vaske',
@@ -448,7 +492,8 @@ export default dataObj = [
       ger: 'waschen',
       lt: 'plauti',
       ua: 'мити',
-      sp: 'lavar'
+      sp: 'lavar',
+      soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/wordsList1%2Fvaske.mp3?alt=media&token=b363426e-2cae-4833-b80b-862602903ab0',
   },
   {
       nor: 'å tørke',
@@ -458,7 +503,8 @@ export default dataObj = [
       ger: 'trocknen',
       lt: 'džiovinti',
       ua: 'сушити',
-      sp: 'secar'
+      sp: 'secar',
+      soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/wordsList1%2Ftoorke.mp3?alt=media&token=892da2c3-16bb-4db1-bfbb-92712b11d023',
   },
   {
       nor: 'å dekke',
@@ -468,7 +514,8 @@ export default dataObj = [
       ger: 'abdecken',
       lt: 'dengti',
       ua: 'покривати',
-      sp: 'cubrir'
+      sp: 'cubrir',
+      soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/wordsList1%2Fdekke.mp3?alt=media&token=1046b9ad-57bd-46f5-92ba-82ac86a73508',
   },
   {
       nor: 'å grave',
@@ -478,7 +525,8 @@ export default dataObj = [
       ger: 'graben',
       lt: 'kasti',
       ua: 'копати',
-      sp: 'excavar'
+      sp: 'excavar',
+      soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/wordsList1%2Fgrave.mp3?alt=media&token=c4c3fa74-9799-4e06-b6c3-337a7ac2ccad',
   },
   {
     nor: 'å akseptere',
@@ -488,7 +536,8 @@ export default dataObj = [
     ger: 'akzeptieren',
     lt: 'priimti',
     ua: 'приймати',
-    sp: 'aceptar'
+    sp: 'aceptar',
+    soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/wordsList1%2Fakseptere.mp3?alt=media&token=29979882-e139-4f14-bf8c-87e40019d521',
   },
   {
     nor: 'å analysere',
@@ -498,7 +547,8 @@ export default dataObj = [
     ger: 'analysieren',
     lt: 'analizuoti',
     ua: 'аналізувати',
-    sp: 'analizar'
+    sp: 'analizar',
+    soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/wordsList1%2Fanalysere.mp3?alt=media&token=226ca6f8-8ade-4a52-9205-8aac89fd42af',
   },
   {
     nor: 'å endre',
@@ -508,7 +558,8 @@ export default dataObj = [
     ger: 'ändern',
     lt: 'keisti',
     ua: 'змінювати',
-    sp: 'cambiar'
+    sp: 'cambiar',
+    soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/wordsList1%2Fendre.mp3?alt=media&token=f601eb55-cf16-4327-9261-61da3e4ad510',
   },
   {
     nor: 'å etablere',
@@ -518,7 +569,8 @@ export default dataObj = [
     ger: 'etablieren',
     lt: 'įkurti',
     ua: 'встановлювати',
-    sp: 'establecer'
+    sp: 'establecer',
+    soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/wordsList1%2Fetablere.mp3?alt=media&token=e0563700-a86a-49ea-995e-2411ceaf3ddc',
   },
   {
     nor: 'å forbedre',
@@ -528,7 +580,8 @@ export default dataObj = [
     ger: 'verbessern',
     lt: 'pagerinti',
     ua: 'покращувати',
-    sp: 'mejorar'
+    sp: 'mejorar',
+    soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/wordsList1%2Fforbedre.mp3?alt=media&token=95adac3a-4707-4fab-979e-be1d944d0e78',
   },
   {
     nor: 'å banke',
@@ -538,7 +591,8 @@ export default dataObj = [
     ger: 'klopfen',
     lt: 'belsti',
     ua: 'стукати',
-    sp: 'golpear'
+    sp: 'golpear',
+    soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/wordsList1%2Fbanke.mp3?alt=media&token=80e02f4c-67af-4fba-9e36-82bad3ad6a22',
   },
   {
     nor: 'å forvente',
@@ -548,7 +602,8 @@ export default dataObj = [
     ger: 'erwarten',
     lt: 'tikėtis',
     ua: 'очікувати',
-    sp: 'esperar'
+    sp: 'esperar',
+    soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/wordsList1%2Fforvente.mp3?alt=media&token=ac50c6f2-3707-41b8-bbb8-f05d0137c5ff',
   },
   {
     nor: 'å fremme',
@@ -558,7 +613,8 @@ export default dataObj = [
     ger: 'fördern',
     lt: 'skatinti',
     ua: 'сприяти',
-    sp: 'promover'
+    sp: 'promover',
+    soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/wordsList1%2Ffremme.mp3?alt=media&token=dd4806f4-15f7-489b-af4f-3857d5a13ae1',
   },
   {
     nor: 'å hindre',
@@ -568,7 +624,8 @@ export default dataObj = [
     ger: 'verhindern',
     lt: 'užkirsti kelią',
     ua: 'перешкоджати',
-    sp: 'impedir'
+    sp: 'impedir',
+    soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/wordsList1%2Fhindre.mp3?alt=media&token=cc4e7e4c-4a3f-4351-85f8-e89059fe75c0',
   },
   {
     nor: 'å lykkes',
@@ -578,7 +635,8 @@ export default dataObj = [
     ger: 'Erfolg haben',
     lt: 'pasisekti',
     ua: 'досягати успіху',
-    sp: 'tener éxito'
+    sp: 'tener éxito',
+    soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/wordsList1%2Flykkes.mp3?alt=media&token=2df234e0-d6d8-4205-a545-d6d47da986c7',
   },
   {
     nor: 'å nøle',
@@ -588,7 +646,8 @@ export default dataObj = [
     ger: 'zögern',
     lt: 'nedrąsoti',
     ua: 'вагатися',
-    sp: 'dudar'
+    sp: 'dudar',
+    soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/wordsList1%2Fnoole.mp3?alt=media&token=18198d30-33ff-45b0-ae47-65c7e91ec18e',
   },
   {
     nor: 'å beskrive',
@@ -598,7 +657,8 @@ export default dataObj = [
     ger: 'beschreiben',
     lt: 'apibūdinti',
     ua: 'описувати',
-    sp: 'describir'
+    sp: 'describir',
+    soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/wordsList1%2Fbeskrive.mp3?alt=media&token=57f99fa7-d551-4a69-a8a2-4c6abf8c853a',
   },
   {
     nor: 'å bestemme',
@@ -608,7 +668,8 @@ export default dataObj = [
     ger: 'entscheiden',
     lt: 'nuspręsti',
     ua: 'визначати',
-    sp: 'decidir'
+    sp: 'decidir',
+    soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/wordsList1%2Fbestemme.mp3?alt=media&token=e4ccd26e-e7ea-446c-bb58-9731f7821c2b',
   },
   {
     nor: 'å observere',
@@ -618,7 +679,8 @@ export default dataObj = [
     ger: 'beobachten',
     lt: 'stebėti',
     ua: 'спостерігати',
-    sp: 'observar'
+    sp: 'observar',
+    soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/wordsList1%2Fobservere.mp3?alt=media&token=79d6793c-1971-42cf-b2cc-69e17174969a',
   },
   {
     nor: 'å redusere',
@@ -628,7 +690,8 @@ export default dataObj = [
     ger: 'reduzieren',
     lt: 'sumažinti',
     ua: 'зменшувати',
-    sp: 'reducir'
+    sp: 'reducir',
+    soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/wordsList1%2Fredusere.mp3?alt=media&token=5729a94e-037e-41a4-8bd9-c0581ea3fba6',
   },
   {
     nor: 'å reflektere',
@@ -638,7 +701,8 @@ export default dataObj = [
     ger: 'nachdenken',
     lt: 'atsispindėti',
     ua: 'роздумувати',
-    sp: 'reflexionar'
+    sp: 'reflexionar',
+    soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/wordsList1%2Freflektere.mp3?alt=media&token=75bdcd90-df15-4ebf-a3a3-185a70c6b8bb',
   },
   {
     nor: 'å sette pris på',
@@ -648,7 +712,8 @@ export default dataObj = [
     ger: 'schätzen',
     lt: 'įvertinti',
     ua: 'цінувати',
-    sp: 'apreciar'
+    sp: 'apreciar',
+    soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/wordsList1%2Fsetteprispaa.mp3?alt=media&token=37393ac4-8c96-4dda-ae4a-9aba5045c393',
   },
   {
     nor: 'å skuffe',
@@ -658,7 +723,8 @@ export default dataObj = [
     ger: 'enttäuschen',
     lt: 'nuvilti',
     ua: 'розчаровувати',
-    sp: 'decepcionar'
+    sp: 'decepcionar',
+    soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/wordsList1%2Fskuffe.mp3?alt=media&token=0f3ccbd6-3f9e-46b6-9444-a02937a584eb',
   },
   {
     nor: 'å tolerere',
@@ -668,7 +734,8 @@ export default dataObj = [
     ger: 'tolerieren',
     lt: 'toleruoti',
     ua: 'толерувати',
-    sp: 'tolerar'
+    sp: 'tolerar',
+    soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/wordsList1%2Ftolerere.mp3?alt=media&token=0f54065e-290b-4e04-a5d8-9a1f3f42e9cf',
   },
   {
     nor: 'å utvikle',
@@ -678,7 +745,8 @@ export default dataObj = [
     ger: 'entwickeln',
     lt: 'plėtoti',
     ua: 'розвивати',
-    sp: 'desarrollar'
+    sp: 'desarrollar',
+    soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/wordsList1%2Futvikle.mp3?alt=media&token=33f11601-6235-40ba-8f73-378d4d565c79',
   },
   {
     nor: 'å vedta',
@@ -688,7 +756,8 @@ export default dataObj = [
     ger: 'annehmen',
     lt: 'priimti',
     ua: 'приймати',
-    sp: 'adoptar'
+    sp: 'adoptar',
+    soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/wordsList1%2Fvedta.mp3?alt=media&token=9b6517a5-014f-4a20-9afe-01320b6eff62',
   },
   {
     nor: 'å være enig',
@@ -698,7 +767,8 @@ export default dataObj = [
     ger: 'zustimmen',
     lt: 'sutikti',
     ua: 'погоджуватися',
-    sp: 'estar de acuerdo'
+    sp: 'estar de acuerdo',
+    soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/wordsList1%2Fveereenig.mp3?alt=media&token=2a03f0dc-dcd6-47fd-a72f-996dde1ba9e4',
   },
   {
     nor: 'å oppdage',
@@ -708,7 +778,8 @@ export default dataObj = [
     ger: 'entdecken',
     lt: 'atrasti',
     ua: 'відкривати',
-    sp: 'descubrir'
+    sp: 'descubrir',
+    soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/wordsList1%2Foppdage.mp3?alt=media&token=3e929ddb-97f7-456f-9c7a-ef19549540ca',
   },
   {
     nor: 'å bevare',
@@ -718,7 +789,8 @@ export default dataObj = [
     ger: 'erhalten',
     lt: 'išsaugoti',
     ua: 'зберігати',
-    sp: 'conservar'
+    sp: 'conservar',
+    soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/wordsList1%2Fbevare.mp3?alt=media&token=5cf3f5cb-0a4e-47d3-baad-6a7b0dfe6aa3',
   },
   {
     nor: 'å delta',
@@ -728,7 +800,8 @@ export default dataObj = [
     ger: 'teilnehmen',
     lt: 'dalyvauti',
     ua: 'брати участь',
-    sp: 'participar'
+    sp: 'participar',
+    soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/wordsList1%2Fdelta.mp3?alt=media&token=0792b325-f071-4a26-9926-187678b9f105',
   },
   {
     nor: 'å uttrykke',
@@ -738,7 +811,8 @@ export default dataObj = [
     ger: 'ausdrücken',
     lt: 'išreikšti',
     ua: 'виражати',
-    sp: 'expresar'
+    sp: 'expresar',
+    soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/wordsList1%2Futtrykke.mp3?alt=media&token=42ac5f9e-7cdf-4900-83a4-abd9935854d8',
   },
   {
     nor: 'å vurdere',
@@ -748,7 +822,8 @@ export default dataObj = [
     ger: 'bewerten',
     lt: 'įvertinti',
     ua: 'оцінювати',
-    sp: 'evaluar'
+    sp: 'evaluar',
+    soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/wordsList1%2Fvurdere.mp3?alt=media&token=37fad857-8b21-48af-b789-adb086000d7a',
   },
   {
     nor: 'å sammenligne',
@@ -758,7 +833,8 @@ export default dataObj = [
     ger: 'vergleichen',
     lt: 'palyginti',
     ua: 'порівнювати',
-    sp: 'comparar'
+    sp: 'comparar',
+    soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/wordsList1%2Fsammenligne.mp3?alt=media&token=4e20c141-a387-4867-bce4-6d0d7a971d46',
   },
   {
     nor: 'å anbefale',
@@ -768,7 +844,8 @@ export default dataObj = [
     ger: 'empfehlen',
     lt: 'rekomenduoti',
     ua: 'рекомендувати',
-    sp: 'recomendar'
+    sp: 'recomendar',
+    soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/wordsList1%2Fanbefale.mp3?alt=media&token=23da80de-58a2-4f56-a371-525371b0cbaa',
   },
   {
     nor: 'å avhenge',
@@ -778,7 +855,8 @@ export default dataObj = [
     ger: 'abhängen',
     lt: 'priklauso',
     ua: 'залежати',
-    sp: 'depender'
+    sp: 'depender',
+    soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/wordsList1%2Favhenge.mp3?alt=media&token=788d175a-387a-4a59-848b-ab53ad1e5928',
   },
   {
     nor: 'å bevise',
@@ -788,7 +866,8 @@ export default dataObj = [
     ger: 'beweisen',
     lt: 'įrodyti',
     ua: 'доводити',
-    sp: 'probar'
+    sp: 'probar',
+    soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/wordsList1%2Fbevise.mp3?alt=media&token=5e1d253e-c1ee-48c8-8b15-0d41fbd67008',
   },
   {
     nor: 'å styrke',
@@ -798,7 +877,8 @@ export default dataObj = [
     ger: 'stärken',
     lt: 'sustiprinti',
     ua: 'зміцнювати',
-    sp: 'fortalecer'
+    sp: 'fortalecer',
+    soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/wordsList1%2Fstyrke.mp3?alt=media&token=f13613f8-0469-4115-90be-d6acf3099dda',
   },
   {
     nor: 'å vandre',
@@ -808,7 +888,8 @@ export default dataObj = [
     ger: 'wandern',
     lt: 'klajoti',
     ua: 'блукати',
-    sp: 'vagar'
+    sp: 'vagar',
+    soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/wordsList1%2Fvandre.mp3?alt=media&token=f7e9873e-15da-406c-bd9c-b0a9a6a8d333',
   },
   {
     nor: 'å riste',
@@ -818,7 +899,8 @@ export default dataObj = [
     ger: 'schütteln',
     lt: 'kratyti',
     ua: 'трясти',
-    sp: 'sacudir'
+    sp: 'sacudir',
+    soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/wordsList1%2Friste.mp3?alt=media&token=9dc82054-15bb-4225-8a45-4af4a8007cb2',
   },
   {
     nor: 'å bekymre',
@@ -828,7 +910,8 @@ export default dataObj = [
     ger: 'sich sorgen',
     lt: 'nerimauti',
     ua: 'турбувати',
-    sp: 'preocupar'
+    sp: 'preocupar',
+    soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/wordsList1%2Fbekymre.mp3?alt=media&token=85b922c6-450d-4287-8f3e-7e4a7b23ec44',
   },
   {
     nor: 'å forlate',
@@ -838,7 +921,8 @@ export default dataObj = [
     ger: 'verlassen',
     lt: 'palikti',
     ua: 'залишати',
-    sp: 'abandonar'
+    sp: 'abandonar',
+    soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/wordsList1%2Fforlate.mp3?alt=media&token=14a6707a-ac19-475f-bc12-87ced5721a36',
   },
   {
     nor: 'å sukke',
@@ -848,7 +932,8 @@ export default dataObj = [
     ger: 'seufzen',
     lt: 'atsidegti',
     ua: 'зітхати',
-    sp: 'suspirar'
+    sp: 'suspirar',
+    soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/wordsList1%2Fsukke.mp3?alt=media&token=fc5cbfa7-8085-44d3-b5f5-d9b8d7ee1465',
   },
   
 ]

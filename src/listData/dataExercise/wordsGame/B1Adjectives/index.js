@@ -320,17 +320,6 @@ export default dataObj = [
       soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/wordsList1%2Flukket.mp3?alt=media&token=2b8541a0-30e8-4950-83d5-e03c2d0811a8',
   },
   {
-      nor: 'misfornøyd',
-      eng: 'dissatisfied',
-      pl: 'niezadowolony',
-      ar: 'غير راض',
-      ger: 'unzufrieden',
-      lt: 'nepatenkintas',
-      ua: 'незадоволений',
-      sp: 'insatisfecho',
-      soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/wordsList1%2Fmisfornooyd.mp3?alt=media&token=97902a24-daf0-4c40-accf-8e3e3130f729',
-  },
-  {
       nor: 'dum',
       eng: 'stupid',
       pl: 'głupi',
@@ -360,7 +349,8 @@ export default dataObj = [
       ger: 'lokal',
       lt: 'vietinis',
       ua: 'місцевий',
-      sp: 'local'
+      sp: 'local',
+      soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/wordsList1%2Flokal.mp3?alt=media&token=82cc4296-806c-4faa-9996-98467fd03d04',
   },
   {
       nor: 'unødvendig',
@@ -370,7 +360,8 @@ export default dataObj = [
       ger: 'unnötig',
       lt: 'nereikalingas',
       ua: 'непотрібний',
-      sp: 'innecesario'
+      sp: 'innecesario',
+      soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/wordsList1%2Funoodvendig.mp3?alt=media&token=ae116600-1f50-4389-8596-5028be33f21f',
   },
   {
       nor: 'frisk',
@@ -380,7 +371,8 @@ export default dataObj = [
       ger: 'frisch',
       lt: 'šviežias',
       ua: 'свіжий',
-      sp: 'fresco'
+      sp: 'fresco',
+      soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/wordsList1%2Ffrisk.mp3?alt=media&token=ffa59af5-0ef3-44f7-b4c4-d3e10755e4a3',
   },
   {
       nor: 'stille',
@@ -390,7 +382,8 @@ export default dataObj = [
       ger: 'ruhig',
       lt: 'tylus',
       ua: 'тихо',
-      sp: 'tranquilo'
+      sp: 'tranquilo',
+      soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/wordsList1%2Fstille.mp3?alt=media&token=089460e2-31ff-4986-b742-3d80efc716bf',
   },
   {
     nor: 'gjerrig',
@@ -400,7 +393,8 @@ export default dataObj = [
     ger: 'geizig',
     lt: 'šykštus',
     ua: 'скупий',
-    sp: 'tacaño'
+    sp: 'tacaño',
+    soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/wordsList1%2Fgjerrig.mp3?alt=media&token=2c1b7b80-32da-4c2e-8860-adb95152e920',
   },
   {
     nor: 'ydmyk',
@@ -410,7 +404,8 @@ export default dataObj = [
     ger: 'bescheiden',
     lt: 'nusižeminęs',
     ua: 'скромний',
-    sp: 'humilde'
+    sp: 'humilde',
+    soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/wordsList1%2Fydmyk.mp3?alt=media&token=3233cb39-c742-4c5b-8705-90c7222fd5a4',
   },
   {
     nor: 'uoppmerksom',
@@ -420,7 +415,8 @@ export default dataObj = [
     ger: 'unaufmerksam',
     lt: 'neįdėmesingas',
     ua: 'неуважний',
-    sp: 'inatento'
+    sp: 'inatento',
+    soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/wordsList1%2Fuoppmerksom.mp3?alt=media&token=56037d12-112e-4982-971c-72766d342ee7',
   },
   {
     nor: 'hjelpsom',
@@ -430,7 +426,8 @@ export default dataObj = [
     ger: 'hilfreich',
     lt: 'pagalbinis',
     ua: 'допоможний',
-    sp: 'útil'
+    sp: 'útil',
+    soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/wordsList1%2Fhjelpsom.mp3?alt=media&token=4ea3a9f4-e3f4-416d-b8ae-867bfc0040a2',
   },
   {
     nor: 'egoistisk',
@@ -440,7 +437,8 @@ export default dataObj = [
     ger: 'egoistisch',
     lt: 'saviškas',
     ua: 'егоїстичний',
-    sp: 'egoísta'
+    sp: 'egoísta',
+    soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/wordsList1%2Fegoistisk.mp3?alt=media&token=fb37a700-a60f-4de4-94b9-1516baa7a740',
   },
   {
     nor: 'flittig',
@@ -450,7 +448,8 @@ export default dataObj = [
     ger: 'fleißig',
     lt: 'diligentas',
     ua: 'прилежний',
-    sp: 'diligente'
+    sp: 'diligente',
+    soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/wordsList1%2Fflittig.mp3?alt=media&token=cb75fd77-5bdc-4b2c-b257-e9c9d9940106',
   },
   {
     nor: 'fornuftig',
@@ -460,7 +459,8 @@ export default dataObj = [
     ger: 'vernünftig',
     lt: 'protingas',
     ua: 'розумний',
-    sp: 'sensato'
+    sp: 'sensato',
+    soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/wordsList1%2Ffornuftig.mp3?alt=media&token=ddd9fe30-5ff0-4bf3-ad40-51d04e59704d',
   },
   {
     nor: 'frekk',
@@ -470,7 +470,8 @@ export default dataObj = [
     ger: 'frech',
     lt: 'drąsus',
     ua: 'нахабний',
-    sp: 'descarado'
+    sp: 'descarado',
+    soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/wordsList1%2Ffrekk.mp3?alt=media&token=7a567650-89ca-4771-a8f7-34488ee70c08',
   },
   {
     nor: 'frivillig',
@@ -480,7 +481,8 @@ export default dataObj = [
     ger: 'freiwillig',
     lt: 'savaiminis',
     ua: 'добровільний',
-    sp: 'voluntario'
+    sp: 'voluntario',
+    soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/wordsList1%2Ffrivillig.mp3?alt=media&token=213340f6-d01e-4078-8a09-b13a01bdc6ad',
   },
   {
     nor: 'oppmerksom',
@@ -490,7 +492,8 @@ export default dataObj = [
     ger: 'aufmerksam',
     lt: 'dėmesingas',
     ua: 'уважний',
-    sp: 'atento'
+    sp: 'atento',
+    soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/wordsList1%2Foppmerksom.mp3?alt=media&token=adb1d6b7-329b-4cb5-ab30-d1da6a307427',
   },
   {
     nor: 'selvkritisk',
@@ -500,7 +503,8 @@ export default dataObj = [
     ger: 'selbstkritisch',
     lt: 'saviškas',
     ua: 'самокритичний',
-    sp: 'autocrítico'
+    sp: 'autocrítico',
+    soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/wordsList1%2Fselvkritisk.mp3?alt=media&token=7916c1d5-eaad-480d-9ef4-a23d1f0e27d3',
   },
   {
     nor: 'selvgod',
@@ -510,7 +514,8 @@ export default dataObj = [
     ger: 'selbstgefällig',
     lt: 'pasipūtęs',
     ua: 'самовдоволений',
-    sp: 'complaciente'
+    sp: 'complaciente',
+    soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/wordsList1%2Fselvgod.mp3?alt=media&token=d75c943e-f755-41e0-b0b2-d225ec5fb56d',
   },
   {
     nor: 'inkompetent',
@@ -520,7 +525,8 @@ export default dataObj = [
     ger: 'inkompetent',
     lt: 'nekvalifikuotas',
     ua: 'некомпетентний',
-    sp: 'incompetente'
+    sp: 'incompetente',
+    soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/wordsList1%2Finkompetent.mp3?alt=media&token=96954481-e8f6-406e-b3f0-8ac1bd04b8d5',
   },
   {
     nor: 'intellektuell',
@@ -530,7 +536,8 @@ export default dataObj = [
     ger: 'intellektuell',
     lt: 'intelektualus',
     ua: 'інтелектуальний',
-    sp: 'intelectual'
+    sp: 'intelectual',
+    soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/wordsList1%2Fintellektuell.mp3?alt=media&token=b7d00b0b-7482-4a2d-8c77-837e70d94037',
   },
   {
     nor: 'naiv',
@@ -540,7 +547,8 @@ export default dataObj = [
     ger: 'naiv',
     lt: 'naivus',
     ua: 'наївний',
-    sp: 'ingenuo'
+    sp: 'ingenuo',
+    soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/wordsList1%2Fnaiv.mp3?alt=media&token=d03dbc45-8f6b-4c7d-b6d3-b2126f998ea7',
   },
   {
     nor: 'nøysom',
@@ -550,7 +558,8 @@ export default dataObj = [
     ger: 'genügsam',
     lt: 'tausus',
     ua: 'скромний',
-    sp: 'frugal'
+    sp: 'frugal',
+    soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/wordsList1%2Fnooysom.mp3?alt=media&token=95814ade-8623-46dd-92f1-bf38ccc1ed4c',
   },
   {
     nor: 'snill',
@@ -560,7 +569,8 @@ export default dataObj = [
     ger: 'liebenswürdig',
     lt: 'malonus',
     ua: 'добрий',
-    sp: 'amable'
+    sp: 'amable',
+    soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/wordsList1%2Fsnill.mp3?alt=media&token=86b1ce6c-97d8-400e-8149-0906afeb075d',
   },
   {
     nor: 'klok',
@@ -570,7 +580,8 @@ export default dataObj = [
     ger: 'weise',
     lt: 'išmintingas',
     ua: 'розумний',
-    sp: 'sabio'
+    sp: 'sabio',
+    soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/wordsList1%2Fklok.mp3?alt=media&token=e4f34f65-c6e9-407b-9b0b-fc36259ef1ba',
   },
   {
     nor: 'sliten',
@@ -580,7 +591,8 @@ export default dataObj = [
     ger: 'müde',
     lt: 'pavargęs',
     ua: 'втомлений',
-    sp: 'agotado'
+    sp: 'agotado',
+    soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/wordsList1%2Fsliten.mp3?alt=media&token=72556fa0-80e7-461f-b379-3ebf5d6d880e',
   },
   {
     nor: 'spennende',
@@ -590,7 +602,8 @@ export default dataObj = [
     ger: 'aufregend',
     lt: 'įdomus',
     ua: 'захоплюючий',
-    sp: 'emocionante'
+    sp: 'emocionante',
+    soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/wordsList1%2Fspennende.mp3?alt=media&token=ef68faa5-2c24-4658-ba17-eeafa529a81c',
   },
   {
     nor: 'provoserende',
@@ -600,7 +613,8 @@ export default dataObj = [
     ger: 'provokativ',
     lt: 'provokuojantis',
     ua: 'провокуючий',
-    sp: 'provocativo'
+    sp: 'provocativo',
+    soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/wordsList1%2Fprovoserende.mp3?alt=media&token=30efdfda-c722-4499-9614-57b6ed3cc04b',
   },
   {
     nor: 'uavhengig',
@@ -610,7 +624,8 @@ export default dataObj = [
     ger: 'unabhängig',
     lt: 'nepriklausomas',
     ua: 'незалежний',
-    sp: 'independiente'
+    sp: 'independiente',
+    soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/wordsList1%2Fuavhengig.mp3?alt=media&token=9c8d42d4-2f8d-4411-8e3e-807622f74f82',
   },
   {
     nor: 'underdanig',
@@ -620,7 +635,8 @@ export default dataObj = [
     ger: 'unterwürfig',
     lt: 'paklusnus',
     ua: 'покірний',
-    sp: 'sumiso'
+    sp: 'sumiso',
+    soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/wordsList1%2Funderdanig.mp3?alt=media&token=92ca9c3c-6c2d-4d52-ba3a-ea84198f9f96',
   },
   {
     nor: 'unik',
@@ -630,7 +646,8 @@ export default dataObj = [
     ger: 'einzigartig',
     lt: 'unikalus',
     ua: 'унікальний',
-    sp: 'único'
+    sp: 'único',
+    soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/wordsList1%2Funik.mp3?alt=media&token=4f4ff2cb-f614-4117-ab7a-6e869692bc12',
   },
   {
     nor: 'matt',
@@ -640,7 +657,8 @@ export default dataObj = [
     ger: 'matt',
     lt: 'matinis',
     ua: 'матовий',
-    sp: 'mate'
+    sp: 'mate',
+    soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/wordsList1%2Fmatt.mp3?alt=media&token=aa238312-0ef6-4602-9b22-591056643770',
   },
   {
     nor: 'gjennomsiktig',
@@ -650,7 +668,8 @@ export default dataObj = [
     ger: 'transparent',
     lt: 'permatomas',
     ua: 'прозорий',
-    sp: 'transparente'
+    sp: 'transparente',
+    soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/wordsList1%2Fgjennomsiktig.mp3?alt=media&token=385d3688-bd91-4ca8-b703-3934f65fd8ae',
   },
   {
     nor: 'ugjennomsiktig',
@@ -660,7 +679,8 @@ export default dataObj = [
     ger: 'undurchsichtig',
     lt: 'nepermatomas',
     ua: 'непрозорий',
-    sp: 'opaco'
+    sp: 'opaco',
+    soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/wordsList1%2Fugjennomsiktig.mp3?alt=media&token=d4c09cb5-883c-49ce-8a91-4bd4bf16a630',
   },
   {
     nor: 'fargerik',
@@ -670,6 +690,7 @@ export default dataObj = [
     ger: 'farbenfroh',
     lt: 'spalvingas',
     ua: 'кольоровий',
-    sp: 'colorido'
+    sp: 'colorido',
+    soundLink: 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/wordsList1%2Ffargerik.mp3?alt=media&token=6209df09-040e-4e31-9951-3943dbe65198',
   }
 ]

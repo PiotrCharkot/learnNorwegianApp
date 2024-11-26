@@ -19,7 +19,7 @@ const CardWordGame = (params) => {
 
     const pressVerb = () => {
 
-        if (true) {
+        if (hasAccess) {
             navigation.navigate('Type10opening', { savedLang: language, refPath: btnVerb })
         } else {
             navigation.navigate({
@@ -32,7 +32,7 @@ const CardWordGame = (params) => {
     
     const pressNoun = () => {
         
-        if (true) {
+        if (hasAccess) {
             navigation.navigate('Type10opening', { savedLang: language, refPath: btnNoun  })
         } else {
             navigation.navigate({
@@ -45,7 +45,7 @@ const CardWordGame = (params) => {
 
     const pressAdj = () => {
         
-        if (true) {
+        if (hasAccess) {
             navigation.navigate('Type10opening', { savedLang: language, refPath: btnAdj  })
         } else {
             navigation.navigate({
