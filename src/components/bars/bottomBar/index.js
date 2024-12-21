@@ -539,9 +539,12 @@ const BottomBar = (params) => {
             }
 
         } else {
-  
+            console.log('all points in bottom bar :', params.totalPoints, 'user points' , currentPoints);
+
+            let additonalScreenPoints = params.learningLastScreenNoQuestion ? params.currentScreen * generalStyles.screenBonus : 0;
+            
             navigation.navigate(params.linkNext, {
-                userPoints: currentPoints, latestScreen: params.latestScreen, comeBackRoute: params.comeBack, allPoints: params.totalPoints, latestAnswered: params.latestAnswered, dataMarkers: params.dataForMarkers, allScreensNum: params.allScreensNum, exeList: params.questionList, linkList: params.links, nextScreen: params.currentScreen + 1, savedLang: params.savedLang 
+                userPoints: currentPoints + additonalScreenPoints, latestScreen: params.latestScreen, comeBackRoute: params.comeBack, allPoints: params.totalPoints, latestAnswered: params.latestAnswered, dataMarkers: params.dataForMarkers, allScreensNum: params.allScreensNum, exeList: params.questionList, linkList: params.links, nextScreen: params.currentScreen + 1, savedLang: params.savedLang 
             })
         }
         

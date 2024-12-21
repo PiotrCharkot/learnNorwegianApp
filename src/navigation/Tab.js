@@ -7,7 +7,7 @@ import { LinearGradient } from 'expo-linear-gradient';
 import { authentication } from '../../firebase/firebase-config';
 import { signInAnonymously, onAuthStateChanged, getAuth  } from 'firebase/auth';
 import { db } from '../../firebase/firebase-config'
-import { collection, doc, setDoc } from "firebase/firestore";
+import { collection, doc, setDoc, getDocs, query, where, updateDoc } from "firebase/firestore";
 import { getStorage, ref, getDownloadURL, uploadBytesResumable } from "firebase/storage";
 import uuid from 'react-native-uuid';
 import LearningScreen from '../screens/LearningScreen';
@@ -21,7 +21,11 @@ const Tab = createBottomTabNavigator();
 
 const screenWidth = Dimensions.get("window").width;
 const screenHeight = Dimensions.get('window').height;
-const isWideScreen = screenWidth > 550
+const isWideScreen = screenWidth > 550;
+
+const usersAchivments = collection(db, 'usersAchivments');
+
+const latestVersionOfUserAchivments = 2;
 
 
 const Tabs = () => {
@@ -71,6 +75,13 @@ const Tabs = () => {
     const [allowDataUpload, setAllowDataUpload] = useState(false);
     const [imageLoaded, setImageLoaded] = useState(false);
     const [newProfilePic, setNewProfilePic] = useState(randomPicture[Math.floor(Math.random() * randomPicture.length)]);
+    const [tempObjAchivmentsLearning, setTempObjAchivmentsLearning] = useState({})
+    const [allowUpdateAchivments, setAllowUpdateAchivments] = useState(false);
+
+    const [achivmentsDocumentId, setAchivmentsDocumentId] = useState('tempid');
+
+
+    const achivmentsDocRef = doc(db, 'usersAchivments', achivmentsDocumentId);
 
     const shakeOffset = 5;
 
@@ -107,10 +118,53 @@ const Tabs = () => {
 
 
             
+
+
+            
             if (authUser) {
-                console.log('in tab navigator - is anonymous?: ', authUser.isAnonymous);
-                console.log('user id in tab navigator is: ', authUser.uid);
                 
+                console.log('user id in tab navigator is: ', authUser.uid, '    user is anonymous?: ' , authUser.isAnonymous);
+
+
+                const checkVersionsOfFirebaseStorage = async () => {
+
+                    const q2 = query(usersAchivments, where('userRef', '==', authUser.uid))
+                    const querySnapshot2 = await getDocs(q2);
+                    
+
+                    if (querySnapshot2.empty) {
+                        console.log('getting userAchivments document FAILED in Tab screen, it is an error');
+                    } else {
+                        querySnapshot2.forEach((doc) => {
+                            
+                            if (doc.data().version != latestVersionOfUserAchivments) {
+                                
+                                console.log('these are data from firebase in tabscreen (it is an old version that will be updated to latest version): ', doc.data());
+                                
+                                let objectToSet = {}
+
+                                setAchivmentsDocumentId(doc.id);
+                                
+
+                                objectToSet = doc.data().learning;
+
+                                // add here things depending on user current version of firebase (doc.data().version)
+                                objectToSet.section7 = [0, 0, 0, 0, 0, 0];
+
+                                setTempObjAchivmentsLearning(objectToSet);
+
+                                
+
+
+                                setAllowUpdateAchivments(true);
+                            }
+                        })
+                    }
+
+                }
+
+                
+                checkVersionsOfFirebaseStorage();
 
             }
             if (authUser && !authUser.isAnonymous) {
@@ -119,8 +173,7 @@ const Tabs = () => {
             } else if (!authUser) {
                 signInAnonymously(authentication)
                 .then(() => {
-                    console.log('anonymus sign in was success. user id is: ', authUser);
-                    console.log('show me a user identification current user rught after anonymous sign  in: ', auth.currentUser.uid);
+                    console.log('user identification after succesful anonymous sign in: ', auth.currentUser.uid);
                     setAllowDataUpload(true)
                 })
                 .catch((error) => {
@@ -136,6 +189,40 @@ const Tabs = () => {
     
         return unscubscribe;
     }, [])
+
+
+
+
+    useEffect(() => {
+
+
+        if (allowUpdateAchivments) {
+            
+            
+            console.log('my new object to set is: ', tempObjAchivmentsLearning);
+
+
+            updateDoc(achivmentsDocRef, {
+                learning: tempObjAchivmentsLearning,
+                version: latestVersionOfUserAchivments
+            })
+            .then(docRef => {
+                console.log("Achivments entry in firebase was update to latest version numer: ", latestVersionOfUserAchivments);
+            })
+            .catch(error => {
+                console.log(error);
+            })
+
+
+            setAllowUpdateAchivments(false);
+            
+            
+        }
+      
+    
+      
+    }, [allowUpdateAchivments])
+    
 
 
     useEffect(() => {
@@ -444,7 +531,7 @@ const Tabs = () => {
             });
             
            
-          }
+        }
 
         if (allowDataUpload && auth.currentUser.uid) {
             

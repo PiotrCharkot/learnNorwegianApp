@@ -1,6 +1,6 @@
 export default dataObj = [
     {
-    title: 'Affirmative sentence',
+    title: 'Affirmative Sentence',
     description: 'Bekreftende setning',
     level: 'A1',
     link: 'Class2x1x1',
@@ -8,7 +8,7 @@ export default dataObj = [
     requiresPro: true
    },
     {
-    title: 'Questions and negations',
+    title: 'Questions and Negations',
     description: 'Spørsmål og negasjoner',
     level: 'A1',
     link: 'Class2x2x1',
@@ -24,7 +24,7 @@ export default dataObj = [
     requiresPro: true
    },
     {
-    title: 'Indirect speech',
+    title: 'Indirect Speech',
     description: 'Indirekte tale',
     level: 'A1',
     link: 'Class2x4x1',
@@ -32,7 +32,7 @@ export default dataObj = [
     requiresPro: true
    },
     {
-    title: 'Conditional statement',
+    title: 'Conditional Statement',
     description: 'Vilkårsetning',
     level: 'A1',
     link: 'Class2x5x1',
@@ -48,7 +48,7 @@ export default dataObj = [
     requiresPro: true
    },
     {
-    title: 'Sentence adverbial',
+    title: 'Sentence Adverbial',
     description: 'Setningsadverbial',
     level: 'A1',
     link: 'Class2x7x1',

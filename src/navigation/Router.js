@@ -394,6 +394,30 @@ import Class6x6x4 from "../screens/ClassScreens/LearningScreens/Class6x6/Class6x
 import Class6x6x5 from "../screens/ClassScreens/LearningScreens/Class6x6/Class6x6x5";
 import Class6x6x6 from "../screens/ClassScreens/LearningScreens/Class6x6/Class6x6x6";
 import Class6x6x7 from "../screens/ClassScreens/LearningScreens/Class6x6/Class6x6x7";
+import Class7x1x1 from '../screens/ClassScreens/LearningScreens/Class7x1/Class7x1x1';
+import Class7x1x2 from '../screens/ClassScreens/LearningScreens/Class7x1/Class7x1x2';
+import Class7x1x3 from '../screens/ClassScreens/LearningScreens/Class7x1/Class7x1x3';
+import Class7x1x4 from '../screens/ClassScreens/LearningScreens/Class7x1/Class7x1x4';
+import Class7x1x5 from '../screens/ClassScreens/LearningScreens/Class7x1/Class7x1x5';
+import Class7x1x6 from '../screens/ClassScreens/LearningScreens/Class7x1/Class7x1x6';
+import Class7x1x7 from '../screens/ClassScreens/LearningScreens/Class7x1/Class7x1x7';
+import Class7x1x8 from '../screens/ClassScreens/LearningScreens/Class7x1/Class7x1x8';
+import Class7x1x9 from '../screens/ClassScreens/LearningScreens/Class7x1/Class7x1x9';
+import Class7x1x10 from '../screens/ClassScreens/LearningScreens/Class7x1/Class7x1x10';
+import Class7x2x1 from '../screens/ClassScreens/LearningScreens/Class7x2/Class7x2x1';
+import Class7x2x2 from '../screens/ClassScreens/LearningScreens/Class7x2/Class7x2x2';
+import Class7x2x3 from '../screens/ClassScreens/LearningScreens/Class7x2/Class7x2x3';
+import Class7x2x4 from '../screens/ClassScreens/LearningScreens/Class7x2/Class7x2x4';
+import Class7x2x5 from '../screens/ClassScreens/LearningScreens/Class7x2/Class7x2x5';
+import Class7x2x6 from '../screens/ClassScreens/LearningScreens/Class7x2/Class7x2x6';
+import Class7x2x7 from '../screens/ClassScreens/LearningScreens/Class7x2/Class7x2x7';
+import Class7x2x8 from '../screens/ClassScreens/LearningScreens/Class7x2/Class7x2x8';
+import Class7x2x9 from '../screens/ClassScreens/LearningScreens/Class7x2/Class7x2x9';
+import Class7x2x10 from '../screens/ClassScreens/LearningScreens/Class7x2/Class7x2x10';
+import Class7x3x1 from '../screens/ClassScreens/LearningScreens/Class7x3/Class7x3x1';
+import Class7x3x2 from '../screens/ClassScreens/LearningScreens/Class7x3/Class7x3x2';
+import Class7x3x3 from '../screens/ClassScreens/LearningScreens/Class7x3/Class7x3x3';
+import Class7x3x4 from '../screens/ClassScreens/LearningScreens/Class7x3/Class7x3x4';
 import Exc1x1x1 from "../screens/ClassScreens/ExerciseScreens/Exc1/Exc1x1x1";
 import Exc1x2x1 from "../screens/ClassScreens/ExerciseScreens/Exc1/Exc1x2x1";
 import Exc1x3x1 from "../screens/ClassScreens/ExerciseScreens/Exc1/Exc1x3x1";
@@ -843,6 +867,30 @@ const Router = () => {
                 <Stack.Screen name="Class6x6x5" component={Class6x6x5} options={{headerShown: false, animationEnabled: false }}/>
                 <Stack.Screen name="Class6x6x6" component={Class6x6x6} options={{headerShown: false, animationEnabled: false }}/>
                 <Stack.Screen name="Class6x6x7" component={Class6x6x7} options={{headerShown: false, animationEnabled: false }}/>
+                <Stack.Screen name="Class7x1x1" component={Class7x1x1} options={{headerShown: false, animationEnabled: false }}/>
+                <Stack.Screen name="Class7x1x2" component={Class7x1x2} options={{headerShown: false, animationEnabled: false }}/>
+                <Stack.Screen name="Class7x1x3" component={Class7x1x3} options={{headerShown: false, animationEnabled: false }}/>
+                <Stack.Screen name="Class7x1x4" component={Class7x1x4} options={{headerShown: false, animationEnabled: false }}/>
+                <Stack.Screen name="Class7x1x5" component={Class7x1x5} options={{headerShown: false, animationEnabled: false }}/>
+                <Stack.Screen name="Class7x1x6" component={Class7x1x6} options={{headerShown: false, animationEnabled: false }}/>
+                <Stack.Screen name="Class7x1x7" component={Class7x1x7} options={{headerShown: false, animationEnabled: false }}/>
+                <Stack.Screen name="Class7x1x8" component={Class7x1x8} options={{headerShown: false, animationEnabled: false }}/>
+                <Stack.Screen name="Class7x1x9" component={Class7x1x9} options={{headerShown: false, animationEnabled: false }}/>
+                <Stack.Screen name="Class7x1x10" component={Class7x1x10} options={{headerShown: false, animationEnabled: false }}/>
+                <Stack.Screen name="Class7x2x1" component={Class7x2x1} options={{headerShown: false, animationEnabled: false }}/>
+                <Stack.Screen name="Class7x2x2" component={Class7x2x2} options={{headerShown: false, animationEnabled: false }}/>
+                <Stack.Screen name="Class7x2x3" component={Class7x2x3} options={{headerShown: false, animationEnabled: false }}/>
+                <Stack.Screen name="Class7x2x4" component={Class7x2x4} options={{headerShown: false, animationEnabled: false }}/>
+                <Stack.Screen name="Class7x2x5" component={Class7x2x5} options={{headerShown: false, animationEnabled: false }}/>
+                <Stack.Screen name="Class7x2x6" component={Class7x2x6} options={{headerShown: false, animationEnabled: false }}/>
+                <Stack.Screen name="Class7x2x7" component={Class7x2x7} options={{headerShown: false, animationEnabled: false }}/>
+                <Stack.Screen name="Class7x2x8" component={Class7x2x8} options={{headerShown: false, animationEnabled: false }}/>
+                <Stack.Screen name="Class7x2x9" component={Class7x2x9} options={{headerShown: false, animationEnabled: false }}/>
+                <Stack.Screen name="Class7x2x10" component={Class7x2x10} options={{headerShown: false, animationEnabled: false }}/>
+                <Stack.Screen name="Class7x3x1" component={Class7x3x1} options={{headerShown: false, animationEnabled: false }}/>
+                <Stack.Screen name="Class7x3x2" component={Class7x3x2} options={{headerShown: false, animationEnabled: false }}/>
+                <Stack.Screen name="Class7x3x3" component={Class7x3x3} options={{headerShown: false, animationEnabled: false }}/>
+                <Stack.Screen name="Class7x3x4" component={Class7x3x4} options={{headerShown: false, animationEnabled: false }}/>
                 <Stack.Screen name="Exc1x1x1" component={Exc1x1x1} options={{headerShown: false, animationEnabled: false }}/>
                 <Stack.Screen name="Exc1x2x1" component={Exc1x2x1} options={{headerShown: false, animationEnabled: false }}/>
                 <Stack.Screen name="Exc1x3x1" component={Exc1x3x1} options={{headerShown: false, animationEnabled: false }}/>

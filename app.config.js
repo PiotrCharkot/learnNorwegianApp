@@ -2,7 +2,7 @@ export default {
   expo: {
     name: "Learn Norwegian",
     slug: "LearnNorwegianApp",
-    version: "1.0.1",
+    version: "1.0.2",
     orientation: "portrait",
     icon: "./assets/logo3.png",
     userInterfaceStyle: "light",
@@ -17,11 +17,11 @@ export default {
     ios: {
       supportsTablet: true,
       bundleIdentifier: "com.piotrcharkot.LearnNorwegianApp",
-      buildNumber: "4"
+      buildNumber: "5"
     },
     android: {
       package: "com.piotrcharkot.LearnNorwegianApp",
-      versionCode: "4",
+      versionCode: "5",
       permissions: [
         "com.android.vending.BILLING"
       ],

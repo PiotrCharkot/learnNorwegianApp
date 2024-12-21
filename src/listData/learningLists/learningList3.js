@@ -1,6 +1,6 @@
 export default dataObj = [
     {
-    title: 'Modal verbs',
+    title: 'Modal Verbs',
     description: 'Modalverb',
     level: 'A1',
     link: 'Class3x1x1',
@@ -16,7 +16,7 @@ export default dataObj = [
     requiresPro: true
    },
     {
-    title: 'Passive voice',
+    title: 'Passive Voice',
     description: 'Passiv',
     level: 'A1',
     link: 'Class3x3x1',
@@ -32,7 +32,7 @@ export default dataObj = [
     requiresPro: true
    },
     {
-    title: 'Verbal compound',
+    title: 'Verbal Compound',
     description: 'Verbal sammensetning',
     level: 'A1',
     link: 'Class3x5x1',

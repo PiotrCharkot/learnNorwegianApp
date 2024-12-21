@@ -16,7 +16,7 @@ export default dataObj = [
     requiresPro: true
    },
     {
-    title: 'Irregular adjectives',
+    title: 'Irregular Adjectives',
     description: 'Uregelmessige adjektiver',
     level: 'A1',
     link: 'Class5x3x1',
@@ -24,7 +24,7 @@ export default dataObj = [
     requiresPro: true
    },
     {
-    title: 'The degree of comparison',
+    title: 'The Degree of Comparison',
     description: 'Gradbøyning',
     level: 'A1',
     link: 'Class5x4x1',
@@ -32,7 +32,7 @@ export default dataObj = [
     requiresPro: true
    },
     {
-    title: 'Irregular degree of comparison',
+    title: 'Irregular Degree of Comparison',
     description: 'Uregelmessig gradbøyning',
     level: 'A1',
     link: 'Class5x5x1',
@@ -40,7 +40,7 @@ export default dataObj = [
     requiresPro: true
    },
     {
-    title: 'The degree of comparison II',
+    title: 'The Degree of Comparison II',
     description: 'Mer, mest, mindre og minst',
     level: 'A1',
     link: 'Class5x6x1',
@@ -48,7 +48,7 @@ export default dataObj = [
     requiresPro: true
    },
    {
-    title: 'Perfect participle',
+    title: 'Perfect Participle',
     description: 'Perfektum partisipp',
     level: 'A1',
     link: 'Class5x7x1',

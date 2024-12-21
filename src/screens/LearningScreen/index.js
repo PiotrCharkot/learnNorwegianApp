@@ -19,6 +19,7 @@ import learningList3 from '../../listData/learningLists/learningList3';
 import learningList4 from '../../listData/learningLists/learningList4';
 import learningList5 from '../../listData/learningLists/learningList5';
 import learningList6 from '../../listData/learningLists/learningList6';
+import learningList7 from '../../listData/learningLists/learningList7';
 import useRevenueCat from '../../../hooks/useRevenueCat';
 import adminIDs from '../../listData/otherData/adminIDs';
 
@@ -59,6 +60,7 @@ const LearningScreen = () => {
   const scrollX4 = useRef(new Animated.Value(0)).current;
   const scrollX5 = useRef(new Animated.Value(0)).current;
   const scrollX6 = useRef(new Animated.Value(0)).current;
+  const scrollX7 = useRef(new Animated.Value(0)).current;
   const overlayOpacity = useRef(new Animated.Value(1)).current;
   const overlayOffset = useRef(new Animated.Value(0)).current;
   // const lastPlayedAtRef = useRef(0);
@@ -75,6 +77,7 @@ const LearningScreen = () => {
   const [dataFlatList4, setDataFlatList4] = useState([]);
   const [dataFlatList5, setDataFlatList5] = useState([]);
   const [dataFlatList6, setDataFlatList6] = useState([]);
+  const [dataFlatList7, setDataFlatList7] = useState([]);
   const [random, setRandom] = useState(0);
   const [readingBtnTxt, setReadingButtonTxt] = useState('Reading Hub');
   const [choosenLanguage, setChoosenLanguage] = useState('EN');
@@ -103,29 +106,34 @@ const LearningScreen = () => {
     outputRange: colorsBackFlatlist5.map((i) => i)
   })
 
-  const backgroundFlatlist2 = scrollX2.interpolate({
+  const backgroundFlatlist7 = scrollX7.interpolate({
     inputRange: colorsBackFlatlist4.map((_, i) => i * cardSize),
     outputRange: colorsBackFlatlist4.map((i) => i)
   })
 
-  const backgroundFlatlist3 = scrollX3.interpolate({
+  const backgroundFlatlist2 = scrollX2.interpolate({
     inputRange: colorsBackFlatlist3.map((_, i) => i * cardSize),
     outputRange: colorsBackFlatlist3.map((i) => i)
   })
 
-  const backgroundFlatlist4 = scrollX4.interpolate({
+  const backgroundFlatlist3 = scrollX3.interpolate({
     inputRange: colorsBackFlatlist5.map((_, i) => i * cardSize),
     outputRange: colorsBackFlatlist5.map((i) => i)
   })
 
-  const backgroundFlatlist5 = scrollX5.interpolate({
+  const backgroundFlatlist4 = scrollX4.interpolate({
     inputRange: colorsBackFlatlist4.map((_, i) => i * cardSize),
     outputRange: colorsBackFlatlist4.map((i) => i)
   })
 
-  const backgroundFlatlist6 = scrollX6.interpolate({
+  const backgroundFlatlist5 = scrollX5.interpolate({
     inputRange: colorsBackFlatlist3.map((_, i) => i * cardSize),
     outputRange: colorsBackFlatlist3.map((i) => i)
+  })
+
+  const backgroundFlatlist6 = scrollX6.interpolate({
+    inputRange: colorsBackFlatlist5.map((_, i) => i * cardSize),
+    outputRange: colorsBackFlatlist5.map((i) => i)
   })
 
 
@@ -182,6 +190,7 @@ const LearningScreen = () => {
     setDataFlatList4([{key: 'left-spacer'}, ...learningList4, {key: 'right-spacer'}])
     setDataFlatList5([{key: 'left-spacer'}, ...learningList5, {key: 'right-spacer'}])
     setDataFlatList6([{key: 'left-spacer'}, ...learningList6, {key: 'right-spacer'}])
+    setDataFlatList7([{key: 'left-spacer'}, ...learningList7, {key: 'right-spacer'}])
   }, [])
 
 
@@ -372,12 +381,22 @@ const LearningScreen = () => {
         learningList6[i].stars = doc.data().learning.section6[i]
       }
 
+      if (doc.data().learning.section7) { // section 7 was added in version 2 of data base
+        for (let i = 0; i < doc.data().learning.section7.length; i++) {
+        
+          learningList7[i].stars = doc.data().learning.section7[i]
+        }
+      }
+
+      
+
       setDataFlatList([{key: 'left-spacer'}, ...learningList1, {key: 'right-spacer'}])
       setDataFlatList2([{key: 'left-spacer'}, ...learningList2, {key: 'right-spacer'}])
       setDataFlatList3([{key: 'left-spacer'}, ...learningList3, {key: 'right-spacer'}])
       setDataFlatList4([{key: 'left-spacer'}, ...learningList4, {key: 'right-spacer'}])
       setDataFlatList5([{key: 'left-spacer'}, ...learningList5, {key: 'right-spacer'}])
       setDataFlatList6([{key: 'left-spacer'}, ...learningList6, {key: 'right-spacer'}])
+      setDataFlatList7([{key: 'left-spacer'}, ...learningList7, {key: 'right-spacer'}])
     });
 
   }
@@ -602,12 +621,54 @@ const LearningScreen = () => {
     </Animated.View>
   }
 
+
+
+  const renderCard7 = ({item, index}) => {
+
+    let colorSqu = colorsBackFlatlist5[index - 1]
+
+    if (!item.title) {
+      return <View style={{width: spacerSize}} ></View>
+    }
+    const inputRange = [
+      (index - 2) * cardSize,
+      (index - 1) * cardSize,
+      index  * cardSize,
+    ];
+
+    const translateY7 = scrollX7.interpolate({
+      inputRange,
+      outputRange: [-20, -70, -20]
+    })
+
+
+
+    return <Animated.View style={{transform: [{translateY: translateY7}]}}>
+
+      <CardBlack 
+      color3={'#ffffff'}
+      title={item.title} 
+      description={item.description} 
+      link={item.link} 
+      stars={item.stars}
+      hasAccess={userHasAccess}
+      requiresPro={item.requiresPro}
+      savedLang={choosenLanguage}/>
+    </Animated.View>
+  }
+
+
+
+
+
   const sendToPro = () => {
     navigation.navigate({
       name: 'Paywall',
       params: {language: choosenLanguage}
   })
   }
+
+
 
 
   return (
@@ -677,6 +738,37 @@ const LearningScreen = () => {
           />
 
         </Animated.View>
+
+
+        <Animated.View style={{...styles.flatListsContainerBottom, backgroundColor: backgroundFlatlist7}}>
+          
+          <LinearGradient colors={['white', 'rgba(255,255,255,0)', 'white']} start={[0.0, 0.1]} end={[0.0, 1.0]}  style={styles.gradinetFlatlist}>
+            </LinearGradient>
+        
+          <View style={{...styles.titleContainer, width: isWideScreen ? 300 : 240, left: isWideScreen ? screenWidth / 2 -150 : screenWidth / 2 - 120}}>
+            <Text style={styles.titleText} allowFontScaling={false}>Pronunciation</Text>
+          </View>
+          <Animated.FlatList 
+            style={styles.flatlist}
+            contentContainerStyle={{
+              alignItems: 'flex-end'
+            }}
+            horizontal
+            showsHorizontalScrollIndicator={false}
+            snapToInterval={cardSize}
+            decelerationRate={0}
+            data={dataFlatList7}
+            renderItem={renderCard7}
+            keyExtractor={(item) => item.key}
+            onScroll={Animated.event(
+              [{nativeEvent: {contentOffset: {x: scrollX7}}}],
+              {useNativeDriver: false}
+            )}
+            scrollEventThrottle={16}
+          />
+
+        </Animated.View>
+
 
         <Animated.View style={{...styles.flatListsContainerBottom, backgroundColor: backgroundFlatlist2}}>
           

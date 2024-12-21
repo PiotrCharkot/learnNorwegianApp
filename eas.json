@@ -37,6 +37,9 @@
         "appleId": "piotr.charkot@gmail.com",
         "ascAppId": "6504736023",
         "appleTeamId": "US2RC72ALH"
+      },
+      "android": {
+        "serviceAccountKeyPath": "../descripton/keys/learnnorwegiannowapp-14b146462b2e.json"
       }
     }
   }

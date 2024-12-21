@@ -1,6 +1,6 @@
 export default dataObj = [
     {
-    title: 'Personal pronouns',
+    title: 'Personal Pronouns',
     description: 'Personlige pronomen',
     level: 'A1',
     link: 'Class6x1x1',
@@ -8,7 +8,7 @@ export default dataObj = [
     requiresPro: true
    },
     {
-    title: 'Possessive pronouns',
+    title: 'Possessive Pronouns',
     description: 'Possessiver',
     level: 'A1',
     link: 'Class6x2x1',
@@ -16,7 +16,7 @@ export default dataObj = [
     requiresPro: true
    },
     {
-    title: 'Demonstrative pronouns',
+    title: 'Demonstrative Pronouns',
     description: 'Question words',
     level: 'A1',
     link: 'Class6x3x1',
@@ -32,7 +32,7 @@ export default dataObj = [
     requiresPro: true
    },
    {
-    title: 'Indefinite pronouns',
+    title: 'Indefinite Pronouns',
     description: 'Ubestemt pronomen',
     level: 'A1',
     link: 'Class6x5x1',
@@ -40,7 +40,7 @@ export default dataObj = [
     requiresPro: true
    },
    {
-    title: 'Reflexive pronouns',
+    title: 'Reflexive Pronouns',
     description: 'Refleksive pronomen',
     level: 'A1',
     link: 'Class6x6x1',

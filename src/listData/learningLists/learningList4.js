@@ -8,7 +8,7 @@ export default dataObj = [
     requiresPro: true
    },
     {
-    title: 'Irregular inflection',
+    title: 'Irregular Inflection',
     description: 'Uregelmessig bøyning',
     level: 'A1',
     link: 'Class4x2x1',
@@ -16,7 +16,7 @@ export default dataObj = [
     requiresPro: true
    },
     {
-    title: 'Uncountable nouns',
+    title: 'Uncountable Nouns',
     description: 'Utellelige substantiver',
     level: 'A1',
     link: 'Class4x3x1',
@@ -32,7 +32,7 @@ export default dataObj = [
     requiresPro: true
    },
     {
-    title: 'Noun phrases',
+    title: 'Noun Phrases',
     description: 'Substantivfraser',
     level: 'A1',
     link: 'Class4x5x1',
@@ -40,7 +40,7 @@ export default dataObj = [
     requiresPro: true
    },
     {
-    title: 'Compound words',
+    title: 'Compound Words',
     description: 'Samskriving',
     level: 'A1',
     link: 'Class4x6x1',

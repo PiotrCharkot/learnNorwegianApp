@@ -1,6 +1,6 @@
 export default dataObj = [
     {
-    title: 'Present tense',
+    title: 'Present Tense',
     description: 'Presens',
     level: 'A1',
     link: 'Class1x1x1',
@@ -8,7 +8,7 @@ export default dataObj = [
     requiresPro: false
    },
     {
-    title: 'Future tense',
+    title: 'Future Tense',
     description: 'Presens futurum',
     level: 'A1',
     link: 'Class1x2x1',
@@ -16,7 +16,7 @@ export default dataObj = [
     requiresPro: false
    },
     {
-    title: 'Past tense',
+    title: 'Past Tense',
     description: 'Preteritum',
     level: 'A1',
     link: 'Class1x3x1',
@@ -24,7 +24,7 @@ export default dataObj = [
     requiresPro: false
    },
     {
-    title: 'Present perfect',
+    title: 'Present Perfect',
     description: 'Presens perfektum',
     level: 'A1',
     link: 'Class1x4x1',
@@ -32,7 +32,7 @@ export default dataObj = [
     requiresPro: true
    },
     {
-    title: 'Past perfect',
+    title: 'Past Perfect',
     description: 'Preteritum perfektum',
     level: 'A1',
     link: 'Class1x5x1',
