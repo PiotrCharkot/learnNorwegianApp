@@ -256,6 +256,11 @@ const UsersScreen = () => {
             userName: 'Guest997133',
             userId: 'ng5EPTK7qJS7VfoqUbGtPLTcX562',
             key: 39
+        },
+        {
+            userName: 'Guest444993',
+            userId: 'jRBa0U4hGDhqkijHyXOVs6TVvIk2',
+            key: 40
         }
 
 
@@ -343,7 +348,7 @@ const UsersScreen = () => {
             if (points) {
                 myNumericValue = parseInt(points, 10);
             } else {
-                myNumericValue = Math.floor(Math.random() * (300 - 50 + 1) + 50);
+                myNumericValue = Math.floor(Math.random() * (500 - 210 + 1) + 210);
                 setPoints(myNumericValue)
             }
     

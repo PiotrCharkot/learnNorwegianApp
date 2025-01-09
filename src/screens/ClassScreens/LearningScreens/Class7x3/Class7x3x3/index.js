@@ -55,47 +55,49 @@ const Class7x3x3 = ({route}) => { //name for component
         <ScrollView showsVerticalScrollIndicator={false} style={styles.body}>
 
           <View style={styles.textContainer}>
-              <Text style={styles.text}>Now let's see "<Text style={styles.textColor}>sj</Text>" and "<Text style={styles.textColor}>skj</Text>" both pronounced as "sh" in English "shoe".</Text>
+              <Text style={styles.text}>The same soft [ç]<Text style={styles.textColor}></Text> sound appears when "k" comes before vowels like i or y.</Text>
           </View>
+
+          
+
 
           <TouchableOpacity onPress={() => {playSound(soundA)}}>
             <View style={styles.exampleContainer}>
                 <Image style={styles.pictureSoundInContainer} source={require('../../../../../../assets/volume.png')} />
-                <Text style={styles.exampleText}>skj</Text>
+                <Text style={styles.exampleText}>en <Text style={styles.exampleTextColor}>ki</Text>rke - <Text style={styles.exampleTextTrans}>/çɪr̥kə/</Text></Text>
+                <Text style={styles.exampleTextTrans}>a church</Text>
             </View>
           </TouchableOpacity>
-
-         
 
 
           <TouchableOpacity onPress={() => {playSound(soundB)}}>
             <View style={styles.exampleContainer}>
                 <Image style={styles.pictureSoundInContainer} source={require('../../../../../../assets/volume.png')} />
-                <Text style={styles.exampleText}>en <Text style={styles.exampleTextColor}>sj</Text>okolade  - <Text style={styles.exampleTextTrans}>/ʃʊkɔˈlɑːdə/</Text></Text>
-                <Text style={styles.exampleTextTrans}>a chocolate</Text>
+                <Text style={styles.exampleText}>en <Text style={styles.exampleTextColor}>ky</Text>lling - <Text style={styles.exampleTextTrans}>/çʏlːɪŋ/</Text></Text>
+                <Text style={styles.exampleTextTrans}>a chicken</Text>
             </View>
           </TouchableOpacity>
 
           
+
+          <View style={styles.textContainer}>
+              <Text style={styles.text}>Before other vowels or consonants "k" is pronounced as hard [k].</Text>
+          </View>
+
             
 
 
           <TouchableOpacity onPress={() => {playSound(soundC)}}>
             <View style={styles.exampleContainer}>
                 <Image style={styles.pictureSoundInContainer} source={require('../../../../../../assets/volume.png')} />
-                <Text style={styles.exampleText}>en <Text style={styles.exampleTextColor}>skj</Text>orte  - <Text style={styles.exampleTextTrans}>/ʃʊʈə/</Text></Text>
-                <Text style={styles.exampleTextTrans}>a shirt</Text>
+                <Text style={styles.exampleText}>kort - <Text style={styles.exampleTextTrans}>/kɔʈ/</Text></Text>
+                <Text style={styles.exampleTextTrans}>short</Text>
             </View>
           </TouchableOpacity>
 
           
 
 
-
-
-          <View style={styles.textContainer}>
-          <Text style={styles.text}><Text style={styles.boldText}>Tip:</Text> Always use a clear "sh" sound, no matter how it's written.</Text>
-          </View>
           
         </ScrollView>
     

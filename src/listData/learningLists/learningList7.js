@@ -25,7 +25,7 @@ export default dataObj = [
    },
     {
     title: 'Silent Letters',
-    description: 'Common silent letters in Norwegian',
+    description: 'Stumme bokstaver',
     level: 'A1',
     link: 'Class7x4x1',
     key: 4,
@@ -33,7 +33,7 @@ export default dataObj = [
    },
    {
    title: 'Stress and Intonation',
-   description: 'Stress and intonation in Norwegian',
+   description: 'Stress og intonasjon',
    level: 'A1',
    link: 'Class7x5x1',
    key: 5,

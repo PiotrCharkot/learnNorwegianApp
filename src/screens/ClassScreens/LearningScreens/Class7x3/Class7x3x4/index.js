@@ -55,7 +55,7 @@ const Class7x3x4 = ({route}) => { //name for component
         <ScrollView showsVerticalScrollIndicator={false} style={styles.body}>
 
           <View style={styles.textContainer}>
-              <Text style={styles.text}>Next we'll have a look at hard and soft "<Text style={styles.textColor}>sk</Text>. ADD WHEN AND WHY</Text>
+              <Text style={styles.text}>Now let's see "<Text style={styles.textColor}>sj</Text>" and "<Text style={styles.textColor}>skj</Text>" both pronounced as "sh" in English "shoe".</Text>
           </View>
 
           <TouchableOpacity onPress={() => {playSound(soundA)}}>
@@ -71,9 +71,8 @@ const Class7x3x4 = ({route}) => { //name for component
           <TouchableOpacity onPress={() => {playSound(soundB)}}>
             <View style={styles.exampleContainer}>
                 <Image style={styles.pictureSoundInContainer} source={require('../../../../../../assets/volume.png')} />
-                <Text style={styles.exampleTextTransSmall}>hard</Text>
-                <Text style={styles.exampleText}><Text style={styles.exampleTextColor}>sk</Text>al  - <Text style={styles.exampleTextTrans}>/skal/</Text></Text>
-                <Text style={styles.exampleTextTrans}>shall</Text>
+                <Text style={styles.exampleText}>en <Text style={styles.exampleTextColor}>sj</Text>okolade - <Text style={styles.exampleTextTrans}>/ʃʊkɔˈlɑːdə/</Text></Text>
+                <Text style={styles.exampleTextTrans}>a chocolate</Text>
             </View>
           </TouchableOpacity>
 
@@ -84,9 +83,8 @@ const Class7x3x4 = ({route}) => { //name for component
           <TouchableOpacity onPress={() => {playSound(soundC)}}>
             <View style={styles.exampleContainer}>
                 <Image style={styles.pictureSoundInContainer} source={require('../../../../../../assets/volume.png')} />
-                <Text style={styles.exampleTextTransSmall}>soft</Text>
-                <Text style={styles.exampleText}>å <Text style={styles.exampleTextColor}>sk</Text>jære  - <Text style={styles.exampleTextTrans}>/ʃæːrə/</Text></Text>
-                <Text style={styles.exampleTextTrans}>to cut</Text>
+                <Text style={styles.exampleText}>en <Text style={styles.exampleTextColor}>skj</Text>orte - <Text style={styles.exampleTextTrans}>/ʃʊʈə/</Text></Text>
+                <Text style={styles.exampleTextTrans}>a shirt</Text>
             </View>
           </TouchableOpacity>
 
@@ -96,7 +94,7 @@ const Class7x3x4 = ({route}) => { //name for component
 
 
           <View style={styles.textContainer}>
-          <Text style={styles.text}><Text style={styles.boldText}>Tip:</Text> </Text>
+          <Text style={styles.text}><Text style={styles.boldText}>Tips:</Text> {'\n'}- lightly raise the front of your tongue toward the ridge behind your upper teeth{'\n'}- the tip of your tongue can rest close to the lower front teeth {'\n'}- the sides of your tongue should gently curve upward {'\n'}- keep your lips slightly rounded</Text>
           </View>
           
         </ScrollView>
@@ -194,11 +192,6 @@ const styles = StyleSheet.create({
   },
   exampleTextTrans: {
     fontSize: 20,
-    fontWeight: '400',
-    textAlign: 'center'
-  },
-  exampleTextTransSmall: {
-    fontSize: 16,
     fontWeight: '400',
     textAlign: 'center'
   },
