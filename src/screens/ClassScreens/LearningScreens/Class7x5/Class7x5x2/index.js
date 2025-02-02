@@ -18,13 +18,13 @@ const Class7x5x2 = ({route}) => { //name for component
     const [latestScreenDone, setLatestScreenDone] = useState(currentScreen);
     const [comeBack, setComeBack] = useState(false);
 
-    const soundA = 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/wordsList1%2Fvoka.mp3?alt=media&token=f9f18732-5f10-48ab-80cf-ba10730bc8f0';
+    const soundA = 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/wordsList1%2FINTOspise.mp3?alt=media&token=35e44522-1b14-4817-85e0-44ccd679c503';
 
 
-    const soundB = 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/wordsList1%2FVKortAkatt.mp3?alt=media&token=d7fb03ac-d6e2-4255-92b8-10f2d5ef240a';
+    const soundB = 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/wordsList1%2FINTOetter.mp3?alt=media&token=60e4a555-0534-4291-a049-cb4102e2d597';
 
 
-    const soundC = 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/wordsList1%2FVKortAsentence.mp3?alt=media&token=ce2236fa-bcc7-4027-ae60-2cf675457f6a';
+    const soundC = 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/wordsList1%2FINTOlege.mp3?alt=media&token=966156ab-2de5-4bf9-b833-527fe9e15ec7';
     
     
 
@@ -57,7 +57,7 @@ const Class7x5x2 = ({route}) => { //name for component
         <ScrollView showsVerticalScrollIndicator={false} style={styles.body}>
 
           <View style={styles.textContainer}>
-              <Text style={styles.text}>First, we’ll take a look at stress in words. {'\n\n'}In Norwegian, stress typically falls on the <Text style={styles.textUnderline}>first syllable</Text> of a word, but there are exceptions. {'\n\n'}As you already know, there are long and short vowels, but only stressed syllables contain long vowels.</Text>
+              <Text style={styles.text}>First, let’s take a look at word stress. {'\n\n'}In Norwegian, stress typically falls on the <Text style={styles.textUnderline}>first syllable</Text> of a word, but there are exceptions. {'\n\n'}As you already know, Norwegian has both long and short vowels, but only stressed syllables contain long vowels.</Text>
           </View>
 
           

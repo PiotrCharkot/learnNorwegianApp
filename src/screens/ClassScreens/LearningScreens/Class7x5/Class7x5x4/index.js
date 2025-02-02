@@ -18,13 +18,13 @@ const Class7x5x4 = ({route}) => { //name for component
     const [latestScreenDone, setLatestScreenDone] = useState(currentScreen);
     const [comeBack, setComeBack] = useState(false);
 
-    const soundA = 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/wordsList1%2Fvoka.mp3?alt=media&token=f9f18732-5f10-48ab-80cf-ba10730bc8f0';
+    const soundA = 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/wordsList1%2FINTOtannlege.mp3?alt=media&token=cfd13f63-812e-4edd-acd5-59b35be37284';
 
 
-    const soundB = 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/wordsList1%2FVKortAkatt.mp3?alt=media&token=d7fb03ac-d6e2-4255-92b8-10f2d5ef240a';
+    const soundB = 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/wordsList1%2FINTObrannbil.mp3?alt=media&token=1938e914-96bf-4566-912f-7c7b1d4e1c91';
 
 
-    const soundC = 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/wordsList1%2FVKortAsentence.mp3?alt=media&token=ce2236fa-bcc7-4027-ae60-2cf675457f6a';
+    const soundC = 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/wordsList1%2FINTOsykehus.mp3?alt=media&token=e975902c-0b26-44f7-b6d4-f7b45ff41681';
     
     
 

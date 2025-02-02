@@ -489,17 +489,17 @@ const FlashcardScreen = () => {
 
           <Animated.View style={{...styles.cardHolder, transform: [{scale: scaleCardHolder2}]}}>
 
-            <CardFlashList refNummer={'2'} userIdRef={userId} title={`A1 - ${cardText[0]} 2 - (55)`} language={choosenLanguage} userName={userName} hasAccess={userHasAccess}/>
+            <CardFlashList refNummer={'2'} userIdRef={userId} title={`A1 - ${cardText[0]} 2 - (55)`} language={choosenLanguage} userName={userName} hasAccess={true}/>
           </Animated.View>
 
           <Animated.View style={{...styles.cardHolder, transform: [{scale: scaleCardHolder3}]}}>
 
-            <CardFlashList refNummer={'3'} userIdRef={userId} title={`A1 - ${cardText[0]} 3 - (54)`} language={choosenLanguage} userName={userName} hasAccess={userHasAccess}/>
+            <CardFlashList refNummer={'3'} userIdRef={userId} title={`A1 - ${cardText[0]} 3 - (54)`} language={choosenLanguage} userName={userName} hasAccess={true}/>
           </Animated.View>
 
           <Animated.View style={{...styles.cardHolder, transform: [{scale: scaleCardHolder4}]}}>
 
-            <CardWordGame title={`A1 - A2 ${gameText}`} language={choosenLanguage} hasAccess={userHasAccess} btnAdj={'A1Adjectives'} btnNoun={'A1Nouns'} btnVerb={'A1Verbs'}/>
+            <CardWordGame title={`A1 - A2 ${gameText}`} language={choosenLanguage} hasAccess={true} btnAdj={'A1Adjectives'} btnNoun={'A1Nouns'} btnVerb={'A1Verbs'}/>
           </Animated.View>
 
           <Animated.View style={{...styles.cardHolder, transform: [{scale: scaleCardHolder5}]}}>

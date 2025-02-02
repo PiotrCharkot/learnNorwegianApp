@@ -94,7 +94,7 @@ const Class7x1x5 = ({route}) => { //name for component
 
 
           <View style={styles.textContainer}>
-          <Text style={styles.text}><Text style={styles.boldText}>Tip:</Text> Round your lips more for the long "o."</Text>
+          <Text style={styles.text}><Text style={styles.boldText}>Tip:</Text> For "<Text style={styles.textColor}>o</Text>", raise your tongue high and position it toward the back of your mouth while rounding your lips tightly.</Text>
           </View>
           
         </ScrollView>

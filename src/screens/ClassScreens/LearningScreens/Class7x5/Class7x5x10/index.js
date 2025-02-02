@@ -6,10 +6,18 @@ import ProgressBar from '../../../../../components/bars/progressBar'
 import BottomBar from '../../../../../components/bars/bottomBar'
 import generalStyles from '../../../../../styles/generalStyles';
 
-const currentScreen = 6; //current screen
+const currentScreen = 10; //current screen
 
 
-const Class7x6x6 = ({route}) => { //name for component
+const totalPoints = 0 * generalStyles.answerBonus + currentScreen * generalStyles.screenBonus;
+const dataForMarkers = {
+    part: 'learning',
+    section: 'section7',
+    class: 4
+  }
+
+
+const Class7x5x10 = ({route}) => { //name for component
 
     const {userPoints, latestScreen, comeBackRoute, allScreensNum, savedLang} = route.params
     
@@ -18,12 +26,7 @@ const Class7x6x6 = ({route}) => { //name for component
     const [latestScreenDone, setLatestScreenDone] = useState(currentScreen);
     const [comeBack, setComeBack] = useState(false);
 
-    const soundA = 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/wordsList1%2FTT3slow.mp3?alt=media&token=e55589c5-e960-4840-a67d-14f4e419126a';
-
-
-    const soundB = 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/wordsList1%2FTT3fast.mp3?alt=media&token=7abac15f-a47b-48f5-99fa-174d50d839b0';
-
-
+   
 
 
     const playSound = async (soundLink) => {
@@ -54,40 +57,16 @@ const Class7x6x6 = ({route}) => { //name for component
         <ScrollView showsVerticalScrollIndicator={false} style={styles.body}>
 
           <View style={styles.textContainer}>
-              <Text style={styles.text}>The following one is all about <Text style={styles.textColor}>r</Text> and <Text style={styles.textColor}>f</Text> sounds.</Text>
+              <Text style={styles.text}>One of the easiest ways to get the hang of intonation and stress is to imitate native speakers. {'\n\n'}Watch Norwegian TV shows, listen to podcasts, pay attention in everyday conversations or just use the listening exercise in our app in the exercise section. {'\n\n'}Try to copy the ups and downs of pitch, even if it feels exaggerated at first. {'\n\n'}If you listen carefully to native speakers and do a bit of practice, you’ll start picking up these patterns naturally. {'\n\n'}Good luck!</Text>
           </View>
 
           
 
-
-          <TouchableOpacity onPress={() => {playSound(soundA)}}>
-            <View style={styles.exampleContainer}>
-                <Image style={styles.pictureSoundInContainer} source={require('../../../../../../assets/volume.png')} />
-                <Text style={styles.exampleTextTransSmall}>slow</Text>
-                <Text style={styles.exampleText}>Hvor fort får fem fisker fart i fjorden?</Text>
-            </View>
-          </TouchableOpacity>
-
-
-          <TouchableOpacity onPress={() => {playSound(soundB)}}>
-            <View style={styles.exampleContainer}>
-                <Image style={styles.pictureSoundInContainer} source={require('../../../../../../assets/volume.png')} />
-                <Text style={styles.exampleTextTransSmall}>fast</Text>
-                <Text style={styles.exampleText}>Hvor fort får fem fisker fart i fjorden?</Text>
-            </View>
-          </TouchableOpacity>
-
-
-          <View>
-            <View style={styles.exampleContainer}>
-                <Text style={styles.exampleTextTrans}>How quickly do five fish move in the fjord?</Text>
-            </View>
-          </View>
-
           
 
 
-          
+
+
         </ScrollView>
     
         <View style={styles.progressBarContainer}>
@@ -99,13 +78,16 @@ const Class7x6x6 = ({route}) => { //name for component
           <BottomBar  
           buttonWidth={generalStyles.buttonNextPrevSize}
           buttonHeight={generalStyles.buttonNextPrevSize}
-          linkNext={'Class7x6x7'} //link next
-          linkPrevious={'Class7x6x5'} //link previous
+          linkNext={'ExitExcScreen'} //link next
+          linkPrevious={'Class7x5x9'} //link previous
           userPoints={currentPoints}
           latestScreen={latestScreenDone}
           currentScreen={currentScreen}
           comeBack={comeBack}
           allScreensNum={allScreensNum}
+          learningLastScreenNoQuestion={true}
+          totalPoints={totalPoints}
+          dataForMarkers={dataForMarkers}
           savedLang={savedLang}
           />
         </View>
@@ -113,7 +95,7 @@ const Class7x6x6 = ({route}) => { //name for component
   )
 }
 
-export default Class7x6x6 //name for export
+export default Class7x5x10 //name for export
 
 const styles = StyleSheet.create({
   mainContainer: {
@@ -186,15 +168,10 @@ const styles = StyleSheet.create({
     fontWeight: '400',
     textAlign: 'center'
   },
-  exampleTextTransSmall: {
-    fontSize: 14,
-    fontWeight: '400',
-    textAlign: 'center'
-  },
   exampleTextColor: {
     fontSize: 22,
     fontWeight: '600',
-    color: '#595959'
+    color: generalStyles.colorText
   },
   pictureContainer: {
     height: 40,

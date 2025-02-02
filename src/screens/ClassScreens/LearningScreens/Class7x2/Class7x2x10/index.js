@@ -26,10 +26,10 @@ const Class7x2x10 = ({route}) => { //name for component
     const [latestScreenDone, setLatestScreenDone] = useState(currentScreen);
     const [comeBack, setComeBack] = useState(false);
 
-    const soundA = 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/wordsList1%2Fvokaa.mp3?alt=media&token=8bfdf86d-0946-4d8c-81ec-2b7f8e85cd03';
+    const soundA = 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/wordsList1%2FVKortAAvaart.mp3?alt=media&token=bdc61741-3fa6-4448-928a-3eb40e87129b';
 
 
-    const soundB = 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/wordsList1%2FVKortAAhaand.mp3?alt=media&token=c7f81b15-d2d9-4118-aefb-65712fcfda81';
+    const soundB = 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/wordsList1%2FVKortAAsentenceVaart.mp3?alt=media&token=18477f36-3c69-4ebe-81c0-2b6f4b7c9e20';
 
 
     const soundC = 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/wordsList1%2FVLangAAbaat.mp3?alt=media&token=1cef81d6-be03-43b1-aedd-fc98e15539fc';
@@ -66,13 +66,14 @@ const Class7x2x10 = ({route}) => { //name for component
         <ScrollView showsVerticalScrollIndicator={false} style={styles.body}>
 
           <View style={styles.textContainer}>
-              <Text style={styles.text}>Last one is "<Text style={styles.textColor}>å</Text>" with words "" for short vowel and "en båt" for long one</Text>
+              <Text style={styles.text}>Last one is "<Text style={styles.textColor}>å</Text>" with words "vårt" for short vowel and "en båt" for long one</Text>
           </View>
 
           <TouchableOpacity onPress={() => {playSound(soundA)}}>
             <View style={styles.exampleContainer}>
                 <Image style={styles.pictureSoundInContainer} source={require('../../../../../../assets/volume.png')} />
-                <Text style={styles.exampleText}>å</Text>
+                <Text style={styles.exampleText}>v<Text style={styles.exampleTextColor}>å</Text>rt - <Text style={styles.exampleTextTrans}>/vɔʈ/</Text></Text>
+                <Text style={styles.exampleTextTrans}>ours</Text>
             </View>
           </TouchableOpacity>
 
@@ -82,8 +83,8 @@ const Class7x2x10 = ({route}) => { //name for component
           <TouchableOpacity onPress={() => {playSound(soundB)}}>
             <View style={styles.exampleContainer}>
                 <Image style={styles.pictureSoundInContainer} source={require('../../../../../../assets/volume.png')} />
-                <Text style={styles.exampleText}>en h<Text style={styles.exampleTextColor}>å</Text>nd - <Text style={styles.exampleTextTrans}>/hɔn/</Text></Text>
-                <Text style={styles.exampleTextTrans}>a hand</Text>
+                <Text style={styles.exampleText}>Huset vårt er blått.</Text>
+                <Text style={styles.exampleTextTrans}>Our house is blue.</Text>
             </View>
           </TouchableOpacity>
 

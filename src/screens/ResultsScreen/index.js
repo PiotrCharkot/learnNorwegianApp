@@ -220,7 +220,7 @@ const ResultsScreen = () => {
         }
 
 
-        if (tempDataArrayWeekly[i].useRef === userId && i + 1 > userNumCap) {
+        if (tempDataArrayWeekly[i].userRef === userId && i + 1 > userNumCap) {
 
           addUserObjectWeekly = true;
           userExtraObjectWeekly = tempDataArrayWeekly[i];

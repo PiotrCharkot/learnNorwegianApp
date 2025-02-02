@@ -137,6 +137,7 @@ const Tabs = () => {
                     } else {
                         querySnapshot2.forEach((doc) => {
                             
+                            
                             if (doc.data().version != latestVersionOfUserAchivments) {
                                 
                                 console.log('these are data from firebase in tabscreen (it is an old version that will be updated to latest version): ', doc.data());
@@ -144,6 +145,8 @@ const Tabs = () => {
                                 let objectToSet = {}
 
                                 setAchivmentsDocumentId(doc.id);
+                                
+
                                 
 
                                 objectToSet = doc.data().learning;
@@ -167,6 +170,7 @@ const Tabs = () => {
                 checkVersionsOfFirebaseStorage();
 
             }
+
             if (authUser && !authUser.isAnonymous) {
                 console.log('loging as registred user: ', authUser.uid);
                 
@@ -226,7 +230,7 @@ const Tabs = () => {
 
 
     useEffect(() => {
-
+        
         let randomGuestId = Math.floor(Math.random() * 1000000);
         let stringId = randomGuestId.toString()
         let nameToFb = 'Guest' + stringId;
@@ -263,7 +267,7 @@ const Tabs = () => {
         
             await setDoc(doc(db, 'usersAchivments', docId2), {
               userRef: userReference,
-              version: 1,
+              version: latestVersionOfUserAchivments,
               learning: {
                 section1: [0,0,0,0,0],
                 section2: [0,0,0,0,0,0,0],
@@ -271,6 +275,7 @@ const Tabs = () => {
                 section4: [0,0,0,0,0,0],
                 section5: [0,0,0,0,0,0,0],
                 section6: [0,0,0,0,0,0],
+                section7: [0,0,0,0,0,0],
               },
               exercise: {
                 section1: {

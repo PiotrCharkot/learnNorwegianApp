@@ -89,7 +89,7 @@ export default dataObj = [
     },
     link: 'Exc1x4x1',
     key: 4,
-    requiresPro: true
+    requiresPro: false
    },
     {
     title: {
@@ -112,7 +112,7 @@ export default dataObj = [
     },
     link: 'Exc1x5x1',
     key: 5,
-    requiresPro: true
+    requiresPro: false
    },
    {
     title: {
@@ -135,7 +135,7 @@ export default dataObj = [
     },
     link: 'Exc1x6x1',
     key: 6,
-    requiresPro: true
+    requiresPro: false
    },
 //    {
 //     title: {

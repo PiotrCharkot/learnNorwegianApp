@@ -18,10 +18,10 @@ const Class7x2x2 = ({route}) => { //name for component
     const [latestScreenDone, setLatestScreenDone] = useState(currentScreen);
     const [comeBack, setComeBack] = useState(false);
 
-    const soundA = 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/wordsList1%2Fvoka.mp3?alt=media&token=f9f18732-5f10-48ab-80cf-ba10730bc8f0';
+    const soundA = 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/wordsList1%2FVKortAmann.mp3?alt=media&token=6218d1d5-cb48-44cb-ac2a-2f23dddc867c';
 
 
-    const soundB = 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/wordsList1%2FVKortAkatt.mp3?alt=media&token=d7fb03ac-d6e2-4255-92b8-10f2d5ef240a';
+    const soundB = 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/wordsList1%2FVKortAsentenceMann.mp3?alt=media&token=46899afa-0945-40a8-a232-270286ff6b12';
 
 
     const soundC = 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/wordsList1%2FVLangAtak.mp3?alt=media&token=c8986e94-2e76-44ca-8539-b97bf04becab';
@@ -59,14 +59,14 @@ const Class7x2x2 = ({route}) => { //name for component
         <ScrollView showsVerticalScrollIndicator={false} style={styles.body}>
 
           <View style={styles.textContainer}>
-              <Text style={styles.text}>First we'll compare short vowel "<Text style={styles.textColor}>a</Text>" in word "katt" with long vowel in word "tak".</Text>
+              <Text style={styles.text}>First we'll compare short vowel "<Text style={styles.textColor}>a</Text>" in word "en mann" with long vowel in word "tak".</Text>
           </View>
 
           <TouchableOpacity onPress={() => {playSound(soundA)}}>
             <View style={styles.exampleContainer}>
                     <Image style={styles.pictureSoundInContainer} source={require('../../../../../../assets/volume.png')} />
-                    <Text style={styles.exampleText}>en k<Text style={styles.exampleTextColor}>a</Text>tt - <Text style={styles.exampleTextTrans}>/kɑt/</Text></Text>
-                    <Text style={styles.exampleTextTrans}>a cat</Text>
+                <Text style={styles.exampleText}>en m<Text style={styles.exampleTextColor}>a</Text>nn - <Text style={styles.exampleTextTrans}>/mɑn/</Text></Text>
+                <Text style={styles.exampleTextTrans}>a man</Text>
                 </View>
           </TouchableOpacity>
 
@@ -76,8 +76,8 @@ const Class7x2x2 = ({route}) => { //name for component
           <TouchableOpacity onPress={() => {playSound(soundB)}}>
             <View style={styles.exampleContainer}>
                 <Image style={styles.pictureSoundInContainer} source={require('../../../../../../assets/volume.png')} />
-                <Text style={styles.exampleText}>en k<Text style={styles.exampleTextColor}>a</Text>tt - <Text style={styles.exampleTextTrans}>/kɑt/</Text></Text>
-                <Text style={styles.exampleTextTrans}>a cat</Text>
+                <Text style={styles.exampleText}>Mannen står der borte.</Text>
+                <Text style={styles.exampleTextTrans}>The man is standing over there.</Text>
             </View>
           </TouchableOpacity>
 

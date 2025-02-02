@@ -383,7 +383,7 @@ const Exc1x3x1 = ({ route }) => {
                           ]}
                         >
                             
-                            <Text style={styles.textInDraggable}>{item}</Text>
+                            <Text style={styles.textInDraggable} allowFontScaling={false}>{item}</Text>
                         </LinearGradient>
                         );
                     }}

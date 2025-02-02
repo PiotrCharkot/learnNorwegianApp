@@ -94,7 +94,7 @@ const Class7x1x3 = ({route}) => { //name for component
 
 
           <View style={styles.textContainer}>
-          <Text style={styles.text}><Text style={styles.boldText}>Tip:</Text> For the short "<Text style={styles.textColor}>e</Text>", keep it crisp and close to an "eh" sound.</Text>
+          <Text style={styles.text}><Text style={styles.boldText}>Tip:</Text> For "<Text style={styles.textColor}>e</Text>", keep your tongue mid-to-high and slightly forward, close to the roof of your mouth without touching it. Your mouth should be only slightly open, and your lips remain neutral.</Text>
           </View>
           
         </ScrollView>

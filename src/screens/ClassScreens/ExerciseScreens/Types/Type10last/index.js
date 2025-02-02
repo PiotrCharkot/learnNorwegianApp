@@ -299,7 +299,7 @@ const Type10last = ({route}) => {
                             ]}
                             >
                                     
-                                    <Text style={styles.textInDraggable}>{item}</Text>
+                                    <Text style={styles.textInDraggable} allowFontScaling={false}>{item}</Text>
                                 </LinearGradient>
                                 );
                             }}
@@ -332,7 +332,7 @@ const Type10last = ({route}) => {
                                 ]}
                                 >
                                     
-                                    <Text style={styles.textInDraggable}>{item}</Text>
+                                    <Text style={styles.textInDraggable} allowFontScaling={false}>{item}</Text>
                                 </LinearGradient>
                                 );
                               }}

@@ -18,16 +18,16 @@ const Class7x4x5 = ({route}) => { //name for component
     const [latestScreenDone, setLatestScreenDone] = useState(currentScreen);
     const [comeBack, setComeBack] = useState(false);
 
-    const soundA = 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/wordsList1%2Fvoka.mp3?alt=media&token=f9f18732-5f10-48ab-80cf-ba10730bc8f0';
+    const soundA = 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/wordsList1%2FSTILbillig.mp3?alt=media&token=27b90566-4edb-4e7c-a4f3-59478d532b90';
 
 
-    const soundB = 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/wordsList1%2FVKortAkatt.mp3?alt=media&token=d7fb03ac-d6e2-4255-92b8-10f2d5ef240a';
+    const soundB = 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/wordsList1%2FSTILfoolge.mp3?alt=media&token=cbce8125-6de2-44b6-85e2-6101ee60c25e';
 
 
-    const soundC = 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/wordsList1%2FVKortAsentence.mp3?alt=media&token=ce2236fa-bcc7-4027-ae60-2cf675457f6a';
+    const soundC = 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/wordsList1%2FSTILrettferdig.mp3?alt=media&token=1903262e-ae0b-40e0-9914-9781e4c054b7';
     
     
-    const soundD = 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/wordsList1%2FVKortAsentence.mp3?alt=media&token=ce2236fa-bcc7-4027-ae60-2cf675457f6a';
+    const soundD = 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/wordsList1%2FSTILselge.mp3?alt=media&token=751a7097-81f6-4f1c-8e71-2b58923fc5c2';
 
 
 
@@ -59,7 +59,7 @@ const Class7x4x5 = ({route}) => { //name for component
         <ScrollView showsVerticalScrollIndicator={false} style={styles.body}>
 
           <View style={styles.textContainer}>
-              <Text style={styles.text}>Letter "<Text style={styles.textColor}>g</Text>" is silent at the end of "og" and at the end of adjectives that end with -ig and some words that end with -ge.</Text>
+              <Text style={styles.text}>The letter "<Text style={styles.textColor}>g</Text>" is silent at the end of "og" and as well as at the end of adjectives ending in -ig and some words ending in -ge.</Text>
           </View>
 
           

@@ -6,10 +6,10 @@ import ProgressBar from '../../../../../components/bars/progressBar'
 import BottomBar from '../../../../../components/bars/bottomBar'
 import generalStyles from '../../../../../styles/generalStyles';
 
-const currentScreen = 6; //current screen
+const currentScreen = 9; //current screen
 
 
-const Class7x6x6 = ({route}) => { //name for component
+const Class7x5x9 = ({route}) => { //name for component
 
     const {userPoints, latestScreen, comeBackRoute, allScreensNum, savedLang} = route.params
     
@@ -18,12 +18,14 @@ const Class7x6x6 = ({route}) => { //name for component
     const [latestScreenDone, setLatestScreenDone] = useState(currentScreen);
     const [comeBack, setComeBack] = useState(false);
 
-    const soundA = 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/wordsList1%2FTT3slow.mp3?alt=media&token=e55589c5-e960-4840-a67d-14f4e419126a';
+    const soundA = 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/wordsList1%2FMPtankenTanken.mp3?alt=media&token=d142cb28-45e9-46ed-850b-09f3b019a068';
 
 
-    const soundB = 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/wordsList1%2FTT3fast.mp3?alt=media&token=7abac15f-a47b-48f5-99fa-174d50d839b0';
-
-
+    const soundB = 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/wordsList1%2FMPbadetBade.mp3?alt=media&token=23b0413b-29d3-4816-b748-163fcc938879';
+    
+    
+    const soundC = 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/wordsList1%2FMPboonderBoonner.mp3?alt=media&token=0c57a56d-9aef-4eb0-bb33-b189269270c4';
+    
 
 
     const playSound = async (soundLink) => {
@@ -54,7 +56,7 @@ const Class7x6x6 = ({route}) => { //name for component
         <ScrollView showsVerticalScrollIndicator={false} style={styles.body}>
 
           <View style={styles.textContainer}>
-              <Text style={styles.text}>The following one is all about <Text style={styles.textColor}>r</Text> and <Text style={styles.textColor}>f</Text> sounds.</Text>
+              <Text style={styles.text}>Norwegian words can have different pitch patterns, often called <Text style={styles.textColor}>Accent 1</Text> and <Text style={styles.textColor}>Accent 2</Text>. {'\n\n'}This is important because intonation can actually change the meaning of a word, even if they are pronounced the same otherwise!</Text>
           </View>
 
           
@@ -63,31 +65,35 @@ const Class7x6x6 = ({route}) => { //name for component
           <TouchableOpacity onPress={() => {playSound(soundA)}}>
             <View style={styles.exampleContainer}>
                 <Image style={styles.pictureSoundInContainer} source={require('../../../../../../assets/volume.png')} />
-                <Text style={styles.exampleTextTransSmall}>slow</Text>
-                <Text style={styles.exampleText}>Hvor fort får fem fisker fart i fjorden?</Text>
+                <Text style={styles.exampleText}><Text style={styles.exampleText}>tanken - tanken</Text></Text>
+                <Text style={styles.exampleTextTrans}>-----¯¯    ¯¯¯¯¯--</Text>
+                <Text style={styles.exampleTextTrans}>the tank - the thought</Text>
             </View>
           </TouchableOpacity>
 
-
+          
           <TouchableOpacity onPress={() => {playSound(soundB)}}>
             <View style={styles.exampleContainer}>
                 <Image style={styles.pictureSoundInContainer} source={require('../../../../../../assets/volume.png')} />
-                <Text style={styles.exampleTextTransSmall}>fast</Text>
-                <Text style={styles.exampleText}>Hvor fort får fem fisker fart i fjorden?</Text>
+                <Text style={styles.exampleText}><Text style={styles.exampleText}>badet - bade</Text></Text>
+                <Text style={styles.exampleTextTrans}>----¯¯    ¯¯¯--</Text>
+                <Text style={styles.exampleTextTrans}>the bathroom - to bathe</Text>
             </View>
           </TouchableOpacity>
 
 
-          <View>
+          
+          <TouchableOpacity onPress={() => {playSound(soundC)}}>
             <View style={styles.exampleContainer}>
-                <Text style={styles.exampleTextTrans}>How quickly do five fish move in the fjord?</Text>
+                <Image style={styles.pictureSoundInContainer} source={require('../../../../../../assets/volume.png')} />
+                <Text style={styles.exampleText}><Text style={styles.exampleText}>bønder - bønner</Text></Text>
+                <Text style={styles.exampleTextTrans}>-----¯¯    ¯¯¯¯¯--</Text>
+                <Text style={styles.exampleTextTrans}>farmers - beans</Text>
             </View>
-          </View>
-
-          
+          </TouchableOpacity>
 
 
-          
+
         </ScrollView>
     
         <View style={styles.progressBarContainer}>
@@ -99,8 +105,8 @@ const Class7x6x6 = ({route}) => { //name for component
           <BottomBar  
           buttonWidth={generalStyles.buttonNextPrevSize}
           buttonHeight={generalStyles.buttonNextPrevSize}
-          linkNext={'Class7x6x7'} //link next
-          linkPrevious={'Class7x6x5'} //link previous
+          linkNext={'Class7x5x10'} //link next
+          linkPrevious={'Class7x5x8'} //link previous
           userPoints={currentPoints}
           latestScreen={latestScreenDone}
           currentScreen={currentScreen}
@@ -113,7 +119,7 @@ const Class7x6x6 = ({route}) => { //name for component
   )
 }
 
-export default Class7x6x6 //name for export
+export default Class7x5x9 //name for export
 
 const styles = StyleSheet.create({
   mainContainer: {
@@ -144,6 +150,11 @@ const styles = StyleSheet.create({
   text: {
     fontSize: generalStyles.screenTextSize,
     fontWeight: generalStyles.learningScreenTitleFontWeightMedium,
+  },
+  textUnderline: {
+    fontSize: generalStyles.screenTextSize,
+    fontWeight: generalStyles.learningScreenTitleFontWeightMedium,
+    textDecorationLine: 'underline'
   },
   textColor: {
     fontSize: generalStyles.screenTextSize,
@@ -177,17 +188,18 @@ const styles = StyleSheet.create({
     borderRadius: generalStyles.borderRadiusEgzCont
   },
   exampleText: {
-    fontSize: 22,
+    fontSize: 20,
     fontWeight: '600',
     textAlign: 'center'
   },
+  exampleTextUnderline: {
+    fontSize: 22,
+    fontWeight: '600',
+    textAlign: 'center',
+    textDecorationLine: 'underline'
+  },
   exampleTextTrans: {
     fontSize: 20,
-    fontWeight: '400',
-    textAlign: 'center'
-  },
-  exampleTextTransSmall: {
-    fontSize: 14,
     fontWeight: '400',
     textAlign: 'center'
   },

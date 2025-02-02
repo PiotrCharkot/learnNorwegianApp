@@ -18,10 +18,10 @@ const Class7x2x8 = ({route}) => { //name for component
     const [latestScreenDone, setLatestScreenDone] = useState(currentScreen);
     const [comeBack, setComeBack] = useState(false);
 
-    const soundA = 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/wordsList1%2Fvokee.mp3?alt=media&token=05ee3ad6-85bc-477a-aede-ae0161dbebdd';
+    const soundA = 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/wordsList1%2FVKorteEEheer.mp3?alt=media&token=677dbb79-c161-4e42-8f1d-0bb56440c534';
 
 
-    const soundB = 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/wordsList1%2FVKortEEfjeer.mp3?alt=media&token=4ca56704-bc92-4e3f-bc53-c652ab7bb3d1';
+    const soundB = 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/wordsList1%2FVKortEEsentenceHeer.mp3?alt=media&token=e9032a69-061b-4007-945c-3aa0d876196c';
 
 
     const soundC = 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/wordsList1%2FVLangEE2treer.mp3?alt=media&token=1fb91b0e-b1e5-48d5-947d-91a26fa8fe1b';
@@ -58,13 +58,14 @@ const Class7x2x8 = ({route}) => { //name for component
         <ScrollView showsVerticalScrollIndicator={false} style={styles.body}>
 
           <View style={styles.textContainer}>
-              <Text style={styles.text}>On to "<Text style={styles.textColor}>æ</Text>" with words "" and "trær"</Text>
+              <Text style={styles.text}>On to "<Text style={styles.textColor}>æ</Text>" with words "en hær" and "trær"</Text>
           </View>
 
           <TouchableOpacity onPress={() => {playSound(soundA)}}>
             <View style={styles.exampleContainer}>
                 <Image style={styles.pictureSoundInContainer} source={require('../../../../../../assets/volume.png')} />
-                <Text style={styles.exampleText}>æ</Text>
+                <Text style={styles.exampleText}>en h<Text style={styles.exampleTextColor}>æ</Text>r - <Text style={styles.exampleTextTrans}>/hær/</Text></Text>
+                <Text style={styles.exampleTextTrans}>an army</Text>
             </View>
           </TouchableOpacity>
 
@@ -74,8 +75,8 @@ const Class7x2x8 = ({route}) => { //name for component
           <TouchableOpacity onPress={() => {playSound(soundB)}}>
             <View style={styles.exampleContainer}>
                 <Image style={styles.pictureSoundInContainer} source={require('../../../../../../assets/volume.png')} />
-                <Text style={styles.exampleText}>en fj<Text style={styles.exampleTextColor}>æ</Text>r - <Text style={styles.exampleTextTrans}>/fjæːr/</Text></Text>
-                <Text style={styles.exampleTextTrans}>a feather</Text>
+                <Text style={styles.exampleText}>Hæren har fått nye uniformer.</Text>
+                <Text style={styles.exampleTextTrans}>The army has new uniforms.</Text>
             </View>
           </TouchableOpacity>
 

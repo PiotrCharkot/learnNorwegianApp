@@ -25,21 +25,21 @@ export default dataObj = [
         textId: 3,
         title: 'Dyrene i Norge',
         level: 'Norge på Tvers',
-        requiresPro: true
+        requiresPro: false
    },
     {
         key: 4,
         textId: 4,
         title: 'Tur ved Akerselva',
         level: 'Echoer fra Oslo',
-        requiresPro: true
+        requiresPro: false
    },
    {
        key: 5,
        textId: 5,
        title: '17. mai i Norge',
        level: 'Kultur i Norge',
-       requiresPro: true
+       requiresPro: false
   },
    
 ];

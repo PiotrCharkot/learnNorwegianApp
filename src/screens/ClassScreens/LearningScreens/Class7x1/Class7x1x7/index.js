@@ -94,7 +94,7 @@ const Class7x1x7 = ({route}) => { //name for component
 
 
           <View style={styles.textContainer}>
-          <Text style={styles.text}><Text style={styles.boldText}>Tip:</Text> Say "ee" with rounded lips.</Text>
+          <Text style={styles.text}><Text style={styles.boldText}>Tip:</Text> "<Text style={styles.textColor}>y</Text>" is much like "<Text style={styles.textColor}>i</Text>", but here your lips are tightly rounded and puckered. Your tongue stays high and forward, and your mouth remains barely open.</Text>
           </View>
           
         </ScrollView>

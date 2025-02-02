@@ -18,13 +18,13 @@ const Class7x5x5 = ({route}) => { //name for component
     const [latestScreenDone, setLatestScreenDone] = useState(currentScreen);
     const [comeBack, setComeBack] = useState(false);
 
-    const soundA = 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/wordsList1%2Fvoka.mp3?alt=media&token=f9f18732-5f10-48ab-80cf-ba10730bc8f0';
+    const soundA = 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/wordsList1%2FINTOjegHarEnBror.mp3?alt=media&token=784efad3-efaa-4922-bb5f-dff28c3ea06b';
 
 
-    const soundB = 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/wordsList1%2FVKortAkatt.mp3?alt=media&token=d7fb03ac-d6e2-4255-92b8-10f2d5ef240a';
+    const soundB = 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/wordsList1%2FINTOjegErSykemeldt.mp3?alt=media&token=962d6c35-991f-4ee5-bce5-4ae4850e236f';
 
 
-    const soundC = 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/wordsList1%2FVKortAsentence.mp3?alt=media&token=ce2236fa-bcc7-4027-ae60-2cf675457f6a';
+    const soundC = 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/wordsList1%2FINTOjegTrengerEnPause.mp3?alt=media&token=36f04d7c-e595-4ea8-bddc-7d54bc4f21d5';
     
     
 
@@ -57,7 +57,7 @@ const Class7x5x5 = ({route}) => { //name for component
         <ScrollView showsVerticalScrollIndicator={false} style={styles.body}>
 
           <View style={styles.textContainer}>
-              <Text style={styles.text}>Norwegian <Text style={styles.textColor}>intonation</Text> refers to the pitch patterns used in sentences. {'\n\n'}The pitch in statements usually is flat and falls at the end of a statement.</Text>
+              <Text style={styles.text}>Norwegian <Text style={styles.textColor}>intonation</Text> refers to the pitch patterns used in sentences. {'\n\n'}In statements, the pitch is usually flat and falls at the end.</Text>
           </View>
 
           

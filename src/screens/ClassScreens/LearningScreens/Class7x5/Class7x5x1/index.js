@@ -50,7 +50,7 @@ const Class7x5x1 = ({route}) => {   //name
             Hei{user.isAnonymous ? <Text style={styles.textName}></Text> : <Text style={styles.textName}> {user.displayName}</Text>}!
             </Text>
             <Text style={styles.text}>
-            Stress and intonation have a big impact on how you understand and speak Norwegian. {'\n\n'}They can change the meaning of words, affect how sentences flow, and influence the way you communicate overall. {'\n\n'}Here’s a simple guide to help you get the hang of these important elements.
+            Stress and intonation have a big impact on how you understand and speak Norwegian. {'\n\n'}They can change the meaning of words, shape the flow of sentences, and influence how you communicate overall. {'\n\n'}Here’s a simple guide to help you get the hang of these important elements.
             </Text>
 
             

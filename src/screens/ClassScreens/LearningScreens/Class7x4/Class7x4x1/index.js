@@ -7,7 +7,7 @@ import BottomBar from '../../../../../components/bars/bottomBar'
 import generalStyles from '../../../../../styles/generalStyles';
 
 const currentScreen = 1;   //current screen
-const allScreensNum = 10;   //screens number
+const allScreensNum = 8;   //screens number
 
 const Class7x4x1 = ({route}) => {   //name 
 

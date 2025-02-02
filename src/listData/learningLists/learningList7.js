@@ -13,7 +13,7 @@ export default dataObj = [
     level: 'A1',
     link: 'Class7x2x1',
     key: 2,
-    requiresPro: true
+    requiresPro: false
    },
     {
     title: 'Consonants and clusters',
@@ -21,7 +21,7 @@ export default dataObj = [
     level: 'A1',
     link: 'Class7x3x1',
     key: 3,
-    requiresPro: true
+    requiresPro: false
    },
     {
     title: 'Silent Letters',
@@ -41,7 +41,7 @@ export default dataObj = [
   },
   {
   title: 'Pronunciation Mastery',
-  description: 'Tongue twisters and minimal pairs',
+  description: 'Uttalemestring',
   level: 'A1',
   link: 'Class7x6x1',
   key: 6,

@@ -18,21 +18,21 @@ export default dataObj = [
        textId: 22,
        title: 'Vikingene i Norge',
        level: 'Historisk Norge',
-       requiresPro: true
+       requiresPro: false
     },
     {
       key: 3,
       textId: 23,
       title: 'Livslang læring og voksenopplæring i Norge',
       level: 'Norge på Tvers',
-      requiresPro: true
+      requiresPro: false
   },
   {
       key: 4,
       textId: 24,
       title: 'Mikkel på jobben',
       level: 'Echoer fra Oslo',
-      requiresPro: true
+      requiresPro: false
   },
   {
       key: 5,

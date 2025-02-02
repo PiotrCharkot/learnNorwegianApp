@@ -94,7 +94,7 @@ const Class7x1x6 = ({route}) => { //name for component
 
 
           <View style={styles.textContainer}>
-          <Text style={styles.text}><Text style={styles.boldText}>Tip:</Text> Tighten your lips into a small circle.</Text>
+          <Text style={styles.text}><Text style={styles.boldText}>Tip:</Text> "<Text style={styles.textColor}>u</Text>" is pronounced with your tongue high and slightly forward, closer to the front than for "<Text style={styles.textColor}>o</Text>". Your lips should be rounded tightly and pushed forward, creating a small opening.</Text>
           </View>
           
         </ScrollView>

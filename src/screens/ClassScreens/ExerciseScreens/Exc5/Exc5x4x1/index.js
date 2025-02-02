@@ -371,7 +371,7 @@ const Exc5x4x1 = ({ route }) => {
                           ]}
                         >
                             
-                            <Text style={styles.textInDraggable}>{item}</Text>
+                            <Text style={styles.textInDraggable} allowFontScaling={false}>{item}</Text>
                         </LinearGradient>
                         );
                     }}

@@ -18,16 +18,16 @@ const Class7x2x5 = ({route}) => { //name for component
     const [latestScreenDone, setLatestScreenDone] = useState(currentScreen);
     const [comeBack, setComeBack] = useState(false);
 
-    const soundA = 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/wordsList1%2Fvoko.mp3?alt=media&token=02d15956-078e-4032-aa35-5c82c6cceb05';
+    const soundA = 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/wordsList1%2FVKortOskog.mp3?alt=media&token=266c7834-889e-4754-8b5e-fb43695344d4';
 
 
-    const soundB = 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/wordsList1%2FVLangObok.mp3?alt=media&token=12c6118c-1c73-4c13-8981-1c62aa6f8a7f';
+    const soundB = 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/wordsList1%2FVKortOsentenceSkog.mp3?alt=media&token=9cf95749-cb11-410a-9ef8-eea079ff4452';
 
 
     const soundC = 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/wordsList1%2FVLangObok.mp3?alt=media&token=12c6118c-1c73-4c13-8981-1c62aa6f8a7f';
 
 
-    const soundD = 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/wordsList1%2FVLangOsentence.mp3?alt=media&token=f9f3a17c-3714-4a5f-a969-fbf9c5e27dfa';
+    const soundD = 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/wordsList1%2FINTOjegLeserEnBok.mp3?alt=media&token=dc1f7158-a25f-49a7-aa0f-e2507770d87f';
 
 
     const playSound = async (soundLink) => {
@@ -58,13 +58,14 @@ const Class7x2x5 = ({route}) => { //name for component
         <ScrollView showsVerticalScrollIndicator={false} style={styles.body}>
 
           <View style={styles.textContainer}>
-              <Text style={styles.text}>Let's proceed to "<Text style={styles.textColor}>o</Text>" short in "" and long in "en bok".</Text>
+              <Text style={styles.text}>Let's proceed to "<Text style={styles.textColor}>o</Text>" short in "en skog" and long in "en bok".</Text>
           </View>
 
           <TouchableOpacity onPress={() => {playSound(soundA)}}>
             <View style={styles.exampleContainer}>
                 <Image style={styles.pictureSoundInContainer} source={require('../../../../../../assets/volume.png')} />
-                <Text style={styles.exampleText}>o</Text>
+                <Text style={styles.exampleText}>en sk<Text style={styles.exampleTextColor}>o</Text>g - <Text style={styles.exampleTextTrans}>/skɔg/</Text></Text>
+                <Text style={styles.exampleTextTrans}>a forest</Text>
             </View>
           </TouchableOpacity>
 
@@ -74,8 +75,8 @@ const Class7x2x5 = ({route}) => { //name for component
           <TouchableOpacity onPress={() => {playSound(soundB)}}>
             <View style={styles.exampleContainer}>
                 <Image style={styles.pictureSoundInContainer} source={require('../../../../../../assets/volume.png')} />
-                <Text style={styles.exampleText}>en b<Text style={styles.exampleTextColor}>o</Text>k - <Text style={styles.exampleTextTrans}>/buːk/</Text></Text>
-                <Text style={styles.exampleTextTrans}>a book</Text>
+                <Text style={styles.exampleText}>Vi gikk en tur i skogen.</Text>
+                <Text style={styles.exampleTextTrans}>We went for a walk in the forest.</Text>
             </View>
           </TouchableOpacity>
 

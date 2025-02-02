@@ -18,16 +18,16 @@ const Class7x4x6 = ({route}) => { //name for component
     const [latestScreenDone, setLatestScreenDone] = useState(currentScreen);
     const [comeBack, setComeBack] = useState(false);
 
-    const soundA = 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/wordsList1%2Fvoka.mp3?alt=media&token=f9f18732-5f10-48ab-80cf-ba10730bc8f0';
+    const soundA = 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/wordsList1%2FSTILhalv.mp3?alt=media&token=8daac10e-936d-469e-8baf-b2dfd85240e1';
 
 
-    const soundB = 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/wordsList1%2FVKortAkatt.mp3?alt=media&token=d7fb03ac-d6e2-4255-92b8-10f2d5ef240a';
+    const soundB = 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/wordsList1%2FSTILselv.mp3?alt=media&token=482f516c-dee1-4259-8b40-e3870819216e';
 
 
-    const soundC = 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/wordsList1%2FVKortAsentence.mp3?alt=media&token=ce2236fa-bcc7-4027-ae60-2cf675457f6a';
+    const soundC = 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/wordsList1%2FSTILsoolv.mp3?alt=media&token=a63fc1d6-c5cb-4f09-82eb-cc2ea04886c7';
     
     
-    const soundD = 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/wordsList1%2FVKortAsentence.mp3?alt=media&token=ce2236fa-bcc7-4027-ae60-2cf675457f6a';
+    const soundD = 'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/wordsList1%2FSTILtolv2.mp3?alt=media&token=5a474bd4-4ba4-4e06-8f6a-04aee56e21fc';
 
 
 
@@ -59,7 +59,7 @@ const Class7x4x6 = ({route}) => { //name for component
         <ScrollView showsVerticalScrollIndicator={false} style={styles.body}>
 
           <View style={styles.textContainer}>
-              <Text style={styles.text}>Lastly, we will look at the letter "<Text style={styles.textColor}>v</Text>". It is silent at the end of certain words. Let's look at some examples.</Text>
+              <Text style={styles.text}>Lastly, let's look at the letter "<Text style={styles.textColor}>v</Text>". It is silent at the end of some words. Let's look at some examples.</Text>
           </View>
 
           
