@@ -15,15 +15,6 @@ import BottomBar from '../../components/bars/bottomBar';
 import AnswerButtonRev from '../../components/buttons/AnswerButtonRevers';
 import generalStyles from '../../styles/generalStyles';
 import Loader from '../../components/other/Loader';
-// import type1data from '../../../../../listData/exerciseData/A1/Type1Data/Prepositions'
-// import type2data from '../../../../../listData/exerciseData/A1/Type2Data/Prepositions'
-// import type3data from '../../../../../listData/exerciseData/A1/Type3Data/Prepositions'
-// import type4data from '../../../../../listData/exerciseData/A1/Type4Data/Prepositions'
-// import type5data from '../../../../../listData/exerciseData/A1/Type5Data/Prepositions'
-// import type6data from '../../../../../listData/exerciseData/A1/Type6Data/Prepositions'
-// import type7data from '../../../../../listData/exerciseData/A1/Type7Data/Prepositions'
-// import type8data from '../../../../../listData/exerciseData/A1/Type8Data/Prepositions'
-
 
 const dataForMarkers = {
   part: 'exercise',
@@ -32,13 +23,13 @@ const dataForMarkers = {
 }
 
 
-let option1 = [type7data, type7data, type2data, type5data, type6data, type8data];
-let option2 = [type7data, type7data, type4data, type5data];
-let option3 = [type7data, type7data, type3data];
+let option1 = [type7data, type4data, type3data, type5data, type6data, type8data];
+let option2 = [type7data, type4data, type3data, type5data];
+let option3 = [type7data, type4data, type3data];
 
-const links1 = ['TestingOpeningScreen', 'Type7', 'Type2', 'Type5', 'Type6', 'Type8'];
-const links2 = ['TestingOpeningScreen', 'Type7', 'Type4', 'Type5'];
-const links3 = ['TestingOpeningScreen', 'Type7', 'Type3'];
+const links1 = ['TestingOpeningScreen', 'Type4', 'Type3', 'Type5', 'Type6', 'Type8'];
+const links2 = ['TestingOpeningScreen', 'Type4', 'Type3', 'Type5'];
+const links3 = ['TestingOpeningScreen', 'Type4', 'Type3'];
 
 
 
@@ -148,9 +139,9 @@ const TestingOpeningScreen = ({route}) => {
     let type7dataNew = type7data;
     let type8dataNew = type8data;
 
-    option1 = [type7dataNew, type7data, type2data, type5data, type6data, type8data];
-    option2 = [type7dataNew, type7data, type4data, type5data];
-    option3 = [type7dataNew, type7data, type3data];
+    option1 = [type7dataNew, type4data, type3data, type5data, type6data, type8data];
+    option2 = [type7dataNew, type4data, type3data, type5data];
+    option3 = [type7dataNew, type4data, type3data];
 
 
     let tempArr = []; 

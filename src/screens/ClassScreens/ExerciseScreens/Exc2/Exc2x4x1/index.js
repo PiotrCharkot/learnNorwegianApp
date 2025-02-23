@@ -332,7 +332,7 @@ const Exc2x4x1 = ({ route }) => {
                 if (exeList[0].textIndex.includes(index) && !exeList[0].lineBreaker.includes(index)) {
                     return (
                         <View style={styles.exgzampleTextContainer} key={index}>
-                            <Text style={styles.exgzampleText}>{item}</Text>
+                            <Text style={styles.exgzampleText} allowFontScaling={false}>{item}</Text>
                         </View>
                     )
                 } else if (exeList[0].lineBreaker.includes(index)) {

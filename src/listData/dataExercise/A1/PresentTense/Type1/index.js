@@ -1,6 +1,84 @@
 export default dataObj = [
     {
         typeOfScreen: '1',
+        nuberOfQuestions: 3,
+        questions: [
+            ['', 'Jeg gar', 'Jeg går', ' til skolen hver dag.'],
+            ['', 'De spiler', 'De spiller', ' fotball etter skolen.'],
+            ['', 'Hun skriver', 'Hun skyver', ' et brev nå.']
+        ],
+        correctAnswers: [2, 2, 1]
+    },
+    {
+        typeOfScreen: '1',
+        nuberOfQuestions: 3,
+        questions: [
+            ['Jeg ', 'drikker', 'spiser', ' frokost hver dag.'],
+            ['De ', 'sykler', 'sykkler', ' hver lørdag.'],
+            ['Han ', 'skriver', 'skrev', ' et brev i går.']
+        ],
+        correctAnswers: [2, 1, 2],
+                    instructions: {
+                        eng: "Select the correct verb form based on the sentence's context and tense.",
+                        pl: 'Wybierz odpowiednią formę czasownika na podstawie kontekstu i czasu zdania.',
+                        ar: 'اختر الصيغة الصحيحة للفعل بناءً على سياق وزمن الجملة',
+                        ger: 'Wählen Sie die richtige Verbform basierend auf dem Kontext und der Zeitform des Satzes.',
+                        lt: 'Pasirinkite tinkamą veiksmažodžio formą pagal sakinio kontekstą ir laiką.',
+                        ua: 'Виберіть правильну форму дієслова, враховуючи контекст і час речення.',
+                        sp: 'Selecciona la forma correcta del verbo según el contexto y el tiempo de la oración.',
+                    }
+    },
+    {
+        typeOfScreen: '1',
+        nuberOfQuestions: 3,
+        questions: [
+            ['Vi ', 'spiller', 'spilte', ' tennis nå.'],
+            ['Jeg ', 'kjører', 'kjørte', ' til jobben hver dag.'],
+            ['De ', 'leser', 'leste', ' avisen i går.']
+        ],
+        correctAnswers: [1, 1, 2],
+                    instructions: {
+                        eng: "Select the correct verb form based on the sentence's context and tense.",
+                        pl: 'Wybierz odpowiednią formę czasownika na podstawie kontekstu i czasu zdania.',
+                        ar: 'اختر الصيغة الصحيحة للفعل بناءً على سياق وزمن الجملة',
+                        ger: 'Wählen Sie die richtige Verbform basierend auf dem Kontext und der Zeitform des Satzes.',
+                        lt: 'Pasirinkite tinkamą veiksmažodžio formą pagal sakinio kontekstą ir laiką.',
+                        ua: 'Виберіть правильну форму дієслова, враховуючи контекст і час речення.',
+                        sp: 'Selecciona la forma correcta del verbo según el contexto y el tiempo de la oración.',
+                    }
+    },
+    {
+        typeOfScreen: '1',
+        nuberOfQuestions: 3,
+        questions: [
+            ['Jeg ', 'leser', 'lesser', ' en bok nå.'],
+            ['Vi ', 'spisser', 'spiser', ' middag sammen hver kveld.'],
+            ['Hun ', 'loper', 'løper', ' til skolen hver morgen.'],
+        ],
+        correctAnswers: [1, 2, 2],
+    },
+    {
+        typeOfScreen: '1',
+        nuberOfQuestions: 3,
+        questions: [
+            ['Han ', 'drikke', 'drikker', ' kaffe hver morgen.'],
+            ['Vi ', 'snaker', 'snakker', ' norsk i timen.'],
+            ['De ', 'går', 'gar', ' til butikken nå.'],
+        ],
+        correctAnswers: [2, 2, 1],
+    },
+    {
+        typeOfScreen: '1',
+        nuberOfQuestions: 3,
+        questions: [
+            ['De ', 'komer', 'kommer', ' alltid presis til møtet.'],
+            ['Han ', 'kjører', 'kjorer', ' bil til jobben hver dag.'],
+            ['Vi ', 'ser', 'sett', ' på TV om kvelden.'],
+        ],
+        correctAnswers: [2, 1, 1],
+    },
+    {
+        typeOfScreen: '1',
         nuberOfQuestions: 5,
         questions: [
             ['Hun ', 'lagde', 'lager', ' middag nå.'], 

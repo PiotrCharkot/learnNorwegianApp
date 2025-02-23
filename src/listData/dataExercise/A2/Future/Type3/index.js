@@ -1,5 +1,58 @@
 export default dataObj = [
-
+    {
+        typeOfScreen: "3",
+        correctAnswers: [
+            "Jeg", "skal", "reise", "til", "Spania", "neste", "uke.", "lineBreaker",
+            "De", "kommer", "til", "å", "gå", "på", "skolen", "i", "morgen.", "lineBreaker",
+            "Jeg", "skal", "snakke", "med", "læreren", "senere", "i", "dag."
+        ],
+        wordsWithGaps: [
+            "Jeg", "skal", "            ", "til", "Spania", "neste", "uke.", "lineBreaker",
+            "De", "            ", "til", "å", "gå", "på", "skolen", "i", "morgen.", "lineBreaker",
+            "Jeg", "            ", "snakke", "med", "læreren", "senere", "i", "dag.",
+            "!!!",
+            "kommer", "reise", "skal"
+        ],
+        gapsIndex: [],
+        textIndex: [],
+        lineBreaker: []
+    },
+    {
+        typeOfScreen: "3",
+        correctAnswers: [
+            "Jeg", "vil", "reise", "til", "Paris", "en", "dag.", "lineBreaker",
+            "De", "skal", "gå", "på", "møte", "klokken", "åtte.", "lineBreaker",
+            "Hun", "kommer", "til", "å", "snakke", "med", "sjefen", "i", "morgen."
+        ],
+        wordsWithGaps: [
+            "Jeg", "            ", "reise", "til", "Paris", "en", "dag.", "lineBreaker",
+            "De", "            ", "gå", "på", "møte", "klokken", "åtte.", "lineBreaker",
+            "Hun", "            ", "til", "å", "snakke", "med", "sjefen", "i", "morgen.",
+            "!!!",
+            "skal", "kommer", "vil"
+        ],
+        gapsIndex: [],
+        textIndex: [],
+        lineBreaker: []
+    },
+    {
+        typeOfScreen: "3",
+        correctAnswers: [
+            "Jeg", "skal", "møte", "vennene", "mine", "klokken", "seks.", "lineBreaker",
+            "Det", "kommer", "til", "å", "regne", "i", "morgen.", "lineBreaker",
+            "Hun", "vil", "bli", "lege", "når", "hun", "blir", "voksen."
+        ],
+        wordsWithGaps: [
+            "Jeg", "            ", "møte", "vennene", "mine", "klokken", "seks.", "lineBreaker",
+            "Det", "            ", "til", "å", "regne", "i", "morgen.", "lineBreaker",
+            "Hun", "            ", "bli", "lege", "når", "hun", "blir", "voksen.",
+            "!!!",
+            "vil", "skal", "kommer"
+        ],
+        gapsIndex: [],
+        textIndex: [],
+        lineBreaker: []
+    },
     {
         typeOfScreen: '3',
         correctAnswers: ['Neste', 'år', 'skal', 'Emma', 'og', 'hennes', 'familie', 'flytte', 'til', 'en', 'ny', 'by.', 'De', 'har', 'planer', 'om', 'å', 'kjøpe', 'et', 'hus', 'nær', 'en', 'skole.', 'Emma', 'kommer til å', 'starte', 'på', 'en', 'ny', 'skole', 'og', 'hun', 'håper', 'å', 'finne', 'mange', 'nye', 'venner.', 'Hennes', 'bror', 'kommer', 'også', 'til', 'å', 'melde', 'seg', 'på', 'fotballaget.'],

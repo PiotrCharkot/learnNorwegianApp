@@ -137,27 +137,50 @@ export default dataObj = [
     key: 6,
     requiresPro: false
    },
-//    {
-//     title: {
-//         eng: 'Test',
-//         pl: 'Test',
-//         ar: 'الاستماع والترتيب',
-//         ger: 'Hören & Sortieren',
-//         lt: 'Klausymasis ir Rūšiavimas',
-//         ua: 'Слухання та Сортування', 
-//         sp: 'Escuchar y Ordenar',
-//     },
-//     description: {
-//         eng: 'Test',
-//         pl: 'Test',
-//         ar: 'أعد تشكيل الجمل مما تسمع',
-//         ger: 'Rekonstruiere Sätze aus dem Gehörten',
-//         lt: 'Atkurkite sakinius iš to, ką girdite',
-//         ua: 'Відтворіть речення з того, що чуєте', 
-//         sp: 'Reconstruye oraciones de lo que escuchas',
-//     },
-//     link: 'TestingOpeningScreen',
-//     key: 7,
-//     requiresPro: false
-//    },
+   {
+    title: {
+        eng: 'Test',
+        pl: 'Test',
+        ar: 'الاستماع والترتيب',
+        ger: 'Hören & Sortieren',
+        lt: 'Klausymasis ir Rūšiavimas',
+        ua: 'Слухання та Сортування', 
+        sp: 'Escuchar y Ordenar',
+    },
+    description: {
+        eng: 'Test',
+        pl: 'Test',
+        ar: 'أعد تشكيل الجمل مما تسمع',
+        ger: 'Rekonstruiere Sätze aus dem Gehörten',
+        lt: 'Atkurkite sakinius iš to, ką girdite',
+        ua: 'Відтворіть речення з того, що чуєте', 
+        sp: 'Reconstruye oraciones de lo que escuchas',
+    },
+    link: 'TestingOpeningScreen',
+    key: 7,
+    requiresPro: false
+   },
+   {
+    title: {
+        eng: 'Recording',
+        pl: 'Recording PL',
+        ar: 'الاستماع والترتيب',
+        ger: 'Hören & Sortieren',
+        lt: 'Klausymasis ir Rūšiavimas',
+        ua: 'Слухання та Сортування', 
+        sp: 'Escuchar y Ordenar',
+    },
+    description: {
+        eng: 'Recording',
+        pl: 'Recording PL',
+        ar: 'أعد تشكيل الجمل مما تسمع',
+        ger: 'Rekonstruiere Sätze aus dem Gehörten',
+        lt: 'Atkurkite sakinius iš to, ką girdite',
+        ua: 'Відтворіть речення з того, що чуєте', 
+        sp: 'Reconstruye oraciones de lo que escuchas',
+    },
+    link: 'Type11opening',
+    key: 8,
+    requiresPro: false
+   },
 ];

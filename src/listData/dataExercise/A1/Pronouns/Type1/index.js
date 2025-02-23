@@ -33,5 +33,35 @@ export default dataObj = [
             ['Han spiser ', 'ei', 'et', ' eple.']            
         ],
         correctAnswers: [1, 2, 1, 1, 2],
+    },
+    {
+        typeOfScreen: '1',
+        nuberOfQuestions: 3,
+        questions: [
+            ['', 'Han', 'Hun', ' heter Maria.'],
+            ['Dette er min bror. ', 'Han', 'Hun', ' heter Erik.'],
+            ['Vi bor i Oslo. ', 'De', 'Det', ' er en fin by.'],
+        ],
+        correctAnswers: [2, 1, 2],
+    },
+    {
+        typeOfScreen: '1',
+        nuberOfQuestions: 3,
+        questions: [
+            ['Dette er min venn. ', 'Hun', 'Han', ' heter Lars.'],
+            ['Hvor er boken min? ', 'Den', 'Det', ' ligger på bordet.'],
+            ['Katten er sulten. ', 'Den', 'Det', ' vil ha mat.'],
+        ],
+        correctAnswers: [2, 1, 1],
+    },
+    {
+        typeOfScreen: '1',
+        nuberOfQuestions: 3,
+        questions: [
+            ['Jeg har en hund. ', 'Han', 'Den', ' er veldig snill.'],
+            ['Dette er mitt hus. ', 'Den', 'Det', ' er stort og hvitt.'],
+            ['Vi har en datter. ', 'Hun', 'Han', ' heter Anna.'],
+        ],
+        correctAnswers: [2, 2, 1], 
     }
 ];

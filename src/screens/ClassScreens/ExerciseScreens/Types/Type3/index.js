@@ -140,7 +140,7 @@ const Type3 = ({ route }) => {
         <View style={styles.body}>
 
             <View style={styles.topView}>
-                <Text style={{...styles.questionText, textAlign: savedLang === 'AR' ? 'right' : 'left' }}>{exeList[nextScreen - 1].instructions ? newInstructions : instructions}</Text>
+                <Text style={{...styles.questionText, textAlign: savedLang === 'AR' ? 'right' : 'left' }} allowFontScaling={false}>{exeList[nextScreen - 1].instructions ? newInstructions : instructions}</Text>
             </View>
 
             <View style={styles.squaresViewContainer}>
@@ -151,7 +151,7 @@ const Type3 = ({ route }) => {
                   if (exeList[nextScreen - 1].textIndex.includes(index) && !exeList[nextScreen - 1].lineBreaker.includes(index)) {
                       return (
                           <View style={styles.exgzampleTextContainer} key={index}>
-                              <Text style={styles.exgzampleText}>{item}</Text>
+                              <Text style={styles.exgzampleText} allowFontScaling={false}>{item}</Text>
                           </View>
                       )
                   } else if (exeList[nextScreen - 1].lineBreaker.includes(index)) {

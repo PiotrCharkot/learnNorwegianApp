@@ -1,5 +1,313 @@
 export default dataObj = [
-
+    {
+        typeOfScreen: '3',
+        correctAnswers: [
+          "Peter", "er", "syk.", "Han", "må", "spise", "frokost", "klokken", "sju", 
+          "for", "å", "ta", "medisinen", "riktig.", "Han", "kan", "ikke", "sove", "for", 
+          "lenge,", "fordi", "han", "våkner", "av", "smerter.", "Foreldrene", "sier", 
+          "at", "han", "skal", "være", "hjemme", "om", "kvelden,", "fordi", "legen", 
+          "har", "gitt", "klare", "instrukser.", "Peter", "bør", "også", "unngå", "junk", 
+          "food", "hvis", "han", "vil", "bli", "bedre.", "Noen", "ganger", "vil", "han", 
+          "absolutt", "smake", "litt", "is,", "selv", "om", "foreldrene", "fraråder", "det."
+        ],
+        wordsWithGaps: [
+          "Peter", "er", "syk.", "Han", 
+          "            ", 
+          "spise", "frokost", "klokken", "sju", 
+          "for", "å", "ta", "medisinen", "riktig.", "Han", 
+          "            ", 
+          "ikke", "sove", "for", "lenge,", "fordi", "han", 
+          "våkner", "av", "smerter.", "Foreldrene", "sier", 
+          "at", "han", 
+          "            ", 
+          "være", "hjemme", "om", "kvelden,", "fordi", "legen", 
+          "har", "gitt", "klare", "instrukser.", "Peter", 
+          "            ", 
+          "også", "unngå", "junk", "food", "hvis", "han", "vil", 
+          "bli", "bedre.", "Noen", "ganger", 
+          "            ", 
+          "han", "absolutt", "smake", "litt", "is,", "selv", 
+          "om", "foreldrene", "fraråder", "det.",
+          "!!!",
+          
+          "ma", "vil", "bør", "kan", "skal", "trenger", "må"
+        ],
+        gapsIndex: [],
+        textIndex: [],
+        lineBreaker: []
+      },
+    {
+        typeOfScreen: '3',
+        correctAnswers: [
+        "Kari", "er", "helt", "tom", "for", "penger,", "så", "hun", "må", 
+        "finne", "en", "ekstra", "jobb", "raskt.", "Hun", "kan", "velge", 
+        "om", "hun", "vil", "jobbe", "i", "en", "butikk", "eller", "på", 
+        "et", "kontor.", "Sjefen", "sier", "at", "hun", "skal", "møte", 
+        "presis", "hver", "dag,", "ellers", "blir", "hun", "trukket", 
+        "i", "lønn.", "Hun", "bør", "nok", "vurdere", "å", "ta", "et", 
+        "kveldskurs", "for", "å", "få", "nye", "ferdigheter.", "Men", 
+        "av", "og", "til", "vil", "hun", "bare", "ta", "en", "fridag,", 
+        "selv", "om", "hun", "egentlig", "ikke", "har", "råd."
+        ],
+        wordsWithGaps: [
+        "Kari", "er", "helt", "tom", "for", "penger,", "så", "hun", 
+        "            ", 
+        "finne", "en", "ekstra", "jobb", "raskt.", "Hun", 
+        "            ", 
+        "velge", "om", "hun", "vil", "jobbe", "i", "en", "butikk", "eller", 
+        "på", "et", "kontor.", "Sjefen", "sier", "at", "hun", 
+        "            ", 
+        "møte", "presis", "hver", "dag,", "ellers", "blir", "hun", 
+        "trukket", "i", "lønn.", "Hun", 
+        "            ", 
+        "nok", "vurdere", "å", "ta", "et", "kveldskurs", "for", "å", 
+        "få", "nye", "ferdigheter.", "Men", "av", "og", "til", 
+        "            ", 
+        "hun", "bare", "ta", "en", "fridag,", "selv", "om", "hun", 
+        "egentlig", "ikke", "har", "råd.",
+        "!!!",
+        
+        "bør", "får", "vil", "kan", "må", "ma", "skal", "bor"
+        ],
+        gapsIndex: [],
+        textIndex: [],
+        lineBreaker: []
+    },
+    {
+        typeOfScreen: '3',
+        correctAnswers: [
+          "Trine", "bor", "på", "en", "øy", "i", "Nord-Norge.",
+          "For", "å", "komme", "seg", "til", "skolen", "i", "tide,",
+          "hun", "må", "lære", "seg", "å", "ro", "båt", "før", "sommeren.",
+          "Hun", "kan", "også", "ta", "ferge", "om", "morgenen,", "men",
+          "billetten", "koster", "mye", "penger.",
+          "Faren", "sier", "at", "hun", "skal", "møte", "opp", "i", "naustet",
+          "hver", "dag", "for", "å", "trene.",
+          "For", "å", "lykkes", "med", "roingen,",
+          "hun", "bør", "være", "mer", "disiplinert,", "men", "hun", "liker",
+          "å", "sove", "lenge.",
+          "Av", "og", "til", "vil", "hun", "absolutt", "lage", "frokost",
+          "for", "familien,", "men", "hun", "glemmer", "ofte", "tiden."
+        ],
+        wordsWithGaps: [
+          "Trine", "bor", "på", "en", "øy", "i", "Nord-Norge.",
+          "For", "å", "komme", "seg", "til", "skolen", "i", "tide,",
+          "hun",
+          "            ", 
+          "lære", "seg", "å", "ro", "båt", "før", "sommeren.",
+          "Hun",
+          "            ", 
+          "også", "ta", "ferge", "om", "morgenen,", "men",
+          "billetten", "koster", "mye", "penger.",
+          "Faren", "sier", "at", "hun",
+          "            ", 
+          "møte", "opp", "i", "naustet",
+          "hver", "dag", "for", "å", "trene.",
+          "For", "å", "lykkes", "med", "roingen,",
+          "hun",
+          "            ", 
+          "være", "mer", "disiplinert,", "men", "hun", "liker",
+          "å", "sove", "lenge.",
+          "Av", "og", "til",
+          "            ", 
+          "hun", "absolutt", "lage", "frokost",
+          "for", "familien,", "men", "hun", "glemmer", "ofte", "tiden.",
+          "!!!",
+          "liker", "må", "vill", "kan", "bør", "vil", "skal", "får"
+        ],
+        gapsIndex: [],
+        textIndex: [],
+        lineBreaker: []
+      },
+      {
+        typeOfScreen: '3',
+        correctAnswers: [
+          "Sara", "har", "akkurat", "flyttet", "til", "en", "ny", "by.",
+          "Hun", "må", "registrere", "seg", "hos", "politiet", "før",
+          "onsdag.",
+          "Hun", "kan", "også", "sende", "inn", "dokumenter", "på",
+          "nett,", "men", "er", "usikker", "på", "hvordan.",
+          "Moren", "hennes", "sier", "at", "hun", "skal", "gå",
+          "personlig", "for", "å", "unngå", "feil.",
+          "Sara", "bør", "undersøke", "åpningstidene", "først,",
+          "så", "hun", "ikke", "drar", "forgjeves.",
+          "Noen", "dager", "vil", "hun", "bare", "bli", "hjemme,",
+          "men", "da", "får", "hun", "kanskje", "ikke", "alt",
+          "gjort", "i", "tide."
+        ],
+        wordsWithGaps: [
+          "Sara", "har", "akkurat", "flyttet", "til", "en", "ny", "by.",
+          "Hun",
+          "            ", 
+          "registrere", "seg", "hos", "politiet", "før",
+          "onsdag.",
+          "Hun",
+          "            ", 
+          "også", "sende", "inn", "dokumenter", "på",
+          "nett,", "men", "er", "usikker", "på", "hvordan.",
+          "Moren", "hennes", "sier", "at", "hun",
+          "            ", 
+          "gå", "personlig", "for", "å", "unngå", "feil.",
+          "Sara",
+          "            ", 
+          "undersøke", "åpningstidene", "først,",
+          "så", "hun", "ikke", "drar", "forgjeves.",
+          "Noen", "dager",
+          "            ", 
+          "hun", "bare", "bli", "hjemme,",
+          "men", "da", "får", "hun", "kanskje", "ikke", "alt",
+          "gjort", "i", "tide.",
+          "!!!",
+          "bor", "kan", "må", "skal", "vil", "bør", "liker", "can"
+        ],
+        gapsIndex: [],
+        textIndex: [],
+        lineBreaker: []
+      },
+    {
+        typeOfScreen: "3",
+        correctAnswers: [
+            "Boken", "ligger", "på", "bordet.", "lineBreaker", 
+            "Hun", "jobber", "i", "butikken.", "lineBreaker", 
+            "Vi", "går", "til", "skolen", "hver", "dag."
+        ],
+        wordsWithGaps: [
+            "Boken", "ligger", "            ", "bordet.", "lineBreaker", 
+            "Hun", "jobber", "            ", "butikken.", "lineBreaker", 
+            "Vi", "går", "            ", "skolen", "hver", "dag.", 
+            "!!!", 
+            "på", "i", "til"
+        ],
+        gapsIndex: [],
+        textIndex: [],
+        lineBreaker: []
+    },
+    {
+        typeOfScreen: "3",
+        correctAnswers: [
+            "Lars", "gikk", "til", "butikken", "for", "å", "kjøpe", "melk.", 
+            "på", "vei", "hjem", "møtte", "han", "vennen", "sin", "ved", "parken.", 
+            "De", "satte", "seg", "på", "benken", "og", "snakket", "om", "ferien."
+        ],
+        wordsWithGaps: [
+            "Lars", "gikk", "            ", "butikken", "for", "å", "kjøpe", "melk.", 
+            "            ", "vei", "hjem", "møtte", "han", "vennen", "sin", "            ", "parken.", 
+            "De", "satte", "seg", "            ", "benken", "og", "snakket", "            ", "ferien.", 
+            "!!!", 
+            "om", "til", "ved", "på", "på"
+        ],
+        gapsIndex: [],
+        textIndex: [],
+        lineBreaker: []
+    },
+    {
+        typeOfScreen: "3",
+        correctAnswers: [
+            "Maria", "skal", "dra", "på", "hytta", "i", "helgen.", 
+            "Hun", "pakker", "klær", "og", "bøker", "ned", "i", "sekken.", 
+            "når", "hun", "kommer", "på", "hytta", "setter", "hun", "sekken", "ved", "døren."
+        ],
+        wordsWithGaps: [
+            "Maria", "skal", "dra", "            ", "hytta", "i", "helgen.", 
+            "Hun", "pakker", "            ", "og", "bøker", "ned", "            ", "sekken.", 
+            "            ", "hun", "kommer", "på", "hytta", "setter", "hun", "sekken", "            ", "døren.", 
+            "!!!", 
+            "når","på", "ved", "klær", "i"
+        ],
+        gapsIndex: [],
+        textIndex: [],
+        lineBreaker: []
+    },
+    {
+        typeOfScreen: "3",
+        correctAnswers: [
+            "Ola", "skal", "jobbe", "på", "kontoret", "i", "morgen.", 
+            "Han", "må", "ta", "med", "laptop", "og", "noen", "dokumenter", "til", "møtet.", 
+            "Når", "han", "kommer", "på", "kontoret", "legger", "han", "laptopen", "på", "pulten."
+        ],
+        wordsWithGaps: [
+            "Ola", "skal", "jobbe", "            ", "kontoret", "i", "morgen.", 
+            "Han", "må", "ta", "            ", "laptop", "og", "noen", "dokumenter", "            ", "møtet.", 
+            "Når", "han", "kommer", "på", "kontoret", "legger", "han", "laptopen", "            ", "pulten.", 
+            "!!!", 
+            "med", "på", "til", "på"
+        ],
+        gapsIndex: [],
+        textIndex: [],
+        lineBreaker: []
+    },
+    {
+        typeOfScreen: "3",
+        correctAnswers: [
+            "Sara", "skal", "spise", "middag", "med", "vennene", "sine", "på", "restauranten", "i", "byen.", 
+            "De", "bestiller", "pizza", "og", "drikker", "vann", "til", "maten.", 
+            "etter", "middagen", "går", "de", "en", "tur", "i", "parken."
+        ],
+        wordsWithGaps: [
+            "Sara", "skal", "spise", "            ", "med", "vennene", "sine", "            ", "restauranten", "i", "byen.", 
+            "De", "bestiller", "pizza", "og", "drikker", "vann", "            ", "maten.", 
+            "            ", "middagen", "går", "de", "en", "tur", "i", "parken.", 
+            "!!!", 
+            "på", "til", "middag", "etter"
+        ],
+        gapsIndex: [],
+        textIndex: [],
+        lineBreaker: []
+    },
+    {
+        typeOfScreen: "3",
+        correctAnswers: [
+            "Jeg", "skal", "reise", "til", "Spania", "neste", "uke.", "lineBreaker",
+            "De", "kommer", "til", "å", "gå", "på", "skolen", "i", "morgen.", "lineBreaker",
+            "Jeg", "skal", "snakke", "med", "læreren", "senere", "i", "dag."
+        ],
+        wordsWithGaps: [
+            "Jeg", "skal", "            ", "til", "Spania", "neste", "uke.", "lineBreaker",
+            "De", "            ", "til", "å", "gå", "på", "skolen", "i", "morgen.", "lineBreaker",
+            "Jeg", "            ", "snakke", "med", "læreren", "senere", "i", "dag.",
+            "!!!",
+            "kommer", "reise", "skal"
+        ],
+        gapsIndex: [],
+        textIndex: [],
+        lineBreaker: []
+    },
+    {
+        typeOfScreen: "3",
+        correctAnswers: [
+            "Jeg", "vil", "reise", "til", "Paris", "en", "dag.", "lineBreaker",
+            "De", "skal", "gå", "på", "møte", "klokken", "åtte.", "lineBreaker",
+            "Hun", "kommer", "til", "å", "snakke", "med", "sjefen", "i", "morgen."
+        ],
+        wordsWithGaps: [
+            "Jeg", "            ", "reise", "til", "Paris", "en", "dag.", "lineBreaker",
+            "De", "            ", "gå", "på", "møte", "klokken", "åtte.", "lineBreaker",
+            "Hun", "            ", "til", "å", "snakke", "med", "sjefen", "i", "morgen.",
+            "!!!",
+            "skal", "kommer", "vil"
+        ],
+        gapsIndex: [],
+        textIndex: [],
+        lineBreaker: []
+    },
+    {
+        typeOfScreen: "3",
+        correctAnswers: [
+            "Jeg", "skal", "møte", "vennene", "mine", "klokken", "seks.", "lineBreaker",
+            "Det", "kommer", "til", "å", "regne", "i", "morgen.", "lineBreaker",
+            "Hun", "vil", "bli", "lege", "når", "hun", "blir", "voksen."
+        ],
+        wordsWithGaps: [
+            "Jeg", "            ", "møte", "vennene", "mine", "klokken", "seks.", "lineBreaker",
+            "Det", "            ", "til", "å", "regne", "i", "morgen.", "lineBreaker",
+            "Hun", "            ", "bli", "lege", "når", "hun", "blir", "voksen.",
+            "!!!",
+            "vil", "skal", "kommer"
+        ],
+        gapsIndex: [],
+        textIndex: [],
+        lineBreaker: []
+    },
     {
         typeOfScreen: '3',
         correctAnswers: ['Erik', 'og', 'Ingrid', 'reiser', 'snart', 'til', 'Spania.', 'De', 'pakker', 'nøye', 'sine', 'kofferter', 'og', 'planlegger', 'reisen', 'grundig.', 'De', 'reiser', 'vanligvis', 'lett', 'men', 'denne', 'gangen', 'tar', 'de', 'med', 'mer', '.', 'På', 'flyplassen', 'sjekker', 'de', 'inn', 'raskt', 'og', 'venter', 'tålmodig', 'på', 'avgang.'],

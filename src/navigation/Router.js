@@ -498,6 +498,7 @@ import Type10x2 from '../screens/ClassScreens/ExerciseScreens/Types/Type10x2';
 import Type10x3 from '../screens/ClassScreens/ExerciseScreens/Types/Type10x3';
 import Type10x4 from '../screens/ClassScreens/ExerciseScreens/Types/Type10x4';
 import Type10last from '../screens/ClassScreens/ExerciseScreens/Types/Type10last';
+import Type11opening from '../screens/ClassScreens/ExerciseScreens/Types/Type11opening';
 
 
 const Stack = createStackNavigator(); 
@@ -1000,6 +1001,7 @@ const Router = () => {
                 <Stack.Screen name="Type10X3" component={Type10x3} options={{headerShown: false, animationEnabled: false }}/>
                 <Stack.Screen name="Type10X4" component={Type10x4} options={{headerShown: false, animationEnabled: false }}/>
                 <Stack.Screen name="Type10last" component={Type10last} options={{headerShown: false, animationEnabled: false }}/>
+                <Stack.Screen name="Type11opening" component={Type11opening} options={{headerShown: false, animationEnabled: false }}/>
             </Stack.Navigator>
         </NavigationContainer>
     )

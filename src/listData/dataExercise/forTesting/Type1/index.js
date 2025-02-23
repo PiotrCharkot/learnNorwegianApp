@@ -3,46 +3,30 @@ export default dataObj = [
         typeOfScreen: '1',
         nuberOfQuestions: 5,
         questions: [
-            ['Han snakker ', 'fort', 'svak', ' når han er nervøs.'],
-            ['Hun våkner ', 'tidlig', 'tørr', ' hver dag for å trene.'],
-            ['Barna leker ', 'trist', 'ute', ' i parken hver ettermiddag.'],
-            ['Vi reiser ', 'billig', 'alltid', ' til fjellet om vinteren.'],
-            ['Hun lytter ', 'oppmerksomt', 'flat', ' til læreren i klassen.'],
+            ["Hun ", "har bodd", "har bodde", " i Bergen i mange år."],
+            ["Har du ", "spiste", "spist", " kveldsmaten?"],
+            ["Vi ", "har fulfort", "har fullført", " oppgaven."],
+            ["Han ", "har reist", "har reiste", " til Tyskland mange ganger."],
+            ["Vi ", "har lært", "har læret", " mye av klassen i år."]
         ],
-        correctAnswers: [1, 1, 2, 2, 1],
-    },
-    {
-        typeOfScreen: '1',
-        nuberOfQuestions: 4,
-        questions: [
-            ['Han leser ', 'sjelden', 'tomt', ' om kvelden.'],
-            ['Hun synger ', 'tørke', 'høyt', ' i dusjen.'],
-            ['Barnet sover ', 'stille', 'bråkete', ' om natten.'],
-            ['Vi går ', 'raskt', 'billig', ' til butikken.'],
-        ],
-        correctAnswers: [1, 2, 1, 1],
-    },
-    {
-        typeOfScreen: '1',
-        nuberOfQuestions: 4,
-        questions: [
-            ['De går ', 'raskt', 'glatt', ' når det regner.'],
-            ['Han ler ', 'fort', 'høyt', ' når han ser en komedie.'],
-            ['Barna spiser ', 'sint', 'ofte', ' etter skolen.'],
-            ['Vi reiser ', 'neste uke', 'dårlig', ' til hytta.'],
-        ],
-        correctAnswers: [ 1, 2, 2, 1],
+        correctAnswers: [1, 2, 2, 1, 1]
     },
     {
         typeOfScreen: '1',
         nuberOfQuestions: 5,
         questions: [
-            ['Han synger ', 'fort', 'stille', ' i dusjen.'],
-            ['Hun jobber ', 'hardt', 'skitten', ' hver dag på kontoret.'],
-            ['Barna leser ', 'sammen', 'skarp', ' bøker på biblioteket.'],
-            ['Vi møtes ', 'tidlig', 'raskt', ' i parken.'],
-            ['Hun går ', 'mørkt', 'aldri', ' til trening på mandager.'],
+            ["Han ", "har komet", "har kommet", " nettopp hjem fra skolen."],
+            ["Vi ", "har gjort", "har gjørt", " det mange ganger."],
+            ["Dere ", "har ikke spiste", "har ikke spist", " frokost ennå."],
+            ["Har du ", "opdaget", "oppdaget", " noe nytt?"],
+            ["De ", "har allerede bestilt", "har allerede bestilte", " billetter til konserten."]
         ],
-        correctAnswers: [2, 1, 1, 1, 2],
-    },
+        correctAnswers: [2, 1, 2, 2, 1]
+    }
+    
+    
+    
+    
+    
+    
 ];
