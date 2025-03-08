@@ -1,5 +1,5 @@
-import {View, Text, StyleSheet, ScrollView, Dimensions, StatusBar, TouchableOpacity, Image, SafeAreaView, } from 'react-native'
-import React, { useState, useEffect } from 'react'
+import {View, Text, StyleSheet, FlatList, Dimensions, TouchableOpacity, Animated } from 'react-native'
+import React, { useState, useEffect, useRef  } from 'react'
 import { useFocusEffect } from "@react-navigation/native";
 import { LinearGradient } from 'expo-linear-gradient';
 import ProgressBar from '../../../../../components/bars/progressBar'
@@ -7,6 +7,8 @@ import BottomBar from '../../../../../components/bars/bottomBar'
 import Draggable from '../../../../../components/other/Draggable'
 import generalStyles from '../../../../../styles/generalStyles';
 import Loader from '../../../../../components/other/Loader';
+import AnswerPairType4 from '../../../../../components/other/AnswerPairType4';
+import AnswerPairType6 from '../../../../../components/other/AnswerPairType6';
 import type1data from '../../../../../listData/dataExercise/C1/Conditionals/Type1';
 import type3data from '../../../../../listData/dataExercise/C1/Conditionals/Type3';
 import type5data from '../../../../../listData/dataExercise/C1/Conditionals/Type5';
@@ -26,6 +28,9 @@ let option2 = [type3data, type8data, type5data, type1data, type3data];
 
 const links1 = ['Exc5x4x1', 'Type1', 'Type5', 'Type8', 'Type3'];
 const links2 = ['Exc5x4x1', 'Type8', 'Type5', 'Type1', 'Type3'];
+
+
+const screenWidth = Dimensions.get('window').width;
 
 
 
@@ -75,6 +80,14 @@ const Exc5x4x1 = ({ route }) => {
     
     const [contentReady, setContentReady] = useState(false);
     const [exeList, setExeList] = useState([]);
+            
+    const [hideShowText, setHideShowText] = useState('Show answers');
+    const [hideTxt, setHideTxt] = useState('Hide answers');
+    const [dataForAnswer, setDataForAnswers] = useState([]);
+    const [answersShown, setAnswersShown] = useState(false);
+
+    
+    const answerPosition = useRef(new Animated.Value(220)).current;
 
 
     useFocusEffect(() => {
@@ -96,16 +109,28 @@ const Exc5x4x1 = ({ route }) => {
           
           if (savedLang === 'PL') {
             setInstructions('Przeciągnij i upuść słowa we właściwe luki.')
+            setHideShowText('Pokaż odpowiedzi')
+            setHideTxt('Ukryj odpowiedzi')
           } else if (savedLang === 'DE') {
             setInstructions('Ziehe die Wörter in die richtigen Lücken.')
+            setHideShowText('Antworten anzeigen')
+            setHideTxt('Antworten verbergen')
           } else if (savedLang === 'LT') {
             setInstructions('Tempkite žodžius į teisingas vietas.')
+            setHideShowText('Rodyti atsakymus')
+            setHideTxt('Slėpti atsakymus')
           } else if (savedLang === 'AR') {
             setInstructions('اسحب وأفلت الكلمات في الفراغات الصحيحة')
+            setHideShowText('عرض الإجابات')
+            setHideTxt('اخفِ الإجابات')
           } else if (savedLang === 'UA') {
             setInstructions('Перетягніть слова в правильні пропуски.')
+            setHideShowText('Показати відповіді')
+            setHideTxt('Сховати відповіді')
           } else if (savedLang === 'ES') {
             setInstructions('Arrastra y suelta las palabras en los huecos correctos.')
+            setHideShowText('Mostrar respuestas')
+            setHideTxt('Ocultar respuestas')
           }
           
           setLanguage(savedLang)
@@ -127,6 +152,7 @@ const Exc5x4x1 = ({ route }) => {
       option2 = [type3dataNew, type8dataNew, type5dataNew, type1dataNew, type3dataNew];
 
       let tempArr = []; 
+      let tempArrAnswers = []; 
       let sumOfAllPoints = 0;
 
       let randomNumber = Math.floor(Math.random()* 2);
@@ -251,6 +277,125 @@ const Exc5x4x1 = ({ route }) => {
       }
 
 
+
+      if (tempArr[0].correctAnswersList) {
+
+        let answerDataArr = tempArr[0].correctAnswersList;
+
+      for (let i = 0; i < answerDataArr.length; i++) {
+          
+
+
+        if (tempArr[0].translationsLinks) {
+          if (route.params.savedLang === 'PL') {
+            tempArrAnswers[i] = {
+                translationData: tempArr[0].translationsCorrectAnswers.pl[i],
+                answerData: [tempArr[0].correctAnswersList[i]],
+                links: tempArr[0].translationsLinks[i],
+                key: i
+            }
+          } else if (route.params.savedLang === 'DE') {
+            tempArrAnswers[i] = {
+                translationData: tempArr[0].translationsCorrectAnswers.ger[i],
+                answerData: [tempArr[0].correctAnswersList[i]],
+                links: tempArr[0].translationsLinks[i],
+                key: i
+            }
+          } else if (route.params.savedLang === 'LT') {
+            tempArrAnswers[i] = {
+                translationData: tempArr[0].translationsCorrectAnswers.lt[i],
+                answerData: [tempArr[0].correctAnswersList[i]],
+                links: tempArr[0].translationsLinks[i],
+                key: i
+            }
+          } else if (route.params.savedLang === 'AR') {
+            tempArrAnswers[i] = {
+                translationData: tempArr[0].translationsCorrectAnswers.ar[i],
+                answerData: [tempArr[0].correctAnswersList[i]],
+                links: tempArr[0].translationsLinks[i],
+                key: i
+            }
+          } else if (route.params.savedLang === 'UA') {
+            tempArrAnswers[i] = {
+                translationData: tempArr[0].translationsCorrectAnswers.ua[i],
+                answerData: [tempArr[0].correctAnswersList[i]],
+                links: tempArr[0].translationsLinks[i],
+                key: i
+            }
+          } else if (route.params.savedLang === 'ES') {
+            tempArrAnswers[i] = {
+                translationData: tempArr[0].translationsCorrectAnswers.sp[i],
+                answerData: [tempArr[0].correctAnswersList[i]],
+                links: tempArr[0].translationsLinks[i],
+                key: i
+            }
+          } else if (route.params.savedLang === 'EN') {
+            tempArrAnswers[i] = {
+                translationData: tempArr[0].translationsCorrectAnswers.eng[i],
+                answerData: [tempArr[0].correctAnswersList[i]],
+                links: tempArr[0].translationsLinks[i],
+                key: i
+            }
+        }
+        } else if (tempArr[0].translationsCorrectAnswers && !tempArr[0].translationsLinks) {
+          if (route.params.savedLang === 'PL') {
+              tempArrAnswers[i] = {
+                  translationData: tempArr[0].translationsCorrectAnswers.pl[i],
+                  answerData: [tempArr[0].correctAnswersList[i]],
+                  key: i
+              }
+            } else if (route.params.savedLang === 'DE') {
+              tempArrAnswers[i] = {
+                  translationData: tempArr[0].translationsCorrectAnswers.ger[i],
+                  answerData: [tempArr[0].correctAnswersList[i]],
+                  key: i
+              }
+            } else if (route.params.savedLang === 'LT') {
+              tempArrAnswers[i] = {
+                  translationData: tempArr[0].translationsCorrectAnswers.lt[i],
+                  answerData: [tempArr[0].correctAnswersList[i]],
+                  key: i
+              }
+            } else if (route.params.savedLang === 'AR') {
+              tempArrAnswers[i] = {
+                  translationData: tempArr[0].translationsCorrectAnswers.ar[i],
+                  answerData: [tempArr[0].correctAnswersList[i]],
+                  key: i
+              }
+            } else if (route.params.savedLang === 'UA') {
+              tempArrAnswers[i] = {
+                  translationData: tempArr[0].translationsCorrectAnswers.ua[i],
+                  answerData: [tempArr[0].correctAnswersList[i]],
+                  key: i
+              }
+            } else if (route.params.savedLang === 'ES') {
+              tempArrAnswers[i] = {
+                  translationData: tempArr[0].translationsCorrectAnswers.sp[i],
+                  answerData: [tempArr[0].correctAnswersList[i]],
+                  key: i
+              }
+            } else if (route.params.savedLang === 'EN') {
+              tempArrAnswers[i] = {
+                  translationData: tempArr[0].translationsCorrectAnswers.eng[i],
+                  answerData: [tempArr[0].correctAnswersList[i]],
+                  key: i
+              }
+          }
+          } else {
+            tempArrAnswers[i] = {
+                answerData: [tempArr[0].allAnswers[i]],
+                key: i
+            }
+          }
+        }
+
+
+
+        setDataForAnswers(tempArrAnswers);
+
+      }
+
+
       setWords(tempArr[0].wordsWithGaps)
       setCorrectAnswers(tempArr[0].correctAnswers);
       setNumberGaps(tempArr[0].gapsIndex.length);
@@ -290,9 +435,52 @@ const Exc5x4x1 = ({ route }) => {
           setIsCorrect(newArr);
           
         }
+        
+        if (exeList[0].translationsCorrectAnswers) {
+          Animated.timing(answerPosition, {
+            toValue: 150,
+            duration: 500,
+            useNativeDriver: false
+          }).start()
+
+
+          setAnswersShown(false);
+
+        }
       }
     
     }, [answersChecked])
+
+
+    const renderAnswer = (item) => {
+      if (exeList[0].translationsLinks) {
+
+        return <AnswerPairType6 dataParams={item} />
+      } else {
+
+        return <AnswerPairType4 dataParams={item} />
+      }
+    }
+      
+      
+    const showHideAnswers = () => {
+        if (answersShown) {
+            setAnswersShown(false);
+            Animated.timing(answerPosition, {
+                toValue: 150,
+                duration: 500,
+                useNativeDriver: false
+            }).start()
+        } else {
+            setAnswersShown(true);
+            Animated.timing(answerPosition, {
+                toValue: 0,
+                duration: 500,
+                useNativeDriver: false
+            }).start()
+        }
+    }
+  
 
     const onMovingDraggable = (movingDraggable) => {
         setMovingDraggable(movingDraggable);
@@ -385,6 +573,28 @@ const Exc5x4x1 = ({ route }) => {
         </View>  : <View style={styles.loaderDisplay}>
             <Loader />
         </View> }
+
+
+
+        <Animated.View style={{...styles.answerContainer, transform: [{translateY: answerPosition}]}}>
+                                
+          <View style={styles.answersListContainer}>
+              <FlatList 
+                  showsVerticalScrollIndicator={false}
+                  decelerationRate={0}
+                  data={dataForAnswer}
+                  renderItem={renderAnswer}
+                  keyExtractor={(item) => item.key}
+                  scrollEventThrottle={16}
+              />
+          </View>
+
+          <TouchableOpacity style={styles.hideShowBtn} onPress={showHideAnswers}>
+              <Text style={styles.hideShowTxt}>{answersShown ? hideTxt : hideShowText}</Text>
+          </TouchableOpacity>
+
+        </Animated.View>
+        
         
     
 
@@ -511,5 +721,41 @@ const styles = StyleSheet.create({
     height: 0,
     width: '100%'
   },
+  answerContainer: {
+    position: 'absolute',
+    marginHorizontal: 20,
+    bottom: 100,
+    width: screenWidth - 40
+  },
+  hideShowBtn: {
+    position: 'absolute',
+    bottom: 147,
+    borderWidth: 3,
+    borderColor: '#6441A5',
+    paddingHorizontal: 10,
+    borderBottomWidth: 0,
+    alignItems: 'center',
+    justifyContent: 'center',
+    paddingTop: 5,
+    paddingBottom: 8,
+    backgroundColor: '#e49dfa',
+    borderTopLeftRadius: 8,
+    borderTopRightRadius: 8
+  },
+  hideShowTxt: {
+    fontSize: 16,
+    fontWeight: '600',
+    color: 'white'
+  },
+  answersListContainer: {
+    borderWidth: 3,
+    borderColor: '#6441A5',
+    padding: 10,
+    backgroundColor: '#e49dfa',
+    height: 150,
+    borderTopRightRadius: 8,
+    borderBottomLeftRadius: 8,
+    borderBottomRightRadius: 8,
+  }
 })
 

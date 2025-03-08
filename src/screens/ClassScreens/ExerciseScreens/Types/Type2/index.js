@@ -1,11 +1,13 @@
-import { View, Text, StyleSheet, TouchableOpacity } from 'react-native'
-import React, { useState, useEffect } from 'react'
+import { View, Text, StyleSheet, Animated, TouchableOpacity, FlatList, Dimensions } from 'react-native'
+import React, { useState, useEffect, useRef  } from 'react'
 import { useFocusEffect } from "@react-navigation/native";
 import { LinearGradient } from 'expo-linear-gradient';
 import ProgressBar from '../../../../../components/bars/progressBar'
 import BottomBar from '../../../../../components/bars/bottomBar'
 import Draggable from '../../../../../components/other/Draggable'
 import generalStyles from '../../../../../styles/generalStyles';
+import AnswerPairType4 from '../../../../../components/other/AnswerPairType4';
+import AnswerPairType6 from '../../../../../components/other/AnswerPairType6';
 
 
 
@@ -19,6 +21,7 @@ const gradientBottom = generalStyles.gradientBottomDraggable;
 const gradientTop2 = generalStyles.gradientTopDraggable3;
 const gradientBottom2 = generalStyles.gradientBottomDraggable3;
 
+const screenWidth = Dimensions.get('window').width;
 
 const exitLink = 'ExitExcScreen'
 
@@ -45,6 +48,12 @@ const Type2 = ({route}) => {
     const [latestScreenAnswered, setLatestScreenAnswered] = useState(latestAnswered);
     const [instructions, setInstructions] = useState('Match items to their matches.');
     const [newInstructions, setNewInstructions] = useState('');
+    const [hideShowText, setHideShowText] = useState('Show answers');
+    const [hideTxt, setHideTxt] = useState('Hide answers')
+    const [dataForAnswer, setDataForAnswers] = useState([]);
+    const [answersShown, setAnswersShown] = useState(false);
+     
+    const answerPosition = useRef(new Animated.Value(220)).current;
 
 
 
@@ -114,35 +123,185 @@ const Type2 = ({route}) => {
         if (exeList[nextScreen - 1].instructions) {
           if (savedLang === 'PL') {
               setNewInstructions(exeList[nextScreen - 1].instructions.pl)
+              setHideShowText('Pokaż odpowiedzi')
+              setHideTxt('Ukryj odpowiedzi')
             } else if (savedLang === 'DE') {
               setNewInstructions(exeList[nextScreen - 1].instructions.ger)
+              setHideShowText('Antworten anzeigen')
+              setHideTxt('Antworten verbergen')
             } else if (savedLang === 'LT') {
               setNewInstructions(exeList[nextScreen - 1].instructions.lt)
+              setHideShowText('Rodyti atsakymus')
+              setHideTxt('Slėpti atsakymus')
             } else if (savedLang === 'AR') {
               setNewInstructions(exeList[nextScreen - 1].instructions.ar)
+              setHideShowText('عرض الإجابات')
+              setHideTxt('اخفِ الإجابات')
             } else if (savedLang === 'UA') {
               setNewInstructions(exeList[nextScreen - 1].instructions.ua)
+              setHideShowText('Показати відповіді')
+              setHideTxt('Сховати відповіді')
             } else if (savedLang === 'ES') {
               setNewInstructions(exeList[nextScreen - 1].instructions.sp)
+              setHideShowText('Mostrar respuestas')
+              setHideTxt('Ocultar respuestas')
             } else if (savedLang === 'EN') {
               setNewInstructions(exeList[nextScreen - 1].instructions.eng)
           }
         } else {
           if (savedLang === 'PL') {
               setInstructions('Dopasuj elementy do ich par.')
+              setHideShowText('Pokaż odpowiedzi')
+              setHideTxt('Ukryj odpowiedzi')
             } else if (savedLang === 'DE') {
               setInstructions('Ordne die Elemente ihren Pendants zu.')
+              setHideShowText('Antworten anzeigen')
+              setHideTxt('Antworten verbergen')
             } else if (savedLang === 'LT') {
               setInstructions('Suderinkite elementus su jų poromis.')
+              setHideShowText('Rodyti atsakymus')
+              setHideTxt('Slėpti atsakymus')
             } else if (savedLang === 'AR') {
               setInstructions('طابق العناصر مع مثيلاتها')
+              setHideShowText('عرض الإجابات')
+              setHideTxt('اخفِ الإجابات')
             } else if (savedLang === 'UA') {
               setInstructions('Відповідайте елементи з їх парами.')
+              setHideShowText('Показати відповіді')
+              setHideTxt('Сховати відповіді')
             } else if (savedLang === 'ES') {
               setInstructions('Empareja los elementos con sus pares.')
+              setHideShowText('Mostrar respuestas')
+              setHideTxt('Ocultar respuestas')
           }
         }
     })
+
+
+
+      useEffect(() => {
+              let tempArr = [];
+    
+    
+              if (exeList[nextScreen - 1].correctAnswersList) {
+    
+                for (let i = 0; i < exeList[nextScreen - 1].correctAnswersList.length; i++) {
+                  
+      
+      
+                  if (exeList[nextScreen - 1].translationsLinks) {
+                    if (savedLang === 'PL') {
+                        tempArr[i] = {
+                            translationData: exeList[nextScreen - 1].translationsCorrectAnswers.pl[i],
+                            answerData: [exeList[nextScreen - 1].correctAnswersList[i]],
+                            links: exeList[nextScreen - 1].translationsLinks[i],
+                            key: i
+                        }
+                      } else if (savedLang === 'DE') {
+                        tempArr[i] = {
+                            translationData: exeList[nextScreen - 1].translationsCorrectAnswers.ger[i],
+                            answerData: [exeList[nextScreen - 1].correctAnswersList[i]],
+                            links: exeList[nextScreen - 1].translationsLinks[i],
+                            key: i
+                        }
+                      } else if (savedLang === 'LT') {
+                        tempArr[i] = {
+                            translationData: exeList[nextScreen - 1].translationsCorrectAnswers.lt[i],
+                            answerData: [exeList[nextScreen - 1].correctAnswersList[i]],
+                            links: exeList[nextScreen - 1].translationsLinks[i],
+                            key: i
+                        }
+                      } else if (savedLang === 'AR') {
+                        tempArr[i] = {
+                            translationData: exeList[nextScreen - 1].translationsCorrectAnswers.ar[i],
+                            answerData: [exeList[nextScreen - 1].correctAnswersList[i]],
+                            links: exeList[nextScreen - 1].translationsLinks[i],
+                            key: i
+                        }
+                      } else if (savedLang === 'UA') {
+                        tempArr[i] = {
+                            translationData: exeList[nextScreen - 1].translationsCorrectAnswers.ua[i],
+                            answerData: [exeList[nextScreen - 1].correctAnswersList[i]],
+                            links: exeList[nextScreen - 1].translationsLinks[i],
+                            key: i
+                        }
+                      } else if (savedLang === 'ES') {
+                        tempArr[i] = {
+                            translationData: exeList[nextScreen - 1].translationsCorrectAnswers.sp[i],
+                            answerData: [exeList[nextScreen - 1].correctAnswersList[i]],
+                            links: exeList[nextScreen - 1].translationsLinks[i],
+                            key: i
+                        }
+                      } else if (savedLang === 'EN') {
+                        tempArr[i] = {
+                            translationData: exeList[nextScreen - 1].translationsCorrectAnswers.eng[i],
+                            answerData: [exeList[nextScreen - 1].correctAnswersList[i]],
+                            links: exeList[nextScreen - 1].translationsLinks[i],
+                            key: i
+                        }
+                    }
+                  } else if (exeList[nextScreen - 1].translationsCorrectAnswers && !exeList[nextScreen - 1].translationsLinks) {
+                        if (savedLang === 'PL') {
+                            tempArr[i] = {
+                                translationData: exeList[nextScreen - 1].translationsCorrectAnswers.pl[i],
+                                answerData: [exeList[nextScreen - 1].correctAnswersList[i]],
+                                key: i
+                            }
+                          } else if (savedLang === 'DE') {
+                            tempArr[i] = {
+                                translationData: exeList[nextScreen - 1].translationsCorrectAnswers.ger[i],
+                                answerData: [exeList[nextScreen - 1].correctAnswersList[i]],
+                                key: i
+                            }
+                          } else if (savedLang === 'LT') {
+                            tempArr[i] = {
+                                translationData: exeList[nextScreen - 1].translationsCorrectAnswers.lt[i],
+                                answerData: [exeList[nextScreen - 1].correctAnswersList[i]],
+                                key: i
+                            }
+                          } else if (savedLang === 'AR') {
+                            tempArr[i] = {
+                                translationData: exeList[nextScreen - 1].translationsCorrectAnswers.ar[i],
+                                answerData: [exeList[nextScreen - 1].correctAnswersList[i]],
+                                key: i
+                            }
+                          } else if (savedLang === 'UA') {
+                            tempArr[i] = {
+                                translationData: exeList[nextScreen - 1].translationsCorrectAnswers.ua[i],
+                                answerData: [exeList[nextScreen - 1].correctAnswersList[i]],
+                                key: i
+                            }
+                          } else if (savedLang === 'ES') {
+                            tempArr[i] = {
+                                translationData: exeList[nextScreen - 1].translationsCorrectAnswers.sp[i],
+                                answerData: [exeList[nextScreen - 1].correctAnswersList[i]],
+                                key: i
+                            }
+                          } else if (savedLang === 'EN') {
+                            tempArr[i] = {
+                                translationData: exeList[nextScreen - 1].translationsCorrectAnswers.eng[i],
+                                answerData: [exeList[nextScreen - 1].correctAnswersList[i]],
+                                key: i
+                            }
+                        }
+                    } else {
+                        tempArr[i] = {
+                            answerData: [exeList[nextScreen - 1].correctAnswersList[i]],
+                            key: i
+                        }
+                    }
+                }
+        
+        
+                console.log('my flat list data', tempArr);
+                setDataForAnswers(tempArr);
+    
+              }
+      
+              
+      
+      
+          }, [])
 
     useEffect(() => {
 
@@ -158,10 +317,58 @@ const Type2 = ({route}) => {
           setIsCorrect(newArr);
           
         }
+
+
+        
+        
+        
+                
+        if (exeList[nextScreen - 1].translationsCorrectAnswers) {
+          Animated.timing(answerPosition, {
+            toValue: 150,
+            duration: 500,
+            useNativeDriver: false
+          }).start()
+
+
+          setAnswersShown(false);
+
+        }
       }
       
     
     }, [answersChecked])
+
+
+    const renderAnswer = (item) => {
+      if (exeList[nextScreen - 1].translationsLinks) {
+
+        return <AnswerPairType6 dataParams={item} />
+      } else {
+
+        return <AnswerPairType4 dataParams={item} />
+      }
+    }
+
+
+    const showHideAnswers = () => {
+        if (answersShown) {
+            setAnswersShown(false);
+            Animated.timing(answerPosition, {
+                toValue: 150,
+                duration: 500,
+                useNativeDriver: false
+            }).start()
+        } else {
+            setAnswersShown(true);
+            Animated.timing(answerPosition, {
+                toValue: 0,
+                duration: 500,
+                useNativeDriver: false
+            }).start()
+        }
+    }
+
 
     const onMovingDraggable = (movingDraggable) => {
         setMovingDraggable(movingDraggable);
@@ -271,6 +478,25 @@ const Type2 = ({route}) => {
             </View>
           
         </View>
+
+
+        
+        <Animated.View style={{...styles.answerContainer, transform: [{translateY: answerPosition}]}}>
+            
+            <View style={styles.answersListContainer}>
+                <FlatList 
+                    showsVerticalScrollIndicator={false}
+                    decelerationRate={0}
+                    data={dataForAnswer}
+                    renderItem={renderAnswer}
+                    keyExtractor={(item) => item.key}
+                    scrollEventThrottle={16}
+                />
+            </View>
+            <TouchableOpacity style={styles.hideShowBtn} onPress={showHideAnswers}>
+                <Text style={styles.hideShowTxt}>{answersShown ? hideTxt : hideShowText}</Text>
+            </TouchableOpacity>
+        </Animated.View>
     
 
       <View style={styles.bottomBarContainer}>
@@ -388,5 +614,41 @@ rightContainer: {
     color: 'white',
     
   },
+  answerContainer: {
+    position: 'absolute',
+    marginHorizontal: 20,
+    bottom: 100,
+    width: screenWidth - 40
+  },
+  hideShowBtn: {
+    position: 'absolute',
+    bottom: 147,
+    borderWidth: 3,
+    borderColor: '#6441A5',
+    paddingHorizontal: 10,
+    borderBottomWidth: 0,
+    alignItems: 'center',
+    justifyContent: 'center',
+    paddingTop: 5,
+    paddingBottom: 8,
+    backgroundColor: '#e49dfa',
+    borderTopLeftRadius: 8,
+    borderTopRightRadius: 8
+  },
+  hideShowTxt: {
+    fontSize: 16,
+    fontWeight: '600',
+    color: 'white'
+  },
+  answersListContainer: {
+    borderWidth: 3,
+    borderColor: '#6441A5',
+    padding: 10,
+    backgroundColor: '#e49dfa',
+    height: 150,
+    borderTopRightRadius: 8,
+    borderBottomLeftRadius: 8,
+    borderBottomRightRadius: 8,
+  }
 
 })

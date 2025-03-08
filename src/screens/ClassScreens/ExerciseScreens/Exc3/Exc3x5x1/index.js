@@ -7,6 +7,7 @@ import BottomBar from '../../../../../components/bars/bottomBar'
 import generalStyles from '../../../../../styles/generalStyles';
 import Loader from '../../../../../components/other/Loader';
 import AnswerPairType4 from '../../../../../components/other/AnswerPairType4';
+import AnswerPairType6 from '../../../../../components/other/AnswerPairType6';
 import type1data from '../../../../../listData/dataExercise/B1/Agreement/Type1';
 import type4data from '../../../../../listData/dataExercise/B1/Agreement/Type4';
 import type5data from '../../../../../listData/dataExercise/B1/Agreement/Type5';
@@ -375,7 +376,58 @@ const Exc3x5x1 = ({route}) => {
 
         for (let i = 0; i < exeList[0].correctAnswers.length; i++) {
             
-          if (exeList[0].translations) {
+          if (exeList[0].translationsLinks) {
+            if (language === 'PL') {
+              myFlatListArray[i] = {
+                    translationData: exeList[0].translations.pl[i],
+                    answerData: exeList[0].correctAnswers[i],
+                    links: exeList[0].translationsLinks[i],
+                    key: i
+                }
+              } else if (language === 'DE') {
+                myFlatListArray[i] = {
+                    translationData: exeList[0].translations.ger[i],
+                    answerData: exeList[0].correctAnswers[i],
+                    links: exeList[0].translationsLinks[i],
+                    key: i
+                }
+              } else if (language === 'LT') {
+                myFlatListArray[i] = {
+                    translationData: exeList[0].translations.lt[i],
+                    answerData: exeList[0].correctAnswers[i],
+                    links: exeList[0].translationsLinks[i],
+                    key: i
+                }
+              } else if (language === 'AR') {
+                myFlatListArray[i] = {
+                    translationData: exeList[0].translations.ar[i],
+                    answerData: exeList[0].correctAnswers[i],
+                    links: exeList[0].translationsLinks[i],
+                    key: i
+                }
+              } else if (language === 'UA') {
+                myFlatListArray[i] = {
+                    translationData: exeList[0].translations.ua[i],
+                    answerData: exeList[0].correctAnswers[i],
+                    links: exeList[0].translationsLinks[i],
+                    key: i
+                }
+              } else if (language === 'ES') {
+                myFlatListArray[i] = {
+                    translationData: exeList[0].translations.sp[i],
+                    answerData: exeList[0].correctAnswers[i],
+                    links: exeList[0].translationsLinks[i],
+                    key: i
+                }
+              } else if (language === 'EN') {
+                myFlatListArray[i] = {
+                    translationData: exeList[0].translations.eng[i],
+                    answerData: exeList[0].correctAnswers[i],
+                    links: exeList[0].translationsLinks[i],
+                    key: i
+                }
+            }
+          } else if (exeList[0].translations && !exeList[0].translationsLinks) {
             if (language === 'PL') {
               myFlatListArray[i] = {
                     translationData: exeList[0].translations.pl[i],
@@ -487,7 +539,13 @@ const Exc3x5x1 = ({route}) => {
 
 
     const renderAnswer = (item) => {
-      return <AnswerPairType4 dataParams={item} />
+      if (exeList[0].translationsLinks) {
+
+        return <AnswerPairType6 dataParams={item} />
+      } else {
+
+        return <AnswerPairType4 dataParams={item} />
+      }
     }
 
 

@@ -1,5 +1,6 @@
 import {View, Text, StyleSheet, TouchableOpacity, Image, Animated, Easing, Alert, ActivityIndicator } from 'react-native'
 import React, { useState, useEffect, useRef } from 'react'
+import * as FileSystem from 'expo-file-system';
 import { useFocusEffect } from "@react-navigation/native";
 import { LinearGradient } from 'expo-linear-gradient';
 import { Audio } from "expo-av";
@@ -8,7 +9,13 @@ import BottomBar from '../../../../../components/bars/bottomBar'
 import generalStyles from '../../../../../styles/generalStyles';
 import Loader from '../../../../../components/other/Loader';
 import type9sentence from '../../../../../listData/dataExercise/A1/Sounds/Type9';
+import { authentication, db } from '../../../../../../firebase/firebase-config';
+import { getFunctions, httpsCallable } from 'firebase/functions';
+import { getStorage, ref, uploadBytes, getDownloadURL, deleteObject } from 'firebase/storage';
 
+
+const storage = getStorage();
+const functions = getFunctions();
 
 const dataForMarkers = { // change here according to section
     part: 'exercise',
@@ -17,26 +24,7 @@ const dataForMarkers = { // change here according to section
 }
 
 
-const recordingOptions = {
-    android: {
-      extension: '.wav',
-      outputFormat: Audio.RECORDING_OPTION_ANDROID_OUTPUT_FORMAT_DEFAULT,
-      audioEncoder: Audio.RECORDING_OPTION_ANDROID_AUDIO_ENCODER_DEFAULT,
-      sampleRate: 44100,
-      numberOfChannels: 2,
-      bitRate: 128000,
-    },
-    ios: {
-      extension: '.wav',
-      audioQuality: Audio.RECORDING_OPTION_IOS_AUDIO_QUALITY_HIGH,
-      sampleRate: 44100,
-      numberOfChannels: 2,
-      bitRate: 128000,
-      linearPCMBitDepth: 16,
-      linearPCMIsBigEndian: false,
-      linearPCMIsFloat: false,
-    },
-};
+
 
 
 const linkList = ['Type11opening', 'Type9x2', 'Type9x3'];
@@ -52,14 +40,7 @@ const allScreensNum = linkList.length;
 //Type11 opening screen
 
 const Type11opening = ({ route }) => {
-    
-    
-    const recordingRef = useRef(null);
-
-    const [recordedUri, setRecordedUri] = useState(null);
-    const [sound, setSound] = useState(null);
-    const [transcription, setTranscription] = useState('');
-    const [loading, setLoading] = useState(false);
+  
 
     
     const [isCorrect, setIsCorrect] = useState([]);
@@ -74,16 +55,30 @@ const Type11opening = ({ route }) => {
     const [latestScreenAnswered, setLatestScreenAnswered] = useState(0);
     const [correctAnswers, setCorrectAnswers]= useState([]);
     const [instructions, setInstructions] = useState('Record sentence and compare with');
-    const [translation, setTranslation] = useState('')
-    
+    const [translation, setTranslation] = useState('');
     const [language, setLanguage] = useState('EN');
     const [soundLink, setSoundLink] = useState('')
     
     const [contentReady, setContentReady] = useState(false);
     const [exeList, setExeList] = useState([]);
 
+
+    
+
+    const [recording, setRecording] = useState(null);
+    const [sound, setSound] = useState(null);
+    const [isRecording, setIsRecording] = useState(false);
+    const [recordingUri, setRecordingUri] = useState(null);
+    const [isTranscribing, setIsTranscribing] = useState(false);
+    const [transcription, setTranscription] = useState('');
+    const [expectedText, setExpectedText] = useState('Hei, hvordan har du det i dag?'); // Example Norwegian text
+    const [isMatching, setIsMatching] = useState(null);
+    const [recordingTime, setRecordingTime] = useState(0);
+    const [timer, setTimer] = useState(null);
+
     
     const translationPosition = useRef(new Animated.Value(500)).current;
+
 
 
     useFocusEffect(() => {
@@ -160,8 +155,9 @@ const Type11opening = ({ route }) => {
       setExeList(tempArr);
 
       
-      setSoundLink(tempArr[0].soundLink)
-      setWords(tempArr[0].wordsWithGaps)
+      //setExpectedText(tempArr.correctAnswers[0]);
+      setSoundLink(tempArr[0].soundLink);
+      setWords(tempArr[0].wordsWithGaps);
       setCorrectAnswers(tempArr[0].correctAnswers);
       setNumberGaps(tempArr[0].gapsIndex.length);
       setIsCorrect(Array(tempArr[0].correctAnswers.length).fill(0));
@@ -206,141 +202,9 @@ const Type11opening = ({ route }) => {
           }
         })();
     }, []);
-      
-
-
-   // Start recording on press in.
-   const startRecording = async () => {
-    try {
-      // Set the audio mode to allow recording.
-      await Audio.setAudioModeAsync({
-        allowsRecordingIOS: true,
-        playsInSilentModeIOS: true,
-      });
-      const recording = new Audio.Recording();
-      await recording.prepareToRecordAsync(recordingOptions);
-      await recording.startAsync();
-      recordingRef.current = recording;
-
-      // Automatically stop recording after 20 seconds.
-      setTimeout(() => {
-        if (recordingRef.current) {
-          stopRecording();
-        }
-      }, 20000);
-    } catch (err) {
-      console.error('Failed to start recording', err);
-    }
-  };
-
-  // Stop recording when user releases the button.
-  const stopRecording = async () => {
-    try {
-      console.log('Stopping recording...');
-      const recording = recordingRef.current;
-      if (!recording) return;
-      recordingRef.current = null;
-      await recording.stopAndUnloadAsync();
-      const uri = recording.getURI();
-      console.log('Recording stored at:', uri);
-      setRecordedUri(uri);
-
-    } catch (err) {
-      console.error('Failed to stop recording', err);
-    }
-
-
-    Animated.timing(translationPosition, {
-        toValue: 0,
-        duration: 1000,
-        easing: Easing.bezier(.7,.93,.57,.99),
-        useNativeDriver: true
-    }).start()
-
-
-  };
-
-  // Play back the recorded audio.
-  const playSound = async () => {
-    if (!recordedUri) return;
-    try {
-      console.log('Loading sound...');
-      const { sound } = await Audio.Sound.createAsync(
-        { uri: recordedUri },
-        { shouldPlay: true }
-      );
-      setSound(sound);
-      console.log('Playing sound...');
-      await sound.playAsync();
-    } catch (err) {
-      console.error('Error playing sound', err);
-    }
-  };
-
-
-
-  const playSoundNative = async () => {
-    try {
-      console.log('Loading sound...');
-      const { sound2: playbackObject } = await Audio.Sound.createAsync(
-        { uri: soundLink },
-        { shouldPlay: true }
-      );
-    
-    } catch (err) {
-      console.error('Error playing sound', err);
-    }
-  };
-
-  // Unload the sound when the component unmounts or sound changes.
-  useEffect(() => {
-    return sound
-      ? () => {
-          console.log('Unloading sound...');
-          sound.unloadAsync();
-        }
-      : undefined;
-  }, [sound]);
-
-
-
-  // Send the recorded file to Firebase Cloud Functions for transcription.
-  const sendForTranscription = async () => {
-    if (!recordedUri) return;
-    setLoading(true);
-    setTranscription('');
-    try {
-      const formData = new FormData();
-      // React Native’s FormData expects a file object with uri, name, and type.
-      formData.append('file', {
-        uri: recordedUri,
-        name: 'recording.wav',
-        type: 'audio/wav'
-      });
-
-      // Replace with your actual Cloud Function endpoint.
-      const response = await fetch(
-        'https://us-central1-your-project-id.cloudfunctions.net/transcribeAudio',
-        {
-          method: 'POST',
-          body: formData,
-          headers: {
-            'Content-Type': 'multipart/form-data',
-          },
-        }
-      );
-      const data = await response.json();
-      setTranscription(data.transcription);
-    } catch (error) {
-      console.error('Transcription error:', error);
-      Alert.alert('Error', 'There was a problem transcribing your audio.');
-    } finally {
-      setLoading(false);
-    }
-  };
 
   
-    
+      
 
     useEffect(() => {
       
@@ -358,6 +222,16 @@ const Type11opening = ({ route }) => {
           
         }
 
+
+    
+        Animated.timing(translationPosition, {
+            toValue: 0,
+            duration: 1000,
+            easing: Easing.bezier(.7,.93,.57,.99),
+            useNativeDriver: true
+        }).start()
+    
+
         
       }
     
@@ -366,8 +240,167 @@ const Type11opening = ({ route }) => {
 
 
 
+    useEffect(() => {
+        return () => {
+          if (recording) {
+            stopRecording();
+          }
+          if (sound) {
+            sound.unloadAsync();
+          }
+        };
+    }, [recording, sound]);
 
+
+
+    const startRecording = async () => {
+        try {
+          const { status } = await Audio.requestPermissionsAsync();
+          if (status !== 'granted') {
+            alert('Vi trenger mikrofontilgang for å ta opp stemmen din');
+            return;
+          }
     
+          await Audio.setAudioModeAsync({
+            allowsRecordingIOS: true,
+            playsInSilentModeIOS: true,
+          });
+    
+          const newRecording = new Audio.Recording();
+          await newRecording.prepareToRecordAsync(Audio.RECORDING_OPTIONS_PRESET_HIGH_QUALITY);
+          await newRecording.startAsync();
+          setRecording(newRecording);
+          setIsRecording(true);
+          
+          // Start timer for max 20 seconds
+          const startTime = Date.now();
+          const timerId = setInterval(() => {
+            const elapsed = Math.floor((Date.now() - startTime) / 1000);
+            setRecordingTime(elapsed);
+            
+            if (elapsed >= 20) {
+              clearInterval(timerId);
+              stopRecording();
+            }
+          }, 1000);
+          
+          setTimer(timerId);
+        } catch (error) {
+          console.error('Failed to start recording', error);
+        }
+      };
+    
+      const stopRecording = async () => {
+        if (timer) {
+          clearInterval(timer);
+          setTimer(null);
+        }
+        
+        setRecordingTime(0);
+        setIsRecording(false);
+        
+        if (!recording) return;
+        
+        try {
+            // Check if the recording is actually recording before stopping
+            const status = await recording.getStatusAsync();
+            if (status.canRecord) {
+              await recording.stopAndUnloadAsync();
+              const uri = recording.getURI();
+              setRecordingUri(uri);
+            } else {
+              console.log('Recording was already stopped');
+            }
+        } catch (error) {
+            console.error('Failed to stop recording', error);
+            // Even if there's an error, still set recording to null to prevent further issues
+        } finally {
+            setRecording(null);
+        }
+      };
+    
+      const playSound = async () => {
+        if (!recordingUri) return;
+        
+        try {
+          if (sound) {
+            await sound.unloadAsync();
+          }
+          
+          const { sound: newSound } = await Audio.Sound.createAsync({ uri: recordingUri });
+          setSound(newSound);
+          await newSound.playAsync();
+        } catch (error) {
+          console.error('Failed to play sound', error);
+        }
+      };
+    
+      const transcribeAudio = async () => {
+        if (!recordingUri) {
+            console.error('No recording URI available');
+            return;
+        }
+        
+        console.log('Starting transcription with URI:', recordingUri);
+        setIsTranscribing(true);
+        
+        try {
+          // Create a blob to upload
+          const response = await fetch(recordingUri);
+          const blob = await response.blob();
+          console.log('Blob created:', blob.size, 'bytes');
+          
+          // Upload to Firebase Storage temporarily
+          const audioRef = ref(storage, `temp_recordings/${Date.now()}.m4a`);
+          await uploadBytes(audioRef, blob);
+          console.log('Audio uploaded to Firebase Storage');
+          
+          // Get download URL for the file
+          const downloadURL = await getDownloadURL(audioRef);
+          console.log('Download URL obtained:', downloadURL);
+          
+          // Call your Firebase Cloud Function
+          const transcribeFunction = httpsCallable(functions, 'transcribeSpeech');
+          console.log('Calling Cloud Function with URL:', downloadURL);
+
+          const params = {
+            audioUrl: downloadURL,
+            language: 'en-US'
+          };
+            
+          console.log('Params object:', JSON.stringify(params));
+          const result = await transcribeFunction(params);
+          
+          // Process result
+          console.log('Transcription result:', result.data);
+          setTranscription(result.data.transcription);
+          
+          // Check if transcription matches the expected text
+          checkTextMatch(result.data.transcription, expectedText);
+          
+          // Delete the temporary file
+          await deleteObject(audioRef);
+          console.log('Temporary audio file deleted');
+        } catch (error) {
+          console.error('Transcription error:', error);
+          if (error.code) console.error('Error code:', error.code);
+          if (error.message) console.error('Error message:', error.message);
+          if (error.details) console.error('Error details:', error.details);
+          alert('Det oppstod en feil under transkriberingen');
+        } finally {
+          setIsTranscribing(false);
+        }
+      };
+    
+      const checkTextMatch = (transcribed, expected) => {
+        // Simple string comparison - you might want to make this more sophisticated
+        const normalizedTranscribed = transcribed.toLowerCase().trim();
+        const normalizedExpected = expected.toLowerCase().trim();
+        
+        // Calculate similarity or just check if they're close enough
+        const isMatch = normalizedTranscribed === normalizedExpected;
+        setIsMatching(isMatch);
+      };
 
 
     
@@ -383,52 +416,63 @@ const Type11opening = ({ route }) => {
           
         </View>
 
+        <View style={styles.middleSection}>
+              
 
-        <View style={styles.norwegianTextContainer}>
-
-            <Text style={styles.norwegianText}>{correctAnswers[0]}</Text>
-        </View>
-
-        <View style={styles.recordBtnContainer}>
-
-            <TouchableOpacity
-                style={styles.recordButton}
-                onPressIn={startRecording}
-                onPressOut={stopRecording}
+        <Text style={styles.expectedText}>Vennligst si: "{expectedText}"</Text>
+      
+        <TouchableOpacity
+            style={[styles.recordButton, isRecording && styles.recordingButton]}
+            onPressIn={() => {
+              if (!isRecording) {
+                startRecording();
+              }
+            }}
+            onPressOut={() => {
+              if (isRecording) {
+                stopRecording();
+              }
+            }}
             >
-                <Text style={styles.buttonText}>Tap and Hold to Record</Text>
-            </TouchableOpacity>
-            {recordedUri && (<View>
-
-
-                <TouchableOpacity style={styles.playButton} onPress={playSound}>
-                    <Text style={styles.buttonText}>Play Recording</Text>
-                </TouchableOpacity>
-
-                <TouchableOpacity style={styles.playButton} onPress={playSoundNative}>
-                    <Text style={styles.buttonText}>Compaee with native</Text>
-                </TouchableOpacity>
-
-                <TouchableOpacity style={styles.transcribeButton} onPress={sendForTranscription}>
-                    <Text style={styles.buttonText}>Transcribe</Text>
-                </TouchableOpacity>
-                </View>
-            )}
-
-
-
-            {loading && <ActivityIndicator size="large" color="#0000ff" style={{ marginTop: 20 }} />}
-                {transcription !== '' && (
-                <View style={styles.transcriptionContainer}>
-                <Text style={styles.transcriptionLabel}>Transcription:</Text>
-                <Text style={styles.transcriptionText}>{transcription}</Text>
-                </View>
-            )}
-                
-
-           
-        </View>
+            <Text style={styles.buttonText}>
+                {isRecording ? `Tar opp (${recordingTime}s)` : 'Trykk og hold for å ta opp'}
+            </Text>
+        </TouchableOpacity>
         
+        {recordingUri && (
+          <TouchableOpacity style={styles.button} onPress={playSound}>
+            <Text style={styles.buttonText}>Spill av opptak</Text>
+            </TouchableOpacity>
+        )}
+        
+        {recordingUri && (
+          <TouchableOpacity 
+            style={styles.button} 
+            onPress={transcribeAudio}
+            disabled={isTranscribing}
+            >
+            <Text style={styles.buttonText}>
+                {isTranscribing ? 'Transkriberer...' : 'Transkriber opptak'}
+            </Text>
+            </TouchableOpacity>
+        )}
+        
+        {isTranscribing && <ActivityIndicator size="large" color="#0000ff" />}
+        
+        {transcription ? (
+          <View style={styles.resultContainer}>
+            <Text style={styles.transcription}>Din tekst: {transcription}</Text>
+            <Text style={[
+              styles.matchResult, 
+              isMatching ? styles.matchSuccess : styles.matchFailure
+            ]}>
+                {isMatching ? '✓ Teksten stemmer!' : '✗ Teksten stemmer ikke.'}
+            </Text>
+            </View>
+        ) : null}
+
+        
+        </View>
 
         
         <View>
@@ -493,6 +537,15 @@ const styles = StyleSheet.create({
     marginTop: 10,
     marginBottom: 0,
   },
+  middleSection: {
+    width: '100%',
+    alignItems: 'center'
+  },
+  bottomBarContainer: {
+    position: 'absolute',
+    bottom: 0,
+    width: '100%',
+  },
   norwegianTextContainer: {
     marginTop: 20,
     width: '100%',
@@ -503,44 +556,57 @@ const styles = StyleSheet.create({
     width: '100%',
     alignItems: 'center'
   },
+  expectedText: {
+    fontSize: 18,
+    marginBottom: 40,
+    textAlign: 'center',
+  },
   recordButton: {
-    backgroundColor: '#4287f5',
+    backgroundColor: '#2196F3',
     padding: 20,
-    borderRadius: 5,
+    borderRadius: 100,
     marginBottom: 20,
+    width: 200,
+    height: 200,
+    justifyContent: 'center',
+    alignItems: 'center',
   },
-  playButton: {
-    backgroundColor: '#34a853',
-    padding: 20,
+  recordingButton: {
+    backgroundColor: '#f44336',
+  },
+  button: {
+    backgroundColor: '#4CAF50',
+    padding: 15,
     borderRadius: 5,
-    marginBottom: 10
+    marginBottom: 10,
+    width: 200,
+    alignItems: 'center',
   },
-  transcribeButton: {
-    backgroundColor: '#f4b400',
-    padding: 20,
-    borderRadius: 5,
-    marginBottom: 20,
+  buttonText: {
+    color: 'white',
+    fontSize: 16,
+    textAlign: 'center',
   },
-  transcriptionContainer: {
+  resultContainer: {
     marginTop: 20,
-    paddingHorizontal: 20,
+    padding: 10,
+    backgroundColor: '#f5f5f5',
+    borderRadius: 5,
+    width: '100%',
   },
-  transcriptionLabel: {
+  transcription: {
+    fontSize: 16,
+    marginBottom: 10,
+  },
+  matchResult: {
     fontSize: 18,
     fontWeight: 'bold',
   },
-  transcriptionText: {
-    fontSize: 16,
-    marginTop: 10,
+  matchSuccess: {
+    color: 'green',
   },
-  buttonText: {
-    color: '#fff',
-    fontSize: 16,
-  },
-  bottomBarContainer: {
-    position: 'absolute',
-    bottom: 0,
-    width: '100%',
+  matchFailure: {
+    color: 'red',
   },
   translationContainer: {
     position: 'absolute',
@@ -553,6 +619,8 @@ const styles = StyleSheet.create({
     fontSize: 17,
     fontWeight: '600',
     textAlign: 'center'
-  }
+  },
+  loaderDisplay: {}
+  
 })
 

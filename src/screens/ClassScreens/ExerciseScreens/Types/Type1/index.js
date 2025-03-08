@@ -1,10 +1,12 @@
-import { View, Text, StyleSheet, TouchableOpacity, ScrollView, Animated } from 'react-native'
+import { View, Text, StyleSheet, ScrollView, Animated, TouchableOpacity, FlatList, Dimensions } from 'react-native'
 import React, { useState, useEffect, useRef} from 'react'
 import { useFocusEffect } from "@react-navigation/native";
 import ProgressBar from '../../../../../components/bars/progressBar'
 import BottomBar from '../../../../../components/bars/bottomBar'
 import generalStyles from '../../../../../styles/generalStyles';
 import Loader from '../../../../../components/other/Loader';
+import AnswerPairType4 from '../../../../../components/other/AnswerPairType4';
+import AnswerPairType6 from '../../../../../components/other/AnswerPairType6';
 
 
 
@@ -12,6 +14,8 @@ import Loader from '../../../../../components/other/Loader';
 const colorUnderline = generalStyles.colorHighlightChoiceOption;
 const colorChosenAns = generalStyles.colorHighlightChoosenAnswer;
 const outputColors = [generalStyles.wrongAnswerConfirmationColor, generalStyles.neutralAnswerConfirmationColor, generalStyles.correctAnswerConfirmationColor];
+
+const screenWidth = Dimensions.get('window').width;
 
 const exitLink = 'ExitExcScreen'
 
@@ -30,6 +34,12 @@ const Type1 = ({route}) => {
   const [resetCheck, setResetCheck] = useState(false);
   const [instructions, setInstructions] = useState('Choose the correct word to complete the sentence.');
   const [newInstructions, setNewInstructions] = useState('');
+  const [hideShowText, setHideShowText] = useState('Show answers');
+  const [hideTxt, setHideTxt] = useState('Hide answers')
+  const [dataForAnswer, setDataForAnswers] = useState([]);
+  const [answersShown, setAnswersShown] = useState(false);
+  
+  const answerPosition = useRef(new Animated.Value(220)).current;
   
 
   
@@ -106,36 +116,186 @@ const Type1 = ({route}) => {
     if (exeList[nextScreen - 1].instructions) {
       if (savedLang === 'PL') {
           setNewInstructions(exeList[nextScreen - 1].instructions.pl)
+          setHideShowText('Pokaż odpowiedzi')
+          setHideTxt('Ukryj odpowiedzi')
         } else if (savedLang === 'DE') {
           setNewInstructions(exeList[nextScreen - 1].instructions.ger)
+          setHideShowText('Antworten anzeigen')
+          setHideTxt('Antworten verbergen')
         } else if (savedLang === 'LT') {
           setNewInstructions(exeList[nextScreen - 1].instructions.lt)
+          setHideShowText('Rodyti atsakymus')
+          setHideTxt('Slėpti atsakymus')
         } else if (savedLang === 'AR') {
           setNewInstructions(exeList[nextScreen - 1].instructions.ar)
+          setHideShowText('عرض الإجابات')
+          setHideTxt('اخفِ الإجابات')
         } else if (savedLang === 'UA') {
           setNewInstructions(exeList[nextScreen - 1].instructions.ua)
+          setHideShowText('Показати відповіді')
+          setHideTxt('Сховати відповіді')
         } else if (savedLang === 'ES') {
           setNewInstructions(exeList[nextScreen - 1].instructions.sp)
+          setHideShowText('Mostrar respuestas')
+          setHideTxt('Ocultar respuestas')
         } else if (savedLang === 'EN') {
           setNewInstructions(exeList[nextScreen - 1].instructions.eng)
       }
     } else {
       if (savedLang === 'PL') {
           setInstructions('Wybierz właściwe słowo, aby uzupełnić zdanie.')
+          setHideShowText('Pokaż odpowiedzi')
+          setHideTxt('Ukryj odpowiedzi')
         } else if (savedLang === 'DE') {
           setInstructions('Wähle das richtige Wort, um den Satz zu vervollständigen.')
+          setHideShowText('Antworten anzeigen')
+          setHideTxt('Antworten verbergen')
         } else if (savedLang === 'LT') {
           setInstructions('Pasirinkite teisingą žodį, kad užbaigtumėte sakinį.')
+          setHideShowText('Rodyti atsakymus')
+          setHideTxt('Slėpti atsakymus')
         } else if (savedLang === 'AR') {
           setInstructions('اختر الكلمة الصحيحة لإكمال الجملة')
+          setHideShowText('عرض الإجابات')
+          setHideTxt('اخفِ الإجابات')
         } else if (savedLang === 'UA') {
           setInstructions('Виберіть правильне слово, щоб завершити речення.')
+          setHideShowText('Показати відповіді')
+          setHideTxt('Сховати відповіді')
         } else if (savedLang === 'ES') {
           setInstructions('Elige la palabra correcta para completar la oración.')
+          setHideShowText('Mostrar respuestas')
+          setHideTxt('Ocultar respuestas')
       }
     }
     
   })
+
+
+
+    useEffect(() => {
+            let tempArr = [];
+  
+  
+            if (exeList[nextScreen - 1].correctAnswersList) {
+  
+              for (let i = 0; i < exeList[nextScreen - 1].correctAnswersList.length; i++) {
+                
+    
+    
+                if (exeList[nextScreen - 1].translationsLinks) {
+                  if (savedLang === 'PL') {
+                      tempArr[i] = {
+                          translationData: exeList[nextScreen - 1].translationsCorrectAnswers.pl[i],
+                          answerData: [exeList[nextScreen - 1].correctAnswersList[i]],
+                          links: exeList[nextScreen - 1].translationsLinks[i],
+                          key: i
+                      }
+                    } else if (savedLang === 'DE') {
+                      tempArr[i] = {
+                          translationData: exeList[nextScreen - 1].translationsCorrectAnswers.ger[i],
+                          answerData: [exeList[nextScreen - 1].correctAnswersList[i]],
+                          links: exeList[nextScreen - 1].translationsLinks[i],
+                          key: i
+                      }
+                    } else if (savedLang === 'LT') {
+                      tempArr[i] = {
+                          translationData: exeList[nextScreen - 1].translationsCorrectAnswers.lt[i],
+                          answerData: [exeList[nextScreen - 1].correctAnswersList[i]],
+                          links: exeList[nextScreen - 1].translationsLinks[i],
+                          key: i
+                      }
+                    } else if (savedLang === 'AR') {
+                      tempArr[i] = {
+                          translationData: exeList[nextScreen - 1].translationsCorrectAnswers.ar[i],
+                          answerData: [exeList[nextScreen - 1].correctAnswersList[i]],
+                          links: exeList[nextScreen - 1].translationsLinks[i],
+                          key: i
+                      }
+                    } else if (savedLang === 'UA') {
+                      tempArr[i] = {
+                          translationData: exeList[nextScreen - 1].translationsCorrectAnswers.ua[i],
+                          answerData: [exeList[nextScreen - 1].correctAnswersList[i]],
+                          links: exeList[nextScreen - 1].translationsLinks[i],
+                          key: i
+                      }
+                    } else if (savedLang === 'ES') {
+                      tempArr[i] = {
+                          translationData: exeList[nextScreen - 1].translationsCorrectAnswers.sp[i],
+                          answerData: [exeList[nextScreen - 1].correctAnswersList[i]],
+                          links: exeList[nextScreen - 1].translationsLinks[i],
+                          key: i
+                      }
+                    } else if (savedLang === 'EN') {
+                      tempArr[i] = {
+                          translationData: exeList[nextScreen - 1].translationsCorrectAnswers.eng[i],
+                          answerData: [exeList[nextScreen - 1].correctAnswersList[i]],
+                          links: exeList[nextScreen - 1].translationsLinks[i],
+                          key: i
+                      }
+                  }
+                } else if (exeList[nextScreen - 1].translationsCorrectAnswers && !exeList[nextScreen - 1].translationsLinks) {
+                      if (savedLang === 'PL') {
+                          tempArr[i] = {
+                              translationData: exeList[nextScreen - 1].translationsCorrectAnswers.pl[i],
+                              answerData: [exeList[nextScreen - 1].correctAnswersList[i]],
+                              key: i
+                          }
+                        } else if (savedLang === 'DE') {
+                          tempArr[i] = {
+                              translationData: exeList[nextScreen - 1].translationsCorrectAnswers.ger[i],
+                              answerData: [exeList[nextScreen - 1].correctAnswersList[i]],
+                              key: i
+                          }
+                        } else if (savedLang === 'LT') {
+                          tempArr[i] = {
+                              translationData: exeList[nextScreen - 1].translationsCorrectAnswers.lt[i],
+                              answerData: [exeList[nextScreen - 1].correctAnswersList[i]],
+                              key: i
+                          }
+                        } else if (savedLang === 'AR') {
+                          tempArr[i] = {
+                              translationData: exeList[nextScreen - 1].translationsCorrectAnswers.ar[i],
+                              answerData: [exeList[nextScreen - 1].correctAnswersList[i]],
+                              key: i
+                          }
+                        } else if (savedLang === 'UA') {
+                          tempArr[i] = {
+                              translationData: exeList[nextScreen - 1].translationsCorrectAnswers.ua[i],
+                              answerData: [exeList[nextScreen - 1].correctAnswersList[i]],
+                              key: i
+                          }
+                        } else if (savedLang === 'ES') {
+                          tempArr[i] = {
+                              translationData: exeList[nextScreen - 1].translationsCorrectAnswers.sp[i],
+                              answerData: [exeList[nextScreen - 1].correctAnswersList[i]],
+                              key: i
+                          }
+                        } else if (savedLang === 'EN') {
+                          tempArr[i] = {
+                              translationData: exeList[nextScreen - 1].translationsCorrectAnswers.eng[i],
+                              answerData: [exeList[nextScreen - 1].correctAnswersList[i]],
+                              key: i
+                          }
+                      }
+                  } else {
+                      tempArr[i] = {
+                          answerData: [exeList[nextScreen - 1].correctAnswersList[i]],
+                          key: i
+                      }
+                  }
+              }
+      
+      
+              console.log('my flat list data', tempArr);
+              setDataForAnswers(tempArr);
+  
+            }
+    
+            
+    
+    
+        }, [])
 
 
 
@@ -167,10 +327,58 @@ const Type1 = ({route}) => {
             
             delayAnimation = delayAnimation + 200;
         }
+
+
+
+        
+        
+                
+        if (exeList[nextScreen - 1].translationsCorrectAnswers) {
+          Animated.timing(answerPosition, {
+            toValue: 150,
+            duration: 500,
+            useNativeDriver: false
+          }).start()
+
+
+          setAnswersShown(false);
+
+        }
     }
   
     
   }, [answersChecked])
+
+
+  const renderAnswer = (item) => {
+    if (exeList[nextScreen - 1].translationsLinks) {
+
+      return <AnswerPairType6 dataParams={item} />
+    } else {
+
+      return <AnswerPairType4 dataParams={item} />
+    }
+  }
+
+
+  const showHideAnswers = () => {
+      if (answersShown) {
+          setAnswersShown(false);
+          Animated.timing(answerPosition, {
+              toValue: 150,
+              duration: 500,
+              useNativeDriver: false
+          }).start()
+      } else {
+          setAnswersShown(true);
+          Animated.timing(answerPosition, {
+              toValue: 0,
+              duration: 500,
+              useNativeDriver: false
+          }).start()
+      }
+  }
+
   
 
 
@@ -249,6 +457,25 @@ const Type1 = ({route}) => {
            
           </View>
         </ScrollView>
+
+
+        
+        <Animated.View style={{...styles.answerContainer, transform: [{translateY: answerPosition}]}}>
+            
+            <View style={styles.answersListContainer}>
+                <FlatList 
+                    showsVerticalScrollIndicator={false}
+                    decelerationRate={0}
+                    data={dataForAnswer}
+                    renderItem={renderAnswer}
+                    keyExtractor={(item) => item.key}
+                    scrollEventThrottle={16}
+                />
+            </View>
+            <TouchableOpacity style={styles.hideShowBtn} onPress={showHideAnswers}>
+                <Text style={styles.hideShowTxt}>{answersShown ? hideTxt : hideShowText}</Text>
+            </TouchableOpacity>
+        </Animated.View>
         
 
         <View style={styles.progressBarContainer}>
@@ -359,4 +586,40 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     backgroundColor: 'white'
 },
+answerContainer: {
+  position: 'absolute',
+  marginHorizontal: 20,
+  bottom: 100,
+  width: screenWidth - 40
+},
+hideShowBtn: {
+  position: 'absolute',
+  bottom: 147,
+  borderWidth: 3,
+  borderColor: '#6441A5',
+  paddingHorizontal: 10,
+  borderBottomWidth: 0,
+  alignItems: 'center',
+  justifyContent: 'center',
+  paddingTop: 5,
+  paddingBottom: 8,
+  backgroundColor: '#e49dfa',
+  borderTopLeftRadius: 8,
+  borderTopRightRadius: 8
+},
+hideShowTxt: {
+  fontSize: 16,
+  fontWeight: '600',
+  color: 'white'
+},
+answersListContainer: {
+  borderWidth: 3,
+  borderColor: '#6441A5',
+  padding: 10,
+  backgroundColor: '#e49dfa',
+  height: 150,
+  borderTopRightRadius: 8,
+  borderBottomLeftRadius: 8,
+  borderBottomRightRadius: 8,
+}
 })

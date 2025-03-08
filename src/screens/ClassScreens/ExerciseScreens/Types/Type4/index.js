@@ -6,6 +6,8 @@ import ProgressBar from '../../../../../components/bars/progressBar'
 import BottomBar from '../../../../../components/bars/bottomBar'
 import generalStyles from '../../../../../styles/generalStyles';
 import AnswerPairType4 from '../../../../../components/other/AnswerPairType4';
+import AnswerPairType6 from '../../../../../components/other/AnswerPairType6';
+
 
 
 const screenWidth = Dimensions.get('window').width;
@@ -209,7 +211,59 @@ const Type4 = ({route}) => {
         for (let i = 0; i < exeList[nextScreen - 1].correctAnswers.length; i++) {
             
 
-            if (exeList[nextScreen - 1].translations) {
+
+          if (exeList[nextScreen - 1].translationsLinks) {
+            if (savedLang === 'PL') {
+                tempArr[i] = {
+                    translationData: exeList[nextScreen - 1].translations.pl[i],
+                    answerData: exeList[nextScreen - 1].correctAnswers[i],
+                    links: exeList[nextScreen - 1].translationsLinks[i],
+                    key: i
+                }
+              } else if (savedLang === 'DE') {
+                tempArr[i] = {
+                    translationData: exeList[nextScreen - 1].translations.ger[i],
+                    answerData: exeList[nextScreen - 1].correctAnswers[i],
+                    links: exeList[nextScreen - 1].translationsLinks[i],
+                    key: i
+                }
+              } else if (savedLang === 'LT') {
+                tempArr[i] = {
+                    translationData: exeList[nextScreen - 1].translations.lt[i],
+                    answerData: exeList[nextScreen - 1].correctAnswers[i],
+                    links: exeList[nextScreen - 1].translationsLinks[i],
+                    key: i
+                }
+              } else if (savedLang === 'AR') {
+                tempArr[i] = {
+                    translationData: exeList[nextScreen - 1].translations.ar[i],
+                    answerData: exeList[nextScreen - 1].correctAnswers[i],
+                    links: exeList[nextScreen - 1].translationsLinks[i],
+                    key: i
+                }
+              } else if (savedLang === 'UA') {
+                tempArr[i] = {
+                    translationData: exeList[nextScreen - 1].translations.ua[i],
+                    answerData: exeList[nextScreen - 1].correctAnswers[i],
+                    links: exeList[nextScreen - 1].translationsLinks[i],
+                    key: i
+                }
+              } else if (savedLang === 'ES') {
+                tempArr[i] = {
+                    translationData: exeList[nextScreen - 1].translations.sp[i],
+                    answerData: exeList[nextScreen - 1].correctAnswers[i],
+                    links: exeList[nextScreen - 1].translationsLinks[i],
+                    key: i
+                }
+              } else if (savedLang === 'EN') {
+                tempArr[i] = {
+                    translationData: exeList[nextScreen - 1].translations.eng[i],
+                    answerData: exeList[nextScreen - 1].correctAnswers[i],
+                    links: exeList[nextScreen - 1].translationsLinks[i],
+                    key: i
+                }
+            }
+          } else if (exeList[nextScreen - 1].translations && !exeList[nextScreen - 1].translationsLinks) {
                 if (savedLang === 'PL') {
                     tempArr[i] = {
                         translationData: exeList[nextScreen - 1].translations.pl[i],
@@ -314,7 +368,13 @@ const Type4 = ({route}) => {
 
 
     const renderAnswer = (item) => {
+      if (exeList[nextScreen - 1].translationsLinks) {
+
+        return <AnswerPairType6 dataParams={item} />
+      } else {
+
         return <AnswerPairType4 dataParams={item} />
+      }
     }
 
 

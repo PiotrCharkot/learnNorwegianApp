@@ -2,70 +2,74 @@ export default dataObj = [
 
     {
         typeOfScreen: '6',
-        leftTitle: 'adverb',
-        rightTitle: 'verb',
-        correctAnswers: [
-            ['raskt', 'sakte', 'høyt', 'lavt', 'godt'],
-            ['løper', 'går', 'snakker', 'hvisker', 'smaker']
-        ],
-        words: [
-            '???', '???', '???', '???', '???', '???', '???', '???', '???', '???', 
-            'snakker', 'hvisker', 'raskt', 'løper', 'sakte', 'høyt', 'godt', 'går', 'smaker', 'lavt'
-        ]
+        leftTitle: 'Comparative',
+        rightTitle: 'Superlative',
+        correctAnswers: [['større', 'mindre', 'bedre', 'verre', 'lavere'], ['størst', 'minst', 'best', 'verst', 'lavest']],
+        words: ['???', '???', '???', '???', '???', '???', '???', '???', '???', '???', '???', '???', 'minst', 'større', 'mindre', 'bedre', 'størst', 'verre', 'lavest', 'best', 'verst', 'lavere'],
+        translations: {
+        eng: ['Comparative', 'Superlative'],
+        pl: ['Stopień wyższy', 'Stopień najwyższy'],
+        ar: ['المقارنة', 'التفضيل'],
+        ger: ['Komparativ', 'Superlativ'],
+        lt: ['Lyginamasis laipsnis', 'Aukščiausiasis laipsnis'],
+        ua: ['Ступінь порівняння', 'Найвищий ступінь'],
+        sp: ['Comparativo', 'Superlativo'],
     },
-    {
-        typeOfScreen: '6',
-        leftTitle: 'adverb',
-        rightTitle: 'adjective',
-        correctAnswers: [
-            ['veldig', 'ganske', 'altfor', 'litt', 'nesten'],
-            ['glad', 'stor', 'varm', 'tung', 'mørk']
-        ],
-        words: [
-            '???', '???', '???', '???', '???', '???', '???', '???', '???', '???', 
-            'tung', 'mørk', 'veldig', 'altfor', 'glad', 'litt', 'nesten', 'ganske', 'stor', 'varm', 
-        ]
+    translationsCorrectAnswers: {
+        eng: ['Comparative, synonym 1, synonym2', 'Superlative2', 'Comparative', 'Superlative4', 'Comparative', 'Superlative6', 'Comparative7', 'Superlative', 'Comparative', 'Superlative10'],
+        pl: ['Stopień wyższy', 'Stopień najwyższy', 'Stopień wyższy3', 'Stopień najwyższy4' ,'Stopień wyższy5', 'Stopień najwyższy', 'Stopień wyższy7', 'Stopień najwyższy', 'Stopień wyższy', 'Stopień najwyższy10'],
+        ar: ['المقارنة', 'التفضيل'],
+        ger: ['Komparativ', 'Superlativ'],
+        lt: ['Lyginamasis laipsnis', 'Aukščiausiasis laipsnis'],
+        ua: ['Ступінь порівняння', 'Найвищий ступінь'],
+        sp: ['Comparativo', 'Superlativo'],
     },
-    {
-        typeOfScreen: '6',
-        leftTitle: 'adverb',
-        rightTitle: 'adjective',
-        correctAnswers: [
-            ['alltid', 'sjelden', 'ofte', 'aldri', 'noen ganger'],
-            ['lykkelig', 'opptatt', 'ledig', 'sulten']
-        ],
-        words: [
-            '???', '???', '???', '???', '???', '???', '???', '???', '???', '???', 
-            'alltid', 'opptatt', 'sjelden', 'noen ganger', 
-            'lykkelig','ofte', 'ledig', 'sulten', 'aldri',
-        ]
+    translationsLinks: [
+        'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/wordsList1%2Fstor.mp3?alt=media&token=cd01dbdf-b602-4e93-9ffe-b32599565abb',
+        'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/wordsList1%2Fstor.mp3?alt=media&token=cd01dbdf-b602-4e93-9ffe-b32599565abb','https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/wordsList1%2Flang.mp3?alt=media&token=968d6e30-3a78-40a6-b254-d89fb4e9a749','https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/wordsList1%2Flang.mp3?alt=media&token=968d6e30-3a78-40a6-b254-d89fb4e9a749','https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/wordsList1%2Flang.mp3?alt=media&token=968d6e30-3a78-40a6-b254-d89fb4e9a749','https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/wordsList1%2Flang.mp3?alt=media&token=968d6e30-3a78-40a6-b254-d89fb4e9a749','https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/wordsList1%2Flang.mp3?alt=media&token=968d6e30-3a78-40a6-b254-d89fb4e9a749','https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/wordsList1%2Flang.mp3?alt=media&token=968d6e30-3a78-40a6-b254-d89fb4e9a749',
+        'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/wordsList1%2Fstor.mp3?alt=media&token=cd01dbdf-b602-4e93-9ffe-b32599565abb',
+        'https://firebasestorage.googleapis.com/v0/b/norapp-69bd4.appspot.com/o/wordsList1%2Fstor.mp3?alt=media&token=cd01dbdf-b602-4e93-9ffe-b32599565abb',
+    ]
     },
-    {
-        typeOfScreen: '6',
-        leftTitle: 'adverbs',
-        rightTitle: 'adjectives',
-        correctAnswers: [
-            ['raskt', 'høyt', 'lavt', 'ofte'],
-            ['rask', 'høy', 'lav', 'mørk']
-        ],
-        words: [
-            '???', '???', '???', '???', '???', '???', '???', '???', '???', '???', 
-            'høyt', 'høy', 'lavt', 'ofte', 
-            'rask', 'raskt', 'lav', 'mørk'
-        ]
-    },
-    {
-        typeOfScreen: '6',
-        leftTitle: 'adverbs',
-        rightTitle: 'adjectives',
-        correctAnswers: [
-            ['raskt', 'tydelig', 'plutselig', 'ofte'],  
-            ['glad', 'stor', 'ny', 'ung']  
-        ],
-        words: [
-            '???', '???', '???', '???', '???', '???', '???', '???', '???', '???', 
-            'raskt', 'plutselig', 'stor', 'ofte', 
-            'glad', 'ny', 'tydelig', 'ung'
-        ]
-    }
+    // {
+    //     typeOfScreen: '6',
+    //     leftTitle: 'Comparative',
+    //     rightTitle: 'Superlative',
+    //     correctAnswers: [['tyngre', 'lysere', 'raskere', 'varmere', 'kaldere'], ['tyngst', 'lysest', 'raskest', 'varmest', 'kaldest']],
+    //     words: ['???', '???', '???', '???', '???', '???', '???', '???', '???', '???', '???', '???', 'varmest', 'tyngre', 'lysere', 'raskest', 'kaldere', 'tyngst', 'lysest', 'kaldest', 'raskere', 'varmere'],
+    //     translations: {
+    //     eng: ['Comparative', 'Superlative'],
+    //     pl: ['Stopień wyższy', 'Stopień najwyższy'],
+    //     ar: ['المقارنة', 'التفضيل'],
+    //     ger: ['Komparativ', 'Superlativ'],
+    //     lt: ['Lyginamasis laipsnis', 'Aukščiausiasis laipsnis'],
+    //     ua: ['Ступінь порівняння', 'Найвищий ступінь'],
+    //     sp: ['Comparativo', 'Superlativo'],
+    //     },
+    //     translationsCorrectAnswers: {
+    //         eng: ['Comparative, synonym 1, synonym2', 'Superlative2', 'Comparative', 'Superlative4', 'Comparative', 'Superlative6', 'Comparative7', 'Superlative', 'Comparative', 'Superlative10'],
+    //         pl: ['Stopień wyższy', 'Stopień najwyższy', 'Stopień wyższy3', 'Stopień najwyższy4' ,'Stopień wyższy5', 'Stopień najwyższy', 'Stopień wyższy7', 'Stopień najwyższy', 'Stopień wyższy', 'Stopień najwyższy10'],
+    //         ar: ['المقارنة', 'التفضيل'],
+    //         ger: ['Komparativ', 'Superlativ'],
+    //         lt: ['Lyginamasis laipsnis', 'Aukščiausiasis laipsnis'],
+    //         ua: ['Ступінь порівняння', 'Найвищий ступінь'],
+    //         sp: ['Comparativo', 'Superlativo'],
+    //     },
+    // },
+    // {
+    //     typeOfScreen: '6',
+    //     leftTitle: 'Comparative',
+    //     rightTitle: 'Superlative',
+    //     correctAnswers: [['sterkere', 'svakere', 'eldre', 'høyere', 'lavere'], ['sterkest', 'svakest', 'eldst', 'høyest', 'lavest']],
+    //     words: ['???', '???', '???', '???', '???', '???', '???', '???', '???', '???', '???', '???', 'lavest', 'sterkere', 'svakest', 'svakere', 'eldst', 'eldre', 'høyere', 'lavere', 'sterkest', 'høyest'],
+    //     translations: {
+    //     eng: ['Comparative', 'Superlative'],
+    //     pl: ['Stopień wyższy', 'Stopień najwyższy'],
+    //     ar: ['المقارنة', 'التفضيل'],
+    //     ger: ['Komparativ', 'Superlativ'],
+    //     lt: ['Lyginamasis laipsnis', 'Aukščiausiasis laipsnis'],
+    //     ua: ['Ступінь порівняння', 'Найвищий ступінь'],
+    //     sp: ['Comparativo', 'Superlativo'],
+    // }
+    // },
 ];

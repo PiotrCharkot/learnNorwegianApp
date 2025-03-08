@@ -23,13 +23,13 @@ const dataForMarkers = {
 }
 
 
-let option1 = [type7data, type4data, type3data, type5data, type6data, type8data];
-let option2 = [type7data, type4data, type3data, type5data];
-let option3 = [type7data, type4data, type3data];
+let option1 = [type7data, type1data, type7data, type6data, type8data];
+let option2 = [type7data, type1data, type7data, type6data];
+let option3 = [type7data, type1data, type7data];
 
-const links1 = ['TestingOpeningScreen', 'Type4', 'Type3', 'Type5', 'Type6', 'Type8'];
-const links2 = ['TestingOpeningScreen', 'Type4', 'Type3', 'Type5'];
-const links3 = ['TestingOpeningScreen', 'Type4', 'Type3'];
+const links1 = ['TestingOpeningScreen', 'Type1', 'Type7', 'Type6', 'Type8'];
+const links2 = ['TestingOpeningScreen', 'Type1', 'Type7', 'Type6'];
+const links3 = ['TestingOpeningScreen', 'Type1', 'Type7'];
 
 
 
@@ -139,9 +139,9 @@ const TestingOpeningScreen = ({route}) => {
     let type7dataNew = type7data;
     let type8dataNew = type8data;
 
-    option1 = [type7dataNew, type4data, type3data, type5data, type6data, type8data];
-    option2 = [type7dataNew, type4data, type3data, type5data];
-    option3 = [type7dataNew, type4data, type3data];
+    option1 = [type7dataNew, type1data, type7data, type6data, type8data];
+    option2 = [type7dataNew, type1data, type7data, type6data];
+    option3 = [type7dataNew, type1data, type7data];
 
 
     let tempArr = []; 

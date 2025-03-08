@@ -1,17 +1,19 @@
-import { View, Text, StyleSheet, Animated, ScrollView } from 'react-native'
+import { View, Text, StyleSheet, Animated, ScrollView, Dimensions, TouchableOpacity, FlatList } from 'react-native'
 import React, { useState, useEffect, useRef  } from 'react'
 import { useFocusEffect } from "@react-navigation/native";
 import ProgressBar from '../../../../../components/bars/progressBar'
 import BottomBar from '../../../../../components/bars/bottomBar';
 import AnswerButtonSmall from '../../../../../components/buttons/AnswerButtonSmall';
 import generalStyles from '../../../../../styles/generalStyles';
+import AnswerPairType4 from '../../../../../components/other/AnswerPairType4';
+import AnswerPairType6 from '../../../../../components/other/AnswerPairType6';
 
 
 const outputColors = [generalStyles.wrongAnswerConfirmationColor, generalStyles.neutralAnswerConfirmationColor, generalStyles.correctAnswerConfirmationColor];
 
 const exitLink = 'ExitExcScreen'
 
-
+const screenWidth = Dimensions.get('window').width;
 
 const Type5 = ({route}) => {
 
@@ -42,6 +44,15 @@ const Type5 = ({route}) => {
     const [instructions, setInstructions] = useState('Choose the correct answer from the options provided.');
     const [newInstructions, setNewInstructions] = useState('');
 
+    
+    const [hideShowText, setHideShowText] = useState('Show answers');
+    const [hideTxt, setHideTxt] = useState('Hide answers');
+    const [dataForAnswer, setDataForAnswers] = useState([]);
+    const [answersShown, setAnswersShown] = useState(false);
+
+    
+    const answerPosition = useRef(new Animated.Value(220)).current;
+
     const a1background = useRef(new Animated.Value(0)).current;
     const a2background = useRef(new Animated.Value(0)).current;
     const a3background = useRef(new Animated.Value(0)).current;
@@ -50,10 +61,10 @@ const Type5 = ({route}) => {
     const backgroundArray = [a1background, a2background, a3background, a4background];
 
     const allUserAnswers = [
-        [isAnswer1Checked, isAnswer2Checked, isAnswer3Checked, isAnswer4Checked],
-        [isAnswer5Checked, isAnswer6Checked, isAnswer7Checked, isAnswer8Checked],
-        [isAnswer9Checked, isAnswer10Checked, isAnswer11Checked, isAnswer12Checked],
-        [isAnswer13Checked, isAnswer14Checked, isAnswer15Checked, isAnswer16Checked],
+      [isAnswer1Checked, isAnswer2Checked, isAnswer3Checked, isAnswer4Checked],
+      [isAnswer5Checked, isAnswer6Checked, isAnswer7Checked, isAnswer8Checked],
+      [isAnswer9Checked, isAnswer10Checked, isAnswer11Checked, isAnswer12Checked],
+      [isAnswer13Checked, isAnswer14Checked, isAnswer15Checked, isAnswer16Checked],
     ]
 
     const backgroundA1 = a1background.interpolate({
@@ -111,32 +122,56 @@ const Type5 = ({route}) => {
         if (exeList[nextScreen - 1].instructions) {
           if (savedLang === 'PL') {
               setNewInstructions(exeList[nextScreen - 1].instructions.pl)
+              setHideShowText('Pokaż odpowiedzi')
+              setHideTxt('Ukryj odpowiedzi')
             } else if (savedLang === 'DE') {
               setNewInstructions(exeList[nextScreen - 1].instructions.ger)
+              setHideShowText('Antworten anzeigen')
+              setHideTxt('Antworten verbergen')
             } else if (savedLang === 'LT') {
               setNewInstructions(exeList[nextScreen - 1].instructions.lt)
+              setHideShowText('Rodyti atsakymus')
+              setHideTxt('Slėpti atsakymus')
             } else if (savedLang === 'AR') {
               setNewInstructions(exeList[nextScreen - 1].instructions.ar)
+              setHideShowText('عرض الإجابات')
+              setHideTxt('اخفِ الإجابات')
             } else if (savedLang === 'UA') {
               setNewInstructions(exeList[nextScreen - 1].instructions.ua)
+              setHideShowText('Показати відповіді')
+              setHideTxt('Сховати відповіді')
             } else if (savedLang === 'ES') {
               setNewInstructions(exeList[nextScreen - 1].instructions.sp)
+              setHideShowText('Mostrar respuestas')
+              setHideTxt('Ocultar respuestas')
             } else if (savedLang === 'EN') {
               setNewInstructions(exeList[nextScreen - 1].instructions.eng)
           }
         } else {
           if (savedLang === 'PL') {
               setInstructions('Wybierz odpowiednią odpowiedź spośród podanych opcji.')
+              setHideShowText('Pokaż odpowiedzi')
+              setHideTxt('Ukryj odpowiedzi')
             } else if (savedLang === 'DE') {
               setInstructions('Wähle die richtige Antwort aus den angegebenen Optionen.')
+              setHideShowText('Antworten anzeigen')
+              setHideTxt('Antworten verbergen')
             } else if (savedLang === 'LT') {
               setInstructions('Pasirinkite teisingą atsakymą iš pateiktų variantų.')
+              setHideShowText('Rodyti atsakymus')
+              setHideTxt('Slėpti atsakymus')
             } else if (savedLang === 'AR') {
               setInstructions('اختر الإجابة الصحيحة من الخيارات المقدمة')
+              setHideShowText('عرض الإجابات')
+              setHideTxt('اخفِ الإجابات')
             } else if (savedLang === 'UA') {
               setInstructions('Виберіть правильну відповідь з наданих варіантів.')
+              setHideShowText('Показати відповіді')
+              setHideTxt('Сховати відповіді')
             } else if (savedLang === 'ES') {
               setInstructions('Elige la respuesta correcta de las opciones proporcionadas.')
+              setHideShowText('Mostrar respuestas')
+              setHideTxt('Ocultar respuestas')
           }
         }
     })
@@ -168,10 +203,171 @@ const Type5 = ({route}) => {
             
             delayAnimation = delayAnimation + 200;
         }
+
+        if (exeList[nextScreen - 1].translationsCorrectAnswers) {
+          Animated.timing(answerPosition, {
+            toValue: 150,
+            duration: 500,
+            useNativeDriver: false
+          }).start()
+
+          
+          setAnswersShown(false);
+
+        }
       }
       
     
     }, [answersChecked])
+
+
+    useEffect(() => {
+      let tempArr = [];
+      let answerDataArr = exeList[nextScreen - 1].correctAnswers;
+
+      for (let i = 0; i < answerDataArr.length; i++) {
+          
+
+
+        if (exeList[nextScreen - 1].translationsLinks) {
+          if (savedLang === 'PL') {
+            tempArr[i] = {
+                translationData: exeList[nextScreen - 1].translationsCorrectAnswers.pl[i],
+                answerData: [exeList[nextScreen - 1].correctAnswersList[i]],
+                links: exeList[nextScreen - 1].translationsLinks[i],
+                key: i
+            }
+          } else if (savedLang === 'DE') {
+            tempArr[i] = {
+                translationData: exeList[nextScreen - 1].translationsCorrectAnswers.ger[i],
+                answerData: [exeList[nextScreen - 1].correctAnswersList[i]],
+                links: exeList[nextScreen - 1].translationsLinks[i],
+                key: i
+            }
+          } else if (savedLang === 'LT') {
+            tempArr[i] = {
+                translationData: exeList[nextScreen - 1].translationsCorrectAnswers.lt[i],
+                answerData: [exeList[nextScreen - 1].correctAnswersList[i]],
+                links: exeList[nextScreen - 1].translationsLinks[i],
+                key: i
+            }
+          } else if (savedLang === 'AR') {
+            tempArr[i] = {
+                translationData: exeList[nextScreen - 1].translationsCorrectAnswers.ar[i],
+                answerData: [exeList[nextScreen - 1].correctAnswersList[i]],
+                links: exeList[nextScreen - 1].translationsLinks[i],
+                key: i
+            }
+          } else if (savedLang === 'UA') {
+            tempArr[i] = {
+                translationData: exeList[nextScreen - 1].translationsCorrectAnswers.ua[i],
+                answerData: [exeList[nextScreen - 1].correctAnswersList[i]],
+                links: exeList[nextScreen - 1].translationsLinks[i],
+                key: i
+            }
+          } else if (savedLang === 'ES') {
+            tempArr[i] = {
+                translationData: exeList[nextScreen - 1].translationsCorrectAnswers.sp[i],
+                answerData: [exeList[nextScreen - 1].correctAnswersList[i]],
+                links: exeList[nextScreen - 1].translationsLinks[i],
+                key: i
+            }
+          } else if (savedLang === 'EN') {
+            tempArr[i] = {
+                translationData: exeList[nextScreen - 1].translationsCorrectAnswers.eng[i],
+                answerData: [exeList[nextScreen - 1].correctAnswersList[i]],
+                links: exeList[nextScreen - 1].translationsLinks[i],
+                key: i
+            }
+        }
+        } else if (exeList[nextScreen - 1].translationsCorrectAnswers && !exeList[nextScreen - 1].translationsLinks) {
+          if (savedLang === 'PL') {
+              tempArr[i] = {
+                  translationData: exeList[nextScreen - 1].translationsCorrectAnswers.pl[i],
+                  answerData: [exeList[nextScreen - 1].correctAnswersList[i]],
+                  key: i
+              }
+            } else if (savedLang === 'DE') {
+              tempArr[i] = {
+                  translationData: exeList[nextScreen - 1].translationsCorrectAnswers.ger[i],
+                  answerData: [exeList[nextScreen - 1].correctAnswersList[i]],
+                  key: i
+              }
+            } else if (savedLang === 'LT') {
+              tempArr[i] = {
+                  translationData: exeList[nextScreen - 1].translationsCorrectAnswers.lt[i],
+                  answerData: [exeList[nextScreen - 1].correctAnswersList[i]],
+                  key: i
+              }
+            } else if (savedLang === 'AR') {
+              tempArr[i] = {
+                  translationData: exeList[nextScreen - 1].translationsCorrectAnswers.ar[i],
+                  answerData: [exeList[nextScreen - 1].correctAnswersList[i]],
+                  key: i
+              }
+            } else if (savedLang === 'UA') {
+              tempArr[i] = {
+                  translationData: exeList[nextScreen - 1].translationsCorrectAnswers.ua[i],
+                  answerData: [exeList[nextScreen - 1].correctAnswersList[i]],
+                  key: i
+              }
+            } else if (savedLang === 'ES') {
+              tempArr[i] = {
+                  translationData: exeList[nextScreen - 1].translationsCorrectAnswers.sp[i],
+                  answerData: [exeList[nextScreen - 1].correctAnswersList[i]],
+                  key: i
+              }
+            } else if (savedLang === 'EN') {
+              tempArr[i] = {
+                  translationData: exeList[nextScreen - 1].translationsCorrectAnswers.eng[i],
+                  answerData: [exeList[nextScreen - 1].correctAnswersList[i]],
+                  key: i
+              }
+          }
+        } else {
+          tempArr[i] = {
+              answerData: [exeList[nextScreen - 1].allAnswers[i]],
+              key: i
+          }
+        }
+      }
+
+
+
+      setDataForAnswers(tempArr);
+        
+        
+    }, [])
+
+
+    const renderAnswer = (item) => {
+      if (exeList[nextScreen - 1].translationsLinks) {
+
+        return <AnswerPairType6 dataParams={item} />
+      } else {
+
+        return <AnswerPairType4 dataParams={item} />
+      }
+    }
+  
+  
+    const showHideAnswers = () => {
+        if (answersShown) {
+            setAnswersShown(false);
+            Animated.timing(answerPosition, {
+                toValue: 150,
+                duration: 500,
+                useNativeDriver: false
+            }).start()
+        } else {
+            setAnswersShown(true);
+            Animated.timing(answerPosition, {
+                toValue: 0,
+                duration: 500,
+                useNativeDriver: false
+            }).start()
+        }
+    }
 
     
   return (
@@ -234,6 +430,25 @@ const Type5 = ({route}) => {
             </View>
           
         </ScrollView>
+
+        <Animated.View style={{...styles.answerContainer, transform: [{translateY: answerPosition}]}}>
+                        
+          <View style={styles.answersListContainer}>
+              <FlatList 
+                  showsVerticalScrollIndicator={false}
+                  decelerationRate={0}
+                  data={dataForAnswer}
+                  renderItem={renderAnswer}
+                  keyExtractor={(item) => item.key}
+                  scrollEventThrottle={16}
+              />
+          </View>
+
+          <TouchableOpacity style={styles.hideShowBtn} onPress={showHideAnswers}>
+              <Text style={styles.hideShowTxt}>{answersShown ? hideTxt : hideShowText}</Text>
+          </TouchableOpacity>
+
+        </Animated.View>
 
 
         <View style={styles.progressBarContainer}>
@@ -345,6 +560,41 @@ const styles = StyleSheet.create({
     marginHorizontal: 3
     
   },
-  
+  answerContainer: {
+    position: 'absolute',
+    marginHorizontal: 20,
+    bottom: 100,
+    width: screenWidth - 40
+  },
+  hideShowBtn: {
+    position: 'absolute',
+    bottom: 147,
+    borderWidth: 3,
+    borderColor: '#6441A5',
+    paddingHorizontal: 10,
+    borderBottomWidth: 0,
+    alignItems: 'center',
+    justifyContent: 'center',
+    paddingTop: 5,
+    paddingBottom: 8,
+    backgroundColor: '#e49dfa',
+    borderTopLeftRadius: 8,
+    borderTopRightRadius: 8
+  },
+  hideShowTxt: {
+    fontSize: 16,
+    fontWeight: '600',
+    color: 'white'
+  },
+  answersListContainer: {
+    borderWidth: 3,
+    borderColor: '#6441A5',
+    padding: 10,
+    backgroundColor: '#e49dfa',
+    height: 150,
+    borderTopRightRadius: 8,
+    borderBottomLeftRadius: 8,
+    borderBottomRightRadius: 8,
+  }
 
 })
